@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:smart_banking/view/notifications/notifications_page.dart';
-import 'package:smart_banking/view/promotion/promotion_page.dart';
-import 'package:smart_banking/view/qr_code/qr_code_page.dart';
-import 'package:smart_banking/view/settings/settings_page.dart';
-
-import '../home/home_page.dart';
+import '../home/view/home_page.dart';
+import '../notifications/notifications_page.dart';
+import '../promotion/promotion_page.dart';
+import '../qr_code/qr_code_page.dart';
+import '../settings/settings_page.dart';
 
 class DashBoardPage extends StatefulWidget {
   const DashBoardPage({Key? key}) : super(key: key);
