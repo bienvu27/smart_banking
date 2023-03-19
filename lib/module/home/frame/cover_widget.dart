@@ -18,8 +18,7 @@ class CoverWidget extends StatelessWidget {
             height: 530,
           ),
           Padding(
-            padding:
-            const EdgeInsets.only(left: 10, right: 10, top: 30),
+            padding: const EdgeInsets.only(left: 10, right: 10, top: 30),
             child: Column(
               children: [
                 Row(
@@ -43,13 +42,13 @@ class CoverWidget extends StatelessWidget {
                               color: Colors.white30, size: 25),
                           border: const OutlineInputBorder(),
                           enabledBorder: OutlineInputBorder(
-                            borderSide: const BorderSide(
-                                color: Colors.transparent),
+                            borderSide:
+                                const BorderSide(color: Colors.transparent),
                             borderRadius: BorderRadius.circular(25.7),
                           ),
                           focusedBorder: OutlineInputBorder(
-                            borderSide: const BorderSide(
-                                color: Colors.transparent),
+                            borderSide:
+                                const BorderSide(color: Colors.transparent),
                             borderRadius: BorderRadius.circular(25.7),
                           ),
                         ),
@@ -82,20 +81,17 @@ class CoverWidget extends StatelessWidget {
                                   height: 15,
                                   alignment: Alignment.center,
                                   decoration: BoxDecoration(
-                                      border: Border.all(
-                                          color: Colors.black12),
+                                      border: Border.all(color: Colors.black12),
                                       color: Colors.white,
                                       shape: BoxShape.circle),
-                                  child:
-                                  const Icon(Icons.menu, size: 12),
+                                  child: const Icon(Icons.menu, size: 12),
                                 ))
                           ],
                         ),
                       ),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment:
-                        MainAxisAlignment.spaceBetween,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: const [
                           Text(
                             'Chào buổi sáng!',
@@ -136,22 +132,79 @@ class CoverWidget extends StatelessWidget {
                         color: Colors.grey.withOpacity(0.3),
                         spreadRadius: 1,
                         blurRadius: 1,
-                        offset: const Offset(
-                            1, 2), // changes position of shadow
+                        offset:
+                            const Offset(1, 2), // changes position of shadow
                       ),
                     ],
                   ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: const [
-                      Text(
-                        'Đăng nhập',
-                        style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.w500,
-                            color: Colors.blue),
+                    children: [
+                      InkWell(
+                        onTap: () {
+                          showModalBottomSheet<void>(
+                            context: context,
+                            isScrollControlled: true,
+                            shape: const RoundedRectangleBorder(
+                              borderRadius: BorderRadius.vertical(
+                                top: Radius.circular(25.0),
+                              ),
+                            ),
+                            builder: (BuildContext context) {
+                              return Container(
+                                margin: const EdgeInsets.only(left: 20, right: 20, top: 20),
+                                height: Get.size.height / 1.2,
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        InkWell(
+                                          onTap: ()=> Navigator.pop(context),
+                                          child: Container(
+                                            width: 25,
+                                            height: 25,
+                                            decoration: const BoxDecoration(
+                                              color: Colors.black12,
+                                              shape: BoxShape.circle,
+                                            ),
+                                            child: const Icon(Icons.close, size: 15,),
+                                          ),
+                                        ),
+                                        Container(
+                                          width: 40,
+                                          height: 20,
+                                          decoration: BoxDecoration(
+                                            color: Colors.black12,
+                                            borderRadius: BorderRadius.circular(20)
+                                          ),
+                                          child: Row(
+                                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                            children: [
+                                              Text('EN', style: TextStyle(fontWeight: FontWeight.w500),),
+                                              Image.network('https://cleandye.com/wp-content/uploads/2020/01/English-icon.png', width: 15, height: 15,)
+                                            ],
+                                          ),
+                                        )
+                                      ],
+                                    )
+                                  ],
+                                ),
+                              );
+                            },
+                          );
+                        },
+                        child: const Text(
+                          'Đăng nhập',
+                          style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.w500,
+                              color: Colors.blue),
+                        ),
                       ),
-                      Text(
+                      const Text(
                         'Đăng ký',
                         style: TextStyle(
                             fontSize: 18,
