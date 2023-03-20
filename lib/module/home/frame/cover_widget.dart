@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../register/view/register_page.dart';
+
 class CoverWidget extends StatelessWidget {
   const CoverWidget({
     super.key,
@@ -329,18 +331,18 @@ class CoverWidget extends StatelessWidget {
                                     Container(
                                       margin: const EdgeInsets.only(top: 30),
                                       child: Column(
-                                        children: const [
-                                          Text(
+                                        children: [
+                                          const Text(
                                             'Hướng dẫn chuyển đổi',
                                             style: TextStyle(
                                                 fontSize: 18,
                                                 fontWeight: FontWeight.w500,
                                                 color: Colors.blue),
                                           ),
-                                          SizedBox(
+                                          const SizedBox(
                                             height: 30,
                                           ),
-                                          Text(
+                                          const Text(
                                             'Đăng ký',
                                             style: TextStyle(
                                                 fontSize: 18,
@@ -364,12 +366,15 @@ class CoverWidget extends StatelessWidget {
                               color: Colors.blue),
                         ),
                       ),
-                      const Text(
-                        'Đăng ký',
-                        style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.w500,
-                            color: Colors.lightBlueAccent),
+                      InkWell(
+                        onTap: ()=> Get.to(const RegisterPage()),
+                        child: const Text(
+                          'Đăng ký',
+                          style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.w500,
+                              color: Colors.lightBlueAccent),
+                        ),
                       ),
                     ],
                   ),
