@@ -152,17 +152,19 @@ class CoverWidget extends StatelessWidget {
                             ),
                             builder: (BuildContext context) {
                               return Container(
-                                margin: const EdgeInsets.only(left: 20, right: 20, top: 20),
+                                margin: const EdgeInsets.only(
+                                    left: 20, right: 20, top: 20),
                                 height: Get.size.height / 1.2,
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
                                     Row(
-                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
                                       children: [
                                         InkWell(
-                                          onTap: ()=> Navigator.pop(context),
+                                          onTap: () => Navigator.pop(context),
                                           child: Container(
                                             width: 25,
                                             height: 25,
@@ -170,25 +172,183 @@ class CoverWidget extends StatelessWidget {
                                               color: Colors.black12,
                                               shape: BoxShape.circle,
                                             ),
-                                            child: const Icon(Icons.close, size: 15,),
+                                            child: const Icon(
+                                              Icons.close,
+                                              size: 15,
+                                            ),
                                           ),
                                         ),
                                         Container(
                                           width: 40,
                                           height: 20,
                                           decoration: BoxDecoration(
-                                            color: Colors.black12,
-                                            borderRadius: BorderRadius.circular(20)
-                                          ),
+                                              color: Colors.black12,
+                                              borderRadius:
+                                                  BorderRadius.circular(20)),
                                           child: Row(
-                                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceEvenly,
                                             children: [
-                                              Text('EN', style: TextStyle(fontWeight: FontWeight.w500),),
-                                              Image.network('https://cleandye.com/wp-content/uploads/2020/01/English-icon.png', width: 15, height: 15,)
+                                              const Text(
+                                                'EN',
+                                                style: TextStyle(
+                                                    fontWeight:
+                                                        FontWeight.w500),
+                                              ),
+                                              Image.network(
+                                                'https://cleandye.com/wp-content/uploads/2020/01/English-icon.png',
+                                                width: 15,
+                                                height: 15,
+                                              )
                                             ],
                                           ),
                                         )
                                       ],
+                                    ),
+                                    Container(
+                                      margin: const EdgeInsets.only(top: 30),
+                                      width: 60,
+                                      height: 60,
+                                      decoration: const BoxDecoration(
+                                        color: Colors.black12,
+                                        shape: BoxShape.circle,
+                                      ),
+                                      child: const Icon(
+                                        Icons.person,
+                                        size: 30,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                    Container(
+                                      margin: const EdgeInsets.only(top: 20),
+                                      child: Column(
+                                        children: [
+                                          const TextField(
+                                            keyboardType: TextInputType.number,
+                                            decoration: InputDecoration(
+                                              labelText: "Số điện thoại",
+                                              //babel text
+                                              prefixIcon: Icon(
+                                                Icons.phone,
+                                                color: Colors.grey,
+                                              ),
+                                              labelStyle: TextStyle(
+                                                  fontSize: 18,
+                                                  color: Colors.black54,
+                                                  fontWeight: FontWeight.w400),
+                                              disabledBorder:
+                                                  UnderlineInputBorder(
+                                                borderSide: BorderSide(
+                                                    color: Colors.black),
+                                              ),
+                                              focusedBorder:
+                                                  UnderlineInputBorder(
+                                                borderSide: BorderSide(
+                                                    color: Colors.blue),
+                                              ),
+                                            ),
+                                          ),
+                                          Container(
+                                            margin:
+                                                const EdgeInsets.only(top: 20),
+                                            child: Stack(
+                                              alignment: Alignment.center,
+                                              children: const [
+                                                TextField(
+                                                    obscureText: true,
+                                                    decoration: InputDecoration(
+                                                        labelText: "Mật khẩu",
+                                                        //babel text
+                                                        prefixIcon: Icon(
+                                                          Icons.lock,
+                                                          color: Colors.grey,
+                                                        ),
+                                                        labelStyle: TextStyle(
+                                                            fontSize: 18,
+                                                            color:
+                                                                Colors.black54,
+                                                            fontWeight:
+                                                                FontWeight
+                                                                    .w400),
+                                                        focusedBorder:
+                                                            UnderlineInputBorder(
+                                                          borderSide:
+                                                              BorderSide(
+                                                                  color: Colors
+                                                                      .blue),
+                                                        ),
+                                                        disabledBorder:
+                                                            UnderlineInputBorder(
+                                                                borderSide: BorderSide(
+                                                                    color: Colors
+                                                                        .grey)))),
+                                                Positioned(
+                                                    right: 5,
+                                                    child: Text(
+                                                      'Quên mật khẩu',
+                                                      style: TextStyle(
+                                                          fontSize: 18,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                          color: Colors.blue),
+                                                    ))
+                                              ],
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    Container(
+                                      margin: const EdgeInsets.only(top: 20),
+                                      alignment: Alignment.center,
+                                      width: Get.size.width,
+                                      height: 50,
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(10),
+                                        color: Colors.blue,
+                                        gradient: const LinearGradient(
+                                          begin: Alignment.topLeft,
+                                          end: Alignment.bottomRight,
+                                          colors: [
+                                            Color(0xff00a5ae),
+                                            Color(0xff00a8ae),
+                                            Color(0xff00a8ae),
+                                            Color(0xff0081ae),
+                                            Color(0xff006cad),
+                                          ],
+                                        ),
+                                      ),
+                                      child: const Text(
+                                        'Đăng nhập',
+                                        style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 17,
+                                            fontWeight: FontWeight.w500),
+                                      ),
+                                    ),
+                                    Container(
+                                      margin: const EdgeInsets.only(top: 30),
+                                      child: Column(
+                                        children: const [
+                                          Text(
+                                            'Hướng dẫn chuyển đổi',
+                                            style: TextStyle(
+                                                fontSize: 18,
+                                                fontWeight: FontWeight.w500,
+                                                color: Colors.blue),
+                                          ),
+                                          SizedBox(
+                                            height: 30,
+                                          ),
+                                          Text(
+                                            'Đăng ký',
+                                            style: TextStyle(
+                                                fontSize: 18,
+                                                fontWeight: FontWeight.w500,
+                                                color: Colors.blue),
+                                          ),
+                                        ],
+                                      ),
                                     )
                                   ],
                                 ),
