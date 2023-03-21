@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomDialog extends StatelessWidget {
   const CustomDialog({super.key, required this.clickCallback});
@@ -17,43 +17,44 @@ class CustomDialog extends StatelessWidget {
 
   Widget dialogContent(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(left: 0.0, right: 0.0),
+      margin: const EdgeInsets.only(left: 0.0, right: 0.0),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          const Padding(
-            padding: const EdgeInsets.all(10.0),
+          Padding(
+            padding: const EdgeInsets.all(10),
             child: Text(
                 "Quý khách vui lòng nhấn lại link giới thiệu để được hưởng khuyến mại theo chương trình KH giới thiệu KH. Trường hợp không có người giới thiệu vui lòng bỏ qua thông báo này",
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                    fontSize: 16,
+                    fontSize: 15.sp,
                     color: Colors.black,
                     fontWeight: FontWeight.w400,
                     height: 1.4)),
           ),
-          SizedBox(height: 15),
+          SizedBox(height: 10.h),
           Padding(
-            padding: const EdgeInsets.only(left: 10, right: 10, bottom: 10),
+            padding: EdgeInsets.only(left: 10.w, right: 10.w, bottom: 10.h),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 InkWell(
                   onTap: ()=> Navigator.pop(context),
                   child: Container(
-                    width: 150,
-                    height: 50,
+                    width: 130.w,
+                    height: 40.h,
                     alignment: Alignment.center,
                     decoration: BoxDecoration(
-                      color: Color(0xffeaf7ff),
-                      borderRadius: BorderRadius.circular(10)
+                      color: Colors.white,
+                      border: Border.all(color: Colors.red, width: 1),
+                      borderRadius: BorderRadius.circular(10.r)
                     ),
                     child: Text(
                       "Đóng",
                       style: TextStyle(
-                          color: Colors.blue,
-                          fontSize: 16,
+                          color: Colors.red,
+                          fontSize: 14.sp,
                           fontWeight: FontWeight.w500),
                       textAlign: TextAlign.center,
                     ),
@@ -61,27 +62,18 @@ class CustomDialog extends StatelessWidget {
                 ),
                 InkWell(
                   child: Container(
-                    width: 150,
-                    height: 50,
+                    width: 130.w,
+                    height: 40.h,
                     alignment: Alignment.center,
                     decoration: BoxDecoration(
-                      color: Color(0xffeaf7ff),
+                      color: Colors.red,
                       borderRadius: BorderRadius.circular(10),
-                      gradient: const LinearGradient(
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight,
-                        colors: [
-                          Color(0xff00b2ae),
-                          Color(0xff00a9ae),
-                          Color(0xff006bad),
-                        ],
-                      ),
                     ),
-                    child: const Text(
+                    child: Text(
                       "Tiếp tục",
                       style: TextStyle(
                           color: Colors.white,
-                          fontSize: 16,
+                          fontSize: 14.sp,
                           fontWeight: FontWeight.w500),
                       textAlign: TextAlign.center,
                     ),

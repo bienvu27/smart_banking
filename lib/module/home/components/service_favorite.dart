@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../components/button/button_component.dart';
 import '../model/service_favorite_model.dart';
 
 class ServiceFavorite extends StatelessWidget {
@@ -14,29 +15,28 @@ class ServiceFavorite extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 10, right: 10),
+      padding: EdgeInsets.only(left: 10.w, right: 10.w),
       child: Column(
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: const [
+            children: [
               Text(
                 'Dịch vụ yêu thích',
                 style: TextStyle(
-                    fontSize: 18, fontWeight: FontWeight.w600),
+                    fontSize: 15.sp, fontWeight: FontWeight.w600, color: Colors.black),
               ),
               Text(
                 'Tuỳ chỉnh',
                 style: TextStyle(
-                    fontSize: 18,
+                    fontSize: 15.sp,
                     fontWeight: FontWeight.w600,
-                    color: Colors.blue),
+                    color: Colors.redAccent),
               ),
             ],
           ),
-          Container(
-            height: 300,
-            margin: const EdgeInsets.only(bottom: 20),
+          SizedBox(
+            height: 250.h,
             child: GridView.count(
                 physics: const NeverScrollableScrollPhysics(),
                 primary: false,
@@ -52,15 +52,15 @@ class ServiceFavorite extends StatelessWidget {
                           children: [
                             Image.network(
                               e.image ?? '',
-                              width: 60,
-                              height: 60,
+                              width: 40.w,
+                              height: 40.h,
                               fit: BoxFit.contain,
                             ),
                             Positioned(
-                              bottom: 5,
+                              bottom: 5.h,
                               child: Container(
-                                width: 30,
-                                height: 0.1,
+                                width: 30.w,
+                                height: 0.1.h,
                                 decoration: BoxDecoration(
                                   boxShadow: [
                                     BoxShadow(
@@ -68,8 +68,7 @@ class ServiceFavorite extends StatelessWidget {
                                       Colors.grey.withOpacity(0.9),
                                       spreadRadius: 2,
                                       blurRadius: 5,
-                                      offset: Offset(0,
-                                          5), // changes position of shadow
+                                      offset: const Offset(0, 5), // changes position of shadow
                                     ),
                                   ],
                                 ),
@@ -77,8 +76,8 @@ class ServiceFavorite extends StatelessWidget {
                             ),
                           ],
                         ),
-                        const SizedBox(
-                          height: 10,
+                        SizedBox(
+                          height: 8.h,
                         ),
                         Text(
                           e.title ?? '',
@@ -91,21 +90,7 @@ class ServiceFavorite extends StatelessWidget {
                   );
                 }).toList()),
           ),
-          Container(
-            width: Get.size.width,
-            height: 50,
-            alignment: Alignment.center,
-            decoration: BoxDecoration(
-                color: const Color(0xffeafff),
-                borderRadius: BorderRadius.circular(10)),
-            child: const Text(
-              'Xem tất cả dịch vụ',
-              style: TextStyle(
-                  fontSize: 17,
-                  fontWeight: FontWeight.w700,
-                  color: Colors.blue),
-            ),
-          )
+          ButtonComponent(title: 'Xem tất cả các dịch vụ', callback: () {},)
         ],
       ),
     );

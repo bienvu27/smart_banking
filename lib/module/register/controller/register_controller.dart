@@ -6,6 +6,4 @@ class RegisterPageController extends GetxController{
     isChecked = !isChecked;
     update();
   }
-
-
 }

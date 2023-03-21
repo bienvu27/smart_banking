@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../home/view/home_page.dart';
 import '../notifications/notifications_page.dart';
 import '../promotion/promotion_page.dart';
@@ -40,17 +41,17 @@ class _DashBoardPageState extends State<DashBoardPage> {
         ),
         floatingActionButton: Material(
           color: Colors.purple,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(35)),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(35.r)),
           shadowColor: Colors.purple,
-          child: Container(
-            height: 50,
-            width: 50,
+          child: SizedBox(
+            height: 40.h,
+            width: 45.w,
             child: FloatingActionButton(
-              backgroundColor: Colors.purple,
+              backgroundColor: Colors.red,
               onPressed: () {},
               shape: RoundedRectangleBorder(
-                  side: BorderSide(width: 3, color: Colors.white),
-                  borderRadius: BorderRadius.circular(100)),
+                  side: BorderSide(width: 3.w, color: Colors.white),
+                  borderRadius: BorderRadius.circular(100.r)),
               child: const Icon(Icons.qr_code_scanner_sharp),
             ),
           ),
@@ -59,8 +60,8 @@ class _DashBoardPageState extends State<DashBoardPage> {
         bottomNavigationBar: BottomAppBar(
           shape: const CircularNotchedRectangle(),
           notchMargin: 10,
-          child: Container(
-            height: 60,
+          child: SizedBox(
+            height: 60.h,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -68,7 +69,7 @@ class _DashBoardPageState extends State<DashBoardPage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     MaterialButton(
-                      minWidth: 40,
+                      minWidth: 40.w,
                       onPressed: () {
                         setState(() {
                           currentScreen = const HomePage();
@@ -80,12 +81,12 @@ class _DashBoardPageState extends State<DashBoardPage> {
                         children: [
                           Icon(
                             Icons.home_filled,
-                            color: currentTab == 0 ? Colors.blue : Colors.grey,
+                            color: currentTab == 0 ? Colors.red : Colors.grey,
                           ),
                           Text(
                             'Trang chủ',
                             style: TextStyle(
-                              color: currentTab == 0 ? Colors.blue : Colors.grey,
+                              color: currentTab == 0 ? Colors.red : Colors.grey,
                             ),
                           )
                         ],
@@ -104,12 +105,12 @@ class _DashBoardPageState extends State<DashBoardPage> {
                         children: [
                           Icon(
                             Icons.blur_circular,
-                            color: currentTab == 1 ? Colors.blue : Colors.grey,
+                            color: currentTab == 1 ? Colors.red : Colors.grey,
                           ),
                           Text(
                             'Đổi quà',
                             style: TextStyle(
-                              color: currentTab == 1 ? Colors.blue : Colors.grey,
+                              color: currentTab == 1 ? Colors.red : Colors.grey,
                             ),
                           )
                         ],
@@ -130,7 +131,7 @@ class _DashBoardPageState extends State<DashBoardPage> {
                     child: Text(
                       'Quét QR',
                       style: TextStyle(
-                        color: currentTab == 3 ? Colors.blue : Colors.grey,
+                        color: currentTab == 3 ? Colors.red : Colors.grey,
                       ),
                     ),
                   ),
@@ -151,12 +152,12 @@ class _DashBoardPageState extends State<DashBoardPage> {
                         children: [
                           Icon(
                             Icons.notifications,
-                            color: currentTab == 4 ? Colors.blue : Colors.grey,
+                            color: currentTab == 4 ? Colors.red : Colors.grey,
                           ),
                           Text(
                             'Thông báo',
                             style: TextStyle(
-                              color: currentTab == 4 ? Colors.blue : Colors.grey,
+                              color: currentTab == 4 ? Colors.red : Colors.grey,
                             ),
                           )
                         ],
@@ -175,12 +176,12 @@ class _DashBoardPageState extends State<DashBoardPage> {
                         children: [
                           Icon(
                             Icons.settings,
-                            color: currentTab == 5 ? Colors.blue : Colors.grey,
+                            color: currentTab == 5 ? Colors.red : Colors.grey,
                           ),
                           Text(
                             'Cài đặt',
                             style: TextStyle(
-                              color: currentTab == 5 ? Colors.blue : Colors.grey,
+                              color: currentTab == 5 ? Colors.red : Colors.grey,
                             ),
                           )
                         ],

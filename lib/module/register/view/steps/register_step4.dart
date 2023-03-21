@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-import '../../controller/register_controller.dart';
+import '../../../components/app_bar/app_bar_component.dart';
+import '../../../components/button/button_component.dart';
 import '../components/radio_button.dart';
 
 class RegisterStep4Page extends StatelessWidget {
@@ -9,40 +11,13 @@ class RegisterStep4Page extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String radioItem = '';
     return Container(
-      decoration: const BoxDecoration(
-        gradient: LinearGradient(
-          begin: Alignment.topRight,
-          end: Alignment.bottomLeft,
-          colors: [
-            Color(0xff01bdae),
-            Color(0xff01bdae),
-            Color(0xff00acae),
-            Color(0xff009bad),
-            Color(0xff009baf),
-          ],
-        ),
-      ),
+      decoration: const BoxDecoration(color: Colors.white),
       child: Scaffold(
         backgroundColor: Colors.transparent,
-        appBar: AppBar(
-          backgroundColor: Colors.transparent,
-          centerTitle: true,
-          title: const Text(
-            'Chọn giấy tờ xác thực',
-            style: TextStyle(
-                fontWeight: FontWeight.w600, fontSize: 18, color: Colors.white),
-          ),
-          leading: InkWell(
-            onTap: () => Get.back(),
-            child: const Icon(
-              Icons.arrow_back_ios_new_outlined,
-              size: 20,
-              color: Colors.white,
-            ),
-          ),
-          elevation: 0,
+        appBar: AppBarComponent(
+          title: 'Chọn giấy tờ xác thực',
+          callback: () => Get.back(),
         ),
         body: Container(
           height: Get.size.height,
@@ -50,18 +25,18 @@ class RegisterStep4Page extends StatelessWidget {
           child: Column(
             children: [
               Container(
-                margin: const EdgeInsets.only(bottom: 10, top: 10),
+                margin: EdgeInsets.only(bottom: 10.h, top: 10.h),
                 alignment: Alignment.center,
                 width: Get.size.width,
                 child: SizedBox(
                   width: Get.size.width / 1.1,
-                  child: const Text(
+                  child: Text(
                     'Quý khách vui lòng chọn giấy tờ xác thực',
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                        fontSize: 15,
+                        fontSize: 13.sp,
                         fontWeight: FontWeight.w400,
-                        color: Colors.white),
+                        color: Colors.black),
                   ),
                 ),
               ),
@@ -70,17 +45,18 @@ class RegisterStep4Page extends StatelessWidget {
           ),
         ),
         bottomNavigationBar: Container(
-          height: 500,
+          height: 380.h,
           decoration: BoxDecoration(
             color: Colors.white,
-            borderRadius: const BorderRadius.only(
-                topLeft: Radius.circular(20), topRight: Radius.circular(20)),
+            borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(20.r),
+                topRight: Radius.circular(20.r)),
             boxShadow: [
               BoxShadow(
-                color: Colors.grey.withOpacity(0.9),
+                color: Colors.grey.withOpacity(0.5),
                 spreadRadius: 3,
-                blurRadius: 1,
-                offset: const Offset(0, 3),
+                blurRadius: 3,
+                offset: const Offset(1, 3),
               )
             ],
           ),
@@ -91,63 +67,63 @@ class RegisterStep4Page extends StatelessWidget {
                 Column(
                   children: [
                     Container(
-                      margin: const EdgeInsets.only(bottom: 10),
+                      margin: EdgeInsets.only(bottom: 10.h),
                       width: Get.size.width,
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           const Icon(
                             Icons.check_circle,
-                            color: Color(0xff009bad),
+                            color: Colors.red,
                           ),
                           Container(
-                            margin: const EdgeInsets.only(left: 10),
+                            margin: EdgeInsets.only(left: 10.w),
                             width: Get.size.width / 1.25,
-                            child: const Text(
+                            child: Text(
                               'Vui lòng sử dụng giấy tờ gốc (bản chính), còn hạn sử dụng',
-                              style: TextStyle(fontSize: 18),
+                              style: TextStyle(fontSize: 15.sp),
                             ),
                           ),
                         ],
                       ),
                     ),
                     Container(
-                      margin: const EdgeInsets.only(bottom: 10),
+                      margin: EdgeInsets.only(bottom: 10.h),
                       width: Get.size.width,
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           const Icon(
                             Icons.check_circle,
-                            color: Color(0xff009bad),
+                            color: Colors.red,
                           ),
                           Container(
-                            margin: const EdgeInsets.only(left: 10),
+                            margin: EdgeInsets.only(left: 10.w),
                             width: Get.size.width / 1.25,
-                            child: const Text(
+                            child: Text(
                               'Chụp ảnh trong môi trường sáng đảm bảo rõ nét, không bị mờ loá, không bị mất góc',
-                              style: TextStyle(fontSize: 18),
+                              style: TextStyle(fontSize: 15.sp),
                             ),
                           ),
                         ],
                       ),
                     ),
                     Container(
-                      margin: const EdgeInsets.only(bottom: 10),
+                      margin: EdgeInsets.only(bottom: 30.h),
                       width: Get.size.width,
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           const Icon(
                             Icons.check_circle,
-                            color: Color(0xff009bad),
+                            color: Colors.red,
                           ),
                           Container(
-                            margin: const EdgeInsets.only(left: 10),
+                            margin: EdgeInsets.only(left: 10.w),
                             width: Get.size.width / 1.25,
-                            child: const Text(
+                            child: Text(
                               'Khách hàng không sử dụng Giấy tờ tuỳ thân giả mạo, không chính chủ. Khách hàng chịu hoàn  toàn trách nhiệm trước pháp luật về thông tin Giấy tờ tuỳ thân cung cấp cho ngân hàng',
-                              style: TextStyle(fontSize: 18),
+                              style: TextStyle(fontSize: 15.sp),
                             ),
                           ),
                         ],
@@ -157,166 +133,139 @@ class RegisterStep4Page extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         SizedBox(
-                          width: 100,
+                          width: 100.w,
                           child: Column(
                             children: [
                               Stack(
                                 children: [
                                   Image.network(
                                     'https://cdn-icons-png.flaticon.com/512/4341/4341131.png',
-                                    width: 100,
-                                    height: 80,
+                                    width: 80.w,
+                                    height: 60.h,
                                   ),
                                   Positioned(
-                                    top: 10,
-                                    right: 1,
+                                    top: 10.h,
+                                    right: 1.w,
                                     child: Container(
-                                      width: 20,
-                                      height: 20,
+                                      width: 15.w,
+                                      height: 15.h,
                                       decoration: BoxDecoration(
                                           color: Colors.redAccent,
                                           shape: BoxShape.circle,
                                           border: Border.all(
                                               width: 1, color: Colors.white)),
-                                      child: const Icon(
+                                      child: Icon(
                                         Icons.close,
-                                        size: 15,
+                                        size: 15.spMin,
                                         color: Colors.white,
                                       ),
                                     ),
                                   ),
                                 ],
                               ),
-                              const SizedBox(
-                                width: 80,
-                                child: Text(
+                              SizedBox(
+                                width: 60.w,
+                                child: const Text(
                                   'Không chụp quá mờ',
                                   textAlign: TextAlign.center,
-                                  style: TextStyle(color: Colors.redAccent, height: 1.5),
+                                  style: TextStyle(
+                                      color: Colors.redAccent, height: 1.5),
                                 ),
                               )
                             ],
                           ),
                         ),
                         SizedBox(
-                          width: 100,
+                          width: 100.w,
                           child: Column(
                             children: [
                               Stack(
                                 children: [
                                   Image.network(
                                     'https://cdn-icons-png.flaticon.com/512/4341/4341131.png',
-                                    width: 100,
-                                    height: 80,
+                                    width: 80.w,
+                                    height: 60.h,
                                   ),
                                   Positioned(
-                                    top: 10,
-                                    right: 1,
+                                    top: 10.h,
+                                    right: 1.w,
                                     child: Container(
-                                      width: 20,
-                                      height: 20,
+                                      width: 15.w,
+                                      height: 15.h,
                                       decoration: BoxDecoration(
                                           color: Colors.redAccent,
                                           shape: BoxShape.circle,
                                           border: Border.all(
                                               width: 1, color: Colors.white)),
-                                      child: const Icon(
+                                      child: Icon(
                                         Icons.close,
-                                        size: 15,
+                                        size: 15.spMin,
                                         color: Colors.white,
                                       ),
                                     ),
                                   ),
                                 ],
                               ),
-                              const SizedBox(
-                                width: 80,
-                                child: Text(
+                              SizedBox(
+                                width: 60.w,
+                                child: const Text(
                                   'Không chụp mất góc',
                                   textAlign: TextAlign.center,
-                                  style: TextStyle(color: Colors.redAccent, height: 1.5),
+                                  style: TextStyle(
+                                      color: Colors.redAccent, height: 1.5),
                                 ),
                               )
                             ],
                           ),
                         ),
                         SizedBox(
-                          width: 100,
+                          width: 100.w,
                           child: Column(
                             children: [
                               Stack(
                                 children: [
                                   Image.network(
                                     'https://cdn-icons-png.flaticon.com/512/4341/4341131.png',
-                                    width: 100,
-                                    height: 80,
+                                    width: 80.w,
+                                    height: 60.h,
                                   ),
                                   Positioned(
-                                    top: 10,
-                                    right: 1,
+                                    top: 10.h,
+                                    right: 1.w,
                                     child: Container(
-                                      width: 20,
-                                      height: 20,
+                                      width: 15.w,
+                                      height: 15.h,
                                       decoration: BoxDecoration(
                                           color: Colors.redAccent,
                                           shape: BoxShape.circle,
                                           border: Border.all(
                                               width: 1, color: Colors.white)),
-                                      child: const Icon(
+                                      child: Icon(
                                         Icons.close,
-                                        size: 15,
+                                        size: 15.spMin,
                                         color: Colors.white,
                                       ),
                                     ),
                                   ),
                                 ],
                               ),
-                              const SizedBox(
-                                width: 80,
-                                child: Text(
+                              SizedBox(
+                                width: 60.w,
+                                child: const Text(
                                   'Không chụp loá sáng',
                                   textAlign: TextAlign.center,
-                                  style: TextStyle(color: Colors.redAccent, height: 1.5),
+                                  style: TextStyle(
+                                      color: Colors.redAccent, height: 1.5),
                                 ),
                               )
                             ],
                           ),
                         ),
                       ],
-                    )
-                  ],
-                ),
-                Positioned(
-                  child: Align(
-                    alignment: FractionalOffset.bottomCenter,
-                    child: Container(
-                      height: 60,
-                      width: Get.size.width,
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                        color: Colors.red,
-                        borderRadius: BorderRadius.circular(10),
-                        gradient: const LinearGradient(
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight,
-                          colors: [
-                            Color(0xff00a5ae),
-                            Color(0xff00a8ae),
-                            Color(0xff00a8ae),
-                            Color(0xff0081ae),
-                            Color(0xff006cad),
-                          ],
-                        ),
-                      ),
-                      child: const Text(
-                        'Tiếp tục',
-                        style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.w500,
-                            color: Colors.white),
-                      ),
                     ),
-                  ),
+                    const Spacer(),
+                    ButtonComponent(title: 'Tiếp tục', callback: () {},)
+                  ],
                 ),
               ],
             ),

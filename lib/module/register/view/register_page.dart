@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:smart_banking/module/register/view/steps/register_step2.dart';
 import 'package:smart_banking/module/register/view/steps/rigister_information.dart';
 
+import '../../components/app_bar/app_bar_component.dart';
 import 'components/custom_dialog.dart';
 
 class RegisterPage extends StatelessWidget {
@@ -11,23 +13,9 @@ class RegisterPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        centerTitle: true,
-        title: const Text(
-          'Đăng ký SmartBanking',
-          style: TextStyle(
-              fontWeight: FontWeight.w600, fontSize: 18, color: Colors.black),
-        ),
-        leading: InkWell(
-          onTap: () => Get.back(),
-          child: const Icon(
-            Icons.arrow_back_ios_new_outlined,
-            size: 20,
-            color: Colors.black,
-          ),
-        ),
-        elevation: 0,
+      appBar: AppBarComponent(
+        title: 'Đăng ký SmartBanking',
+        callback: () => Get.back(),
       ),
       body: SingleChildScrollView(
         physics: const NeverScrollableScrollPhysics(),
@@ -42,28 +30,30 @@ class RegisterPage extends StatelessWidget {
                           clickCallback: () {
                             Navigator.pop(context);
                             Get.to(const RegisterStep2Page());
-                          } ,
+                          },
                         ));
               },
               child: Container(
-                margin: const EdgeInsets.only(top: 10),
-                padding: const EdgeInsets.only(left: 10, right: 20),
-                height: 80,
+                margin: EdgeInsets.only(top: 10.h),
+                padding: EdgeInsets.only(left: 10.w, right: 20.w),
+                height: 60.h,
                 color: Colors.white,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     SizedBox(
-                      width: Get.size.width / 1.5,
+                      width: Get.size.width / 1.4,
                       child: Text(
-                        'Đăng ký cho khách hàng chưa có thông tin tại BIDV',
+                        'Đăng ký cho khách hàng chưa có thông tin tại BRD',
                         style: TextStyle(
-                            fontSize: 18, fontWeight: FontWeight.w500),
+                            fontSize: 15.sp,
+                            fontWeight: FontWeight.w500,
+                            color: Colors.black),
                       ),
                     ),
-                    const Icon(
+                    Icon(
                       Icons.arrow_forward_ios,
-                      size: 17,
+                      size: 17.spMin,
                       color: Colors.black38,
                     )
                   ],
@@ -83,9 +73,9 @@ class RegisterPage extends StatelessWidget {
                         ));
               },
               child: Container(
-                margin: const EdgeInsets.only(top: 10),
-                padding: const EdgeInsets.only(left: 10, right: 20),
-                height: 90,
+                margin: EdgeInsets.only(top: 10.w),
+                padding: EdgeInsets.only(left: 10.w, right: 20.w, top: 10.h),
+                height: 80.h,
                 color: Colors.white,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -94,23 +84,23 @@ class RegisterPage extends StatelessWidget {
                       width: Get.size.width / 1.3,
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: const [
+                        children: [
                           Text(
-                            'Đăng ký cho khách hàng đã có tài khoản thanh toán VNĐ mở tại BIDV',
+                            'Đăng ký cho khách hàng đã có tài khoản thanh toán VNĐ mở tại BRD',
                             style: TextStyle(
-                                fontSize: 18, fontWeight: FontWeight.w500),
+                                fontSize: 15.sp, fontWeight: FontWeight.w500),
                           ),
                           Text(
                             'Xác thực tự động qua bộ câu hỏi hoặc xác thực qua thông tin thẻ ghi nợ nội địa (thẻ ATM) trên ứng dụng Smartbaking',
-                            style:
-                                TextStyle(fontSize: 15, color: Colors.black38),
+                            style: TextStyle(
+                                fontSize: 13.sp, color: Colors.black38),
                           ),
                         ],
                       ),
                     ),
-                    const Icon(
+                    Icon(
                       Icons.arrow_forward_ios,
-                      size: 17,
+                      size: 17.spMin,
                       color: Colors.black38,
                     )
                   ],

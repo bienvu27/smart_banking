@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smart_banking/router/app_pages.dart';
 import 'package:smart_banking/router/app_routers.dart';
 import 'package:get/get.dart';
@@ -13,11 +14,18 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
-      initialRoute: AppRouters.DASHBOARD,
-      getPages: AppPages.list,
-      debugShowCheckedModeBanner: false,
-      themeMode: ThemeMode.system,
+    return ScreenUtilInit(
+      designSize: const Size(360, 690),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      builder: (context, child){
+        return GetMaterialApp(
+          initialRoute: AppRouters.DASHBOARD,
+          getPages: AppPages.list,
+          debugShowCheckedModeBanner: false,
+          themeMode: ThemeMode.system,
+        );
+      },
     );
   }
 }

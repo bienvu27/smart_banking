@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smart_banking/module/home/model/list_service_model.dart';
 
-import '../frame/cover_widget.dart';
-import '../frame/grid_menu.dart';
-import '../frame/list_service.dart';
-import '../frame/service_favorite.dart';
+import '../components/cover_widget.dart';
+import '../components/grid_menu.dart';
+import '../components/list_service.dart';
+import '../components/service_favorite.dart';
 import '../model/service_favorite_model.dart';
 
 class HomePage extends StatefulWidget {
@@ -88,38 +88,38 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           children: [
             const CoverWidget(),
-            const SizedBox(
-              height: 20,
+            SizedBox(
+              height: 20.h,
             ),
             const GridMenu(),
-            const SizedBox(
-              height: 20,
+            SizedBox(
+              height: 20.h,
             ),
             ServiceFavorite(list: list),
-            const SizedBox(
-              height: 20,
+            SizedBox(
+              height: 20.h,
             ),
             Container(
-              margin: const EdgeInsets.only(left: 10, right: 10),
-              height: 150,
+              margin: EdgeInsets.only(left: 10.w, right: 10.w),
+              height: 120.h,
               child: PageView.builder(
                   itemCount: images.length,
                   pageSnapping: true,
                   itemBuilder: (context, pagePosition) {
                     return ClipRRect(
-                        borderRadius: BorderRadius.circular(15),
+                        borderRadius: BorderRadius.circular(15.r),
                         child: Image.network(
                           images[pagePosition],
                           fit: BoxFit.fill,
                         ));
                   }),
             ),
-            const SizedBox(
-              height: 20,
+            SizedBox(
+              height: 20.h,
             ),
-            const Text(
+            Text(
               'Quý khách quan tâm dịch vụ gì hôm nay?',
-              style: TextStyle(fontSize: 15, fontWeight: FontWeight.w500),
+              style: TextStyle(fontSize: 13.sp, fontWeight: FontWeight.w500),
             ),
             ListService(listService: listService)
           ],

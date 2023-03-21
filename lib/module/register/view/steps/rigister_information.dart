@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:smart_banking/module/components/button/button_component.dart';
 
+import '../../../components/app_bar/app_bar_component.dart';
+import '../../../components/text_field/text_field_component.dart';
+import '../../../components/text_field/text_field_popup_icon_component.dart';
+import '../../../components/text_field/text_field_subtile_component.dart';
 import '../../controller/register_controller.dart';
 
 class RegisterInformation extends StatefulWidget {
@@ -14,310 +20,100 @@ class _RegisterInformationState extends State<RegisterInformation> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        centerTitle: true,
-        title: const Text(
-          'Thông tin đăng ký',
-          style: TextStyle(
-              fontWeight: FontWeight.w600, fontSize: 18, color: Colors.black),
-        ),
-        leading: InkWell(
-          onTap: () => Get.back(),
-          child: const Icon(
-            Icons.arrow_back_ios_new_outlined,
-            size: 20,
-            color: Colors.black,
-          ),
-        ),
-        elevation: 0,
+      appBar: AppBarComponent(
+        title: 'Thông tin đăng ký',
+        callback: () => Get.back(),
       ),
       body: SingleChildScrollView(
         child: Container(
-          margin: const EdgeInsets.only(top: 10),
+          margin: EdgeInsets.only(top: 10.h),
           width: Get.size.width,
-          height: Get.size.height,
+          height: Get.size.height * 1.1,
           color: Colors.white,
           child: Padding(
             padding: const EdgeInsets.all(20),
             child: Column(
               children: [
                 Container(
-                  margin: EdgeInsets.only(bottom: 20),
-                  child: TextField(
-                    decoration: InputDecoration(
-                      labelText: "Họ và tên",
-                      labelStyle: TextStyle(
-                          fontSize: 18,
-                          color: Colors.black54,
-                          fontWeight: FontWeight.w500),
-                      disabledBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.black),
-                      ),
-                      focusedBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.blue),
-                      ),
-                    ),
+                  margin: EdgeInsets.only(bottom: 20.h),
+                  child: const TextFieldComponent(
+                    label: 'Họ và tên',
+                    textInputType: TextInputType.text,
                   ),
                 ),
                 Container(
-                  margin: EdgeInsets.only(bottom: 20),
-                  child: TextField(
-                    decoration: InputDecoration(
-                      labelText: "Số tài khoản",
-                      labelStyle: TextStyle(
-                          fontSize: 18,
-                          color: Colors.black54,
-                          fontWeight: FontWeight.w500),
-                      disabledBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.black),
-                      ),
-                      focusedBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.blue),
-                      ),
-                    ),
+                  margin: EdgeInsets.only(bottom: 20.h),
+                  child: const TextFieldComponent(
+                      label: 'Số tài khoản', textInputType: TextInputType.text),
+                ),
+                Container(
+                  margin: EdgeInsets.only(bottom: 20.h),
+                  child: const TextFieldPopupIconComponent(
+                      label: 'Ngày sinh', icon: Icons.date_range),
+                ),
+                Container(
+                  margin: EdgeInsets.only(bottom: 20.h),
+                  child: const TextFieldComponent(
+                    label: 'Số CMND/ CCCD/ HC',
+                    textInputType: TextInputType.text,
                   ),
                 ),
                 Container(
-                  margin: const EdgeInsets.only(bottom: 20),
-                  child: Stack(
-                    alignment: Alignment.center,
-                    children: const [
-                      TextField(
-                          enabled: false,
-                          obscureText: false,
-                          decoration: InputDecoration(
-                              labelText: "Ngày sinh",
-                              labelStyle: TextStyle(
-                                  fontSize: 18,
-                                  color: Colors.black54,
-                                  fontWeight: FontWeight.w400),
-                              focusedBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(color: Colors.blue),
-                              ),
-                              disabledBorder: UnderlineInputBorder(
-                                  borderSide: BorderSide(color: Colors.grey)))),
-                      Positioned(
-                          right: 5,
-                          child: Icon(
-                            Icons.date_range,
-                            color: Colors.blue,
-                          ))
-                    ],
-                  ),
+                  margin: EdgeInsets.only(bottom: 20.h),
+                  child: const TextFieldComponent(
+                      label: 'Số điện thoại đăng nhập',
+                      textInputType: TextInputType.phone),
                 ),
                 Container(
-                  margin: EdgeInsets.only(bottom: 20),
-                  child: TextField(
-                    decoration: InputDecoration(
-                      labelText: "Số CMND/  CCCD/ HC",
-                      labelStyle: TextStyle(
-                          fontSize: 18,
-                          color: Colors.black54,
-                          fontWeight: FontWeight.w500),
-                      disabledBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.black),
-                      ),
-                      focusedBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.blue),
-                      ),
-                    ),
-                  ),
-                ),
-                Container(
-                  margin: EdgeInsets.only(bottom: 20),
-                  child: TextField(
-                    keyboardType: TextInputType.number,
-                    decoration: InputDecoration(
-                      labelText: "Số điện thoại đăng nhập",
-                      labelStyle: TextStyle(
-                          fontSize: 18,
-                          color: Colors.black54,
-                          fontWeight: FontWeight.w500),
-                      disabledBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.black),
-                      ),
-                      focusedBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.blue),
-                      ),
-                    ),
-                  ),
-                ),
-                Container(
-                  margin: EdgeInsets.only(bottom: 20),
-                  child: TextField(
-                    keyboardType: TextInputType.number,
-                    decoration: InputDecoration(
-                      labelText: "Số điện thoại nhận OTP",
-                      labelStyle: TextStyle(
-                          fontSize: 18,
-                          color: Colors.black54,
-                          fontWeight: FontWeight.w500),
-                      disabledBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.black),
-                      ),
-                      focusedBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.blue),
-                      ),
-                    ),
-                  ),
+                  margin: EdgeInsets.only(bottom: 20.h),
+                  child: const TextFieldComponent(
+                      label: 'Số điện thoại nhận OTP',
+                      textInputType: TextInputType.phone),
                 ),
                 Stack(
                   children: [
                     Container(
-                      margin: const EdgeInsets.only(bottom: 20),
-                      child: Stack(
-                        alignment: Alignment.center,
-                        children: const [
-                          TextField(
-                              enabled: false,
-                              obscureText: false,
-                              decoration: InputDecoration(
-                                  labelText: "Chọn gói dịch vụ",
-                                  labelStyle: TextStyle(
-                                      fontSize: 18,
-                                      color: Colors.black54,
-                                      fontWeight: FontWeight.w400),
-                                  focusedBorder: UnderlineInputBorder(
-                                    borderSide: BorderSide(color: Colors.blue),
-                                  ),
-                                  disabledBorder: UnderlineInputBorder(
-                                      borderSide:
-                                          BorderSide(color: Colors.grey)))),
-                          Positioned(
-                              right: 5,
-                              child: Icon(
-                                Icons.arrow_drop_down_rounded,
-                                size: 35,
-                                color: Colors.black54,
-                              )),
-                        ],
-                      ),
+                      margin: EdgeInsets.only(bottom: 20.h),
+                      child: const TextFieldPopupIconComponent(
+                          label: 'Chọn gói dịch vụ',
+                          icon: Icons.arrow_drop_down_sharp),
                     ),
-                    const Positioned(
-                        bottom: 1,
-                        right: 1,
-                        child: Text(
+                    Positioned(
+                        bottom: 1.h,
+                        right: 1.w,
+                        child: const Text(
                           'Thông tin hạn mức',
                           style: TextStyle(
-                              fontWeight: FontWeight.w500, color: Colors.blue),
+                              fontWeight: FontWeight.w500, color: Colors.red),
                         ))
                   ],
                 ),
                 Container(
-                  margin: const EdgeInsets.only(bottom: 20),
-                  child: Stack(
-                    alignment: Alignment.center,
-                    children: const [
-                      TextField(
-                          enabled: true,
-                          obscureText: false,
-                          decoration: InputDecoration(
-                              labelText: "Email",
-                              labelStyle: TextStyle(
-                                  fontSize: 18,
-                                  color: Colors.black54,
-                                  fontWeight: FontWeight.w400),
-                              focusedBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(color: Colors.blue),
-                              ),
-                              disabledBorder: UnderlineInputBorder(
-                                  borderSide: BorderSide(color: Colors.grey)))),
-                      Positioned(
-                          right: 5,
-                          child: Text(
-                            '(Không bắt buộc)',
-                            style: TextStyle(color: Colors.black12),
-                          ))
-                    ],
-                  ),
+                  margin: EdgeInsets.only(bottom: 20.h),
+                  child: const TextFieldSubTitleComponent(
+                      label: 'Email',
+                      subTitle: '(Không bắt buộc)',
+                      textInputType: TextInputType.emailAddress),
                 ),
                 Container(
                   margin: const EdgeInsets.only(bottom: 20),
-                  child: Stack(
-                    alignment: Alignment.center,
-                    children: const [
-                      TextField(
-                          keyboardType: TextInputType.number,
-                          enabled: true,
-                          obscureText: false,
-                          decoration: InputDecoration(
-                              labelText: "Mã cán bộ tiếp thị",
-                              labelStyle: TextStyle(
-                                  fontSize: 18,
-                                  color: Colors.black54,
-                                  fontWeight: FontWeight.w400),
-                              focusedBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(color: Colors.blue),
-                              ),
-                              disabledBorder: UnderlineInputBorder(
-                                  borderSide: BorderSide(color: Colors.grey)))),
-                      Positioned(
-                          right: 5,
-                          child: Text(
-                            '(Không bắt buộc)',
-                            style: TextStyle(color: Colors.black12),
-                          ))
-                    ],
-                  ),
+                  child: const TextFieldSubTitleComponent(
+                      label: 'Mã cán bộ tiếp thị',
+                      subTitle: '(Không bắt buộc)',
+                      textInputType: TextInputType.text),
                 ),
                 Container(
                   margin: const EdgeInsets.only(bottom: 20),
-                  child: Stack(
-                    alignment: Alignment.center,
-                    children: const [
-                      TextField(
-                          keyboardType: TextInputType.number,
-                          enabled: true,
-                          obscureText: false,
-                          decoration: InputDecoration(
-                              labelText: "Số điện thoại người giới thiệu",
-                              labelStyle: TextStyle(
-                                  fontSize: 18,
-                                  color: Colors.black54,
-                                  fontWeight: FontWeight.w400),
-                              focusedBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(color: Colors.blue),
-                              ),
-                              disabledBorder: UnderlineInputBorder(
-                                  borderSide: BorderSide(color: Colors.grey)))),
-                      Positioned(
-                          right: 5,
-                          child: Text(
-                            '(Không bắt buộc)',
-                            style: TextStyle(color: Colors.black12),
-                          ))
-                    ],
-                  ),
+                  child: const TextFieldSubTitleComponent(
+                      label: 'Số điện thoại người giới thiệu',
+                      subTitle: '(Không bắt buộc)',
+                      textInputType: TextInputType.phone),
                 ),
                 Container(
                   margin: const EdgeInsets.only(bottom: 20),
-                  child: Stack(
-                    alignment: Alignment.center,
-                    children: const [
-                      TextField(
-                          enabled: false,
-                          obscureText: false,
-                          decoration: InputDecoration(
-                              labelText: "Chọn mã giới thiệu đặc trưng",
-                              labelStyle: TextStyle(
-                                  fontSize: 18,
-                                  color: Colors.black54,
-                                  fontWeight: FontWeight.w400),
-                              focusedBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(color: Colors.blue),
-                              ),
-                              disabledBorder: UnderlineInputBorder(
-                                  borderSide: BorderSide(color: Colors.grey)))),
-                      Positioned(
-                          right: 5,
-                          child: Icon(
-                            Icons.arrow_drop_down_rounded,
-                            size: 35,
-                            color: Colors.black54,
-                          )),
-                    ],
-                  ),
+                  child: const TextFieldPopupIconComponent(
+                      label: 'Chọn mã giới thiệu đặc trưng',
+                      icon: Icons.arrow_drop_down_sharp),
                 ),
               ],
             ),
@@ -325,7 +121,7 @@ class _RegisterInformationState extends State<RegisterInformation> {
         ),
       ),
       bottomNavigationBar: Container(
-        height: 140,
+        height: 110.h,
         decoration: BoxDecoration(
           color: Colors.white,
           boxShadow: [
@@ -333,11 +129,11 @@ class _RegisterInformationState extends State<RegisterInformation> {
               color: Colors.grey.withOpacity(0.9),
               spreadRadius: 3,
               blurRadius: 1,
-              offset: Offset(0, 3),
+              offset: const Offset(0, 3),
             )
           ],
         ),
-        child: Stack(
+        child: Column(
           children: [
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -350,32 +146,32 @@ class _RegisterInformationState extends State<RegisterInformation> {
                       onChanged: (value) {
                         controller.toggleCheckbox(controller.isChecked);
                       },
-                      activeColor: Colors.green,
+                      activeColor: Colors.red,
                       checkColor: Colors.white,
                       tristate: false,
                     );
                   },
                 ),
                 Container(
-                  padding: EdgeInsets.only(top: 15),
+                  padding: EdgeInsets.only(top: 10.h),
                   width: Get.size.width / 1.2,
                   child: RichText(
-                    text: const TextSpan(
+                    text: TextSpan(
                       text: 'Tôi đã đọc và đồng ý với ',
-                      style: TextStyle(fontSize: 15, color: Colors.black54),
+                      style: TextStyle(fontSize: 13.sp, color: Colors.black54),
                       children: [
                         TextSpan(
                           text: 'điều kiện và điều khoản ',
                           style: TextStyle(
-                            fontSize: 15,
-                            color: Colors.blue,
+                            fontSize: 13.sp,
+                            color: Colors.red,
                             fontWeight: FontWeight.w500,
                             decoration: TextDecoration.underline,
                           ),
                         ),
                         TextSpan(
-                          text: 'đăng ký dịch vụ BIDV.',
-                          style: TextStyle(fontSize: 15, color: Colors.black54),
+                          text: 'đăng ký dịch vụ BRD.',
+                          style: TextStyle(fontSize: 13.sp, color: Colors.black54),
                         ),
                       ],
                     ),
@@ -383,39 +179,9 @@ class _RegisterInformationState extends State<RegisterInformation> {
                 )
               ],
             ),
-            Positioned(
-              child: Align(
-                alignment: FractionalOffset.bottomCenter,
-                child: Container(
-                  margin: EdgeInsets.only(left: 10, right: 10, bottom: 10),
-                  height: 50,
-                  width: Get.size.width,
-                  alignment: Alignment.center,
-                  decoration: BoxDecoration(
-                    color: Colors.red,
-                    borderRadius: BorderRadius.circular(10),
-                    gradient: const LinearGradient(
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
-                      colors: [
-                        Color(0xff00a5ae),
-                        Color(0xff00a8ae),
-                        Color(0xff00a8ae),
-                        Color(0xff0081ae),
-                        Color(0xff006cad),
-                      ],
-                    ),
-                  ),
-                  child: const Text(
-                    'Tiếp tục',
-                    style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.white),
-                  ),
-                ),
-              ),
-            ),
+            const Spacer(),
+            ButtonComponent(title: 'Tiếp tục', callback: () {},),
+
           ],
         ),
       ),
