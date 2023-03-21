@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:smart_banking/module/register/view/steps/register_step2.dart';
+import 'package:smart_banking/module/register/view/steps/rigister_information.dart';
 
 import 'components/custom_dialog.dart';
 
@@ -77,6 +78,7 @@ class RegisterPage extends StatelessWidget {
                     builder: (BuildContext context) => CustomDialog(
                           clickCallback: () {
                             Navigator.pop(context);
+                            Get.to(const RegisterInformation());
                           },
                         ));
               },

@@ -1,8 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:smart_banking/module/register/view/components/singing_character.dart';
-
-import '../../controller/register_controller.dart';
 import '../../model/group_model.dart';
 
 class RadioButton extends StatefulWidget {
@@ -13,7 +9,7 @@ class RadioButton extends StatefulWidget {
 }
 
 class _RadioButtonState extends State<RadioButton> {
-  int _value2 = 0;
+  int _value2 = 1;
   final List<GroupModel> _group = [
     GroupModel(
         text: "Căn cước công dân/Chứng minh nhân dân",
