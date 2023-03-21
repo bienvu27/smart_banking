@@ -182,7 +182,8 @@ class _RegisterInformationState extends State<RegisterInformation> {
                                     borderSide: BorderSide(color: Colors.blue),
                                   ),
                                   disabledBorder: UnderlineInputBorder(
-                                      borderSide: BorderSide(color: Colors.grey)))),
+                                      borderSide:
+                                          BorderSide(color: Colors.grey)))),
                           Positioned(
                               right: 5,
                               child: Icon(
@@ -199,8 +200,7 @@ class _RegisterInformationState extends State<RegisterInformation> {
                         child: Text(
                           'Thông tin hạn mức',
                           style: TextStyle(
-                              fontWeight: FontWeight.w500,
-                              color: Colors.blue),
+                              fontWeight: FontWeight.w500, color: Colors.blue),
                         ))
                   ],
                 ),
@@ -225,7 +225,10 @@ class _RegisterInformationState extends State<RegisterInformation> {
                                   borderSide: BorderSide(color: Colors.grey)))),
                       Positioned(
                           right: 5,
-                          child: Text('(Không bắt buộc)', style: TextStyle(color: Colors.black12),))
+                          child: Text(
+                            '(Không bắt buộc)',
+                            style: TextStyle(color: Colors.black12),
+                          ))
                     ],
                   ),
                 ),
@@ -251,7 +254,10 @@ class _RegisterInformationState extends State<RegisterInformation> {
                                   borderSide: BorderSide(color: Colors.grey)))),
                       Positioned(
                           right: 5,
-                          child: Text('(Không bắt buộc)', style: TextStyle(color: Colors.black12),))
+                          child: Text(
+                            '(Không bắt buộc)',
+                            style: TextStyle(color: Colors.black12),
+                          ))
                     ],
                   ),
                 ),
@@ -277,7 +283,10 @@ class _RegisterInformationState extends State<RegisterInformation> {
                                   borderSide: BorderSide(color: Colors.grey)))),
                       Positioned(
                           right: 5,
-                          child: Text('(Không bắt buộc)', style: TextStyle(color: Colors.black12),))
+                          child: Text(
+                            '(Không bắt buộc)',
+                            style: TextStyle(color: Colors.black12),
+                          ))
                     ],
                   ),
                 ),
@@ -356,17 +365,17 @@ class _RegisterInformationState extends State<RegisterInformation> {
                       style: TextStyle(fontSize: 15, color: Colors.black54),
                       children: [
                         TextSpan(
-                          text:
-                          'điều kiện và điều khoản ',
+                          text: 'điều kiện và điều khoản ',
                           style: TextStyle(
-                              fontSize: 15, color: Colors.blue),
+                            fontSize: 15,
+                            color: Colors.blue,
+                            fontWeight: FontWeight.w500,
+                            decoration: TextDecoration.underline,
+                          ),
                         ),
                         TextSpan(
                           text: 'đăng ký dịch vụ BIDV.',
-                          style: TextStyle(
-                              fontSize: 15,
-                              color: Colors.black54
-                          ),
+                          style: TextStyle(fontSize: 15, color: Colors.black54),
                         ),
                       ],
                     ),
