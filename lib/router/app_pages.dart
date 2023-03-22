@@ -1,9 +1,11 @@
 import 'package:get/get.dart';
+import 'package:smart_banking/module/home/view/home_page.dart';
 import 'package:smart_banking/module/register/view/register_binding.dart';
 import 'package:smart_banking/module/register/view/register_page.dart';
 import 'package:smart_banking/module/service_manager/view/service_manager_page.dart';
-import '../module/dashboard/dashboard_binding.dart';
-import '../module/dashboard/dashboard_page.dart';
+import '../module/dashboard/binding/dashboard_binding.dart';
+import '../module/dashboard/view/dashboard_page.dart';
+import '../module/home/binding/home_binding.dart';
 import '../module/service_manager/view/service_manager_binding.dart';
 import 'app_routers.dart';
 
@@ -24,5 +26,9 @@ class AppPages {
         page: () => const ServiceManager(),
         binding: ServiceManagerBinding()),
 
+    GetPage(
+        name: AppRouters.HOME,
+        page: () => const HomePage(),
+        binding: HomedBinding()),
   ];
 }

@@ -9,7 +9,7 @@ class GridMenuComponent extends StatelessWidget {
     required this.topRight,
     required this.bottomRight,
     required this.title,
-    required this.icon,
+    required this.icon, required this.callback, required this.color,
   });
 
   final double bottomLeft;
@@ -18,40 +18,45 @@ class GridMenuComponent extends StatelessWidget {
   final double bottomRight;
   final String title;
   final IconData icon;
+  final VoidCallback callback;
+  final Color color ;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 78.h,
-      decoration: BoxDecoration(
-        color: Colors.black12,
-        borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(bottomLeft.r),
-          topLeft: Radius.circular(topLeft.r),
-          topRight: Radius.circular(topRight.r),
-          bottomRight: Radius.circular(bottomRight.r),
+    return InkWell(
+      onTap: ()=> callback(),
+      child: Container(
+        height: 78.h,
+        decoration: BoxDecoration(
+          color: color,
+          borderRadius: BorderRadius.only(
+            bottomLeft: Radius.circular(bottomLeft.r),
+            topLeft: Radius.circular(topLeft.r),
+            topRight: Radius.circular(topRight.r),
+            bottomRight: Radius.circular(bottomRight.r),
+          ),
         ),
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Icon(
-            icon,
-            size: 30.spMin,
-            color: Colors.red,
-          ),
-          SizedBox(
-            height: 5.h,
-          ),
-          Text(
-            title,
-            style: TextStyle(
-                fontSize: 13.sp,
-                color: Colors.black,
-                fontWeight: FontWeight.w500),
-          )
-        ],
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Icon(
+              icon,
+              size: 30.spMin,
+              color: Colors.white,
+            ),
+            SizedBox(
+              height: 5.h,
+            ),
+            Text(
+              title,
+              style: TextStyle(
+                  fontSize: 13.sp,
+                  color: Colors.white,
+                  fontWeight: FontWeight.w500),
+            )
+          ],
+        ),
       ),
     );
   }

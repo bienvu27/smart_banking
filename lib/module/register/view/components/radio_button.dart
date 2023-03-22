@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../res/my_color .dart';
 import '../../model/group_model.dart';
 
 class RadioButton extends StatefulWidget {
@@ -32,7 +33,7 @@ class _RadioButtonState extends State<RadioButton> {
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10.r),
               side: BorderSide(
-                  color: _group[i].selected! ? Colors.red : Colors.black12)),
+                  color: _group[i].selected! ? MyColor.PRIMARY_COLOR_BLUE : Colors.black12)),
           value: _group[i].index,
           groupValue: _value2,
           selected: _group[i].selected!,
@@ -45,12 +46,12 @@ class _RadioButtonState extends State<RadioButton> {
               _group[i].selected = true;
             });
           },
-          activeColor: Colors.red,
+          activeColor: MyColor.PRIMARY_COLOR_BLUE,
           title: Text(
             ' ${_group[i].text}',
             style: TextStyle(
                 fontSize: 13,
-                color: _group[i].selected! ? Colors.red : Colors.grey,
+                color: _group[i].selected! ? MyColor.PRIMARY_COLOR_BLUE : Colors.grey,
                 fontWeight:
                     _group[i].selected! ? FontWeight.bold : FontWeight.normal),
           ),

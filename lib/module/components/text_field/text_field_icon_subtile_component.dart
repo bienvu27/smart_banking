@@ -3,15 +3,16 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../res/my_color .dart';
 
-class TextFieldSubTitleComponent extends StatelessWidget {
-  const TextFieldSubTitleComponent({
-    super.key, required this.label, required this.subTitle, required this.textInputType,
+class TextFieldIconSubTitleComponent extends StatelessWidget {
+  const TextFieldIconSubTitleComponent({
+    super.key, required this.label, required this.subTitle, required this.textInputType, required this.obscureText, required this.icon,
   });
 
   final String label;
   final String subTitle;
   final TextInputType textInputType;
-
+  final bool obscureText;
+  final IconData icon;
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -20,9 +21,14 @@ class TextFieldSubTitleComponent extends StatelessWidget {
         TextField(
           keyboardType: textInputType,
             enabled: true,
-            obscureText: false,
+            obscureText: obscureText,
+
             decoration: InputDecoration(
                 labelText: label,
+              prefixIcon: Icon(
+              icon,
+              color: MyColor.PRIMARY_COLOR_BLUE,
+            ),
                 labelStyle: TextStyle(
                     fontSize: 15.sp,
                     color: Colors.black54,
@@ -30,13 +36,13 @@ class TextFieldSubTitleComponent extends StatelessWidget {
                 focusedBorder: UnderlineInputBorder(
                   borderSide: BorderSide(color: MyColor.PRIMARY_COLOR_BLUE),
                 ),
-                disabledBorder: const UnderlineInputBorder(
-                    borderSide: BorderSide(color: Colors.black)))),
+                disabledBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: MyColor.PRIMARY_COLOR_BLUE)))),
         Positioned(
             right: 5.w,
             child: Text(
               subTitle,
-              style: const TextStyle(color: Colors.black12),
+              style: TextStyle(color: MyColor.PRIMARY_COLOR_BLUE),
             ))
       ],
     );

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
+import '../../../res/my_color .dart';
+
 class ButtonComponent extends StatelessWidget {
   const ButtonComponent({
     super.key, required this.title, required this.callback,
@@ -21,7 +23,7 @@ class ButtonComponent extends StatelessWidget {
             width: Get.size.width,
             alignment: Alignment.center,
             decoration: BoxDecoration(
-              color: Colors.red,
+              color: MyColor.PRIMARY_COLOR_BLUE,
               borderRadius: BorderRadius.circular(10.r),
             ),
             child: Text(

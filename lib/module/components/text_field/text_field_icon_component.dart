@@ -1,23 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class TextFieldPhoneIconComponent extends StatelessWidget {
-  TextFieldPhoneIconComponent({
-    super.key, required this.labelText, this.icon
+import '../../../res/my_color .dart';
+
+class TextFieldIconComponent extends StatelessWidget {
+  TextFieldIconComponent({
+    super.key, required this.labelText, this.icon, required this.textInputType
   });
   final String labelText;
   IconData? icon;
-
+  final TextInputType textInputType;
   @override
   Widget build(BuildContext context) {
     return TextField(
-      keyboardType: TextInputType.number,
+      keyboardType: textInputType,
       decoration: InputDecoration(
         labelText: labelText,
         //babel text
         prefixIcon: Icon(
           icon,
-          color: Colors.grey,
+          color: MyColor.PRIMARY_COLOR_BLUE,
         ),
         labelStyle: TextStyle(
             fontSize: 15.sp,
@@ -26,8 +28,8 @@ class TextFieldPhoneIconComponent extends StatelessWidget {
         disabledBorder: const UnderlineInputBorder(
           borderSide: BorderSide(color: Colors.black),
         ),
-        focusedBorder: const UnderlineInputBorder(
-          borderSide: BorderSide(color: Colors.red),
+        focusedBorder: UnderlineInputBorder(
+          borderSide: BorderSide(color: MyColor.PRIMARY_COLOR_BLUE),
         ),
       ),
     );

@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:smart_banking/module/register/view/steps/register_step3.dart';
 
+import '../../../../res/my_color .dart';
 import '../../../components/app_bar/app_bar_component.dart';
 import '../../../components/button/button_component.dart';
 
@@ -29,13 +30,13 @@ class RegisterStep2Page extends StatelessWidget {
                   width: Get.size.width,
                   child: SizedBox(
                     width: Get.size.width / 1.5,
-                    child: const Text(
-                      'Cùng BRD thử nghiệm công nghệ định danh số hoàn toàn mới',
+                    child: Text(
+                      'Cùng VRB thử nghiệm công nghệ định danh số hoàn toàn mới',
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                          fontSize: 30,
+                          fontSize: 25.sp,
                           fontWeight: FontWeight.w500,
-                          color: Colors.red),
+                          color: MyColor.PRIMARY_COLOR_BLUE),
                     ),
                   ),
                 ),

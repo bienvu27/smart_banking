@@ -3,9 +3,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:smart_banking/module/register/view/steps/register_step4.dart';
 
+import '../../../../res/my_color .dart';
 import '../../../components/app_bar/app_bar_component.dart';
 import '../../../components/button/button_component.dart';
-import '../../../components/text_field/text_field_phone_icon_component.dart';
+import '../../../components/text_field/text_field_icon_component.dart';
 import '../../controller/register_controller.dart';
 
 class RegisterStep3Page extends StatelessWidget {
@@ -40,8 +41,8 @@ class RegisterStep3Page extends StatelessWidget {
                   ),
                 ),
               ),
-              TextFieldPhoneIconComponent(
-                  labelText: 'Số điện thoại đăng ký', icon: Icons.phone),
+              TextFieldIconComponent(
+                  labelText: 'Số điện thoại đăng ký', icon: Icons.phone, textInputType: TextInputType.number),
               Container(
                 margin: EdgeInsets.only(top: 40.h, bottom: 30.h),
                 height: 250.h,
@@ -59,7 +60,7 @@ class RegisterStep3Page extends StatelessWidget {
                           onChanged: (value) {
                             controller.toggleCheckbox(controller.isChecked);
                           },
-                          activeColor: Colors.red,
+                          activeColor: MyColor.PRIMARY_COLOR_BLUE,
                           checkColor: Colors.white,
                           tristate: false,
                         );
@@ -121,7 +122,7 @@ class RegisterStep3Page extends StatelessWidget {
                               text: 'điều kiện, điều khoản giao dịch chung ',
                               style: TextStyle(
                                   fontSize: 13.sp,
-                                  color: Colors.red,
+                                  color: MyColor.PRIMARY_COLOR_BLUE,
                                   fontWeight: FontWeight.w500),
                             ),
                             TextSpan(

@@ -38,8 +38,8 @@ class CoverWidget extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    Image.network(
-                      'https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/BRD_logo.svg/1200px-BRD_logo.svg.png',
+                    Image.asset(
+                      'assets/images/vrbank.png',
                       width: 100.w,
                       height: 50.h,
                     ),
@@ -145,11 +145,11 @@ class CoverWidget extends StatelessWidget {
                             const Offset(3, 3), // changes position of shadow
                       ),
                     ],
-                  ),
-                  child: Image.network(
-                    'https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/BRD_logo.svg/1200px-BRD_logo.svg.png',
-                    height: 200.h,
-                    width: 190.w,
+                    image: const DecorationImage(
+                      image:NetworkImage('http://icdn.dantri.com.vn/zoom/1200_630/2021/11/10/chuan-3-crop-crop-1636541129710.jpeg',
+                      ),
+                      fit: BoxFit.fill,
+                    )
                   ),
                 )
               ],

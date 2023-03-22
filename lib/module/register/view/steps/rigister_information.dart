@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:smart_banking/module/components/button/button_component.dart';
 
+import '../../../../res/my_color .dart';
 import '../../../components/app_bar/app_bar_component.dart';
 import '../../../components/text_field/text_field_component.dart';
 import '../../../components/text_field/text_field_popup_icon_component.dart';
@@ -81,10 +82,10 @@ class _RegisterInformationState extends State<RegisterInformation> {
                     Positioned(
                         bottom: 1.h,
                         right: 1.w,
-                        child: const Text(
+                        child: Text(
                           'Thông tin hạn mức',
                           style: TextStyle(
-                              fontWeight: FontWeight.w500, color: Colors.red),
+                              fontWeight: FontWeight.w500, color: MyColor.PRIMARY_COLOR_BLUE),
                         ))
                   ],
                 ),
@@ -146,7 +147,7 @@ class _RegisterInformationState extends State<RegisterInformation> {
                       onChanged: (value) {
                         controller.toggleCheckbox(controller.isChecked);
                       },
-                      activeColor: Colors.red,
+                      activeColor: MyColor.PRIMARY_COLOR_BLUE,
                       checkColor: Colors.white,
                       tristate: false,
                     );
@@ -164,7 +165,7 @@ class _RegisterInformationState extends State<RegisterInformation> {
                           text: 'điều kiện và điều khoản ',
                           style: TextStyle(
                             fontSize: 13.sp,
-                            color: Colors.red,
+                            color: MyColor.PRIMARY_COLOR_BLUE,
                             fontWeight: FontWeight.w500,
                             decoration: TextDecoration.underline,
                           ),

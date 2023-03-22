@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import '../../../res/my_color .dart';
 import '../model/list_service_model.dart';
 
 class ListService extends StatelessWidget {
@@ -22,7 +23,7 @@ class ListService extends StatelessWidget {
             width: Get.size.width,
             height: 90.h,
             decoration: BoxDecoration(
-                color: Colors.black12,
+                color: Color(0xffEEEEEE),
                 borderRadius: BorderRadius.circular(15.r)),
             child: Padding(
               padding: EdgeInsets.only(left: 20.w),
@@ -45,7 +46,7 @@ class ListService extends StatelessWidget {
                               e.title ?? '',
                               style: TextStyle(
                                   fontSize: 15.sp,
-                                  color: Colors.red,
+                                  color: MyColor.PRIMARY_COLOR_BLUE,
                                   fontWeight: FontWeight.w700),
                             ),
                             SizedBox(
@@ -68,7 +69,7 @@ class ListService extends StatelessWidget {
                         width: 80.w,
                         height: 15.h,
                         decoration: BoxDecoration(
-                            color: Colors.redAccent,
+                            color: MyColor.PRIMARY_COLOR_BLUE,
                             borderRadius: BorderRadius.circular(20.r)),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -84,7 +85,7 @@ class ListService extends StatelessWidget {
                             Icon(
                               Icons.arrow_forward_ios,
                               size: 13.spMin,
-                              color: Colors.black,
+                              color: Colors.white,
                             )
                           ],
                         ),

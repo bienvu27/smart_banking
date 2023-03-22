@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import '../../../res/my_color .dart';
 import '../../components/button/button_component.dart';
+import '../../components/dialog/custom_dialog.dart';
 import '../../service_manager/model/service_favorite_model.dart';
 
 class ServiceFavorite extends StatelessWidget {
@@ -31,7 +33,7 @@ class ServiceFavorite extends StatelessWidget {
                 style: TextStyle(
                     fontSize: 15.sp,
                     fontWeight: FontWeight.w600,
-                    color: Colors.redAccent),
+                    color: MyColor.PRIMARY_COLOR_BLUE),
               ),
             ],
           ),
@@ -44,7 +46,19 @@ class ServiceFavorite extends StatelessWidget {
                 mainAxisSpacing: 10,
                 crossAxisCount: 3,
                 children: list.map((e) {
-                  return SizedBox(
+                  return InkWell(
+                    onTap: (){
+                      showDialog(
+                          barrierDismissible: false,
+                          context: context,
+                          builder: (BuildContext context) => CustomDialog(
+                            title: 'Quý khách cần kích hoạt ứng dụng trước để sử dụng chức năng này.',
+                            cancel: 'Huỷ bỏ',
+                            submit: 'Đăng nhập',
+                            clickCallback: () {
+                            },
+                          ));
+                    },
                     child: Column(
                       children: [
                         Stack(

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
+import '../../../../res/my_color .dart';
 import '../../../components/app_bar/app_bar_component.dart';
 import '../../../components/button/button_component.dart';
 import '../components/radio_button.dart';
@@ -72,9 +73,9 @@ class RegisterStep4Page extends StatelessWidget {
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const Icon(
+                          Icon(
                             Icons.check_circle,
-                            color: Colors.red,
+                            color: MyColor.PRIMARY_COLOR_BLUE,
                           ),
                           Container(
                             margin: EdgeInsets.only(left: 10.w),
@@ -93,9 +94,9 @@ class RegisterStep4Page extends StatelessWidget {
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const Icon(
+                          Icon(
                             Icons.check_circle,
-                            color: Colors.red,
+                            color: MyColor.PRIMARY_COLOR_BLUE,
                           ),
                           Container(
                             margin: EdgeInsets.only(left: 10.w),
@@ -114,9 +115,9 @@ class RegisterStep4Page extends StatelessWidget {
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const Icon(
+                          Icon(
                             Icons.check_circle,
-                            color: Colors.red,
+                            color: MyColor.PRIMARY_COLOR_BLUE,
                           ),
                           Container(
                             margin: EdgeInsets.only(left: 10.w),
@@ -165,11 +166,11 @@ class RegisterStep4Page extends StatelessWidget {
                               ),
                               SizedBox(
                                 width: 60.w,
-                                child: const Text(
+                                child: Text(
                                   'Không chụp quá mờ',
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
-                                      color: Colors.redAccent, height: 1.5),
+                                      color: MyColor.PRIMARY_COLOR_BLUE, height: 1.5),
                                 ),
                               )
                             ],
@@ -208,11 +209,11 @@ class RegisterStep4Page extends StatelessWidget {
                               ),
                               SizedBox(
                                 width: 60.w,
-                                child: const Text(
+                                child: Text(
                                   'Không chụp mất góc',
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
-                                      color: Colors.redAccent, height: 1.5),
+                                      color: MyColor.PRIMARY_COLOR_BLUE, height: 1.5),
                                 ),
                               )
                             ],
@@ -251,11 +252,11 @@ class RegisterStep4Page extends StatelessWidget {
                               ),
                               SizedBox(
                                 width: 60.w,
-                                child: const Text(
+                                child: Text(
                                   'Không chụp loá sáng',
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
-                                      color: Colors.redAccent, height: 1.5),
+                                      color: MyColor.PRIMARY_COLOR_BLUE, height: 1.5),
                                 ),
                               )
                             ],

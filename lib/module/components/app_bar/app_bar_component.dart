@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../res/my_color .dart';
+
 
 class AppBarComponent extends StatelessWidget with PreferredSizeWidget {
   const AppBarComponent({
@@ -15,8 +17,8 @@ class AppBarComponent extends StatelessWidget with PreferredSizeWidget {
       centerTitle: true,
       title: Text(
         title,
-        style: const TextStyle(
-            fontWeight: FontWeight.w600, fontSize: 18, color: Colors.red),
+        style: TextStyle(
+            fontWeight: FontWeight.w600, fontSize: 18, color: MyColor.PRIMARY_COLOR_BLUE),
       ),
       leading: InkWell(
         onTap: () => callback(),

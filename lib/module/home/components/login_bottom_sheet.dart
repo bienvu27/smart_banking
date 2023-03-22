@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:smart_banking/module/components/text_field/text_field_icon_subtile_component.dart';
+
+import '../../../res/my_color .dart';
+import '../../components/button/button_component.dart';
+import '../../components/text_field/text_field_component.dart';
+import '../../components/text_field/text_field_icon_component.dart';
 
 class LoginBottomSheet extends StatelessWidget {
   const LoginBottomSheet({
@@ -21,16 +27,14 @@ class LoginBottomSheet extends StatelessWidget {
           ),
           builder: (BuildContext context) {
             return Container(
-              margin: EdgeInsets.only(
-                  left: 20.w, right: 20.w, top: 20.h),
+              margin: EdgeInsets.only(left: 20.w, right: 20.w, top: 20.h),
               height: Get.size.height / 1.2,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Row(
-                    mainAxisAlignment:
-                    MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       InkWell(
                         onTap: () => Navigator.pop(context),
@@ -50,19 +54,13 @@ class LoginBottomSheet extends StatelessWidget {
                       Container(
                         width: 40.w,
                         height: 20.h,
-                        decoration: BoxDecoration(
-                            color: Colors.black12,
-                            borderRadius:
-                            BorderRadius.circular(20.r)),
+                        decoration: BoxDecoration(color: Colors.black12, borderRadius: BorderRadius.circular(20.r)),
                         child: Row(
-                          mainAxisAlignment:
-                          MainAxisAlignment.spaceEvenly,
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             const Text(
                               'EN',
-                              style: TextStyle(
-                                  fontWeight:
-                                  FontWeight.w500),
+                              style: TextStyle(fontWeight: FontWeight.w500),
                             ),
                             Image.network(
                               'https://cleandye.com/wp-content/uploads/2020/01/English-icon.png',
@@ -84,7 +82,7 @@ class LoginBottomSheet extends StatelessWidget {
                     ),
                     child: Icon(
                       Icons.person,
-                      size: 30.spMin,
+                      size: 35.spMin,
                       color: Colors.white,
                     ),
                   ),
@@ -92,96 +90,23 @@ class LoginBottomSheet extends StatelessWidget {
                     margin: EdgeInsets.only(top: 20.h),
                     child: Column(
                       children: [
-                        TextField(
-                          keyboardType: TextInputType.number,
-                          decoration: InputDecoration(
-                            labelText: "Số điện thoại",
-                            //babel text
-                            prefixIcon: const Icon(
-                              Icons.phone,
-                              color: Colors.red,
-                            ),
-                            labelStyle: TextStyle(
-                                fontSize: 15.sp,
-                                color: Colors.black54,
-                                fontWeight: FontWeight.w400),
-                            disabledBorder:
-                            const UnderlineInputBorder(
-                              borderSide: BorderSide(
-                                  color: Colors.black),
-                            ),
-                            focusedBorder:
-                            const UnderlineInputBorder(
-                              borderSide: BorderSide(
-                                  color: Colors.redAccent),
-                            ),
-                          ),
-                        ),
+                        TextFieldIconComponent(
+                            labelText: 'Số điện thoại', icon: Icons.phone, textInputType: TextInputType.number),
                         Container(
-                          margin: EdgeInsets.only(top: 20.h),
-                          child: Stack(
-                            alignment: Alignment.center,
-                            children: [
-                              TextField(
-                                  obscureText: true,
-                                  decoration: InputDecoration(
-                                      labelText: "Mật khẩu",
-                                      //babel text
-                                      prefixIcon: const Icon(
-                                        Icons.lock,
-                                        color: Colors.red,
-                                      ),
-                                      labelStyle: TextStyle(
-                                          fontSize: 15.sp,
-                                          color:
-                                          Colors.black54,
-                                          fontWeight:
-                                          FontWeight
-                                              .w400),
-                                      focusedBorder:
-                                      const UnderlineInputBorder(
-                                        borderSide: BorderSide(
-                                            color: Colors
-                                                .redAccent),
-                                      ),
-                                      disabledBorder:
-                                      const UnderlineInputBorder(
-                                          borderSide: BorderSide(
-                                              color: Colors
-                                                  .grey)))),
-                              Positioned(
-                                  right: 5.w,
-                                  child: Text(
-                                    'Quên mật khẩu',
-                                    style: TextStyle(
-                                        fontSize: 15.sp,
-                                        fontWeight:
-                                        FontWeight.w500,
-                                        color: Colors.black38),
-                                  ))
-                            ],
-                          ),
-                        ),
+                            margin: EdgeInsets.only(top: 20.h),
+                            child: const TextFieldIconSubTitleComponent(
+                              label: "Mật khẩu",
+                              textInputType: TextInputType.text,
+                              subTitle: 'Quên mật khẩu',
+                              obscureText: true,
+                              icon: Icons.lock,
+                            )),
                       ],
                     ),
                   ),
-                  Container(
-                    margin: EdgeInsets.only(top: 20.h),
-                    alignment: Alignment.center,
-                    width: Get.size.width,
-                    height: 50,
-                    decoration: BoxDecoration(
-                      borderRadius:
-                      BorderRadius.circular(10.r),
-                      color: Colors.red,
-                    ),
-                    child: Text(
-                      'Đăng nhập',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 15.sp,
-                          fontWeight: FontWeight.w500),
-                    ),
+                  Padding(
+                    padding: EdgeInsets.only(top: 20.h),
+                    child: ButtonComponent(title: 'Đăng nhập', callback: () {}),
                   ),
                   Container(
                     margin: EdgeInsets.only(top: 30.h),
@@ -189,20 +114,14 @@ class LoginBottomSheet extends StatelessWidget {
                       children: [
                         Text(
                           'Hướng dẫn chuyển đổi',
-                          style: TextStyle(
-                              fontSize: 15.sp,
-                              fontWeight: FontWeight.w500,
-                              color: Colors.redAccent),
+                          style: TextStyle(fontSize: 15.sp, fontWeight: FontWeight.w500, color: MyColor.PRIMARY_COLOR_BLUE),
                         ),
                         SizedBox(
                           height: 20.h,
                         ),
                         Text(
                           'Đăng ký',
-                          style: TextStyle(
-                              fontSize: 15.sp,
-                              fontWeight: FontWeight.w500,
-                              color: Colors.redAccent),
+                          style: TextStyle(fontSize: 15.sp, fontWeight: FontWeight.w500, color: MyColor.PRIMARY_COLOR_BLUE),
                         ),
                       ],
                     ),
@@ -215,10 +134,7 @@ class LoginBottomSheet extends StatelessWidget {
       },
       child: Text(
         'Đăng nhập',
-        style: TextStyle(
-            fontSize: 15.sp,
-            fontWeight: FontWeight.w500,
-            color: Colors.redAccent),
+        style: TextStyle(fontSize: 15.sp, fontWeight: FontWeight.w500, color: MyColor.PRIMARY_COLOR_BLUE),
       ),
     );
   }

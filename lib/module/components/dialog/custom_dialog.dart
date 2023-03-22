@@ -1,13 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../res/my_color .dart';
+
 class CustomDialog extends StatelessWidget {
-  const CustomDialog({super.key, required this.clickCallback});
+  const CustomDialog(
+      {super.key, required this.clickCallback, required this.title, required this.cancel, required this.submit});
 
   final VoidCallback clickCallback;
+  final String title;
+  final String cancel;
+  final String submit;
 
   @override
   Widget build(BuildContext context) {
+
     return Dialog(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       elevation: 0.0,
@@ -26,7 +33,7 @@ class CustomDialog extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(10),
             child: Text(
-                "Quý khách vui lòng nhấn lại link giới thiệu để được hưởng khuyến mại theo chương trình KH giới thiệu KH. Trường hợp không có người giới thiệu vui lòng bỏ qua thông báo này",
+                title,
                 textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 15.sp, color: Colors.black, fontWeight: FontWeight.w400, height: 1.4)),
           ),
@@ -47,7 +54,7 @@ class CustomDialog extends StatelessWidget {
                         border: Border.all(color: Colors.red, width: 1),
                         borderRadius: BorderRadius.circular(10.r)),
                     child: Text(
-                      "Đóng",
+                      cancel,
                       style: TextStyle(color: Colors.red, fontSize: 14.sp, fontWeight: FontWeight.w500),
                       textAlign: TextAlign.center,
                     ),
@@ -59,11 +66,11 @@ class CustomDialog extends StatelessWidget {
                     height: 40.h,
                     alignment: Alignment.center,
                     decoration: BoxDecoration(
-                      color: Colors.red,
-                      borderRadius: BorderRadius.circular(10),
+                      color: MyColor.PRIMARY_COLOR_BLUE,
+                      borderRadius: BorderRadius.circular(10.r),
                     ),
                     child: Text(
-                      "Tiếp tục",
+                      submit,
                       style: TextStyle(color: Colors.white, fontSize: 14.sp, fontWeight: FontWeight.w500),
                       textAlign: TextAlign.center,
                     ),

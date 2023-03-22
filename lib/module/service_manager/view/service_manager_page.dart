@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import '../../../res/my_color .dart';
 import '../../components/app_bar/app_bar_component.dart';
 import '../components/services/service_list.dart';
 import '../components/services/service_name.dart';
@@ -239,7 +240,7 @@ class _ServiceManagerState extends State<ServiceManager> {
         width: Get.size.width / 2,
         height: 35.h,
         alignment: Alignment.center,
-        decoration: BoxDecoration(color: Colors.red, borderRadius: BorderRadius.circular(20.r)),
+        decoration: BoxDecoration(color: MyColor.PRIMARY_COLOR_BLUE, borderRadius: BorderRadius.circular(20.r)),
         child: Container(
           alignment: Alignment.center,
           child: DropdownButton(
@@ -248,11 +249,10 @@ class _ServiceManagerState extends State<ServiceManager> {
             onChanged: (value) {
               setState(() {
                 selectVal = value.toString();
-                print('Test: $id');
               });
             },
             alignment: Alignment.center,
-            dropdownColor: Colors.redAccent,
+            dropdownColor: MyColor.PRIMARY_COLOR_BLUE,
             borderRadius: BorderRadius.circular(20.r),
             icon: Icon(
               Icons.arrow_drop_down,
