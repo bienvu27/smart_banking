@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
+import 'package:get/get.dart';
 import '../../components/button/button_component.dart';
-import '../model/service_favorite_model.dart';
+import '../../service_manager/model/service_favorite_model.dart';
 
 class ServiceFavorite extends StatelessWidget {
   const ServiceFavorite({
@@ -90,7 +90,8 @@ class ServiceFavorite extends StatelessWidget {
                   );
                 }).toList()),
           ),
-          ButtonComponent(title: 'Xem tất cả các dịch vụ', callback: () {},)
+          ButtonComponent(
+            title: 'Xem tất cả các dịch vụ', callback: () => Get.toNamed("/service_manager", arguments: ''),)
         ],
       ),
     );
