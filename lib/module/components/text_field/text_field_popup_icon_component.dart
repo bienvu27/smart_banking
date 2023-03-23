@@ -19,6 +19,7 @@ class TextFieldPopupIconComponent extends StatelessWidget {
         TextField(
             enabled: false,
             obscureText: false,
+            style: TextStyle(fontSize: 15.sp, fontWeight: FontWeight.w900),
             decoration: InputDecoration(
                 labelText: label,
                 labelStyle: TextStyle(

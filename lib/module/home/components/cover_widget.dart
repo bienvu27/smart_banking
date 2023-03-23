@@ -11,7 +11,7 @@ class CoverWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    int number = 2 ;
+    int number = 1 ;
     return SizedBox(
       height: 350.h,
       child: Stack(

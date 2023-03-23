@@ -14,6 +14,7 @@ class TextFieldIconComponent extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextField(
       keyboardType: textInputType,
+      style: TextStyle(fontSize: 15.sp, fontWeight: FontWeight.w900),
       decoration: InputDecoration(
         labelText: labelText,
         //babel text

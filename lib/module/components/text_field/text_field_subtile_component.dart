@@ -21,6 +21,7 @@ class TextFieldSubTitleComponent extends StatelessWidget {
           keyboardType: textInputType,
             enabled: true,
             obscureText: false,
+            style: TextStyle(fontSize: 15.sp, fontWeight: FontWeight.w900),
             decoration: InputDecoration(
                 labelText: label,
                 labelStyle: TextStyle(
