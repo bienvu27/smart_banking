@@ -33,7 +33,7 @@ class SliverAppBarCustom extends StatelessWidget {
       backgroundColor: Colors.white,
       flexibleSpace: FlexibleSpaceBar(
         background: Image.network(
-          'http://icdn.dantri.com.vn/zoom/1200_630/2021/11/10/chuan-3-crop-crop-1636541129710.jpeg',
+          'https://ibanking.vrbank.com.vn/Image/Promotion/Banner%20Xuan%20Binh%20Than%20IB%20896%20TV.jpg?1.2',
           fit: BoxFit.fill,
         ),
         titlePadding: EdgeInsets.only(left: 10.w, bottom: 5.h),
