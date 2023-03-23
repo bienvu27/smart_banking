@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import '../../register/view/register_page.dart';
-import 'login_bottom_sheet.dart';
+import 'authentication.dart';
+import 'infor_user.dart';
 
 class CoverWidget extends StatelessWidget {
   const CoverWidget({
@@ -11,6 +11,7 @@ class CoverWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    int number = 2 ;
     return SizedBox(
       height: 350.h,
       child: Stack(
@@ -117,7 +118,7 @@ class CoverWidget extends StatelessWidget {
                                 color: Colors.black54),
                           ),
                           Text(
-                            'Quý khách',
+                            'Bien Vu',
                             style: TextStyle(
                                 fontSize: 13.sp,
                                 fontWeight: FontWeight.w500,
@@ -155,48 +156,15 @@ class CoverWidget extends StatelessWidget {
               ],
             ),
           ),
-          Positioned(
-              bottom: 1,
-              child: SizedBox(
-                width: Get.size.width,
-                child: Container(
-                  margin: EdgeInsets.only(left: 10.w, right: 10.w),
-                  alignment: Alignment.center,
-                  width: Get.size.width,
-                  height: 60.h,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15.r),
-                    color: Colors.white,
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.5),
-                        spreadRadius: 1,
-                        blurRadius: 7,
-                        offset:
-                        const Offset(3, 3), // changes position of shadow
-                      ),
-                    ],
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      const LoginBottomSheet(),
-                      InkWell(
-                        onTap: () => Get.to(const RegisterPage()),
-                        child: Text(
-                          'Đăng ký',
-                          style: TextStyle(
-                              fontSize: 15.sp,
-                              fontWeight: FontWeight.w500,
-                              color: Colors.black54),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ))
+          if(number == 1)...[
+            const Authentication(),
+          ]else ...[
+            const InforUser(),
+          ]
         ],
       ),
     );
   }
 }
+
+

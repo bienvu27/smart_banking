@@ -55,19 +55,19 @@ class DashboardBottomNavigatorBar extends StatelessWidget {
                 MaterialButton(
                   minWidth: 40.w,
                   onPressed: () {
-                    // controller.currentScreen = const PromotionPage();
-                    showDialog(
-                        barrierDismissible: false,
-                        context: context,
-                        builder: (BuildContext context) => CustomDialog(
-                          title: 'Quý khách cần kích hoạt ứng dụng trước để sử dụng chức năng này.',
-                          cancel: 'Huỷ bỏ',
-                          submit: 'Đăng nhập',
-                          clickCallback: () {
-                          },
-                        ));
+                    controller.currentScreen = const PromotionPage();
+                    // showDialog(
+                    //     barrierDismissible: false,
+                    //     context: context,
+                    //     builder: (BuildContext context) => CustomDialog(
+                    //       title: 'Quý khách cần kích hoạt ứng dụng trước để sử dụng chức năng này.',
+                    //       cancel: 'Huỷ bỏ',
+                    //       submit: 'Đăng nhập',
+                    //       clickCallback: () {
+                    //       },
+                    //     ));
                     controller.changeTabIndex(1);
-                    controller.changeTabIndex(0);
+                    // controller.changeTabIndex(0);
                     // controller.currentTab = 1;
                   },
                   child: Column(
