@@ -117,6 +117,7 @@ class _PromotionPageState extends State<PromotionPage> {
         like: 5360),
   ];
 
+
   @override
   void initState() {
     // TODO: implement initState
