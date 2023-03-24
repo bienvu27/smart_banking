@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
 import '../../home/view/home_page.dart';
-import '../../notifications/notifications_page.dart';
+import '../../notification/notifications_page.dart';
 import '../../promotion/promotion_page.dart';
 import '../../qr_code/qr_code_page.dart';
 import '../../settings/settings_page.dart';

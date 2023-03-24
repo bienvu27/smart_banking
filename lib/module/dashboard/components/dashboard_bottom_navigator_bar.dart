@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 import '../../../res/my_color .dart';
 import '../../components/dialog/custom_dialog.dart';
 import '../../home/view/home_page.dart';
-import '../../notifications/notifications_page.dart';
+import '../../notification/notifications_page.dart';
 import '../../promotion/promotion_page.dart';
 import '../../settings/settings_page.dart';
 import '../controller/dashboard_controller.dart';
@@ -121,19 +121,19 @@ class DashboardBottomNavigatorBar extends StatelessWidget {
                 MaterialButton(
                   minWidth: 40.w,
                   onPressed: () {
-                    // controller.currentScreen = const NotificationPage();
-                    showDialog(
-                        barrierDismissible: false,
-                        context: context,
-                        builder: (BuildContext context) => CustomDialog(
-                          title: 'Quý khách cần kích hoạt ứng dụng trước để sử dụng chức năng này.',
-                          cancel: 'Huỷ bỏ',
-                          submit: 'Đăng nhập',
-                          clickCallback: () {
-                          },
-                        ));
+                    controller.currentScreen = const NotificationPage();
+                    // showDialog(
+                    //     barrierDismissible: false,
+                    //     context: context,
+                    //     builder: (BuildContext context) => CustomDialog(
+                    //       title: 'Quý khách cần kích hoạt ứng dụng trước để sử dụng chức năng này.',
+                    //       cancel: 'Huỷ bỏ',
+                    //       submit: 'Đăng nhập',
+                    //       clickCallback: () {
+                    //       },
+                    //     ));
                     controller.changeTabIndex(4);
-                    controller.changeTabIndex(0);
+
                   },
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
