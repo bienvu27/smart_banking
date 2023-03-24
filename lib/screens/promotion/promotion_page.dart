@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:smart_banking/module/components/grid_view/grid_view_component.dart';
-import 'package:smart_banking/module/promotion/model/promotion_model.dart';
+import 'package:smart_banking/screens/components/grid_view/grid_view_component.dart';
+import 'package:smart_banking/screens/promotion/model/promotion_model.dart';
 
 import '../../res/my_color .dart';
 import '../service_manager/model/service_favorite_model.dart';

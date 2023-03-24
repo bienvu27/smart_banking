@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:smart_banking/module/home/model/list_service_model.dart';
+import 'package:smart_banking/screens/home/model/list_service_model.dart';
 
 import '../components/cover_widget.dart';
 import '../components/grid_menu.dart';

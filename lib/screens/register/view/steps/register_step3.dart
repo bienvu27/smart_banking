@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:smart_banking/module/register/view/steps/register_step4.dart';
+import 'package:smart_banking/screens/register/view/steps/register_step4.dart';
 
 import '../../../../res/my_color .dart';
 import '../../../components/app_bar/app_bar_component.dart';

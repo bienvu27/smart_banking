@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:smart_banking/module/register/view/steps/register_step2.dart';
-import 'package:smart_banking/module/register/view/steps/rigister_information.dart';
+import 'package:smart_banking/screens/register/view/steps/register_step2.dart';
+import 'package:smart_banking/screens/register/view/steps/rigister_information.dart';
 
 import '../../components/app_bar/app_bar_component.dart';
 import '../../components/dialog/custom_dialog.dart';

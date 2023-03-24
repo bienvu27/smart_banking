@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import '../../../core/style.dart';
 import 'authentication.dart';
 import 'infor_user.dart';
 
@@ -11,26 +12,20 @@ class CoverWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    int number = 2 ;
+    int number = 1 ;
+    final width  = MediaQuery.of(context).size.width;
+    final height  = MediaQuery.of(context).size.height;
     return SizedBox(
-      height: 350.h,
+      height: height/1.36,
       child: Stack(
         children: [
           Container(
-            height: 300.h,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.only(
-                  bottomRight: Radius.circular(20.r),
-                  bottomLeft: Radius.circular(20.r)),
-              color: Colors.white,
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.grey.withOpacity(0.1),
-                  spreadRadius: 1,
-                  blurRadius: 1,
-                  offset: const Offset(1, 2), // changes position of shadow
-                ),
-              ],
+            height: height/1.5,
+            decoration: const BoxDecoration(
+                image: DecorationImage(
+                    image: NetworkImage('https://www.bidv.com.vn/wps/wcm/connect/d7a1fd33-8001-4db2-a7b6-7a36a6511745/Coming+Soon+resize+5kt_380+x+213.jpg?MOD=AJPERES&CACHEID=ROOTWORKSPACE-d7a1fd33-8001-4db2-a7b6-7a36a6511745-nQJoNWe'),
+                    fit: BoxFit.fill
+                )
             ),
           ),
           Padding(
@@ -44,9 +39,10 @@ class CoverWidget extends StatelessWidget {
                       width: 100.w,
                       height: 50.h,
                     ),
-                    SizedBox(
+                    Container(
+                      margin: EdgeInsets.only(left: 10.w),
                       height: 25.h,
-                      width: Get.size.width / 1.5,
+                      width: Get.size.width / 1.6,
                       child: TextField(
                         maxLines: 1,
                         style: TextStyle(fontSize: 17.sp),
@@ -55,25 +51,23 @@ class CoverWidget extends StatelessWidget {
                           filled: true,
                           prefixIcon: Icon(
                             Icons.search,
-                            color: Colors.black54,
-                            size: 20.spMin,
+                            color: clr_white54,
+                            size: 26.spMin,
                           ),
                           border: OutlineInputBorder(
                               borderSide: BorderSide.none,
                               borderRadius:
                                   BorderRadius.all(Radius.circular(30.r))),
-                          fillColor:
-                              Theme.of(context).inputDecorationTheme.fillColor,
+                          fillColor: clr_black12,
                           contentPadding: EdgeInsets.zero,
-                          hintText: 'Search',
-                          hintStyle: TextStyle(fontSize: 15.sp),
+                          hintText: 'Tìm kiếm',
+                          hintStyle: TextStyle(fontSize: 15.sp, color: clr_white54),
                         ),
                       ),
                     )
                   ],
                 ),
-                Container(
-                  margin: EdgeInsets.only(top: 20.h),
+                SizedBox(
                   height: 30.h,
                   child: Row(
                     children: [
@@ -129,30 +123,6 @@ class CoverWidget extends StatelessWidget {
                     ],
                   ),
                 ),
-                Container(
-                  margin: EdgeInsets.only(top: 20.h),
-                  width: Get.size.width,
-                  height: 120.h,
-                  alignment: Alignment.center,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20.r),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.5),
-                        spreadRadius: 1,
-                        blurRadius: 7,
-                        offset:
-                            const Offset(3, 3), // changes position of shadow
-                      ),
-                    ],
-                    image: const DecorationImage(
-                      image:NetworkImage('http://icdn.dantri.com.vn/zoom/1200_630/2021/11/10/chuan-3-crop-crop-1636541129710.jpeg',
-                      ),
-                      fit: BoxFit.fill,
-                    )
-                  ),
-                )
               ],
             ),
           ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:smart_banking/module/notification/model/notification_model.dart';
+import 'package:smart_banking/screens/notification/model/notification_model.dart';
 import '../../res/my_color .dart';
 import 'components/notification_list.dart';
 
