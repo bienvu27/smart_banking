@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:smart_banking/screens/home/model/list_service_model.dart';
 
 import '../components/cover_widget.dart';
@@ -82,47 +81,62 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            const CoverWidget(),
-            SizedBox(
-              height: 20.h,
+      body: Stack(
+        children: [
+          SizedBox(
+            height: MediaQuery.of(context).size.height,
+            child: Center(
+              child: Image.asset(
+                'assets/images/vrbank.png',
+                width: 200.w,
+                height: 190.h, color: Colors.white.withOpacity(0.1),
+                colorBlendMode: BlendMode.modulate,
+              ),
             ),
-            const GridMenu(),
-            SizedBox(
-              height: 20.h,
+          ),
+          SingleChildScrollView(
+            child: Column(
+              children: [
+                const CoverWidget(),
+                SizedBox(
+                  height: 20.h,
+                ),
+                const GridMenu(),
+                SizedBox(
+                  height: 20.h,
+                ),
+                ServiceFavorite(list: list),
+                SizedBox(
+                  height: 20.h,
+                ),
+                Container(
+                  margin: EdgeInsets.only(left: 10.w, right: 10.w),
+                  height: 120.h,
+                  child: PageView.builder(
+                      itemCount: images.length,
+                      pageSnapping: true,
+                      itemBuilder: (context, pagePosition) {
+                        return ClipRRect(
+                            borderRadius: BorderRadius.circular(15.r),
+                            child: Image.network(
+                              images[pagePosition],
+                              fit: BoxFit.fill,
+                            ));
+                      }),
+                ),
+                SizedBox(
+                  height: 20.h,
+                ),
+                Text(
+                  'Quý khách quan tâm dịch vụ gì hôm nay?',
+                  style: TextStyle(fontSize: 13.sp, fontWeight: FontWeight.w500),
+                ),
+                ListService(listService: listService)
+              ],
             ),
-            ServiceFavorite(list: list),
-            SizedBox(
-              height: 20.h,
-            ),
-            Container(
-              margin: EdgeInsets.only(left: 10.w, right: 10.w),
-              height: 120.h,
-              child: PageView.builder(
-                  itemCount: images.length,
-                  pageSnapping: true,
-                  itemBuilder: (context, pagePosition) {
-                    return ClipRRect(
-                        borderRadius: BorderRadius.circular(15.r),
-                        child: Image.network(
-                          images[pagePosition],
-                          fit: BoxFit.fill,
-                        ));
-                  }),
-            ),
-            SizedBox(
-              height: 20.h,
-            ),
-            Text(
-              'Quý khách quan tâm dịch vụ gì hôm nay?',
-              style: TextStyle(fontSize: 13.sp, fontWeight: FontWeight.w500),
-            ),
-            ListService(listService: listService)
-          ],
-        ),
-      ),
+          ),
+        ],
+      )
     );
   }
 }

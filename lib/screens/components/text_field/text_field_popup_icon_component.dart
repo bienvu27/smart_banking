@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../core/style.dart';
 import '../../../res/my_color .dart';
 
 class TextFieldPopupIconComponent extends StatelessWidget {
@@ -23,19 +24,19 @@ class TextFieldPopupIconComponent extends StatelessWidget {
             decoration: InputDecoration(
                 labelText: label,
                 labelStyle: TextStyle(
-                    fontSize: 15.sp,
-                    color: Colors.black54,
-                    fontWeight: FontWeight.w400),
+                    fontSize: 17.sp,
+                    color: clr_black54,
+                    fontWeight: FontWeight.w500),
                 focusedBorder: const UnderlineInputBorder(
-                  borderSide: BorderSide(color: Colors.black54),
+                  borderSide: BorderSide(color: clr_black54),
                 ),
                 disabledBorder: const UnderlineInputBorder(
-                    borderSide: BorderSide(color: Colors.black54)))),
+                    borderSide: BorderSide(color: clr_black54)))),
         Positioned(
             right: 5.w,
             child: Icon(
               icon,
-              color: MyColor.PRIMARY_COLOR_BLUE,
+              color: clr_366173,
             ))
       ],
     );

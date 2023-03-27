@@ -3,8 +3,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:smart_banking/screens/register/view/steps/register_step3.dart';
 
+import '../../../../core/resources/strings.dart';
 import '../../../../core/style.dart';
-import '../../../../res/my_color .dart';
+
 import '../../../components/app_bar/app_bar_component.dart';
 import '../../../components/button/button_component.dart';
 
@@ -15,14 +16,16 @@ class RegisterStep2Page extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBarComponent(
+          bgColor: clr_white,
+          colorTitle: clr_black,
+          colorIcon: clr_black,
           title: '',
           callback: () => Get.back(),
         ),
-        body: SingleChildScrollView(
-          physics: const NeverScrollableScrollPhysics(),
-          child: Container(
-            height: Get.size.height,
-            color: Colors.white,
+        body: Container(
+          color: clr_white,
+          height: Get.size.height,
+          child: SingleChildScrollView(
             child: Column(
               children: [
                 Container(
@@ -32,12 +35,12 @@ class RegisterStep2Page extends StatelessWidget {
                   child: SizedBox(
                     width: Get.size.width / 1.5,
                     child: Text(
-                      'Cùng VRB thử nghiệm công nghệ định danh số hoàn toàn mới',
+                      TITLE_5,
                       textAlign: TextAlign.center,
                       style: TextStyle(
                           fontSize: 25.sp,
                           fontWeight: FontWeight.w500,
-                          color: MyColor.PRIMARY_COLOR_BLUE),
+                          color: clr_black),
                     ),
                   ),
                 ),
@@ -59,13 +62,14 @@ class RegisterStep2Page extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               const Icon(Icons.av_timer),
+
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   SizedBox(
                                     width: Get.size.width / 1.3,
                                     child: Text(
-                                      'Mở tài khoản thanh toán dễ dàng và nhanh chóng',
+                                      TITLE_6,
                                       style: TextStyle(fontSize: 15.sp),
                                     ),
                                   ),
@@ -73,7 +77,7 @@ class RegisterStep2Page extends StatelessWidget {
                                     margin: const EdgeInsets.only(top: 10),
                                     width: Get.size.width / 1.2,
                                     height: 1, // Thickness
-                                    color: Colors.black12,
+                                    color: clr_black12,
                                   )
                                 ],
                               )
@@ -96,7 +100,7 @@ class RegisterStep2Page extends StatelessWidget {
                                   SizedBox(
                                     width: Get.size.width / 1.3,
                                     child: Text(
-                                      'Đăng ký dịch vụ ngân hàng điện tử SmartBanking thoả sức giao dịch trực tuyến',
+                                      TITLE_7,
                                       style: TextStyle(fontSize: 15.sp),
                                     ),
                                   ),
@@ -104,7 +108,7 @@ class RegisterStep2Page extends StatelessWidget {
                                     margin: EdgeInsets.only(top: 10.h),
                                     width: Get.size.width / 1.2,
                                     height: 1, // Thickness
-                                    color: Colors.black12,
+                                    color: clr_black12,
                                   )
                                 ],
                               )
@@ -125,7 +129,7 @@ class RegisterStep2Page extends StatelessWidget {
                                   SizedBox(
                                     width: Get.size.width / 1.3,
                                     child: Text(
-                                      'Trải nghiệm mới cùng BIDV với thật nhiều ưu đã đang chờ đón',
+                                      TITLE_8,
                                       style: TextStyle(fontSize: 15.sp),
                                     ),
                                   ),
@@ -133,7 +137,7 @@ class RegisterStep2Page extends StatelessWidget {
                                     margin: EdgeInsets.only(top: 10.h),
                                     width: Get.size.width / 1.2,
                                     height: 1, // Thickness
-                                    color: Colors.black12,
+                                    color: clr_black12,
                                   )
                                 ],
                               )
@@ -151,7 +155,7 @@ class RegisterStep2Page extends StatelessWidget {
         bottomNavigationBar: Container(
           height: 90.h,
           decoration: BoxDecoration(
-            color: Colors.white,
+            color: clr_white,
             boxShadow: [
               BoxShadow(
                 color: Colors.grey.withOpacity(0.9),
@@ -162,7 +166,7 @@ class RegisterStep2Page extends StatelessWidget {
             ],
           ), // Get.to(const RegisterStep3Page()
           child: ButtonComponent(
-            title: 'Đăng ký ngay',
+            title: REGISTER_NOW,
             bgColor: button_color_home,
             callback: () => Get.to(
               const RegisterStep3Page(),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../core/style.dart';
 import '../../../res/my_color .dart';
 
 class TextFieldIconSubTitleComponent extends StatelessWidget {
@@ -19,6 +20,7 @@ class TextFieldIconSubTitleComponent extends StatelessWidget {
       alignment: Alignment.center,
       children: [
         TextField(
+
           keyboardType: textInputType,
             enabled: true,
             obscureText: obscureText,
@@ -27,22 +29,25 @@ class TextFieldIconSubTitleComponent extends StatelessWidget {
                 labelText: label,
               prefixIcon: Icon(
               icon,
-              color: MyColor.PRIMARY_COLOR_BLUE,
+              color: clr_black26,
             ),
                 labelStyle: TextStyle(
                     fontSize: 15.sp,
-                    color: Colors.black54,
-                    fontWeight: FontWeight.w400),
-                focusedBorder: UnderlineInputBorder(
-                  borderSide: BorderSide(color: MyColor.PRIMARY_COLOR_BLUE),
+                    color: clr_black26,
+                    fontWeight: FontWeight.w500),
+                focusedBorder: const UnderlineInputBorder(
+                  borderSide: BorderSide(color: clr_blue_customization),
                 ),
-                disabledBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(color: MyColor.PRIMARY_COLOR_BLUE)))),
+                disabledBorder: const UnderlineInputBorder(
+                    borderSide: BorderSide(color: clr_blue_customization)))),
         Positioned(
             right: 5.w,
             child: Text(
               subTitle,
-              style: TextStyle(color: MyColor.PRIMARY_COLOR_BLUE),
+              style: TextStyle(
+                  fontSize: 14.sp,
+                  fontWeight: FontWeight.w500,
+                  color: clr_blue_customization),
             ))
       ],
     );

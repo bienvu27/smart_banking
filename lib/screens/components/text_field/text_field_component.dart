@@ -19,7 +19,7 @@ class TextFieldComponent extends StatelessWidget {
       decoration: InputDecoration(
         labelText: label,
         labelStyle: TextStyle(
-            fontSize: 15.sp,
+            fontSize: 17.sp,
             color: Colors.black54,
             fontWeight: FontWeight.w500),
         disabledBorder: const UnderlineInputBorder(

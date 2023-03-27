@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../core/resources/strings.dart';
+import '../../../../core/style.dart';
 import '../../../../res/my_color .dart';
 import '../../model/group_model.dart';
 
@@ -14,11 +16,11 @@ class _RadioButtonState extends State<RadioButton> {
   int _value2 = 1;
   final List<GroupModel> _group = [
     GroupModel(
-        text: "Căn cước công dân/Chứng minh nhân dân",
+        text: TITLE_19,
         index: 1,
         selected: true),
-    GroupModel(text: "Căn cước công nhân gắn chíp", index: 2, selected: false),
-    GroupModel(text: "Hộ chiếu", index: 3, selected: false),
+    GroupModel(text: TITLE_20, index: 2, selected: false),
+    GroupModel(text: PASSPORT, index: 3, selected: false),
   ];
 
   Widget makeRadioTiles() {
@@ -32,8 +34,10 @@ class _RadioButtonState extends State<RadioButton> {
           tileColor: Colors.white,
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10.r),
-              side: BorderSide(
-                  color: _group[i].selected! ? MyColor.PRIMARY_COLOR_BLUE : Colors.black12)),
+              side: const BorderSide(
+                  // color: _group[i].selected! ? MyColor.PRIMARY_COLOR_BLUE : Colors.black12
+                  color: clr_black12
+              )),
           value: _group[i].index,
           groupValue: _value2,
           selected: _group[i].selected!,
@@ -46,12 +50,12 @@ class _RadioButtonState extends State<RadioButton> {
               _group[i].selected = true;
             });
           },
-          activeColor: MyColor.PRIMARY_COLOR_BLUE,
+          activeColor: clr_6dd7ce,
           title: Text(
             ' ${_group[i].text}',
             style: TextStyle(
-                fontSize: 13,
-                color: _group[i].selected! ? MyColor.PRIMARY_COLOR_BLUE : Colors.grey,
+                fontSize: 13.sp,
+                color:  clr_black,
                 fontWeight:
                     _group[i].selected! ? FontWeight.bold : FontWeight.normal),
           ),
@@ -64,11 +68,10 @@ class _RadioButtonState extends State<RadioButton> {
     );
     return column;
   }
-
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(20),
+      padding: EdgeInsets.only(top: 10.h, left: 10.w, right: 10.w, bottom: 10.h),
       child: Column(
         children: [makeRadioTiles()],
       ),

@@ -25,15 +25,22 @@ class ButtonComponent extends StatelessWidget {
             width: Get.size.width,
             alignment: Alignment.center,
             decoration: BoxDecoration(
-              color: bgColor,
               borderRadius: BorderRadius.circular(10.r),
+                gradient: LinearGradient(
+                    colors: [
+                     Color(0xff01bbae),
+                     Color(0xff00a2ae),
+                     Color(0xff00a2ae),
+                     Color(0xff0181ad),
+                     Color(0xff026c90),
+                    ])
             ),
             child: Text(
               title,
               style: TextStyle(
                   fontSize: 15.sp,
                   fontWeight: FontWeight.w500,
-                  color: clr_blue_customization),
+                  color: clr_white),
             ),
           ),
         ],

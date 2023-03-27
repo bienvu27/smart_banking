@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:smart_banking/screens/components/button/button_component.dart';
 
+import '../../../../core/resources/strings.dart';
 import '../../../../core/style.dart';
 import '../../../../res/my_color .dart';
 import '../../../components/app_bar/app_bar_component.dart';
@@ -22,8 +23,12 @@ class _RegisterInformationState extends State<RegisterInformation> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBarComponent(
-        title: 'Thông tin đăng ký',
+        bgColor: clr_white,
+        colorTitle: clr_black,
+        colorIcon: clr_black,
+        title: INFRO_REGISTER,
         callback: () => Get.back(),
       ),
       body: SingleChildScrollView(
@@ -31,7 +36,7 @@ class _RegisterInformationState extends State<RegisterInformation> {
           margin: EdgeInsets.only(top: 10.h),
           width: Get.size.width,
           height: Get.size.height * 1.1,
-          color: Colors.white,
+          color: clr_white,
           child: Padding(
             padding: const EdgeInsets.all(20),
             child: Column(
@@ -39,37 +44,37 @@ class _RegisterInformationState extends State<RegisterInformation> {
                 Container(
                   margin: EdgeInsets.only(bottom: 20.h),
                   child: const TextFieldComponent(
-                    label: 'Họ và tên',
+                    label: FULL_NAME,
                     textInputType: TextInputType.text,
                   ),
                 ),
                 Container(
                   margin: EdgeInsets.only(bottom: 20.h),
                   child: const TextFieldComponent(
-                      label: 'Số tài khoản', textInputType: TextInputType.text),
+                      label: ACCOUNT_NUMBER, textInputType: TextInputType.text),
                 ),
                 Container(
                   margin: EdgeInsets.only(bottom: 20.h),
                   child: const TextFieldPopupIconComponent(
-                      label: 'Ngày sinh', icon: Icons.date_range),
+                      label: DATE_OF_BIRTH, icon: Icons.date_range),
                 ),
                 Container(
                   margin: EdgeInsets.only(bottom: 20.h),
                   child: const TextFieldComponent(
-                    label: 'Số CMND/ CCCD/ HC',
+                    label: CCCD,
                     textInputType: TextInputType.text,
                   ),
                 ),
                 Container(
                   margin: EdgeInsets.only(bottom: 20.h),
                   child: const TextFieldComponent(
-                      label: 'Số điện thoại đăng nhập',
+                      label: PHONE_NUMBER_REGISTER_1,
                       textInputType: TextInputType.phone),
                 ),
                 Container(
                   margin: EdgeInsets.only(bottom: 20.h),
                   child: const TextFieldComponent(
-                      label: 'Số điện thoại nhận OTP',
+                      label: PHONE_NUMBER_REGISTER_2,
                       textInputType: TextInputType.phone),
                 ),
                 Stack(
@@ -77,44 +82,46 @@ class _RegisterInformationState extends State<RegisterInformation> {
                     Container(
                       margin: EdgeInsets.only(bottom: 20.h),
                       child: const TextFieldPopupIconComponent(
-                          label: 'Chọn gói dịch vụ',
+                          label: CHOSE_SERVICES,
                           icon: Icons.arrow_drop_down_sharp),
                     ),
                     Positioned(
                         bottom: 1.h,
                         right: 1.w,
                         child: Text(
-                          'Thông tin hạn mức',
+                          LIMIT_INFOR,
                           style: TextStyle(
-                              fontWeight: FontWeight.w500, color: MyColor.PRIMARY_COLOR_BLUE),
+                              fontSize: 13.sp,
+                              fontWeight: FontWeight.w500,
+                              color: clr_blue_customization),
                         ))
                   ],
                 ),
                 Container(
                   margin: EdgeInsets.only(bottom: 20.h),
                   child: const TextFieldSubTitleComponent(
-                      label: 'Email',
-                      subTitle: '(Không bắt buộc)',
+                      label: EMAIL,
+                      subTitle: OPTIONAL,
                       textInputType: TextInputType.emailAddress),
                 ),
                 Container(
                   margin: const EdgeInsets.only(bottom: 20),
                   child: const TextFieldSubTitleComponent(
-                      label: 'Mã cán bộ tiếp thị',
-                      subTitle: '(Không bắt buộc)',
+                      label: CODE_USE,
+                      subTitle: OPTIONAL,
                       textInputType: TextInputType.text),
                 ),
                 Container(
-                  margin: const EdgeInsets.only(bottom: 20),
+                  margin: EdgeInsets.only(bottom: 20.h),
                   child: const TextFieldSubTitleComponent(
-                      label: 'Số điện thoại người giới thiệu',
-                      subTitle: '(Không bắt buộc)',
+                      label: PHONE_NUMBER_REGISTER_3,
+                      subTitle: OPTIONAL,
                       textInputType: TextInputType.phone),
                 ),
                 Container(
-                  margin: const EdgeInsets.only(bottom: 20),
+                  margin: EdgeInsets.only(bottom: 20.h),
                   child: const TextFieldPopupIconComponent(
-                      label: 'Chọn mã giới thiệu đặc trưng',
+                      label: PHONE_NUMBER_REGISTER_4,
                       icon: Icons.arrow_drop_down_sharp),
                 ),
               ],
@@ -125,7 +132,7 @@ class _RegisterInformationState extends State<RegisterInformation> {
       bottomNavigationBar: Container(
         height: 110.h,
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: clr_white,
           boxShadow: [
             BoxShadow(
               color: Colors.grey.withOpacity(0.9),
@@ -148,8 +155,8 @@ class _RegisterInformationState extends State<RegisterInformation> {
                       onChanged: (value) {
                         controller.toggleCheckbox(controller.isChecked);
                       },
-                      activeColor: MyColor.PRIMARY_COLOR_BLUE,
-                      checkColor: Colors.white,
+                      activeColor: clr_blue_customization,
+                      checkColor: clr_white,
                       tristate: false,
                     );
                   },
@@ -159,21 +166,21 @@ class _RegisterInformationState extends State<RegisterInformation> {
                   width: Get.size.width / 1.2,
                   child: RichText(
                     text: TextSpan(
-                      text: 'Tôi đã đọc và đồng ý với ',
-                      style: TextStyle(fontSize: 13.sp, color: Colors.black54),
+                      text: '$TITLE_27 ',
+                      style: TextStyle(fontSize: 13.sp, color: clr_black54),
                       children: [
                         TextSpan(
-                          text: 'điều kiện và điều khoản ',
+                          text: '$TITLE_28 ',
                           style: TextStyle(
                             fontSize: 13.sp,
-                            color: MyColor.PRIMARY_COLOR_BLUE,
+                            color: clr_blue_customization,
                             fontWeight: FontWeight.w500,
                             decoration: TextDecoration.underline,
                           ),
                         ),
                         TextSpan(
-                          text: 'đăng ký dịch vụ BRD.',
-                          style: TextStyle(fontSize: 13.sp, color: Colors.black54),
+                          text: TITLE_29,
+                          style: TextStyle(fontSize: 13.sp, color: clr_black54),
                         ),
                       ],
                     ),
@@ -182,8 +189,12 @@ class _RegisterInformationState extends State<RegisterInformation> {
               ],
             ),
             const Spacer(),
-            ButtonComponent(title: 'Tiếp tục', bgColor: button_color_home, callback: () {},),
 
+            ButtonComponent(
+              title: NEXT,
+              bgColor: button_color_home,
+              callback: () {},
+            ),
           ],
         ),
       ),

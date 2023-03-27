@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import '../../../core/style.dart';
 import '../../../res/my_color .dart';
 import '../../components/app_bar/app_bar_component.dart';
 import '../components/services/service_list.dart';
@@ -170,6 +171,9 @@ class _ServiceManagerState extends State<ServiceManager> {
 
     return Scaffold(
       appBar: AppBarComponent(
+        bgColor: clr_white,
+        colorTitle: clr_black,
+        colorIcon: clr_black,
         title: 'Quản lý dịch vụ',
         callback: () => Get.back(),
       ),

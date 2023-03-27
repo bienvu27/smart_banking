@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../core/style.dart';
 import '../../../res/my_color .dart';
 
 class TextFieldSubTitleComponent extends StatelessWidget {
@@ -25,19 +26,19 @@ class TextFieldSubTitleComponent extends StatelessWidget {
             decoration: InputDecoration(
                 labelText: label,
                 labelStyle: TextStyle(
-                    fontSize: 15.sp,
+                    fontSize: 17.sp,
                     color: Colors.black54,
-                    fontWeight: FontWeight.w400),
-                focusedBorder: UnderlineInputBorder(
-                  borderSide: BorderSide(color: MyColor.PRIMARY_COLOR_BLUE),
+                    fontWeight: FontWeight.w500),
+                focusedBorder: const UnderlineInputBorder(
+                  borderSide: BorderSide(color: clr_blue_customization),
                 ),
                 disabledBorder: const UnderlineInputBorder(
-                    borderSide: BorderSide(color: Colors.black)))),
+                    borderSide: BorderSide(color: clr_black)))),
         Positioned(
             right: 5.w,
             child: Text(
               subTitle,
-              style: const TextStyle(color: Colors.black12),
+              style: const TextStyle(color: clr_black12),
             ))
       ],
     );

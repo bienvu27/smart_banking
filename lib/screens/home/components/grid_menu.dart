@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smart_banking/screens/components/dialog/custom_dialog.dart';
 
+import '../../../core/style.dart';
 import '../../../res/my_color .dart';
 import 'grid_menu_component.dart';
 
@@ -12,7 +13,8 @@ class GridMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
+      color: clr_white,
       width: MediaQuery.of(context).size.width,
       child: Column(
         children: [

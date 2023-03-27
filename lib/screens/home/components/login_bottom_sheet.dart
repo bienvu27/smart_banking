@@ -2,12 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:smart_banking/screens/components/text_field/text_field_icon_subtile_component.dart';
-
 import '../../../core/resources/strings.dart';
 import '../../../core/style.dart';
 import '../../../res/my_color .dart';
 import '../../components/button/button_component.dart';
-import '../../components/text_field/text_field_component.dart';
 import '../../components/text_field/text_field_icon_component.dart';
 
 class LoginBottomSheet extends StatelessWidget {
@@ -44,19 +42,21 @@ class LoginBottomSheet extends StatelessWidget {
                           width: 25.w,
                           height: 25.h,
                           decoration: const BoxDecoration(
-                            color: Colors.black12,
+                            color: clr_black12,
                             shape: BoxShape.circle,
                           ),
                           child: Icon(
                             Icons.close,
-                            size: 15.spMin,
+                            size: 15.spMax,
                           ),
                         ),
                       ),
                       Container(
                         width: 40.w,
                         height: 20.h,
-                        decoration: BoxDecoration(color: Colors.black12, borderRadius: BorderRadius.circular(20.r)),
+                        decoration: BoxDecoration(
+                            color: Colors.black12,
+                            borderRadius: BorderRadius.circular(20.r)),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
@@ -64,8 +64,8 @@ class LoginBottomSheet extends StatelessWidget {
                               'EN',
                               style: TextStyle(fontWeight: FontWeight.w500),
                             ),
-                            Image.network(
-                              'https://cleandye.com/wp-content/uploads/2020/01/English-icon.png',
+                            Image.asset(
+                              'assets/images/english_icon.png',
                               width: 15.w,
                               height: 15.h,
                             )
@@ -79,13 +79,13 @@ class LoginBottomSheet extends StatelessWidget {
                     width: 60.w,
                     height: 60.h,
                     decoration: const BoxDecoration(
-                      color: Colors.black12,
+                      color: clr_black12,
                       shape: BoxShape.circle,
                     ),
                     child: Icon(
                       Icons.person,
-                      size: 35.spMin,
-                      color: Colors.white,
+                      size: 35.spMax,
+                      color: clr_white,
                     ),
                   ),
                   Container(
@@ -93,13 +93,15 @@ class LoginBottomSheet extends StatelessWidget {
                     child: Column(
                       children: [
                         TextFieldIconComponent(
-                            labelText: 'Số điện thoại', icon: Icons.phone, textInputType: TextInputType.number),
+                            labelText: PHONE_NUMBER,
+                            icon: Icons.phone,
+                            textInputType: TextInputType.number),
                         Container(
                             margin: EdgeInsets.only(top: 20.h),
                             child: const TextFieldIconSubTitleComponent(
-                              label: "Mật khẩu",
+                              label: PASSWORD,
                               textInputType: TextInputType.text,
-                              subTitle: 'Quên mật khẩu',
+                              subTitle: FORGOT_PASSWORD,
                               obscureText: true,
                               icon: Icons.lock,
                             )),
@@ -108,22 +110,31 @@ class LoginBottomSheet extends StatelessWidget {
                   ),
                   Padding(
                     padding: EdgeInsets.only(top: 20.h),
-                    child: ButtonComponent(title: 'Đăng nhập', bgColor: button_color_home, callback: () {}),
+                    child: ButtonComponent(
+                        title: LOGIN,
+                        bgColor: button_color_home,
+                        callback: () {}),
                   ),
                   Container(
                     margin: EdgeInsets.only(top: 30.h),
                     child: Column(
                       children: [
                         Text(
-                          'Hướng dẫn chuyển đổi',
-                          style: TextStyle(fontSize: 15.sp, fontWeight: FontWeight.w500, color: MyColor.PRIMARY_COLOR_BLUE),
+                          CONVERSION_GUIDE,
+                          style: TextStyle(
+                              fontSize: 15.sp,
+                              fontWeight: FontWeight.w500,
+                              color: clr_blue_customization),
                         ),
                         SizedBox(
                           height: 20.h,
                         ),
                         Text(
-                          'Đăng ký',
-                          style: TextStyle(fontSize: 15.sp, fontWeight: FontWeight.w500, color: MyColor.PRIMARY_COLOR_BLUE),
+                          SIGN_IN,
+                          style: TextStyle(
+                              fontSize: 15.sp,
+                              fontWeight: FontWeight.w500,
+                              color: clr_blue_customization),
                         ),
                       ],
                     ),
@@ -136,7 +147,10 @@ class LoginBottomSheet extends StatelessWidget {
       },
       child: Text(
         LOGIN,
-        style: TextStyle(fontSize: 15.sp, fontWeight: FontWeight.w500, color: PRIMARY_COLOR_BLUE),
+        style: TextStyle(
+            fontSize: 15.sp,
+            fontWeight: FontWeight.w500,
+            color: PRIMARY_COLOR_BLUE),
       ),
     );
   }
