@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:smart_banking/screens/register/view/steps/register_step4.dart';
 
+import '../../../../core/style.dart';
 import '../../../../res/my_color .dart';
 import '../../../components/app_bar/app_bar_component.dart';
 import '../../../components/button/button_component.dart';
@@ -141,6 +142,7 @@ class RegisterStep3Page extends StatelessWidget {
               // Get.to(const RegisterStep4Page()),
               ButtonComponent(
                 title: 'Tiếp tục',
+                bgColor: button_color_home,
                 callback: () => Get.to(const RegisterStep4Page()),
               ),
             ],

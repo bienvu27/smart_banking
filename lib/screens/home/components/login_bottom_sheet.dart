@@ -3,6 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:smart_banking/screens/components/text_field/text_field_icon_subtile_component.dart';
 
+import '../../../core/resources/strings.dart';
+import '../../../core/style.dart';
 import '../../../res/my_color .dart';
 import '../../components/button/button_component.dart';
 import '../../components/text_field/text_field_component.dart';
@@ -106,7 +108,7 @@ class LoginBottomSheet extends StatelessWidget {
                   ),
                   Padding(
                     padding: EdgeInsets.only(top: 20.h),
-                    child: ButtonComponent(title: 'Đăng nhập', callback: () {}),
+                    child: ButtonComponent(title: 'Đăng nhập', bgColor: button_color_home, callback: () {}),
                   ),
                   Container(
                     margin: EdgeInsets.only(top: 30.h),
@@ -133,8 +135,8 @@ class LoginBottomSheet extends StatelessWidget {
         );
       },
       child: Text(
-        'Đăng nhập',
-        style: TextStyle(fontSize: 15.sp, fontWeight: FontWeight.w500, color: MyColor.PRIMARY_COLOR_BLUE),
+        LOGIN,
+        style: TextStyle(fontSize: 15.sp, fontWeight: FontWeight.w500, color: PRIMARY_COLOR_BLUE),
       ),
     );
   }

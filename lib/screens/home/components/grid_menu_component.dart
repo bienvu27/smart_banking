@@ -9,7 +9,7 @@ class GridMenuComponent extends StatelessWidget {
     required this.topRight,
     required this.bottomRight,
     required this.title,
-    required this.icon, required this.callback, required this.color,
+    required this.icon, required this.callback, required this.color, required this.color1, required this.color2, required this.color3, required this.color4,
   });
 
   final double bottomLeft;
@@ -20,6 +20,10 @@ class GridMenuComponent extends StatelessWidget {
   final IconData icon;
   final VoidCallback callback;
   final Color color ;
+  final Color color1 ;
+  final Color color2 ;
+  final Color color3 ;
+  final Color color4 ;
 
   @override
   Widget build(BuildContext context) {
@@ -35,6 +39,13 @@ class GridMenuComponent extends StatelessWidget {
             topRight: Radius.circular(topRight.r),
             bottomRight: Radius.circular(bottomRight.r),
           ),
+          gradient: LinearGradient(
+              colors: [
+                color1,
+                color2,
+                color3,
+                color4,
+              ])
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

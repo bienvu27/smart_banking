@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
+import '../../../../core/style.dart';
 import '../../../../res/my_color .dart';
 import '../../../components/app_bar/app_bar_component.dart';
 import '../../../components/button/button_component.dart';
@@ -265,7 +266,7 @@ class RegisterStep4Page extends StatelessWidget {
                       ],
                     ),
                     const Spacer(),
-                    ButtonComponent(title: 'Tiếp tục', callback: () {},)
+                    ButtonComponent(title: 'Tiếp tục', bgColor: button_color_home, callback: () {},)
                   ],
                 ),
               ],

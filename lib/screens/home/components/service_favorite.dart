@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import '../../../res/my_color .dart';
+import '../../../core/resources/strings.dart';
+import '../../../core/style.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import '../../components/button/button_component.dart';
 import '../../components/dialog/custom_dialog.dart';
 import '../../service_manager/model/service_favorite_model.dart';
@@ -24,16 +26,16 @@ class ServiceFavorite extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'Dịch vụ yêu thích',
+                SERVICES_FAVORITE,
                 style: TextStyle(
-                    fontSize: 15.sp, fontWeight: FontWeight.w600, color: Colors.black),
+                    fontSize: 17.sp, fontWeight: FontWeight.w600, color: clr_black),
               ),
               Text(
-                'Tuỳ chỉnh',
+                CUSTOMIZATION,
                 style: TextStyle(
-                    fontSize: 15.sp,
+                    fontSize: 17.sp,
                     fontWeight: FontWeight.w600,
-                    color: MyColor.PRIMARY_COLOR_BLUE),
+                    color: clr_blue_customization),
               ),
             ],
           ),
@@ -64,10 +66,11 @@ class ServiceFavorite extends StatelessWidget {
                         Stack(
                           alignment: Alignment.center,
                           children: [
-                            Image.network(
-                              e.image ?? '',
-                              width: 40.w,
-                              height: 40.h,
+                            SvgPicture.asset(
+                              '${e.image}',
+                              width: 35.w,
+                              height: 35.h,
+                              color: clr_blue_customization,
                               fit: BoxFit.contain,
                             ),
                             Positioned(
@@ -79,10 +82,10 @@ class ServiceFavorite extends StatelessWidget {
                                   boxShadow: [
                                     BoxShadow(
                                       color:
-                                      Colors.grey.withOpacity(0.9),
+                                      Colors.grey.withOpacity(0.5),
                                       spreadRadius: 2,
                                       blurRadius: 5,
-                                      offset: const Offset(0, 5), // changes position of shadow
+                                      offset: const Offset(1, 5), // changes position of shadow
                                     ),
                                   ],
                                 ),
@@ -93,11 +96,14 @@ class ServiceFavorite extends StatelessWidget {
                         SizedBox(
                           height: 8.h,
                         ),
-                        Text(
-                          e.title ?? '',
-                          maxLines: 3,
-                          textAlign: TextAlign.center,
-                          style: const TextStyle(fontWeight: FontWeight.w500),
+                        SizedBox(
+                          width: 65.w,
+                          child: Text(
+                            e.title ?? '',
+                            maxLines: 3,
+                            textAlign: TextAlign.center,
+                            style: const TextStyle(fontWeight: FontWeight.w600),
+                          ),
                         )
                       ],
                     ),
@@ -105,7 +111,7 @@ class ServiceFavorite extends StatelessWidget {
                 }).toList()),
           ),
           ButtonComponent(
-            title: 'Xem tất cả các dịch vụ', callback: () => Get.toNamed("/service_manager", arguments: ''),)
+            title: 'Xem tất cả các dịch vụ', bgColor: button_color_home, callback: () => Get.toNamed("/service_manager", arguments: ''),)
         ],
       ),
     );

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import '../../../core/resources/strings.dart';
 import '../../../core/style.dart';
 import 'authentication.dart';
 import 'infor_user.dart';
@@ -16,7 +17,7 @@ class CoverWidget extends StatelessWidget {
     final width  = MediaQuery.of(context).size.width;
     final height  = MediaQuery.of(context).size.height;
     return SizedBox(
-      height: height/1.36,
+      height: height/1.37,
       child: Stack(
         children: [
           Container(
@@ -60,7 +61,7 @@ class CoverWidget extends StatelessWidget {
                                   BorderRadius.all(Radius.circular(30.r))),
                           fillColor: clr_black12,
                           contentPadding: EdgeInsets.zero,
-                          hintText: 'Tìm kiếm',
+                          hintText: SEARCH,
                           hintStyle: TextStyle(fontSize: 15.sp, color: clr_white54),
                         ),
                       ),
@@ -68,57 +69,60 @@ class CoverWidget extends StatelessWidget {
                   ],
                 ),
                 SizedBox(
-                  height: 30.h,
+                  // height: height/17,
+                  height: 40.h,
                   child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      SizedBox(
-                        width: 50.w,
-                        height: 50.w,
-                        child: Stack(
-                          children: [
-                            CircleAvatar(
-                              backgroundColor: Colors.black12,
-                              child: Icon(
-                                Icons.person,
-                                color: Colors.white,
-                                size: 30.spMin,
-                              ),
+                      Stack(
+                        children: [
+                          CircleAvatar(
+                            backgroundColor: clr_white60,
+                            child: Icon(
+                              Icons.person,
+                              color: Colors.white,
+                              size: 20.spMax,
                             ),
-                            Positioned(
-                                right: 12,
-                                bottom: -2,
-                                child: Container(
-                                  width: 15.w,
-                                  height: 15.h,
-                                  alignment: Alignment.center,
-                                  decoration: BoxDecoration(
-                                      border: Border.all(color: Colors.black12),
-                                      color: Colors.white,
-                                      shape: BoxShape.circle),
-                                  child: Icon(Icons.menu, size: 12.spMin),
-                                ))
+                          ),
+                          Positioned(
+                              right: 0.w,
+                              bottom: 0.h,
+                              child: Container(
+                                width: 12.w,
+                                height: 12.h,
+                                alignment: Alignment.center,
+                                decoration: BoxDecoration(
+                                    border: Border.all(color: clr_black12),
+                                    color: clr_white,
+                                    shape: BoxShape.circle),
+                                child: Icon(Icons.menu, size: 10.spMax),
+                              ))
+                        ],
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(left: 10.w),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Text(
+                              GOOD_MORNING,
+                              style: TextStyle(
+                                  // fontFamily: 'myriad-pro-bold-condensed',
+                                  fontSize: 13.sp,
+                                  fontWeight: FontWeight.w500,
+                                  color: clr_white60),
+                            ),
+                            Text(
+                              CUSTOMERS,
+                              style: TextStyle(
+                                  fontSize: 15.sp,
+                                  fontWeight: FontWeight.w600,
+                                  color: clr_white),
+                            ),
                           ],
                         ),
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          Text(
-                            'Chào buổi sáng!',
-                            style: TextStyle(
-                                fontSize: 13.sp,
-                                fontWeight: FontWeight.w500,
-                                color: Colors.black54),
-                          ),
-                          Text(
-                            'Bien Vu',
-                            style: TextStyle(
-                                fontSize: 13.sp,
-                                fontWeight: FontWeight.w500,
-                                color: Colors.black87),
-                          ),
-                        ],
                       )
                     ],
                   ),

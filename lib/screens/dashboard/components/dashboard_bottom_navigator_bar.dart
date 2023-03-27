@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
+import '../../../core/style.dart';
 import '../../../res/my_color .dart';
 import '../../components/dialog/custom_dialog.dart';
 import '../../home/view/home_page.dart';
@@ -21,170 +22,197 @@ class DashboardBottomNavigatorBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return BottomAppBar(
       shape: const CircularNotchedRectangle(),
-      notchMargin: 10,
+      notchMargin: 5,
       child: SizedBox(
         height: 60.h,
+        width: Get.size.width,
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                MaterialButton(
-                  minWidth: 40.w,
-                  onPressed: () {
-                    controller.currentScreen = const HomePage();
-                    controller.changeTabIndex(0);
-                  },
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(
-                        Icons.home_filled,
-                        color: controller.currentTab == 0 ? MyColor.PRIMARY_COLOR_BLUE : Colors.grey,
+            Flexible(
+              flex: 2,
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Flexible(
+                    flex: 1,
+                    child: InkWell(
+                      onTap: () {
+                        controller.currentScreen = const HomePage();
+                        controller.changeTabIndex(0);
+                      },
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            Icons.home,
+                            size: 22.spMax,
+                            color: controller.currentTab == 0 ? clr_active_button : clr_unactive_button,
+                          ),
+                          Text(
+                            'Trang chủ',
+                            style: TextStyle(
+                              fontSize: 12.sp,
+                              color: controller.currentTab == 0 ? clr_active_button : clr_unactive_button,
+                            ),
+                          )
+                        ],
                       ),
-                      Text(
-                        'Trang chủ',
-                        style: TextStyle(
-                          color: controller.currentTab == 0 ? MyColor.PRIMARY_COLOR_BLUE : Colors.grey,
-                        ),
-                      )
-                    ],
+                    ),
                   ),
-                ),
-                MaterialButton(
-                  minWidth: 40.w,
-                  onPressed: () {
-                    controller.currentScreen = const PromotionPage();
-                    // showDialog(
-                    //     barrierDismissible: false,
-                    //     context: context,
-                    //     builder: (BuildContext context) => CustomDialog(
-                    //       title: 'Quý khách cần kích hoạt ứng dụng trước để sử dụng chức năng này.',
-                    //       cancel: 'Huỷ bỏ',
-                    //       submit: 'Đăng nhập',
-                    //       clickCallback: () {
-                    //       },
-                    //     ));
-                    controller.changeTabIndex(1);
-                    // controller.changeTabIndex(0);
-                    // controller.currentTab = 1;
-                  },
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(
-                        Icons.blur_circular,
-                        color: controller.currentTab == 1 ? MyColor.PRIMARY_COLOR_BLUE : Colors.grey,
+                  Flexible(
+                    flex: 1,
+                    child: InkWell(
+                      onTap: () {
+                        controller.currentScreen = const PromotionPage();
+                        // showDialog(
+                        //     barrierDismissible: false,
+                        //     context: context,
+                        //     builder: (BuildContext context) => CustomDialog(
+                        //       title: 'Quý khách cần kích hoạt ứng dụng trước để sử dụng chức năng này.',
+                        //       cancel: 'Huỷ bỏ',
+                        //       submit: 'Đăng nhập',
+                        //       clickCallback: () {
+                        //       },
+                        //     ));
+                        controller.changeTabIndex(1);
+                        // controller.changeTabIndex(0);
+                        // controller.currentTab = 1;
+                      },
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            Icons.blur_circular,
+                            size: 22.spMax,
+                            color: controller.currentTab == 1 ? clr_active_button : clr_unactive_button,
+                          ),
+                          Text(
+                            'Đổi quà',
+                            style: TextStyle(
+                              fontSize: 12.sp,
+                              color: controller.currentTab == 1 ? clr_active_button : clr_unactive_button,
+                            ),
+                          )
+                        ],
                       ),
-                      Text(
-                        'Đổi quà',
-                        style: TextStyle(
-                          color: controller.currentTab == 1 ? MyColor.PRIMARY_COLOR_BLUE : Colors.grey,
-                        ),
-                      )
-                    ],
+                    ),
                   ),
-                ),
-              ],
-            ),
-            Container(
-              margin: const EdgeInsets.only(top: 30),
-              child: MaterialButton(
-                minWidth: 40.w,
-                onPressed: () {
-                  showDialog(
-                      barrierDismissible: false,
-                      context: context,
-                      builder: (BuildContext context) => CustomDialog(
-                        title: 'Quý khách cần kích hoạt ứng dụng trước để sử dụng chức năng này.',
-                        cancel: 'Huỷ bỏ',
-                        submit: 'Đăng nhập',
-                        clickCallback: () {
-                        },
-                      ));
-                  controller.changeTabIndex(0);
-                  // currentScreen = const QRCode_Page();
-                  // currentTab = 3;
-                },
-                child: Text(
-                  'Quét QR',
-                  style: TextStyle(
-                    color: controller.currentTab == 3 ? MyColor.PRIMARY_COLOR_BLUE : Colors.grey,
-                  ),
-                ),
+                ],
               ),
             ),
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                MaterialButton(
-                  minWidth: 40.w,
-                  onPressed: () {
-                    controller.currentScreen = const NotificationPage();
-                    // showDialog(
-                    //     barrierDismissible: false,
-                    //     context: context,
-                    //     builder: (BuildContext context) => CustomDialog(
-                    //       title: 'Quý khách cần kích hoạt ứng dụng trước để sử dụng chức năng này.',
-                    //       cancel: 'Huỷ bỏ',
-                    //       submit: 'Đăng nhập',
-                    //       clickCallback: () {
-                    //       },
-                    //     ));
-                    controller.changeTabIndex(4);
+            Flexible(
+              flex: 1,
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Container(
+                    margin: EdgeInsets.only(top: 20.h),
+                    child: InkWell(
+                      onTap: () {
+                        showDialog(
+                            barrierDismissible: false,
+                            context: context,
+                            builder: (BuildContext context) => CustomDialog(
+                              title: 'Quý khách cần kích hoạt ứng dụng trước để sử dụng chức năng này.',
+                              cancel: 'Huỷ bỏ',
+                              submit: 'Đăng nhập',
+                              clickCallback: () {
+                              },
+                            ));
+                        controller.changeTabIndex(0);
+                        // currentScreen = const QRCode_Page();
+                        // currentTab = 3;
+                      },
+                      child: Text(
+                        'Quét QR',
+                        style: TextStyle(
+                          fontSize: 12.sp,
+                          color: controller.currentTab == 3 ? clr_active_button : clr_unactive_button,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Flexible(
+              flex: 2,
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  InkWell(
+                    onTap: () {
+                      controller.currentScreen = const NotificationPage();
+                      // showDialog(
+                      //     barrierDismissible: false,
+                      //     context: context,
+                      //     builder: (BuildContext context) => CustomDialog(
+                      //       title: 'Quý khách cần kích hoạt ứng dụng trước để sử dụng chức năng này.',
+                      //       cancel: 'Huỷ bỏ',
+                      //       submit: 'Đăng nhập',
+                      //       clickCallback: () {
+                      //       },
+                      //     ));
+                      controller.changeTabIndex(4);
 
-                  },
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(
-                        Icons.notifications,
-                        color: controller.currentTab == 4 ? MyColor.PRIMARY_COLOR_BLUE : Colors.grey,
-                      ),
-                      Text(
-                        'Thông báo',
-                        style: TextStyle(
-                          color: controller.currentTab == 4 ? MyColor.PRIMARY_COLOR_BLUE : Colors.grey,
+                    },
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Icons.notifications,
+                          size: 22.spMax,
+                          color: controller.currentTab == 4 ? clr_active_button : clr_unactive_button,
                         ),
-                      )
-                    ],
+                        Text(
+                          'Thông báo',
+                          style: TextStyle(
+                            fontSize: 12.sp,
+                            color: controller.currentTab == 4 ? clr_active_button : clr_unactive_button,
+                          ),
+                        )
+                      ],
+                    ),
                   ),
-                ),
-                MaterialButton(
-                  minWidth: 40.w,
-                  onPressed: () {
-                    controller.currentScreen = const SettingsPage();
-                    // showDialog(
-                    //     barrierDismissible: false,
-                    //     context: context,
-                    //     builder: (BuildContext context) => CustomDialog(
-                    //       title: 'Quý khách cần kích hoạt ứng dụng trước để sử dụng chức năng này.',
-                    //       cancel: 'Huỷ bỏ',
-                    //       submit: 'Đăng nhập',
-                    //       clickCallback: () {
-                    //       },
-                    //     ));
-                    controller.changeTabIndex(5);
-                    // controller.changeTabIndex(0);
-                  },
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(
-                        Icons.settings,
-                        color: controller.currentTab == 5 ? MyColor.PRIMARY_COLOR_BLUE : Colors.grey,
-                      ),
-                      Text(
-                        'Cài đặt',
-                        style: TextStyle(
-                          color: controller.currentTab == 5 ? MyColor.PRIMARY_COLOR_BLUE : Colors.grey,
+                  InkWell(
+                    onTap: () {
+                      controller.currentScreen = const SettingsPage();
+                      // showDialog(
+                      //     barrierDismissible: false,
+                      //     context: context,
+                      //     builder: (BuildContext context) => CustomDialog(
+                      //       title: 'Quý khách cần kích hoạt ứng dụng trước để sử dụng chức năng này.',
+                      //       cancel: 'Huỷ bỏ',
+                      //       submit: 'Đăng nhập',
+                      //       clickCallback: () {
+                      //       },
+                      //     ));
+                      controller.changeTabIndex(5);
+                      // controller.changeTabIndex(0);
+                    },
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Icons.settings,
+                          size: 22.spMax,
+                          color: controller.currentTab == 5 ? clr_active_button : clr_unactive_button,
                         ),
-                      )
-                    ],
+                        Text(
+                          'Cài đặt',
+                          style: TextStyle(
+                            fontSize: 12.sp,
+                            color: controller.currentTab == 5 ? clr_active_button : clr_unactive_button,
+                          ),
+                        )
+                      ],
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             )
           ],
         ),

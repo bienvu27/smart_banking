@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:smart_banking/screens/components/button/button_component.dart';
 
+import '../../../../core/style.dart';
 import '../../../../res/my_color .dart';
 import '../../../components/app_bar/app_bar_component.dart';
 import '../../../components/text_field/text_field_component.dart';
@@ -181,7 +182,7 @@ class _RegisterInformationState extends State<RegisterInformation> {
               ],
             ),
             const Spacer(),
-            ButtonComponent(title: 'Tiếp tục', callback: () {},),
+            ButtonComponent(title: 'Tiếp tục', bgColor: button_color_home, callback: () {},),
 
           ],
         ),

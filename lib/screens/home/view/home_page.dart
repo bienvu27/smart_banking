@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:smart_banking/screens/home/model/list_service_model.dart';
 
 import '../components/cover_widget.dart';
@@ -19,26 +20,22 @@ class _HomePageState extends State<HomePage> {
   final list = [
     ServiceFavoriteModel(
         image:
-            'https://e7.pngegg.com/pngimages/15/364/png-clipart-computer-icons-person-user-group-icon-auto-part-rim-thumbnail.png',
+            'assets/svg/baby_face.svg',
         title: 'Smart Kids'),
     ServiceFavoriteModel(
-        image: 'https://cdn-icons-png.flaticon.com/512/3702/3702999.png',
+        image: 'assets/svg/gift.svg',
         title: 'Tặng quà'),
     ServiceFavoriteModel(
-        image:
-            'https://www.iconpacks.net/icons/2/free-store-icon-2017-thumb.png',
+        image: 'assets/svg/bank.svg',
         title: 'Mở tài khoản chọn tên như ý'),
     ServiceFavoriteModel(
-        image:
-            'https://icons.veryicon.com/png/o/business/a-set-of-commercial-icons/money-transfer.png',
+        image: 'assets/svg/money_transfer.svg',
         title: 'Chuyển tiền ngoài BIDV đến số tài khoản'),
     ServiceFavoriteModel(
-        image:
-            'https://cdn4.iconfinder.com/data/icons/smart-phones-technologies/512/android-phone.png',
+        image: 'assets/svg/mobile_package_tracking.svg',
         title: 'Nạp tiền điện thoại'),
     ServiceFavoriteModel(
-        image:
-            'https://icon-library.com/images/save-money-icon-png/save-money-icon-png-9.jpg',
+        image: 'assets/svg/money_box.svg',
         title: 'Gửi tiết kiệm Online')
   ];
 
@@ -50,32 +47,32 @@ class _HomePageState extends State<HomePage> {
 
   final listService = [
     ListServiceModel(
-        'https://cdn-icons-png.flaticon.com/512/66/66455.png',
+        'assets/svg/bank.svg',
         'Dịch vụ ngân hàng',
         'Ngân hàng số 24/7 đáp ứng mọi nhu cầu: Chuyển tiền - Thanh toán - Tiền gửi - Tiền vay - Thẻ tín dụng',
         11),
     ListServiceModel(
-        'https://icon-library.com/images/stars-icon-png/stars-icon-png-1.jpg',
+        'assets/svg/sparkling.svg',
         'Đăng ký dịch vụ',
         'Đăng ký bất kỳ dịch vụ mong muốn chỉ trong vòng vài phút và kết nối bạn bè',
         10),
     ListServiceModel(
-        'https://icons.veryicon.com/png/o/miscellaneous/cbxt/rectangle-3.png',
+        'assets/svg/insurance_agent.svg',
         'Dịch vụ bảo hiểm',
         'Kiến tạo tương lai vững chắc về sức khỏe và tài chính với bảo hiểm nhân thọ và phi nhân thọ ',
         4),
     ListServiceModel(
-        'https://www.clipartmax.com/png/middle/360-3605240_stocks-transparent-background-transparent-stock-icon-png.png',
+        'assets/svg/futures.svg',
         'Dịch vụ chứng khoán',
         'Đầu từ linh hoạt thông qua mở tài khoản online và chuyển tiền đầu tư nhanh chóng, chính xác',
         3),
     ListServiceModel(
-        'https://icon-library.com/images/headset-icon-transparent/headset-icon-transparent-25.jpg',
+        'assets/svg/headset.svg',
         'Hỗ trợ khách hàng',
         'Dễ dàng tra cứu thông tin tài khoản và tìm kiếm các thông tin Ngâng hàng hữu ích khác; hỗ trợ tra soát giao dịch và quản lý tài chính cá nhân',
         6),
     ListServiceModel(
-        'https://icon-library.com/images/insurance-icon-png/insurance-icon-png-15.jpg',
+        'assets/svg/charity.svg',
         'Từ thiện cùng BIDV',
         'Chung tay cùng BIDV đóng góp vào quỹ từ thiện',
         2),
@@ -84,6 +81,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: SingleChildScrollView(
         child: Column(
           children: [
