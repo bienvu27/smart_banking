@@ -1,8 +1,12 @@
 const String GOOD_MORNING  = 'Chào buổi sáng!';
 const String CUSTOMERS  = 'Quý khách';
 const String SEARCH  = 'Tìm kiếm';
+const String SEARCH_2  = 'Tìm kiếm thụ hưởng';
 const String EMAIL  = 'Email';
 const String EXIT  = 'Thoát';
+const String RECENTLY  = 'Gần đây';
+const String CONTACT  = 'Danh bạ';
+const String SAVED_TEMPLATES  = 'Mẫu đã lưu';
 const String PERSONAL  = 'Cá nhân';
 const String CHANGE_AVATAR  = 'Đổi ảnh đại diện';
 const String CHANGE_BG  = 'Đổi ảnh nền';

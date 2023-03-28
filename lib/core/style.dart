@@ -11,6 +11,7 @@ const Color clr_black12 = Color(0x1F000000);
 const Color clr_black26 = Color(0x42000000);
 const Color clr_black38 = Color(0x61000000);
 const Color clr_black54 = Color(0x8A000000);
+const Color clr_black87 = Color(0xDD000000);
 const Color clr_black = Color(0xFF000000);
 const Color clr_white54 = Color(0x8AFFFFFF);
 const Color clr_white60 = Color(0x99FFFFFF);
@@ -30,6 +31,7 @@ const Color clr_e1e9ef = Color(0xffe1e9ef);
 const Color clr_66cacef = Color(0xff66cace);
 const Color clr_f5f5f5 = Color(0xfff5f5f5);
 const Color clr_a6a8a9 = Color(0xffa6a8a9);
+const Color clr_f6f5f7 = Color(0xfff6f5f7);
 
 const Color clr_gradient_1 = Color(0xff0e51a2);
 const Color clr_gradient_2 = Color(0xff2869b3);

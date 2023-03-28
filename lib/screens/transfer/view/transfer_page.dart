@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
 import 'package:smart_banking/screens/transfer/view/tabs/first_tab.dart';
 import 'package:smart_banking/screens/transfer/view/tabs/seconds_tab.dart';
 import 'package:smart_banking/screens/transfer/view/tabs/last_tab.dart';
