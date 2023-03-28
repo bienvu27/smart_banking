@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smart_banking/screens/components/dialog/custom_dialog.dart';
-
+import 'package:get/get.dart';
+import '../../../core/resources/strings.dart';
 import '../../../core/style.dart';
-import '../../../res/my_color .dart';
 import 'grid_menu_component.dart';
 
 class GridMenu extends StatelessWidget {
@@ -26,28 +26,29 @@ class GridMenu extends StatelessWidget {
                   padding: EdgeInsets.only(left: 10.w, right: 5.w),
                   child: GridMenuComponent(
                     callback: () {
-                      showDialog(
-                          barrierDismissible: false,
-                          context: context,
-                          builder: (BuildContext context) => CustomDialog(
-                                title:
-                                    'Quý khách cần kích hoạt ứng dụng trước để sử dụng chức năng này.',
-                                cancel: 'Huỷ bỏ',
-                                submit: 'Đăng nhập',
-                                clickCallback: () {},
-                              ));
+                      // showDialog(
+                      //     barrierDismissible: false,
+                      //     context: context,
+                      //     builder: (BuildContext context) => CustomDialog(
+                      //           title:
+                      //           TITLE_31,
+                      //           cancel: CANCEL2,
+                      //           submit: LOGIN,
+                      //           clickCallback: () {},
+                      //         ));
+                      Get.toNamed("/transfer", arguments: '');
                     },
-                    title: 'Chuyển tiền',
+                    title: TRANSFER,
                     icon: Icons.compare_arrows_outlined,
                     topLeft: 15,
                     topRight: 15,
                     bottomLeft: 15,
                     bottomRight: 0,
-                    color: MyColor.PRIMARY_COLOR_RED,
-                    color1: Color(0xff0e51a2),
-                    color2: Color(0xff2869b3),
-                    color3: Color(0xff2d69b0),
-                    color4: Color(0xff4a81c1),
+                    color: PRIMARY_COLOR_RED,
+                    color1: clr_gradient_1,
+                    color2: clr_gradient_2,
+                    color3: clr_gradient_3,
+                    color4: clr_gradient_4,
                   ),
                 ),
               ),
@@ -62,23 +63,23 @@ class GridMenu extends StatelessWidget {
                           context: context,
                           builder: (BuildContext context) => CustomDialog(
                                 title:
-                                    'Quý khách cần kích hoạt ứng dụng trước để sử dụng chức năng này.',
-                                cancel: 'Huỷ bỏ',
-                                submit: 'Đăng nhập',
+                                TITLE_31,
+                                cancel: CANCEL2,
+                                submit: LOGIN,
                                 clickCallback: () {},
                               ));
                     },
-                    title: 'Dịch vụ thẻ',
+                    title: SERVICE_CARD,
                     icon: Icons.wallet,
                     topLeft: 15,
                     topRight: 15,
                     bottomLeft: 0,
                     bottomRight: 15,
-                    color: MyColor.PRIMARY_COLOR_RED,
-                    color1: Color(0xff4a81c1),
-                    color2: Color(0xff2d69b0),
-                    color3: Color(0xff2869b3),
-                    color4: Color(0xff0e51a2),
+                    color: PRIMARY_COLOR_RED,
+                    color1: clr_gradient_4,
+                    color2: clr_gradient_3,
+                    color3: clr_gradient_2,
+                    color4: clr_gradient_1,
                   ),
                 ),
               ),
@@ -100,23 +101,23 @@ class GridMenu extends StatelessWidget {
                           context: context,
                           builder: (BuildContext context) => CustomDialog(
                                 title:
-                                    'Quý khách cần kích hoạt ứng dụng trước để sử dụng chức năng này.',
-                                cancel: 'Huỷ bỏ',
-                                submit: 'Đăng nhập',
+                                TITLE_31,
+                                cancel: CANCEL2,
+                                submit: LOGIN,
                                 clickCallback: () {},
                               ));
                     },
-                    title: 'Tiết kiệm',
+                    title: SAVE,
                     icon: Icons.account_balance_wallet,
                     topLeft: 15,
                     topRight: 0,
                     bottomLeft: 15,
                     bottomRight: 15,
-                    color: MyColor.PRIMARY_COLOR_BLUE,
-                    color1: Color(0xff009691),
-                    color2: Color(0xff00918c),
-                    color3: Color(0xff02a099),
-                    color4: Color(0xff02b3ad),
+                    color: PRIMARY_COLOR_RED,
+                    color1: clr_gradient_1_1,
+                    color2: clr_gradient_2_2,
+                    color3: clr_gradient_3_3,
+                    color4: clr_gradient_4_4,
                   ),
                 ),
               ),
@@ -131,23 +132,23 @@ class GridMenu extends StatelessWidget {
                           context: context,
                           builder: (BuildContext context) => CustomDialog(
                                 title:
-                                    'Quý khách cần kích hoạt ứng dụng trước để sử dụng chức năng này.',
-                                cancel: 'Huỷ bỏ',
-                                submit: 'Đăng nhập',
+                                TITLE_31,
+                                cancel: CANCEL2,
+                                submit: LOGIN,
                                 clickCallback: () {},
                               ));
                     },
-                    title: 'Mua sắm',
+                    title: SHOPPING,
                     icon: Icons.shopping_cart_outlined,
                     topLeft: 0,
                     topRight: 15,
                     bottomLeft: 15,
                     bottomRight: 15,
-                    color: MyColor.PRIMARY_COLOR_BLUE,
-                    color1: Color(0xff02b3ad),
-                    color2: Color(0xff02a099),
-                    color3: Color(0xff00918c),
-                    color4: Color(0xff009691),
+                    color: PRIMARY_COLOR,
+                    color1: clr_gradient_4_4,
+                    color2: clr_gradient_3_3,
+                    color3: clr_gradient_2_2,
+                    color4: clr_gradient_1_1,
                   ),
                 ),
               ),

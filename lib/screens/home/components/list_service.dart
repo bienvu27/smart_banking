@@ -4,7 +4,6 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import '../../../core/resources/strings.dart';
 import '../../../core/style.dart';
-import '../../../res/my_color .dart';
 import '../model/list_service_model.dart';
 
 class ListService extends StatelessWidget {
@@ -52,7 +51,7 @@ class ListService extends StatelessWidget {
                             e.title ?? '',
                             style: TextStyle(
                                 fontSize: 15.sp,
-                                color: MyColor.PRIMARY_COLOR_BLUE,
+                                color: PRIMARY_COLOR,
                                 fontWeight: FontWeight.w700),
                           ),
                           SizedBox(

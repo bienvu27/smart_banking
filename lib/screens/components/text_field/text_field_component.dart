@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../res/my_color .dart';
+import '../../../core/style.dart';
+
 
 class TextFieldComponent extends StatelessWidget {
   const TextFieldComponent({
@@ -25,8 +26,8 @@ class TextFieldComponent extends StatelessWidget {
         disabledBorder: const UnderlineInputBorder(
           borderSide: BorderSide(color: Colors.black),
         ),
-        focusedBorder: UnderlineInputBorder(
-          borderSide: BorderSide(color: MyColor.PRIMARY_COLOR_BLUE),
+        focusedBorder: const UnderlineInputBorder(
+          borderSide: BorderSide(color: PRIMARY_COLOR),
         ),
       ),
     );

@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 import '../../../core/style.dart';
-import '../../../res/my_color .dart';
 
 class ButtonComponent extends StatelessWidget {
   const ButtonComponent({
@@ -26,13 +25,13 @@ class ButtonComponent extends StatelessWidget {
             alignment: Alignment.center,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10.r),
-                gradient: LinearGradient(
+                gradient: const LinearGradient(
                     colors: [
-                     Color(0xff01bbae),
-                     Color(0xff00a2ae),
-                     Color(0xff00a2ae),
-                     Color(0xff0181ad),
-                     Color(0xff026c90),
+                      clr_button_1,
+                      clr_button_2,
+                      clr_button_3,
+                      clr_button_4,
+                      clr_button_5,
                     ])
             ),
             child: Text(

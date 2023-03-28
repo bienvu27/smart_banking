@@ -7,6 +7,8 @@ import '../screens/dashboard/binding/dashboard_binding.dart';
 import '../screens/dashboard/view/dashboard_page.dart';
 import '../screens/home/binding/home_binding.dart';
 import '../screens/service_manager/view/service_manager_binding.dart';
+import '../screens/transfer/binding/transfer_binding.dart';
+import '../screens/transfer/view/transfer_page.dart';
 import 'app_routers.dart';
 
 class AppPages {
@@ -30,5 +32,10 @@ class AppPages {
         name: AppRouters.HOME,
         page: () => const HomePage(),
         binding: HomedBinding()),
+
+    GetPage(
+        name: AppRouters.TRANSFER,
+        page: () => const TransferPage(),
+        binding: TransferBinding()),
   ];
 }

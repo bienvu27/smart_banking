@@ -15,6 +15,7 @@ const Color clr_black = Color(0xFF000000);
 const Color clr_white54 = Color(0x8AFFFFFF);
 const Color clr_white60 = Color(0x99FFFFFF);
 const Color clr_white = Color(0xFFFFFFFF);
+const Color clr_grey = Color(0xFFFFFFFF);
 const Color clr_yellow = Color(0xFFC9FF34);
 const Color clr_yellow100 = Color(0xFFFFF9C4);
 const Color clr_blue = Color(0xFF1565C0);
@@ -22,7 +23,29 @@ const Color clr_bg_text = Color(0xfff8f8f8);
 const Color clr_blue_customization_1 = Color(0xffc4e3fa);
 const Color clr_active_button = Color(0xff69dad0);
 const Color clr_unactive_button = Color(0xffd7d7d7);
-const Color clr_flower_1 = Color(0xff530303);
+const Color clr_flower_1 = Color(0xffba9bac);
+const Color clr_flower_2 = Color(0xffa5c9e0);
+const Color clr_flower_3 = Color(0xffd5d0be);
+const Color clr_e1e9ef = Color(0xffe1e9ef);
+const Color clr_66cacef = Color(0xff66cace);
+const Color clr_f5f5f5 = Color(0xfff5f5f5);
+const Color clr_a6a8a9 = Color(0xffa6a8a9);
+
+const Color clr_gradient_1 = Color(0xff0e51a2);
+const Color clr_gradient_2 = Color(0xff2869b3);
+const Color clr_gradient_3 = Color(0xff2d69b0);
+const Color clr_gradient_4 = Color(0xff4a81c1);
+
+const Color clr_gradient_1_1 = Color(0xff009691);
+const Color clr_gradient_2_2 = Color(0xff00918c);
+const Color clr_gradient_3_3 = Color(0xff02a099);
+const Color clr_gradient_4_4 = Color(0xff02b3ad);
+
+const Color clr_button_1 = Color(0xff01bbae);
+const Color clr_button_2 = Color(0xff00a2ae);
+const Color clr_button_3 = Color(0xff00a2ae);
+const Color clr_button_4 = Color(0xff0181ad);
+const Color clr_button_5 = Color(0xff026c90);
 
 
 const Color button_color_home =  Color(0xFFeaf7ff);

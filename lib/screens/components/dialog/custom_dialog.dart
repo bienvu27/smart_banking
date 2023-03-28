@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../core/style.dart';
-import '../../../res/my_color .dart';
+
 
 class CustomDialog extends StatelessWidget {
   const CustomDialog(

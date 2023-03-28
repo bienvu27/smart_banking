@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 
 import '../../../../core/resources/strings.dart';
 import '../../../../core/style.dart';
-import '../../../../res/my_color .dart';
 import '../../../components/app_bar/app_bar_component.dart';
 import '../../../components/button/button_component.dart';
 import '../components/radio_button.dart';

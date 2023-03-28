@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../core/style.dart';
-import '../../../res/my_color .dart';
-
-
 class AppBarComponent extends StatelessWidget with PreferredSizeWidget {
   const AppBarComponent({
     super.key, required this.title, required this.callback, required this.bgColor, required this.colorTitle, required this.colorIcon,

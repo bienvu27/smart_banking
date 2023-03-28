@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 import '../../../core/style.dart';
-import '../../../res/my_color .dart';
+
 import '../../components/dialog/custom_dialog.dart';
 import '../../home/view/home_page.dart';
 import '../../notification/notifications_page.dart';

@@ -4,7 +4,6 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import '../../../core/resources/strings.dart';
 import '../../../core/style.dart';
-import '../../../res/my_color .dart';
 import '../model/promotion_model.dart';
 
 class ListPromotion extends StatelessWidget {
@@ -138,7 +137,7 @@ class ListPromotion extends StatelessWidget {
                                         fontSize: 15.sp,
                                         fontWeight: FontWeight.w600,
                                         color:
-                                        MyColor.PRIMARY_COLOR_BLUE),
+                                        PRIMARY_COLOR),
                                   ),
                                   Text(
                                     'B-Point',
@@ -146,7 +145,7 @@ class ListPromotion extends StatelessWidget {
                                         fontSize: 15.sp,
                                         fontWeight: FontWeight.w400,
                                         color:
-                                        MyColor.PRIMARY_COLOR_BLUE),
+                                        PRIMARY_COLOR),
                                   ),
                                 ],
                               ),
