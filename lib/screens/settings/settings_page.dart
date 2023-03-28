@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../core/resources/strings.dart';
+import '../../core/style.dart';
 import 'components/settings_component.dart';
 
 class SettingsPage extends StatelessWidget {
@@ -28,28 +30,28 @@ class SettingsPage extends StatelessWidget {
                         width: 60.w,
                         height: 60.h,
                         decoration: const BoxDecoration(
-                          color: Colors.black12,
+                          color: clr_black12,
                           shape: BoxShape.circle,
                         ),
                         child: Icon(
                           Icons.person,
                           size: 35.spMin,
-                          color: Colors.white,
+                          color: clr_white,
                         ),
                       ),
                       Text(
-                        'Chào buổi sáng!',
+                        GOOD_MORNING,
                         style: TextStyle(
                             fontSize: 15.sp,
                             fontWeight: FontWeight.w500,
-                            color: Colors.black54),
+                            color: clr_white54),
                       ),
                       Text(
                         'Vu Xuan Bien',
                         style: TextStyle(
                             fontSize: 25.sp,
                             fontWeight: FontWeight.w500,
-                            color: Colors.black),
+                            color: clr_black),
                       ),
                     ],
                   ),
@@ -61,20 +63,20 @@ class SettingsPage extends StatelessWidget {
                       width: 80.w,
                       height: 25.h,
                       decoration: BoxDecoration(
-                          color: Colors.yellow[100],
+                          color: clr_yellow100,
                           borderRadius: BorderRadius.circular(20.r)),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          Text('Thoát',
+                          Text(EXIT,
                               style: TextStyle(
                                   fontSize: 15.sp,
-                                  color: Colors.red,
+                                  color: PRIMARY_COLOR_RED,
                                   fontWeight: FontWeight.w500)),
                           Icon(
                             Icons.arrow_forward_ios,
                             size: 15.spMin,
-                            color: Colors.red,
+                            color: PRIMARY_COLOR_RED,
                           )
                         ],
                       ),
@@ -83,22 +85,31 @@ class SettingsPage extends StatelessWidget {
             ),
             Container(
               padding: EdgeInsets.only(left: 10.w, right: 10.w, top: 20.h),
-              color: Colors.white,
+              color: clr_white,
               width: MediaQuery.of(context).size.width,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Cá nhân',
+                    PERSONAL,
                     style: TextStyle(
-                        fontSize: 25.sp,
+                        fontSize: 20.sp,
                         fontWeight: FontWeight.w500,
-                        color: Colors.black),
+                        color: clr_black),
                   ),
-                  SizedBox(height: 20.h,),
-                  SettingComponent(title: 'Đổi ảnh đại diện', icon: Icons.account_circle, callback: () {},),
-                  SettingComponent(title: 'Đổi ảnh nền', icon: Icons.broken_image_outlined, callback: () {},),
-
+                  SizedBox(
+                    height: 20.h,
+                  ),
+                  SettingComponent(
+                    title: CHANGE_AVATAR,
+                    icon: Icons.account_circle_outlined,
+                    callback: () {},
+                  ),
+                  SettingComponent(
+                    title: CHANGE_BG,
+                    icon: Icons.broken_image_outlined,
+                    callback: () {},
+                  ),
                 ],
               ),
             ),
@@ -111,27 +122,46 @@ class SettingsPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Cài đặt nâng cao',
+                    ADVANCED_SETTINGS,
                     style: TextStyle(
-                        fontSize: 25.sp,
+                        fontSize: 20.sp,
                         fontWeight: FontWeight.w500,
-                        color: Colors.black),
+                        color: clr_black),
                   ),
-                  SizedBox(height: 20.h,),
-                  SettingComponent(title: 'Danh bạ chuyển tiền', icon: Icons.phone_iphone, callback: () {},),
-                  SettingComponent(title: 'Mẫu thanh toán', icon: Icons.sd_card, callback: () {},),
-                  SettingComponent(title: 'Đổi lại mật khẩu', icon: Icons.lock, callback: () {},),
-                  SettingComponent(title: 'Cài đặt đăng nhập', icon: Icons.vpn_lock, callback: () {},),
-                  SettingComponent(title: 'Cài đặt khác', icon: Icons.fingerprint, callback: () {},),
+                  SizedBox(
+                    height: 20.h,
+                  ),
+                  SettingComponent(
+                    title: TRANSFER_CONTACTS,
+                    icon: Icons.phone_iphone,
+                    callback: () {},
+                  ),
+                  SettingComponent(
+                    title: PAYMENT_FORM,
+                    icon: Icons.sd_card,
+                    callback: () {},
+                  ),
+                  SettingComponent(
+                    title: CHANGE_PASSWORD,
+                    icon: Icons.lock,
+                    callback: () {},
+                  ),
+                  SettingComponent(
+                    title: LOGIN_SETTING,
+                    icon: Icons.vpn_lock,
+                    callback: () {},
+                  ),
+                  SettingComponent(
+                    title: OTHER_SETTINGS,
+                    icon: Icons.fingerprint,
+                    callback: () {},
+                  ),
                 ],
               ),
             ),
-
           ],
         ),
       ),
     );
   }
 }
-
-

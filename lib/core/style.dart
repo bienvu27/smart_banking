@@ -16,6 +16,7 @@ const Color clr_white54 = Color(0x8AFFFFFF);
 const Color clr_white60 = Color(0x99FFFFFF);
 const Color clr_white = Color(0xFFFFFFFF);
 const Color clr_yellow = Color(0xFFC9FF34);
+const Color clr_yellow100 = Color(0xFFFFF9C4);
 const Color clr_blue = Color(0xFF1565C0);
 const Color clr_bg_text = Color(0xfff8f8f8);
 const Color clr_blue_customization_1 = Color(0xffc4e3fa);

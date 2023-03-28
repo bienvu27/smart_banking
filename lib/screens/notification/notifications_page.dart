@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smart_banking/screens/notification/model/notification_model.dart';
-import '../../res/my_color .dart';
+import '../../core/resources/strings.dart';
+import '../../core/style.dart';
 import 'components/notification_list.dart';
+import 'model/description_model.dart';
 
 class NotificationPage extends StatelessWidget {
   const NotificationPage({Key? key}) : super(key: key);
@@ -10,12 +12,63 @@ class NotificationPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final list = [
-      NotificationModel(date: '22/03/2023', time: '14:55', image: 'https://cdn.vietnambiz.vn/1881912202208555/images/2023/02/21/ngan-hang-viet-nga-20230221171222723.jpeg?width=700', description: ''),
-      NotificationModel(date: '22/03/2023', time: '14:55', image: 'https://vrbank.com.vn/Uploads/%E1%BA%A2nh%20b%C3%A0i%20vi%E1%BA%BFt/Poster%20Mobile%20app_A4-02%20(2).jpg', description: ''),
-      NotificationModel(date: '22/03/2023', time: '14:55', image: 'https://haymora.com/upload/images/tai_chinh_ngan_hang/ngan_hang_lien_doanh_viet_-_nga_-_vrb/vrb-doi-ngu-nhan-su-source-dantri.jpg', description: ''),
-      NotificationModel(date: '22/03/2023', time: '14:55', image: 'https://cdn.vietnambiz.vn/1881912202208555/images/2023/02/21/ngan-hang-viet-nga-20230221171222723.jpeg?width=700', description: ''),
-      NotificationModel(date: '22/03/2023', time: '14:55', image: 'https://vrbank.com.vn/Uploads/%E1%BA%A2nh%20b%C3%A0i%20vi%E1%BA%BFt/Poster%20Mobile%20app_A4-02%20(2).jpg', description: ''),
-      NotificationModel(date: '22/03/2023', time: '14:55', image: 'https://haymora.com/upload/images/tai_chinh_ngan_hang/ngan_hang_lien_doanh_viet_-_nga_-_vrb/vrb-doi-ngu-nhan-su-source-dantri.jpg', description: ''),
+      NotificationModel(date: '22/03/2023', time: '14:55', image: 'https://cdn.vietnambiz.vn/1881912202208555/images/2023/02/21/ngan-hang-viet-nga-20230221171222723.jpeg?width=700', description: [
+        DescriptionModel(image: 'https://cdn-icons-png.flaticon.com/512/1933/1933691.png', description: 'Đổi quà miễn phí - Đừng bỏ phí! Đổi quà miễn phí'),
+        DescriptionModel(image: 'https://cdn-icons-png.flaticon.com/512/2584/2584606.png', description: 'VRB Membership Reward tặng bạn: '),
+        DescriptionModel(image: 'https://cdn-icons-png.flaticon.com/512/4160/4160724.png', description: 'Danh mục giao dịch được tích điểm được mở rộng với chuyển tiền quốc tế, đăng ký BRV Smart Kids,...'),
+        DescriptionModel(image: 'https://cdn-icons-png.flaticon.com/512/4160/4160724.png', description: 'Tích điểm bao la khi mở tài khoản chọn tên, chi tiêu thẻ, Thanh toán Online, Tiết kiệm,...'),
+        DescriptionModel(image: 'https://www.emojimeaning.com/img/img-messenger-64/1f449.png', description: 'Giao dịch ngay hôm nay để tích điểm B-Point và tận hưởng miễn phí kho ưu đã bất ngờ từ Member Rewards bạn nhé!'),
+        DescriptionModel(image: 'https://www.emojimeaning.com/img/img-messenger-64/1f449.png', description: 'Chi tiết thể lệ (Cập nhật ngày 15/03/2023).'),
+        DescriptionModel(image: 'https://www.emojimeaning.com/img/img-messenger-64/1f449.png', description: 'Miễn phí thường niên thẻ thẻ Platinum khi phát sinh tổng doanh số giao dịch từ 2 triệu đồng trong vòng 30 ngày kể từ ngày phát hành thẻ.'),
+        DescriptionModel(image: 'https://www.emojimeaning.com/img/img-messenger-64/1f449.png', description: 'Miễn phí thường niên thẻ Classic/Gold khi phát sinh tổng doanh số giao dịch từ 1 triệu đồng trong vòng 30 ngày kể từ ngày phát hành thẻ.'),
+
+      ]),
+      NotificationModel(date: '22/03/2023', time: '14:55', image: 'https://vrbank.com.vn/Uploads/%E1%BA%A2nh%20b%C3%A0i%20vi%E1%BA%BFt/Poster%20Mobile%20app_A4-02%20(2).jpg', description: [
+        DescriptionModel(image: 'https://cdn-icons-png.flaticon.com/512/1933/1933691.png', description: 'Đổi quà miễn phí - Đừng bỏ phí! Đổi quà miễn phí'),
+        DescriptionModel(image: 'https://cdn-icons-png.flaticon.com/512/2584/2584606.png', description: 'VRB Membership Reward tặng bạn: '),
+        DescriptionModel(image: 'https://cdn-icons-png.flaticon.com/512/4160/4160724.png', description: 'Danh mục giao dịch được tích điểm được mở rộng với chuyển tiền quốc tế, đăng ký BRV Smart Kids,...'),
+        DescriptionModel(image: 'https://cdn-icons-png.flaticon.com/512/4160/4160724.png', description: 'Tích điểm bao la khi mở tài khoản chọn tên, chi tiêu thẻ, Thanh toán Online, Tiết kiệm,...'),
+        DescriptionModel(image: 'https://www.emojimeaning.com/img/img-messenger-64/1f449.png', description: 'Giao dịch ngay hôm nay để tích điểm B-Point và tận hưởng miễn phí kho ưu đã bất ngờ từ Member Rewards bạn nhé!'),
+        DescriptionModel(image: 'https://www.emojimeaning.com/img/img-messenger-64/1f449.png', description: 'Chi tiết thể lệ (Cập nhật ngày 15/03/2023).'),
+        DescriptionModel(image: 'https://www.emojimeaning.com/img/img-messenger-64/1f449.png', description: 'Miễn phí thường niên thẻ thẻ Platinum khi phát sinh tổng doanh số giao dịch từ 2 triệu đồng trong vòng 30 ngày kể từ ngày phát hành thẻ.'),
+        DescriptionModel(image: 'https://www.emojimeaning.com/img/img-messenger-64/1f449.png', description: 'Miễn phí thường niên thẻ Classic/Gold khi phát sinh tổng doanh số giao dịch từ 1 triệu đồng trong vòng 30 ngày kể từ ngày phát hành thẻ.'),]),
+      NotificationModel(date: '22/03/2023', time: '14:55', image: 'https://haymora.com/upload/images/tai_chinh_ngan_hang/ngan_hang_lien_doanh_viet_-_nga_-_vrb/vrb-doi-ngu-nhan-su-source-dantri.jpg', description: [
+        DescriptionModel(image: 'https://cdn-icons-png.flaticon.com/512/1933/1933691.png', description: 'Đổi quà miễn phí - Đừng bỏ phí! Đổi quà miễn phí'),
+        DescriptionModel(image: 'https://cdn-icons-png.flaticon.com/512/2584/2584606.png', description: 'VRB Membership Reward tặng bạn: '),
+        DescriptionModel(image: 'https://cdn-icons-png.flaticon.com/512/4160/4160724.png', description: 'Danh mục giao dịch được tích điểm được mở rộng với chuyển tiền quốc tế, đăng ký BRV Smart Kids,...'),
+        DescriptionModel(image: 'https://cdn-icons-png.flaticon.com/512/4160/4160724.png', description: 'Tích điểm bao la khi mở tài khoản chọn tên, chi tiêu thẻ, Thanh toán Online, Tiết kiệm,...'),
+        DescriptionModel(image: 'https://www.emojimeaning.com/img/img-messenger-64/1f449.png', description: 'Giao dịch ngay hôm nay để tích điểm B-Point và tận hưởng miễn phí kho ưu đã bất ngờ từ Member Rewards bạn nhé!'),
+        DescriptionModel(image: 'https://www.emojimeaning.com/img/img-messenger-64/1f449.png', description: 'Chi tiết thể lệ (Cập nhật ngày 15/03/2023).'),
+        DescriptionModel(image: 'https://www.emojimeaning.com/img/img-messenger-64/1f449.png', description: 'Miễn phí thường niên thẻ thẻ Platinum khi phát sinh tổng doanh số giao dịch từ 2 triệu đồng trong vòng 30 ngày kể từ ngày phát hành thẻ.'),
+        DescriptionModel(image: 'https://www.emojimeaning.com/img/img-messenger-64/1f449.png', description: 'Miễn phí thường niên thẻ Classic/Gold khi phát sinh tổng doanh số giao dịch từ 1 triệu đồng trong vòng 30 ngày kể từ ngày phát hành thẻ.'),
+      ]),
+      NotificationModel(date: '22/03/2023', time: '14:55', image: 'https://cdn.vietnambiz.vn/1881912202208555/images/2023/02/21/ngan-hang-viet-nga-20230221171222723.jpeg?width=700', description: [
+        DescriptionModel(image: 'https://cdn-icons-png.flaticon.com/512/1933/1933691.png', description: 'Đổi quà miễn phí - Đừng bỏ phí! Đổi quà miễn phí'),
+        DescriptionModel(image: 'https://cdn-icons-png.flaticon.com/512/2584/2584606.png', description: 'VRB Membership Reward tặng bạn: '),
+        DescriptionModel(image: 'https://cdn-icons-png.flaticon.com/512/4160/4160724.png', description: 'Danh mục giao dịch được tích điểm được mở rộng với chuyển tiền quốc tế, đăng ký BRV Smart Kids,...'),
+        DescriptionModel(image: 'https://cdn-icons-png.flaticon.com/512/4160/4160724.png', description: 'Tích điểm bao la khi mở tài khoản chọn tên, chi tiêu thẻ, Thanh toán Online, Tiết kiệm,...'),
+        DescriptionModel(image: 'https://www.emojimeaning.com/img/img-messenger-64/1f449.png', description: 'Giao dịch ngay hôm nay để tích điểm B-Point và tận hưởng miễn phí kho ưu đã bất ngờ từ Member Rewards bạn nhé!'),
+        DescriptionModel(image: 'https://www.emojimeaning.com/img/img-messenger-64/1f449.png', description: 'Chi tiết thể lệ (Cập nhật ngày 15/03/2023).'),
+        DescriptionModel(image: 'https://www.emojimeaning.com/img/img-messenger-64/1f449.png', description: 'Miễn phí thường niên thẻ thẻ Platinum khi phát sinh tổng doanh số giao dịch từ 2 triệu đồng trong vòng 30 ngày kể từ ngày phát hành thẻ.'),
+        DescriptionModel(image: 'https://www.emojimeaning.com/img/img-messenger-64/1f449.png', description: 'Miễn phí thường niên thẻ Classic/Gold khi phát sinh tổng doanh số giao dịch từ 1 triệu đồng trong vòng 30 ngày kể từ ngày phát hành thẻ.'),      ]),
+      NotificationModel(date: '22/03/2023', time: '14:55', image: 'https://vrbank.com.vn/Uploads/%E1%BA%A2nh%20b%C3%A0i%20vi%E1%BA%BFt/Poster%20Mobile%20app_A4-02%20(2).jpg',  description: [
+        DescriptionModel(image: 'https://cdn-icons-png.flaticon.com/512/1933/1933691.png', description: 'Đổi quà miễn phí - Đừng bỏ phí! Đổi quà miễn phí'),
+        DescriptionModel(image: 'https://cdn-icons-png.flaticon.com/512/2584/2584606.png', description: 'VRB Membership Reward tặng bạn: '),
+        DescriptionModel(image: 'https://cdn-icons-png.flaticon.com/512/4160/4160724.png', description: 'Danh mục giao dịch được tích điểm được mở rộng với chuyển tiền quốc tế, đăng ký BRV Smart Kids,...'),
+        DescriptionModel(image: 'https://cdn-icons-png.flaticon.com/512/4160/4160724.png', description: 'Tích điểm bao la khi mở tài khoản chọn tên, chi tiêu thẻ, Thanh toán Online, Tiết kiệm,...'),
+        DescriptionModel(image: 'https://www.emojimeaning.com/img/img-messenger-64/1f449.png', description: 'Giao dịch ngay hôm nay để tích điểm B-Point và tận hưởng miễn phí kho ưu đã bất ngờ từ Member Rewards bạn nhé!'),
+        DescriptionModel(image: 'https://www.emojimeaning.com/img/img-messenger-64/1f449.png', description: 'Chi tiết thể lệ (Cập nhật ngày 15/03/2023).'),
+        DescriptionModel(image: 'https://www.emojimeaning.com/img/img-messenger-64/1f449.png', description: 'Miễn phí thường niên thẻ thẻ Platinum khi phát sinh tổng doanh số giao dịch từ 2 triệu đồng trong vòng 30 ngày kể từ ngày phát hành thẻ.'),
+        DescriptionModel(image: 'https://www.emojimeaning.com/img/img-messenger-64/1f449.png', description: 'Miễn phí thường niên thẻ Classic/Gold khi phát sinh tổng doanh số giao dịch từ 1 triệu đồng trong vòng 30 ngày kể từ ngày phát hành thẻ.'),      ]),
+      NotificationModel(date: '22/03/2023', time: '14:55', image: 'https://haymora.com/upload/images/tai_chinh_ngan_hang/ngan_hang_lien_doanh_viet_-_nga_-_vrb/vrb-doi-ngu-nhan-su-source-dantri.jpg', description: [
+        DescriptionModel(image: 'https://cdn-icons-png.flaticon.com/512/1933/1933691.png', description: 'Đổi quà miễn phí - Đừng bỏ phí! Đổi quà miễn phí'),
+        DescriptionModel(image: 'https://cdn-icons-png.flaticon.com/512/2584/2584606.png', description: 'VRB Membership Reward tặng bạn: '),
+        DescriptionModel(image: 'https://cdn-icons-png.flaticon.com/512/4160/4160724.png', description: 'Danh mục giao dịch được tích điểm được mở rộng với chuyển tiền quốc tế, đăng ký BRV Smart Kids,...'),
+        DescriptionModel(image: 'https://cdn-icons-png.flaticon.com/512/4160/4160724.png', description: 'Tích điểm bao la khi mở tài khoản chọn tên, chi tiêu thẻ, Thanh toán Online, Tiết kiệm,...'),
+        DescriptionModel(image: 'https://www.emojimeaning.com/img/img-messenger-64/1f449.png', description: 'Giao dịch ngay hôm nay để tích điểm B-Point và tận hưởng miễn phí kho ưu đã bất ngờ từ Member Rewards bạn nhé!'),
+        DescriptionModel(image: 'https://www.emojimeaning.com/img/img-messenger-64/1f449.png', description: 'Chi tiết thể lệ (Cập nhật ngày 15/03/2023).'),
+        DescriptionModel(image: 'https://www.emojimeaning.com/img/img-messenger-64/1f449.png', description: 'Miễn phí thường niên thẻ thẻ Platinum khi phát sinh tổng doanh số giao dịch từ 2 triệu đồng trong vòng 30 ngày kể từ ngày phát hành thẻ.'),
+        DescriptionModel(image: 'https://www.emojimeaning.com/img/img-messenger-64/1f449.png', description: 'Miễn phí thường niên thẻ Classic/Gold khi phát sinh tổng doanh số giao dịch từ 1 triệu đồng trong vòng 30 ngày kể từ ngày phát hành thẻ.'),      ]),
     ];
 
     return DefaultTabController(
@@ -25,9 +78,9 @@ class NotificationPage extends StatelessWidget {
               elevation: 0,
               centerTitle: true,
               title: Text(
-                'Thông báo',
+                  NOTIFICATION,
                 style: TextStyle(
-                    color: Colors.black,
+                    color: clr_black,
                     fontSize: 18.sp,
                     fontWeight: FontWeight.w600),
               ),
@@ -39,7 +92,7 @@ class NotificationPage extends StatelessWidget {
                       onTap: () {},
                       child: const Icon(
                         Icons.settings,
-                        color: Colors.black,
+                        color: clr_black,
                       )),
                 )
               ],
@@ -63,28 +116,28 @@ class NotificationPage extends StatelessWidget {
                           borderRadius: BorderRadius.circular(
                             25.r,
                           ),
-                          color: Colors.white,
+                          color: clr_white,
                         ),
-                        labelColor: MyColor.PRIMARY_COLOR_BLUE,
-                        unselectedLabelColor: Colors.black,
+                        labelColor: PRIMARY_COLOR,
+                        unselectedLabelColor: clr_black,
                         tabs: [
                           Tab(
                             child: Text(
-                              'Khuyến mãi',
+                              PROMOTIN_1,
                               style: TextStyle(
                                   fontSize: 13.sp, fontWeight: FontWeight.w500),
                             ),
                           ),
                           Tab(
                             child: Text(
-                              'Biến động',
+                              VOLATILITY,
                               style: TextStyle(
                                   fontSize: 13.sp, fontWeight: FontWeight.w500),
                             ),
                           ),
                           Tab(
                             child: Text(
-                              'Tin khác',
+                              NOTIFI,
                               style: TextStyle(
                                   fontSize: 13.sp, fontWeight: FontWeight.w500),
                             ),
@@ -103,7 +156,7 @@ class NotificationPage extends StatelessWidget {
                       child: Container(
                         decoration: BoxDecoration(
                           boxShadow: [
-                            BoxShadow(blurRadius: 2.r, color: Colors.black12),
+                            BoxShadow(blurRadius: 2.r, color: clr_black12),
                           ],
                           borderRadius: BorderRadius.circular(25.r),
                         ),
@@ -115,16 +168,16 @@ class NotificationPage extends StatelessWidget {
                             filled: true,
                             prefixIcon: Icon(
                               Icons.search,
-                              color: Colors.black54,
+                              color: clr_black54,
                               size: 30.spMin,
                             ),
                             border: OutlineInputBorder(
                                 borderSide: BorderSide.none,
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(25.r))),
-                            fillColor: Colors.white,
+                            fillColor: clr_white,
                             contentPadding: EdgeInsets.zero,
-                            hintText: 'Tìm kiếm',
+                            hintText: SEARCH,
                             hintStyle: TextStyle(fontSize: 15.sp),
                           ),
                         ),
@@ -136,9 +189,9 @@ class NotificationPage extends StatelessWidget {
 
           body: TabBarView(
             children: [
-              NotificationList(list: list, visible: true),
-              NotificationList(list: list, visible: false),
-              NotificationList(list: list, visible: false),
+              NotificationList(list: list, visibleImage: true, visibleIcon: true),
+              NotificationList(list: list, visibleImage: false,  visibleIcon: false),
+              NotificationList(list: list, visibleImage: false,  visibleIcon: false),
             ],
           ),
         ));
