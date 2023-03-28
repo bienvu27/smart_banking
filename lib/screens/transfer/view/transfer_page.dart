@@ -55,12 +55,12 @@ class TransferPage extends StatelessWidget {
                           spreadRadius: 5),
                     ],
                     gradient: const LinearGradient(colors: [
-                      Color(0xff01bbae),
-                      Color(0xff00a2ae),
-                      Color(0xff00a2ae),
-                      Color(0xff00a2ae),
-                      Color(0xff0181ad),
-                      Color(0xff0181ad),
+                      clr_button_1,
+                      clr_button_2,
+                      clr_button_2,
+                      clr_button_2,
+                      clr_button_4,
+                      clr_button_4,
                     ])),
                 child: TabBar(
                   padding: const EdgeInsets.all(5),
