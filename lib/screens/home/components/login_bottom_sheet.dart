@@ -124,7 +124,7 @@ class LoginBottomSheet extends StatelessWidget {
                           style: TextStyle(
                               fontSize: 15.sp,
                               fontWeight: FontWeight.w500,
-                              color: clr_blue_customization),
+                              color: PRIMARY_COLOR),
                         ),
                         SizedBox(
                           height: 20.h,
@@ -134,7 +134,7 @@ class LoginBottomSheet extends StatelessWidget {
                           style: TextStyle(
                               fontSize: 15.sp,
                               fontWeight: FontWeight.w500,
-                              color: clr_blue_customization),
+                              color: PRIMARY_COLOR),
                         ),
                       ],
                     ),

@@ -27,10 +27,10 @@ class TextFieldIconComponent extends StatelessWidget {
             color: clr_black26,
             fontWeight: FontWeight.w500),
         disabledBorder: const UnderlineInputBorder(
-          borderSide: BorderSide(color: clr_blue_customization),
+          borderSide: BorderSide(color: PRIMARY_COLOR),
         ),
         focusedBorder: const UnderlineInputBorder(
-          borderSide: BorderSide(color: clr_blue_customization),
+          borderSide: BorderSide(color: PRIMARY_COLOR),
         ),
       ),
     );

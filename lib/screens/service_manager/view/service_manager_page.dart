@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import '../../../core/resources/strings.dart';
 import '../../../core/style.dart';
-import '../../../res/my_color .dart';
 import '../../components/app_bar/app_bar_component.dart';
 import '../components/services/service_list.dart';
 import '../components/services/service_name.dart';
@@ -34,139 +34,188 @@ class _ServiceManagerState extends State<ServiceManager> {
     final listBank = [
       ServiceFavoriteModel(
           image:
-              'https://e7.pngegg.com/pngimages/15/364/png-clipart-computer-icons-person-user-group-icon-auto-part-rim-thumbnail.png',
-          title: 'Smart Kids'),
-      ServiceFavoriteModel(image: 'https://cdn-icons-png.flaticon.com/512/3702/3702999.png', title: 'Tặng quà'),
+              'assets/svg/money_transfer.svg',
+          title: 'Chuyển tiền'),
       ServiceFavoriteModel(
-          image: 'https://www.iconpacks.net/icons/2/free-store-icon-2017-thumb.png',
-          title: 'Mở tài khoản chọn tên như ý'),
+          image: 'assets/svg/card_payment.svg',
+          title: 'Thanh toán'),
       ServiceFavoriteModel(
-          image: 'https://icons.veryicon.com/png/o/business/a-set-of-commercial-icons/money-transfer.png',
-          title: 'Chuyển tiền ngoài BIDV đến số tài khoản'),
+          image:
+              'assets/svg/bank_cards.svg',
+          title: 'Dịch vụ thẻ'),
       ServiceFavoriteModel(
-          image: 'https://cdn4.iconfinder.com/data/icons/smart-phones-technologies/512/android-phone.png',
+          image:
+          'assets/svg/money_box.svg',
+          title: 'Tiết kiệm Online'),
+      ServiceFavoriteModel(
+          image:
+          'assets/svg/atm.svg',
+          title: 'Rút tiền mặt tại ATM'),
+      ServiceFavoriteModel(
+          image:
+              'assets/svg/cash_in_hand.svg',
+          title: 'Tiền vay'),
+      ServiceFavoriteModel(
+          image:
+          'assets/svg/mobile_package_tracking.svg',
           title: 'Nạp tiền điện thoại'),
       ServiceFavoriteModel(
-          image: 'https://icon-library.com/images/save-money-icon-png/save-money-icon-png-9.jpg',
-          title: 'Gửi tiết kiệm Online'),
+          image:
+          'assets/svg/invoice.svg',
+          title: 'Bán ngoại tệ'),
       ServiceFavoriteModel(
-          image: 'https://www.iconpacks.net/icons/2/free-store-icon-2017-thumb.png',
-          title: 'Mở tài khoản chọn tên như ý'),
+          image:
+          'assets/svg/gift.svg',
+          title: 'Tặng quà'),
       ServiceFavoriteModel(
-          image: 'https://icons.veryicon.com/png/o/business/a-set-of-commercial-icons/money-transfer.png',
-          title: 'Chuyển tiền ngoài BIDV đến số tài khoản'),
+          image:
+          'assets/svg/smartphone_approve.svg',
+          title: 'Smart OTP'),
       ServiceFavoriteModel(
-          image: 'https://cdn4.iconfinder.com/data/icons/smart-phones-technologies/512/android-phone.png',
-          title: 'Nạp tiền điện thoại'),
-      ServiceFavoriteModel(
-          image: 'https://icon-library.com/images/save-money-icon-png/save-money-icon-png-9.jpg',
-          title: 'Gửi tiết kiệm Online'),
-      ServiceFavoriteModel(
-          image: 'https://icon-library.com/images/save-money-icon-png/save-money-icon-png-9.jpg',
-          title: 'Gửi tiết kiệm Online')
+          image:
+          'assets/svg/bank_card_dollar.svg',
+          title: 'Chuyển tiền quốc tế')
     ];
+
     final listInsurance = [
       ServiceFavoriteModel(
           image:
-              'https://e7.pngegg.com/pngimages/15/364/png-clipart-computer-icons-person-user-group-icon-auto-part-rim-thumbnail.png',
-          title: 'Smart Kids'),
-      ServiceFavoriteModel(image: 'https://cdn-icons-png.flaticon.com/512/3702/3702999.png', title: 'Tặng quà'),
+          'assets/svg/insurance_agent.svg',
+          title: 'Bảo hiểm BIC'),
       ServiceFavoriteModel(
-          image: 'https://www.iconpacks.net/icons/2/free-store-icon-2017-thumb.png',
-          title: 'Mở tài khoản chọn tên như ý'),
+          image:
+          'assets/svg/medical_expenses_insurance.svg',
+          title: 'Thanh toán phí bảo hiểm'),
       ServiceFavoriteModel(
-          image: 'https://icons.veryicon.com/png/o/business/a-set-of-commercial-icons/money-transfer.png',
-          title: 'Chuyển tiền ngoài BIDV đến số tài khoản'),
+          image:
+          'assets/svg/insurance_agent.svg',
+          title: 'Bảo hiểm nhân thọ VRB MetLife'),
+      ServiceFavoriteModel(
+          image:
+          'assets/svg/medical_expenses_insurance.svg',
+          title: 'Bồi thường'),
     ];
     final listStock = [
       ServiceFavoriteModel(
           image:
-              'https://e7.pngegg.com/pngimages/15/364/png-clipart-computer-icons-person-user-group-icon-auto-part-rim-thumbnail.png',
-          title: 'Smart Kids'),
-      ServiceFavoriteModel(image: 'https://cdn-icons-png.flaticon.com/512/3702/3702999.png', title: 'Tặng quà'),
+          'assets/svg/neutral_trading.svg',
+          title: 'Mở tài khoản chứng khoán'),
       ServiceFavoriteModel(
-          image: 'https://www.iconpacks.net/icons/2/free-store-icon-2017-thumb.png',
-          title: 'Mở tài khoản chọn tên như ý'),
+          image:
+          'assets/svg/stocks.svg',
+          title: 'Giao dịch chứng khoán'),
+      ServiceFavoriteModel(
+          image:
+          'assets/svg/futures.svg',
+          title: 'Nộp tiền chứng khoán'),
     ];
     final listRegisterService = [
       ServiceFavoriteModel(
-          image:
-              'https://e7.pngegg.com/pngimages/15/364/png-clipart-computer-icons-person-user-group-icon-auto-part-rim-thumbnail.png',
-          title: 'Smart Kids'),
-      ServiceFavoriteModel(image: 'https://cdn-icons-png.flaticon.com/512/3702/3702999.png', title: 'Tặng quà'),
-      ServiceFavoriteModel(
-          image: 'https://www.iconpacks.net/icons/2/free-store-icon-2017-thumb.png',
-          title: 'Mở tài khoản chọn tên như ý'),
+          image: 'assets/svg/bank_account.svg',
+          title: 'Mở tài khoản như ý'),
       ServiceFavoriteModel(
           image:
-              'https://e7.pngegg.com/pngimages/15/364/png-clipart-computer-icons-person-user-group-icon-auto-part-rim-thumbnail.png',
-          title: 'Smart Kids'),
-      ServiceFavoriteModel(image: 'https://cdn-icons-png.flaticon.com/512/3702/3702999.png', title: 'Tặng quà'),
-      ServiceFavoriteModel(
-          image: 'https://www.iconpacks.net/icons/2/free-store-icon-2017-thumb.png',
-          title: 'Mở tài khoản chọn tên như ý'),
+          'assets/svg/year_view.svg',
+          title: 'Thanh toán định kỳ'),
       ServiceFavoriteModel(
           image:
-              'https://e7.pngegg.com/pngimages/15/364/png-clipart-computer-icons-person-user-group-icon-auto-part-rim-thumbnail.png',
+          'assets/svg/money_transfer.svg',
+          title: 'Chuyển tiền định kỳ'),
+      ServiceFavoriteModel(
+          image: 'assets/svg/construction_mail_open.svg',
+          title: 'Đăng ký email thông báo'),
+      ServiceFavoriteModel(
+          image:
+          'assets/svg/technical_support.svg',
+          title: 'Đăng ký gói dịch vụ'),
+      ServiceFavoriteModel(
+          image:
+          'assets/svg/restart.svg',
+          title: 'Đổi hạn mức giao dịch'),
+      ServiceFavoriteModel(
+          image: 'assets/svg/payment_history.svg',
+          title: 'Biến động số dư'),
+      ServiceFavoriteModel(
+          image:
+          'assets/svg/add_male_user_group.svg',
+          title: 'Giới thiệu bạn Thưởng vô hạn'),
+      ServiceFavoriteModel(
+          image:
+          'assets/svg/badge.svg',
+          title: 'TK Chọn tên Như ý'),
+      ServiceFavoriteModel(
+          image:
+          'assets/svg/baby_face.svg',
           title: 'Smart Kids'),
-      ServiceFavoriteModel(image: 'https://cdn-icons-png.flaticon.com/512/3702/3702999.png', title: 'Tặng quà'),
-      ServiceFavoriteModel(
-          image: 'https://www.iconpacks.net/icons/2/free-store-icon-2017-thumb.png',
-          title: 'Mở tài khoản chọn tên như ý'),
-      ServiceFavoriteModel(
-          image: 'https://www.iconpacks.net/icons/2/free-store-icon-2017-thumb.png',
-          title: 'Mở tài khoản chọn tên như ý'),
     ];
     final listShopping = [
       ServiceFavoriteModel(
           image:
-              'https://e7.pngegg.com/pngimages/15/364/png-clipart-computer-icons-person-user-group-icon-auto-part-rim-thumbnail.png',
-          title: 'Smart Kids'),
-      ServiceFavoriteModel(image: 'https://cdn-icons-png.flaticon.com/512/3702/3702999.png', title: 'Tặng quà'),
+          'assets/svg/plane.svg',
+          title: 'Vé máy bay'),
       ServiceFavoriteModel(
-          image: 'https://www.iconpacks.net/icons/2/free-store-icon-2017-thumb.png',
-          title: 'Mở tài khoản chọn tên như ý'),
-      ServiceFavoriteModel(
-          image:
-              'https://e7.pngegg.com/pngimages/15/364/png-clipart-computer-icons-person-user-group-icon-auto-part-rim-thumbnail.png',
-          title: 'Smart Kids'),
-      ServiceFavoriteModel(image: 'https://cdn-icons-png.flaticon.com/512/3702/3702999.png', title: 'Tặng quà'),
-      ServiceFavoriteModel(
-          image: 'https://www.iconpacks.net/icons/2/free-store-icon-2017-thumb.png',
-          title: 'Mở tài khoản chọn tên như ý'),
+        image:
+          'assets/svg/hotel.svg',
+          title: 'Khách sạn'),
       ServiceFavoriteModel(
           image:
-              'https://e7.pngegg.com/pngimages/15/364/png-clipart-computer-icons-person-user-group-icon-auto-part-rim-thumbnail.png',
-          title: 'Smart Kids'),
-      ServiceFavoriteModel(image: 'https://cdn-icons-png.flaticon.com/512/3702/3702999.png', title: 'Tặng quà'),
+          'assets/svg/carpool.svg',
+          title: 'Vé xe'),
       ServiceFavoriteModel(
-          image: 'https://www.iconpacks.net/icons/2/free-store-icon-2017-thumb.png',
-          title: 'Mở tài khoản chọn tên như ý'),
+          image:
+          'assets/svg/subway.svg',
+          title: 'Vé tàu'),
+      ServiceFavoriteModel(
+          image: 'assets/svg/fast_cart.svg',
+          title: 'Mua sắm VnShop'),
+      ServiceFavoriteModel(
+          image:
+          'assets/svg/train_ticket.svg',
+          title: 'Vé xem phim'),
+      ServiceFavoriteModel(
+          image:
+          'assets/svg/flower_bouquet.svg',
+          title: 'Đặt hoa'),
+      ServiceFavoriteModel(
+          image: 'assets/svg/transit.svg',
+          title: 'Giao hàng'),
+      ServiceFavoriteModel(
+          image:
+          'assets/svg/taxi.svg',
+          title: 'Taxi'),
     ];
     final listCharity = [
       ServiceFavoriteModel(
           image:
-              'https://e7.pngegg.com/pngimages/15/364/png-clipart-computer-icons-person-user-group-icon-auto-part-rim-thumbnail.png',
-          title: 'Smart Kids'),
-      ServiceFavoriteModel(image: 'https://cdn-icons-png.flaticon.com/512/3702/3702999.png', title: 'Tặng quà'),
+          'assets/svg/pill.svg',
+          title: 'Ủng hộ quỹ vac-xin'),
+      ServiceFavoriteModel(
+          image:  'assets/svg/charity.svg',
+          title: 'Chuyển tiền từ thiện'),
     ];
     final listSupport = [
       ServiceFavoriteModel(
           image:
-              'https://e7.pngegg.com/pngimages/15/364/png-clipart-computer-icons-person-user-group-icon-auto-part-rim-thumbnail.png',
-          title: 'Smart Kids'),
-      ServiceFavoriteModel(image: 'https://cdn-icons-png.flaticon.com/512/3702/3702999.png', title: 'Tặng quà'),
+          'assets/svg/chart.svg',
+          title: 'Báo cáo giao dịch'),
       ServiceFavoriteModel(
-          image: 'https://www.iconpacks.net/icons/2/free-store-icon-2017-thumb.png',
-          title: 'Mở tài khoản chọn tên như ý'),
+          image: 'assets/svg/finance.svg',
+          title: 'quản lý tài chính cá nhân'),
       ServiceFavoriteModel(
           image:
-              'https://e7.pngegg.com/pngimages/15/364/png-clipart-computer-icons-person-user-group-icon-auto-part-rim-thumbnail.png',
-          title: 'Smart Kids'),
-      ServiceFavoriteModel(image: 'https://cdn-icons-png.flaticon.com/512/3702/3702999.png', title: 'Tặng quà'),
+          'assets/svg/atm_machine.svg',
+          title: 'Tìm kiếm ATM/CN'),
       ServiceFavoriteModel(
-          image: 'https://www.iconpacks.net/icons/2/free-store-icon-2017-thumb.png',
-          title: 'Mở tài khoản chọn tên như ý'),
+          image:
+          'assets/svg/interest_rate.svg',
+          title: 'Lãi suất'),
+      ServiceFavoriteModel(
+          image: 'assets/svg/exchange_rate.svg',
+          title: 'Tỷ giá'),
+      ServiceFavoriteModel(
+          image:
+          'assets/svg/headset.svg',
+          title: 'Hỗ trợ'),
     ];
 
     return Scaffold(
@@ -174,66 +223,59 @@ class _ServiceManagerState extends State<ServiceManager> {
         bgColor: clr_white,
         colorTitle: clr_black,
         colorIcon: clr_black,
-        title: 'Quản lý dịch vụ',
+        title: SERVICES_MANAGER,
         callback: () => Get.back(),
       ),
       body: SingleChildScrollView(
         child: Column(
           children: [
             if (id == 1) ...[
-              ServiceList(title: 'Dịch vụ ngân hàng', list: listBank),
-              ServiceList(title: 'Dịch vụ bảo hiểm', list: listInsurance),
-              ServiceList(title: 'Dịch vụ chứng khoán', list: listStock),
-              ServiceList(title: 'Đăng ký dịch vụ', list: listRegisterService),
-              ServiceList(title: 'Mua sắm', list: listShopping),
-              ServiceList(title: 'Từ thiện', list: listCharity),
-              ServiceList(title: 'Hỗ trợ', list: listSupport),
+              ServiceList(title: SERVICES_BANK, list: listBank),
+              ServiceList(title: SERVICES_INSURANCE, list: listInsurance),
+              ServiceList(title: SERVICES_STOCK, list: listStock),
+              ServiceList(title: REGISTER_SERVICES, list: listRegisterService),
+              ServiceList(title: SHOPPING, list: listShopping),
+              ServiceList(title: SERVICE_CHARITY, list: listCharity),
+              ServiceList(title: SUPPORT, list: listSupport),
               Container(
                 color: Colors.white,
                 height: 100.h,
               ),
             ] else if (id == 2) ...[
-              ServiceList(title: 'Dịch vụ ngân hàng', list: listBank),
               Container(
-                color: Colors.white,
-                height: Get.size.height,
-              ),
+                  color: clr_white,
+                  height: Get.size.height,
+                  child: ServiceList(title: SERVICES_BANK, list: listBank)),
             ] else if (id == 3) ...[
-              ServiceList(title: 'Dịch vụ bảo hiểm', list: listInsurance),
               Container(
-                color: Colors.white,
-                height: Get.size.height,
-              ),
+                  color: clr_white,
+                  height: Get.size.height,
+                  child: ServiceList(title: SERVICES_INSURANCE, list: listInsurance)),
             ] else if (id == 4) ...[
-              ServiceList(title: 'Dịch vụ chứng khoán', list: listStock),
               Container(
-                color: Colors.white,
-                height: Get.size.height,
-              ),
+                  color: clr_white,
+                  height: Get.size.height,
+                  child: ServiceList(title: SERVICES_STOCK, list: listStock)),
             ] else if (id == 5) ...[
-              ServiceList(title: 'Đăng ký dịch vụ', list: listRegisterService),
               Container(
-                color: Colors.white,
-                height: Get.size.height,
-              ),
+                  color: clr_white,
+                  height: Get.size.height,
+                  child: ServiceList(title: REGISTER_SERVICES, list: listRegisterService)),
             ] else if (id == 6) ...[
-              ServiceList(title: 'Mua sắm', list: listShopping),
               Container(
-                color: Colors.white,
-                height: Get.size.height,
-              ),
+                  color: clr_white,
+                  height: Get.size.height,
+                  child: ServiceList(title: SHOPPING, list: listShopping)),
             ] else if (id == 7) ...[
-              ServiceList(title: 'Từ thiện', list: listCharity),
               Container(
-                color: Colors.white,
-                height: Get.size.height,
-              ),
+                  color: clr_white,
+                  height: Get.size.height,
+                  child: ServiceList(title: SERVICE_CHARITY, list: listCharity)),
             ] else if (id == 8) ...[
-              ServiceList(title: 'Hỗ trợ', list: listSupport),
               Container(
-                color: Colors.white,
-                height: Get.size.height,
-              ),
+                  color: clr_white,
+                  height: Get.size.height,
+                  child: ServiceList(title: SUPPORT, list: listSupport)),
             ]
           ],
         ),
@@ -244,7 +286,10 @@ class _ServiceManagerState extends State<ServiceManager> {
         width: Get.size.width / 2,
         height: 35.h,
         alignment: Alignment.center,
-        decoration: BoxDecoration(color: MyColor.PRIMARY_COLOR_BLUE, borderRadius: BorderRadius.circular(20.r)),
+        decoration: BoxDecoration(
+          color: button_dropdown_color_bg,
+          borderRadius: BorderRadius.circular(20.r),
+        ),
         child: Container(
           alignment: Alignment.center,
           child: DropdownButton(
@@ -256,11 +301,11 @@ class _ServiceManagerState extends State<ServiceManager> {
               });
             },
             alignment: Alignment.center,
-            dropdownColor: MyColor.PRIMARY_COLOR_BLUE,
+            dropdownColor: button_dropdown_color_bg,
             borderRadius: BorderRadius.circular(20.r),
             icon: Icon(
-              Icons.arrow_drop_down,
-              color: Colors.white,
+              Icons.keyboard_arrow_down_sharp,
+              color: clr_white,
               size: 30.spMin,
             ),
             items: listItems.map((item) {
@@ -272,11 +317,10 @@ class _ServiceManagerState extends State<ServiceManager> {
                   child: Center(
                     child: Text(
                       item.name ?? '',
-                      // '${item.id}',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: 15.sp,
-                        color: Colors.white,
+                        color: clr_white,
                         fontWeight: FontWeight.w500,
                       ),
                     ),

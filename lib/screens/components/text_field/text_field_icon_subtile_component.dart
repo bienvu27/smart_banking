@@ -36,10 +36,10 @@ class TextFieldIconSubTitleComponent extends StatelessWidget {
                     color: clr_black26,
                     fontWeight: FontWeight.w500),
                 focusedBorder: const UnderlineInputBorder(
-                  borderSide: BorderSide(color: clr_blue_customization),
+                  borderSide: BorderSide(color: PRIMARY_COLOR),
                 ),
                 disabledBorder: const UnderlineInputBorder(
-                    borderSide: BorderSide(color: clr_blue_customization)))),
+                    borderSide: BorderSide(color: PRIMARY_COLOR)))),
         Positioned(
             right: 5.w,
             child: Text(
@@ -47,7 +47,7 @@ class TextFieldIconSubTitleComponent extends StatelessWidget {
               style: TextStyle(
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w500,
-                  color: clr_blue_customization),
+                  color: PRIMARY_COLOR),
             ))
       ],
     );

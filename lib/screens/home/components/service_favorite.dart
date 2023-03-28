@@ -35,7 +35,7 @@ class ServiceFavorite extends StatelessWidget {
                 style: TextStyle(
                     fontSize: 17.sp,
                     fontWeight: FontWeight.w600,
-                    color: clr_blue_customization),
+                    color: PRIMARY_COLOR),
               ),
             ],
           ),
@@ -54,9 +54,9 @@ class ServiceFavorite extends StatelessWidget {
                           barrierDismissible: false,
                           context: context,
                           builder: (BuildContext context) => CustomDialog(
-                            title: 'Quý khách cần kích hoạt ứng dụng trước để sử dụng chức năng này.',
-                            cancel: 'Huỷ bỏ',
-                            submit: 'Đăng nhập',
+                            title: TITLE_31,
+                            cancel: CANCEL2,
+                            submit: LOGIN,
                             clickCallback: () {
                             },
                           ));
@@ -70,7 +70,7 @@ class ServiceFavorite extends StatelessWidget {
                               '${e.image}',
                               width: 35.w,
                               height: 35.h,
-                              color: clr_blue_customization,
+                              color: PRIMARY_COLOR,
                               fit: BoxFit.contain,
                             ),
                             Positioned(
@@ -82,10 +82,10 @@ class ServiceFavorite extends StatelessWidget {
                                   boxShadow: [
                                     BoxShadow(
                                       color:
-                                      Colors.grey.withOpacity(0.5),
+                                      Colors.grey.withOpacity(0.9),
                                       spreadRadius: 2,
                                       blurRadius: 5,
-                                      offset: const Offset(1, 5), // changes position of shadow
+                                      offset: const Offset(0, 5), // changes position of shadow
                                     ),
                                   ],
                                 ),
@@ -111,7 +111,7 @@ class ServiceFavorite extends StatelessWidget {
                 }).toList()),
           ),
           ButtonComponent(
-            title: 'Xem tất cả các dịch vụ', bgColor: button_color_home, callback: () => Get.toNamed("/service_manager", arguments: ''),)
+            title: SEE_ALL_SERVICES, bgColor: button_color_home, callback: () => Get.toNamed("/service_manager", arguments: ''),)
         ],
       ),
     );

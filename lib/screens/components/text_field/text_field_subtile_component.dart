@@ -30,7 +30,7 @@ class TextFieldSubTitleComponent extends StatelessWidget {
                     color: Colors.black54,
                     fontWeight: FontWeight.w500),
                 focusedBorder: const UnderlineInputBorder(
-                  borderSide: BorderSide(color: clr_blue_customization),
+                  borderSide: BorderSide(color: PRIMARY_COLOR),
                 ),
                 disabledBorder: const UnderlineInputBorder(
                     borderSide: BorderSide(color: clr_black)))),

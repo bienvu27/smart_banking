@@ -37,7 +37,7 @@ class ListService extends StatelessWidget {
                       '${e.image}',
                       width: 25.w,
                       height: 25.h,
-                      color: clr_blue_customization,
+                      color: PRIMARY_COLOR,
                       fit: BoxFit.contain,
                     ),
                     Container(
@@ -82,18 +82,18 @@ class ListService extends StatelessWidget {
                         children: [
                           Text('${e.numberService}',
                               style: const TextStyle(
-                                  color: clr_blue_customization,
+                                  color: PRIMARY_COLOR,
                                   fontWeight: FontWeight.w500)),
                            SizedBox(width: 3.w,),
                            const Text(SERVICE,
                               style: TextStyle(
-                                  color: clr_blue_customization,
+                                  color: PRIMARY_COLOR,
                                   fontWeight: FontWeight.w500)),
                           SizedBox(width: 3.w,),
                           Icon(
                             Icons.arrow_forward_ios,
                             size: 13.spMin,
-                            color: clr_blue_customization,
+                            color: PRIMARY_COLOR,
                           )
                         ],
                       ),

@@ -5,7 +5,6 @@ import 'package:smart_banking/screens/components/button/button_component.dart';
 
 import '../../../../core/resources/strings.dart';
 import '../../../../core/style.dart';
-import '../../../../res/my_color .dart';
 import '../../../components/app_bar/app_bar_component.dart';
 import '../../../components/text_field/text_field_component.dart';
 import '../../../components/text_field/text_field_popup_icon_component.dart';
@@ -31,11 +30,11 @@ class _RegisterInformationState extends State<RegisterInformation> {
         title: INFRO_REGISTER,
         callback: () => Get.back(),
       ),
+
       body: SingleChildScrollView(
         child: Container(
           margin: EdgeInsets.only(top: 10.h),
           width: Get.size.width,
-          height: Get.size.height * 1.1,
           color: clr_white,
           child: Padding(
             padding: const EdgeInsets.all(20),
@@ -93,7 +92,7 @@ class _RegisterInformationState extends State<RegisterInformation> {
                           style: TextStyle(
                               fontSize: 13.sp,
                               fontWeight: FontWeight.w500,
-                              color: clr_blue_customization),
+                              color: PRIMARY_COLOR),
                         ))
                   ],
                 ),
@@ -155,7 +154,7 @@ class _RegisterInformationState extends State<RegisterInformation> {
                       onChanged: (value) {
                         controller.toggleCheckbox(controller.isChecked);
                       },
-                      activeColor: clr_blue_customization,
+                      activeColor: PRIMARY_COLOR,
                       checkColor: clr_white,
                       tristate: false,
                     );
@@ -173,7 +172,7 @@ class _RegisterInformationState extends State<RegisterInformation> {
                           text: '$TITLE_28 ',
                           style: TextStyle(
                             fontSize: 13.sp,
-                            color: clr_blue_customization,
+                            color: PRIMARY_COLOR,
                             fontWeight: FontWeight.w500,
                             decoration: TextDecoration.underline,
                           ),

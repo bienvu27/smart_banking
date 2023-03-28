@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import '../../../../core/style.dart';
 import '../../model/service_favorite_model.dart';
 
 class ServiceList extends StatelessWidget {
@@ -12,20 +14,20 @@ class ServiceList extends StatelessWidget {
   final List<ServiceFavoriteModel> list;
   final String title ;
 
-
   @override
   Widget build(BuildContext context) {
+    final width = Get.size.width;
     return Container(
       margin: EdgeInsets.only(top: 10.h),
       padding: EdgeInsets.only(top: 10, left: 10.w, right: 10.w),
-      width: Get.size.width,
-      color: Colors.white,
+      width: width,
+      color: clr_white,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             title,
-            style: TextStyle(fontSize: 15.sp, fontWeight: FontWeight.w500),
+            style: TextStyle(fontSize: 17.sp, fontWeight: FontWeight.w600),
           ),
           Padding(
             padding: EdgeInsets.only(top: 20.h),
@@ -42,10 +44,11 @@ class ServiceList extends StatelessWidget {
                       Stack(
                         alignment: Alignment.center,
                         children: [
-                          Image.network(
-                            e.image ?? '',
-                            width: 40.w,
-                            height: 40.h,
+                          SvgPicture.asset(
+                            '${e.image}',
+                            width: 35.w,
+                            height: 35.h,
+                            color: PRIMARY_COLOR,
                             fit: BoxFit.contain,
                           ),
                           Positioned(
@@ -71,11 +74,14 @@ class ServiceList extends StatelessWidget {
                       SizedBox(
                         height: 8.h,
                       ),
-                      Text(
-                        e.title ?? '',
-                        maxLines: 3,
-                        textAlign: TextAlign.center,
-                        style: const TextStyle(fontWeight: FontWeight.w500),
+                      SizedBox(
+                        width: 65.w,
+                        child: Text(
+                          e.title ?? '',
+                          maxLines: 3,
+                          textAlign: TextAlign.center,
+                          style: const TextStyle(fontWeight: FontWeight.w600),
+                        ),
                       )
                     ],
                   );

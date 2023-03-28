@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import '../../../core/resources/strings.dart';
+import '../../../core/style.dart';
 import '../../../res/my_color .dart';
 import '../model/promotion_model.dart';
 
@@ -16,7 +19,7 @@ class ListPromotion extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: Get.size.width,
-      color: Colors.white,
+      color: clr_white,
       margin: EdgeInsets.only(top: 10.h, bottom: 30.h),
       padding: EdgeInsets.only(left: 10.w, right: 10.w),
       child: Column(
@@ -24,11 +27,11 @@ class ListPromotion extends StatelessWidget {
         children: [
           SizedBox(height: 10.h,),
           Text(
-            'Gợi ý quà tặng',
+            PROMOTION_1,
             style: TextStyle(
                 fontSize: 18.sp,
                 fontWeight: FontWeight.w600,
-                color: Colors.black),
+                color: clr_black),
           ),
           Column(
             children: listPromotion.map((e){
@@ -38,7 +41,7 @@ class ListPromotion extends StatelessWidget {
                 decoration: BoxDecoration(
                   border: Border(
                     bottom: BorderSide(
-                        width: 1.w, color: Colors.black26),
+                        width: 1.w, color: clr_black26),
                   ),),
                 child: Row(
                   children: [
@@ -63,13 +66,13 @@ class ListPromotion extends StatelessWidget {
                                   e.image ?? ''),
                               fit: BoxFit.fill)),
                     ),
+
                     SizedBox(
-                      height: 70.h,
                       width: Get.size.width / 1.7,
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment
-                            .spaceEvenly,
+                            .spaceBetween,
                         children: [
                           Text(
                             e.title ?? '',
@@ -79,14 +82,16 @@ class ListPromotion extends StatelessWidget {
                                 height: 1.3,
                                 fontWeight: FontWeight.w800),
                           ),
+                          SizedBox(height: 5.h,),
                           Text(
-                            'Ưu đãi đến: ${e.subTitle}',
+                            '$TITLE_32 ${e.subTitle}',
                             maxLines: 2,
                             style: TextStyle(
                                 fontSize: 13.sp,
-                                color: Colors.black45,
+                                color: clr_black54,
                                 fontWeight: FontWeight.w500),
                           ),
+                          SizedBox(height: 5.h,),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
@@ -95,25 +100,31 @@ class ListPromotion extends StatelessWidget {
                                 width: 35.w,
                                 child: Stack(
                                   children: [
-                                    Icon(
-                                      Icons.circle_rounded,
-                                      size: 20.spMin,
-                                      color: Colors.redAccent,
+                                    SvgPicture.asset(
+                                      'assets/svg/flower_rounded.svg',
+                                      width: 15.w,
+                                      height: 15.h,
+                                      color: clr_flower_1,
+                                      fit: BoxFit.contain,
                                     ),
                                     Positioned(
                                       left: 8.w,
-                                      child: Icon(
-                                        Icons.circle_rounded,
-                                        size: 20.spMin,
-                                        color: Colors.yellow,
+                                      child: SvgPicture.asset(
+                                        'assets/svg/flower_rounded.svg',
+                                        width: 15.w,
+                                        height: 15.h,
+                                        color: clr_yellow,
+                                        fit: BoxFit.contain,
                                       ),
                                     ),
                                     Positioned(
                                       left: 16.w,
-                                      child: Icon(
-                                        Icons.circle_rounded,
-                                        size: 20.spMin,
-                                        color: Colors.blue,
+                                      child: SvgPicture.asset(
+                                        'assets/svg/flower_rounded.svg',
+                                        width: 15.w,
+                                        height: 15.h,
+                                        color: clr_blue,
+                                        fit: BoxFit.contain,
                                       ),
                                     ),
                                   ],
@@ -145,7 +156,7 @@ class ListPromotion extends StatelessWidget {
                                   Icon(
                                     Icons.favorite_border,
                                     size: 20.spMin,
-                                    color: Colors.black54,
+                                    color: clr_black54,
                                   ),
                                   SizedBox(
                                     width: 3.w,
@@ -155,7 +166,7 @@ class ListPromotion extends StatelessWidget {
                                     style: TextStyle(
                                       fontSize: 15.sp,
                                       fontWeight: FontWeight.w400,
-                                      color: Colors.black54,
+                                      color: clr_black54,
                                     ),
                                   ),
                                 ],

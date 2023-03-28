@@ -68,7 +68,7 @@ class RegisterStep3Page extends StatelessWidget {
                             onChanged: (value) {
                               controller.toggleCheckbox(controller.isChecked);
                             },
-                            activeColor: clr_blue_customization,
+                            activeColor: PRIMARY_COLOR,
                             checkColor: clr_white,
                             tristate: false,
                           );
@@ -130,7 +130,7 @@ class RegisterStep3Page extends StatelessWidget {
                                 text: '$TITLE_16 ',
                                 style: TextStyle(
                                     fontSize: 13.sp,
-                                    color: clr_blue_customization,
+                                    color: PRIMARY_COLOR,
                                     fontWeight: FontWeight.w500),
                               ),
                               TextSpan(

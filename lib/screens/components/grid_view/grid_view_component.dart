@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../res/my_color .dart';
+import 'package:flutter_svg/svg.dart';
+import '../../../core/resources/strings.dart';
+import '../../../core/style.dart';
 import '../../components/dialog/custom_dialog.dart';
 import '../../service_manager/model/service_favorite_model.dart';
 
@@ -26,14 +28,14 @@ class GridViewComponent extends StatelessWidget {
               Text(
                 title,
                 style: TextStyle(
-                    fontSize: 18.sp, fontWeight: FontWeight.w600, color: Colors.black),
+                    fontSize: 17.sp, fontWeight: FontWeight.w600, color: clr_black),
               ),
               Text(
                 subTitle ?? '',
                 style: TextStyle(
                     fontSize: 15.sp,
                     fontWeight: FontWeight.w600,
-                    color: MyColor.PRIMARY_COLOR_BLUE),
+                    color: PRIMARY_COLOR),
               ),
             ],
           ),
@@ -51,9 +53,9 @@ class GridViewComponent extends StatelessWidget {
                         barrierDismissible: false,
                         context: context,
                         builder: (BuildContext context) => CustomDialog(
-                          title: 'Quý khách cần kích hoạt ứng dụng trước để sử dụng chức năng này.',
-                          cancel: 'Huỷ bỏ',
-                          submit: 'Đăng nhập',
+                          title: TITLE_31,
+                          cancel: CANCEL2,
+                          submit: LOGIN,
                           clickCallback: () {
                           },
                         ));
@@ -63,10 +65,11 @@ class GridViewComponent extends StatelessWidget {
                       Stack(
                         alignment: Alignment.center,
                         children: [
-                          Image.network(
-                            e.image ?? '',
-                            width: 40.w,
-                            height: 40.h,
+                          SvgPicture.asset(
+                            '${e.image}',
+                            width: 35.w,
+                            height: 35.h,
+                            color: PRIMARY_COLOR,
                             fit: BoxFit.contain,
                           ),
                           Positioned(

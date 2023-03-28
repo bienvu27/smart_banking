@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smart_banking/screens/home/model/list_service_model.dart';
 
+import '../../../core/resources/strings.dart';
 import '../components/cover_widget.dart';
 import '../components/grid_menu.dart';
 import '../components/list_service.dart';
@@ -128,7 +129,7 @@ class _HomePageState extends State<HomePage> {
                   height: 20.h,
                 ),
                 Text(
-                  'Quý khách quan tâm dịch vụ gì hôm nay?',
+                  TITLE_30,
                   style: TextStyle(fontSize: 13.sp, fontWeight: FontWeight.w500),
                 ),
                 ListService(listService: listService)

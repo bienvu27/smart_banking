@@ -59,7 +59,7 @@ class CustomDialog extends StatelessWidget {
                           borderRadius: BorderRadius.circular(10.r)),
                       child: Text(
                         cancel,
-                        style: TextStyle(color: clr_blue_customization, fontSize: 15.sp, fontWeight: FontWeight.w800),
+                        style: TextStyle(color: PRIMARY_COLOR, fontSize: 15.sp, fontWeight: FontWeight.w800),
                         textAlign: TextAlign.center,
                       ),
                     ),
