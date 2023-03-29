@@ -2,7 +2,7 @@ import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_contacts/flutter_contacts.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../core/style.dart';
 
@@ -26,7 +26,6 @@ class _MyContactsState extends State<MyContacts> {
     if (await FlutterContacts.requestPermission()) {
       contacts = await FlutterContacts.getContacts(
           withProperties: true, withPhoto: true);
-      print(contacts);
       setState(() {});
     }
   }
@@ -49,11 +48,24 @@ class _MyContactsState extends State<MyContacts> {
                       : "--";
                   return ListTile(
                     leading: (contacts![index].photo == null)
-                        ? const CircleAvatar(child: Icon(Icons.person))
+                        ? CircleAvatar(
+                            backgroundColor: clr_bg_text,
+                            radius: 20.r,
+                            child: Icon(
+                              Icons.person,
+                              size: 25.spMax,
+                              color: clr_d9dbda,
+                            ))
                         : CircleAvatar(backgroundImage: MemoryImage(image!)),
                     title: Text(
-                        "${contacts![index].name.first} ${contacts![index].name.last}"),
-                    subtitle: Text(num),
+                        "${contacts![index].name.first} ${contacts![index].name.last}",
+                        style: TextStyle(
+                            fontSize: 15.sp, fontWeight: FontWeight.w600)),
+                    subtitle: Text(num,
+                        style: TextStyle(
+                            fontSize: 15.sp,
+                            fontWeight: FontWeight.w600,
+                            color: clr_black)),
                     onTap: () {},
                   );
                 }),

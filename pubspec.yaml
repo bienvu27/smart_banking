@@ -39,7 +39,6 @@ dependencies:
   flutter_screenutil: ^5.7.0
   flutter_svg: ^2.0.4
   flutter_contacts: ^1.1.6
-  url_launcher: ^6.1.10
 
 dev_dependencies:
   flutter_test:
