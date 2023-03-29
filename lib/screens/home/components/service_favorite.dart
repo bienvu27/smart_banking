@@ -18,11 +18,11 @@ class ServiceFavorite extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(left: 10.w, right: 10.w),
-      child: Column(
-        children: [
-          Row(
+    return Column(
+      children: [
+        Padding(
+          padding: EdgeInsets.only(left: 10.w, right: 10.w),
+          child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
@@ -39,7 +39,10 @@ class ServiceFavorite extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(
+        ),
+        Padding(
+          padding: EdgeInsets.only(left: 10.w, right: 10.w),
+          child: SizedBox(
             height: 250.h,
             child: GridView.count(
                 physics: const NeverScrollableScrollPhysics(),
@@ -110,10 +113,10 @@ class ServiceFavorite extends StatelessWidget {
                   );
                 }).toList()),
           ),
-          ButtonComponent(
-            title: SEE_ALL_SERVICES, bgColor: button_color_home, callback: () => Get.toNamed("/service_manager", arguments: ''),)
-        ],
-      ),
+        ),
+        ButtonComponent(
+          title: SEE_ALL_SERVICES, bgColor: button_color_home, callback: () => Get.toNamed("/service_manager", arguments: ''),)
+      ],
     );
   }
 }

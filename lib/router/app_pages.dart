@@ -3,6 +3,9 @@ import 'package:smart_banking/screens/home/view/home_page.dart';
 import 'package:smart_banking/screens/register/view/register_binding.dart';
 import 'package:smart_banking/screens/register/view/register_page.dart';
 import 'package:smart_banking/screens/service_manager/view/service_manager_page.dart';
+import '../screens/contacts_manager/binding/contacts_manager_binding.dart';
+import '../screens/contacts_manager/controller/contacts_manager_controller.dart';
+import '../screens/contacts_manager/view/contacts_manager.dart';
 import '../screens/dashboard/binding/dashboard_binding.dart';
 import '../screens/dashboard/view/dashboard_page.dart';
 import '../screens/home/binding/home_binding.dart';
@@ -37,5 +40,10 @@ class AppPages {
         name: AppRouters.TRANSFER,
         page: () => const TransferPage(),
         binding: TransferBinding()),
+
+    GetPage(
+        name: AppRouters.CONTACTS_MANAGER,
+        page: () => const ContactsManagerPage(),
+        binding: ContactsManagerBinding()),
   ];
 }

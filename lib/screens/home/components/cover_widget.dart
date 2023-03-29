@@ -68,64 +68,60 @@ class CoverWidget extends StatelessWidget {
                     )
                   ],
                 ),
-                SizedBox(
-                  // height: height/17,
-                  height: 40.h,
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Stack(
-                        children: [
-                          CircleAvatar(
-                            backgroundColor: clr_white60,
-                            child: Icon(
-                              Icons.person,
-                              color: Colors.white,
-                              size: 20.spMax,
-                            ),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Stack(
+                      children: [
+                        CircleAvatar(
+                          backgroundColor: clr_white60,
+                          child: Icon(
+                            Icons.person,
+                            color: Colors.white,
+                            size: 20.spMax,
                           ),
-                          Positioned(
-                              right: 0.w,
-                              bottom: 0.h,
-                              child: Container(
-                                width: 12.w,
-                                height: 12.h,
-                                alignment: Alignment.center,
-                                decoration: BoxDecoration(
-                                    border: Border.all(color: clr_black12),
-                                    color: clr_white,
-                                    shape: BoxShape.circle),
-                                child: Icon(Icons.menu, size: 10.spMax),
-                              ))
+                        ),
+                        Positioned(
+                            right: 0.w,
+                            bottom: 0.h,
+                            child: Container(
+                              width: 12.w,
+                              height: 12.h,
+                              alignment: Alignment.center,
+                              decoration: BoxDecoration(
+                                  border: Border.all(color: clr_black12),
+                                  color: clr_white,
+                                  shape: BoxShape.circle),
+                              child: Icon(Icons.menu, size: 10.spMax),
+                            ))
+                      ],
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(left: 10.w),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Text(
+                            GOOD_MORNING,
+                            style: TextStyle(
+                                // fontFamily: 'myriad-pro-bold-condensed',
+                                fontSize: 13.sp,
+                                fontWeight: FontWeight.w500,
+                                color: clr_white60),
+                          ),
+                          Text(
+                            CUSTOMERS,
+                            style: TextStyle(
+                                fontSize: 15.sp,
+                                fontWeight: FontWeight.w600,
+                                color: clr_white),
+                          ),
                         ],
                       ),
-                      Padding(
-                        padding: EdgeInsets.only(left: 10.w),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Text(
-                              GOOD_MORNING,
-                              style: TextStyle(
-                                  // fontFamily: 'myriad-pro-bold-condensed',
-                                  fontSize: 13.sp,
-                                  fontWeight: FontWeight.w500,
-                                  color: clr_white60),
-                            ),
-                            Text(
-                              CUSTOMERS,
-                              style: TextStyle(
-                                  fontSize: 15.sp,
-                                  fontWeight: FontWeight.w600,
-                                  color: clr_white),
-                            ),
-                          ],
-                        ),
-                      )
-                    ],
-                  ),
+                    )
+                  ],
                 ),
               ],
             ),

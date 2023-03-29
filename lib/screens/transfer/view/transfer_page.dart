@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:smart_banking/screens/transfer/view/tabs/first_tab.dart';
+import 'package:smart_banking/screens/transfer/view/tabs/tab1/first_tab.dart';
 import 'package:smart_banking/screens/transfer/view/tabs/seconds_tab.dart';
 import 'package:smart_banking/screens/transfer/view/tabs/last_tab.dart';
 
@@ -118,6 +118,7 @@ class TransferPage extends StatelessWidget {
               ),
             )),
         body:  const TabBarView(
+          physics: NeverScrollableScrollPhysics(),
           children: [
             FirstTab(),
             SecondsTab(),

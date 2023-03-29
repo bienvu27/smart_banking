@@ -17,7 +17,6 @@ class ListPromotion extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: Get.size.width,
       color: clr_white,
       margin: EdgeInsets.only(top: 10.h, bottom: 30.h),
       padding: EdgeInsets.only(left: 10.w, right: 10.w),
@@ -77,16 +76,19 @@ class ListPromotion extends StatelessWidget {
                             e.title ?? '',
                             maxLines: 2,
                             style: TextStyle(
+                              overflow: TextOverflow.ellipsis,
                                 fontSize: 15.sp,
                                 height: 1.3,
                                 fontWeight: FontWeight.w800),
                           ),
+
                           SizedBox(height: 5.h,),
                           Text(
                             '$TITLE_32 ${e.subTitle}',
                             maxLines: 2,
                             style: TextStyle(
                                 fontSize: 13.sp,
+                                overflow: TextOverflow.ellipsis,
                                 color: clr_black54,
                                 fontWeight: FontWeight.w500),
                           ),
@@ -95,7 +97,6 @@ class ListPromotion extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
                               Container(
-                                margin: EdgeInsets.only(right: 5.w),
                                 width: 35.w,
                                 child: Stack(
                                   children: [
@@ -131,25 +132,32 @@ class ListPromotion extends StatelessWidget {
                               ),
                               Row(
                                 children: [
-                                  Text(
-                                    e.point ?? '',
-                                    style: TextStyle(
-                                        fontSize: 15.sp,
-                                        fontWeight: FontWeight.w600,
-                                        color:
-                                        PRIMARY_COLOR),
+                                  SizedBox(
+                                    width: MediaQuery.of(context).size.width / 7,
+                                    child: Text(
+                                      e.point ?? '',
+                                      style: TextStyle(
+                                        overflow: TextOverflow.ellipsis,
+                                          fontSize: 15.sp,
+                                          fontWeight: FontWeight.w600,
+                                          color:
+                                          PRIMARY_COLOR),
+                                    ),
                                   ),
-                                  Text(
-                                    'B-Point',
-                                    style: TextStyle(
-                                        fontSize: 15.sp,
-                                        fontWeight: FontWeight.w400,
-                                        color:
-                                        PRIMARY_COLOR),
+                                  SizedBox(
+                                    width: MediaQuery.of(context).size.width / 7,
+                                    child: Text(
+                                      'B-Point',
+                                      style: TextStyle(
+                                          overflow: TextOverflow.ellipsis,
+                                          fontSize: 15.sp,
+                                          fontWeight: FontWeight.w400,
+                                          color:
+                                          PRIMARY_COLOR),
+                                    ),
                                   ),
                                 ],
                               ),
-                              SizedBox(width: 10.w,),
                               Row(
                                 children: [
                                   Icon(

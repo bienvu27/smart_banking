@@ -103,7 +103,7 @@ class NotificationPage extends StatelessWidget {
                     Container(
                       margin: EdgeInsets.only(
                           left: 20.w, right: 20.w, top: 15.h, bottom: 10.h),
-                      height: 35.h,
+                      height: 35.w,
                       decoration: BoxDecoration(
                         color: Colors.grey[200],
                         borderRadius: BorderRadius.circular(
@@ -111,7 +111,7 @@ class NotificationPage extends StatelessWidget {
                         ),
                       ),
                       child: TabBar(
-                        padding: const EdgeInsets.all(5),
+                        padding: EdgeInsets.only(top: 5.h, right: 5.w, left: 5.w, bottom: 5.h),
                         indicator: BoxDecoration(
                           borderRadius: BorderRadius.circular(
                             25.r,
