@@ -13,11 +13,11 @@ class CoverWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    int number = 1 ;
+    int number = 2 ;
     final width  = MediaQuery.of(context).size.width;
     final height  = MediaQuery.of(context).size.height;
     return SizedBox(
-      height: height/1.37,
+      height: height/1.34,
       child: Stack(
         children: [
           Container(
@@ -38,11 +38,11 @@ class CoverWidget extends StatelessWidget {
                     Image.asset(
                       'assets/images/vrbank.png',
                       width: 100.w,
-                      height: 50.h,
+                      height: 50.w,
                     ),
                     Container(
                       margin: EdgeInsets.only(left: 10.w),
-                      height: 25.h,
+                      height: 30.w,
                       width: Get.size.width / 1.6,
                       child: TextField(
                         maxLines: 1,
@@ -112,9 +112,9 @@ class CoverWidget extends StatelessWidget {
                                 color: clr_white60),
                           ),
                           Text(
-                            CUSTOMERS,
+                            'VU XUAN BIEN'.toUpperCase(),
                             style: TextStyle(
-                                fontSize: 15.sp,
+                                fontSize: 18.sp,
                                 fontWeight: FontWeight.w600,
                                 color: clr_white),
                           ),

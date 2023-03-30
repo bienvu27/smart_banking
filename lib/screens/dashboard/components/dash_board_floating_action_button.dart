@@ -13,9 +13,9 @@ class DashBoardFloatingActionButton extends StatelessWidget {
       color: PRIMARY_COLOR,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(35.r)),
       shadowColor: PRIMARY_COLOR,
-      child: SizedBox(
-        height: 40.h,
-        width: 45.w,
+      child: CircleAvatar(
+       radius: 25.r,
+        backgroundColor: clr_white,
         child: FloatingActionButton(
           backgroundColor: PRIMARY_COLOR,
           onPressed: () {},

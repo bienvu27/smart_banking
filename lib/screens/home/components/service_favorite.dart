@@ -52,17 +52,17 @@ class ServiceFavorite extends StatelessWidget {
                 crossAxisCount: 3,
                 children: list.map((e) {
                   return InkWell(
-                    onTap: (){
+                    onTap: () {
                       showDialog(
                           barrierDismissible: false,
                           context: context,
-                          builder: (BuildContext context) => CustomDialog(
-                            title: TITLE_31,
-                            cancel: CANCEL2,
-                            submit: LOGIN,
-                            clickCallback: () {
-                            },
-                          ));
+                          builder: (BuildContext context) =>
+                              CustomDialog(
+                                title: TITLE_31,
+                                cancel: CANCEL2,
+                                submit: LOGIN,
+                                clickCallback: () {},
+                              ));
                     },
                     child: Column(
                       children: [
@@ -114,8 +114,26 @@ class ServiceFavorite extends StatelessWidget {
                 }).toList()),
           ),
         ),
-        ButtonComponent(
-          title: SEE_ALL_SERVICES, bgColor: button_color_home, callback: () => Get.toNamed("/service_manager", arguments: ''),)
+        InkWell(
+          onTap: () => Get.toNamed("/service_manager", arguments: ''),
+          child: Container(
+            margin: EdgeInsets.only(left: 10.w, right: 10.w, top: 10.h),
+            height: 40.h,
+            width: Get.size.width,
+            alignment: Alignment.center,
+            decoration: BoxDecoration(
+              color: button_color_home,
+                borderRadius: BorderRadius.circular(10.r),
+            ),
+            child: Text(
+              SEE_ALL_SERVICES,
+              style: TextStyle(
+                  fontSize: 15.sp,
+                  fontWeight: FontWeight.w500,
+                  color: PRIMARY_COLOR),
+            ),
+          ),
+        ),
       ],
     );
   }

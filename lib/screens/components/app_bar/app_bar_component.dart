@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppBarComponent extends StatelessWidget with PreferredSizeWidget {
-  const AppBarComponent({
-    super.key, required this.title, required this.callback, required this.bgColor, required this.colorTitle, required this.colorIcon,
+  AppBarComponent({
+    super.key, required this.title, required this.callback, required this.bgColor, required this.colorTitle, required this.colorIcon, this.iconAction,
   });
   final String title;
   final VoidCallback callback;
   final Color bgColor, colorTitle, colorIcon ;
+  IconData? iconAction;
 
   @override
   Widget build(BuildContext context) {
@@ -27,6 +28,18 @@ class AppBarComponent extends StatelessWidget with PreferredSizeWidget {
           color: colorIcon,
         ),
       ),
+      actions: [
+        Padding(
+          padding: EdgeInsets.only(right: 10.w),
+          child: InkWell(
+          onTap: () => callback(),
+          child: Icon(
+            iconAction,
+            size: 20.spMax,
+            color: colorIcon,
+          ),
+      ),
+        ),],
       elevation: 0,
     );
   }

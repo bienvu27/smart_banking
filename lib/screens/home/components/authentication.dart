@@ -23,7 +23,7 @@ class Authentication extends StatelessWidget {
             margin: EdgeInsets.only(left: 10.w, right: 10.w),
             alignment: Alignment.center,
             width: Get.size.width,
-            height: 55.h,
+            height: 80.w,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15.r),
               color: Colors.white,

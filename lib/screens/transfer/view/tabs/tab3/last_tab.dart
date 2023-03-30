@@ -4,19 +4,18 @@ import 'package:get/get.dart';
 
 import '../../../../../core/resources/strings.dart';
 import '../../../../../core/style.dart';
-import '../../../../components/button/button_component.dart';
-import 'components/list_contacts.dart';
-import 'components/list_contacts_recently.dart';
 import '../../../models/list_contacts_model.dart';
+import '../tab1/components/list_contacts.dart';
+import '../tab1/components/list_contacts_recently.dart';
 
-class FirstTab extends StatefulWidget {
-  const FirstTab({Key? key}) : super(key: key);
+class LastTab extends StatefulWidget {
+  const LastTab({Key? key}) : super(key: key);
 
   @override
-  State<FirstTab> createState() => _FirstTabState();
+  State<LastTab> createState() => _LastTabState();
 }
 
-class _FirstTabState extends State<FirstTab> {
+class _LastTabState extends State<LastTab> {
   ScrollController? _scrollController;
   bool lastStatus = true;
   double height = 245.w;
@@ -57,53 +56,53 @@ class _FirstTabState extends State<FirstTab> {
   Widget build(BuildContext context) {
     final list = [
       ListContactsModel(
-          image: 'assets/images/vrbank.png',
-          name: 'VU XUAN BIEN',
-          numberAccount: '27910000492884',
-          nameBank: 'VRBANK',
-          money: '4.000.000',
+        image: 'assets/images/vrbank.png',
+        name: 'VU XUAN BIEN',
+        numberAccount: '27910000492884',
+        nameBank: 'VRBANK',
+        money: '4.000.000',
       ),
       ListContactsModel(
-          image: 'assets/images/vrbank.png',
-          name: 'VU XUAN BIEN',
-          numberAccount: '27910000492884',
-          nameBank: 'VRBANK',
-          money: '4.000.000',
+        image: 'assets/images/vrbank.png',
+        name: 'VU XUAN BIEN',
+        numberAccount: '27910000492884',
+        nameBank: 'VRBANK',
+        money: '4.000.000',
       ),
       ListContactsModel(
-          image: 'assets/images/vrbank.png',
-          name: 'VU XUAN BIEN',
-          numberAccount: '27910000492884',
-          nameBank: 'VRBANK',
-          money: '4.000.000',
+        image: 'assets/images/vrbank.png',
+        name: 'VU XUAN BIEN',
+        numberAccount: '27910000492884',
+        nameBank: 'VRBANK',
+        money: '4.000.000',
       ),
       ListContactsModel(
-          image: 'assets/images/vrbank.png',
-          name: 'VU XUAN BIEN',
-          numberAccount: '27910000492884',
-          nameBank: 'VRBANK',
-          money: '4.000.000',
+        image: 'assets/images/vrbank.png',
+        name: 'VU XUAN BIEN',
+        numberAccount: '27910000492884',
+        nameBank: 'VRBANK',
+        money: '4.000.000',
       ),
       ListContactsModel(
-          image: 'assets/images/vrbank.png',
-          name: 'VU XUAN BIEN',
-          numberAccount: '27910000492884',
-          nameBank: 'VRBANK',
-          money: '4.000.000',
+        image: 'assets/images/vrbank.png',
+        name: 'VU XUAN BIEN',
+        numberAccount: '27910000492884',
+        nameBank: 'VRBANK',
+        money: '4.000.000',
       ),
       ListContactsModel(
-          image: 'assets/images/vrbank.png',
-          name: 'VU XUAN BIEN',
-          numberAccount: '27910000492884',
-          nameBank: 'VRBANK',
-          money: '4.000.000',
+        image: 'assets/images/vrbank.png',
+        name: 'VU XUAN BIEN',
+        numberAccount: '27910000492884',
+        nameBank: 'VRBANK',
+        money: '4.000.000',
       ),
       ListContactsModel(
-          image: 'assets/images/vrbank.png',
-          name: 'VU XUAN BIEN',
-          numberAccount: '27910000492884',
-          nameBank: 'VRBANK',
-          money: '4.000.000',
+        image: 'assets/images/vrbank.png',
+        name: 'VU XUAN BIEN',
+        numberAccount: '27910000492884',
+        nameBank: 'VRBANK',
+        money: '4.000.000',
       ),
     ];
     return DefaultTabController(
@@ -129,20 +128,10 @@ class _FirstTabState extends State<FirstTab> {
                           padding: EdgeInsets.only(left: 20.w, right: 20.w, top: 20.h),
                           child: TextField(
                             keyboardType: TextInputType.number,
-                            style: TextStyle(
-                                fontSize: 15.sp, fontWeight: FontWeight.w400),
+                            style: TextStyle(fontSize: 15.sp, fontWeight: FontWeight.w400),
                             decoration: InputDecoration(
-                              labelText: TITLE_33,
-                              suffixIcon: Icon(
-                                Icons.account_box_outlined,
-                                size: 20.spMax,
-                                color: clr_black54,
-                              ),
-                              suffixIconColor: clr_black54,
-                              labelStyle: TextStyle(
-                                  fontSize: 16.sp,
-                                  color: clr_black54,
-                                  fontWeight: FontWeight.w500),
+                              labelText: TITLE_44,
+                              labelStyle: TextStyle(fontSize: 16.sp, color: clr_black54, fontWeight: FontWeight.w500),
                               disabledBorder: const UnderlineInputBorder(
                                 borderSide: BorderSide(color: clr_black),
                               ),
@@ -156,8 +145,7 @@ class _FirstTabState extends State<FirstTab> {
                           color: clr_f5f5f5,
                           height: 50.h,
                           margin: EdgeInsets.only(top: 20.h),
-                          padding:
-                          EdgeInsets.only(top: 10.h, left: 20.w, right: 20.w),
+                          padding: EdgeInsets.only(top: 10.h, left: 20.w, right: 20.w),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
@@ -202,30 +190,32 @@ class _FirstTabState extends State<FirstTab> {
                     child: Column(
                       children: [
                         Container(
-                          margin:
-                          EdgeInsets.only(left: 20.w, right: 20.w,),
+                          margin: EdgeInsets.only(
+                            left: 20.w,
+                            right: 20.w,
+                          ),
                           child: TabBar(
                             labelColor: clr_black,
                             unselectedLabelColor: clr_black54,
                             indicatorColor: PRIMARY_COLOR,
-                            onTap: (index){
+                            onTap: (index) {
                               setState(() {
-                               if(index == 1){
-                                 visibly = false;
-                                 height = 188.w;
-                                 fromHeight = 10.h;
-                               }else if(index == 2){
-                                 statusSearch = false;
-                                 visibly = true;
-                                 height = 245.w;
-                                 fromHeight = 60.h;
-                               }else{
-                                 statusSearch = true;
-                                 visibly = true;
-                                 height = 245.w;
-                                 fromHeight = 60.h;
-                               }
-                               print(visibly);
+                                if (index == 1) {
+                                  visibly = false;
+                                  height = 188.w;
+                                  fromHeight = 10.h;
+                                } else if (index == 2) {
+                                  statusSearch = false;
+                                  visibly = true;
+                                  height = 245.w;
+                                  fromHeight = 60.h;
+                                } else {
+                                  statusSearch = true;
+                                  visibly = true;
+                                  height = 245.w;
+                                  fromHeight = 60.h;
+                                }
+                                print(visibly);
                               });
                             },
                             tabs: [
@@ -233,30 +223,21 @@ class _FirstTabState extends State<FirstTab> {
                                 child: Text(
                                   CONTACT,
                                   textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                      fontSize: 13.sp,
-                                      fontWeight: FontWeight.w600,
-                                      height: 1.2.h),
+                                  style: TextStyle(fontSize: 13.sp, fontWeight: FontWeight.w600, height: 1.2.h),
                                 ),
                               ),
                               Tab(
                                 child: Text(
                                   RECENTLY,
                                   textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                      fontSize: 13.sp,
-                                      fontWeight: FontWeight.w600,
-                                      height: 1.2.h),
+                                  style: TextStyle(fontSize: 13.sp, fontWeight: FontWeight.w600, height: 1.2.h),
                                 ),
                               ),
                               Tab(
                                 child: Text(
                                   SAVED_TEMPLATES,
                                   textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                      fontSize: 13.sp,
-                                      fontWeight: FontWeight.w600,
-                                      height: 1.2.h),
+                                  style: TextStyle(fontSize: 13.sp, fontWeight: FontWeight.w600, height: 1.2.h),
                                 ),
                               ),
                             ],
@@ -291,11 +272,10 @@ class _FirstTabState extends State<FirstTab> {
                                   ),
                                   border: OutlineInputBorder(
                                       borderSide: BorderSide.none,
-                                      borderRadius:
-                                      BorderRadius.all(Radius.circular(25.r))),
+                                      borderRadius: BorderRadius.all(Radius.circular(25.r))),
                                   fillColor: clr_white,
                                   contentPadding: EdgeInsets.zero,
-                                  hintText: statusSearch ?  SEARCH_2 : SEARCH_3,
+                                  hintText: statusSearch ? SEARCH_2 : SEARCH_3,
                                   hintStyle: TextStyle(
                                     fontSize: 15.sp,
                                     fontWeight: FontWeight.w500,
@@ -318,32 +298,15 @@ class _FirstTabState extends State<FirstTab> {
             children: [
               ListContacts(list: list),
               ListContactsRecently(list: list),
-              Center(child: Text(TITLE_36,style: TextStyle(color: clr_black26, fontSize: 15.sp), )),
+              Center(
+                  child: Text(
+                TITLE_36,
+                style: TextStyle(color: clr_black26, fontSize: 15.sp),
+              )),
             ],
           ),
         ),
-          bottomNavigationBar: Container(
-            height: 55.h,
-            decoration: BoxDecoration(
-              color: clr_white,
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.grey.withOpacity(0.9),
-                  spreadRadius: 3,
-                  blurRadius: 1,
-                  offset: const Offset(0, 3),
-                )
-              ],
-            ), // Get.to(const RegisterStep3Page()
-            child: ButtonComponent(
-              title: NEXT,
-              bgColor: button_color_home,
-              callback: () => Get.toNamed("/transaction_infor", arguments: ''),
-            ),
-          )
       ),
     );
   }
 }
-
-

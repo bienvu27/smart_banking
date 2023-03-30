@@ -11,7 +11,7 @@ class InforUser extends StatelessWidget {
   @override
   Widget build(BuildContext conteaxt) {
     return Positioned(
-        bottom: 1,
+        bottom: 0,
         child: SizedBox(
           width: Get.size.width,
           child: Container(
@@ -19,16 +19,17 @@ class InforUser extends StatelessWidget {
             padding: EdgeInsets.only(left: 10.w, right: 10.w),
             alignment: Alignment.center,
             width: Get.size.width,
-            height: 60.h,
+            height: 80.w,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15.r),
               color: Colors.white,
               boxShadow: [
                 BoxShadow(
-                  color: Colors.grey.withOpacity(0.5),
+                  color: Colors.grey.withOpacity(0.9),
                   spreadRadius: 1,
-                  blurRadius: 7,
-                  offset: const Offset(3, 3), // changes position of shadow
+                  blurRadius: 8,
+                  offset:
+                  const Offset(1, 1), // changes position of shadow
                 ),
               ],
             ),
@@ -62,8 +63,7 @@ class InforUser extends StatelessWidget {
                   ],
                 ),
                 Container(
-                  width: 80.w,
-                  height: 15.h,
+                  padding: EdgeInsets.only(top: 5.h, bottom: 5.h, right: 10.w, left: 10.w),
                   decoration: BoxDecoration(
                       color: Colors.black12,
                       borderRadius: BorderRadius.circular(20.r)),

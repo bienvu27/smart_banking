@@ -282,8 +282,7 @@ class _ServiceManagerState extends State<ServiceManager> {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: Container(
-        margin: EdgeInsets.only(bottom: 20.h),
-        width: Get.size.width / 2,
+        margin: EdgeInsets.only(bottom: 20.h,left: 60.w, right: 60.w),
         height: 35.h,
         alignment: Alignment.center,
         decoration: BoxDecoration(
