@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/resources/strings.dart';
-import '../../../../core/style/style.dart';
+import '../../../../core/style/colors.dart';
 import '../../model/group_model.dart';
 
 class RadioButton extends StatefulWidget {

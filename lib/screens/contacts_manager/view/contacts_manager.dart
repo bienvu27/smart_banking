@@ -3,8 +3,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 import '../../../core/resources/strings.dart';
-import '../../../core/style/style.dart';
-import '../../transfer/models/list_contacts_model.dart';
+import '../../../core/style/colors.dart';
+import '../../../core/style/size.dart';
+import '../../../fake_data/data_fake_home.dart';
+import '../../components/button/back_icon_button.dart';
+import '../../transfer/view/tabs/components/search_contacts.dart';
 import '../../transfer/view/tabs/tab1/components/list_contacts.dart';
 import 'my_contacts.dart';
 
@@ -13,57 +16,6 @@ class ContactsManagerPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final list = [
-      ListContactsModel(
-        image: 'assets/images/vrbank.png',
-        name: 'VU XUAN BIEN',
-        numberAccount: '27910000492884',
-        nameBank: 'VRBANK',
-        money: '4.000.000',
-      ),
-      ListContactsModel(
-        image: 'assets/images/vrbank.png',
-        name: 'VU XUAN BIEN',
-        numberAccount: '27910000492884',
-        nameBank: 'VRBANK',
-        money: '4.000.000',
-      ),
-      ListContactsModel(
-        image: 'assets/images/vrbank.png',
-        name: 'VU XUAN BIEN',
-        numberAccount: '27910000492884',
-        nameBank: 'VRBANK',
-        money: '4.000.000',
-      ),
-      ListContactsModel(
-        image: 'assets/images/vrbank.png',
-        name: 'VU XUAN BIEN',
-        numberAccount: '27910000492884',
-        nameBank: 'VRBANK',
-        money: '4.000.000',
-      ),
-      ListContactsModel(
-        image: 'assets/images/vrbank.png',
-        name: 'VU XUAN BIEN',
-        numberAccount: '27910000492884',
-        nameBank: 'VRBANK',
-        money: '4.000.000',
-      ),
-      ListContactsModel(
-        image: 'assets/images/vrbank.png',
-        name: 'VU XUAN BIEN',
-        numberAccount: '27910000492884',
-        nameBank: 'VRBANK',
-        money: '4.000.000',
-      ),
-      ListContactsModel(
-        image: 'assets/images/vrbank.png',
-        name: 'VU XUAN BIEN',
-        numberAccount: '27910000492884',
-        nameBank: 'VRBANK',
-        money: '4.000.000',
-      ),
-    ];
     return DefaultTabController(
       length: 2,
       child: Scaffold(
@@ -73,49 +25,55 @@ class ContactsManagerPage extends StatelessWidget {
             title: Text(
               CONTACTS_MANAGER,
               style: TextStyle(
-                  color: clr_black,
-                  fontSize: 18.sp,
-                  fontWeight: FontWeight.w600),
+                color: clr_black,
+                fontSize: fontSize_12,
+                fontWeight: FontWeight.w600,
+              ),
             ),
-            leading: InkWell(
-                onTap: () => Navigator.pop(context),
-                child: Icon(
-                  Icons.arrow_back_ios_new_outlined,
-                  color: clr_black,
-                  size:20.spMax,
-                )),
-            backgroundColor: Colors.white,
+            leading: BackIconButton(
+              callback: () => Navigator.pop(context),
+            ),
+            backgroundColor: clr_white,
             actions: [
               Padding(
-                padding: EdgeInsets.only(right: 10.w),
+                padding: EdgeInsets.only(right: width_8),
                 child: InkWell(
                     onTap: () {},
                     child: Icon(
                       Icons.home_outlined,
                       color: clr_black,
-                      size: 30.spMax,
+                      size: fontSize_20,
                     )),
               )
             ],
             bottom: PreferredSize(
-              preferredSize: Size.fromHeight(100.h),
+              preferredSize: Size.fromHeight(height_56),
               child: Column(
                 children: [
                   Container(
                     margin: EdgeInsets.only(
-                        left: 20.w, right: 20.w, top: 15.h, bottom: 10.h),
-                    height: 40.w,
+                      left: width_16,
+                      right: width_16,
+                      top: height_8,
+                      bottom: height_6,
+                    ),
+                    height: height_26,
                     decoration: BoxDecoration(
                       color: Colors.grey[200],
                       borderRadius: BorderRadius.circular(
-                        25.r,
+                        border_16,
                       ),
                     ),
                     child: TabBar(
-                      padding: EdgeInsets.only(top: 5.h, right: 5.w, left: 5.w, bottom: 5.h),
+                      padding: EdgeInsets.only(
+                        top: height_3,
+                        right: width_2_5,
+                        left: width_2_5,
+                        bottom: height_3,
+                      ),
                       indicator: BoxDecoration(
                         borderRadius: BorderRadius.circular(
-                          25.r,
+                          border_16,
                         ),
                         color: clr_white,
                       ),
@@ -125,64 +83,28 @@ class ContactsManagerPage extends StatelessWidget {
                         Tab(
                           child: Text(
                             TAB_CONTACTS_1,
-                            style: TextStyle(
-                                fontSize: 13.sp, fontWeight: FontWeight.w500),
+                            style: TextStyle( fontSize: fontSize_10, fontWeight: FontWeight.w500),
                           ),
                         ),
                         Tab(
                           child: Text(
                             TAB_CONTACTS_2,
-                            style: TextStyle(
-                                fontSize: 13.sp, fontWeight: FontWeight.w500),
+                            style: TextStyle(fontSize: fontSize_10, fontWeight: FontWeight.w500),
                           ),
                         ),
                       ],
-
                     ),
                   ),
-                  Container(
-                    margin: EdgeInsets.only(bottom: 10.h),
-                    padding: EdgeInsets.only(
-                      left: 20.w,
-                      right: 20.w,
-                    ),
-                    height: 35.h,
-                    child: Container(
-                      decoration: BoxDecoration(
-                        boxShadow: [
-                          BoxShadow(blurRadius: 2.r, color: clr_black12),
-                        ],
-                        borderRadius: BorderRadius.circular(25.r),
-                      ),
-                      child: TextField(
-                        maxLines: 1,
-                        style: TextStyle(fontSize: 17.sp),
-                        textAlignVertical: TextAlignVertical.center,
-                        decoration: InputDecoration(
-                          filled: true,
-                          prefixIcon: Icon(
-                            Icons.search,
-                            color: clr_black54,
-                            size: 30.spMin,
-                          ),
-                          border: OutlineInputBorder(
-                              borderSide: BorderSide.none,
-                              borderRadius:
-                              BorderRadius.all(Radius.circular(25.r))),
-                          fillColor: clr_white,
-                          contentPadding: EdgeInsets.zero,
-                          hintText: SEARCH,
-                          hintStyle: TextStyle(fontSize: 15.sp),
-                        ),
-                      ),
-                    ),
-                  )
+                  SearchContacts(visibly: true, title: SEARCH,)
                 ],
               ),
             )),
-        body:  TabBarView(
+        body: TabBarView(
           children: [
-            ListContacts(list: list, callBack: ()=> Get.toNamed("/transaction_infor", arguments: '')),
+            ListContacts(
+              list: listContacts,
+              callBack: () => Get.toNamed("/transaction_infor", arguments: ''),
+            ),
             const MyContacts(),
           ],
         ),

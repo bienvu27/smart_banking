@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-import '../../../core/style/style.dart';
+import '../../../core/style/colors.dart';
+import '../../../core/style/size.dart';
 
 class ButtonComponent extends StatelessWidget {
   const ButtonComponent({
@@ -19,25 +20,18 @@ class ButtonComponent extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            margin: EdgeInsets.only(left: 10.w, right: 10.w, top: 10.h),
-            height: 40.h,
+            margin: EdgeInsets.only(left: width_16, right: width_16,),
+            height: height_32,
             width: Get.size.width,
             alignment: Alignment.center,
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10.r),
-                gradient: const LinearGradient(
-                    colors: [
-                      clr_button_1,
-                      clr_button_2,
-                      clr_button_3,
-                      clr_button_4,
-                      clr_button_5,
-                    ])
+              borderRadius: BorderRadius.circular(border_8),
+                gradient: linearGradientButtom
             ),
             child: Text(
               title,
               style: TextStyle(
-                  fontSize: 15.sp,
+                  fontSize: fontSize_12,
                   fontWeight: FontWeight.w500,
                   color: clr_white),
             ),

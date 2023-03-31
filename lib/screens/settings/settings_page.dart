@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../core/resources/strings.dart';
-import '../../core/style/style.dart';
+import '../../core/style/colors.dart';
 import 'components/settings_component.dart';
 
 class SettingsPage extends StatelessWidget {

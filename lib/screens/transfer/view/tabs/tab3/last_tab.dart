@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 import '../../../../../core/resources/strings.dart';
-import '../../../../../core/style/style.dart';
+import '../../../../../core/style/colors.dart';
 import '../../../models/list_contacts_model.dart';
 import '../tab1/components/list_contacts.dart';
 import '../tab1/components/list_contacts_recently.dart';

@@ -1,8 +1,10 @@
 import 'dart:ui';
 
-const Color PRIMARY_COLOR_RED =  Color(0xFFFA4C4C);
+import 'package:flutter/material.dart';
+
+const Color PRIMARY_COLOR_RED = Color(0xFFFA4C4C);
 const Color PRIMARY_COLOR = Color(0xff2878b2);
-const Color PRIMARY_COLOR_BLUE =  Color(0xFF0031ba);
+const Color PRIMARY_COLOR_BLUE = Color(0xFF0031ba);
 
 const Color clr_366173 = Color(0xFF366173);
 const Color clr_6dd7ce = Color(0xFF6dd7ce);
@@ -52,7 +54,74 @@ const Color clr_button_3 = Color(0xff00a2ae);
 const Color clr_button_4 = Color(0xff0181ad);
 const Color clr_button_5 = Color(0xff026c90);
 
+const Color button_color_home = Color(0xFFeaf7ff);
+const Color button_color_bg_dialog = Color(0xffeaf7ff);
+const Color button_dropdown_color_bg = Color(0xff00bfaf);
 
-const Color button_color_home =  Color(0xFFeaf7ff);
-const Color button_color_bg_dialog =  Color(0xffeaf7ff);
-const Color button_dropdown_color_bg =  Color(0xff00bfaf);
+final Color color_white_opacity = Colors.white.withOpacity(0.1);
+
+BoxShadow boxShadow = BoxShadow(
+  color: Colors.grey.withOpacity(0.9),
+  spreadRadius: 1,
+  blurRadius: 8,
+  offset: const Offset(1, 1), // changes position of shadow
+);
+BoxShadow boxShadowIcon =  BoxShadow(
+  color:
+  Colors.grey.withOpacity(0.9),
+  spreadRadius: 2,
+  blurRadius: 5,
+  offset: const Offset(0, 5), // changes position of shadow
+);
+BoxShadow boxShadowTab =   BoxShadow(
+    color: clr_e1e9ef.withOpacity(0.9),
+    offset: const Offset(0.0, 1.0), //(x,y)
+    blurRadius: 1.0,
+    spreadRadius: 5);
+BoxShadow bottomNavigationBar = BoxShadow(
+  color: Colors.grey.withOpacity(0.9),
+  spreadRadius: 3,
+  blurRadius: 1,
+  offset: const Offset(0, 3),
+);
+
+LinearGradient linearGradient1 = LinearGradient(colors: [
+  clr_gradient_1,
+  clr_gradient_2,
+  clr_gradient_3,
+  clr_gradient_4,
+]);
+LinearGradient linearGradient2 = LinearGradient(colors: [
+  clr_gradient_4,
+  clr_gradient_3,
+  clr_gradient_2,
+  clr_gradient_1,
+]);
+LinearGradient linearGradient3 = LinearGradient(colors: [
+  clr_gradient_1_1,
+  clr_gradient_2_2,
+  clr_gradient_3_3,
+  clr_gradient_4_4,
+]);
+LinearGradient linearGradient4 = LinearGradient(colors: [
+  clr_gradient_4_4,
+  clr_gradient_3_3,
+  clr_gradient_2_2,
+  clr_gradient_1_1,
+]);
+LinearGradient linearGradientTab = LinearGradient(colors: [
+  clr_button_1,
+  clr_button_2,
+  clr_button_2,
+  clr_button_2,
+  clr_button_4,
+  clr_button_4,
+]);
+LinearGradient linearGradientButtom = LinearGradient(
+    colors: [
+      clr_button_1,
+      clr_button_2,
+      clr_button_3,
+      clr_button_4,
+      clr_button_5,
+    ]);

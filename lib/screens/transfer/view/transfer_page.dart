@@ -5,7 +5,9 @@ import 'package:smart_banking/screens/transfer/view/tabs/tab2/seconds_tab.dart';
 import 'package:smart_banking/screens/transfer/view/tabs/tab3/last_tab.dart';
 
 import '../../../core/resources/strings.dart';
-import '../../../core/style/style.dart';
+import '../../../core/style/colors.dart';
+import '../../../core/style/size.dart';
+import '../../components/button/back_icon_button.dart';
 
 class TransferPage extends StatelessWidget {
   const TransferPage({Key? key}) : super(key: key);
@@ -21,51 +23,39 @@ class TransferPage extends StatelessWidget {
             title: Text(
               CHOOSE_PEOPLE,
               style: TextStyle(
-                  color: clr_black,
-                  fontSize: 18.sp,
-                  fontWeight: FontWeight.w600),
+                color: clr_black,
+                fontSize: fontSize_12,
+                fontWeight: FontWeight.w600,
+              ),
             ),
             backgroundColor: clr_white,
-            leading: InkWell(
-                onTap: () => Navigator.pop(context),
-                child: Icon(
-                  Icons.arrow_back_ios_new_outlined,
-                  color: clr_black,
-                  size: 20.spMax,
-                )),
+            leading: BackIconButton(callback: () => Navigator.pop(context)),
             bottom: PreferredSize(
-              preferredSize: Size.fromHeight(70.h),
+              preferredSize: Size.fromHeight(80.h),
               child: Container(
                 margin: EdgeInsets.only(
-                  left: 20.w,
-                  right: 20.w,
-                  top: 15.h,
+                  left: width_16,
+                  right: width_16,
+                  top: height_8,
                 ),
-                height: 60.h,
+                height: height_44,
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(
-                      15.r,
-                    ),
-                    boxShadow: [
-                      BoxShadow(
-                          color: clr_e1e9ef.withOpacity(0.9),
-                          offset: const Offset(0.0, 1.0), //(x,y)
-                          blurRadius: 1.0,
-                          spreadRadius: 5),
-                    ],
-                    gradient: const LinearGradient(colors: [
-                      clr_button_1,
-                      clr_button_2,
-                      clr_button_2,
-                      clr_button_2,
-                      clr_button_4,
-                      clr_button_4,
-                    ])),
+                  borderRadius: BorderRadius.circular(
+                    border_10,
+                  ),
+                  boxShadow: [boxShadowTab],
+                  gradient: linearGradientTab,
+                ),
                 child: TabBar(
-                  padding: const EdgeInsets.all(5),
+                  padding: EdgeInsets.only(
+                    top: height_4,
+                    left: width_4,
+                    right: width_4,
+                    bottom: height_4,
+                  ),
                   indicator: BoxDecoration(
                     borderRadius: BorderRadius.circular(
-                      15.r,
+                      border_10,
                     ),
                     color: clr_66cacef,
                   ),
@@ -73,56 +63,48 @@ class TransferPage extends StatelessWidget {
                   unselectedLabelColor: clr_white,
                   tabs: [
                     Tab(
-                      child: SizedBox(
-                        width: 80.w,
-                        child: Text(
-                          TAB_1,
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              fontSize: 13.sp,
-                              fontWeight: FontWeight.w500,
-                              height: 1.2.h),
+                      child: Text(
+                        TAB_1,
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: fontSize_10,
+                          fontWeight: FontWeight.w500,
+                          height: lineHeight,
                         ),
                       ),
                     ),
                     Tab(
-                      child: SizedBox(
-                        width: 80.w,
-                        child: Text(
-                          TAB_2,
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              fontSize: 13.sp,
-                              fontWeight: FontWeight.w500,
-                              height: 1.2.h),
+                      child: Text(
+                        TAB_2,
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: fontSize_10,
+                          fontWeight: FontWeight.w500,
+                          height: lineHeight,
                         ),
                       ),
                     ),
                     Tab(
-                      child: SizedBox(
-                        width: 80.w,
-                        child: Text(
-                          TAB_3,
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontSize: 13.sp,
-                            fontWeight: FontWeight.w500,
-                            height: 1.2.h
-                          ),
+                      child: Text(
+                        TAB_3,
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: fontSize_10,
+                          fontWeight: FontWeight.w500,
+                          height: lineHeight,
                         ),
                       ),
                     ),
-
                   ],
                 ),
               ),
             )),
-        body:  const TabBarView(
+        body: const TabBarView(
           physics: NeverScrollableScrollPhysics(),
           children: [
             FirstTab(),
             SecondsTab(),
-            LastTab()
+            LastTab(),
           ],
         ),
       ),

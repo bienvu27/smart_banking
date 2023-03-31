@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
-
+import '../../../core/resources/strings.dart';
+import '../../../core/style/colors.dart';
+import '../../../core/style/size.dart';
 
 class InforUser extends StatelessWidget {
   const InforUser({
@@ -9,29 +9,22 @@ class InforUser extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext conteaxt) {
+  Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
     return Positioned(
-        bottom: 0,
+        bottom: size_0,
         child: SizedBox(
-          width: Get.size.width,
+          width: width,
           child: Container(
-            margin: EdgeInsets.only(left: 10.w, right: 10.w),
-            padding: EdgeInsets.only(left: 10.w, right: 10.w),
+            margin: EdgeInsets.only(left: width_10, right: width_10),
+            padding: EdgeInsets.only(left: width_10, right: width_10),
             alignment: Alignment.center,
-            width: Get.size.width,
-            height: 80.w,
+            width: width,
+            height: height_50,
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(15.r),
-              color: Colors.white,
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.grey.withOpacity(0.9),
-                  spreadRadius: 1,
-                  blurRadius: 8,
-                  offset:
-                  const Offset(1, 1), // changes position of shadow
-                ),
-              ],
+              borderRadius: BorderRadius.circular(border_10),
+              color: clr_white,
+              boxShadow: [boxShadow],
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -41,43 +34,60 @@ class InforUser extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      'Tài khoản thanh toán',
+                      PAYMENT_ACCOUNT,
                       style: TextStyle(
-                          color: Colors.black54,
-                          fontSize: 15.sp,
-                          fontWeight: FontWeight.w500),
+                        color: Colors.black54,
+                        fontSize: fontSize_11,
+                        fontWeight: FontWeight.w500,
+                      ),
                     ),
-                    SizedBox(height: 5.h,),
+                    SizedBox(
+                      height: height_2,
+                    ),
                     Row(
                       children: [
                         Text(
-                          '21610000542522',
+                          NUMBER_TEST,
                           style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 17.sp,
-                              fontWeight: FontWeight.w900),
+                            color: clr_black,
+                            fontSize: fontSize_14,
+                            fontWeight: FontWeight.w500,
+                          ),
                         ),
-                        const Icon(Icons.keyboard_arrow_down_rounded)
+                        Icon(
+                          Icons.keyboard_arrow_down_rounded,
+                          size: fontSize_20,
+                        )
                       ],
                     ),
                   ],
                 ),
                 Container(
-                  padding: EdgeInsets.only(top: 5.h, bottom: 5.h, right: 10.w, left: 10.w),
+                  padding: EdgeInsets.only(
+                    top: height_4,
+                    bottom: height_4,
+                    right: width_8,
+                    left: width_8,
+                  ),
                   decoration: BoxDecoration(
-                      color: Colors.black12,
-                      borderRadius: BorderRadius.circular(20.r)),
+                    color: clr_black12,
+                    borderRadius: BorderRadius.circular(border_16),
+                  ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      const Text('Danh sách',
-                          style: TextStyle(
-                              color: Colors.black54,
-                              fontWeight: FontWeight.w500)),
+                      Text(
+                        TODO_LIST,
+                        style: TextStyle(
+                          fontSize: fontSize_11,
+                          color: clr_black54,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
                       Icon(
                         Icons.arrow_forward_ios,
-                        size: 13.spMin,
-                        color: Colors.black54,
+                        size: fontSize_10,
+                        color: clr_black54,
                       )
                     ],
                   ),

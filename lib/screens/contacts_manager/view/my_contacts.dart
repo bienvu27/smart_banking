@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_contacts/flutter_contacts.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../core/style/style.dart';
+import '../../../core/style/colors.dart';
+import '../../../core/style/size.dart';
 
 class MyContacts extends StatefulWidget {
   const MyContacts({Key? key}) : super(key: key);
@@ -50,20 +51,20 @@ class _MyContactsState extends State<MyContacts> {
                     leading: (contacts![index].photo == null)
                         ? CircleAvatar(
                             backgroundColor: clr_bg_text,
-                            radius: 20.r,
+                            radius: border_16,
                             child: Icon(
                               Icons.person,
-                              size: 25.spMax,
+                              size: 35.spMax,
                               color: clr_d9dbda,
                             ))
                         : CircleAvatar(backgroundImage: MemoryImage(image!)),
                     title: Text(
                         "${contacts![index].name.first} ${contacts![index].name.last}",
                         style: TextStyle(
-                            fontSize: 15.sp, fontWeight: FontWeight.w600)),
+                            fontSize: fontSize_10, fontWeight: FontWeight.w600)),
                     subtitle: Text(num,
                         style: TextStyle(
-                            fontSize: 15.sp,
+                            fontSize: fontSize_10,
                             fontWeight: FontWeight.w600,
                             color: clr_black)),
                     onTap: () {},

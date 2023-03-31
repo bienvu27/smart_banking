@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-import '../../../core/style/style.dart';
+import '../../../core/resources/strings.dart';
+import '../../../core/style/colors.dart';
 
+import '../../../core/style/size.dart';
 import '../../components/dialog/custom_dialog.dart';
 import '../../home/view/home_page.dart';
 import '../../notification/notifications_page.dart';
@@ -22,9 +23,9 @@ class DashboardBottomNavigatorBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return BottomAppBar(
       shape: const CircularNotchedRectangle(),
-      notchMargin: 5,
+      notchMargin: 10,
       child: SizedBox(
-        height: 60.h,
+        height: height_40,
         width: Get.size.width,
         child: Row(
           children: [
@@ -46,13 +47,14 @@ class DashboardBottomNavigatorBar extends StatelessWidget {
                         children: [
                           Icon(
                             Icons.home,
-                            size: 22.spMax,
+                            size: fontSize_20,
                             color: controller.currentTab == 0 ? clr_active_button : clr_unactive_button,
                           ),
                           Text(
-                            'Trang chủ',
+                            HOME,
                             style: TextStyle(
-                              fontSize: 12.sp,
+                              fontSize: fontSize_8,
+                              fontWeight: FontWeight.w500,
                               color: controller.currentTab == 0 ? clr_active_button : clr_unactive_button,
                             ),
                           )
@@ -65,32 +67,20 @@ class DashboardBottomNavigatorBar extends StatelessWidget {
                     child: InkWell(
                       onTap: () {
                         controller.currentScreen = const PromotionPage();
-                        // showDialog(
-                        //     barrierDismissible: false,
-                        //     context: context,
-                        //     builder: (BuildContext context) => CustomDialog(
-                        //       title: 'Quý khách cần kích hoạt ứng dụng trước để sử dụng chức năng này.',
-                        //       cancel: 'Huỷ bỏ',
-                        //       submit: 'Đăng nhập',
-                        //       clickCallback: () {
-                        //       },
-                        //     ));
                         controller.changeTabIndex(1);
-                        // controller.changeTabIndex(0);
-                        // controller.currentTab = 1;
                       },
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Icon(
                             Icons.blur_circular,
-                            size: 22.spMax,
+                            size: fontSize_20,
                             color: controller.currentTab == 1 ? clr_active_button : clr_unactive_button,
                           ),
                           Text(
-                            'Đổi quà',
+                            REDEEM_GIFTS,
                             style: TextStyle(
-                              fontSize: 12.sp,
+                              fontSize: fontSize_8,
                               color: controller.currentTab == 1 ? clr_active_button : clr_unactive_button,
                             ),
                           )
@@ -108,27 +98,25 @@ class DashboardBottomNavigatorBar extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Container(
-                    margin: EdgeInsets.only(top: 20.h),
+                    margin: EdgeInsets.only(top: height_16),
                     child: InkWell(
                       onTap: () {
                         showDialog(
                             barrierDismissible: false,
                             context: context,
                             builder: (BuildContext context) => CustomDialog(
-                              title: 'Quý khách cần kích hoạt ứng dụng trước để sử dụng chức năng này.',
-                              cancel: 'Huỷ bỏ',
-                              submit: 'Đăng nhập',
+                              title: TITLE_31,
+                              cancel: CANCEL2,
+                              submit: LOGIN,
                               clickCallback: () {
                               },
                             ));
                         controller.changeTabIndex(0);
-                        // currentScreen = const QRCode_Page();
-                        // currentTab = 3;
                       },
                       child: Text(
-                        'Quét QR',
+                        QR_CODE,
                         style: TextStyle(
-                          fontSize: 12.sp,
+                          fontSize: fontSize_8,
                           color: controller.currentTab == 3 ? clr_active_button : clr_unactive_button,
                         ),
                       ),
@@ -146,16 +134,6 @@ class DashboardBottomNavigatorBar extends StatelessWidget {
                   InkWell(
                     onTap: () {
                       controller.currentScreen = const NotificationPage();
-                      // showDialog(
-                      //     barrierDismissible: false,
-                      //     context: context,
-                      //     builder: (BuildContext context) => CustomDialog(
-                      //       title: 'Quý khách cần kích hoạt ứng dụng trước để sử dụng chức năng này.',
-                      //       cancel: 'Huỷ bỏ',
-                      //       submit: 'Đăng nhập',
-                      //       clickCallback: () {
-                      //       },
-                      //     ));
                       controller.changeTabIndex(4);
 
                     },
@@ -164,13 +142,13 @@ class DashboardBottomNavigatorBar extends StatelessWidget {
                       children: [
                         Icon(
                           Icons.notifications,
-                          size: 22.spMax,
+                          size: fontSize_20,
                           color: controller.currentTab == 4 ? clr_active_button : clr_unactive_button,
                         ),
                         Text(
-                          'Thông báo',
+                          NOTIFICATION,
                           style: TextStyle(
-                            fontSize: 12.sp,
+                            fontSize: fontSize_8,
                             color: controller.currentTab == 4 ? clr_active_button : clr_unactive_button,
                           ),
                         )
@@ -180,16 +158,6 @@ class DashboardBottomNavigatorBar extends StatelessWidget {
                   InkWell(
                     onTap: () {
                       controller.currentScreen = const SettingsPage();
-                      // showDialog(
-                      //     barrierDismissible: false,
-                      //     context: context,
-                      //     builder: (BuildContext context) => CustomDialog(
-                      //       title: 'Quý khách cần kích hoạt ứng dụng trước để sử dụng chức năng này.',
-                      //       cancel: 'Huỷ bỏ',
-                      //       submit: 'Đăng nhập',
-                      //       clickCallback: () {
-                      //       },
-                      //     ));
                       controller.changeTabIndex(5);
                       // controller.changeTabIndex(0);
                     },
@@ -198,13 +166,13 @@ class DashboardBottomNavigatorBar extends StatelessWidget {
                       children: [
                         Icon(
                           Icons.settings,
-                          size: 22.spMax,
+                          size: fontSize_20,
                           color: controller.currentTab == 5 ? clr_active_button : clr_unactive_button,
                         ),
                         Text(
-                          'Cài đặt',
+                          SETTING,
                           style: TextStyle(
-                            fontSize: 12.sp,
+                            fontSize: fontSize_8,
                             color: controller.currentTab == 5 ? clr_active_button : clr_unactive_button,
                           ),
                         )

@@ -3,11 +3,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:smart_banking/screens/transfer/view/tabs/tab1/components/list_contacts.dart';
 import 'package:smart_banking/screens/transfer/view/tabs/tab1/components/list_contacts_recently.dart';
-
 import '../../../../../core/resources/strings.dart';
-import '../../../../../core/style/style.dart';
+import '../../../../../core/style/colors.dart';
+import '../../../../../core/style/size.dart';
+import '../../../../../fake_data/data_fake_home.dart';
 import '../../../../components/button/button_component.dart';
-import '../../../models/list_contacts_model.dart';
+import '../components/text_field_trans_fer.dart';
 import 'model/icon_bank_model.dart';
 
 class SecondsTab extends StatefulWidget {
@@ -20,7 +21,7 @@ class SecondsTab extends StatefulWidget {
 class _SecondsTabState extends State<SecondsTab> {
   ScrollController? _scrollController;
   bool lastStatus = true;
-  double height = 342.w;
+  double height = 500.w;
   double fromHeight = 60.h;
   int index = 1;
   bool statusSearch = true;
@@ -55,67 +56,6 @@ class _SecondsTabState extends State<SecondsTab> {
 
   @override
   Widget build(BuildContext context) {
-    final list = [
-      ListContactsModel(
-        image: 'assets/images/vrbank.png',
-        name: 'VU XUAN BIEN',
-        numberAccount: '27910000492884',
-        nameBank: 'VRBANK',
-        money: '4.000.000',
-      ),
-      ListContactsModel(
-        image: 'assets/images/vrbank.png',
-        name: 'VU XUAN BIEN',
-        numberAccount: '27910000492884',
-        nameBank: 'VRBANK',
-        money: '4.000.000',
-      ),
-      ListContactsModel(
-        image: 'assets/images/vrbank.png',
-        name: 'VU XUAN BIEN',
-        numberAccount: '27910000492884',
-        nameBank: 'VRBANK',
-        money: '4.000.000',
-      ),
-      ListContactsModel(
-        image: 'assets/images/vrbank.png',
-        name: 'VU XUAN BIEN',
-        numberAccount: '27910000492884',
-        nameBank: 'VRBANK',
-        money: '4.000.000',
-      ),
-      ListContactsModel(
-        image: 'assets/images/vrbank.png',
-        name: 'VU XUAN BIEN',
-        numberAccount: '27910000492884',
-        nameBank: 'VRBANK',
-        money: '4.000.000',
-      ),
-      ListContactsModel(
-        image: 'assets/images/vrbank.png',
-        name: 'VU XUAN BIEN',
-        numberAccount: '27910000492884',
-        nameBank: 'VRBANK',
-        money: '4.000.000',
-      ),
-      ListContactsModel(
-        image: 'assets/images/vrbank.png',
-        name: 'VU XUAN BIEN',
-        numberAccount: '27910000492884',
-        nameBank: 'VRBANK',
-        money: '4.000.000',
-      ),
-    ];
-    final listImageBank = [
-      IconBankModel(image: 'https://cdn.haitrieu.com/wp-content/uploads/2022/02/Icon-Vietcombank.png'),
-      IconBankModel(
-          image:
-              'https://cdn.haitrieu.com/wp-content/uploads/2022/02/Icon-MB-Bank-MBB.png'),
-      IconBankModel(image: 'https://cdn.haitrieu.com/wp-content/uploads/2022/01/Logo-BIDV-Ori.png'),
-      IconBankModel(image: 'https://cdn.haitrieu.com/wp-content/uploads/2022/02/Icon-TPBank.png'),
-      IconBankModel(image: 'https://cdn.haitrieu.com/wp-content/uploads/2022/01/Icon-Agribank.png'),
-      IconBankModel(image: 'https://cdn.haitrieu.com/wp-content/uploads/2022/01/Icon-VPBank.png'),
-    ];
     return DefaultTabController(
       length: 3,
       child: Scaffold(
@@ -135,32 +75,12 @@ class _SecondsTabState extends State<SecondsTab> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Padding(
-                            padding: EdgeInsets.only(left: 20.w, right: 20.w, top: 20.h),
-                            child: TextField(
-                              enabled: false,
-                              keyboardType: TextInputType.number,
-                              style: TextStyle(fontSize: 15.sp, fontWeight: FontWeight.w400),
-                              decoration: InputDecoration(
-                                labelText: TITLE_43,
-                                suffixIcon: Icon(
-                                  Icons.arrow_drop_down_sharp,
-                                  size: 30.spMax,
-                                  color: clr_black54,
-                                ),
-                                suffixIconColor: clr_black54,
-                                labelStyle: TextStyle(fontSize: 16.sp, color: clr_black54, fontWeight: FontWeight.w500),
-                                disabledBorder: const UnderlineInputBorder(
-                                  borderSide: BorderSide(color: clr_black12),
-                                ),
-                                focusedBorder: const UnderlineInputBorder(
-                                  borderSide: BorderSide(color: PRIMARY_COLOR),
-                                ),
-                              ),
-                            ),
+                          TextFieldTransFer(
+                            labelText: TITLE_43,
+                            suffixIcon: Icons.arrow_drop_down_sharp,
                           ),
                           Padding(
-                            padding: EdgeInsets.only(left: 20.w, right: 20.w, top: 20.h),
+                            padding: EdgeInsets.only(left: width_16, right: width_16, top: height_12),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
@@ -168,24 +88,24 @@ class _SecondsTabState extends State<SecondsTab> {
                                   SUGGEST,
                                   style: TextStyle(
                                     color: clr_black54,
-                                    fontSize: 13.sp,
+                                    fontSize: fontSize_12,
                                   ),
                                 ),
                                 SizedBox(
                                   width: MediaQuery.of(context).size.width,
-                                  height: 50.h,
+                                  height: height_40,
                                   child: ListView(
                                     scrollDirection: Axis.horizontal,
                                     children: listImageBank
                                         .map((e) => Container(
-                                              margin: EdgeInsets.only(right: 20.w, top: 10.h),
+                                              margin: EdgeInsets.only(right: width_16, top: height_8),
                                               child: CircleAvatar(
                                                   backgroundColor: clr_f6f5f7,
-                                                  radius: 20.r,
+                                                  radius: border_16,
                                                   child: Image.network(
                                                     e.image ?? '',
-                                                    width: 20.w,
-                                                    height: 20.h,
+                                                    width: width_24,
+                                                    height: height_24,
                                                     fit: BoxFit.scaleDown,
                                                   )),
                                             ))
@@ -351,8 +271,8 @@ class _SecondsTabState extends State<SecondsTab> {
             body: TabBarView(
               physics: const NeverScrollableScrollPhysics(),
               children: [
-                ListContacts(list: list,callBack: ()=> Get.toNamed("/transaction_infor", arguments: ''), icon: Icons.account_balance_wallet_rounded),
-                ListContactsRecently(list: list, callBack: () => Get.toNamed("/transaction_infor", arguments: '')),
+                ListContacts(list: listContacts,callBack: ()=> Get.toNamed("/transaction_infor", arguments: ''), icon: Icons.account_balance_wallet_rounded),
+                ListContactsRecently(list: listContacts, callBack: () => Get.toNamed("/transaction_infor", arguments: '')),
                 Center(
                     child: Text(
                   TITLE_36,
@@ -362,17 +282,11 @@ class _SecondsTabState extends State<SecondsTab> {
             ),
           ),
           bottomNavigationBar: Container(
-            height: 55.h,
+            padding: EdgeInsets.only(top: height_4, bottom: height_4),
+            height: height_40,
             decoration: BoxDecoration(
               color: clr_white,
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.grey.withOpacity(0.9),
-                  spreadRadius: 3,
-                  blurRadius: 1,
-                  offset: const Offset(0, 3),
-                )
-              ],
+              boxShadow: [bottomNavigationBar],
             ), // Get.to(const RegisterStep3Page()
             child: ButtonComponent(
               title: NEXT,

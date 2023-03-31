@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import '../../../../../../core/style/style.dart';
+import '../../../../../../core/style/colors.dart';
+import '../../../../../../core/style/size.dart';
 import '../../../../models/list_contacts_model.dart';
 
 class ListContacts extends StatelessWidget {
@@ -17,14 +16,15 @@ class ListContacts extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(left: 20.w, right: 20.w),
+      padding: EdgeInsets.only(left: width_16, right: width_16),
       color: clr_white,
       child: ListView(
+        physics: BouncingScrollPhysics(),
         children: list.map((e) {
           return InkWell(
             onTap: () => callBack(),
             child: Container(
-              margin: EdgeInsets.only(top: 20.h,),
+              margin: EdgeInsets.only(top: height_12,),
               color: clr_white,
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -34,14 +34,14 @@ class ListContacts extends StatelessWidget {
                     children: [
                       CircleAvatar(
                         backgroundColor: clr_f6f5f7,
-                        radius: 20.r,
+                        radius: border_16,
                         child: Image.asset(
                           e.image ?? '',
-                          width: 30.w,
-                          height: 30.h,
+                          width: width_24,
+                          height: height_24,
                         ),
                       ),
-                      SizedBox(width: 10.w,),
+                      SizedBox(width: width_8,),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -50,28 +50,28 @@ class ListContacts extends StatelessWidget {
                             style: TextStyle(
                                 color: clr_black,
                                 fontWeight: FontWeight.w600,
-                                fontSize: 15.sp),
+                                fontSize: fontSize_10),
                           ),
-                          SizedBox(height: 5.h,),
+                          SizedBox(height: height_4),
                           Text(
                             e.numberAccount?.toUpperCase() ?? ''.toUpperCase(),
                             style: TextStyle(
                                 color: clr_black,
                                 fontWeight: FontWeight.w600,
-                                fontSize: 13.sp),
+                                fontSize: fontSize_10),
                           ),
-                          SizedBox(height: 5.h,),
+                          SizedBox(height: height_4),
                           Text(
                             e.nameBank?.toUpperCase() ?? ''.toUpperCase(),
                             style: TextStyle(
                                 color: clr_black87,
-                                fontSize: 13.sp),
+                                fontSize: fontSize_10),
                           ),
                         ],
                       ),
                     ],
                   ),
-                  Icon(icon, color: clr_black26, size: 20.spMax,)
+                  Icon(icon, color: clr_black26, size: fontSize_12,)
                 ],
               ),
             ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../core/style/style.dart';
+import '../../../core/style/colors.dart';
+import '../../../core/style/size.dart';
 
 class DashBoardFloatingActionButton extends StatelessWidget {
   const DashBoardFloatingActionButton({
@@ -10,18 +10,19 @@ class DashBoardFloatingActionButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: PRIMARY_COLOR,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(35.r)),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(border_16)),
       shadowColor: PRIMARY_COLOR,
       child: CircleAvatar(
-       radius: 25.r,
+        radius: border_16,
         backgroundColor: clr_white,
         child: FloatingActionButton(
           backgroundColor: PRIMARY_COLOR,
           onPressed: () {},
           shape: RoundedRectangleBorder(
-              side: BorderSide(width: 3.w, color: clr_white), borderRadius: BorderRadius.circular(100.r)),
-          child: const Icon(Icons.qr_code_scanner_sharp),
+            side: BorderSide(width: width_2, color: clr_white),
+            borderRadius: BorderRadius.circular(border_40),
+          ),
+          child: const Icon(Icons.qr_code_2),
         ),
       ),
     );

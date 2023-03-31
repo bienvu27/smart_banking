@@ -1,7 +1,11 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+
+double size_0 = 0;
+double lineHeight = 1.2;
 /// Height
 double height_2 = 5.h;
+double height_3 = 7.h;
 double height_4 = 10.h;
 double height_5 = 12.h;
 double height_6 = 15.h;
@@ -58,7 +62,9 @@ double height_1296 = 3240.h;
 
 
 /// Width
+double width_0 = 0.w;
 double width_2 = 5.w;
+double width_2_5 = 7.w;
 double width_3 = 7.5.w;
 double width_4 = 10.w;
 double width_8 = 20.w;
@@ -110,6 +116,7 @@ double border_5 = 12.5.r;
 double border_8 = 20.r;
 double border_10 = 25.r;
 double border_16 = 40.r;
+double border_50 = 50.r;
 double border_24 = 60.r;
 double border_32 = 80.r;
 double border_40 = 100.r;

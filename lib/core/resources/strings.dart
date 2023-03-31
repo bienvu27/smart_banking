@@ -82,6 +82,11 @@ const String TAB_CONTACTS_1  = 'Danh bạ đã lưu';
 const String TAB_CONTACTS_2  = 'Danh bạ điện thoại';
 const String TRANSACTION_INFOR  = 'Thông tin giao dịch';
 const String DESCRIPTIONS  = 'Nội dung';
+const String TODO_LIST  = 'Danh sách';
+const String HOME  = 'Trang chủ';
+const String REDEEM_GIFTS  = 'Đổi quà';
+const String QR_CODE  = 'Quét QR';
+const String SETTING  = 'Cài đặt';
 
 
 const String TITLE_1  = 'Quý khách vui lòng nhấn lại link giới thiệu để được hưởng khuyến mại theo chương trình KH giới thiệu KH. Trường hợp không có người giới thiệu vui lòng bỏ qua thông báo này';
@@ -128,3 +133,6 @@ const String TITLE_41 = 'Ngày giao dịch';
 const String TITLE_42 = 'Vui lòng nhập mã OTP đã được gửi tới số điện thoại của Quý khách để xác thực giao dịch.';
 const String TITLE_43  = 'Chọn ngân hàng thụ hưởng';
 const String TITLE_44  = 'Số thẻ thụ hưởng';
+const String NAME_TEST  = 'VU XUAN BIEN';
+const String PAYMENT_ACCOUNT  = 'Tài khoản thanh toán';
+const String NUMBER_TEST  = '21610000542522';

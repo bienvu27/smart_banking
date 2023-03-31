@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'dart:ui' as ui;
 import '../../../core/resources/strings.dart';
-import '../../../core/style/style.dart';
+import '../../../core/style/colors.dart';
 import '../../components/app_bar/app_bar_component.dart';
 import '../../components/button/button_component.dart';
 import '../../components/text_field/text_field_component.dart';

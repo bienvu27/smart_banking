@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smart_banking/screens/components/grid_view/grid_view_component.dart';
 import 'package:smart_banking/screens/promotion/model/promotion_model.dart';
 import '../../core/resources/strings.dart';
-import '../../core/style/style.dart';
+import '../../core/style/colors.dart';
 import '../service_manager/model/service_favorite_model.dart';
 import 'components/list_promotion.dart';
 import 'components/sliver_app_bar.dart';

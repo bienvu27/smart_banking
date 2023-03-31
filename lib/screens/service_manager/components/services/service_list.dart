@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import '../../../../core/style/style.dart';
+import '../../../../core/style/colors.dart';
 import '../../model/service_favorite_model.dart';
 
 class ServiceList extends StatelessWidget {

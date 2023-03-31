@@ -5,7 +5,7 @@ import 'package:otp_text_field/otp_field.dart';
 import 'package:otp_text_field/style.dart';
 
 import '../../../core/resources/strings.dart';
-import '../../../core/style/style.dart';
+import '../../../core/style/colors.dart';
 import '../../components/app_bar/app_bar_component.dart';
 import '../../components/button/button_component.dart';
 import '../components/title_components.dart';
