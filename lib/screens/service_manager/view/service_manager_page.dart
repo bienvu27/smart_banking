@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import '../../../core/resources/strings.dart';
-import '../../../core/style.dart';
+import '../../../core/style/style.dart';
 import '../../components/app_bar/app_bar_component.dart';
 import '../components/services/service_list.dart';
 import '../components/services/service_name.dart';

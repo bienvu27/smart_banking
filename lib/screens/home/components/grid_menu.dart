@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smart_banking/screens/components/dialog/custom_dialog.dart';
 import 'package:get/get.dart';
 import '../../../core/resources/strings.dart';
-import '../../../core/style.dart';
+import '../../../core/style/style.dart';
 import 'grid_menu_component.dart';
 
 class GridMenu extends StatelessWidget {

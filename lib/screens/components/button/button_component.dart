@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-import '../../../core/style.dart';
+import '../../../core/style/style.dart';
 
 class ButtonComponent extends StatelessWidget {
   const ButtonComponent({

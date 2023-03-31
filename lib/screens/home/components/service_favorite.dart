@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import '../../../core/resources/strings.dart';
-import '../../../core/style.dart';
+import '../../../core/style/style.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../../components/button/button_component.dart';
 import '../../components/dialog/custom_dialog.dart';

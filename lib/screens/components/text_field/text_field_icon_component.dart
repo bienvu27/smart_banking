@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../core/style.dart';
+import '../../../core/style/style.dart';
 
 
 class TextFieldIconComponent extends StatelessWidget {

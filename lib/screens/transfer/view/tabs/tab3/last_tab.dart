@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 import '../../../../../core/resources/strings.dart';
-import '../../../../../core/style.dart';
+import '../../../../../core/style/style.dart';
 import '../../../models/list_contacts_model.dart';
 import '../tab1/components/list_contacts.dart';
 import '../tab1/components/list_contacts_recently.dart';
@@ -43,14 +43,13 @@ class _LastTabState extends State<LastTab> {
     super.initState();
     _scrollController = ScrollController()..addListener(_scrollListener);
   }
+
   @override
   void dispose() {
     _scrollController?.removeListener(_scrollListener);
     _scrollController?.dispose();
     super.dispose();
   }
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -296,8 +295,8 @@ class _LastTabState extends State<LastTab> {
           body: TabBarView(
             physics: const NeverScrollableScrollPhysics(),
             children: [
-              ListContacts(list: list),
-              ListContactsRecently(list: list),
+              ListContacts(list: list, callBack: () => Get.toNamed("/transaction_infor", arguments: '')),
+              ListContactsRecently(list: list, callBack: () => Get.toNamed("/transaction_infor", arguments: '')),
               Center(
                   child: Text(
                 TITLE_36,

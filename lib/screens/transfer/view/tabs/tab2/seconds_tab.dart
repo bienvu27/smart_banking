@@ -5,7 +5,7 @@ import 'package:smart_banking/screens/transfer/view/tabs/tab1/components/list_co
 import 'package:smart_banking/screens/transfer/view/tabs/tab1/components/list_contacts_recently.dart';
 
 import '../../../../../core/resources/strings.dart';
-import '../../../../../core/style.dart';
+import '../../../../../core/style/style.dart';
 import '../../../../components/button/button_component.dart';
 import '../../../models/list_contacts_model.dart';
 import 'model/icon_bank_model.dart';
@@ -351,8 +351,8 @@ class _SecondsTabState extends State<SecondsTab> {
             body: TabBarView(
               physics: const NeverScrollableScrollPhysics(),
               children: [
-                ListContacts(list: list, icon: Icons.account_balance_wallet_rounded),
-                ListContactsRecently(list: list),
+                ListContacts(list: list,callBack: ()=> Get.toNamed("/transaction_infor", arguments: ''), icon: Icons.account_balance_wallet_rounded),
+                ListContactsRecently(list: list, callBack: () => Get.toNamed("/transaction_infor", arguments: '')),
                 Center(
                     child: Text(
                   TITLE_36,

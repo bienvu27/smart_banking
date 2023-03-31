@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smart_banking/screens/notification/model/notification_model.dart';
 import '../../core/resources/strings.dart';
-import '../../core/style.dart';
+import '../../core/style/style.dart';
 import 'components/notification_list.dart';
 import 'model/description_model.dart';
 

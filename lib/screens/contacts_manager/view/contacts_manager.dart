@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 import '../../../core/resources/strings.dart';
-import '../../../core/style.dart';
+import '../../../core/style/style.dart';
 import '../../transfer/models/list_contacts_model.dart';
 import '../../transfer/view/tabs/tab1/components/list_contacts.dart';
 import 'my_contacts.dart';
@@ -181,7 +182,7 @@ class ContactsManagerPage extends StatelessWidget {
             )),
         body:  TabBarView(
           children: [
-            ListContacts(list: list),
+            ListContacts(list: list, callBack: ()=> Get.toNamed("/transaction_infor", arguments: '')),
             const MyContacts(),
           ],
         ),

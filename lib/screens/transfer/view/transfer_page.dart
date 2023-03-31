@@ -5,7 +5,7 @@ import 'package:smart_banking/screens/transfer/view/tabs/tab2/seconds_tab.dart';
 import 'package:smart_banking/screens/transfer/view/tabs/tab3/last_tab.dart';
 
 import '../../../core/resources/strings.dart';
-import '../../../core/style.dart';
+import '../../../core/style/style.dart';
 
 class TransferPage extends StatelessWidget {
   const TransferPage({Key? key}) : super(key: key);

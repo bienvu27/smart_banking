@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:smart_banking/screens/components/text_field/text_field_icon_subtile_component.dart';
 import '../../../core/resources/strings.dart';
-import '../../../core/style.dart';
+import '../../../core/style/style.dart';
 import '../../components/button/button_component.dart';
 import '../../components/text_field/text_field_icon_component.dart';
 

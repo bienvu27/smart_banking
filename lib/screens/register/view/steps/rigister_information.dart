@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:smart_banking/screens/components/button/button_component.dart';
 
 import '../../../../core/resources/strings.dart';
-import '../../../../core/style.dart';
+import '../../../../core/style/style.dart';
 import '../../../components/app_bar/app_bar_component.dart';
 import '../../../components/text_field/text_field_component.dart';
 import '../../../components/text_field/text_field_popup_icon_component.dart';
