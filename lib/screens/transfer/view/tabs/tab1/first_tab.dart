@@ -106,7 +106,7 @@ class _FirstTabState extends State<FirstTab> {
                                   if (index == 1) {
                                     visibly = false;
                                     // height = 344.w;
-                                    height = 356.w;
+                                    height = 361.w;
                                     fromHeight = 0;
                                   } else if (index == 2) {
                                     statusSearch = false;

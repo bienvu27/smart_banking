@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../core/style/size.dart';
 
 class AppBarComponent extends StatelessWidget with PreferredSizeWidget {
   AppBarComponent({
@@ -18,24 +18,24 @@ class AppBarComponent extends StatelessWidget with PreferredSizeWidget {
       title: Text(
         title,
         style: TextStyle(
-            fontWeight: FontWeight.w600, fontSize: 15.sp, color: colorTitle),
+            fontWeight: FontWeight.w600, fontSize: fontSize_12, color: colorTitle),
       ),
       leading: InkWell(
         onTap: () => callback(),
         child: Icon(
           Icons.arrow_back_ios_new_outlined,
-          size: 20.spMax,
+          size: fontSize_15,
           color: colorIcon,
         ),
       ),
       actions: [
         Padding(
-          padding: EdgeInsets.only(right: 10.w),
+          padding: EdgeInsets.only(right: width_8),
           child: InkWell(
           onTap: () => callback(),
           child: Icon(
             iconAction,
-            size: 20.spMax,
+            size: fontSize_15,
             color: colorIcon,
           ),
       ),

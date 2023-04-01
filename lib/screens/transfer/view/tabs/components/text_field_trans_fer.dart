@@ -3,11 +3,11 @@ import '../../../../../core/style/colors.dart';
 import '../../../../../core/style/size.dart';
 
 class TextFieldTransFer extends StatelessWidget {
-  const TextFieldTransFer({
-    super.key, required this.labelText, required this.suffixIcon,
+  TextFieldTransFer({
+    super.key, required this.labelText, this.suffixIcon,
   });
   final String labelText;
-  final IconData suffixIcon;
+  IconData? suffixIcon;
 
   @override
   Widget build(BuildContext context) {

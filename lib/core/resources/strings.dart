@@ -87,6 +87,7 @@ const String HOME  = 'Trang chủ';
 const String REDEEM_GIFTS  = 'Đổi quà';
 const String QR_CODE  = 'Quét QR';
 const String SETTING  = 'Cài đặt';
+const String TRANSACTION_CONTENT  = 'Nội dung giao dịch';
 
 
 const String TITLE_1  = 'Quý khách vui lòng nhấn lại link giới thiệu để được hưởng khuyến mại theo chương trình KH giới thiệu KH. Trường hợp không có người giới thiệu vui lòng bỏ qua thông báo này';
@@ -136,3 +137,4 @@ const String TITLE_44  = 'Số thẻ thụ hưởng';
 const String NAME_TEST  = 'VU XUAN BIEN';
 const String PAYMENT_ACCOUNT  = 'Tài khoản thanh toán';
 const String NUMBER_TEST  = '21610000542522';
+const String MONEY_TEST  = '6,345,293 VND';
