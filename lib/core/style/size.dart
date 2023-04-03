@@ -47,6 +47,7 @@ double height_128 = 448.h;
 double height_130 = 325.h;
 double height_148 = 370.h;
 double height_160 = 400.h;
+double height_170 = 500.h;
 double height_184 = 460.h;
 double height_212 = 530.h;
 double height_700 = 700.h;

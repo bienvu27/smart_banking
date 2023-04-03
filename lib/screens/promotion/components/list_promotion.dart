@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import '../../../core/resources/strings.dart';
@@ -57,34 +58,32 @@ class ListPromotion extends StatelessWidget {
                                   e.image ?? ''),
                               fit: BoxFit.fill)),
                     ),
-
-                    SizedBox(
-                      width: Get.size.width / 1.7,
+                    Container(
+                      width: Get.size.width / 1.6,
+                      height: 140.h,
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment
-                            .spaceBetween,
+                            .spaceAround,
                         children: [
                           Text(
                             e.title ?? '',
                             maxLines: 2,
                             style: TextStyle(
                               overflow: TextOverflow.ellipsis,
-                                fontSize: fontSize_10,
+                                fontSize: fontSize_12,
                                 height: lineHeight,
                                 fontWeight: FontWeight.w800),
                           ),
-                          SizedBox(height: height_4,),
                           Text(
                             '$TITLE_32 ${e.subTitle}',
                             maxLines: 2,
                             style: TextStyle(
-                                fontSize: fontSize_10,
+                                fontSize: fontSize_11,
                                 overflow: TextOverflow.ellipsis,
                                 color: clr_black54,
                                 fontWeight: FontWeight.w500),
                           ),
-                          SizedBox(height: height_4,),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [

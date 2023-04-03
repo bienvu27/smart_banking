@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../../core/style/colors.dart';
+import '../../../core/style/size.dart';
 
 class SettingComponent extends StatelessWidget {
   const SettingComponent({
@@ -13,18 +15,18 @@ class SettingComponent extends StatelessWidget {
     return InkWell(
       onTap: ()=> callback,
       child: Container(
-        margin: EdgeInsets.only(bottom: 30.h,),
+        margin: EdgeInsets.only(bottom: height_12,),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
               title,
               style: TextStyle(
-                  fontSize: 16.sp,
+                  fontSize: fontSize_14,
                   fontWeight: FontWeight.w400,
-                  color: Colors.black),
+                  color: clr_black),
             ),
-            Icon(icon, size: 25.spMin,)
+            Icon(icon, size: fontSize_26,)
           ],
         ),
       ),
