@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 import 'package:smart_banking/screens/home/view/home_page.dart';
-import 'package:smart_banking/screens/register/view/register_binding.dart';
+import 'package:smart_banking/screens/register/binding/register_binding.dart';
 import 'package:smart_banking/screens/register/view/register_page.dart';
 import 'package:smart_banking/screens/service_manager/view/service_manager_page.dart';
 import '../screens/contacts_manager/binding/contacts_manager_binding.dart';

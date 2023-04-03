@@ -71,19 +71,25 @@ class NotificationPage extends StatelessWidget {
                           Tab(
                             child: Text(
                               PROMOTIN_1,
-                              style: TextStyle(fontSize: fontSize_10, fontWeight: FontWeight.w500),
+                              style: TextStyle(
+                                fontSize: fontSize_8,
+                                fontWeight: FontWeight.w500,
+                              ),
                             ),
                           ),
                           Tab(
                             child: Text(
                               VOLATILITY,
-                              style: TextStyle(fontSize: fontSize_10, fontWeight: FontWeight.w500),
+                              style: TextStyle(
+                                fontSize: fontSize_8,
+                                fontWeight: FontWeight.w500,
+                              ),
                             ),
                           ),
                           Tab(
                             child: Text(
                               NOTIFI,
-                              style: TextStyle(fontSize: fontSize_10, fontWeight: FontWeight.w500),
+                              style: TextStyle(fontSize: fontSize_8, fontWeight: FontWeight.w500),
                             ),
                           ),
                         ],
@@ -97,6 +103,7 @@ class NotificationPage extends StatelessWidget {
                 ),
               )),
           body: TabBarView(
+            physics: NeverScrollableScrollPhysics(),
             children: [
               NotificationList(list: listNoti, visibleImage: true, visibleIcon: true),
               NotificationList(list: listNoti, visibleImage: false, visibleIcon: false),

@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 
 import '../../../../core/resources/strings.dart';
 import '../../../../core/style/colors.dart';
+import '../../../../core/style/size.dart';
 import '../../../components/app_bar/app_bar_component.dart';
 import '../../../components/button/button_component.dart';
 import '../components/radio_button.dart';
@@ -15,16 +16,7 @@ class RegisterStep4Page extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: Get.size.height,
-      decoration: const BoxDecoration(
-        gradient: LinearGradient(
-            colors: [
-              Color(0xff01bbae),
-              Color(0xff00a2ae),
-              Color(0xff00a2ae),
-              Color(0xff0181ad),
-              Color(0xff026c90),
-            ])
-      ),
+      decoration: BoxDecoration(gradient: linearGradientBgRegister),
       child: Scaffold(
         backgroundColor: Colors.transparent,
         appBar: AppBarComponent(
@@ -34,12 +26,14 @@ class RegisterStep4Page extends StatelessWidget {
           title: SELECT_DOCUMENTS,
           callback: () => Get.back(),
         ),
-
         body: SingleChildScrollView(
           child: Column(
             children: [
               Container(
-                margin: EdgeInsets.only(bottom: 10.h, top: 10.h),
+                margin: EdgeInsets.only(
+                  bottom: height_8,
+                  top: height_8,
+                ),
                 alignment: Alignment.center,
                 width: Get.size.width,
                 child: SizedBox(
@@ -48,93 +42,96 @@ class RegisterStep4Page extends StatelessWidget {
                     TITLE_18,
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                        fontSize: 13.sp,
-                        fontWeight: FontWeight.w400,
-                        color: clr_white),
+                      fontSize: fontSize_12,
+                      fontWeight: FontWeight.w400,
+                      color: clr_white,
+                    ),
                   ),
                 ),
               ),
               const RadioButton(),
               Container(
-                margin: EdgeInsets.only(top: 50.h),
-                padding: EdgeInsets.only(bottom: 10.h),
+                margin: EdgeInsets.only(top: height_20),
+                padding: EdgeInsets.only(bottom: height_8),
                 width: Get.size.width,
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: clr_white,
                   borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(20.r),
-                      topRight: Radius.circular(20.r)),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.5),
-                      spreadRadius: 3,
-                      blurRadius: 3,
-                      offset: const Offset(1, 3),
-                    )
-                  ],
+                    topLeft: Radius.circular(border_16),
+                    topRight: Radius.circular(border_16),
+                  ),
+                  boxShadow: [bottomNavigationBar],
                 ),
                 child: Padding(
-                  padding: EdgeInsets.only(top: 20.h, left: 20.w, right: 20.w, bottom: 20.h),
+                  padding: EdgeInsets.only(
+                    top: height_8,
+                    left: width_8,
+                    right: width_8,
+                    bottom: height_8,
+                  ),
                   child: Column(
                     children: [
                       Container(
-                        margin: EdgeInsets.only(bottom: 10.h),
+                        margin: EdgeInsets.only(bottom: height_8),
                         width: Get.size.width,
                         child: Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            const Icon(
+                            Icon(
                               Icons.check_circle,
                               color: clr_active_button,
+                              size: fontSize_20,
                             ),
                             Container(
-                              margin: EdgeInsets.only(left: 10.w),
+                              margin: EdgeInsets.only(left: width_8),
                               width: Get.size.width / 1.3,
                               child: Text(
                                 TITLE_21,
-                                style: TextStyle(fontSize: 15.sp),
+                                style: TextStyle(fontSize: fontSize_11),
                               ),
                             ),
                           ],
                         ),
                       ),
                       Container(
-                        margin: EdgeInsets.only(bottom: 10.h),
+                        margin: EdgeInsets.only(bottom: height_8),
                         width: Get.size.width,
                         child: Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            const Icon(
+                            Icon(
                               Icons.check_circle,
                               color: clr_active_button,
+                              size: fontSize_20,
                             ),
                             Container(
-                              margin: EdgeInsets.only(left: 10.w),
+                              margin: EdgeInsets.only(left: width_8),
                               width: Get.size.width / 1.3,
                               child: Text(
                                 TITLE_22,
-                                style: TextStyle(fontSize: 15.sp),
+                                style: TextStyle(fontSize: fontSize_11),
                               ),
                             ),
                           ],
                         ),
                       ),
                       Container(
-                        margin: EdgeInsets.only(bottom: 20.h),
+                        margin: EdgeInsets.only(bottom: height_8),
                         width: Get.size.width,
                         child: Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            const Icon(
+                            Icon(
                               Icons.check_circle,
                               color: clr_active_button,
+                              size: fontSize_20,
                             ),
                             Container(
-                              margin: EdgeInsets.only(left: 10.w),
+                              margin: EdgeInsets.only(left: width_8),
                               width: Get.size.width / 1.3,
                               child: Text(
                                 TITLE_23,
-                                style: TextStyle(fontSize: 15.sp),
+                                style: TextStyle(fontSize: fontSize_11),
                               ),
                             ),
                           ],
@@ -144,7 +141,7 @@ class RegisterStep4Page extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           SizedBox(
-                            width: 100.w,
+                            width: width_80,
                             child: Column(
                               children: [
                                 Stack(
@@ -163,8 +160,7 @@ class RegisterStep4Page extends StatelessWidget {
                                         decoration: BoxDecoration(
                                             color: Colors.redAccent,
                                             shape: BoxShape.circle,
-                                            border: Border.all(
-                                                width: 1, color: Colors.white)),
+                                            border: Border.all(width: 1, color: Colors.white)),
                                         child: Icon(
                                           Icons.close,
                                           size: 15.spMin,
@@ -179,8 +175,7 @@ class RegisterStep4Page extends StatelessWidget {
                                   child: const Text(
                                     TITLE_24,
                                     textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                        color: PRIMARY_COLOR_RED, height: 1.5),
+                                    style: TextStyle(color: PRIMARY_COLOR_RED, height: 1.5),
                                   ),
                                 )
                               ],
@@ -206,8 +201,7 @@ class RegisterStep4Page extends StatelessWidget {
                                         decoration: BoxDecoration(
                                             color: Colors.redAccent,
                                             shape: BoxShape.circle,
-                                            border: Border.all(
-                                                width: 1, color: Colors.white)),
+                                            border: Border.all(width: 1, color: Colors.white)),
                                         child: Icon(
                                           Icons.close,
                                           size: 15.spMin,
@@ -222,8 +216,7 @@ class RegisterStep4Page extends StatelessWidget {
                                   child: const Text(
                                     TITLE_25,
                                     textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                        color: PRIMARY_COLOR_RED, height: 1.5),
+                                    style: TextStyle(color: PRIMARY_COLOR_RED, height: 1.5),
                                   ),
                                 )
                               ],
@@ -249,8 +242,7 @@ class RegisterStep4Page extends StatelessWidget {
                                         decoration: BoxDecoration(
                                             color: Colors.redAccent,
                                             shape: BoxShape.circle,
-                                            border: Border.all(
-                                                width: 1, color: Colors.white)),
+                                            border: Border.all(width: 1, color: Colors.white)),
                                         child: Icon(
                                           Icons.close,
                                           size: 15.spMin,
@@ -265,8 +257,7 @@ class RegisterStep4Page extends StatelessWidget {
                                   child: const Text(
                                     TITLE_26,
                                     textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                        color: PRIMARY_COLOR_RED, height: 1.5),
+                                    style: TextStyle(color: PRIMARY_COLOR_RED, height: 1.5),
                                   ),
                                 )
                               ],
@@ -276,7 +267,11 @@ class RegisterStep4Page extends StatelessWidget {
                       ),
                       Container(
                           margin: EdgeInsets.only(top: 20.h),
-                          child: ButtonComponent(title: NEXT, bgColor: button_color_home, callback: () {},))
+                          child: ButtonComponent(
+                            title: NEXT,
+                            bgColor: button_color_home,
+                            callback: () {},
+                          ))
                     ],
                   ),
                 ),
@@ -284,7 +279,6 @@ class RegisterStep4Page extends StatelessWidget {
             ],
           ),
         ),
-
       ),
     );
   }

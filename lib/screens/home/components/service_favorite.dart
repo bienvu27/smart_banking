@@ -90,7 +90,7 @@ class ServiceFavorite extends StatelessWidget {
                           width: width_64,
                           child: Text(
                             e.title ?? '',
-                            maxLines: 3,
+                            maxLines: 2,
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               fontSize: fontSize_12,
@@ -117,7 +117,12 @@ class ServiceFavorite extends StatelessWidget {
             ),
             child: Text(
               SEE_ALL_SERVICES,
-              style: TextStyle(fontSize: fontSize_12, fontWeight: FontWeight.w500, color: PRIMARY_COLOR),
+              style: TextStyle(
+                fontSize: fontSize_12,
+                fontWeight: FontWeight.w500,
+                color: PRIMARY_COLOR,
+                overflow: TextOverflow.ellipsis,
+              ),
             ),
           ),
         ),

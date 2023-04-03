@@ -24,7 +24,7 @@ class _SecondsTabState extends State<SecondsTab> {
   ScrollController? _scrollController;
   bool lastStatus = true;
   double height = 630.w;
-  double fromHeight = 75.h;
+  double fromHeight = 77.h;
   int index = 1;
   bool statusSearch = true;
   bool visibly = true;
@@ -147,12 +147,12 @@ class _SecondsTabState extends State<SecondsTab> {
                                     statusSearch = false;
                                     visibly = true;
                                     height = 630.w;
-                                    fromHeight = 75.h;
+                                    fromHeight = 77.h;
                                   } else {
                                     statusSearch = true;
                                     visibly = true;
                                     height = 630.w;
-                                    fromHeight = 75.h;
+                                    fromHeight = 77.h;
                                   }
                                 });
                               },

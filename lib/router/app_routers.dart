@@ -10,4 +10,5 @@ class AppRouters{
   static const String SPLASH_SCREEN = '/splash_screen';
 
 
+
 }

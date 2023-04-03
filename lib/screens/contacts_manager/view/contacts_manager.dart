@@ -82,19 +82,28 @@ class ContactsManagerPage extends StatelessWidget {
                         Tab(
                           child: Text(
                             TAB_CONTACTS_1,
-                            style: TextStyle( fontSize: fontSize_10, fontWeight: FontWeight.w500),
+                            style: TextStyle(
+                              fontSize: fontSize_8,
+                              fontWeight: FontWeight.w500,
+                            ),
                           ),
                         ),
                         Tab(
                           child: Text(
                             TAB_CONTACTS_2,
-                            style: TextStyle(fontSize: fontSize_10, fontWeight: FontWeight.w500),
+                            style: TextStyle(
+                              fontSize: fontSize_8,
+                              fontWeight: FontWeight.w500,
+                            ),
                           ),
                         ),
                       ],
                     ),
                   ),
-                  SearchContacts(visibly: true, title: SEARCH,)
+                  SearchContacts(
+                    visibly: true,
+                    title: SEARCH,
+                  )
                 ],
               ),
             )),

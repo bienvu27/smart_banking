@@ -158,3 +158,11 @@ LinearGradient linearGradientBtnDialog = LinearGradient(colors: [
   Color(0xff00a2ae),
   Color(0xff0181ad),
 ]);
+LinearGradient linearGradientBgRegister = LinearGradient(
+    colors: [
+      Color(0xff01bbae),
+      Color(0xff00a2ae),
+      Color(0xff00a2ae),
+      Color(0xff0181ad),
+      Color(0xff026c90),
+    ]);

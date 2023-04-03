@@ -3,9 +3,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:smart_banking/screens/register/view/steps/register_step3.dart';
 
+import '../../../../core/resources/name_icon.dart';
 import '../../../../core/resources/strings.dart';
 import '../../../../core/style/colors.dart';
 
+import '../../../../core/style/size.dart';
 import '../../../components/app_bar/app_bar_component.dart';
 import '../../../components/button/button_component.dart';
 
@@ -29,40 +31,39 @@ class RegisterStep2Page extends StatelessWidget {
             child: Column(
               children: [
                 Container(
-                  margin: EdgeInsets.only(bottom: 20.h),
+                  margin: EdgeInsets.only(bottom: height_16),
                   alignment: Alignment.center,
                   width: Get.size.width,
                   child: SizedBox(
-                    width: Get.size.width / 1.5,
+                    width: Get.size.width / 1.4,
                     child: Text(
                       TITLE_5,
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                          fontSize: 25.sp,
+                          fontSize: fontSize_14,
                           fontWeight: FontWeight.w500,
                           color: clr_black),
                     ),
                   ),
                 ),
                 Image.network(
-                  'https://cdni.iconscout.com/illustration/premium/thumb/face-id-security-3887131-3240391.png',
-                  width: 250.w,
+                  image_register,
+                  width: width_200,
                 ),
                 Padding(
-                  padding: EdgeInsets.only(left: 10.w, top: 20.h),
+                  padding: EdgeInsets.only(left: width_8, top: height_16),
                   child: SizedBox(
-                    width: Get.size.width,
+                    width: MediaQuery.of(context).size.width,
                     child: Column(
                       children: [
                         Container(
-                          margin: EdgeInsets.only(bottom: 20.h),
+                          margin: EdgeInsets.only(bottom: height_16),
                           width: Get.size.width,
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              const Icon(Icons.av_timer),
-
+                              Icon(Icons.av_timer, size: fontSize_20),
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
@@ -70,11 +71,11 @@ class RegisterStep2Page extends StatelessWidget {
                                     width: Get.size.width / 1.3,
                                     child: Text(
                                       TITLE_6,
-                                      style: TextStyle(fontSize: 15.sp),
+                                      style: TextStyle(fontSize: fontSize_12),
                                     ),
                                   ),
                                   Container(
-                                    margin: const EdgeInsets.only(top: 10),
+                                    margin: EdgeInsets.only(top: height_8),
                                     width: Get.size.width / 1.2,
                                     height: 1, // Thickness
                                     color: clr_black12,
@@ -85,14 +86,14 @@ class RegisterStep2Page extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          margin: EdgeInsets.only(bottom: 20.h),
+                          margin: EdgeInsets.only(bottom: height_16),
                           width: Get.size.width,
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              const Icon(
-                                (Icons.phone_iphone),
+                              Icon(
+                                (Icons.phone_iphone), size: fontSize_20
                               ),
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -101,11 +102,11 @@ class RegisterStep2Page extends StatelessWidget {
                                     width: Get.size.width / 1.3,
                                     child: Text(
                                       TITLE_7,
-                                      style: TextStyle(fontSize: 15.sp),
+                                      style: TextStyle(fontSize: fontSize_12),
                                     ),
                                   ),
                                   Container(
-                                    margin: EdgeInsets.only(top: 10.h),
+                                    margin: EdgeInsets.only(top: height_8),
                                     width: Get.size.width / 1.2,
                                     height: 1, // Thickness
                                     color: clr_black12,
@@ -116,13 +117,13 @@ class RegisterStep2Page extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          margin: EdgeInsets.only(bottom: 20.h),
+                          margin: EdgeInsets.only(bottom: height_16),
                           width: Get.size.width,
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              const Icon(Icons.change_circle_outlined),
+                              Icon(Icons.change_circle_outlined, size: fontSize_20),
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
@@ -130,11 +131,11 @@ class RegisterStep2Page extends StatelessWidget {
                                     width: Get.size.width / 1.3,
                                     child: Text(
                                       TITLE_8,
-                                      style: TextStyle(fontSize: 15.sp),
+                                      style: TextStyle(fontSize: fontSize_12),
                                     ),
                                   ),
                                   Container(
-                                    margin: EdgeInsets.only(top: 10.h),
+                                    margin: EdgeInsets.only(top: height_8),
                                     width: Get.size.width / 1.2,
                                     height: 1, // Thickness
                                     color: clr_black12,
@@ -153,16 +154,12 @@ class RegisterStep2Page extends StatelessWidget {
           ),
         ),
         bottomNavigationBar: Container(
-          height: 90.h,
+          height: height_80,
+          padding: EdgeInsets.only(top: height_12),
           decoration: BoxDecoration(
             color: clr_white,
             boxShadow: [
-              BoxShadow(
-                color: Colors.grey.withOpacity(0.9),
-                spreadRadius: 3,
-                blurRadius: 1,
-                offset: const Offset(0, 3),
-              )
+              bottomNavigationBar
             ],
           ), // Get.to(const RegisterStep3Page()
           child: ButtonComponent(

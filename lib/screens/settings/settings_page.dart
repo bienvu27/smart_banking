@@ -95,7 +95,7 @@ class SettingsPage extends StatelessWidget {
                     Text(
                       PERSONAL,
                       style: TextStyle(
-                        fontSize: fontSize_20,
+                        fontSize: fontSize_16,
                         fontWeight: FontWeight.w500,
                         color: clr_black,
                       ),
@@ -127,7 +127,7 @@ class SettingsPage extends StatelessWidget {
                     Text(
                       ADVANCED_SETTINGS,
                       style: TextStyle(
-                        fontSize: fontSize_20,
+                        fontSize: fontSize_16,
                         fontWeight: FontWeight.w500,
                         color: clr_black,
                       ),

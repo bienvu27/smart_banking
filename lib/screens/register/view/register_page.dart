@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:smart_banking/screens/register/view/steps/register_step2.dart';
 import 'package:smart_banking/screens/register/view/steps/rigister_information.dart';
 
 import '../../../core/resources/strings.dart';
 import '../../../core/style/colors.dart';
+import '../../../core/style/size.dart';
 import '../../components/app_bar/app_bar_component.dart';
 import '../../components/dialog/custom_dialog.dart';
 
@@ -32,8 +32,7 @@ class RegisterPage extends StatelessWidget {
                     barrierDismissible: false,
                     context: context,
                     builder: (BuildContext context) => CustomDialog(
-                          title:
-                          TITLE_1,
+                          title: TITLE_1,
                           cancel: CANCEL,
                           submit: NEXT,
                           clickCallback: () {
@@ -43,8 +42,13 @@ class RegisterPage extends StatelessWidget {
                         ));
               },
               child: Container(
-                margin: EdgeInsets.only(top: 10.h),
-                padding: EdgeInsets.only(left: 10.w, right: 20.w, top: 10.h, bottom: 10.h),
+                margin: EdgeInsets.only(top: height_8),
+                padding: EdgeInsets.only(
+                  left: width_8,
+                  right: width_16,
+                  top: height_8,
+                  bottom: width_8,
+                ),
                 color: clr_white,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -53,12 +57,16 @@ class RegisterPage extends StatelessWidget {
                       width: Get.size.width / 1.4,
                       child: Text(
                         TITLE_2,
-                        style: TextStyle(fontSize: 15.sp, fontWeight: FontWeight.w500, color: clr_black),
+                        style: TextStyle(
+                          fontSize: fontSize_12,
+                          fontWeight: FontWeight.w500,
+                          color: clr_black,
+                        ),
                       ),
                     ),
                     Icon(
                       Icons.arrow_forward_ios,
-                      size: 17.spMin,
+                      size: fontSize_14,
                       color: Colors.black38,
                     )
                   ],
@@ -71,8 +79,7 @@ class RegisterPage extends StatelessWidget {
                     barrierDismissible: false,
                     context: context,
                     builder: (BuildContext context) => CustomDialog(
-                          title:
-                          TITLE_1,
+                          title: TITLE_1,
                           cancel: CANCEL,
                           submit: NEXT,
                           clickCallback: () {
@@ -82,8 +89,12 @@ class RegisterPage extends StatelessWidget {
                         ));
               },
               child: Container(
-                margin: EdgeInsets.only(top: 10.w),
-                padding: EdgeInsets.only(left: 10.w, right: 20.w, top: 10.h, bottom: 10.h),
+                margin: EdgeInsets.only(top: height_8),
+                padding: EdgeInsets.only(
+                  left: width_8,
+                  right: width_16,
+                  top: height_8,
+                  bottom: width_8,),
                 color: clr_white,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -95,18 +106,18 @@ class RegisterPage extends StatelessWidget {
                         children: [
                           Text(
                             TITLE_3,
-                            style: TextStyle(fontSize: 15.sp, fontWeight: FontWeight.w500),
+                            style: TextStyle(fontSize: fontSize_12, fontWeight: FontWeight.w500),
                           ),
                           Text(
                             TITLE_4,
-                            style: TextStyle(fontSize: 13.sp, color: clr_black38),
+                            style: TextStyle(fontSize: fontSize_11, color: clr_black38),
                           ),
                         ],
                       ),
                     ),
                     Icon(
                       Icons.arrow_forward_ios,
-                      size: 17.spMin,
+                      size: fontSize_14,
                       color: Colors.black38,
                     )
                   ],
@@ -114,8 +125,8 @@ class RegisterPage extends StatelessWidget {
               ),
             ),
             Container(
-              color: Colors.white,
-              height: Get.size.height,
+              color: clr_white,
+              height: MediaQuery.of(context).size.height,
             )
           ],
         ),

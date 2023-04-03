@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import '../../../core/resources/strings.dart';
@@ -60,7 +59,6 @@ class ListPromotion extends StatelessWidget {
                     ),
                     Container(
                       width: Get.size.width / 1.6,
-                      height: 140.h,
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment
@@ -75,6 +73,7 @@ class ListPromotion extends StatelessWidget {
                                 height: lineHeight_1_2,
                                 fontWeight: FontWeight.w800),
                           ),
+                          SizedBox(height: height_4,),
                           Text(
                             '$TITLE_32 ${e.subTitle}',
                             maxLines: 2,
@@ -84,6 +83,7 @@ class ListPromotion extends StatelessWidget {
                                 color: clr_black54,
                                 fontWeight: FontWeight.w500),
                           ),
+                          SizedBox(height: height_4,),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [

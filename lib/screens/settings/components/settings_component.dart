@@ -22,11 +22,11 @@ class SettingComponent extends StatelessWidget {
             Text(
               title,
               style: TextStyle(
-                  fontSize: fontSize_14,
+                  fontSize: fontSize_12,
                   fontWeight: FontWeight.w400,
                   color: clr_black),
             ),
-            Icon(icon, size: fontSize_26,)
+            Icon(icon, size: fontSize_20,)
           ],
         ),
       ),

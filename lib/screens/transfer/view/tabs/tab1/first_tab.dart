@@ -128,7 +128,7 @@ class _FirstTabState extends State<FirstTab> {
                                     CONTACT,
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
-                                      fontSize: fontSize_10,
+                                      fontSize: fontSize_7,
                                       fontWeight: FontWeight.w600,
                                       height: lineHeight_1_2,
                                     ),

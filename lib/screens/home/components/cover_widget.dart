@@ -60,7 +60,10 @@ class CoverWidget extends StatelessWidget {
                             size: fontSize_20,
                           ),
                           border: OutlineInputBorder(
-                              borderSide: BorderSide.none, borderRadius: BorderRadius.all(Radius.circular(border_16))),
+                              borderSide: BorderSide.none,
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(border_16),
+                              )),
                           fillColor: clr_black12,
                           contentPadding: EdgeInsets.zero,
                           hintText: SEARCH,

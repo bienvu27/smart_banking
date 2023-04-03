@@ -72,7 +72,7 @@ class ServiceList extends StatelessWidget {
                         width: width_64,
                         child: Text(
                           e.title ?? '',
-                          maxLines: 3,
+                          maxLines: 2,
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             fontSize: fontSize_12,

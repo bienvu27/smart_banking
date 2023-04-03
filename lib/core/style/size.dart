@@ -132,6 +132,7 @@ double border_148 = 370.r;
 
 
 /// Font size
+double fontSize_6 = 15.sp;
 double fontSize_7 = 17.5.sp;
 double fontSize_8 = 20.sp;
 double fontSize_9 = 22.5.sp;

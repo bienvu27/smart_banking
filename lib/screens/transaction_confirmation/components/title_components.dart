@@ -31,12 +31,14 @@ class TitleComponents extends StatelessWidget {
               ),
             ),
           ),
-          Text(
-            subTitle,
-            style: TextStyle(
-              color: color,
-              fontSize: fontSize_12,
-              fontWeight: FontWeight.w700,
+          Flexible(
+            child: Text(
+              subTitle,
+              style: TextStyle(
+                color: color,
+                fontSize: fontSize_12,
+                fontWeight: FontWeight.w700,
+              ),
             ),
           ),
         ],
