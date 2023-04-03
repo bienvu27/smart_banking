@@ -8,7 +8,7 @@ import '../screens/contacts_manager/view/contacts_manager.dart';
 import '../screens/dashboard/binding/dashboard_binding.dart';
 import '../screens/dashboard/view/dashboard_page.dart';
 import '../screens/home/binding/home_binding.dart';
-import '../screens/service_manager/view/service_manager_binding.dart';
+import '../screens/service_manager/binding/service_manager_binding.dart';
 import '../screens/splash_screen/binding/splash_screen_binding.dart';
 import '../screens/splash_screen/view/splash_screen.dart';
 import '../screens/transaction_confirmation/binding/transaction_confirmation_binding.dart';

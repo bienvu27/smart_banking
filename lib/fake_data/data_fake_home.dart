@@ -261,3 +261,189 @@ final listNoti = [
     DescriptionModel(image: 'https://www.emojimeaning.com/img/img-messenger-64/1f449.png', description: 'Miễn phí thường niên thẻ thẻ Platinum khi phát sinh tổng doanh số giao dịch từ 2 triệu đồng trong vòng 30 ngày kể từ ngày phát hành thẻ.'),
     DescriptionModel(image: 'https://www.emojimeaning.com/img/img-messenger-64/1f449.png', description: 'Miễn phí thường niên thẻ Classic/Gold khi phát sinh tổng doanh số giao dịch từ 1 triệu đồng trong vòng 30 ngày kể từ ngày phát hành thẻ.'),      ]),
 ];
+
+final listBank = [
+  ServiceFavoriteModel(
+      image:
+      'assets/svg/money_transfer.svg',
+      title: 'Chuyển tiền'),
+  ServiceFavoriteModel(
+      image: 'assets/svg/card_payment.svg',
+      title: 'Thanh toán'),
+  ServiceFavoriteModel(
+      image:
+      'assets/svg/bank_cards.svg',
+      title: 'Dịch vụ thẻ'),
+  ServiceFavoriteModel(
+      image:
+      'assets/svg/money_box.svg',
+      title: 'Tiết kiệm Online'),
+  ServiceFavoriteModel(
+      image:
+      'assets/svg/atm.svg',
+      title: 'Rút tiền mặt tại ATM'),
+  ServiceFavoriteModel(
+      image:
+      'assets/svg/cash_in_hand.svg',
+      title: 'Tiền vay'),
+  ServiceFavoriteModel(
+      image:
+      'assets/svg/mobile_package_tracking.svg',
+      title: 'Nạp tiền điện thoại'),
+  ServiceFavoriteModel(
+      image:
+      'assets/svg/invoice.svg',
+      title: 'Bán ngoại tệ'),
+  ServiceFavoriteModel(
+      image:
+      'assets/svg/gift.svg',
+      title: 'Tặng quà'),
+  ServiceFavoriteModel(
+      image:
+      'assets/svg/smartphone_approve.svg',
+      title: 'Smart OTP'),
+  ServiceFavoriteModel(
+      image:
+      'assets/svg/bank_card_dollar.svg',
+      title: 'Chuyển tiền quốc tế')
+];
+final listInsurance = [
+  ServiceFavoriteModel(
+      image:
+      'assets/svg/insurance_agent.svg',
+      title: 'Bảo hiểm BIC'),
+  ServiceFavoriteModel(
+      image:
+      'assets/svg/medical_expenses_insurance.svg',
+      title: 'Thanh toán phí bảo hiểm'),
+  ServiceFavoriteModel(
+      image:
+      'assets/svg/insurance_agent.svg',
+      title: 'Bảo hiểm nhân thọ VRB MetLife'),
+  ServiceFavoriteModel(
+      image:
+      'assets/svg/medical_expenses_insurance.svg',
+      title: 'Bồi thường'),
+];
+final listStock = [
+  ServiceFavoriteModel(
+      image:
+      'assets/svg/neutral_trading.svg',
+      title: 'Mở tài khoản chứng khoán'),
+  ServiceFavoriteModel(
+      image:
+      'assets/svg/stocks.svg',
+      title: 'Giao dịch chứng khoán'),
+  ServiceFavoriteModel(
+      image:
+      'assets/svg/futures.svg',
+      title: 'Nộp tiền chứng khoán'),
+];
+final listRegisterService = [
+  ServiceFavoriteModel(
+      image: 'assets/svg/bank_account.svg',
+      title: 'Mở tài khoản như ý'),
+  ServiceFavoriteModel(
+      image:
+      'assets/svg/year_view.svg',
+      title: 'Thanh toán định kỳ'),
+  ServiceFavoriteModel(
+      image:
+      'assets/svg/money_transfer.svg',
+      title: 'Chuyển tiền định kỳ'),
+  ServiceFavoriteModel(
+      image: 'assets/svg/construction_mail_open.svg',
+      title: 'Đăng ký email thông báo'),
+  ServiceFavoriteModel(
+      image:
+      'assets/svg/technical_support.svg',
+      title: 'Đăng ký gói dịch vụ'),
+  ServiceFavoriteModel(
+      image:
+      'assets/svg/restart.svg',
+      title: 'Đổi hạn mức giao dịch'),
+  ServiceFavoriteModel(
+      image: 'assets/svg/payment_history.svg',
+      title: 'Biến động số dư'),
+  ServiceFavoriteModel(
+      image:
+      'assets/svg/add_male_user_group.svg',
+      title: 'Giới thiệu bạn Thưởng vô hạn'),
+  ServiceFavoriteModel(
+      image:
+      'assets/svg/badge.svg',
+      title: 'TK Chọn tên Như ý'),
+  ServiceFavoriteModel(
+      image:
+      'assets/svg/baby_face.svg',
+      title: 'Smart Kids'),
+];
+final listShopping = [
+  ServiceFavoriteModel(
+      image:
+      'assets/svg/plane.svg',
+      title: 'Vé máy bay'),
+  ServiceFavoriteModel(
+      image:
+      'assets/svg/hotel.svg',
+      title: 'Khách sạn'),
+  ServiceFavoriteModel(
+      image:
+      'assets/svg/carpool.svg',
+      title: 'Vé xe'),
+  ServiceFavoriteModel(
+      image:
+      'assets/svg/subway.svg',
+      title: 'Vé tàu'),
+  ServiceFavoriteModel(
+      image: 'assets/svg/fast_cart.svg',
+      title: 'Mua sắm VnShop'),
+  ServiceFavoriteModel(
+      image:
+      'assets/svg/train_ticket.svg',
+      title: 'Vé xem phim'),
+  ServiceFavoriteModel(
+      image:
+      'assets/svg/flower_bouquet.svg',
+      title: 'Đặt hoa'),
+  ServiceFavoriteModel(
+      image: 'assets/svg/transit.svg',
+      title: 'Giao hàng'),
+  ServiceFavoriteModel(
+      image:
+      'assets/svg/taxi.svg',
+      title: 'Taxi'),
+];
+final listCharity = [
+  ServiceFavoriteModel(
+      image:
+      'assets/svg/pill.svg',
+      title: 'Ủng hộ quỹ vac-xin'),
+  ServiceFavoriteModel(
+      image:  'assets/svg/charity.svg',
+      title: 'Chuyển tiền từ thiện'),
+];
+final listSupport = [
+  ServiceFavoriteModel(
+      image:
+      'assets/svg/chart.svg',
+      title: 'Báo cáo giao dịch'),
+  ServiceFavoriteModel(
+      image: 'assets/svg/finance.svg',
+      title: 'quản lý tài chính cá nhân'),
+  ServiceFavoriteModel(
+      image:
+      'assets/svg/atm_machine.svg',
+      title: 'Tìm kiếm ATM/CN'),
+  ServiceFavoriteModel(
+      image:
+      'assets/svg/interest_rate.svg',
+      title: 'Lãi suất'),
+  ServiceFavoriteModel(
+      image: 'assets/svg/exchange_rate.svg',
+      title: 'Tỷ giá'),
+  ServiceFavoriteModel(
+      image:
+      'assets/svg/headset.svg',
+      title: 'Hỗ trợ'),
+];

@@ -3,23 +3,25 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import '../../../../core/style/colors.dart';
+import '../../../../core/style/size.dart';
 import '../../model/service_favorite_model.dart';
 
 class ServiceList extends StatelessWidget {
   const ServiceList({
     super.key,
-    required this.list, required this.title,
+    required this.list,
+    required this.title,
   });
 
   final List<ServiceFavoriteModel> list;
-  final String title ;
+  final String title;
 
   @override
   Widget build(BuildContext context) {
     final width = Get.size.width;
     return Container(
-      margin: EdgeInsets.only(top: 10.h),
-      padding: EdgeInsets.only(top: 10, left: 10.w, right: 10.w),
+      margin: EdgeInsets.only(top: height_8),
+      padding: EdgeInsets.only(top: height_8, left: width_8, right: width_8),
       width: width,
       color: clr_white,
       child: Column(
@@ -27,10 +29,10 @@ class ServiceList extends StatelessWidget {
         children: [
           Text(
             title,
-            style: TextStyle(fontSize: 17.sp, fontWeight: FontWeight.w600),
+            style: TextStyle(fontSize: fontSize_12, fontWeight: FontWeight.w600),
           ),
           Padding(
-            padding: EdgeInsets.only(top: 20.h),
+            padding: EdgeInsets.only(top: width_12),
             child: GridView.count(
                 physics: const NeverScrollableScrollPhysics(),
                 primary: false,
@@ -46,41 +48,36 @@ class ServiceList extends StatelessWidget {
                         children: [
                           SvgPicture.asset(
                             '${e.image}',
-                            width: 35.w,
-                            height: 35.h,
+                            width: width_28,
+                            height: height_28,
                             color: PRIMARY_COLOR,
                             fit: BoxFit.contain,
                           ),
                           Positioned(
-                            bottom: 5.h,
+                            bottom: height_5,
                             child: Container(
-                              width: 30.w,
+                              width: width_20,
                               height: 0.1.h,
                               decoration: BoxDecoration(
-                                boxShadow: [
-                                  BoxShadow(
-                                    color:
-                                    Colors.grey.withOpacity(0.9),
-                                    spreadRadius: 2,
-                                    blurRadius: 5,
-                                    offset: const Offset(0, 5), // changes position of shadow
-                                  ),
-                                ],
+                                boxShadow: [boxShadowIcon],
                               ),
                             ),
                           ),
                         ],
                       ),
                       SizedBox(
-                        height: 8.h,
+                        height: height_6,
                       ),
                       SizedBox(
-                        width: 65.w,
+                        width: width_64,
                         child: Text(
                           e.title ?? '',
                           maxLines: 3,
                           textAlign: TextAlign.center,
-                          style: const TextStyle(fontWeight: FontWeight.w600),
+                          style: TextStyle(
+                            fontSize: fontSize_12,
+                            fontWeight: FontWeight.w600,
+                          ),
                         ),
                       )
                     ],

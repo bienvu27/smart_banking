@@ -3,6 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import '../../../core/resources/strings.dart';
 import '../../../core/style/colors.dart';
+import '../../../core/style/size.dart';
+import '../../../fake_data/data_fake_home.dart';
 import '../../components/app_bar/app_bar_component.dart';
 import '../components/services/service_list.dart';
 import '../components/services/service_name.dart';
@@ -31,192 +33,7 @@ class _ServiceManagerState extends State<ServiceManager> {
 
   @override
   Widget build(BuildContext context) {
-    final listBank = [
-      ServiceFavoriteModel(
-          image:
-              'assets/svg/money_transfer.svg',
-          title: 'Chuyển tiền'),
-      ServiceFavoriteModel(
-          image: 'assets/svg/card_payment.svg',
-          title: 'Thanh toán'),
-      ServiceFavoriteModel(
-          image:
-              'assets/svg/bank_cards.svg',
-          title: 'Dịch vụ thẻ'),
-      ServiceFavoriteModel(
-          image:
-          'assets/svg/money_box.svg',
-          title: 'Tiết kiệm Online'),
-      ServiceFavoriteModel(
-          image:
-          'assets/svg/atm.svg',
-          title: 'Rút tiền mặt tại ATM'),
-      ServiceFavoriteModel(
-          image:
-              'assets/svg/cash_in_hand.svg',
-          title: 'Tiền vay'),
-      ServiceFavoriteModel(
-          image:
-          'assets/svg/mobile_package_tracking.svg',
-          title: 'Nạp tiền điện thoại'),
-      ServiceFavoriteModel(
-          image:
-          'assets/svg/invoice.svg',
-          title: 'Bán ngoại tệ'),
-      ServiceFavoriteModel(
-          image:
-          'assets/svg/gift.svg',
-          title: 'Tặng quà'),
-      ServiceFavoriteModel(
-          image:
-          'assets/svg/smartphone_approve.svg',
-          title: 'Smart OTP'),
-      ServiceFavoriteModel(
-          image:
-          'assets/svg/bank_card_dollar.svg',
-          title: 'Chuyển tiền quốc tế')
-    ];
 
-    final listInsurance = [
-      ServiceFavoriteModel(
-          image:
-          'assets/svg/insurance_agent.svg',
-          title: 'Bảo hiểm BIC'),
-      ServiceFavoriteModel(
-          image:
-          'assets/svg/medical_expenses_insurance.svg',
-          title: 'Thanh toán phí bảo hiểm'),
-      ServiceFavoriteModel(
-          image:
-          'assets/svg/insurance_agent.svg',
-          title: 'Bảo hiểm nhân thọ VRB MetLife'),
-      ServiceFavoriteModel(
-          image:
-          'assets/svg/medical_expenses_insurance.svg',
-          title: 'Bồi thường'),
-    ];
-    final listStock = [
-      ServiceFavoriteModel(
-          image:
-          'assets/svg/neutral_trading.svg',
-          title: 'Mở tài khoản chứng khoán'),
-      ServiceFavoriteModel(
-          image:
-          'assets/svg/stocks.svg',
-          title: 'Giao dịch chứng khoán'),
-      ServiceFavoriteModel(
-          image:
-          'assets/svg/futures.svg',
-          title: 'Nộp tiền chứng khoán'),
-    ];
-    final listRegisterService = [
-      ServiceFavoriteModel(
-          image: 'assets/svg/bank_account.svg',
-          title: 'Mở tài khoản như ý'),
-      ServiceFavoriteModel(
-          image:
-          'assets/svg/year_view.svg',
-          title: 'Thanh toán định kỳ'),
-      ServiceFavoriteModel(
-          image:
-          'assets/svg/money_transfer.svg',
-          title: 'Chuyển tiền định kỳ'),
-      ServiceFavoriteModel(
-          image: 'assets/svg/construction_mail_open.svg',
-          title: 'Đăng ký email thông báo'),
-      ServiceFavoriteModel(
-          image:
-          'assets/svg/technical_support.svg',
-          title: 'Đăng ký gói dịch vụ'),
-      ServiceFavoriteModel(
-          image:
-          'assets/svg/restart.svg',
-          title: 'Đổi hạn mức giao dịch'),
-      ServiceFavoriteModel(
-          image: 'assets/svg/payment_history.svg',
-          title: 'Biến động số dư'),
-      ServiceFavoriteModel(
-          image:
-          'assets/svg/add_male_user_group.svg',
-          title: 'Giới thiệu bạn Thưởng vô hạn'),
-      ServiceFavoriteModel(
-          image:
-          'assets/svg/badge.svg',
-          title: 'TK Chọn tên Như ý'),
-      ServiceFavoriteModel(
-          image:
-          'assets/svg/baby_face.svg',
-          title: 'Smart Kids'),
-    ];
-    final listShopping = [
-      ServiceFavoriteModel(
-          image:
-          'assets/svg/plane.svg',
-          title: 'Vé máy bay'),
-      ServiceFavoriteModel(
-        image:
-          'assets/svg/hotel.svg',
-          title: 'Khách sạn'),
-      ServiceFavoriteModel(
-          image:
-          'assets/svg/carpool.svg',
-          title: 'Vé xe'),
-      ServiceFavoriteModel(
-          image:
-          'assets/svg/subway.svg',
-          title: 'Vé tàu'),
-      ServiceFavoriteModel(
-          image: 'assets/svg/fast_cart.svg',
-          title: 'Mua sắm VnShop'),
-      ServiceFavoriteModel(
-          image:
-          'assets/svg/train_ticket.svg',
-          title: 'Vé xem phim'),
-      ServiceFavoriteModel(
-          image:
-          'assets/svg/flower_bouquet.svg',
-          title: 'Đặt hoa'),
-      ServiceFavoriteModel(
-          image: 'assets/svg/transit.svg',
-          title: 'Giao hàng'),
-      ServiceFavoriteModel(
-          image:
-          'assets/svg/taxi.svg',
-          title: 'Taxi'),
-    ];
-    final listCharity = [
-      ServiceFavoriteModel(
-          image:
-          'assets/svg/pill.svg',
-          title: 'Ủng hộ quỹ vac-xin'),
-      ServiceFavoriteModel(
-          image:  'assets/svg/charity.svg',
-          title: 'Chuyển tiền từ thiện'),
-    ];
-    final listSupport = [
-      ServiceFavoriteModel(
-          image:
-          'assets/svg/chart.svg',
-          title: 'Báo cáo giao dịch'),
-      ServiceFavoriteModel(
-          image: 'assets/svg/finance.svg',
-          title: 'quản lý tài chính cá nhân'),
-      ServiceFavoriteModel(
-          image:
-          'assets/svg/atm_machine.svg',
-          title: 'Tìm kiếm ATM/CN'),
-      ServiceFavoriteModel(
-          image:
-          'assets/svg/interest_rate.svg',
-          title: 'Lãi suất'),
-      ServiceFavoriteModel(
-          image: 'assets/svg/exchange_rate.svg',
-          title: 'Tỷ giá'),
-      ServiceFavoriteModel(
-          image:
-          'assets/svg/headset.svg',
-          title: 'Hỗ trợ'),
-    ];
 
     return Scaffold(
       appBar: AppBarComponent(
@@ -281,52 +98,58 @@ class _ServiceManagerState extends State<ServiceManager> {
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      floatingActionButton: Container(
-        margin: EdgeInsets.only(bottom: 20.h,left: 60.w, right: 60.w),
-        height: 35.h,
-        alignment: Alignment.center,
-        decoration: BoxDecoration(
-          color: button_dropdown_color_bg,
-          borderRadius: BorderRadius.circular(20.r),
-        ),
-        child: Container(
-          alignment: Alignment.center,
-          child: DropdownButton(
-            underline: const SizedBox(),
-            value: selectVal,
-            onChanged: (value) {
-              setState(() {
-                selectVal = value.toString();
-              });
-            },
+      floatingActionButton: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Container(
+            margin: EdgeInsets.only(bottom: height_16,),
+            padding: EdgeInsets.only(left: width_4, right: width_4),
+            height: height_28,
             alignment: Alignment.center,
-            dropdownColor: button_dropdown_color_bg,
-            borderRadius: BorderRadius.circular(20.r),
-            icon: Icon(
-              Icons.keyboard_arrow_down_sharp,
-              color: clr_white,
-              size: 30.spMin,
+            decoration: BoxDecoration(
+              color: button_dropdown_color_bg,
+              borderRadius: BorderRadius.circular(border_16),
             ),
-            items: listItems.map((item) {
-              return DropdownMenuItem(
-                  onTap: () {
-                    id = item.id!;
-                  },
-                  value: item.name,
-                  child: Center(
-                    child: Text(
-                      item.name ?? '',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 15.sp,
-                        color: clr_white,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                  ));
-            }).toList(),
+            child: Container(
+              alignment: Alignment.center,
+              child: DropdownButton(
+                underline: const SizedBox(),
+                value: selectVal,
+                onChanged: (value) {
+                  setState(() {
+                    selectVal = value.toString();
+                  });
+                },
+                alignment: Alignment.center,
+                dropdownColor: button_dropdown_color_bg,
+                borderRadius: BorderRadius.circular(20.r),
+                icon: Icon(
+                  Icons.keyboard_arrow_down_sharp,
+                  color: clr_white,
+                  size: fontSize_20,
+                ),
+                items: listItems.map((item) {
+                  return DropdownMenuItem(
+                      onTap: () {
+                        id = item.id!;
+                      },
+                      value: item.name,
+                      child: Center(
+                        child: Text(
+                          item.name ?? '',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: fontSize_14,
+                            color: clr_white,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ));
+                }).toList(),
+              ),
+            ),
           ),
-        ),
+        ],
       ),
     );
   }
