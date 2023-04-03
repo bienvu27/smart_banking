@@ -164,7 +164,7 @@ class _SecondsTabState extends State<SecondsTab> {
                                     style: TextStyle(
                                       fontSize: fontSize_10,
                                       fontWeight: FontWeight.w600,
-                                      height: lineHeight,
+                                      height: lineHeight_1_2,
                                     ),
                                   ),
                                 ),
@@ -175,7 +175,7 @@ class _SecondsTabState extends State<SecondsTab> {
                                     style: TextStyle(
                                       fontSize: fontSize_10,
                                       fontWeight: FontWeight.w600,
-                                      height: lineHeight,
+                                      height: lineHeight_1_2,
                                     ),
                                   ),
                                 ),
@@ -186,7 +186,7 @@ class _SecondsTabState extends State<SecondsTab> {
                                     style: TextStyle(
                                       fontSize: fontSize_10,
                                       fontWeight: FontWeight.w600,
-                                      height: lineHeight,
+                                      height: lineHeight_1_2,
                                     ),
                                   ),
                                 ),

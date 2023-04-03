@@ -72,7 +72,7 @@ class ListPromotion extends StatelessWidget {
                             style: TextStyle(
                               overflow: TextOverflow.ellipsis,
                                 fontSize: fontSize_12,
-                                height: lineHeight,
+                                height: lineHeight_1_2,
                                 fontWeight: FontWeight.w800),
                           ),
                           Text(

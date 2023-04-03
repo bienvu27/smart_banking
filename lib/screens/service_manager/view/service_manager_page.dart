@@ -7,9 +7,6 @@ import '../../../core/style/size.dart';
 import '../../../fake_data/data_fake_home.dart';
 import '../../components/app_bar/app_bar_component.dart';
 import '../components/services/service_list.dart';
-import '../components/services/service_name.dart';
-import '../model/service_favorite_model.dart';
-
 class ServiceManager extends StatefulWidget {
   const ServiceManager({Key? key}) : super(key: key);
 
@@ -18,16 +15,7 @@ class ServiceManager extends StatefulWidget {
 }
 
 class _ServiceManagerState extends State<ServiceManager> {
-  List<ServiceName> listItems = [
-    ServiceName(id: 1, name: 'Tất cả các dịch vụ'),
-    ServiceName(id: 2, name: 'Dịch vụ ngân hàng'),
-    ServiceName(id: 3, name: 'Dịch vụ bảo hiểm'),
-    ServiceName(id: 4, name: 'Dịch vụ chứng khoán'),
-    ServiceName(id: 5, name: 'Đăng ký dịch vụ'),
-    ServiceName(id: 6, name: 'Mua sắm'),
-    ServiceName(id: 7, name: 'Từ thiện'),
-    ServiceName(id: 8, name: 'Hỗ trợ'),
-  ];
+
   String selectVal = "Tất cả các dịch vụ";
   int id = 1;
 

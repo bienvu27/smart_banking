@@ -113,7 +113,7 @@ class NotificationList extends StatelessWidget {
                                     text: data.description,
                                     style: TextStyle(
                                         fontSize: fontSize_10,
-                                        height: lineHeight,
+                                        height: lineHeight_1_2,
                                         color: clr_black),
                                   ),
                                 ]),

@@ -2,7 +2,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 
 double size_0 = 0;
-double lineHeight = 1.2;
+double lineHeight_1_2 = 1.2;
+double lineHeight_1_4 = 1.4;
 /// Height
 double height_2 = 5.h;
 double height_3 = 7.h;

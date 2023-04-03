@@ -69,7 +69,7 @@ class TransferPage extends StatelessWidget {
                         style: TextStyle(
                           fontSize: fontSize_10,
                           fontWeight: FontWeight.w500,
-                          height: lineHeight,
+                          height: lineHeight_1_2,
                         ),
                       ),
                     ),
@@ -80,7 +80,7 @@ class TransferPage extends StatelessWidget {
                         style: TextStyle(
                           fontSize: fontSize_10,
                           fontWeight: FontWeight.w500,
-                          height: lineHeight,
+                          height: lineHeight_1_2,
                         ),
                       ),
                     ),
@@ -91,7 +91,7 @@ class TransferPage extends StatelessWidget {
                         style: TextStyle(
                           fontSize: fontSize_10,
                           fontWeight: FontWeight.w500,
-                          height: lineHeight,
+                          height: lineHeight_1_2,
                         ),
                       ),
                     ),

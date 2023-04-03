@@ -153,3 +153,8 @@ LinearGradient linearGradientBg2 = LinearGradient(colors: [
   clr_button_4,
   clr_button_5,
 ]);
+LinearGradient linearGradientBtnDialog = LinearGradient(colors: [
+  Color(0xff01bbae),
+  Color(0xff00a2ae),
+  Color(0xff0181ad),
+]);

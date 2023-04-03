@@ -130,7 +130,7 @@ class _FirstTabState extends State<FirstTab> {
                                     style: TextStyle(
                                       fontSize: fontSize_10,
                                       fontWeight: FontWeight.w600,
-                                      height: lineHeight,
+                                      height: lineHeight_1_2,
                                     ),
                                   ),
                                 ),
@@ -141,7 +141,7 @@ class _FirstTabState extends State<FirstTab> {
                                     style: TextStyle(
                                       fontSize: fontSize_10,
                                       fontWeight: FontWeight.w600,
-                                      height: lineHeight,
+                                      height: lineHeight_1_2,
                                     ),
                                   ),
                                 ),
@@ -152,7 +152,7 @@ class _FirstTabState extends State<FirstTab> {
                                     style: TextStyle(
                                       fontSize: fontSize_10,
                                       fontWeight: FontWeight.w600,
-                                      height: lineHeight,
+                                      height: lineHeight_1_2,
                                     ),
                                   ),
                                 ),
