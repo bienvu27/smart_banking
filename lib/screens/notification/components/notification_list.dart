@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../core/style/colors.dart';
+import '../../../core/style/size.dart';
 import '../model/notification_model.dart';
 
 class NotificationList extends StatelessWidget {
@@ -18,18 +18,18 @@ class NotificationList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.white,
+      color: clr_white,
       child: ListView(
         children: list.map((e) {
           return Container(
-            padding: EdgeInsets.only(bottom: 30.h),
+            padding: EdgeInsets.only(bottom: height_24),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
                   padding: EdgeInsets.only(
-                    top: 10.h,
-                    left: 10.w,
+                    top: height_8,
+                    left: width_8,
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -37,25 +37,25 @@ class NotificationList extends StatelessWidget {
                       Text(
                         'Hôm qua, ${e.date}',
                         style: TextStyle(
-                            fontSize: 13.sp, fontWeight: FontWeight.w500),
+                            fontSize: fontSize_10, fontWeight: FontWeight.w500),
                       ),
                       SizedBox(
-                        height: 10.h,
+                        height: height_8,
                       ),
                       Row(
                         children: [
                           Icon(
                             Icons.verified_outlined,
-                            size: 17.spMin,
+                            size: fontSize_12,
                             color: Colors.black54,
                           ),
                           SizedBox(
-                            width: 5.w,
+                            width: width_4,
                           ),
                           Text(
                             '14:55',
                             style: TextStyle(
-                                fontSize: 13.sp,
+                                fontSize: fontSize_10,
                                 fontWeight: FontWeight.w500,
                                 color: Colors.black54),
                           )
@@ -67,9 +67,9 @@ class NotificationList extends StatelessWidget {
                 Visibility(
                   visible: visibleImage,
                   child: Container(
-                    margin: EdgeInsets.only(top: 20.h),
+                    margin: EdgeInsets.only(top: height_12),
                     width: MediaQuery.of(context).size.width,
-                    height: 300.h,
+                    height: height_212,
                     decoration: BoxDecoration(
                       image: DecorationImage(
                         image: NetworkImage('${e.image}'),
@@ -79,12 +79,12 @@ class NotificationList extends StatelessWidget {
                   ),
                 ),
                 Container(
-                    margin: EdgeInsets.only(top: 20.h, right: 20.w, left: 20.h),
+                    margin: EdgeInsets.only(top: height_8, right: width_8, left: width_8),
                     padding: EdgeInsets.only(
-                        top: 10.h, bottom: 10.h, right: 10.w, left: 10.w),
+                        top: height_8, bottom: height_8, right: width_8, left: width_8),
                     width: MediaQuery.of(context).size.width,
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(5.r),
+                        borderRadius: BorderRadius.circular(border_4),
                         color: Colors.grey[100]),
                     child: ListView(
                       shrinkWrap: true,
@@ -101,19 +101,19 @@ class NotificationList extends StatelessWidget {
                                       visible: visibleIcon,
                                       child: Container(
                                           margin: EdgeInsets.only(
-                                              top: 3.h, right: 5.w),
+                                              top: height_2, right: width_4),
                                           child: Image.network(
                                             data.image ?? '',
-                                            width: 15.spMax,
-                                            height: 15.spMax,
+                                            width: width_12,
+                                            height: width_12,
                                           )),
                                     ),
                                   ),
                                   TextSpan(
                                     text: data.description,
                                     style: TextStyle(
-                                        fontSize: 15.sp,
-                                        height: 1.5,
+                                        fontSize: fontSize_10,
+                                        height: lineHeight,
                                         color: clr_black),
                                   ),
                                 ]),

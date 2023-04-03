@@ -62,6 +62,7 @@ double height_1296 = 3240.h;
 
 
 /// Width
+double width_1 = 1.w;
 double width_0 = 0.w;
 double width_2 = 5.w;
 double width_2_5 = 7.w;

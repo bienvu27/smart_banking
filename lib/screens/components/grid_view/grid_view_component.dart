@@ -3,14 +3,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import '../../../core/resources/strings.dart';
 import '../../../core/style/colors.dart';
+import '../../../core/style/size.dart';
 import '../../components/dialog/custom_dialog.dart';
 import '../../service_manager/model/service_favorite_model.dart';
 
 class GridViewComponent extends StatelessWidget {
-  GridViewComponent({
-    super.key,
-    required this.list, required this.title, this.subTitle
-  });
+  GridViewComponent({super.key, required this.list, required this.title, this.subTitle});
 
   final List<ServiceFavoriteModel> list;
   final String title;
@@ -19,7 +17,7 @@ class GridViewComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(left: 10.w, right: 10.w, bottom: 5.h),
+      padding: EdgeInsets.only(left: width_10, right: width_10, bottom: height_4),
       child: Column(
         children: [
           Row(
@@ -27,15 +25,11 @@ class GridViewComponent extends StatelessWidget {
             children: [
               Text(
                 title,
-                style: TextStyle(
-                    fontSize: 17.sp, fontWeight: FontWeight.w600, color: clr_black),
+                style: TextStyle(fontSize: fontSize_12, fontWeight: FontWeight.w600, color: clr_black),
               ),
               Text(
                 subTitle ?? '',
-                style: TextStyle(
-                    fontSize: 15.sp,
-                    fontWeight: FontWeight.w600,
-                    color: PRIMARY_COLOR),
+                style: TextStyle(fontSize: fontSize_12, fontWeight: FontWeight.w600, color: PRIMARY_COLOR),
               ),
             ],
           ),
@@ -48,17 +42,16 @@ class GridViewComponent extends StatelessWidget {
               crossAxisCount: 3,
               children: list.map((e) {
                 return InkWell(
-                  onTap: (){
+                  onTap: () {
                     showDialog(
                         barrierDismissible: false,
                         context: context,
                         builder: (BuildContext context) => CustomDialog(
-                          title: TITLE_31,
-                          cancel: CANCEL2,
-                          submit: LOGIN,
-                          clickCallback: () {
-                          },
-                        ));
+                              title: TITLE_31,
+                              cancel: CANCEL2,
+                              submit: LOGIN,
+                              clickCallback: () {},
+                            ));
                   },
                   child: Column(
                     children: [
@@ -67,39 +60,37 @@ class GridViewComponent extends StatelessWidget {
                         children: [
                           SvgPicture.asset(
                             '${e.image}',
-                            width: 35.w,
-                            height: 35.h,
+                            width: width_28,
+                            height: height_28,
                             color: PRIMARY_COLOR,
                             fit: BoxFit.contain,
                           ),
                           Positioned(
-                            bottom: 5.h,
+                            bottom: height_5,
                             child: Container(
-                              width: 30.w,
+                              width: width_20,
                               height: 0.1.h,
                               decoration: BoxDecoration(
-                                boxShadow: [
-                                  BoxShadow(
-                                    color:
-                                    Colors.grey.withOpacity(0.9),
-                                    spreadRadius: 2,
-                                    blurRadius: 5,
-                                    offset: const Offset(0, 5), // changes position of shadow
-                                  ),
-                                ],
+                                boxShadow: [boxShadowIcon],
                               ),
                             ),
                           ),
                         ],
                       ),
                       SizedBox(
-                        height: 8.h,
+                        height: height_6,
                       ),
-                      Text(
-                        e.title ?? '',
-                        maxLines: 3,
-                        textAlign: TextAlign.center,
-                        style: const TextStyle(fontWeight: FontWeight.w500),
+                      SizedBox(
+                        width: width_64,
+                        child: Text(
+                          e.title ?? '',
+                          maxLines: 3,
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: fontSize_12,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
                       )
                     ],
                   ),

@@ -26,7 +26,7 @@ class SearchContacts extends StatelessWidget {
         child: Container(
           decoration: BoxDecoration(
             boxShadow: [
-              BoxShadow(blurRadius: border_8, color: clr_black12),
+              boxShadowSearch
             ],
             borderRadius: BorderRadius.circular(border_16),
           ),

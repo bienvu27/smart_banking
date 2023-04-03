@@ -15,6 +15,7 @@ const Color clr_black38 = Color(0x61000000);
 const Color clr_black54 = Color(0x8A000000);
 const Color clr_black87 = Color(0xDD000000);
 const Color clr_black = Color(0xFF000000);
+const Color clr_transparent = Color(0x00000000);
 const Color clr_white54 = Color(0x8AFFFFFF);
 const Color clr_white60 = Color(0x99FFFFFF);
 const Color clr_white = Color(0xFFFFFFFF);
@@ -83,6 +84,19 @@ BoxShadow bottomNavigationBar = BoxShadow(
   spreadRadius: 3,
   blurRadius: 1,
   offset: const Offset(0, 3),
+);
+BoxShadow boxShadowImage =  BoxShadow(
+  color:
+  Colors.grey.withOpacity(0.5),
+  spreadRadius: 1,
+  blurRadius: 1,
+  offset: const Offset(
+      1, 1), // changes position of shadow
+);
+BoxShadow boxShadowSearch=   BoxShadow(
+  color: Colors.black12,
+  offset: Offset(0.0, 1.0), //(x,y)
+  blurRadius: 6.0,
 );
 
 LinearGradient linearGradient1 = LinearGradient(colors: [

@@ -138,3 +138,4 @@ const String NAME_TEST  = 'VU XUAN BIEN';
 const String PAYMENT_ACCOUNT  = 'Tài khoản thanh toán';
 const String NUMBER_TEST  = '21610000542522';
 const String MONEY_TEST  = '6,345,293 VND';
+const String PROMOTION_SCREEN  = 'Quà tặng';

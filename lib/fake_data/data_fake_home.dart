@@ -1,4 +1,7 @@
 import '../screens/home/model/list_service_model.dart';
+import '../screens/notification/model/description_model.dart';
+import '../screens/notification/model/notification_model.dart';
+import '../screens/promotion/model/promotion_model.dart';
 import '../screens/service_manager/model/service_favorite_model.dart';
 import '../screens/transfer/models/list_contacts_model.dart';
 import '../screens/transfer/view/tabs/tab2/model/icon_bank_model.dart';
@@ -125,4 +128,136 @@ final listImageBank = [
   IconBankModel(image: 'https://cdn.haitrieu.com/wp-content/uploads/2022/02/Icon-TPBank.png'),
   IconBankModel(image: 'https://cdn.haitrieu.com/wp-content/uploads/2022/01/Icon-Agribank.png'),
   IconBankModel(image: 'https://cdn.haitrieu.com/wp-content/uploads/2022/01/Icon-VPBank.png'),
+];
+
+final listPromotion = [
+  PromotionModel(
+      image: 'https://play-lh.googleusercontent.com/Hf7XwXAW9ringub6PP_scB6sN8n6yrR1Q-8p9fa_iTTQhskZCg6tvwJhpPx1pSmcZ8at=w526-h296-rw',
+      title: 'Nạp tiền điện thoại mệnh giá 10.000 VNĐ',
+      subTitle: '31/12/2023',
+      point: '50.000',
+      like: 5360),
+
+  PromotionModel(
+      image: 'https://media.vneconomy.vn/images/upload/2022/03/01/ngan-hang-viet-nga.jpeg',
+      title: 'Nạp tiền điện thoại mệnh giá 10.000 VNĐ',
+      subTitle: '31/12/2023',
+      point: '50.000',
+      like: 5360),
+
+  PromotionModel(
+      image: 'https://image.mekongasean.vn/1200x630/Uploaded/2023/mrwqwqdwp/2022_03_02/viet-nga-5013.jpeg',
+      title: 'Nạp tiền điện thoại mệnh giá 10.000 VNĐ',
+      subTitle: '31/12/2023',
+      point: '50.000',
+      like: 5360),
+
+  PromotionModel(
+      image: 'https://cdn1.nhatrangtoday.vn/images/photos/Ngan-hang-Viet-Nga-VRB-3.jpg',
+      title: 'Nạp tiền điện thoại mệnh giá 10.000 VNĐ',
+      subTitle: '31/12/2023',
+      point: '50.000',
+      like: 5360),
+
+  PromotionModel(
+      image: 'https://play-lh.googleusercontent.com/Hf7XwXAW9ringub6PP_scB6sN8n6yrR1Q-8p9fa_iTTQhskZCg6tvwJhpPx1pSmcZ8at=w526-h296-rw',
+      title: 'Nạp tiền điện thoại mệnh giá 10.000 VNĐ',
+      subTitle: '31/12/2023',
+      point: '50.000',
+      like: 5360),
+
+  PromotionModel(
+      image: 'https://cdn1.nhatrangtoday.vn/images/photos/Ngan-hang-Viet-Nga-VRB-5.jpg',
+      title: 'Nạp tiền điện thoại mệnh giá 10.000 VNĐ',
+      subTitle: '31/12/2023',
+      point: '50.000',
+      like: 5360),
+
+  PromotionModel(
+      image: 'https://i1-kinhdoanh.vnecdn.net/2021/12/10/vrb-anh-k-text-2498-1639108454.jpg?w=0&h=0&q=100&dpr=2&fit=crop&s=RdZ1tnbf7FCSmdpRjMnW8w',
+      title: 'Nạp tiền điện thoại mệnh giá 10.000 VNĐ',
+      subTitle: '31/12/2023',
+      point: '50.000',
+      like: 5360),
+
+  PromotionModel(
+      image: 'https://cashgo.vn/wp-content/uploads/2021/06/vrb-la-ngan-hang-gi.jpg',
+      title: 'Nạp tiền điện thoại mệnh giá 10.000 VNĐ',
+      subTitle: '31/12/2023',
+      point: '50.000',
+      like: 5360),
+
+  PromotionModel(
+      image: 'https://image.mekongasean.vn/1200x630/Uploaded/2023/mrwqwqdwp/2022_03_02/viet-nga-5013.jpeg',
+      title: 'Nạp tiền điện thoại mệnh giá 10.000 VNĐ',
+      subTitle: '31/12/2023',
+      point: '50.000',
+      like: 5360),
+
+  PromotionModel(
+      image: 'https://vtv1.mediacdn.vn/thumb_w/650/2019/9/12/1-1568263433284635129991.jpg',
+      title: 'Nạp tiền điện thoại mệnh giá 10.000 VNĐ',
+      subTitle: '31/12/2023',
+      point: '50.000',
+      like: 5360),
+];
+
+final listNoti = [
+  NotificationModel(date: '22/03/2023', time: '14:55', image: 'https://cdn.vietnambiz.vn/1881912202208555/images/2023/02/21/ngan-hang-viet-nga-20230221171222723.jpeg?width=700', description: [
+    DescriptionModel(image: 'https://cdn-icons-png.flaticon.com/512/1933/1933691.png', description: 'Đổi quà miễn phí - Đừng bỏ phí! Đổi quà miễn phí'),
+    DescriptionModel(image: 'https://cdn-icons-png.flaticon.com/512/2584/2584606.png', description: 'VRB Membership Reward tặng bạn: '),
+    DescriptionModel(image: 'https://cdn-icons-png.flaticon.com/512/4160/4160724.png', description: 'Danh mục giao dịch được tích điểm được mở rộng với chuyển tiền quốc tế, đăng ký BRV Smart Kids,...'),
+    DescriptionModel(image: 'https://cdn-icons-png.flaticon.com/512/4160/4160724.png', description: 'Tích điểm bao la khi mở tài khoản chọn tên, chi tiêu thẻ, Thanh toán Online, Tiết kiệm,...'),
+    DescriptionModel(image: 'https://www.emojimeaning.com/img/img-messenger-64/1f449.png', description: 'Giao dịch ngay hôm nay để tích điểm B-Point và tận hưởng miễn phí kho ưu đã bất ngờ từ Member Rewards bạn nhé!'),
+    DescriptionModel(image: 'https://www.emojimeaning.com/img/img-messenger-64/1f449.png', description: 'Chi tiết thể lệ (Cập nhật ngày 15/03/2023).'),
+    DescriptionModel(image: 'https://www.emojimeaning.com/img/img-messenger-64/1f449.png', description: 'Miễn phí thường niên thẻ thẻ Platinum khi phát sinh tổng doanh số giao dịch từ 2 triệu đồng trong vòng 30 ngày kể từ ngày phát hành thẻ.'),
+    DescriptionModel(image: 'https://www.emojimeaning.com/img/img-messenger-64/1f449.png', description: 'Miễn phí thường niên thẻ Classic/Gold khi phát sinh tổng doanh số giao dịch từ 1 triệu đồng trong vòng 30 ngày kể từ ngày phát hành thẻ.'),
+
+  ]),
+  NotificationModel(date: '22/03/2023', time: '14:55', image: 'https://vrbank.com.vn/Uploads/%E1%BA%A2nh%20b%C3%A0i%20vi%E1%BA%BFt/Poster%20Mobile%20app_A4-02%20(2).jpg', description: [
+    DescriptionModel(image: 'https://cdn-icons-png.flaticon.com/512/1933/1933691.png', description: 'Đổi quà miễn phí - Đừng bỏ phí! Đổi quà miễn phí'),
+    DescriptionModel(image: 'https://cdn-icons-png.flaticon.com/512/2584/2584606.png', description: 'VRB Membership Reward tặng bạn: '),
+    DescriptionModel(image: 'https://cdn-icons-png.flaticon.com/512/4160/4160724.png', description: 'Danh mục giao dịch được tích điểm được mở rộng với chuyển tiền quốc tế, đăng ký BRV Smart Kids,...'),
+    DescriptionModel(image: 'https://cdn-icons-png.flaticon.com/512/4160/4160724.png', description: 'Tích điểm bao la khi mở tài khoản chọn tên, chi tiêu thẻ, Thanh toán Online, Tiết kiệm,...'),
+    DescriptionModel(image: 'https://www.emojimeaning.com/img/img-messenger-64/1f449.png', description: 'Giao dịch ngay hôm nay để tích điểm B-Point và tận hưởng miễn phí kho ưu đã bất ngờ từ Member Rewards bạn nhé!'),
+    DescriptionModel(image: 'https://www.emojimeaning.com/img/img-messenger-64/1f449.png', description: 'Chi tiết thể lệ (Cập nhật ngày 15/03/2023).'),
+    DescriptionModel(image: 'https://www.emojimeaning.com/img/img-messenger-64/1f449.png', description: 'Miễn phí thường niên thẻ thẻ Platinum khi phát sinh tổng doanh số giao dịch từ 2 triệu đồng trong vòng 30 ngày kể từ ngày phát hành thẻ.'),
+    DescriptionModel(image: 'https://www.emojimeaning.com/img/img-messenger-64/1f449.png', description: 'Miễn phí thường niên thẻ Classic/Gold khi phát sinh tổng doanh số giao dịch từ 1 triệu đồng trong vòng 30 ngày kể từ ngày phát hành thẻ.'),]),
+  NotificationModel(date: '22/03/2023', time: '14:55', image: 'https://haymora.com/upload/images/tai_chinh_ngan_hang/ngan_hang_lien_doanh_viet_-_nga_-_vrb/vrb-doi-ngu-nhan-su-source-dantri.jpg', description: [
+    DescriptionModel(image: 'https://cdn-icons-png.flaticon.com/512/1933/1933691.png', description: 'Đổi quà miễn phí - Đừng bỏ phí! Đổi quà miễn phí'),
+    DescriptionModel(image: 'https://cdn-icons-png.flaticon.com/512/2584/2584606.png', description: 'VRB Membership Reward tặng bạn: '),
+    DescriptionModel(image: 'https://cdn-icons-png.flaticon.com/512/4160/4160724.png', description: 'Danh mục giao dịch được tích điểm được mở rộng với chuyển tiền quốc tế, đăng ký BRV Smart Kids,...'),
+    DescriptionModel(image: 'https://cdn-icons-png.flaticon.com/512/4160/4160724.png', description: 'Tích điểm bao la khi mở tài khoản chọn tên, chi tiêu thẻ, Thanh toán Online, Tiết kiệm,...'),
+    DescriptionModel(image: 'https://www.emojimeaning.com/img/img-messenger-64/1f449.png', description: 'Giao dịch ngay hôm nay để tích điểm B-Point và tận hưởng miễn phí kho ưu đã bất ngờ từ Member Rewards bạn nhé!'),
+    DescriptionModel(image: 'https://www.emojimeaning.com/img/img-messenger-64/1f449.png', description: 'Chi tiết thể lệ (Cập nhật ngày 15/03/2023).'),
+    DescriptionModel(image: 'https://www.emojimeaning.com/img/img-messenger-64/1f449.png', description: 'Miễn phí thường niên thẻ thẻ Platinum khi phát sinh tổng doanh số giao dịch từ 2 triệu đồng trong vòng 30 ngày kể từ ngày phát hành thẻ.'),
+    DescriptionModel(image: 'https://www.emojimeaning.com/img/img-messenger-64/1f449.png', description: 'Miễn phí thường niên thẻ Classic/Gold khi phát sinh tổng doanh số giao dịch từ 1 triệu đồng trong vòng 30 ngày kể từ ngày phát hành thẻ.'),
+  ]),
+  NotificationModel(date: '22/03/2023', time: '14:55', image: 'https://cdn.vietnambiz.vn/1881912202208555/images/2023/02/21/ngan-hang-viet-nga-20230221171222723.jpeg?width=700', description: [
+    DescriptionModel(image: 'https://cdn-icons-png.flaticon.com/512/1933/1933691.png', description: 'Đổi quà miễn phí - Đừng bỏ phí! Đổi quà miễn phí'),
+    DescriptionModel(image: 'https://cdn-icons-png.flaticon.com/512/2584/2584606.png', description: 'VRB Membership Reward tặng bạn: '),
+    DescriptionModel(image: 'https://cdn-icons-png.flaticon.com/512/4160/4160724.png', description: 'Danh mục giao dịch được tích điểm được mở rộng với chuyển tiền quốc tế, đăng ký BRV Smart Kids,...'),
+    DescriptionModel(image: 'https://cdn-icons-png.flaticon.com/512/4160/4160724.png', description: 'Tích điểm bao la khi mở tài khoản chọn tên, chi tiêu thẻ, Thanh toán Online, Tiết kiệm,...'),
+    DescriptionModel(image: 'https://www.emojimeaning.com/img/img-messenger-64/1f449.png', description: 'Giao dịch ngay hôm nay để tích điểm B-Point và tận hưởng miễn phí kho ưu đã bất ngờ từ Member Rewards bạn nhé!'),
+    DescriptionModel(image: 'https://www.emojimeaning.com/img/img-messenger-64/1f449.png', description: 'Chi tiết thể lệ (Cập nhật ngày 15/03/2023).'),
+    DescriptionModel(image: 'https://www.emojimeaning.com/img/img-messenger-64/1f449.png', description: 'Miễn phí thường niên thẻ thẻ Platinum khi phát sinh tổng doanh số giao dịch từ 2 triệu đồng trong vòng 30 ngày kể từ ngày phát hành thẻ.'),
+    DescriptionModel(image: 'https://www.emojimeaning.com/img/img-messenger-64/1f449.png', description: 'Miễn phí thường niên thẻ Classic/Gold khi phát sinh tổng doanh số giao dịch từ 1 triệu đồng trong vòng 30 ngày kể từ ngày phát hành thẻ.'),      ]),
+  NotificationModel(date: '22/03/2023', time: '14:55', image: 'https://vrbank.com.vn/Uploads/%E1%BA%A2nh%20b%C3%A0i%20vi%E1%BA%BFt/Poster%20Mobile%20app_A4-02%20(2).jpg',  description: [
+    DescriptionModel(image: 'https://cdn-icons-png.flaticon.com/512/1933/1933691.png', description: 'Đổi quà miễn phí - Đừng bỏ phí! Đổi quà miễn phí'),
+    DescriptionModel(image: 'https://cdn-icons-png.flaticon.com/512/2584/2584606.png', description: 'VRB Membership Reward tặng bạn: '),
+    DescriptionModel(image: 'https://cdn-icons-png.flaticon.com/512/4160/4160724.png', description: 'Danh mục giao dịch được tích điểm được mở rộng với chuyển tiền quốc tế, đăng ký BRV Smart Kids,...'),
+    DescriptionModel(image: 'https://cdn-icons-png.flaticon.com/512/4160/4160724.png', description: 'Tích điểm bao la khi mở tài khoản chọn tên, chi tiêu thẻ, Thanh toán Online, Tiết kiệm,...'),
+    DescriptionModel(image: 'https://www.emojimeaning.com/img/img-messenger-64/1f449.png', description: 'Giao dịch ngay hôm nay để tích điểm B-Point và tận hưởng miễn phí kho ưu đã bất ngờ từ Member Rewards bạn nhé!'),
+    DescriptionModel(image: 'https://www.emojimeaning.com/img/img-messenger-64/1f449.png', description: 'Chi tiết thể lệ (Cập nhật ngày 15/03/2023).'),
+    DescriptionModel(image: 'https://www.emojimeaning.com/img/img-messenger-64/1f449.png', description: 'Miễn phí thường niên thẻ thẻ Platinum khi phát sinh tổng doanh số giao dịch từ 2 triệu đồng trong vòng 30 ngày kể từ ngày phát hành thẻ.'),
+    DescriptionModel(image: 'https://www.emojimeaning.com/img/img-messenger-64/1f449.png', description: 'Miễn phí thường niên thẻ Classic/Gold khi phát sinh tổng doanh số giao dịch từ 1 triệu đồng trong vòng 30 ngày kể từ ngày phát hành thẻ.'),      ]),
+  NotificationModel(date: '22/03/2023', time: '14:55', image: 'https://haymora.com/upload/images/tai_chinh_ngan_hang/ngan_hang_lien_doanh_viet_-_nga_-_vrb/vrb-doi-ngu-nhan-su-source-dantri.jpg', description: [
+    DescriptionModel(image: 'https://cdn-icons-png.flaticon.com/512/1933/1933691.png', description: 'Đổi quà miễn phí - Đừng bỏ phí! Đổi quà miễn phí'),
+    DescriptionModel(image: 'https://cdn-icons-png.flaticon.com/512/2584/2584606.png', description: 'VRB Membership Reward tặng bạn: '),
+    DescriptionModel(image: 'https://cdn-icons-png.flaticon.com/512/4160/4160724.png', description: 'Danh mục giao dịch được tích điểm được mở rộng với chuyển tiền quốc tế, đăng ký BRV Smart Kids,...'),
+    DescriptionModel(image: 'https://cdn-icons-png.flaticon.com/512/4160/4160724.png', description: 'Tích điểm bao la khi mở tài khoản chọn tên, chi tiêu thẻ, Thanh toán Online, Tiết kiệm,...'),
+    DescriptionModel(image: 'https://www.emojimeaning.com/img/img-messenger-64/1f449.png', description: 'Giao dịch ngay hôm nay để tích điểm B-Point và tận hưởng miễn phí kho ưu đã bất ngờ từ Member Rewards bạn nhé!'),
+    DescriptionModel(image: 'https://www.emojimeaning.com/img/img-messenger-64/1f449.png', description: 'Chi tiết thể lệ (Cập nhật ngày 15/03/2023).'),
+    DescriptionModel(image: 'https://www.emojimeaning.com/img/img-messenger-64/1f449.png', description: 'Miễn phí thường niên thẻ thẻ Platinum khi phát sinh tổng doanh số giao dịch từ 2 triệu đồng trong vòng 30 ngày kể từ ngày phát hành thẻ.'),
+    DescriptionModel(image: 'https://www.emojimeaning.com/img/img-messenger-64/1f449.png', description: 'Miễn phí thường niên thẻ Classic/Gold khi phát sinh tổng doanh số giao dịch từ 1 triệu đồng trong vòng 30 ngày kể từ ngày phát hành thẻ.'),      ]),
 ];

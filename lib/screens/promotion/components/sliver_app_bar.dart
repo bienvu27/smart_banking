@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../core/resources/name_icon.dart';
+import '../../../core/resources/strings.dart';
+import '../../../core/style/colors.dart';
+import '../../../core/style/size.dart';
+
 class SliverAppBarCustom extends StatelessWidget {
   const SliverAppBarCustom({
     super.key,
@@ -17,32 +22,32 @@ class SliverAppBarCustom extends StatelessWidget {
       leading: Icon(
         Icons.lightbulb_circle_outlined,
         color: _isSliverAppBarExpanded
-            ? Colors.black
-            : Colors.transparent,
+            ? clr_black
+            : clr_transparent,
       ),
       expandedHeight: kExpandedHeight,
       pinned: true,
       centerTitle: true,
       snap: false,
-      title: Text('Quà tặng',
+      title: Text(PROMOTION_SCREEN,
           style: TextStyle(
               color: _isSliverAppBarExpanded
-                  ? Colors.black
+                  ? clr_black
                   : Colors.transparent,
               fontWeight: FontWeight.w500)),
-      backgroundColor: Colors.white,
+      backgroundColor: clr_white,
       flexibleSpace: FlexibleSpaceBar(
         background: Image.network(
-          'https://ibanking.vrbank.com.vn/Image/Promotion/Banner%20Xuan%20Binh%20Than%20IB%20896%20TV.jpg?1.2',
+          image_cover_promotion,
           fit: BoxFit.fill,
         ),
-        titlePadding: EdgeInsets.only(left: 10.w, bottom: 5.h),
+        titlePadding: EdgeInsets.only(left: width_8, bottom: height_4),
         title: _isSliverAppBarExpanded ? null : Container(
-          height: 15.h,
-          width: 50.w,
+          height: height_11,
+          width: width_40,
           decoration: BoxDecoration(
-              color: Colors.black54,
-              borderRadius: BorderRadius.circular(10.r)),
+              color: clr_black54,
+              borderRadius: BorderRadius.circular(border_8)),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -50,13 +55,13 @@ class SliverAppBarCustom extends StatelessWidget {
               Icon(
                 Icons.account_circle_rounded,
                 color: Colors.white,
-                size: 15.spMin,
+                size: fontSize_10,
               ),
               Text(
-                'Hỗ trợ',
+                SUPPORT,
                 style: TextStyle(
-                    fontSize: 10.sp,
-                    color: Colors.white,
+                    fontSize: fontSize_8,
+                    color: clr_white,
                     fontWeight: FontWeight.w500),
               )
             ],
