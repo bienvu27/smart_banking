@@ -14,11 +14,14 @@ class ListContactsSave extends StatelessWidget {
     return Container(
       padding: EdgeInsets.only(left: width_16, right: width_16),
       color: clr_white,
-      child:  Center(
+      child: Center(
           child: Text(
-            TITLE_36,
-            style: TextStyle(color: clr_black26, fontSize: fontSize_12),
-          )),
+        TITLE_36,
+        style: TextStyle(
+          color: clr_black26,
+          fontSize: fontSize_12,
+        ),
+      )),
     );
   }
 }

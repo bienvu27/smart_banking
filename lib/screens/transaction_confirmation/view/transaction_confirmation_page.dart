@@ -118,7 +118,7 @@ class TransactionConfirmationPage extends StatelessWidget {
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                 color: clr_black,
-                                fontSize: fontSize_10,
+                                fontSize: fontSize_12,
                                 fontWeight: FontWeight.w500,
                               ),
                             ),

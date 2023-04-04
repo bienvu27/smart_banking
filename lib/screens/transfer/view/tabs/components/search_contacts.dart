@@ -25,9 +25,7 @@ class SearchContacts extends StatelessWidget {
         height: height_28,
         child: Container(
           decoration: BoxDecoration(
-            boxShadow: [
-              boxShadowSearch
-            ],
+            boxShadow: [boxShadowSearch],
             borderRadius: BorderRadius.circular(border_16),
           ),
           child: TextField(
@@ -43,12 +41,14 @@ class SearchContacts extends StatelessWidget {
               ),
               border: OutlineInputBorder(
                   borderSide: BorderSide.none,
-                  borderRadius: BorderRadius.all(Radius.circular(border_10))),
+                  borderRadius: BorderRadius.all(Radius.circular(
+                    border_10,
+                  ))),
               fillColor: clr_white,
               contentPadding: EdgeInsets.zero,
               hintText: '$title',
               hintStyle: TextStyle(
-                fontSize: fontSize_10,
+                fontSize: fontSize_12,
                 fontWeight: FontWeight.w500,
                 color: clr_black26,
               ),

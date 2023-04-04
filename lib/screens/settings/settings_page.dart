@@ -44,17 +44,25 @@ class SettingsPage extends StatelessWidget {
                         ),
                         Text(
                           GOOD_MORNING,
-                          style: TextStyle(fontSize: fontSize_12, fontWeight: FontWeight.w500, color: clr_black12),
+                          style: TextStyle(
+                            fontSize: fontSize_12,
+                            fontWeight: FontWeight.w500,
+                            color: clr_black12,
+                          ),
                         ),
                         Text(
                           'Vu Xuan Bien',
-                          style: TextStyle(fontSize: fontSize_16, fontWeight: FontWeight.w500, color: clr_black),
+                          style: TextStyle(
+                            fontSize: fontSize_16,
+                            fontWeight: FontWeight.w500,
+                            color: clr_black,
+                          ),
                         ),
                       ],
                     ),
                   ),
                   Positioned(
-                      top: height_40,
+                      top: height_28,
                       right: width_8,
                       child: Container(
                         padding: EdgeInsets.only(
@@ -69,9 +77,14 @@ class SettingsPage extends StatelessWidget {
                         ),
                         child: Row(
                           children: [
-                            Text(EXIT,
-                                style: TextStyle(
-                                    fontSize: fontSize_12, color: PRIMARY_COLOR_RED, fontWeight: FontWeight.w500)),
+                            Text(
+                              EXIT,
+                              style: TextStyle(
+                                fontSize: fontSize_12,
+                                color: PRIMARY_COLOR_RED,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
                             SizedBox(
                               width: width_4,
                             ),
@@ -95,7 +108,7 @@ class SettingsPage extends StatelessWidget {
                     Text(
                       PERSONAL,
                       style: TextStyle(
-                        fontSize: fontSize_12,
+                        fontSize: fontSize_16,
                         fontWeight: FontWeight.w500,
                         color: clr_black,
                       ),
@@ -127,7 +140,7 @@ class SettingsPage extends StatelessWidget {
                     Text(
                       ADVANCED_SETTINGS,
                       style: TextStyle(
-                        fontSize: fontSize_12,
+                        fontSize: fontSize_16,
                         fontWeight: FontWeight.w500,
                         color: clr_black,
                       ),

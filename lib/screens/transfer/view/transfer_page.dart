@@ -67,7 +67,7 @@ class TransferPage extends StatelessWidget {
                         TAB_1,
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          fontSize: fontSize_7,
+                          fontSize: fontSize_10,
                           fontWeight: FontWeight.w500,
                           height: lineHeight_1_2,
                         ),
@@ -78,7 +78,7 @@ class TransferPage extends StatelessWidget {
                         TAB_2,
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          fontSize: fontSize_7,
+                          fontSize: fontSize_10,
                           fontWeight: FontWeight.w500,
                         ),
                       ),
@@ -88,7 +88,7 @@ class TransferPage extends StatelessWidget {
                         TAB_3,
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          fontSize: fontSize_7,
+                          fontSize: fontSize_10,
                           fontWeight: FontWeight.w500,
                           height: lineHeight_1_2,
                         ),

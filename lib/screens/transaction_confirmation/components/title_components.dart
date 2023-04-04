@@ -26,7 +26,7 @@ class TitleComponents extends StatelessWidget {
               title,
               style: TextStyle(
                 color: clr_black38,
-                fontSize: fontSize_10,
+                fontSize: fontSize_12,
                 fontWeight: FontWeight.w500,
               ),
             ),
@@ -36,7 +36,7 @@ class TitleComponents extends StatelessWidget {
               subTitle,
               style: TextStyle(
                 color: color,
-                fontSize: fontSize_10,
+                fontSize: fontSize_12,
                 fontWeight: FontWeight.w700,
               ),
             ),

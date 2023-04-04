@@ -21,7 +21,11 @@ class ServiceList extends StatelessWidget {
     final width = Get.size.width;
     return Container(
       margin: EdgeInsets.only(top: height_8),
-      padding: EdgeInsets.only(top: height_8, left: width_8, right: width_8),
+      padding: EdgeInsets.only(
+        top: height_8,
+        left: width_8,
+        right: width_8,
+      ),
       width: width,
       color: clr_white,
       child: Column(
@@ -29,7 +33,10 @@ class ServiceList extends StatelessWidget {
         children: [
           Text(
             title,
-            style: TextStyle(fontSize: fontSize_10, fontWeight: FontWeight.w600),
+            style: TextStyle(
+              fontSize: fontSize_12,
+              fontWeight: FontWeight.w600,
+            ),
           ),
           Padding(
             padding: EdgeInsets.only(top: width_12),
@@ -72,7 +79,7 @@ class ServiceList extends StatelessWidget {
                         maxLines: 3,
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          fontSize: fontSize_8,
+                          fontSize: fontSize_10,
                           fontWeight: FontWeight.w600,
                         ),
                       )

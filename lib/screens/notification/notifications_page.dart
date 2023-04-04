@@ -30,7 +30,7 @@ class NotificationPage extends StatelessWidget {
                       child: Icon(
                         Icons.settings,
                         color: clr_black,
-                        size: fontSize_14,
+                        size: fontSize_16,
                       )),
                 )
               ],
@@ -72,7 +72,7 @@ class NotificationPage extends StatelessWidget {
                             child: Text(
                               PROMOTIN_1,
                               style: TextStyle(
-                                fontSize: fontSize_8,
+                                fontSize: fontSize_10,
                                 fontWeight: FontWeight.w500,
                               ),
                             ),
@@ -81,7 +81,7 @@ class NotificationPage extends StatelessWidget {
                             child: Text(
                               VOLATILITY,
                               style: TextStyle(
-                                fontSize: fontSize_8,
+                                fontSize: fontSize_10,
                                 fontWeight: FontWeight.w500,
                               ),
                             ),
@@ -89,7 +89,10 @@ class NotificationPage extends StatelessWidget {
                           Tab(
                             child: Text(
                               NOTIFI,
-                              style: TextStyle(fontSize: fontSize_8, fontWeight: FontWeight.w500),
+                              style: TextStyle(
+                                fontSize: fontSize_10,
+                                fontWeight: FontWeight.w500,
+                              ),
                             ),
                           ),
                         ],

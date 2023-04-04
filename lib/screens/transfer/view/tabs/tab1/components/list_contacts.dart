@@ -34,11 +34,11 @@ class ListContacts extends StatelessWidget {
                     children: [
                       CircleAvatar(
                         backgroundColor: clr_f6f5f7,
-                        radius: border_16,
+                        radius: border_50,
                         child: Image.asset(
                           e.image ?? '',
-                          width: width_24,
-                          height: height_24,
+                          width: width_28,
+                          height: height_28,
                         ),
                       ),
                       SizedBox(width: width_8,),
@@ -50,7 +50,7 @@ class ListContacts extends StatelessWidget {
                             style: TextStyle(
                                 color: clr_black,
                                 fontWeight: FontWeight.w600,
-                                fontSize: fontSize_8),
+                                fontSize: fontSize_12),
                           ),
                           SizedBox(height: height_4),
                           Text(
@@ -58,14 +58,14 @@ class ListContacts extends StatelessWidget {
                             style: TextStyle(
                                 color: clr_black,
                                 fontWeight: FontWeight.w600,
-                                fontSize: fontSize_8),
+                                fontSize: fontSize_12),
                           ),
                           SizedBox(height: height_4),
                           Text(
                             e.nameBank?.toUpperCase() ?? ''.toUpperCase(),
                             style: TextStyle(
                                 color: clr_black87,
-                                fontSize: fontSize_8),
+                                fontSize: fontSize_12),
                           ),
                         ],
                       ),

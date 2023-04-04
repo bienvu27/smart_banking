@@ -26,7 +26,7 @@ class GridViewComponent extends StatelessWidget {
               Text(
                 title,
                 style: TextStyle(
-                  fontSize: fontSize_10,
+                  fontSize: fontSize_12,
                   fontWeight: FontWeight.w600,
                   color: clr_black,
                 ),
@@ -34,7 +34,7 @@ class GridViewComponent extends StatelessWidget {
               Text(
                 subTitle ?? '',
                 style: TextStyle(
-                  fontSize: fontSize_10,
+                  fontSize: fontSize_12,
                   fontWeight: FontWeight.w600,
                   color: PRIMARY_COLOR,
                 ),
@@ -94,7 +94,7 @@ class GridViewComponent extends StatelessWidget {
                           maxLines: 3,
                           textAlign: TextAlign.center,
                           style: TextStyle(
-                            fontSize: fontSize_8,
+                            fontSize: fontSize_10,
                             fontWeight: FontWeight.w600,
                           ),
                         ),

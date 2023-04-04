@@ -128,7 +128,7 @@ class _LastTabState extends State<LastTab> {
                                   CONTACT,
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
-                                    fontSize: fontSize_9,
+                                    fontSize: fontSize_12,
                                     fontWeight: FontWeight.w600,
                                     height: lineHeight_1_2,
                                   ),
@@ -139,7 +139,7 @@ class _LastTabState extends State<LastTab> {
                                   RECENTLY,
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
-                                    fontSize: fontSize_9,
+                                    fontSize: fontSize_12,
                                     fontWeight: FontWeight.w600,
                                     height: lineHeight_1_2,
                                   ),
@@ -150,7 +150,7 @@ class _LastTabState extends State<LastTab> {
                                   SAVED_TEMPLATES,
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
-                                    fontSize: fontSize_9,
+                                    fontSize: fontSize_12,
                                     fontWeight: FontWeight.w600,
                                     height: lineHeight_1_2,
                                   ),

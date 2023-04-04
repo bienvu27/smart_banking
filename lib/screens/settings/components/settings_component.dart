@@ -22,7 +22,7 @@ class SettingComponent extends StatelessWidget {
             Text(
               title,
               style: TextStyle(
-                  fontSize: fontSize_10,
+                  fontSize: fontSize_12,
                   fontWeight: FontWeight.w400,
                   color: clr_black),
             ),

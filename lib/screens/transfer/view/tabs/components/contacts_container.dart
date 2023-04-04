@@ -25,7 +25,7 @@ class ContactsContainer extends StatelessWidget {
             child: Text(
               TITLE_34,
               style: TextStyle(
-                fontSize: fontSize_8,
+                fontSize: fontSize_10,
                 overflow: TextOverflow.ellipsis,
                 fontWeight: FontWeight.w500,
                 color: clr_a6a8a9,
@@ -34,16 +34,13 @@ class ContactsContainer extends StatelessWidget {
           ),
           InkWell(
             onTap: () => Get.toNamed("/contacts_manager", arguments: ''),
-            child: SizedBox(
-              width: MediaQuery.of(context).size.width / 3.8,
-              child: Text(
-                TITLE_35,
-                style: TextStyle(
-                  fontSize: fontSize_8,
-                  overflow: TextOverflow.ellipsis,
-                  fontWeight: FontWeight.w500,
-                  color: PRIMARY_COLOR,
-                ),
+            child: Text(
+              TITLE_35,
+              style: TextStyle(
+                fontSize: fontSize_10,
+                overflow: TextOverflow.ellipsis,
+                fontWeight: FontWeight.w500,
+                color: PRIMARY_COLOR,
               ),
             ),
           ),

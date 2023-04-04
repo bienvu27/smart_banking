@@ -35,7 +35,7 @@ class ListPromotion extends StatelessWidget {
           Text(
             PROMOTION_1,
             style: TextStyle(
-              fontSize: fontSize_10,
+              fontSize: fontSize_12,
               fontWeight: FontWeight.w600,
               color: clr_black,
             ),
@@ -57,9 +57,10 @@ class ListPromotion extends StatelessWidget {
                       height: height_56,
                       margin: EdgeInsets.only(right: width_8),
                       decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(border_8),
-                          boxShadow: [boxShadowImage],
-                          image: DecorationImage(image: NetworkImage(e.image ?? ''), fit: BoxFit.fill)),
+                        borderRadius: BorderRadius.circular(border_8),
+                        boxShadow: [boxShadowImage],
+                        image: DecorationImage(image: NetworkImage(e.image ?? ''), fit: BoxFit.fill),
+                      ),
                     ),
                     Container(
                       width: Get.size.width / 1.6,
@@ -72,7 +73,7 @@ class ListPromotion extends StatelessWidget {
                             maxLines: 2,
                             style: TextStyle(
                                 overflow: TextOverflow.ellipsis,
-                                fontSize: fontSize_10,
+                                fontSize: fontSize_12,
                                 height: lineHeight_1_2,
                                 fontWeight: FontWeight.w800),
                           ),
@@ -83,7 +84,7 @@ class ListPromotion extends StatelessWidget {
                             '$TITLE_32 ${e.subTitle}',
                             maxLines: 2,
                             style: TextStyle(
-                                fontSize: fontSize_9,
+                                fontSize: fontSize_11,
                                 overflow: TextOverflow.ellipsis,
                                 color: clr_black54,
                                 fontWeight: FontWeight.w500),
@@ -136,7 +137,7 @@ class ListPromotion extends StatelessWidget {
                                       e.point ?? '',
                                       style: TextStyle(
                                           overflow: TextOverflow.ellipsis,
-                                          fontSize: fontSize_9,
+                                          fontSize: fontSize_11,
                                           fontWeight: FontWeight.w600,
                                           color: PRIMARY_COLOR),
                                     ),
@@ -147,7 +148,7 @@ class ListPromotion extends StatelessWidget {
                                       'B-Point',
                                       style: TextStyle(
                                           overflow: TextOverflow.ellipsis,
-                                          fontSize: fontSize_9,
+                                          fontSize: fontSize_11,
                                           fontWeight: FontWeight.w400,
                                           color: PRIMARY_COLOR),
                                     ),
@@ -167,7 +168,7 @@ class ListPromotion extends StatelessWidget {
                                   Text(
                                     '${e.like}',
                                     style: TextStyle(
-                                      fontSize: fontSize_9,
+                                      fontSize: fontSize_11,
                                       fontWeight: FontWeight.w400,
                                       color: clr_black54,
                                     ),
