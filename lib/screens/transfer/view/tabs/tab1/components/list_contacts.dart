@@ -50,7 +50,7 @@ class ListContacts extends StatelessWidget {
                             style: TextStyle(
                                 color: clr_black,
                                 fontWeight: FontWeight.w600,
-                                fontSize: fontSize_10),
+                                fontSize: fontSize_8),
                           ),
                           SizedBox(height: height_4),
                           Text(
@@ -58,14 +58,14 @@ class ListContacts extends StatelessWidget {
                             style: TextStyle(
                                 color: clr_black,
                                 fontWeight: FontWeight.w600,
-                                fontSize: fontSize_10),
+                                fontSize: fontSize_8),
                           ),
                           SizedBox(height: height_4),
                           Text(
                             e.nameBank?.toUpperCase() ?? ''.toUpperCase(),
                             style: TextStyle(
                                 color: clr_black87,
-                                fontSize: fontSize_10),
+                                fontSize: fontSize_8),
                           ),
                         ],
                       ),

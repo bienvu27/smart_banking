@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:smart_banking/screens/components/dialog/custom_dialog.dart';
 import 'package:get/get.dart';
+import 'package:smart_banking/screens/transfer/view/transfer_page.dart';
+import '../../../core/resources/name_icon.dart';
 import '../../../core/resources/strings.dart';
 import '../../../core/style/colors.dart';
 import '../../../core/style/size.dart';
@@ -24,7 +26,10 @@ class GridMenu extends StatelessWidget {
               Expanded(
                 flex: 1,
                 child: Padding(
-                  padding: EdgeInsets.only(left: width_10, right: width_4),
+                  padding: EdgeInsets.only(
+                    left: width_10,
+                    right: width_4,
+                  ),
                   child: GridMenuComponent(
                     callback: () {
                       // showDialog(
@@ -38,9 +43,10 @@ class GridMenu extends StatelessWidget {
                       //           clickCallback: () {},
                       //         ));
                       Get.toNamed("/transfer", arguments: '');
+
                     },
                     title: TRANSFER,
-                    icon: Icons.compare_arrows_outlined,
+                    icon: 'assets/svg/icon_white/2102.svg',
                     topLeft: border_10,
                     topRight: border_10,
                     bottomLeft: border_10,
@@ -67,7 +73,7 @@ class GridMenu extends StatelessWidget {
                               ));
                     },
                     title: SERVICE_CARD,
-                    icon: Icons.wallet,
+                    icon: image_service_card,
                     topLeft: border_10,
                     topRight: border_10,
                     bottomLeft: size_0,
@@ -101,7 +107,7 @@ class GridMenu extends StatelessWidget {
                               ));
                     },
                     title: SAVE,
-                    icon: Icons.account_balance_wallet,
+                    icon: image_save_money,
                     topLeft: border_10,
                     topRight: size_0,
                     bottomLeft: border_10,
@@ -128,7 +134,7 @@ class GridMenu extends StatelessWidget {
                               ));
                     },
                     title: SHOPPING,
-                    icon: Icons.shopping_cart_outlined,
+                    icon: image_shopping,
                     topLeft: size_0,
                     topRight: border_10,
                     bottomLeft: border_10,

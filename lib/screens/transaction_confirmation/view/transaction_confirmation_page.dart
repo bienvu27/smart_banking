@@ -12,6 +12,7 @@ import '../components/title_components.dart';
 
 class TransactionConfirmationPage extends StatelessWidget {
   const TransactionConfirmationPage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -81,15 +82,15 @@ class TransactionConfirmationPage extends StatelessWidget {
         ),
       ),
       bottomNavigationBar: Container(
-          color: Colors.white,
-          height: height_112,
+          color: Colors.transparent,
+          height: height_125,
           child: Stack(
             alignment: Alignment.bottomCenter,
             children: [
               SizedBox(
-                  height: height_104,
+                  height: height_121,
                   child: Container(
-                    padding: EdgeInsets.only(left: width_8, right: width_8),
+                    padding: EdgeInsets.only(left: width_8, right: width_8,),
                     decoration: BoxDecoration(
                         color: clr_white,
                         borderRadius: BorderRadius.only(
@@ -104,11 +105,14 @@ class TransactionConfirmationPage extends StatelessWidget {
                           ),
                         ]),
                     child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         Flexible(
                           flex: 2,
                           child: Container(
-                            margin: EdgeInsets.only(top: height_8),
+                            margin: EdgeInsets.only(
+                              top: height_8,
+                            ),
                             child: Text(
                               TITLE_42,
                               textAlign: TextAlign.center,
@@ -128,7 +132,7 @@ class TransactionConfirmationPage extends StatelessWidget {
                             children: [
                               OTPTextField(
                                 length: 6,
-                                width: width_148,
+                                width: MediaQuery.of(context).size.width / 1.5,
                                 fieldWidth: width_24,
                                 style: TextStyle(
                                   fontSize: fontSize_20,
@@ -150,10 +154,13 @@ class TransactionConfirmationPage extends StatelessWidget {
                         ),
                         Flexible(
                           flex: 2,
-                          child: ButtonComponent(
-                              title: CONFIRM,
-                              bgColor: button_color_home,
-                              callback: () => Get.toNamed("/transaction_confirm", arguments: '')),
+                          child: Container(
+                            padding: EdgeInsets.only(top: height_8),
+                            child: ButtonComponent(
+                                title: CONFIRM,
+                                bgColor: button_color_home,
+                                callback: () => Get.toNamed("/transaction_confirm", arguments: '')),
+                          ),
                         ),
                       ],
                     ),
@@ -164,8 +171,8 @@ class TransactionConfirmationPage extends StatelessWidget {
                     backgroundColor: clr_2dcabc,
                     radius: border_8,
                     child: Icon(
-                      Icons.keyboard_arrow_down_outlined,
-                      size: fontSize_16,
+                      Icons.keyboard_arrow_down,
+                      size: fontSize_15,
                       color: clr_white,
                     )),
               ),

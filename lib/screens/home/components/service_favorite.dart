@@ -28,7 +28,7 @@ class ServiceFavorite extends StatelessWidget {
               Text(
                 SERVICES_FAVORITE,
                 style: TextStyle(
-                  fontSize: fontSize_10,
+                  fontSize: fontSize_12,
                   fontWeight: FontWeight.w600,
                   color: clr_black,
                 ),
@@ -36,7 +36,7 @@ class ServiceFavorite extends StatelessWidget {
               Text(
                 CUSTOMIZATION,
                 style: TextStyle(
-                  fontSize: fontSize_10,
+                  fontSize: fontSize_12,
                   fontWeight: FontWeight.w600,
                   color: PRIMARY_COLOR,
                 ),
@@ -74,9 +74,8 @@ class ServiceFavorite extends StatelessWidget {
                           children: [
                             SvgPicture.asset(
                               '${e.image}',
-                              width: width_28,
-                              height: height_28,
-                              color: PRIMARY_COLOR,
+                              width: width_40,
+                              height: height_40,
                               fit: BoxFit.contain,
                             ),
                             Positioned(
@@ -101,7 +100,7 @@ class ServiceFavorite extends StatelessWidget {
                             maxLines: 3,
                             textAlign: TextAlign.center,
                             style: TextStyle(
-                              fontSize: fontSize_8,
+                              fontSize: fontSize_10,
                               fontWeight: FontWeight.w600,
                             ),
                           ),
@@ -126,7 +125,7 @@ class ServiceFavorite extends StatelessWidget {
             child: Text(
               SEE_ALL_SERVICES,
               style: TextStyle(
-                fontSize: fontSize_10,
+                fontSize: fontSize_12,
                 fontWeight: FontWeight.w500,
                 color: PRIMARY_COLOR,
                 overflow: TextOverflow.ellipsis,

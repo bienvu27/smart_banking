@@ -43,9 +43,8 @@ class ListService extends StatelessWidget {
                   children: [
                     SvgPicture.asset(
                       '${e.image}',
-                      width: width_20,
-                      height: height_20,
-                      color: PRIMARY_COLOR,
+                      width: height_32,
+                      height: height_32,
                       fit: BoxFit.contain,
                     ),
                     Container(
@@ -59,7 +58,7 @@ class ListService extends StatelessWidget {
                           Text(
                             e.title ?? '',
                             style: TextStyle(
-                              fontSize: fontSize_10,
+                              fontSize: fontSize_12,
                               color: PRIMARY_COLOR,
                               fontWeight: FontWeight.w700,
                             ),
@@ -72,7 +71,7 @@ class ListService extends StatelessWidget {
                             maxLines: 3,
                             style: TextStyle(
                               height: 1.7,
-                              fontSize: fontSize_8,
+                              fontSize: fontSize_11,
                             ),
                           ),
                         ],
@@ -99,14 +98,14 @@ class ListService extends StatelessWidget {
                         children: [
                           Text('${e.numberService}',
                               style: TextStyle(
-                                fontSize: fontSize_8,
+                                fontSize: fontSize_10,
                                 color: PRIMARY_COLOR,
                                 fontWeight: FontWeight.w500,
                               )),
                           SizedBox(width: width_2),
                           Text(SERVICE,
                               style: TextStyle(
-                                fontSize: fontSize_8,
+                                fontSize: fontSize_10,
                                 color: PRIMARY_COLOR,
                                 fontWeight: FontWeight.w500,
                               )),

@@ -33,7 +33,7 @@ class CoverWidget extends StatelessWidget {
             padding: EdgeInsets.only(
               left: width_12,
               right: width_12,
-              top: height_24,
+              top: height_4,
             ),
             child: Column(
               children: [

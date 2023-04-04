@@ -162,7 +162,7 @@ class _SecondsTabState extends State<SecondsTab> {
                                     CONTACT,
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
-                                      fontSize: fontSize_10,
+                                      fontSize: fontSize_9,
                                       fontWeight: FontWeight.w600,
                                       height: lineHeight_1_2,
                                     ),
@@ -173,7 +173,7 @@ class _SecondsTabState extends State<SecondsTab> {
                                     RECENTLY,
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
-                                      fontSize: fontSize_10,
+                                      fontSize: fontSize_9,
                                       fontWeight: FontWeight.w600,
                                       height: lineHeight_1_2,
                                     ),
@@ -184,7 +184,7 @@ class _SecondsTabState extends State<SecondsTab> {
                                     SAVED_TEMPLATES,
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
-                                      fontSize: fontSize_10,
+                                      fontSize: fontSize_9,
                                       fontWeight: FontWeight.w600,
                                       height: lineHeight_1_2,
                                     ),

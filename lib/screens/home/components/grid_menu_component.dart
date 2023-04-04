@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import '../../../core/style/colors.dart';
 import '../../../core/style/size.dart';
 
@@ -20,8 +21,7 @@ class GridMenuComponent extends StatelessWidget {
   final double topLeft;
   final double topRight;
   final double bottomRight;
-  final String title;
-  final IconData icon;
+  final String title, icon;
   final VoidCallback callback;
   final Color color;
 
@@ -29,12 +29,12 @@ class GridMenuComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
+    return GestureDetector(
       onTap: () => callback(),
       child: Container(
         padding: EdgeInsets.only(
-          top: height_16,
-          bottom: height_16,
+          top: height_11,
+          bottom: height_11,
         ),
         decoration: BoxDecoration(
             color: color,
@@ -49,17 +49,22 @@ class GridMenuComponent extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Icon(
+            SvgPicture.asset(
               icon,
-              size: fontSize_26,
-              color: clr_white,
+              width: width_40,
+              height: height_40,
+              fit: BoxFit.contain,
             ),
             SizedBox(
               height: height_4,
             ),
             Text(
               title,
-              style: TextStyle(fontSize: fontSize_10, color: clr_white, fontWeight: FontWeight.w500),
+              style: TextStyle(
+                fontSize: fontSize_10,
+                color: clr_white,
+                fontWeight: FontWeight.w500,
+              ),
             )
           ],
         ),

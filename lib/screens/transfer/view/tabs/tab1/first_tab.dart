@@ -128,7 +128,7 @@ class _FirstTabState extends State<FirstTab> {
                                     CONTACT,
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
-                                      fontSize: fontSize_7,
+                                      fontSize: fontSize_9,
                                       fontWeight: FontWeight.w600,
                                       height: lineHeight_1_2,
                                     ),
@@ -139,7 +139,7 @@ class _FirstTabState extends State<FirstTab> {
                                     RECENTLY,
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
-                                      fontSize: fontSize_10,
+                                      fontSize: fontSize_9,
                                       fontWeight: FontWeight.w600,
                                       height: lineHeight_1_2,
                                     ),
@@ -150,7 +150,7 @@ class _FirstTabState extends State<FirstTab> {
                                     SAVED_TEMPLATES,
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
-                                      fontSize: fontSize_10,
+                                      fontSize: fontSize_9,
                                       fontWeight: FontWeight.w600,
                                       height: lineHeight_1_2,
                                     ),
@@ -159,7 +159,10 @@ class _FirstTabState extends State<FirstTab> {
                               ],
                             ),
                           ),
-                          SearchContacts(visibly: visibly, title: statusSearch ? SEARCH_2 : SEARCH_3,)
+                          SearchContacts(
+                            visibly: visibly,
+                            title: statusSearch ? SEARCH_2 : SEARCH_3,
+                          )
                         ],
                       ),
                     ),

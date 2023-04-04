@@ -57,7 +57,7 @@ class ListContactsRecently extends StatelessWidget {
                             style: TextStyle(
                               color: clr_black,
                               fontWeight: FontWeight.w600,
-                              fontSize: fontSize_10,
+                              fontSize: fontSize_8,
                             ),
                           ),
                           SizedBox(height: height_4),
@@ -66,20 +66,23 @@ class ListContactsRecently extends StatelessWidget {
                             style: TextStyle(
                               color: clr_black,
                               fontWeight: FontWeight.w600,
-                              fontSize: fontSize_10,
+                              fontSize: fontSize_8,
                             ),
                           ),
                           SizedBox(height: height_4),
                           Text(
                             e.nameBank?.toUpperCase() ?? ''.toUpperCase(),
-                            style: TextStyle(color: clr_black87, fontSize: fontSize_10),
+                            style: TextStyle(
+                              color: clr_black87,
+                              fontSize: fontSize_8,
+                            ),
                           ),
                           SizedBox(height: height_4),
                           Text(
                             '${e.money} VND'.toUpperCase(),
                             style: TextStyle(
                               color: clr_black,
-                              fontSize: fontSize_10,
+                              fontSize: fontSize_8,
                               fontWeight: FontWeight.w600,
                             ),
                           ),

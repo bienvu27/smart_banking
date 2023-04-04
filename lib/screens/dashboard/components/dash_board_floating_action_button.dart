@@ -15,7 +15,7 @@ class DashBoardFloatingActionButton extends StatelessWidget {
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(border_16)),
       shadowColor: PRIMARY_COLOR,
       child: CircleAvatar(
-        radius: border_16,
+        radius: border_50,
         backgroundColor: clr_white,
         child: FloatingActionButton(
           backgroundColor: PRIMARY_COLOR,
@@ -24,7 +24,7 @@ class DashBoardFloatingActionButton extends StatelessWidget {
           },
           shape: RoundedRectangleBorder(
             side: BorderSide(width: width_2, color: clr_white),
-            borderRadius: BorderRadius.circular(border_40),
+            borderRadius: BorderRadius.circular(border_148),
           ),
           child: const Icon(Icons.qr_code_2),
         ),

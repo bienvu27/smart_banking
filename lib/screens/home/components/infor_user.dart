@@ -20,8 +20,8 @@ class InforUser extends StatelessWidget {
             padding: EdgeInsets.only(
               left: width_10,
               right: width_10,
-              bottom: height_13,
-              top: height_13,
+              bottom: height_12,
+              top: height_12,
             ),
             alignment: Alignment.center,
             width: width,
@@ -41,12 +41,12 @@ class InforUser extends StatelessWidget {
                       PAYMENT_ACCOUNT,
                       style: TextStyle(
                         color: Colors.black54,
-                        fontSize: fontSize_10,
+                        fontSize: fontSize_12,
                         fontWeight: FontWeight.w500,
                       ),
                     ),
                     SizedBox(
-                      height: height_2,
+                      height: height_4,
                     ),
                     Row(
                       children: [
@@ -54,7 +54,7 @@ class InforUser extends StatelessWidget {
                           NUMBER_TEST,
                           style: TextStyle(
                             color: clr_black,
-                            fontSize: fontSize_12,
+                            fontSize: fontSize_14,
                             fontWeight: FontWeight.w500,
                           ),
                         ),
@@ -83,7 +83,7 @@ class InforUser extends StatelessWidget {
                       Text(
                         TODO_LIST,
                         style: TextStyle(
-                          fontSize: fontSize_8,
+                          fontSize: fontSize_10,
                           color: clr_black54,
                           fontWeight: FontWeight.w500,
                         ),

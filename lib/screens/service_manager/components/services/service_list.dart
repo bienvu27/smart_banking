@@ -29,7 +29,7 @@ class ServiceList extends StatelessWidget {
         children: [
           Text(
             title,
-            style: TextStyle(fontSize: fontSize_12, fontWeight: FontWeight.w600),
+            style: TextStyle(fontSize: fontSize_10, fontWeight: FontWeight.w600),
           ),
           Padding(
             padding: EdgeInsets.only(top: width_12),
@@ -48,9 +48,8 @@ class ServiceList extends StatelessWidget {
                         children: [
                           SvgPicture.asset(
                             '${e.image}',
-                            width: width_28,
-                            height: height_28,
-                            color: PRIMARY_COLOR,
+                            width: width_40,
+                            height: height_40,
                             fit: BoxFit.contain,
                           ),
                           Positioned(
@@ -68,16 +67,13 @@ class ServiceList extends StatelessWidget {
                       SizedBox(
                         height: height_6,
                       ),
-                      SizedBox(
-                        width: width_64,
-                        child: Text(
-                          e.title ?? '',
-                          maxLines: 2,
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontSize: fontSize_12,
-                            fontWeight: FontWeight.w600,
-                          ),
+                      Text(
+                        e.title ?? '',
+                        maxLines: 3,
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: fontSize_8,
+                          fontWeight: FontWeight.w600,
                         ),
                       )
                     ],

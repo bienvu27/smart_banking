@@ -68,9 +68,8 @@ class GridViewComponent extends StatelessWidget {
                         children: [
                           SvgPicture.asset(
                             '${e.image}',
-                            width: width_28,
-                            height: height_28,
-                            color: PRIMARY_COLOR,
+                            width: width_40,
+                            height: height_40,
                             fit: BoxFit.contain,
                           ),
                           Positioned(

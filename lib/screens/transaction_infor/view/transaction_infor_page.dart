@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../../core/resources/name_icon.dart';
 import '../../../core/resources/strings.dart';
 import '../../../core/style/colors.dart';
 import '../../../core/style/size.dart';
@@ -28,9 +29,16 @@ class TransactionInforPage extends StatelessWidget {
           child: Column(
             children: [
               Container(
-                margin: EdgeInsets.only(left: width_8, right: width_8, top: height_8),
-                padding: EdgeInsets.only(left: width_12),
-                height: height_56,
+                margin: EdgeInsets.only(
+                  left: width_8,
+                  right: width_8,
+                  top: height_8,
+                ),
+                padding: EdgeInsets.only(
+                  left: width_12,
+                  top: height_20,
+                  bottom: height_20,
+                ),
                 decoration: BoxDecoration(
                   color: clr_blue,
                   borderRadius: BorderRadius.circular(border_8),
@@ -41,12 +49,12 @@ class TransactionInforPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       CircleAvatar(
-                        radius: border_16,
+                        radius: border_50,
                         backgroundColor: clr_d5d6d7,
                         child: Icon(
                           Icons.person,
                           color: Colors.white,
-                          size: fontSize_20,
+                          size: fontSize_26,
                         ),
                       ),
                       SizedBox(
@@ -80,9 +88,16 @@ class TransactionInforPage extends StatelessWidget {
                     ]),
               ),
               Container(
-                margin: EdgeInsets.only(left: width_8, right: width_8, top: height_8),
-                padding: EdgeInsets.only(right: width_12),
-                height: height_56,
+                margin: EdgeInsets.only(
+                  left: width_8,
+                  right: width_8,
+                  top: height_8,
+                ),
+                padding: EdgeInsets.only(
+                  right: width_12,
+                  top: height_20,
+                  bottom: height_20,
+                ),
                 decoration: BoxDecoration(
                   color: clr_blue,
                   borderRadius: BorderRadius.circular(border_8),
@@ -122,11 +137,11 @@ class TransactionInforPage extends StatelessWidget {
                       ),
                       CircleAvatar(
                         backgroundColor: clr_f6f5f7,
-                        radius: border_16,
+                        radius: border_50,
                         child: Image.asset(
-                          'assets/images/vrbank.png',
-                          width: width_20,
-                          height: height_20,
+                          icon_vrb,
+                          width: width_24,
+                          height: height_24,
                         ),
                       ),
                     ]),
@@ -134,7 +149,11 @@ class TransactionInforPage extends StatelessWidget {
               Stack(
                 children: [
                   Padding(
-                    padding: EdgeInsets.only(left: width_8, right: width_8, top: height_8),
+                    padding: EdgeInsets.only(
+                      left: width_8,
+                      right: width_8,
+                      top: height_8,
+                    ),
                     child: TextFieldComponent(
                       label: AMOUT_OF_MONEY,
                       textInputType: TextInputType.number,
@@ -147,7 +166,7 @@ class TransactionInforPage extends StatelessWidget {
                       VND,
                       style: TextStyle(
                         color: clr_black,
-                        fontSize: fontSize_12,
+                        fontSize: fontSize_10,
                         fontWeight: FontWeight.w500,
                       ),
                     ),
@@ -155,7 +174,11 @@ class TransactionInforPage extends StatelessWidget {
                 ],
               ),
               Padding(
-                padding: EdgeInsets.only(left: width_8, right: width_8, top: height_8),
+                padding: EdgeInsets.only(
+                  left: width_8,
+                  right: width_8,
+                  top: height_8,
+                ),
                 child: TextFieldComponent(
                   label: TRANSACTION_CONTENT,
                   textInputType: TextInputType.text,

@@ -17,71 +17,72 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: false,
-      body: Stack(
-        children: [
-          SizedBox(
-            height: MediaQuery.of(context).size.height,
-            child: Center(
-              child: Image.asset(
-                icon_vrb,
-                width: width_80,
-                height: height_80,
-                color: color_white_opacity,
-                colorBlendMode: BlendMode.modulate,
+        resizeToAvoidBottomInset: false,
+        body: Stack(
+          children: [
+            SizedBox(
+              height: MediaQuery.of(context).size.height,
+              child: Center(
+                child: Image.asset(
+                  icon_vrb,
+                  width: width_80,
+                  height: height_80,
+                  color: color_white_opacity,
+                  colorBlendMode: BlendMode.modulate,
+                ),
               ),
             ),
-          ),
-          SingleChildScrollView(
-            child: Column(
-              children: [
-                const CoverWidget(),
-                SizedBox(
-                  height: height_12,
-                ),
-                const GridMenu(),
-                SizedBox(
-                  height: height_12,
-                ),
-                ServiceFavorite(list: list),
-                SizedBox(
-                  height: height_12,
-                ),
-                Container(
-                  margin: EdgeInsets.only(left: width_12, right: width_12),
-                  height: height_86,
-                  child: PageView.builder(
-                      itemCount: images.length,
-                      pageSnapping: true,
-                      itemBuilder: (context, pagePosition) {
-                        return ClipRRect(
-                            borderRadius: BorderRadius.circular(border_8),
-                            child: Image.network(
-                              images[pagePosition],
-                              fit: BoxFit.fill,
-                            ));
-                      }),
-                ),
-                SizedBox(
-                  height: height_12,
-                ),
-                Text(
-                  TITLE_30,
-                  style: TextStyle(fontSize: fontSize_8, fontWeight: FontWeight.w500),
-                ),
-                SizedBox(
-                  height: height_12,
-                ),
-                ListService(listService: listService)
-              ],
+            SingleChildScrollView(
+              child: Column(
+                children: [
+                  const CoverWidget(),
+                  SizedBox(
+                    height: height_12,
+                  ),
+                  const GridMenu(),
+                  SizedBox(
+                    height: height_12,
+                  ),
+                  ServiceFavorite(list: list),
+                  SizedBox(
+                    height: height_12,
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(left: width_12, right: width_12),
+                    height: height_96,
+                    child: PageView.builder(
+                        itemCount: images.length,
+                        pageSnapping: true,
+                        itemBuilder: (context, pagePosition) {
+                          return ClipRRect(
+                              borderRadius: BorderRadius.circular(border_8),
+                              child: Image.network(
+                                images[pagePosition],
+                                fit: BoxFit.fill,
+                              ));
+                        }),
+                  ),
+                  SizedBox(
+                    height: height_12,
+                  ),
+                  Text(
+                    TITLE_30,
+                    style: TextStyle(
+                      fontSize: fontSize_12,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                  SizedBox(
+                    height: height_12,
+                  ),
+                  ListService(listService: listService)
+                ],
+              ),
             ),
-          ),
-        ],
-      )
-    );
+          ],
+        ));
   }
 }
