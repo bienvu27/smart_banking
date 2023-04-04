@@ -71,7 +71,7 @@ class _HomePageState extends State<HomePage> {
                 ),
                 Text(
                   TITLE_30,
-                  style: TextStyle(fontSize: fontSize_12, fontWeight: FontWeight.w500),
+                  style: TextStyle(fontSize: fontSize_8, fontWeight: FontWeight.w500),
                 ),
                 SizedBox(
                   height: height_12,

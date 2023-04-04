@@ -112,7 +112,7 @@ class NotificationList extends StatelessWidget {
                                   TextSpan(
                                     text: data.description,
                                     style: TextStyle(
-                                        fontSize: fontSize_10,
+                                        fontSize: fontSize_12,
                                         height: lineHeight_1_2,
                                         color: clr_black),
                                   ),

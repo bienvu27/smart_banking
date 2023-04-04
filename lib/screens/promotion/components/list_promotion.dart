@@ -18,29 +18,38 @@ class ListPromotion extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: clr_white,
-      margin: EdgeInsets.only(top: height_8, bottom: height_12),
-      padding: EdgeInsets.only(left: width_8, right: width_8),
+      margin: EdgeInsets.only(
+        top: height_8,
+        bottom: height_12,
+      ),
+      padding: EdgeInsets.only(
+        left: width_8,
+        right: width_8,
+      ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(height: height_8,),
+          SizedBox(
+            height: height_8,
+          ),
           Text(
             PROMOTION_1,
             style: TextStyle(
-                fontSize: fontSize_12,
-                fontWeight: FontWeight.w600,
-                color: clr_black),
+              fontSize: fontSize_10,
+              fontWeight: FontWeight.w600,
+              color: clr_black,
+            ),
           ),
           Column(
-            children: listPromotion.map((e){
+            children: listPromotion.map((e) {
               return Container(
                 margin: EdgeInsets.only(top: height_8),
                 padding: EdgeInsets.only(bottom: height_8),
                 decoration: BoxDecoration(
                   border: Border(
-                    bottom: BorderSide(
-                        width: width_1, color: clr_black26),
-                  ),),
+                    bottom: BorderSide(width: width_1, color: clr_black26),
+                  ),
+                ),
                 child: Row(
                   children: [
                     Container(
@@ -49,41 +58,39 @@ class ListPromotion extends StatelessWidget {
                       margin: EdgeInsets.only(right: width_8),
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(border_8),
-                          boxShadow: [
-                            boxShadowImage
-                          ],
-                          image: DecorationImage(
-                              image: NetworkImage(
-                                  e.image ?? ''),
-                              fit: BoxFit.fill)),
+                          boxShadow: [boxShadowImage],
+                          image: DecorationImage(image: NetworkImage(e.image ?? ''), fit: BoxFit.fill)),
                     ),
                     Container(
                       width: Get.size.width / 1.6,
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment
-                            .spaceAround,
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           Text(
                             e.title ?? '',
                             maxLines: 2,
                             style: TextStyle(
-                              overflow: TextOverflow.ellipsis,
-                                fontSize: fontSize_12,
+                                overflow: TextOverflow.ellipsis,
+                                fontSize: fontSize_10,
                                 height: lineHeight_1_2,
                                 fontWeight: FontWeight.w800),
                           ),
-                          SizedBox(height: height_4,),
+                          SizedBox(
+                            height: height_4,
+                          ),
                           Text(
                             '$TITLE_32 ${e.subTitle}',
                             maxLines: 2,
                             style: TextStyle(
-                                fontSize: fontSize_11,
+                                fontSize: fontSize_9,
                                 overflow: TextOverflow.ellipsis,
                                 color: clr_black54,
                                 fontWeight: FontWeight.w500),
                           ),
-                          SizedBox(height: height_4,),
+                          SizedBox(
+                            height: height_4,
+                          ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
@@ -93,8 +100,8 @@ class ListPromotion extends StatelessWidget {
                                   children: [
                                     SvgPicture.asset(
                                       'assets/svg/flower_rounded.svg',
-                                      width: height_16,
-                                      height: width_16,
+                                      width: width_12,
+                                      height: height_12,
                                       color: clr_flower_1,
                                       fit: BoxFit.contain,
                                     ),
@@ -102,8 +109,8 @@ class ListPromotion extends StatelessWidget {
                                       left: width_8,
                                       child: SvgPicture.asset(
                                         'assets/svg/flower_rounded.svg',
-                                        width: height_16,
-                                        height: width_16,
+                                        width: width_12,
+                                        height: height_12,
                                         color: clr_yellow,
                                         fit: BoxFit.contain,
                                       ),
@@ -112,8 +119,8 @@ class ListPromotion extends StatelessWidget {
                                       left: width_16,
                                       child: SvgPicture.asset(
                                         'assets/svg/flower_rounded.svg',
-                                        width: height_16,
-                                        height: width_16,
+                                        width: width_12,
+                                        height: height_12,
                                         color: clr_blue,
                                         fit: BoxFit.contain,
                                       ),
@@ -128,11 +135,10 @@ class ListPromotion extends StatelessWidget {
                                     child: Text(
                                       e.point ?? '',
                                       style: TextStyle(
-                                        overflow: TextOverflow.ellipsis,
-                                          fontSize: fontSize_11,
+                                          overflow: TextOverflow.ellipsis,
+                                          fontSize: fontSize_9,
                                           fontWeight: FontWeight.w600,
-                                          color:
-                                          PRIMARY_COLOR),
+                                          color: PRIMARY_COLOR),
                                     ),
                                   ),
                                   SizedBox(
@@ -141,10 +147,9 @@ class ListPromotion extends StatelessWidget {
                                       'B-Point',
                                       style: TextStyle(
                                           overflow: TextOverflow.ellipsis,
-                                          fontSize: fontSize_11,
+                                          fontSize: fontSize_9,
                                           fontWeight: FontWeight.w400,
-                                          color:
-                                          PRIMARY_COLOR),
+                                          color: PRIMARY_COLOR),
                                     ),
                                   ),
                                 ],
@@ -153,7 +158,7 @@ class ListPromotion extends StatelessWidget {
                                 children: [
                                   Icon(
                                     Icons.favorite_border,
-                                    size: fontSize_16,
+                                    size: fontSize_12,
                                     color: clr_black54,
                                   ),
                                   SizedBox(
@@ -162,7 +167,7 @@ class ListPromotion extends StatelessWidget {
                                   Text(
                                     '${e.like}',
                                     style: TextStyle(
-                                      fontSize: fontSize_11,
+                                      fontSize: fontSize_9,
                                       fontWeight: FontWeight.w400,
                                       color: clr_black54,
                                     ),

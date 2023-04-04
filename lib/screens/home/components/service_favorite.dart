@@ -27,17 +27,25 @@ class ServiceFavorite extends StatelessWidget {
             children: [
               Text(
                 SERVICES_FAVORITE,
-                style: TextStyle(fontSize: fontSize_12, fontWeight: FontWeight.w600, color: clr_black),
+                style: TextStyle(
+                  fontSize: fontSize_10,
+                  fontWeight: FontWeight.w600,
+                  color: clr_black,
+                ),
               ),
               Text(
                 CUSTOMIZATION,
-                style: TextStyle(fontSize: fontSize_12, fontWeight: FontWeight.w600, color: PRIMARY_COLOR),
+                style: TextStyle(
+                  fontSize: fontSize_10,
+                  fontWeight: FontWeight.w600,
+                  color: PRIMARY_COLOR,
+                ),
               ),
             ],
           ),
         ),
         Padding(
-          padding: EdgeInsets.only(left: width_10, right: width_10),
+          padding: EdgeInsets.only(left: width_10, right: width_10,),
           child: Container(
             child: GridView.count(
                 physics: const NeverScrollableScrollPhysics(),
@@ -90,10 +98,10 @@ class ServiceFavorite extends StatelessWidget {
                           width: width_64,
                           child: Text(
                             e.title ?? '',
-                            maxLines: 2,
+                            maxLines: 3,
                             textAlign: TextAlign.center,
                             style: TextStyle(
-                              fontSize: fontSize_12,
+                              fontSize: fontSize_8,
                               fontWeight: FontWeight.w600,
                             ),
                           ),
@@ -108,7 +116,7 @@ class ServiceFavorite extends StatelessWidget {
           onTap: () => Get.toNamed("/service_manager", arguments: ''),
           child: Container(
             margin: EdgeInsets.only(left: width_10, right: width_10, top: height_8),
-            height: height_32,
+            padding: EdgeInsets.only(top: height_10, bottom: height_10),
             width: Get.size.width,
             alignment: Alignment.center,
             decoration: BoxDecoration(
@@ -118,7 +126,7 @@ class ServiceFavorite extends StatelessWidget {
             child: Text(
               SEE_ALL_SERVICES,
               style: TextStyle(
-                fontSize: fontSize_12,
+                fontSize: fontSize_10,
                 fontWeight: FontWeight.w500,
                 color: PRIMARY_COLOR,
                 overflow: TextOverflow.ellipsis,

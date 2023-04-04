@@ -15,14 +15,14 @@ class SettingComponent extends StatelessWidget {
     return InkWell(
       onTap: ()=> callback,
       child: Container(
-        margin: EdgeInsets.only(bottom: height_12,),
+        margin: EdgeInsets.only(bottom: height_16,),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
               title,
               style: TextStyle(
-                  fontSize: fontSize_12,
+                  fontSize: fontSize_10,
                   fontWeight: FontWeight.w400,
                   color: clr_black),
             ),

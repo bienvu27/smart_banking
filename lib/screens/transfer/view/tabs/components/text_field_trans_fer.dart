@@ -15,6 +15,7 @@ class TextFieldTransFer extends StatelessWidget {
       padding: EdgeInsets.only(left: width_16, right: width_16, top: height_12),
       child: TextField(
         keyboardType: TextInputType.number,
+        enabled: false,
         style: TextStyle(
             fontSize: fontSize_12, fontWeight: FontWeight.w600),
         decoration: InputDecoration(
@@ -26,7 +27,7 @@ class TextFieldTransFer extends StatelessWidget {
           ),
           suffixIconColor: clr_black54,
           labelStyle: TextStyle(
-              fontSize: fontSize_10,
+              fontSize: fontSize_8,
               color: clr_black54,
               fontWeight: FontWeight.w500),
           disabledBorder: const UnderlineInputBorder(

@@ -21,10 +21,22 @@ class ListService extends StatelessWidget {
       child: Column(
         children: listService.map((e) {
           return Container(
-            margin: EdgeInsets.only(left: width_12, right: width_12, top: height_8),
-            padding: EdgeInsets.only(left: width_8, right: width_8, bottom: height_8, top: height_8),
+            margin: EdgeInsets.only(
+              left: width_12,
+              right: width_12,
+              top: height_8,
+            ),
+            padding: EdgeInsets.only(
+              left: width_8,
+              right: width_8,
+              bottom: height_8,
+              top: height_8,
+            ),
             width: Get.size.width,
-            decoration: BoxDecoration(color: button_color_home, borderRadius: BorderRadius.circular(border_10)),
+            decoration: BoxDecoration(
+              color: button_color_home,
+              borderRadius: BorderRadius.circular(border_10),
+            ),
             child: Stack(
               children: [
                 Row(
@@ -46,7 +58,11 @@ class ListService extends StatelessWidget {
                         children: [
                           Text(
                             e.title ?? '',
-                            style: TextStyle(fontSize: fontSize_12, color: PRIMARY_COLOR, fontWeight: FontWeight.w700),
+                            style: TextStyle(
+                              fontSize: fontSize_10,
+                              color: PRIMARY_COLOR,
+                              fontWeight: FontWeight.w700,
+                            ),
                           ),
                           SizedBox(
                             height: height_4,
@@ -54,7 +70,10 @@ class ListService extends StatelessWidget {
                           Text(
                             e.description ?? '',
                             maxLines: 3,
-                            style: const TextStyle(height: 1.7),
+                            style: TextStyle(
+                              height: 1.7,
+                              fontSize: fontSize_8,
+                            ),
                           ),
                         ],
                       ),
@@ -65,19 +84,32 @@ class ListService extends StatelessWidget {
                     top: size_0,
                     right: size_0,
                     child: Container(
-                      padding: EdgeInsets.only(top: height_2, bottom: height_2, left: width_4, right: width_4),
-                      decoration:
-                          BoxDecoration(color: clr_blue_customization_1, borderRadius: BorderRadius.circular(width_10)),
+                      padding: EdgeInsets.only(
+                        top: height_2,
+                        bottom: height_2,
+                        left: width_4,
+                        right: width_4,
+                      ),
+                      decoration: BoxDecoration(
+                        color: clr_blue_customization_1,
+                        borderRadius: BorderRadius.circular(width_10),
+                      ),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           Text('${e.numberService}',
-                              style:
-                                  TextStyle(fontSize: fontSize_11, color: PRIMARY_COLOR, fontWeight: FontWeight.w500)),
+                              style: TextStyle(
+                                fontSize: fontSize_8,
+                                color: PRIMARY_COLOR,
+                                fontWeight: FontWeight.w500,
+                              )),
                           SizedBox(width: width_2),
                           Text(SERVICE,
-                              style:
-                                  TextStyle(fontSize: fontSize_11, color: PRIMARY_COLOR, fontWeight: FontWeight.w500)),
+                              style: TextStyle(
+                                fontSize: fontSize_8,
+                                color: PRIMARY_COLOR,
+                                fontWeight: FontWeight.w500,
+                              )),
                           SizedBox(width: width_2),
                           Icon(
                             Icons.arrow_forward_ios,

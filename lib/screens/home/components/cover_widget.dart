@@ -49,6 +49,7 @@ class CoverWidget extends StatelessWidget {
                       height: height_22,
                       width: Get.size.width / 1.6,
                       child: TextField(
+                        enabled: false,
                         maxLines: 1,
                         style: TextStyle(fontSize: fontSize_10),
                         textAlignVertical: TextAlignVertical.center,
@@ -85,7 +86,7 @@ class CoverWidget extends StatelessWidget {
                       children: [
                         CircleAvatar(
                           backgroundColor: clr_white60,
-                          radius: fontSize_15,
+                          radius: fontSize_16,
                           child: Icon(
                             Icons.person,
                             color: clr_white,
@@ -118,15 +119,15 @@ class CoverWidget extends StatelessWidget {
                             GOOD_MORNING,
                             style: TextStyle(
                                 // fontFamily: 'myriad-pro-bold-condensed',
-                                fontSize: fontSize_11,
+                                fontSize: fontSize_10,
                                 fontWeight: FontWeight.w500,
                                 color: clr_white60),
                           ),
                           Text(
                             NAME_TEST.toUpperCase(),
                             style: TextStyle(
-                              fontSize: fontSize_14,
-                              fontWeight: FontWeight.w600,
+                              fontSize: fontSize_12,
+                              fontWeight: FontWeight.w500,
                               color: clr_white,
                             ),
                           ),

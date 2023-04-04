@@ -17,10 +17,14 @@ class InforUser extends StatelessWidget {
           width: width,
           child: Container(
             margin: EdgeInsets.only(left: width_10, right: width_10),
-            padding: EdgeInsets.only(left: width_10, right: width_10),
+            padding: EdgeInsets.only(
+              left: width_10,
+              right: width_10,
+              bottom: height_13,
+              top: height_13,
+            ),
             alignment: Alignment.center,
             width: width,
-            height: height_50,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(border_10),
               color: clr_white,
@@ -37,7 +41,7 @@ class InforUser extends StatelessWidget {
                       PAYMENT_ACCOUNT,
                       style: TextStyle(
                         color: Colors.black54,
-                        fontSize: fontSize_11,
+                        fontSize: fontSize_10,
                         fontWeight: FontWeight.w500,
                       ),
                     ),
@@ -50,7 +54,7 @@ class InforUser extends StatelessWidget {
                           NUMBER_TEST,
                           style: TextStyle(
                             color: clr_black,
-                            fontSize: fontSize_14,
+                            fontSize: fontSize_12,
                             fontWeight: FontWeight.w500,
                           ),
                         ),
@@ -79,7 +83,7 @@ class InforUser extends StatelessWidget {
                       Text(
                         TODO_LIST,
                         style: TextStyle(
-                          fontSize: fontSize_11,
+                          fontSize: fontSize_8,
                           color: clr_black54,
                           fontWeight: FontWeight.w500,
                         ),
