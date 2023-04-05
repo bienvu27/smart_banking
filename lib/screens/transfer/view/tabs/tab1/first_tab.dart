@@ -78,6 +78,7 @@ class _FirstTabState extends State<FirstTab> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           TextFieldTransFer(
+                            enabled: true,
                             labelText: TITLE_33,
                             suffixIcon: Icons.account_box_outlined,
                           ),
@@ -106,7 +107,7 @@ class _FirstTabState extends State<FirstTab> {
                                   if (index == 1) {
                                     visibly = false;
                                     // height = 344.w;
-                                    height = 361.w;
+                                    height = 370.w;
                                     fromHeight = 0;
                                   } else if (index == 2) {
                                     statusSearch = false;

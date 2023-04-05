@@ -79,6 +79,7 @@ class _LastTabState extends State<LastTab> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         TextFieldTransFer(
+                          enabled: true,
                           labelText: TITLE_44,
                         ),
                         ContactsContainer(),
@@ -106,7 +107,7 @@ class _LastTabState extends State<LastTab> {
                                 if (index == 1) {
                                   visibly = false;
                                   // height = 344.w;
-                                  height = 361.w;
+                                  height = 370.w;
                                   fromHeight = 0;
                                 } else if (index == 2) {
                                   statusSearch = false;

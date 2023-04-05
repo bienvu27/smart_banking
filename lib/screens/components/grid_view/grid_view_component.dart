@@ -87,14 +87,14 @@ class GridViewComponent extends StatelessWidget {
                       SizedBox(
                         height: height_6,
                       ),
-                      SizedBox(
-                        width: width_64,
+                      Flexible(
                         child: Text(
                           e.title ?? '',
-                          maxLines: 3,
+                          maxLines: 2,
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             fontSize: fontSize_10,
+                            overflow: TextOverflow.ellipsis,
                             fontWeight: FontWeight.w600,
                           ),
                         ),

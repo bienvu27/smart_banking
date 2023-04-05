@@ -6,11 +6,14 @@ class TextFieldTransFer extends StatelessWidget {
   TextFieldTransFer({
     super.key,
     required this.labelText,
-    this.suffixIcon,
+    this.suffixIcon, required this.enabled,
+    this.callback
   });
 
   final String labelText;
   IconData? suffixIcon;
+  final bool? enabled ;
+  VoidCallback? callback;
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +25,8 @@ class TextFieldTransFer extends StatelessWidget {
       ),
       child: TextField(
         keyboardType: TextInputType.number,
-        enabled: false,
+        enabled: enabled,
+        onTap: ()=> callback!(),
         style: TextStyle(
           fontSize: fontSize_12,
           fontWeight: FontWeight.w600,
