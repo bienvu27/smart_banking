@@ -83,7 +83,7 @@ class ContactsManagerPage extends StatelessWidget {
                           child: Text(
                             TAB_CONTACTS_1,
                             style: TextStyle(
-                              fontSize: fontSize_8,
+                              fontSize: fontSize_10,
                               fontWeight: FontWeight.w500,
                             ),
                           ),
@@ -92,7 +92,7 @@ class ContactsManagerPage extends StatelessWidget {
                           child: Text(
                             TAB_CONTACTS_2,
                             style: TextStyle(
-                              fontSize: fontSize_8,
+                              fontSize: fontSize_10,
                               fontWeight: FontWeight.w500,
                             ),
                           ),

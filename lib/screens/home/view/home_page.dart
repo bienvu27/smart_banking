@@ -51,7 +51,10 @@ class _HomePageState extends State<HomePage> {
                     height: height_12,
                   ),
                   Container(
-                    margin: EdgeInsets.only(left: width_12, right: width_12),
+                    margin: EdgeInsets.only(
+                      left: width_12,
+                      right: width_12,
+                    ),
                     height: height_96,
                     child: PageView.builder(
                         itemCount: images.length,

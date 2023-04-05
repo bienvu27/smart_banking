@@ -130,6 +130,7 @@ double border_24 = 60.r;
 double border_32 = 80.r;
 double border_40 = 100.r;
 double border_148 = 370.r;
+double border_500 = 500.r;
 
 
 

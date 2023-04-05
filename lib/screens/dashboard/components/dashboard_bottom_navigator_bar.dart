@@ -23,7 +23,7 @@ class DashboardBottomNavigatorBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return BottomAppBar(
       shape: const CircularNotchedRectangle(),
-      notchMargin: 8,
+      notchMargin: 6,
       child: SizedBox(
         height: height_40,
         width: Get.size.width,

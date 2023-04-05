@@ -17,6 +17,8 @@ import '../screens/transaction_infor/binding/transaction_infor_binding.dart';
 import '../screens/transaction_infor/view/transaction_infor_page.dart';
 import '../screens/transfer/binding/transfer_binding.dart';
 import '../screens/transfer/view/transfer_page.dart';
+import '../screens/transfer_success/binding/transfer_success_binding.dart';
+import '../screens/transfer_success/view/transfer_success.dart';
 import 'app_routers.dart';
 
 class AppPages {
@@ -64,7 +66,12 @@ class AppPages {
     GetPage(
         name: AppRouters.SPLASH_SCREEN,
         page: () => SplashScreen(),
-        binding: SplashScreenBinding())
+        binding: SplashScreenBinding()),
+
+    GetPage(
+        name: AppRouters.TRANSFER_SUCCESS,
+        page: () => TransferSuccessPage(),
+        binding: TransferSuccessBinding())
 
   ];
 }

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smart_banking/screens/components/dialog/custom_dialog.dart';
 import 'package:get/get.dart';
-import 'package:smart_banking/screens/transfer/view/transfer_page.dart';
 import '../../../core/resources/name_icon.dart';
 import '../../../core/resources/strings.dart';
 import '../../../core/style/colors.dart';
@@ -43,8 +42,8 @@ class GridMenu extends StatelessWidget {
                       //           clickCallback: () {},
                       //         ));
                       Get.toNamed("/transfer", arguments: '');
-
                     },
+
                     title: TRANSFER,
                     icon: 'assets/svg/icon_white/2102.svg',
                     topLeft: border_10,

@@ -8,6 +8,7 @@ class AppRouters{
   static const String TRANSACTION_INFOR = '/transaction_infor';
   static const String TRANSACTION_CONFIRM = '/transaction_confirm';
   static const String SPLASH_SCREEN = '/splash_screen';
+  static const String TRANSFER_SUCCESS = '/transfer_success';
 
 
 

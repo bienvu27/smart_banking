@@ -6,3 +6,4 @@ const image_transfer = "assets/svg/icon_white/2102.svg";
 const image_service_card = "assets/svg/icon_white/2104.svg";
 const image_save_money = "assets/svg/icon_white/2106.svg";
 const image_shopping = "assets/svg/icon_white/210101.svg";
+const image_transfer_success = "https://www.bidv.com.vn/smartbanking/grandsale2023/grandsale/bfb.jpg";

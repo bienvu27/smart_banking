@@ -159,7 +159,7 @@ class TransactionConfirmationPage extends StatelessWidget {
                             child: ButtonComponent(
                                 title: CONFIRM,
                                 bgColor: button_color_home,
-                                callback: () => Get.toNamed("/transaction_confirm", arguments: '')),
+                                callback: () => Get.toNamed("/transfer_success", arguments: '')),
                           ),
                         ),
                       ],

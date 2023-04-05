@@ -12,7 +12,9 @@ class DashBoardFloatingActionButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(border_16)),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(border_148),
+      ),
       shadowColor: PRIMARY_COLOR,
       child: CircleAvatar(
         radius: border_50,
@@ -23,7 +25,10 @@ class DashBoardFloatingActionButton extends StatelessWidget {
             scanQRCode();
           },
           shape: RoundedRectangleBorder(
-            side: BorderSide(width: width_2, color: clr_white),
+            side: BorderSide(
+              width: width_2,
+              color: clr_white,
+            ),
             borderRadius: BorderRadius.circular(border_148),
           ),
           child: const Icon(Icons.qr_code_2),
@@ -31,8 +36,9 @@ class DashBoardFloatingActionButton extends StatelessWidget {
       ),
     );
   }
+
   void scanQRCode() async {
-    try{
+    try {
       final qrCode = await FlutterBarcodeScanner.scanBarcode('#ff6666', 'Cancel', true, ScanMode.QR);
 
       // if (!mounted) return;
@@ -45,6 +51,5 @@ class DashBoardFloatingActionButton extends StatelessWidget {
     } on PlatformException {
       // getResult = 'Failed to scan QR Code.';
     }
-
   }
 }
