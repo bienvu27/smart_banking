@@ -114,20 +114,20 @@ LinearGradient linearGradient2 = LinearGradient(colors: [
   clr_gradient_1,
 ]);
 LinearGradient linearGradient3 = LinearGradient(colors: [
-  // clr_gradient_1_1,
-  // clr_gradient_2_2,
-  // clr_gradient_3_3,
-  // clr_gradient_4_4,
-  Color(0xffff4b1f),
-  Color(0xffff9068)
+  clr_gradient_1_1,
+  clr_gradient_2_2,
+  clr_gradient_3_3,
+  clr_gradient_4_4,
+  // Color(0xffff4b1f),
+  // Color(0xffff9068)
 ]);
 LinearGradient linearGradient4 = LinearGradient(colors: [
-  // clr_gradient_4_4,
-  // clr_gradient_3_3,
-  // clr_gradient_2_2,
-  // clr_gradient_1_1,
-  Color(0xffff9068),
-  Color(0xffff4b1f),
+  clr_gradient_4_4,
+  clr_gradient_3_3,
+  clr_gradient_2_2,
+  clr_gradient_1_1,
+  // Color(0xffff9068),
+  // Color(0xffff4b1f),
 ]);
 LinearGradient linearGradientTab = LinearGradient(colors: [
   clr_button_1,
