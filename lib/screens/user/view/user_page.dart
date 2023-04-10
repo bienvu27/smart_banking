@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:smart_banking/screens/user/view/tabs/user_tab1/user_tab1.dart';
+import 'package:smart_banking/screens/user/view/tabs/user_tab2/user_tab2.dart';
+import 'package:smart_banking/screens/user/view/tabs/user_tab3/user_tab3.dart';
 
 import '../../../core/resources/strings.dart';
 import '../../../core/style/colors.dart';
@@ -45,7 +47,7 @@ class UserPage extends StatelessWidget {
             ],
             backgroundColor: clr_white,
             bottom: PreferredSize(
-              preferredSize: Size.fromHeight(height_24),
+              preferredSize: Size.fromHeight(height_40),
               child: Column(
                 children: [
                   Container(
@@ -118,12 +120,8 @@ class UserPage extends StatelessWidget {
           physics: NeverScrollableScrollPhysics(),
           children: [
             UserTab1(),
-            Center(
-              child: Text('Tab2'),
-            ),
-            Center(
-              child: Text('Tab3'),
-            ),
+            UserTab2(),
+            UserTab3(),
           ],
         ),
       ),

@@ -158,3 +158,7 @@ const String SAVE_IMAGE  = 'Lưu ảnh';
 const String USER  = 'Tài khoản';
 const String DEFAULT  = 'Mặc định';
 const String AVAILABLE_BALANCES  = 'Số dư khả dụng';
+const String TITLE_50  = 'Quý khách chưa có tài khoản tiết kiệm tại VRBank';
+const String TITLE_51 = 'Mở tiết kiệm online';
+const String TITLE_52 = 'Đăng ký vay';
+const String TITLE_53  = 'Quý khách chưa có tài khoản vay tại VRBank';

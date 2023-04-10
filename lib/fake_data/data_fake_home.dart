@@ -1,4 +1,5 @@
 import 'package:smart_banking/screens/transfer/models/list_bank_model.dart';
+import 'package:smart_banking/screens/user/model/list_available_balances_model.dart';
 
 import '../screens/home/model/list_service_model.dart';
 import '../screens/notification/model/description_model.dart';
@@ -478,4 +479,15 @@ final listBanks = [
     title: 'VPBank',
     subTitle: 'NHTMCP Việt Nam Thịnh vượng',
   ),
+];
+
+List listAvailableBalances = [
+  AvailableBalancesModel(number:
+  48010001079251, defaultCode: true, money: '50000000'),
+  AvailableBalancesModel(number:
+  48010001079252, defaultCode: false, money: '150000000'),
+];
+List listAvailableBalances2 = [
+  AvailableBalancesModel(number:
+  1801000666888, defaultCode: true, money: '20000'),
 ];
