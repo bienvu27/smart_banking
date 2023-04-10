@@ -19,6 +19,7 @@ class ListContacts extends StatelessWidget {
       padding: EdgeInsets.only(left: width_16, right: width_16),
       color: clr_white,
       child: ListView(
+        shrinkWrap: true,
         physics: BouncingScrollPhysics(),
         children: list.map((e) {
           return InkWell(

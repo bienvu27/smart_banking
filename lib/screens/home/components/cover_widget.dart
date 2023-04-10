@@ -24,8 +24,12 @@ class CoverWidget extends StatelessWidget {
             height: height / 1.5,
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: NetworkImage(image_cover),
+                image: AssetImage(vrb_banner),
                 fit: BoxFit.fill,
+                colorFilter: ColorFilter.mode(
+                  Colors.black.withOpacity(1.0),
+                  BlendMode.softLight,
+                ),
               ),
             ),
           ),
@@ -57,7 +61,7 @@ class CoverWidget extends StatelessWidget {
                           filled: true,
                           prefixIcon: Icon(
                             Icons.search,
-                            color: clr_white54,
+                            color: clr_white70,
                             size: fontSize_20,
                           ),
                           border: OutlineInputBorder(
@@ -65,12 +69,13 @@ class CoverWidget extends StatelessWidget {
                               borderRadius: BorderRadius.all(
                                 Radius.circular(border_16),
                               )),
-                          fillColor: clr_black12,
+                          fillColor: clr_black54,
                           contentPadding: EdgeInsets.zero,
                           hintText: SEARCH,
                           hintStyle: TextStyle(
+                            fontFamily: 'open_sans',
                             fontSize: fontSize_11,
-                            color: clr_white54,
+                            color: clr_white70,
                             fontWeight: FontWeight.w400,
                           ),
                         ),
@@ -118,16 +123,17 @@ class CoverWidget extends StatelessWidget {
                           Text(
                             GOOD_MORNING,
                             style: TextStyle(
-                                // fontFamily: 'myriad-pro-bold-condensed',
+                                fontFamily: 'open_sans',
                                 fontSize: fontSize_10,
-                                fontWeight: FontWeight.w500,
-                                color: clr_white60),
+                                fontWeight: FontWeight.w600,
+                                color: clr_white70),
                           ),
                           Text(
                             NAME_TEST.toUpperCase(),
                             style: TextStyle(
                               fontSize: fontSize_12,
-                              fontWeight: FontWeight.w500,
+                              fontFamily: 'open_sans',
+                              fontWeight: FontWeight.w700,
                               color: clr_white,
                             ),
                           ),

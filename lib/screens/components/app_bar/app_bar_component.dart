@@ -3,11 +3,19 @@ import '../../../core/style/size.dart';
 
 class AppBarComponent extends StatelessWidget with PreferredSizeWidget {
   AppBarComponent({
-    super.key, required this.title, required this.callback, required this.bgColor, required this.colorTitle, required this.colorIcon, this.iconAction,
+    super.key,
+    required this.title,
+    required this.callback,
+    required this.bgColor,
+    required this.colorTitle,
+    required this.colorIcon,
+    this.iconAction,
   });
+
   final String title;
   final VoidCallback callback;
-  final Color bgColor, colorTitle, colorIcon ;
+  final Color bgColor, colorTitle, colorIcon;
+
   IconData? iconAction;
 
   @override
@@ -17,8 +25,7 @@ class AppBarComponent extends StatelessWidget with PreferredSizeWidget {
       centerTitle: true,
       title: Text(
         title,
-        style: TextStyle(
-            fontWeight: FontWeight.w600, fontSize: fontSize_12, color: colorTitle),
+        style: TextStyle(fontWeight: FontWeight.w600, fontSize: fontSize_12, color: colorTitle),
       ),
       leading: InkWell(
         onTap: () => callback(),
@@ -32,14 +39,15 @@ class AppBarComponent extends StatelessWidget with PreferredSizeWidget {
         Padding(
           padding: EdgeInsets.only(right: width_8),
           child: InkWell(
-          onTap: () => callback(),
-          child: Icon(
-            iconAction,
-            size: fontSize_15,
-            color: colorIcon,
+            onTap: () => callback(),
+            child: Icon(
+              iconAction,
+              size: fontSize_15,
+              color: colorIcon,
+            ),
           ),
-      ),
-        ),],
+        ),
+      ],
       elevation: 0,
     );
   }

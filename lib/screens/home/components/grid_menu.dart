@@ -31,19 +31,8 @@ class GridMenu extends StatelessWidget {
                   ),
                   child: GridMenuComponent(
                     callback: () {
-                      // showDialog(
-                      //     barrierDismissible: false,
-                      //     context: context,
-                      //     builder: (BuildContext context) => CustomDialog(
-                      //           title:
-                      //           TITLE_31,
-                      //           cancel: CANCEL2,
-                      //           submit: LOGIN,
-                      //           clickCallback: () {},
-                      //         ));
                       Get.toNamed("/transfer", arguments: '');
                     },
-
                     title: TRANSFER,
                     icon: 'assets/svg/icon_white/2102.svg',
                     topLeft: border_10,
@@ -105,8 +94,8 @@ class GridMenu extends StatelessWidget {
                                 clickCallback: () {},
                               ));
                     },
-                    title: SAVE,
-                    icon: image_save_money,
+                    title: PAYMENT,
+                    icon: image_payment,
                     topLeft: border_10,
                     topRight: size_0,
                     bottomLeft: border_10,
@@ -132,8 +121,8 @@ class GridMenu extends StatelessWidget {
                                 clickCallback: () {},
                               ));
                     },
-                    title: SHOPPING,
-                    icon: image_shopping,
+                    title: DEPOSITS,
+                    icon: image_save_money,
                     topLeft: size_0,
                     topRight: border_10,
                     bottomLeft: border_10,

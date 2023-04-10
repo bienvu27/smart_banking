@@ -11,6 +11,7 @@ import '../../../../components/button/button_component.dart';
 import '../components/contacts_container.dart';
 import '../components/search_contacts.dart';
 import '../components/text_field_trans_fer.dart';
+import '../tab1/components/list_bank.dart';
 import '../tab1/components/list_contacts_save.dart';
 
 class SecondsTab extends StatefulWidget {
@@ -88,80 +89,88 @@ class _SecondsTabState extends State<SecondsTab> {
                                   ),
                                 ),
                                 builder: (BuildContext context) {
-                                  return SafeArea(
-                                    child: Container(
-                                      margin: EdgeInsets.only(
-                                        left: width_12,
-                                        right: width_12,
-                                        top: height_8,
-                                      ),
-                                      padding: EdgeInsets.only(top: height_12),
-                                      height: Get.size.height / 1.05,
-                                      child: Column(
-                                          mainAxisAlignment: MainAxisAlignment.start,
-                                          mainAxisSize: MainAxisSize.min,
-                                          children: [
-                                            Row(
-                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                              children: [
-                                                Text(
-                                                  TITLE_43,
+                                  return Container(
+                                    margin: EdgeInsets.only(
+                                      top: height_8,
+                                    ),
+                                    color: Colors.white,
+                                    padding: EdgeInsets.only(
+                                      top: height_12,
+                                      left: width_12,
+                                      right: width_12,
+                                    ),
+                                    height: Get.size.height / 1.05,
+                                    child: Column(
+                                        mainAxisAlignment: MainAxisAlignment.start,
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: [
+                                          Row(
+                                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                            children: [
+                                              Text(
+                                                TITLE_43,
+                                                style: TextStyle(
+                                                  fontSize: fontSize_12,
+                                                  fontWeight: FontWeight.w600,
+                                                ),
+                                              ),
+                                              InkWell(
+                                                onTap: () => Navigator.pop(context),
+                                                child: Text(
+                                                  CANCEL,
                                                   style: TextStyle(
                                                     fontSize: fontSize_12,
+                                                    color: PRIMARY_COLOR,
                                                     fontWeight: FontWeight.w600,
                                                   ),
                                                 ),
-                                                InkWell(
-                                                  onTap: ()=> Navigator.pop(context),
-                                                  child: Text(
-                                                    CANCEL,
-                                                    style: TextStyle(
-                                                      fontSize: fontSize_12,
-                                                      color: PRIMARY_COLOR,
-                                                      fontWeight: FontWeight.w600,
-                                                    ),
-                                                  ),
-                                                ),
-                                              ],
+                                              ),
+                                            ],
+                                          ),
+                                          Container(
+                                            margin: EdgeInsets.only(
+                                              top: height_16,
+                                              bottom: height_8,
                                             ),
-                                            Container(
-                                              margin: EdgeInsets.only(top: height_16),
-                                              height: height_36,
-                                              child: Container(
-                                                decoration: BoxDecoration(
-                                                  boxShadow: [boxShadowSearch],
-                                                  borderRadius: BorderRadius.circular(border_24),
-                                                ),
-                                                child: TextField(
-                                                  maxLines: 1,
-                                                  style: TextStyle(fontSize: fontSize_12),
-                                                  textAlignVertical: TextAlignVertical.center,
-                                                  decoration: InputDecoration(
-                                                    filled: true,
-                                                    prefixIcon: Icon(
-                                                      Icons.search,
-                                                      color: clr_black54,
-                                                      size: fontSize_20,
-                                                    ),
-                                                    border: OutlineInputBorder(
-                                                        borderSide: BorderSide.none,
-                                                        borderRadius: BorderRadius.all(Radius.circular(
-                                                          border_50,
-                                                        ))),
-                                                    fillColor: clr_white,
-                                                    contentPadding: EdgeInsets.zero,
-                                                    hintText: SEARCH,
-                                                    hintStyle: TextStyle(
-                                                      fontSize: fontSize_12,
-                                                      fontWeight: FontWeight.w500,
-                                                      color: clr_black26,
-                                                    ),
+                                            height: height_36,
+                                            child: Container(
+                                              decoration: BoxDecoration(
+                                                boxShadow: [boxShadowSearch],
+                                                borderRadius: BorderRadius.circular(border_24),
+                                              ),
+                                              child: TextField(
+                                                maxLines: 1,
+                                                style: TextStyle(fontSize: fontSize_12),
+                                                textAlignVertical: TextAlignVertical.center,
+                                                decoration: InputDecoration(
+                                                  filled: true,
+                                                  prefixIcon: Icon(
+                                                    Icons.search,
+                                                    color: clr_black54,
+                                                    size: fontSize_20,
+                                                  ),
+                                                  border: OutlineInputBorder(
+                                                      borderSide: BorderSide.none,
+                                                      borderRadius: BorderRadius.all(Radius.circular(
+                                                        border_50,
+                                                      ))),
+                                                  fillColor: clr_white,
+                                                  contentPadding: EdgeInsets.zero,
+                                                  hintText: SEARCH,
+                                                  hintStyle: TextStyle(
+                                                    fontSize: fontSize_12,
+                                                    fontWeight: FontWeight.w500,
+                                                    color: clr_black26,
                                                   ),
                                                 ),
                                               ),
                                             ),
-                                          ]),
-                                    ),
+                                          ),
+                                          ListBank(
+                                              list: listBanks,
+                                              callBack: () {},
+                                              icon: Icons.account_balance_wallet_rounded),
+                                        ]),
                                   );
                                 },
                               );
@@ -199,7 +208,7 @@ class _SecondsTabState extends State<SecondsTab> {
                                               child: CircleAvatar(
                                                   backgroundColor: clr_f6f5f7,
                                                   radius: border_16,
-                                                  child: Image.network(
+                                                  child: Image.asset(
                                                     e.image ?? '',
                                                     width: width_24,
                                                     height: height_24,
@@ -307,7 +316,9 @@ class _SecondsTabState extends State<SecondsTab> {
                     callBack: () => Get.toNamed("/transaction_infor", arguments: ''),
                     icon: Icons.account_balance_wallet_rounded),
                 ListContactsRecently(
-                    list: listContacts, callBack: () => Get.toNamed("/transaction_infor", arguments: '')),
+                  list: listContacts,
+                  callBack: () => Get.toNamed("/transaction_infor", arguments: ''),
+                ),
                 ListContactsSave(),
               ],
             ),

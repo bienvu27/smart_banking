@@ -62,8 +62,9 @@ class GridMenuComponent extends StatelessWidget {
               title,
               style: TextStyle(
                 fontSize: fontSize_10,
+                fontFamily: 'open_sans',
                 color: clr_white,
-                fontWeight: FontWeight.w500,
+                fontWeight: FontWeight.w600,
               ),
             )
           ],

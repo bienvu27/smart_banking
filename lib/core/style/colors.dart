@@ -3,10 +3,13 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 const Color PRIMARY_COLOR_RED = Color(0xFFFA4C4C);
-const Color PRIMARY_COLOR = Color(0xff2878b2);
+const Color PRIMARY_COLOR = Color(0xff233C64);
 const Color PRIMARY_COLOR_BLUE = Color(0xFF0031ba);
 
 const Color clr_366173 = Color(0xFF366173);
+const Color clr_4caf50 = Color(0xFF4CAF50);
+const Color clr_78abd3 = Color(0xFF78abd3);
+const Color clr_67748E = Color(0xFF67748E);
 const Color clr_6dd7ce = Color(0xFF6dd7ce);
 const Color clr_4e636e = Color(0xFF4e636e);
 const Color clr_black12 = Color(0x1F000000);
@@ -18,6 +21,7 @@ const Color clr_black = Color(0xFF000000);
 const Color clr_transparent = Color(0x00000000);
 const Color clr_white54 = Color(0x8AFFFFFF);
 const Color clr_white60 = Color(0x99FFFFFF);
+const Color clr_white70 = Color(0xB3FFFFFF);
 const Color clr_white = Color(0xFFFFFFFF);
 const Color clr_grey = Color(0xFFFFFFFF);
 const Color clr_yellow = Color(0xFFC9FF34);
@@ -25,7 +29,7 @@ const Color clr_yellow100 = Color(0xFFFFF9C4);
 const Color clr_blue = Color(0xFF1565C0);
 const Color clr_bg_text = Color(0xfff8f8f8);
 const Color clr_blue_customization_1 = Color(0xffc4e3fa);
-const Color clr_active_button = Color(0xff69dad0);
+const Color clr_active_button = Color(0xff233C64);
 const Color clr_unactive_button = Color(0xffd7d7d7);
 const Color clr_flower_1 = Color(0xffba9bac);
 const Color clr_flower_2 = Color(0xffa5c9e0);
@@ -100,10 +104,14 @@ BoxShadow boxShadowSearch=   BoxShadow(
 );
 
 LinearGradient linearGradient1 = LinearGradient(colors: [
-  clr_gradient_1,
-  clr_gradient_2,
-  clr_gradient_3,
-  clr_gradient_4,
+  Color(0xff344767),
+  Color(0xff344767),
+  Color(0xff374d71),
+  Color(0xff394964),
+  // clr_gradient_1,
+  // clr_gradient_2,
+  // clr_gradient_3,
+  // clr_gradient_4,
   // Color(0xff3f2b96),
   // Color(0xffa8c0ff),
 ]);
@@ -114,18 +122,22 @@ LinearGradient linearGradient2 = LinearGradient(colors: [
   clr_gradient_1,
 ]);
 LinearGradient linearGradient3 = LinearGradient(colors: [
-  clr_gradient_1_1,
-  clr_gradient_2_2,
-  clr_gradient_3_3,
-  clr_gradient_4_4,
+  clr_gradient_4,
+  clr_gradient_3,
+  clr_gradient_2,
+  clr_gradient_1,
   // Color(0xffff4b1f),
   // Color(0xffff9068)
 ]);
 LinearGradient linearGradient4 = LinearGradient(colors: [
-  clr_gradient_4_4,
-  clr_gradient_3_3,
-  clr_gradient_2_2,
-  clr_gradient_1_1,
+  Color(0xff344767),
+  Color(0xff344767),
+  Color(0xff2b4165),
+  Color(0xff243d66),
+  // clr_gradient_4_4,
+  // clr_gradient_3_3,
+  // clr_gradient_2_2,
+  // clr_gradient_1_1,
   // Color(0xffff9068),
   // Color(0xffff4b1f),
 ]);

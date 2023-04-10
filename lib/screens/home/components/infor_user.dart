@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import '../../../core/resources/strings.dart';
 import '../../../core/style/colors.dart';
 import '../../../core/style/size.dart';
@@ -16,7 +17,7 @@ class InforUser extends StatelessWidget {
         child: SizedBox(
           width: width,
           child: Container(
-            margin: EdgeInsets.only(left: width_10, right: width_10),
+            margin: EdgeInsets.only(left: width_10, right: width_10,),
             padding: EdgeInsets.only(
               left: width_10,
               right: width_10,
@@ -40,6 +41,7 @@ class InforUser extends StatelessWidget {
                     Text(
                       PAYMENT_ACCOUNT,
                       style: TextStyle(
+                        fontFamily: 'open_sans',
                         color: Colors.black54,
                         fontSize: fontSize_12,
                         fontWeight: FontWeight.w500,
@@ -54,8 +56,9 @@ class InforUser extends StatelessWidget {
                           NUMBER_TEST,
                           style: TextStyle(
                             color: clr_black,
+                            fontFamily: 'open_sans',
                             fontSize: fontSize_14,
-                            fontWeight: FontWeight.w500,
+                            fontWeight: FontWeight.w600,
                           ),
                         ),
                         Icon(
@@ -66,34 +69,38 @@ class InforUser extends StatelessWidget {
                     ),
                   ],
                 ),
-                Container(
-                  padding: EdgeInsets.only(
-                    top: height_4,
-                    bottom: height_4,
-                    right: width_8,
-                    left: width_8,
-                  ),
-                  decoration: BoxDecoration(
-                    color: clr_black12,
-                    borderRadius: BorderRadius.circular(border_16),
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Text(
-                        TODO_LIST,
-                        style: TextStyle(
-                          fontSize: fontSize_10,
-                          color: clr_black54,
-                          fontWeight: FontWeight.w500,
+                InkWell(
+                  onTap: ()=> Get.toNamed("/user_page", arguments: ''),
+                  child: Container(
+                    padding: EdgeInsets.only(
+                      top: height_4,
+                      bottom: height_4,
+                      right: width_8,
+                      left: width_8,
+                    ),
+                    decoration: BoxDecoration(
+                      color: clr_black12,
+                      borderRadius: BorderRadius.circular(border_16),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Text(
+                          TODO_LIST,
+                          style: TextStyle(
+                            fontSize: fontSize_9,
+                            fontFamily: 'open_sans',
+                            color: clr_black54,
+                            fontWeight: FontWeight.w600,
+                          ),
                         ),
-                      ),
-                      Icon(
-                        Icons.arrow_forward_ios,
-                        size: fontSize_10,
-                        color: clr_black54,
-                      )
-                    ],
+                        Icon(
+                          Icons.arrow_forward_ios,
+                          size: fontSize_10,
+                          color: clr_black54,
+                        )
+                      ],
+                    ),
                   ),
                 )
               ],

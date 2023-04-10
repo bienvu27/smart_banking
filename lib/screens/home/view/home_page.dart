@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../core/resources/name_icon.dart';
 import '../../../core/resources/strings.dart';
-import '../../../core/style/colors.dart';
 import '../../../core/style/size.dart';
 import '../../../fake_data/data_fake_home.dart';
 import '../components/cover_widget.dart';
@@ -23,18 +21,18 @@ class _HomePageState extends State<HomePage> {
         resizeToAvoidBottomInset: false,
         body: Stack(
           children: [
-            SizedBox(
-              height: MediaQuery.of(context).size.height,
-              child: Center(
-                child: Image.asset(
-                  icon_vrb,
-                  width: width_80,
-                  height: height_80,
-                  color: color_white_opacity,
-                  colorBlendMode: BlendMode.modulate,
-                ),
-              ),
-            ),
+            // SizedBox(
+            //   height: MediaQuery.of(context).size.height,
+            //   child: Center(
+            //     child: Image.asset(
+            //       icon_vrb,
+            //       width: width_80,
+            //       height: height_80,
+            //       color: color_white_opacity,
+            //       colorBlendMode: BlendMode.modulate,
+            //     ),
+            //   ),
+            // ),
             SingleChildScrollView(
               child: Column(
                 children: [
@@ -62,7 +60,7 @@ class _HomePageState extends State<HomePage> {
                         itemBuilder: (context, pagePosition) {
                           return ClipRRect(
                               borderRadius: BorderRadius.circular(border_8),
-                              child: Image.network(
+                              child: Image.asset(
                                 images[pagePosition],
                                 fit: BoxFit.fill,
                               ));
@@ -74,8 +72,9 @@ class _HomePageState extends State<HomePage> {
                   Text(
                     TITLE_30,
                     style: TextStyle(
-                      fontSize: fontSize_12,
-                      fontWeight: FontWeight.w500,
+                      fontSize: fontSize_11,
+                      fontFamily: 'open_sans',
+                      fontWeight: FontWeight.w600,
                     ),
                   ),
                   SizedBox(

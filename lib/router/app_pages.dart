@@ -19,6 +19,8 @@ import '../screens/transfer/binding/transfer_binding.dart';
 import '../screens/transfer/view/transfer_page.dart';
 import '../screens/transfer_success/binding/transfer_success_binding.dart';
 import '../screens/transfer_success/view/transfer_success.dart';
+import '../screens/user/binding/user_bindding.dart';
+import '../screens/user/view/user_page.dart';
 import 'app_routers.dart';
 
 class AppPages {
@@ -71,7 +73,12 @@ class AppPages {
     GetPage(
         name: AppRouters.TRANSFER_SUCCESS,
         page: () => TransferSuccessPage(),
-        binding: TransferSuccessBinding())
+        binding: TransferSuccessBinding()),
+
+    GetPage(
+        name: AppRouters.USER_PAGE,
+        page: () => UserPage(),
+        binding: UserBinding())
 
   ];
 }
