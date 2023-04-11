@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import '../../../core/resources/name_icon.dart';
 import '../../../core/resources/strings.dart';
 import '../../../core/style/colors.dart';
 import '../../../core/style/size.dart';
@@ -18,7 +20,7 @@ class HistoryTransferBottomNavigatorBar extends StatelessWidget {
       shape: const CircularNotchedRectangle(),
       notchMargin: 6,
       child: SizedBox(
-        height: height_40,
+        height: height_44,
         width: Get.size.width,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -33,18 +35,20 @@ class HistoryTransferBottomNavigatorBar extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Icon(
-                      Icons.home,
-                      size: fontSize_20,
-                      color: clr_unactive_button,
+                    SvgPicture.asset(
+                      image_transfer,
+                      width: width_24,
+                      height: height_24,
+                      color: PRIMARY_COLOR,
+                      fit: BoxFit.contain,
                     ),
                     Text(
-                      HOME,
+                      TRANSFER_MONEY,
                       style: TextStyle(
                         fontSize: fontSize_9,
                         fontFamily: 'open_sans',
                         fontWeight: FontWeight.w600,
-                        color: clr_unactive_button,
+                        color: PRIMARY_COLOR,
                       ),
                     )
                   ],
@@ -61,18 +65,20 @@ class HistoryTransferBottomNavigatorBar extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Icon(
-                      Icons.home,
-                      size: fontSize_20,
-                      color: clr_unactive_button,
+                    SvgPicture.asset(
+                      card_mobile,
+                      width: width_24,
+                      height: height_24,
+                      color: PRIMARY_COLOR,
+                      fit: BoxFit.contain,
                     ),
                     Text(
-                      HOME,
+                      TITLE_54,
                       style: TextStyle(
                         fontSize: fontSize_9,
                         fontFamily: 'open_sans',
                         fontWeight: FontWeight.w600,
-                        color: clr_unactive_button,
+                        color: PRIMARY_COLOR,
                       ),
                     )
                   ],
@@ -89,18 +95,20 @@ class HistoryTransferBottomNavigatorBar extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Icon(
-                      Icons.home,
-                      size: fontSize_20,
-                      color: clr_unactive_button,
+                    SvgPicture.asset(
+                      image_payment,
+                      width: width_24,
+                      height: height_24,
+                      color: PRIMARY_COLOR,
+                      fit: BoxFit.contain,
                     ),
                     Text(
-                      HOME,
+                      PAYMENT,
                       style: TextStyle(
                         fontSize: fontSize_9,
                         fontFamily: 'open_sans',
                         fontWeight: FontWeight.w600,
-                        color: clr_unactive_button,
+                        color: PRIMARY_COLOR,
                       ),
                     )
                   ],

@@ -170,3 +170,5 @@ const String DETAIL  = 'Chi tiết';
 const String ALL  = 'Tất cả';
 const String IN_MONEY  = 'Tiền vào';
 const String OUT_MONEY  = 'Tiền ra';
+const String TRANSFER_MONEY  = 'Chuyển tiền';
+const String TITLE_54  = 'Nạp tiền điện thoại';
