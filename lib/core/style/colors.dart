@@ -151,11 +151,15 @@ LinearGradient linearGradientTab = LinearGradient(colors: [
 ]);
 LinearGradient linearGradientButtom = LinearGradient(
     colors: [
-      clr_button_1,
-      clr_button_2,
-      clr_button_3,
-      clr_button_4,
-      clr_button_5,
+      PRIMARY_COLOR,
+      PRIMARY_COLOR,
+      PRIMARY_COLOR,
+      PRIMARY_COLOR,
+      // clr_button_1,
+      // clr_button_2,
+      // clr_button_3,
+      // clr_button_4,
+      // clr_button_5,
     ]);
 LinearGradient linearGradientBg = LinearGradient(colors: [
   clr_button_5,
