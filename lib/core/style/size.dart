@@ -125,6 +125,7 @@ double width_800 = 2000.w;
 double border_2 = 5.r;
 double border_4 = 10.r;
 double border_5 = 12.5.r;
+double border_7 = 15.r;
 double border_8 = 20.r;
 double border_10 = 25.r;
 double border_30 = 30.r;

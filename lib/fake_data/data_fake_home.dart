@@ -1,6 +1,7 @@
 import 'package:smart_banking/screens/transfer/models/list_bank_model.dart';
 import 'package:smart_banking/screens/user/model/list_available_balances_model.dart';
 
+import '../screens/history_transfer/model/history_transfer_model.dart';
 import '../screens/home/model/list_service_model.dart';
 import '../screens/notification/model/description_model.dart';
 import '../screens/notification/model/notification_model.dart';
@@ -26,15 +27,18 @@ List<String> images = [
 ];
 
 final listService = [
-  ListServiceModel('assets/svg/icon_gradient/210201.svg', 'Dịch vụ ngân hàng',
-      '- Dịch vụ ngân hàng: Ngân hàng số 24/7 đáp ứng mọi nhu cầu: Chuyển tiền - Thanh toán - Tiền gửi - Tiền vay - Thẻ ...', 5),
-
+  ListServiceModel(
+      'assets/svg/icon_gradient/210201.svg',
+      'Dịch vụ ngân hàng',
+      '- Dịch vụ ngân hàng: Ngân hàng số 24/7 đáp ứng mọi nhu cầu: Chuyển tiền - Thanh toán - Tiền gửi - Tiền vay - Thẻ ...',
+      5),
   ListServiceModel('assets/svg/icon_gradient/210423.svg', 'Đăng ký dịch vụ',
       '- Đăng ký dịch vụ: Đăng ký dịch vụ mong muốn chỉ trong vài phút và dễ dàng kết nối bạn bè ...', 5),
-
-  ListServiceModel('assets/svg/icon_gradient/220102.svg', 'Hỗ trợ khách hàng',
-      '- Hỗ trợ khách hàng: Dễ dàng tra cứu thông tin tài khoản và thông tin Ngân hàng hữu ích khác, hỗ trợ tra soát giao dịch và tài chính cá nhân ...', 5),
-
+  ListServiceModel(
+      'assets/svg/icon_gradient/220102.svg',
+      'Hỗ trợ khách hàng',
+      '- Hỗ trợ khách hàng: Dễ dàng tra cứu thông tin tài khoản và thông tin Ngân hàng hữu ích khác, hỗ trợ tra soát giao dịch và tài chính cá nhân ...',
+      5),
   ListServiceModel('assets/svg/icon_gradient/2202.svg', 'Cài đặt',
       '- Cài đặt: Cài đặt các mẫu chuyển tiền, mẫu thanh toán tiện lợi nhanh chóng, đổi mật khẩu ...', 5),
 ];
@@ -459,35 +463,103 @@ final listBanks = [
     title: 'Agribank',
     subTitle: 'NH Nông nghiệp và Phát triển nông thôn VN',
   ),
-  ListBankModel(image: 'assets/images/icons_bank/icon_bidv.webp',
+  ListBankModel(
+    image: 'assets/images/icons_bank/icon_bidv.webp',
     title: 'BIDV',
     subTitle: 'NHTMCP Đầu tư và phát triển VN',
   ),
-  ListBankModel(image: 'assets/images/icons_bank/icon_mbbank.webp',
+  ListBankModel(
+    image: 'assets/images/icons_bank/icon_mbbank.webp',
     title: 'MBbank',
     subTitle: 'NHTMCP Quân đội',
   ),
-  ListBankModel(image: 'assets/images/icons_bank/icon_tpbank.webp',
+  ListBankModel(
+    image: 'assets/images/icons_bank/icon_tpbank.webp',
     title: 'TPBank',
     subTitle: 'NHTMCP Tiền Phong',
   ),
-  ListBankModel(image: 'assets/images/icons_bank/icon_vietcombank.webp',
+  ListBankModel(
+    image: 'assets/images/icons_bank/icon_vietcombank.webp',
     title: 'Vietcombank',
     subTitle: 'NHTMCP Ngoại thương',
   ),
-  ListBankModel(image: 'assets/images/icons_bank/icon_vpbank.webp',
+  ListBankModel(
+    image: 'assets/images/icons_bank/icon_vpbank.webp',
     title: 'VPBank',
     subTitle: 'NHTMCP Việt Nam Thịnh vượng',
   ),
 ];
 
 List listAvailableBalances = [
-  AvailableBalancesModel(number:
-  48010001079251, defaultCode: true, money: '50000000'),
-  AvailableBalancesModel(number:
-  48010001079252, defaultCode: false, money: '150000000'),
+  AvailableBalancesModel(number: 48010001079251, defaultCode: true, money: '50000000'),
+  AvailableBalancesModel(number: 48010001079252, defaultCode: false, money: '150000000'),
 ];
 List listAvailableBalances2 = [
-  AvailableBalancesModel(number:
-  1801000666888, defaultCode: true, money: '20000'),
+  AvailableBalancesModel(number: 1801000666888, defaultCode: true, money: '20000'),
+];
+
+List historyTransfer = [
+  HistoryTransferModel(
+    cardNumber: '970418XXXXXX59000000',
+    dateTime: '08/04/2023 17:20:41',
+    money: 500000,
+    tradingCode: 847103436,
+    plus: true,
+  ),
+
+  HistoryTransferModel(
+    cardNumber: '9704XXXXXX59000000',
+    dateTime: '08/04/2023 17:20:41',
+    money: 500000,
+    tradingCode: 847103436,
+    plus: false,
+  ),
+
+  HistoryTransferModel(
+    cardNumber: '19998XXXXXX59000000',
+    dateTime: '08/04/2023 17:20:41',
+    money: 500000,
+    tradingCode: 847103436,
+    plus: true,
+  ),
+
+  HistoryTransferModel(
+    cardNumber: '970418XXXXXX59000000',
+    dateTime: '08/04/2023 17:20:41',
+    money: 500000,
+    tradingCode: 847103436,
+    plus: false,
+  ),
+
+  HistoryTransferModel(
+    cardNumber: '970418XXXXXX59000000',
+    dateTime: '08/04/2023 17:20:41',
+    money: 500000,
+    tradingCode: 847103436,
+    plus: false,
+  ),
+
+  HistoryTransferModel(
+    cardNumber: '970418XXXXXX59000000',
+    dateTime: '08/04/2023 17:20:41',
+    money: 500000,
+    tradingCode: 847103436,
+    plus: false,
+  ),
+
+  HistoryTransferModel(
+    cardNumber: '970418XXXXXX59000000',
+    dateTime: '08/04/2023 17:20:41',
+    money: 500000,
+    tradingCode: 847103436,
+    plus: false,
+  ),
+
+  HistoryTransferModel(
+    cardNumber: '970418XXXXXX59000000',
+    dateTime: '08/04/2023 17:20:41',
+    money: 500000,
+    tradingCode: 847103436,
+    plus: false,
+  ),
 ];
