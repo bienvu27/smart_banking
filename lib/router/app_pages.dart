@@ -7,6 +7,8 @@ import '../screens/contacts_manager/binding/contacts_manager_binding.dart';
 import '../screens/contacts_manager/view/contacts_manager.dart';
 import '../screens/dashboard/binding/dashboard_binding.dart';
 import '../screens/dashboard/view/dashboard_page.dart';
+import '../screens/history_transfer/binding/history_transfer_binding.dart';
+import '../screens/history_transfer/view/history_transfer_page.dart';
 import '../screens/home/binding/home_binding.dart';
 import '../screens/service_manager/binding/service_manager_binding.dart';
 import '../screens/splash_screen/binding/splash_screen_binding.dart';
@@ -78,7 +80,12 @@ class AppPages {
     GetPage(
         name: AppRouters.USER_PAGE,
         page: () => UserPage(),
-        binding: UserBinding())
+        binding: UserBinding()),
+
+    GetPage(
+        name: AppRouters.HISTORY_TRANSFER,
+        page: () => HistoryTransferPage(),
+        binding: HistoryTransferBinding()),
 
   ];
 }

@@ -71,14 +71,13 @@ BoxShadow boxShadow = BoxShadow(
   blurRadius: 8,
   offset: const Offset(1, 1), // changes position of shadow
 );
-BoxShadow boxShadowIcon =  BoxShadow(
-  color:
-  Colors.grey.withOpacity(0.9),
+BoxShadow boxShadowIcon = BoxShadow(
+  color: Colors.grey.withOpacity(0.9),
   spreadRadius: 2,
   blurRadius: 5,
   offset: const Offset(0, 5), // changes position of shadow
 );
-BoxShadow boxShadowTab =   BoxShadow(
+BoxShadow boxShadowTab = BoxShadow(
     color: clr_e1e9ef.withOpacity(0.9),
     offset: const Offset(0.0, 1.0), //(x,y)
     blurRadius: 1.0,
@@ -89,18 +88,20 @@ BoxShadow bottomNavigationBar = BoxShadow(
   blurRadius: 1,
   offset: const Offset(0, 3),
 );
-BoxShadow boxShadowImage =  BoxShadow(
-  color:
-  Colors.grey.withOpacity(0.5),
+BoxShadow boxShadowImage = BoxShadow(
+  color: Colors.grey.withOpacity(0.5),
   spreadRadius: 1,
   blurRadius: 1,
-  offset: const Offset(
-      1, 1), // changes position of shadow
+  offset: const Offset(1, 1), // changes position of shadow
 );
-BoxShadow boxShadowSearch=   BoxShadow(
-  color: Colors.black12,
-  offset: Offset(0.0, 1.0), //(x,y)
-  blurRadius: 6.0,
+BoxShadow boxShadowSearch = BoxShadow(
+  color: Colors.grey,
+  blurRadius: 15.0, // soften the shadow
+  spreadRadius: 0.1, //extend the shadow
+  offset: Offset(
+    0, // Move to right 5  horizontally
+    1.0, // Move to bottom 5 Vertically
+  ),
 );
 
 LinearGradient linearGradient1 = LinearGradient(colors: [
@@ -149,18 +150,17 @@ LinearGradient linearGradientTab = LinearGradient(colors: [
   clr_button_4,
   clr_button_4,
 ]);
-LinearGradient linearGradientButtom = LinearGradient(
-    colors: [
-      PRIMARY_COLOR,
-      PRIMARY_COLOR,
-      PRIMARY_COLOR,
-      PRIMARY_COLOR,
-      // clr_button_1,
-      // clr_button_2,
-      // clr_button_3,
-      // clr_button_4,
-      // clr_button_5,
-    ]);
+LinearGradient linearGradientButtom = LinearGradient(colors: [
+  PRIMARY_COLOR,
+  PRIMARY_COLOR,
+  PRIMARY_COLOR,
+  PRIMARY_COLOR,
+  // clr_button_1,
+  // clr_button_2,
+  // clr_button_3,
+  // clr_button_4,
+  // clr_button_5,
+]);
 LinearGradient linearGradientBg = LinearGradient(colors: [
   clr_button_5,
   clr_button_4,
@@ -180,11 +180,10 @@ LinearGradient linearGradientBtnDialog = LinearGradient(colors: [
   Color(0xff00a2ae),
   Color(0xff0181ad),
 ]);
-LinearGradient linearGradientBgRegister = LinearGradient(
-    colors: [
-      Color(0xff01bbae),
-      Color(0xff00a2ae),
-      Color(0xff00a2ae),
-      Color(0xff0181ad),
-      Color(0xff026c90),
-    ]);
+LinearGradient linearGradientBgRegister = LinearGradient(colors: [
+  Color(0xff01bbae),
+  Color(0xff00a2ae),
+  Color(0xff00a2ae),
+  Color(0xff0181ad),
+  Color(0xff026c90),
+]);

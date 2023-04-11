@@ -29,7 +29,7 @@ class TransferPage extends StatelessWidget {
               ),
             ),
             backgroundColor: clr_white,
-            leading: BackIconButton(callback: () => Navigator.pop(context)),
+            leading: BackIconButton(callback: () => Navigator.pop(context), color: Colors.black,),
             bottom: PreferredSize(
               preferredSize: Size.fromHeight(80.h),
               child: Container(

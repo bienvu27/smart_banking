@@ -26,7 +26,7 @@ class SearchContacts extends StatelessWidget {
         child: Container(
           decoration: BoxDecoration(
             boxShadow: [boxShadowSearch],
-            borderRadius: BorderRadius.circular(border_16),
+            borderRadius: BorderRadius.circular(border_24),
           ),
           child: TextField(
             maxLines: 1,
@@ -42,7 +42,7 @@ class SearchContacts extends StatelessWidget {
               border: OutlineInputBorder(
                   borderSide: BorderSide.none,
                   borderRadius: BorderRadius.all(Radius.circular(
-                    border_10,
+                    border_16,
                   ))),
               fillColor: clr_white,
               contentPadding: EdgeInsets.zero,

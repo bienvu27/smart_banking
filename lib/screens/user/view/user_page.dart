@@ -30,6 +30,7 @@ class UserPage extends StatelessWidget {
             ),
             leading: BackIconButton(
               callback: () => Navigator.pop(context),
+              color: Colors.black,
             ),
             actions: [
               Padding(

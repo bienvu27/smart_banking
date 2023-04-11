@@ -31,6 +31,7 @@ class ContactsManagerPage extends StatelessWidget {
             ),
             leading: BackIconButton(
               callback: () => Navigator.pop(context),
+              color: Colors.black,
             ),
             backgroundColor: clr_white,
             actions: [
