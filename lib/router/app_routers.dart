@@ -11,5 +11,6 @@ class AppRouters{
   static const String TRANSFER_SUCCESS = '/transfer_success';
   static const String USER_PAGE = '/user_page';
   static const String HISTORY_TRANSFER = '/history_transfer';
+  static const String CARD_MOBILE = '/card_mobile';
 
 }

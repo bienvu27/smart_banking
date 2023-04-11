@@ -25,6 +25,7 @@ class TransferPage extends StatelessWidget {
               style: TextStyle(
                 color: clr_black,
                 fontSize: fontSize_12,
+                fontFamily: 'open_sans',
                 fontWeight: FontWeight.w600,
               ),
             ),
@@ -67,8 +68,9 @@ class TransferPage extends StatelessWidget {
                         TAB_1,
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          fontSize: fontSize_10,
-                          fontWeight: FontWeight.w500,
+                          fontSize: fontSize_9,
+                          fontWeight: FontWeight.w600,
+                          fontFamily: 'open_sans',
                           height: lineHeight_1_2,
                         ),
                       ),
@@ -78,8 +80,9 @@ class TransferPage extends StatelessWidget {
                         TAB_2,
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          fontSize: fontSize_10,
-                          fontWeight: FontWeight.w500,
+                          fontSize: fontSize_9,
+                          fontWeight: FontWeight.w600,
+                          fontFamily: 'open_sans',
                         ),
                       ),
                     ),
@@ -88,8 +91,9 @@ class TransferPage extends StatelessWidget {
                         TAB_3,
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          fontSize: fontSize_10,
-                          fontWeight: FontWeight.w500,
+                          fontSize: fontSize_9,
+                          fontWeight: FontWeight.w600,
+                          fontFamily: 'open_sans',
                           height: lineHeight_1_2,
                         ),
                       ),

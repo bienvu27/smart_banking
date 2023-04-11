@@ -9,7 +9,6 @@ import '../../../core/resources/strings.dart';
 import '../../../core/style/colors.dart';
 import '../../../core/style/size.dart';
 import '../../components/button/back_icon_button.dart';
-import '../../transfer/view/tabs/components/search_contacts.dart';
 import '../components/history_trasnfer_bottom_navigator_bar.dart';
 import '../components/row_title.dart';
 import '../controller/history_transfer_controller.dart';
@@ -22,7 +21,6 @@ class HistoryTransferPage extends StatefulWidget {
 }
 
 class _HistoryTransferPageState extends State<HistoryTransferPage> {
-  final ScrollController _sliverScrollController = ScrollController();
   var isPinned = false;
 
   @override
@@ -94,7 +92,7 @@ class _HistoryTransferPageState extends State<HistoryTransferPage> {
                         ),
                       ),
                       Text(
-                        '0 VND',
+                        '500,000 VND',
                         style: TextStyle(
                           color: clr_white,
                           fontFamily: 'open_sans',

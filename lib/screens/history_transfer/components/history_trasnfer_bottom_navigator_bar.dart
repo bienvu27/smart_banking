@@ -7,11 +7,16 @@ import '../../../core/style/colors.dart';
 import '../../../core/style/size.dart';
 import '../controller/history_transfer_controller.dart';
 
-class HistoryTransferBottomNavigatorBar extends StatelessWidget {
+class HistoryTransferBottomNavigatorBar extends StatefulWidget {
    HistoryTransferBottomNavigatorBar({
     super.key,
   });
 
+  @override
+  State<HistoryTransferBottomNavigatorBar> createState() => _HistoryTransferBottomNavigatorBarState();
+}
+
+class _HistoryTransferBottomNavigatorBarState extends State<HistoryTransferBottomNavigatorBar> {
   final controller = Get.put(HistoryTransferController());
 
   @override
@@ -29,8 +34,9 @@ class HistoryTransferBottomNavigatorBar extends StatelessWidget {
               flex: 1,
               child: InkWell(
                 onTap: () {
-                  // controller.currentScreen = const HomePage();
-                  // controller.changeTabIndex(0);
+                  setState(() {
+                    Get.toNamed("/transfer", arguments: '');
+                  });
                 },
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -59,8 +65,9 @@ class HistoryTransferBottomNavigatorBar extends StatelessWidget {
               flex: 1,
               child: InkWell(
                 onTap: () {
-                  // controller.currentScreen = const HomePage();
-                  // controller.changeTabIndex(0);
+                  setState(() {
+                    Get.toNamed("/card_mobile", arguments: '');
+                  });
                 },
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -89,8 +96,9 @@ class HistoryTransferBottomNavigatorBar extends StatelessWidget {
               flex: 1,
               child: InkWell(
                 onTap: () {
-                  // controller.currentScreen = const HomePage();
-                  // controller.changeTabIndex(0);
+                  setState(() {
+                    Get.toNamed("/transfer", arguments: '');
+                  });
                 },
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
