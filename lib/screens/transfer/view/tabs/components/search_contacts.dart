@@ -17,7 +17,7 @@ class SearchContacts extends StatelessWidget {
     return Visibility(
       visible: visibly,
       child: Container(
-        margin: EdgeInsets.only(top: height_8),
+        margin: EdgeInsets.only(top: height_2),
         padding: EdgeInsets.only(
           left: width_16,
           right: width_16,
@@ -25,8 +25,8 @@ class SearchContacts extends StatelessWidget {
         height: height_28,
         child: Container(
           decoration: BoxDecoration(
-            boxShadow: [boxShadowSearch],
             borderRadius: BorderRadius.circular(border_24),
+            border: Border.all(width: 1, color: clr_black12,)
           ),
           child: TextField(
             maxLines: 1,
@@ -36,7 +36,7 @@ class SearchContacts extends StatelessWidget {
               filled: true,
               prefixIcon: Icon(
                 Icons.search,
-                color: clr_black54,
+                color: clr_black12,
                 size: fontSize_20,
               ),
               border: OutlineInputBorder(
@@ -48,9 +48,10 @@ class SearchContacts extends StatelessWidget {
               contentPadding: EdgeInsets.zero,
               hintText: '$title',
               hintStyle: TextStyle(
-                fontSize: fontSize_12,
+                fontSize: fontSize_11,
+                fontFamily: 'open_sans',
                 fontWeight: FontWeight.w500,
-                color: clr_black26,
+                color: clr_black12,
               ),
             ),
           ),

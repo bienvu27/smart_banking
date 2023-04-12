@@ -25,7 +25,12 @@ class AppBarComponent extends StatelessWidget with PreferredSizeWidget {
       centerTitle: true,
       title: Text(
         title,
-        style: TextStyle(fontWeight: FontWeight.w600, fontSize: fontSize_12, color: colorTitle),
+        style: TextStyle(
+          fontWeight: FontWeight.w600,
+          fontSize: fontSize_11,
+          color: colorTitle,
+          fontFamily: 'open_sans',
+        ),
       ),
       leading: InkWell(
         onTap: () => callback(),

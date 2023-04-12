@@ -107,7 +107,7 @@ class _LastTabState extends State<LastTab> {
                                 if (index == 1) {
                                   visibly = false;
                                   // height = 344.w;
-                                  height = 370.w;
+                                  height = 378.5.w;
                                   fromHeight = 0;
                                 } else if (index == 2) {
                                   statusSearch = false;

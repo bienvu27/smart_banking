@@ -34,8 +34,8 @@ class TransferSuccessPage extends StatelessWidget {
                 width: MediaQuery.of(context).size.width,
                 child: ClipRRect(
                     borderRadius: BorderRadius.circular(border_8),
-                    child: Image.network(
-                      image_transfer_success,
+                    child: Image.asset(
+                      image_success,
                       fit: BoxFit.fill,
                     )),
               ),

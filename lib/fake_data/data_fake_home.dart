@@ -95,6 +95,58 @@ final listContacts = [
   ),
 ];
 
+final listContacts2 = [
+  ListContactsModel(
+    image: 'assets/images/icons_bank/icon_agribank.webp',
+    name: 'VU XUAN BIEN',
+    numberAccount: '27910000492884',
+    nameBank: 'Agribank',
+    money: '',
+  ),
+  ListContactsModel(
+    image: 'assets/images/icons_bank/icon_bidv.webp',
+    name: 'HA HONG HIEU',
+    numberAccount: '27910000492884',
+    nameBank: 'BIDV',
+    money: '',
+  ),
+  ListContactsModel(
+    image: 'assets/images/icons_bank/icon_mbbank.webp',
+    name: 'DUONG VAN TIN',
+    numberAccount: '27910000492884',
+    nameBank: 'MBBANK',
+    money: '',
+  ),
+  ListContactsModel(
+    image: 'assets/images/icons_bank/icon_tpbank.webp',
+    name: 'BUI ANH TUAN',
+    numberAccount: '27910000492884',
+    nameBank: 'TPBANK',
+    money: '',
+  ),
+  ListContactsModel(
+    image: 'assets/images/icons_bank/icon_vietcombank.webp',
+    name: 'NGUYEN THI THU HA',
+    numberAccount: '27910000492884',
+    nameBank: 'VIETCOMBANK',
+    money: '',
+  ),
+  ListContactsModel(
+    image: 'assets/images/icons_bank/icon_vpbank.webp',
+    name: 'BUI LONG VU',
+    numberAccount: '27910000492884',
+    nameBank: 'VPBANK',
+    money: '',
+  ),
+  ListContactsModel(
+    image: 'assets/images/icons_bank/icon_vpbank.webp',
+    name: 'BUI LONG VU',
+    numberAccount: '27910000492884',
+    nameBank: 'VPBANK',
+    money: '',
+  ),
+];
+
 final listImageBank = [
   IconBankModel(image: 'assets/images/icons_bank/icon_agribank.webp'),
   IconBankModel(image: 'assets/images/icons_bank/icon_bidv.webp'),

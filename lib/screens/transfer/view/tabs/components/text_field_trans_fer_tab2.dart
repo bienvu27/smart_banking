@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:get/get_connect/http/src/utils/utils.dart';
 import '../../../../../core/resources/name_icon.dart';
@@ -6,13 +7,13 @@ import '../../../../../core/style/colors.dart';
 import '../../../../../core/style/size.dart';
 import '../../../controller/transfer_controller.dart';
 
-class TextFieldTransFer extends StatelessWidget {
-  TextFieldTransFer({super.key, required this.labelText, this.suffixIcon, required this.enabled, this.callback, this.title, this.textEditingController});
+class TextFieldTransFerTab2 extends StatelessWidget {
+  TextFieldTransFerTab2({super.key, required this.labelText, this.suffixIcon, required this.enabled, this.callback, this.title, this.textEditingController, this.subfix});
 
   final String labelText;
   IconData? suffixIcon;
   final bool? enabled;
-  final String? title ;
+  final String? title, subfix ;
   VoidCallback? callback;
   TextEditingController? textEditingController;
 
@@ -29,7 +30,6 @@ class TextFieldTransFer extends StatelessWidget {
               enabled: enabled,
               onTap: () => callback!(),
               controller: TextEditingController(text: title),
-
               style: TextStyle(
                 fontSize: fontSize_12,
                 fontWeight: FontWeight.w600,
@@ -37,6 +37,14 @@ class TextFieldTransFer extends StatelessWidget {
               ),
               decoration: InputDecoration(
                 labelText: labelText,
+                prefix: Padding(
+                  padding: EdgeInsets.only(right: width_8),
+                  child: CircleAvatar(
+                    backgroundColor: Colors.black12,
+                    radius: 15.r,
+                    child: Image.asset(subfix ?? '', width: width_8, height: height_8,),
+                  ),
+                ),
                 suffixIcon: InkWell(
                   onTap: () => Get.toNamed("/contacts_manager", arguments: ''),
                   child: Icon(

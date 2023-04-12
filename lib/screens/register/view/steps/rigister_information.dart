@@ -98,21 +98,21 @@ class _RegisterInformationState extends State<RegisterInformation> {
                 ),
                 Container(
                   margin: EdgeInsets.only(bottom: 20.h),
-                  child: const TextFieldSubTitleComponent(
+                  child: TextFieldSubTitleComponent(
                       label: EMAIL,
                       subTitle: OPTIONAL,
                       textInputType: TextInputType.emailAddress),
                 ),
                 Container(
                   margin: const EdgeInsets.only(bottom: 20),
-                  child: const TextFieldSubTitleComponent(
+                  child:  TextFieldSubTitleComponent(
                       label: CODE_USE,
                       subTitle: OPTIONAL,
                       textInputType: TextInputType.text),
                 ),
                 Container(
                   margin: EdgeInsets.only(bottom: 20.h),
-                  child: const TextFieldSubTitleComponent(
+                  child:  TextFieldSubTitleComponent(
                       label: PHONE_NUMBER_REGISTER_3,
                       subTitle: OPTIONAL,
                       textInputType: TextInputType.phone),

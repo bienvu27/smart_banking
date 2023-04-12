@@ -3,6 +3,10 @@ import 'package:smart_banking/screens/home/view/home_page.dart';
 import 'package:smart_banking/screens/register/binding/register_binding.dart';
 import 'package:smart_banking/screens/register/view/register_page.dart';
 import 'package:smart_banking/screens/service_manager/view/service_manager_page.dart';
+import '../screens/add_contacts/binding/add_contacts_binding.dart';
+import '../screens/add_contacts/view/add_contacts_page.dart';
+import '../screens/all_contacts/binding/all_contacts_binding.dart';
+import '../screens/all_contacts/view/all_contacts_page.dart';
 import '../screens/card_mobile/binding/card_mobile_binding.dart';
 import '../screens/card_mobile/view/card_mobile_page.dart';
 import '../screens/contacts_manager/binding/contacts_manager_binding.dart';
@@ -93,6 +97,16 @@ class AppPages {
         name: AppRouters.CARD_MOBILE,
         page: () => CardMobilePage(),
         binding: CardMobileBinding()),
+
+    GetPage(
+        name: AppRouters.ALL_CONTACTS,
+        page: () => AllContactsPage(),
+        binding: AllContactsBinding()),
+
+    GetPage(
+        name: AppRouters.ADD_CONTACTS,
+        page: () => AddContactsPage(),
+        binding: AddContactsBinding()),
 
   ];
 }

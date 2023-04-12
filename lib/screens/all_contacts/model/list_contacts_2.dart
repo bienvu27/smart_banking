@@ -3,10 +3,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../../core/style/colors.dart';
 import '../../../../../../core/style/size.dart';
-import '../../../../models/list_contacts_model.dart';
+import '../../transfer/models/list_contacts_model.dart';
 
-class ListContactsRecently extends StatelessWidget {
-  const ListContactsRecently({
+class ListContacts2 extends StatelessWidget {
+  const ListContacts2({
     super.key,
     required this.list,
     required this.callBack,
@@ -19,10 +19,10 @@ class ListContactsRecently extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.only(left: width_16, right: width_16),
+      height: MediaQuery.of(context).size.height/1.5,
+      margin: EdgeInsets.only(bottom: height_8),
       color: clr_white,
       child: ListView(
-        physics: BouncingScrollPhysics(),
-        shrinkWrap: true,
         children: list.map((e) {
           return InkWell(
             onTap: () => callBack(),
@@ -80,15 +80,6 @@ class ListContactsRecently extends StatelessWidget {
                               fontFamily: 'open_sans',
                               fontSize: fontSize_10,
                               fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                          SizedBox(height: height_4),
-                          Text(
-                            '${e.money} VND'.toUpperCase(),
-                            style: TextStyle(
-                              color: clr_black,
-                              fontSize: fontSize_12,
-                              fontWeight: FontWeight.w600,
                             ),
                           ),
                         ],

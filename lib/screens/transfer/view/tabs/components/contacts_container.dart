@@ -33,7 +33,7 @@ class ContactsContainer extends StatelessWidget {
             ),
           ),
           InkWell(
-            onTap: () => Get.toNamed("/contacts_manager", arguments: ''),
+            onTap: () => Get.toNamed("/all_contacts", arguments: ''),
             child: Text(
               TITLE_35,
               style: TextStyle(

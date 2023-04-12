@@ -107,7 +107,7 @@ class _FirstTabState extends State<FirstTab> {
                                   if (index == 1) {
                                     visibly = false;
                                     // height = 344.w;
-                                    height = 370.w;
+                                    height = 378.5.w;
                                     fromHeight = 0;
                                   } else if (index == 2) {
                                     statusSearch = false;
@@ -129,7 +129,8 @@ class _FirstTabState extends State<FirstTab> {
                                     CONTACT,
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
-                                      fontSize: fontSize_12,
+                                      fontSize: fontSize_11,
+                                      fontFamily: 'open_sans',
                                       fontWeight: FontWeight.w600,
                                       height: lineHeight_1_2,
                                     ),
@@ -140,7 +141,8 @@ class _FirstTabState extends State<FirstTab> {
                                     RECENTLY,
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
-                                      fontSize: fontSize_12,
+                                      fontSize: fontSize_11,
+                                      fontFamily: 'open_sans',
                                       fontWeight: FontWeight.w600,
                                       height: lineHeight_1_2,
                                     ),
@@ -151,7 +153,8 @@ class _FirstTabState extends State<FirstTab> {
                                     SAVED_TEMPLATES,
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
-                                      fontSize: fontSize_12,
+                                      fontSize: fontSize_11,
+                                      fontFamily: 'open_sans',
                                       fontWeight: FontWeight.w600,
                                       height: lineHeight_1_2,
                                     ),

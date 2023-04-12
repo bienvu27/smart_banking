@@ -35,11 +35,11 @@ class ListContacts extends StatelessWidget {
                     children: [
                       CircleAvatar(
                         backgroundColor: clr_f6f5f7,
-                        radius: border_50,
+                        radius: border_16,
                         child: Image.asset(
                           e.image ?? '',
-                          width: width_28,
-                          height: height_28,
+                          width: width_24,
+                          height: height_24,
                         ),
                       ),
                       SizedBox(width: width_8,),
@@ -49,24 +49,28 @@ class ListContacts extends StatelessWidget {
                           Text(
                             e.name?.toUpperCase() ?? ''.toUpperCase(),
                             style: TextStyle(
-                                color: clr_black,
-                                fontWeight: FontWeight.w600,
-                                fontSize: fontSize_12),
+                              color: clr_black,
+                              fontFamily: 'open_sans',
+                              fontWeight: FontWeight.w600,
+                              fontSize: fontSize_11,),
                           ),
                           SizedBox(height: height_4),
                           Text(
                             e.numberAccount?.toUpperCase() ?? ''.toUpperCase(),
                             style: TextStyle(
-                                color: clr_black,
-                                fontWeight: FontWeight.w600,
-                                fontSize: fontSize_12),
+                              color: clr_black,
+                              fontFamily: 'open_sans',
+                              fontWeight: FontWeight.w600,
+                              fontSize: fontSize_10,),
                           ),
                           SizedBox(height: height_4),
                           Text(
                             e.nameBank?.toUpperCase() ?? ''.toUpperCase(),
                             style: TextStyle(
-                                color: clr_black87,
-                                fontSize: fontSize_12),
+                              color: clr_black87,
+                              fontFamily: 'open_sans',
+                              fontSize: fontSize_10,
+                              fontWeight: FontWeight.w500,),
                           ),
                         ],
                       ),

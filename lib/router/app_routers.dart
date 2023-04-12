@@ -12,5 +12,7 @@ class AppRouters{
   static const String USER_PAGE = '/user_page';
   static const String HISTORY_TRANSFER = '/history_transfer';
   static const String CARD_MOBILE = '/card_mobile';
+  static const String ALL_CONTACTS = '/all_contacts';
+  static const String ADD_CONTACTS = '/add_contacts';
 
 }
