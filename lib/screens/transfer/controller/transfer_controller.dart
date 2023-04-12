@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class TransferController extends GetxController {
   bool isSwitched = false;
+  TabController? tabController;
 
   toggle(){
     isSwitched = !isSwitched;
@@ -18,6 +20,18 @@ class TransferController extends GetxController {
     print('ssss $title');
     print('xxxx $textController.text');
     update();
+  }
+
+  checkIndex(int index){
+    if(index == 0){
+    }else if(index == 2){
+    }
+  }
+
+  @override
+  void onInit() {
+    // TODO: implement onInit
+    super.onInit();
   }
 
 }

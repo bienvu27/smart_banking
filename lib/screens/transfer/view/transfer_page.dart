@@ -61,6 +61,10 @@ class TransferPage extends StatelessWidget {
                         color: PRIMARY_COLOR,
                       ),
                       child: TabBar(
+                        onTap: (index){
+                          controller.checkIndex(index);
+                          print(index);
+                        },
                         padding: EdgeInsets.only(
                           top: height_4,
                           left: width_4,
