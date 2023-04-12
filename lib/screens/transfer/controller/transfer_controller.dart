@@ -4,8 +4,8 @@ import 'package:get/get.dart';
 class TransferController extends GetxController {
   bool isSwitched = false;
 
-  toggle(bool switched){
-    isSwitched = !switched;
+  toggle(){
+    isSwitched = !isSwitched;
     update();
   }
   TextEditingController textController = TextEditingController() ;
