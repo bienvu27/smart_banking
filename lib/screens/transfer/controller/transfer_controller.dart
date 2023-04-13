@@ -15,7 +15,7 @@ class TransferController extends GetxController {
   }
   TextEditingController textController = TextEditingController() ;
   TextEditingController textController2 = TextEditingController() ;
-  String? title, image, subTitle;
+  String? title = '', image, subTitle;
   String? number, name;
 
   void log(String title, String image, subTitle){
