@@ -9,6 +9,7 @@ import '../screens/notification/model/notification_model2.dart';
 import '../screens/promotion/model/promotion_model.dart';
 import '../screens/service_manager/components/services/service_name.dart';
 import '../screens/service_manager/model/service_favorite_model.dart';
+import '../screens/transfer/models/BeneficiaryAccount.dart';
 import '../screens/transfer/models/list_contacts_model.dart';
 import '../screens/transfer/view/tabs/tab2/model/icon_bank_model.dart';
 
@@ -543,7 +544,7 @@ final listBanks = [
   ),
 ];
 
-List<BeneficiaryAccount> benefList = [
+List<BeneficiaryAccount> beneficiaryList = [
   BeneficiaryAccount(
     account: "22210004128293",
     surplus: "25.000"
@@ -553,6 +554,8 @@ List<BeneficiaryAccount> benefList = [
       surplus: "30.000"
   ),
 ];
+
+
 
 List listAvailableBalances = [
   AvailableBalancesModel(number: 48010001079251, defaultCode: true, money: '50000000'),

@@ -1,23 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:smart_banking/screens/transfer/view/tabs/components/text_field_trans_fer_tab2.dart';
-import 'package:smart_banking/screens/transfer/view/tabs/tab1/components/list_bank.dart';
 import 'package:smart_banking/screens/transfer/view/tabs/tab1/components/seconds_tab_isnotempty.dart';
 import 'package:smart_banking/screens/transfer/view/tabs/tab1/first_tab.dart';
 import 'package:smart_banking/screens/transfer/view/tabs/tab2/seconds_tab.dart';
 import 'package:smart_banking/screens/transfer/view/tabs/tab3/last_tab.dart';
-
-import '../../../core/resources/name_icon.dart';
 import '../../../core/resources/strings.dart';
 import '../../../core/style/colors.dart';
 import '../../../core/style/size.dart';
-import '../../../fake_data/data_fake_home.dart';
 import '../../components/button/back_icon_button.dart';
 import '../../components/button/button_component.dart';
-import '../../components/dialog/custom_dialog.dart';
 import '../../components/dialog/custom_dialog_transfer.dart';
-import '../../transaction_infor/view/transaction_infor_page2.dart';
 import '../controller/transfer_controller.dart';
 
 class TransferPage extends StatelessWidget {
@@ -163,7 +156,7 @@ class TransferPage extends StatelessWidget {
                               },
                             ));
                       }else{
-                        Get.to(TransactionInforPage2());
+                          Get.toNamed("/transaction_infor", arguments: '');
                       }
 
                     },

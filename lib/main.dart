@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:keyboard_dismisser/keyboard_dismisser.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:smart_banking/router/app_pages.dart';
 import 'package:smart_banking/router/app_routers.dart';
 import 'package:get/get.dart';
 
+import 'core/resources/constant.dart';
 import 'core/widgets/root_layout.dart';
 
-void main() {
+void main()  {
+  // SharedPreferences pref = await SharedPreferences.getInstance();
+  // isLogin = await pref.getString("username") != null;
   runApp(const MyApp());
 }
 

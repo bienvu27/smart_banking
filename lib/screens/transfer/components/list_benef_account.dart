@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../../../../core/style/colors.dart';
 import '../../../../../../core/style/size.dart';
-import '../models/beneficiaryAccount.dart';
+import '../models/BeneficiaryAccount.dart';
 
 class ListBenefAccount extends StatelessWidget {
   ListBenefAccount({

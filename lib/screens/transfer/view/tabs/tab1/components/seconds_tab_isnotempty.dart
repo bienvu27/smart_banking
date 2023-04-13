@@ -327,8 +327,7 @@ class SecondsTabIsNotEmpty extends StatelessWidget {
                     top: height_12,
                   ),
                   child: TextField(
-                    keyboardType: TextInputType.number,
-                    enabled: false,
+                    enabled: true,
                     onTap: () {},
                     style: TextStyle(
                       fontSize: fontSize_12,

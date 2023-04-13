@@ -25,7 +25,7 @@ class TransferController extends GetxController {
 
   void chooseBenefAccountSelected(int index){
     this.indexBenefAccountSelected = index;
-    beneficiaryAccountController.text = benefList.elementAt(index).account!;
+    beneficiaryAccountController.text = beneficiaryList.elementAt(index).account!;
     update();
   }
 
@@ -79,7 +79,7 @@ class TransferController extends GetxController {
                 ),
 
                 ListBenefAccount(
-                    list: benefList,
+                    list: beneficiaryList,
                     onTapElement: (index) {
                       chooseBenefAccountSelected(index);
                       Navigator.pop(context);

@@ -1,3 +1,1 @@
-class Constants {
-  static bool? isLogin;
-}
+bool? isLogin = false;
