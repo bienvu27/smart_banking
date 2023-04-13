@@ -64,6 +64,7 @@ class TransferSuccessPage extends StatelessWidget {
                           TRANSFER_SUCCESS,
                           style: TextStyle(
                             fontSize: fontSize_14,
+                            fontFamily: 'open_sans',
                             fontWeight: FontWeight.w600,
                           ),
                         ),
@@ -77,7 +78,7 @@ class TransferSuccessPage extends StatelessWidget {
                             style: TextStyle(
                               fontSize: fontSize_14,
                               color: clr_black,
-                              fontWeight: FontWeight.w400,
+                              fontWeight: FontWeight.w500,
                               height: lineHeight_1_5,
                             ),
                             children: [
@@ -230,7 +231,7 @@ class TransferSuccessPage extends StatelessWidget {
                                       height: height_4,
                                     ),
                                     Text(
-                                      SAVE_IMAGE,
+                                      SHARE,
                                       style: TextStyle(
                                         fontSize: fontSize_11,
                                         fontWeight: FontWeight.w600,
@@ -250,7 +251,7 @@ class TransferSuccessPage extends StatelessWidget {
                                       height: height_4,
                                     ),
                                     Text(
-                                      SAVE_IMAGE,
+                                      HOME,
                                       style: TextStyle(
                                         fontSize: fontSize_11,
                                         fontWeight: FontWeight.w600,

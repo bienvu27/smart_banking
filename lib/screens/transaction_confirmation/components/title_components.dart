@@ -21,13 +21,14 @@ class TitleComponents extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           SizedBox(
-            width: width_105,
+            width: width_128,
             child: Text(
               title,
               style: TextStyle(
                 color: clr_black38,
-                fontSize: fontSize_12,
-                fontWeight: FontWeight.w500,
+                fontSize: fontSize_11,
+                fontFamily: 'open_sans',
+                fontWeight: FontWeight.w600,
               ),
             ),
           ),
@@ -36,8 +37,9 @@ class TitleComponents extends StatelessWidget {
               subTitle,
               style: TextStyle(
                 color: color,
-                fontSize: fontSize_12,
-                fontWeight: FontWeight.w700,
+                fontSize: fontSize_11,
+                fontFamily: 'open_sans',
+                fontWeight: FontWeight.w600,
               ),
             ),
           ),

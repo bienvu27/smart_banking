@@ -42,14 +42,14 @@ class _RegisterInformationState extends State<RegisterInformation> {
               children: [
                 Container(
                   margin: EdgeInsets.only(bottom: 20.h),
-                  child: const TextFieldComponent(
+                  child:  TextFieldComponent(
                     label: FULL_NAME,
                     textInputType: TextInputType.text,
                   ),
                 ),
                 Container(
                   margin: EdgeInsets.only(bottom: 20.h),
-                  child: const TextFieldComponent(
+                  child:  TextFieldComponent(
                       label: ACCOUNT_NUMBER, textInputType: TextInputType.text),
                 ),
                 Container(
@@ -59,20 +59,20 @@ class _RegisterInformationState extends State<RegisterInformation> {
                 ),
                 Container(
                   margin: EdgeInsets.only(bottom: 20.h),
-                  child: const TextFieldComponent(
+                  child:  TextFieldComponent(
                     label: CCCD,
                     textInputType: TextInputType.text,
                   ),
                 ),
                 Container(
                   margin: EdgeInsets.only(bottom: 20.h),
-                  child: const TextFieldComponent(
+                  child:  TextFieldComponent(
                       label: PHONE_NUMBER_REGISTER_1,
                       textInputType: TextInputType.phone),
                 ),
                 Container(
                   margin: EdgeInsets.only(bottom: 20.h),
-                  child: const TextFieldComponent(
+                  child:  TextFieldComponent(
                       label: PHONE_NUMBER_REGISTER_2,
                       textInputType: TextInputType.phone),
                 ),

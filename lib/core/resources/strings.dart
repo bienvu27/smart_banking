@@ -198,3 +198,4 @@ const String TITLE_68 = 'Quý khách chưa có mẫu phát sinh giao dịch gầ
 const String TITLE_69 = 'Quý khách vui lòng nhập Số tài khoản/Số thẻ/Tài khoản định danh';
 const String TITLE_70 = 'Quý khách vui lòng Chọn ngân hàng thụ hưởng';
 const String TITLE_71 = 'Quý khách vui lòng Nhập số thẻ thụ hưởng';
+const String TITLE_72 = 'VU XUAN BIEN Chuyen tien';

@@ -176,6 +176,19 @@ LinearGradient linearGradientButtom = LinearGradient(
     begin: Alignment(-1, -1),
     end: Alignment(1, 1),
 );
+LinearGradient linearGradientButtom2 = LinearGradient(
+  colors: [
+    PRIMARY_COLOR_RED,
+    PRIMARY_COLOR,
+    // clr_button_1,
+    // clr_button_2,
+    // clr_button_3,
+    // clr_button_4,
+    // clr_button_5,
+  ],
+  begin: Alignment(-1, -1),
+  end: Alignment(1, 1),
+);
 LinearGradient linearGradientBg = LinearGradient(colors: [
   clr_button_5,
   clr_button_4,

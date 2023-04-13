@@ -44,7 +44,7 @@ class TransactionInforPage2 extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: clr_blue,
                   borderRadius: BorderRadius.circular(border_8),
-                  gradient: linearGradientBg,
+                  gradient: linearGradientButtom,
                 ),
                 child: Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -105,7 +105,7 @@ class TransactionInforPage2 extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: clr_blue,
                   borderRadius: BorderRadius.circular(border_8),
-                  gradient: linearGradientBg2,
+                  gradient: linearGradientButtom2,
                 ),
                 child: Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -200,6 +200,7 @@ class TransactionInforPage2 extends StatelessWidget {
                 child: TextFieldComponent(
                   label: TRANSACTION_CONTENT,
                   textInputType: TextInputType.text,
+                  text: TITLE_72,
                 ),
               ),
               SizedBox(height: height_16,),
