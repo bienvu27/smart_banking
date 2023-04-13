@@ -194,3 +194,7 @@ const String TITLE_65 = 'Loại chuyển tiền';
 const String TITLE_66 = 'Chuyển tiền nội bộ VRB';
 const String CHECK = 'Kiểm tra';
 const String TITLE_67 = 'Số tài khoản thụ hưởng';
+const String TITLE_68 = 'Quý khách chưa có mẫu phát sinh giao dịch gần đây';
+const String TITLE_69 = 'Quý khách vui lòng nhập Số tài khoản/Số thẻ/Tài khoản định danh';
+const String TITLE_70 = 'Quý khách vui lòng Chọn ngân hàng thụ hưởng';
+const String TITLE_71 = 'Quý khách vui lòng Nhập số thẻ thụ hưởng';

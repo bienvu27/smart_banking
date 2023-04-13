@@ -229,7 +229,8 @@ class SecondsTabIsNotEmpty extends StatelessWidget {
                   ),
                   Switch(
                     value: controller.isSwitched,
-                    activeColor: PRIMARY_COLOR,
+                    activeColor: clr_1ac5b6,
+                    thumbColor: MaterialStatePropertyAll<Color>(controller.isSwitched ? clr_1ac5b6 : clr_e2e3e3),
                     onChanged: (value) {
                       controller.toggle();
                       // controller.isSwitched = value;

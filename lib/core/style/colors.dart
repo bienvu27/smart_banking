@@ -2,8 +2,8 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
-const Color PRIMARY_COLOR_RED = Color(0xFFFA4C4C);
-const Color PRIMARY_COLOR = Color(0xff233C64);
+const Color PRIMARY_COLOR_RED = Color(0xFFde0000);
+const Color PRIMARY_COLOR = Color(0xff002d85);
 const Color PRIMARY_COLOR_BLUE = Color(0xFF0031ba);
 
 const Color clr_366173 = Color(0xFF366173);
@@ -42,6 +42,9 @@ const Color clr_f6f5f7 = Color(0xfff6f5f7);
 const Color clr_d9dbda = Color(0xffd9dbda);
 const Color clr_d5d6d7 = Color(0xffd5d6d7);
 const Color clr_2dcabc = Color(0xff2dcabc);
+const Color clr_adb5bd = Color(0xffadb5bd);
+const Color clr_1ac5b6 = Color(0xff1ac5b6);
+const Color clr_e2e3e3 = Color(0xffe2e3e3);
 
 const Color clr_gradient_1 = Color(0xff0e51a2);
 const Color clr_gradient_2 = Color(0xff2869b3);
@@ -105,10 +108,17 @@ BoxShadow boxShadowSearch = BoxShadow(
 );
 
 LinearGradient linearGradient1 = LinearGradient(colors: [
-  Color(0xff344767),
-  Color(0xff344767),
-  Color(0xff374d71),
-  Color(0xff394964),
+  PRIMARY_COLOR,
+  PRIMARY_COLOR,
+  PRIMARY_COLOR,
+  // clr_gradient_1,
+  // clr_gradient_2,
+  // clr_gradient_2,
+
+  // Color(0xff344767),
+  // Color(0xff344767),
+  // Color(0xff374d71),
+  // Color(0xff394964),
   // clr_gradient_1,
   // clr_gradient_2,
   // clr_gradient_3,
@@ -131,10 +141,13 @@ LinearGradient linearGradient3 = LinearGradient(colors: [
   // Color(0xffff9068)
 ]);
 LinearGradient linearGradient4 = LinearGradient(colors: [
-  Color(0xff344767),
-  Color(0xff344767),
-  Color(0xff2b4165),
-  Color(0xff243d66),
+  PRIMARY_COLOR,
+  PRIMARY_COLOR,
+  PRIMARY_COLOR,
+  // Color(0xff344767),
+  // Color(0xff344767),
+  // Color(0xff2b4165),
+  // Color(0xff243d66),
   // clr_gradient_4_4,
   // clr_gradient_3_3,
   // clr_gradient_2_2,
@@ -150,17 +163,19 @@ LinearGradient linearGradientTab = LinearGradient(colors: [
   clr_button_4,
   clr_button_4,
 ]);
-LinearGradient linearGradientButtom = LinearGradient(colors: [
+LinearGradient linearGradientButtom = LinearGradient(
+    colors: [
   PRIMARY_COLOR,
-  PRIMARY_COLOR,
-  PRIMARY_COLOR,
-  PRIMARY_COLOR,
+  PRIMARY_COLOR_RED,
   // clr_button_1,
   // clr_button_2,
   // clr_button_3,
   // clr_button_4,
   // clr_button_5,
-]);
+],
+    begin: Alignment(-1, -1),
+    end: Alignment(1, 1),
+);
 LinearGradient linearGradientBg = LinearGradient(colors: [
   clr_button_5,
   clr_button_4,

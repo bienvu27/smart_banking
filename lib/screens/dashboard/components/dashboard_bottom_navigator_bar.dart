@@ -48,7 +48,7 @@ class DashboardBottomNavigatorBar extends StatelessWidget {
                           Icon(
                             Icons.home,
                             size: fontSize_20,
-                            color: controller.currentTab == 0 ? clr_active_button : clr_unactive_button,
+                            color: controller.currentTab == 0 ? PRIMARY_COLOR : clr_unactive_button,
                           ),
                           Text(
                             HOME,
@@ -56,7 +56,7 @@ class DashboardBottomNavigatorBar extends StatelessWidget {
                               fontSize: fontSize_9,
                               fontFamily: 'open_sans',
                               fontWeight: FontWeight.w600,
-                              color: controller.currentTab == 0 ? clr_active_button : clr_unactive_button,
+                              color: controller.currentTab == 0 ? PRIMARY_COLOR : clr_unactive_button,
                             ),
                           )
                         ],
@@ -77,7 +77,7 @@ class DashboardBottomNavigatorBar extends StatelessWidget {
                             Icons.blur_circular,
                             size: fontSize_20,
 
-                            color: controller.currentTab == 1 ? clr_active_button : clr_unactive_button,
+                            color: controller.currentTab == 1 ? PRIMARY_COLOR : clr_unactive_button,
                           ),
                           Text(
                             REDEEM_GIFTS,
@@ -85,7 +85,7 @@ class DashboardBottomNavigatorBar extends StatelessWidget {
                               fontSize: fontSize_9,
                               fontFamily: 'open_sans',
                               fontWeight: FontWeight.w600,
-                              color: controller.currentTab == 1 ? clr_active_button : clr_unactive_button,
+                              color: controller.currentTab == 1 ? PRIMARY_COLOR : clr_unactive_button,
                             ),
                           )
                         ],
@@ -123,7 +123,7 @@ class DashboardBottomNavigatorBar extends StatelessWidget {
                           fontSize: fontSize_9,
                           fontFamily: 'open_sans',
                           fontWeight: FontWeight.w600,
-                          color: controller.currentTab == 3 ? clr_active_button : clr_unactive_button,
+                          color: controller.currentTab == 3 ? PRIMARY_COLOR : clr_unactive_button,
                         ),
                       ),
                     ),
@@ -149,7 +149,7 @@ class DashboardBottomNavigatorBar extends StatelessWidget {
                         Icon(
                           Icons.notifications,
                           size: fontSize_20,
-                          color: controller.currentTab == 4 ? clr_active_button : clr_unactive_button,
+                          color: controller.currentTab == 4 ? PRIMARY_COLOR : clr_unactive_button,
                         ),
                         Text(
                           NOTIFICATION,
@@ -157,7 +157,7 @@ class DashboardBottomNavigatorBar extends StatelessWidget {
                             fontSize: fontSize_9,
                             fontFamily: 'open_sans',
                             fontWeight: FontWeight.w600,
-                            color: controller.currentTab == 4 ? clr_active_button : clr_unactive_button,
+                            color: controller.currentTab == 4 ? PRIMARY_COLOR : clr_unactive_button,
                           ),
                         )
                       ],
@@ -175,7 +175,7 @@ class DashboardBottomNavigatorBar extends StatelessWidget {
                         Icon(
                           Icons.settings,
                           size: fontSize_20,
-                          color: controller.currentTab == 5 ? clr_active_button : clr_unactive_button,
+                          color: controller.currentTab == 5 ? PRIMARY_COLOR : clr_unactive_button,
                         ),
                         Text(
                           SETTING,
@@ -183,7 +183,7 @@ class DashboardBottomNavigatorBar extends StatelessWidget {
                             fontSize: fontSize_9,
                             fontFamily: 'open_sans',
                             fontWeight: FontWeight.w600,
-                            color: controller.currentTab == 5 ? clr_active_button : clr_unactive_button,
+                            color: controller.currentTab == 5 ? PRIMARY_COLOR : clr_unactive_button,
                           ),
                         )
                       ],

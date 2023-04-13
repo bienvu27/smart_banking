@@ -39,7 +39,7 @@ class GridMenu extends StatelessWidget {
                     topRight: border_10,
                     bottomLeft: border_10,
                     bottomRight: size_0,
-                    color: PRIMARY_COLOR_RED,
+                    color: PRIMARY_COLOR,
                     gradient: linearGradient1,
                   ),
                 ),

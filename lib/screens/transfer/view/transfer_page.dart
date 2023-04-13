@@ -15,6 +15,8 @@ import '../../../core/style/size.dart';
 import '../../../fake_data/data_fake_home.dart';
 import '../../components/button/back_icon_button.dart';
 import '../../components/button/button_component.dart';
+import '../../components/dialog/custom_dialog.dart';
+import '../../components/dialog/custom_dialog_transfer.dart';
 import '../controller/transfer_controller.dart';
 
 class TransferPage extends StatelessWidget {
@@ -61,11 +63,19 @@ class TransferPage extends StatelessWidget {
                         boxShadow: [boxShadowTab],
                         // gradient: linearGradientTab,
                         color: PRIMARY_COLOR,
+                        gradient: linearGradientButtom
                       ),
                       child: TabBar(
                         onTap: (index){
                           controller.checkIndex(index);
                           print(index);
+                          if(index == 0){
+                            controller.titleDialog = TITLE_69;
+                          }else if(index == 1){
+                            controller.titleDialog = TITLE_70;
+                          }else{
+                            controller.titleDialog = TITLE_71;
+                          }
                         },
                         padding: EdgeInsets.only(
                           top: height_4,
@@ -78,7 +88,8 @@ class TransferPage extends StatelessWidget {
                             border_10,
                           ),
                           // color: clr_66cacef,
-                          color: clr_gradient_3,
+                          // color: clr_gradient_3,
+                          color: clr_adb5bd,
                         ),
                         labelColor: clr_white,
                         unselectedLabelColor: clr_white,
@@ -144,7 +155,19 @@ class TransferPage extends StatelessWidget {
                   child: ButtonComponent(
                     title: NEXT,
                     bgColor: button_color_home,
-                    callback: () => Get.toNamed("/transaction_infor", arguments: ''),
+                    callback: (){
+                      showDialog(
+                          barrierDismissible: false,
+                          context: context,
+                          builder: (BuildContext context) => CustomDialogTransfer(
+                            title: controller.titleDialog ?? TITLE_69,
+                            cancel: CANCEL2,
+                            submit: CANCEL,
+                            clickCallback: () {
+                              Navigator.pop(context);
+                            },
+                          ));
+                    },
                   ),
                 )
             );

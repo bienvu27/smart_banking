@@ -8,6 +8,7 @@ import '../../../../../core/style/colors.dart';
 import '../../../../../core/style/size.dart';
 import '../../../../../fake_data/data_fake_home.dart';
 import '../../../../components/button/button_component.dart';
+import '../../../../transaction_infor/view/transaction_infor_page2.dart';
 import '../../../controller/transfer_controller.dart';
 import '../components/contacts_container.dart';
 import '../components/search_contacts.dart';
@@ -83,126 +84,116 @@ class _SecondsTabState extends State<SecondsTab> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Stack(
-                              children: [
-                                InkWell(
-                                  onTap: () {
-                                    showModalBottomSheet<void>(
-                                      context: context,
-                                      isScrollControlled: true,
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.vertical(
-                                          top: Radius.circular(25.r),
-                                        ),
+                            InkWell(
+                              onTap: () {
+                                showModalBottomSheet<void>(
+                                  context: context,
+                                  isScrollControlled: true,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.vertical(
+                                      top: Radius.circular(25.r),
+                                    ),
+                                  ),
+                                  builder: (BuildContext context) {
+                                    return Container(
+                                      margin: EdgeInsets.only(
+                                        top: height_8,
                                       ),
-                                      builder: (BuildContext context) {
-                                        return Container(
-                                          margin: EdgeInsets.only(
-                                            top: height_8,
-                                          ),
-                                          color: Colors.white,
-                                          padding: EdgeInsets.only(
-                                            top: height_12,
-                                            left: width_12,
-                                            right: width_12,
-                                          ),
-                                          height: Get.size.height / 1.05,
-                                          child: Column(
-                                              mainAxisAlignment: MainAxisAlignment.start,
-                                              mainAxisSize: MainAxisSize.min,
+                                      color: Colors.white,
+                                      padding: EdgeInsets.only(
+                                        top: height_12,
+                                        left: width_12,
+                                        right: width_12,
+                                      ),
+                                      height: Get.size.height / 1.05,
+                                      child: Column(
+                                          mainAxisAlignment: MainAxisAlignment.start,
+                                          mainAxisSize: MainAxisSize.min,
+                                          children: [
+                                            Row(
+                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                               children: [
-                                                Row(
-                                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                                  children: [
-                                                    Text(
-                                                      TITLE_43,
-                                                      style: TextStyle(
-                                                        fontSize: fontSize_12,
-                                                        fontWeight: FontWeight.w600,
-                                                      ),
-                                                    ),
-                                                    InkWell(
-                                                      onTap: () => Navigator.pop(context),
-                                                      child: Text(
-                                                        CANCEL,
-                                                        style: TextStyle(
-                                                          fontSize: fontSize_12,
-                                                          color: PRIMARY_COLOR,
-                                                          fontWeight: FontWeight.w600,
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ],
-                                                ),
-                                                Container(
-                                                  margin: EdgeInsets.only(
-                                                    top: height_16,
-                                                    bottom: height_8,
+                                                Text(
+                                                  TITLE_43,
+                                                  style: TextStyle(
+                                                    fontSize: fontSize_12,
+                                                    fontWeight: FontWeight.w600,
                                                   ),
-                                                  height: height_28,
-                                                  child: Container(
-                                                    decoration: BoxDecoration(
-                                                        borderRadius: BorderRadius.circular(border_24),
-                                                        border: Border.all(width: 0.5 ,color: clr_black12,)
-                                                    ),
-                                                    child: TextField(
-                                                      maxLines: 1,
-                                                      style: TextStyle(fontSize: fontSize_12),
-                                                      textAlignVertical: TextAlignVertical.center,
-                                                      decoration: InputDecoration(
-                                                        filled: true,
-                                                        prefixIcon: Icon(
-                                                          Icons.search,
-                                                          color: clr_black12,
-                                                          size: fontSize_20,
-                                                        ),
-
-                                                        border: OutlineInputBorder(
-                                                            borderSide: BorderSide.none,
-                                                            borderRadius: BorderRadius.all(Radius.circular(
-                                                              border_16,
-                                                            ))),
-                                                        enabledBorder: UnderlineInputBorder(
-                                                          borderSide: BorderSide(
-                                                            width: 0.5,
-                                                            color: clr_black12,
-                                                          ),),
-                                                        fillColor: clr_white,
-                                                        contentPadding: EdgeInsets.zero,
-                                                        hintText: SEARCH,
-                                                        hintStyle: TextStyle(
-                                                          fontSize: fontSize_11,
-                                                          fontFamily: 'open_sans',
-                                                          fontWeight: FontWeight.w500,
-                                                          color: clr_black12,
-                                                        ),
-                                                      ),
+                                                ),
+                                                InkWell(
+                                                  onTap: () => Navigator.pop(context),
+                                                  child: Text(
+                                                    CANCEL,
+                                                    style: TextStyle(
+                                                      fontSize: fontSize_12,
+                                                      color: PRIMARY_COLOR,
+                                                      fontWeight: FontWeight.w600,
                                                     ),
                                                   ),
                                                 ),
-                                                ListBank(
-                                                    list: listBanks,
-                                                    onTapElement: (e) {
-                                                      controller.log(e.title!, e.image!, e.subTitle!);
-                                                      Navigator.pop(context);
-                                                    },
-                                                    icon: Icons.account_balance_wallet_rounded),
+                                              ],
+                                            ),
+                                            Container(
+                                              margin: EdgeInsets.only(
+                                                top: height_16,
+                                                bottom: height_8,
+                                              ),
+                                              height: height_28,
+                                              child: Container(
+                                                decoration: BoxDecoration(
+                                                    borderRadius: BorderRadius.circular(border_24),
+                                                    border: Border.all(width: 1 ,color: clr_black12,)
+                                                ),
+                                                child: TextField(
+                                                  maxLines: 1,
+                                                  style: TextStyle(fontSize: fontSize_12),
+                                                  textAlignVertical: TextAlignVertical.center,
+                                                  decoration: InputDecoration(
+                                                    filled: true,
+                                                    prefixIcon: Icon(
+                                                      Icons.search,
+                                                      color: clr_black12,
+                                                      size: fontSize_20,
+                                                    ),
+                                                    border: OutlineInputBorder(
+                                                        borderSide: BorderSide.none,
+                                                        borderRadius: BorderRadius.all(Radius.circular(
+                                                          border_16,
+                                                        ))),
+                                                    fillColor: clr_white,
+                                                    contentPadding: EdgeInsets.zero,
+                                                    hintText: SEARCH,
+                                                    hintStyle: TextStyle(
+                                                      fontSize: fontSize_11,
+                                                      fontFamily: 'open_sans',
+                                                      fontWeight: FontWeight.w500,
+                                                      color: clr_black12,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                            ListBank(
+                                                list: listBanks,
+                                                onTapElement: (e) {
+                                                  controller.log(e.title!, e.image!, e.subTitle!);
+                                                  Navigator.pop(context);
+                                                },
+                                                icon: Icons.account_balance_wallet_rounded),
 
-                                              ]),
-                                        );
-                                      },
+                                          ]),
                                     );
                                   },
-                                  child: TextFieldTransFerTab2(
-                                    enabled: false,
-                                    labelText: TITLE_43,
-                                    suffixIcon: Icons.arrow_drop_down_sharp,
-                                    title: controller.title,
-                                    subfix: controller.image,
-                                    textEditingController: controller.textController,
-                                  ),
-                                ),
-                              ],
+                                );
+                              },
+                              child: TextFieldTransFerTab2(
+                                enabled: false,
+                                labelText: TITLE_43,
+                                suffixIcon: Icons.arrow_drop_down_sharp,
+                                title: controller.title,
+                                subfix: controller.image,
+                                textEditingController: controller.textController,
+                              ),
                             ),
                             Padding(
                               padding: EdgeInsets.only(
@@ -225,19 +216,24 @@ class _SecondsTabState extends State<SecondsTab> {
                                     height: height_40,
                                     child: ListView(
                                       scrollDirection: Axis.horizontal,
-                                      children: listImageBank
-                                          .map((e) => Container(
-                                        margin: EdgeInsets.only(right: width_16, top: height_8),
+                                      children: listBanks
+                                          .map((e) => InkWell(
+                                        onTap: (){
+                                          controller.log(e.title!, e.image!, e.subTitle!);
+                                        },
+                                            child: Container(
+                                        margin: EdgeInsets.only(right: width_16, top: height_8,),
                                         child: CircleAvatar(
-                                            backgroundColor: clr_f6f5f7,
-                                            radius: border_16,
-                                            child: Image.asset(
-                                              e.image ?? '',
-                                              width: width_24,
-                                              height: height_24,
-                                              fit: BoxFit.scaleDown,
-                                            )),
-                                      ))
+                                              backgroundColor: clr_f6f5f7,
+                                              radius: border_16,
+                                              child: Image.asset(
+                                                e.image ?? '',
+                                                width: width_24,
+                                                height: height_24,
+                                                fit: BoxFit.scaleDown,
+                                              )),
+                                      ),
+                                          ))
                                           .toList(),
                                     ),
                                   )
@@ -268,7 +264,7 @@ class _SecondsTabState extends State<SecondsTab> {
                                   setState(() {
                                     if (index == 1) {
                                       visibly = false;
-                                      height = 547.7.w;
+                                      height = 547.8.w;
                                       fromHeight = 10.h;
                                     } else if (index == 2) {
                                       statusSearch = false;
@@ -289,7 +285,8 @@ class _SecondsTabState extends State<SecondsTab> {
                                       CONTACT,
                                       textAlign: TextAlign.center,
                                       style: TextStyle(
-                                        fontSize: fontSize_12,
+                                        fontSize: fontSize_11,
+                                        fontFamily: 'open_sans',
                                         fontWeight: FontWeight.w600,
                                         height: lineHeight_1_2,
                                       ),
@@ -300,7 +297,8 @@ class _SecondsTabState extends State<SecondsTab> {
                                       RECENTLY,
                                       textAlign: TextAlign.center,
                                       style: TextStyle(
-                                        fontSize: fontSize_12,
+                                        fontSize: fontSize_11,
+                                        fontFamily: 'open_sans',
                                         fontWeight: FontWeight.w600,
                                         height: lineHeight_1_2,
                                       ),
@@ -311,7 +309,8 @@ class _SecondsTabState extends State<SecondsTab> {
                                       SAVED_TEMPLATES,
                                       textAlign: TextAlign.center,
                                       style: TextStyle(
-                                        fontSize: fontSize_12,
+                                        fontSize: fontSize_11,
+                                        fontFamily: 'open_sans',
                                         fontWeight: FontWeight.w600,
                                         height: lineHeight_1_2,
                                       ),
@@ -320,6 +319,7 @@ class _SecondsTabState extends State<SecondsTab> {
                                 ],
                               ),
                             ),
+                            SizedBox(height: height_4,),
                             SearchContacts(
                               visibly: visibly,
                               title: statusSearch ? SEARCH_2 : SEARCH_3,
@@ -335,11 +335,12 @@ class _SecondsTabState extends State<SecondsTab> {
                 physics: const NeverScrollableScrollPhysics(),
                 children: [
                   ListContacts(
-                      list: listContacts,
-                      callBack: () => Get.toNamed("/transaction_infor", arguments: ''),
+                      list: listContacts2,
+                      // callBack: () => Get.toNamed("/transaction_infor", arguments: ''),
+                      callBack: ()=> Get.to(TransactionInforPage2()),
                       icon: Icons.account_balance_wallet_rounded),
                   ListContactsRecently(
-                    list: listContacts,
+                    list: listContacts2,
                     callBack: () => Get.toNamed("/transaction_infor", arguments: ''),
                   ),
                   ListContactsSave(),

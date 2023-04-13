@@ -14,3 +14,4 @@ const image_vietqr = "assets/images/icons_bank/icon_vietqr.webp";
 const image_qr = "assets/images/qr_code.png";
 const card_mobile = "assets/svg/icon_gradient/210502.svg";
 const image_success = "assets/images/list_images/image_3.jpg";
+const image_agribank = "assets/images/icons_bank/icon_agribank.webp";

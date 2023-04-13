@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class TransferController extends GetxController {
-  bool isSwitched = false;
+  bool isSwitched = true;
   TabController? tabController;
+  String? titleDialog;
 
   toggle(){
     isSwitched = !isSwitched;
@@ -35,10 +36,5 @@ class TransferController extends GetxController {
     update();
   }
 
-  @override
-  void onInit() {
-    // TODO: implement onInit
-    super.onInit();
-  }
 
 }
