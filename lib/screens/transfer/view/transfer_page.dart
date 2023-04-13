@@ -17,6 +17,7 @@ import '../../components/button/back_icon_button.dart';
 import '../../components/button/button_component.dart';
 import '../../components/dialog/custom_dialog.dart';
 import '../../components/dialog/custom_dialog_transfer.dart';
+import '../../transaction_infor/view/transaction_infor_page2.dart';
 import '../controller/transfer_controller.dart';
 
 class TransferPage extends StatelessWidget {
@@ -68,14 +69,7 @@ class TransferPage extends StatelessWidget {
                       child: TabBar(
                         onTap: (index){
                           controller.checkIndex(index);
-                          print(index);
-                          if(index == 0){
-                            controller.titleDialog = TITLE_69;
-                          }else if(index == 1){
-                            controller.titleDialog = TITLE_70;
-                          }else{
-                            controller.titleDialog = TITLE_71;
-                          }
+                          controller.setTitleDialog(index);
                         },
                         padding: EdgeInsets.only(
                           top: height_4,
@@ -156,17 +150,22 @@ class TransferPage extends StatelessWidget {
                     title: NEXT,
                     bgColor: button_color_home,
                     callback: (){
-                      showDialog(
-                          barrierDismissible: false,
-                          context: context,
-                          builder: (BuildContext context) => CustomDialogTransfer(
-                            title: controller.titleDialog ?? TITLE_69,
-                            cancel: CANCEL2,
-                            submit: CANCEL,
-                            clickCallback: () {
-                              Navigator.pop(context);
-                            },
-                          ));
+                      if(controller.title == ''){
+                        showDialog(
+                            barrierDismissible: false,
+                            context: context,
+                            builder: (BuildContext context) => CustomDialogTransfer(
+                              title: controller.titleDialog ?? TITLE_69,
+                              cancel: CANCEL2,
+                              submit: CANCEL,
+                              clickCallback: () {
+                                Navigator.pop(context);
+                              },
+                            ));
+                      }else{
+                        Get.to(TransactionInforPage2());
+                      }
+
                     },
                   ),
                 )

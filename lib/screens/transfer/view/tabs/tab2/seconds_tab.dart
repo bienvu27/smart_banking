@@ -337,7 +337,7 @@ class _SecondsTabState extends State<SecondsTab> {
                   ListContacts(
                       list: listContacts2,
                       // callBack: () => Get.toNamed("/transaction_infor", arguments: ''),
-                      callBack: ()=> Get.to(TransactionInforPage2()),
+                      callBack: (e)=> Get.to(TransactionInforPage2()),
                       icon: Icons.account_balance_wallet_rounded),
                   ListContactsRecently(
                     list: listContacts2,

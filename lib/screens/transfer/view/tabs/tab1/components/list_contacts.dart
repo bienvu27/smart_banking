@@ -11,7 +11,7 @@ class ListContacts extends StatelessWidget {
 
   final List<ListContactsModel> list;
   IconData? icon;
-  final VoidCallback callBack;
+  Function?  callBack;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,11 @@ class ListContacts extends StatelessWidget {
         physics: BouncingScrollPhysics(),
         children: list.map((e) {
           return InkWell(
-            onTap: () => callBack(),
+            onTap: () {
+              if(callBack != null){
+                callBack!(e);
+              }
+            } ,
             child: Container(
               margin: EdgeInsets.only(top: height_12,),
               color: clr_white,
