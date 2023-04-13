@@ -128,12 +128,12 @@ double border_5 = 12.5.r;
 double border_7 = 15.r;
 double border_8 = 20.r;
 double border_10 = 25.r;
-double border_30 = 30.r;
 double border_16 = 40.r;
-double border_50 = 50.r;
 double border_24 = 60.r;
+double border_30 = 30.r;
 double border_32 = 80.r;
 double border_40 = 100.r;
+double border_50 = 50.r;
 double border_148 = 370.r;
 double border_500 = 500.r;
 

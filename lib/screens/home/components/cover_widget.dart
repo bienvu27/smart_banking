@@ -8,8 +8,11 @@ import 'authentication.dart';
 import 'infor_user.dart';
 
 class CoverWidget extends StatelessWidget {
-  const CoverWidget({
+  bool? isLogin;
+
+  CoverWidget({
     super.key,
+    bool? isLogin
   });
 
   @override
@@ -128,7 +131,7 @@ class CoverWidget extends StatelessWidget {
                                 fontWeight: FontWeight.w600,
                                 color: clr_white70),
                           ),
-                          Text(
+                          isLogin != null && isLogin! ? Text(
                             NAME_TEST.toUpperCase(),
                             style: TextStyle(
                               fontSize: fontSize_12,
@@ -136,7 +139,7 @@ class CoverWidget extends StatelessWidget {
                               fontWeight: FontWeight.w700,
                               color: clr_white,
                             ),
-                          ),
+                          ) : SizedBox(),
                         ],
                       ),
                     )

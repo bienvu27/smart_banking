@@ -144,6 +144,7 @@ const String TITLE_40 = 'Ngân hàng thụ hưởng';
 const String TITLE_41 = 'Ngày giao dịch';
 const String TITLE_42 = 'Vui lòng nhập mã OTP đã được gửi tới số điện thoại của Quý khách để xác thực giao dịch.';
 const String TITLE_43  = 'Chọn ngân hàng thụ hưởng';
+const String TITLE_CHOOSE_BENEF = "Chọn tài khoản thụ hưởng";
 const String MY_QR  = 'Mã QR của tôi';
 const String TITLE_44  = 'Số thẻ thụ hưởng';
 const String TITLE_45  = 'Quý khách đã chuyển thành công số tiền ';
@@ -194,6 +195,7 @@ const String TITLE_65 = 'Loại chuyển tiền';
 const String TITLE_66 = 'Chuyển tiền nội bộ VRB';
 const String CHECK = 'Kiểm tra';
 const String TITLE_67 = 'Số tài khoản thụ hưởng';
+
 const String TITLE_68 = 'Quý khách chưa có mẫu phát sinh giao dịch gần đây';
 const String TITLE_69 = 'Quý khách vui lòng nhập Số tài khoản/Số thẻ/Tài khoản định danh';
 const String TITLE_70 = 'Quý khách vui lòng Chọn ngân hàng thụ hưởng';

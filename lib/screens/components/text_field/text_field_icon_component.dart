@@ -7,15 +7,18 @@ import '../../../core/style/size.dart';
 
 class TextFieldIconComponent extends StatelessWidget {
   TextFieldIconComponent({
-    super.key, required this.labelText, this.icon, required this.textInputType
+    super.key, required this.labelText, this.icon, required this.textInputType, this.textController
   });
   final String labelText;
   IconData? icon;
   final TextInputType textInputType;
+  TextEditingController? textController;
+
   @override
   Widget build(BuildContext context) {
     return TextField(
       keyboardType: textInputType,
+      controller: textController ?? new TextEditingController(),
       style: TextStyle(
           fontSize: fontSize_12, fontWeight: FontWeight.w600),
       decoration: InputDecoration(

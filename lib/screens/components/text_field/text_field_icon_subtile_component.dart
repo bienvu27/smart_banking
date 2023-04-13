@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../../core/style/colors.dart';
 import '../../../core/style/size.dart';
 
 
 class TextFieldIconSubTitleComponent extends StatelessWidget {
-  const TextFieldIconSubTitleComponent({
-    super.key, required this.label, required this.subTitle, required this.textInputType, required this.obscureText, required this.icon,
+   TextFieldIconSubTitleComponent({
+    super.key, required this.label, required this.subTitle, required this.textInputType, required this.obscureText, required this.icon, this.textController
   });
 
   final String label;
@@ -15,6 +13,8 @@ class TextFieldIconSubTitleComponent extends StatelessWidget {
   final TextInputType textInputType;
   final bool obscureText;
   final IconData icon;
+  TextEditingController? textController;
+
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -24,6 +24,7 @@ class TextFieldIconSubTitleComponent extends StatelessWidget {
           keyboardType: textInputType,
             enabled: true,
             obscureText: obscureText,
+            controller: textController,
             style: TextStyle(
                 fontSize: fontSize_12, fontWeight: FontWeight.w600),
             decoration: InputDecoration(

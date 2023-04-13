@@ -1,3 +1,4 @@
+import 'package:smart_banking/screens/transfer/models/beneficiaryAccount.dart';
 import 'package:smart_banking/screens/transfer/models/list_bank_model.dart';
 import 'package:smart_banking/screens/user/model/list_available_balances_model.dart';
 
@@ -540,6 +541,17 @@ final listBanks = [
     image: 'assets/images/icons_bank/icon_vpbank.webp',
     title: 'VPBank',
     subTitle: 'NHTMCP Việt Nam Thịnh vượng',
+  ),
+];
+
+List<BeneficiaryAccount> benefList = [
+  BeneficiaryAccount(
+    account: "22210004128293",
+    surplus: "25.000"
+  ),
+  BeneficiaryAccount(
+      account: "22210004125524",
+      surplus: "30.000"
   ),
 ];
 

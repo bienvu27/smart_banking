@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import '../../../core/common/utils.dart';
 import '../../../core/resources/strings.dart';
 import '../../../core/style/colors.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -61,7 +63,10 @@ class ServiceFavorite extends StatelessWidget {
                 shrinkWrap: true,
                 children: list.map((e) {
                   return InkWell(
-                    onTap: () {
+                    onTap: () async {
+                      SharedPreferences pref = await SharedPreferences.getInstance();
+                      print(await pref.getString("username").toString() + "vvvv");
+                      await pref.getString("username") == null ?
                       showDialog(
                           barrierDismissible: false,
                           context: context,
@@ -69,8 +74,11 @@ class ServiceFavorite extends StatelessWidget {
                                 title: TITLE_31,
                                 cancel: CANCEL2,
                                 submit: LOGIN,
-                                clickCallback: () {},
-                              ));
+                                clickCallback: () {
+                                  Navigator.of(context).pop();
+                                  Utils.showAuthenticationDialog(context);
+                                },
+                              )):Utils.showWarningDialog(context, "Chưa cập nhật");
                     },
                     child: Column(
                       children: [

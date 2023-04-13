@@ -15,6 +15,13 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,14 +43,14 @@ class _HomePageState extends State<HomePage> {
             SingleChildScrollView(
               child: Column(
                 children: [
-                  const CoverWidget(),
-                  SizedBox(
-                    height: height_12,
-                  ),
-                  const GridMenu(),
-                  SizedBox(
-                    height: height_12,
-                  ),
+                      CoverWidget(),
+                      SizedBox(
+                        height: height_12,
+                      ),
+                      const GridMenu(),
+                      SizedBox(
+                        height: height_12,
+                    ),
                   ServiceFavorite(list: list),
                   SizedBox(
                     height: height_12,

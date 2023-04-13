@@ -130,10 +130,10 @@ class TransferPage extends StatelessWidget {
               body: TabBarView(
                 physics: NeverScrollableScrollPhysics(),
                 children: [
-                  FirstTab(),
+                  FirstTab(controller: controller,),
                   if(controller.textController.text.isEmpty)...[
                     SecondsTab(),
-                  ]else...[
+                  ]else ...[
                     SecondsTabIsNotEmpty()
                   ],
                   LastTab(),
