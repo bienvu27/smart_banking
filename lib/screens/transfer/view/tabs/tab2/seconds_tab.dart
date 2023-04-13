@@ -346,19 +346,7 @@ class _SecondsTabState extends State<SecondsTab> {
                 ],
               ),
             ),
-            bottomNavigationBar: Container(
-              padding: EdgeInsets.only(top: height_4, bottom: height_4),
-              height: height_40,
-              decoration: BoxDecoration(
-                color: clr_white,
-                boxShadow: [bottomNavigationBar],
-              ), // Get.to(const RegisterStep3Page()
-              child: ButtonComponent(
-                title: NEXT,
-                bgColor: button_color_home,
-                callback: () => Get.toNamed("/transaction_infor", arguments: ''),
-              ),
-            ));
+          );
       })
     );
   }

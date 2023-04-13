@@ -24,8 +24,15 @@ class TransferController extends GetxController {
 
   checkIndex(int index){
     if(index == 0){
+      textController.clear();
+      this.image = '';
+      this.title = '';
     }else if(index == 2){
+      textController.clear();
+      this.image = '';
+      this.title = '';
     }
+    update();
   }
 
   @override
