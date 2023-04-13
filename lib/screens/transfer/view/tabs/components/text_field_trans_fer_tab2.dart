@@ -44,7 +44,7 @@ class TextFieldTransFerTab2 extends StatelessWidget {
         ),
         decoration: InputDecoration(
           labelText: labelText,
-          prefix: subfix!.isNotEmpty ? Padding(
+          prefix: subfix != null && subfix!.isNotEmpty ? Padding(
             padding: EdgeInsets.only(right: width_8),
             child: CircleAvatar(
               backgroundColor: Colors.black12,
