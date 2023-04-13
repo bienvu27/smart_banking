@@ -268,7 +268,7 @@ class _SecondsTabState extends State<SecondsTab> {
                                   setState(() {
                                     if (index == 1) {
                                       visibly = false;
-                                      height = 540.w;
+                                      height = 547.7.w;
                                       fromHeight = 10.h;
                                     } else if (index == 2) {
                                       statusSearch = false;
