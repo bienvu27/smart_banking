@@ -72,7 +72,7 @@ class NotificationList extends StatelessWidget {
                     height: height_212,
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                        image: NetworkImage('${e.image}'),
+                        image: AssetImage('${e.image}'),
                         fit: BoxFit.fill,
                       ),
                     ),
