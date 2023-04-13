@@ -5,6 +5,7 @@ import '../screens/history_transfer/model/history_transfer_model.dart';
 import '../screens/home/model/list_service_model.dart';
 import '../screens/notification/model/description_model.dart';
 import '../screens/notification/model/notification_model.dart';
+import '../screens/notification/model/notification_model2.dart';
 import '../screens/promotion/model/promotion_model.dart';
 import '../screens/service_manager/components/services/service_name.dart';
 import '../screens/service_manager/model/service_favorite_model.dart';
@@ -94,7 +95,6 @@ final listContacts = [
     money: '10.000.000',
   ),
 ];
-
 
 final listContacts2 = [
   ListContactsModel(
@@ -228,7 +228,7 @@ final listNoti = [
       date: '22/03/2023',
       time: '14:55',
       image:
-          'https://cdn.vietnambiz.vn/1881912202208555/images/2023/02/21/ngan-hang-viet-nga-20230221171222723.jpeg?width=700',
+          'assets/images/list_images/image_1.jpg',
       description: [
         DescriptionModel(
             image: 'https://cdn-icons-png.flaticon.com/512/1933/1933691.png',
@@ -263,7 +263,7 @@ final listNoti = [
       date: '22/03/2023',
       time: '14:55',
       image:
-          'https://vrbank.com.vn/Uploads/%E1%BA%A2nh%20b%C3%A0i%20vi%E1%BA%BFt/Poster%20Mobile%20app_A4-02%20(2).jpg',
+          'assets/images/list_images/image_2.jpg',
       description: [
         DescriptionModel(
             image: 'https://cdn-icons-png.flaticon.com/512/1933/1933691.png',
@@ -298,7 +298,7 @@ final listNoti = [
       date: '22/03/2023',
       time: '14:55',
       image:
-          'https://haymora.com/upload/images/tai_chinh_ngan_hang/ngan_hang_lien_doanh_viet_-_nga_-_vrb/vrb-doi-ngu-nhan-su-source-dantri.jpg',
+          'assets/images/list_images/image_3.jpg',
       description: [
         DescriptionModel(
             image: 'https://cdn-icons-png.flaticon.com/512/1933/1933691.png',
@@ -333,7 +333,7 @@ final listNoti = [
       date: '22/03/2023',
       time: '14:55',
       image:
-          'https://cdn.vietnambiz.vn/1881912202208555/images/2023/02/21/ngan-hang-viet-nga-20230221171222723.jpeg?width=700',
+          'assets/images/list_images/image_4.jpeg',
       description: [
         DescriptionModel(
             image: 'https://cdn-icons-png.flaticon.com/512/1933/1933691.png',
@@ -368,7 +368,7 @@ final listNoti = [
       date: '22/03/2023',
       time: '14:55',
       image:
-          'https://vrbank.com.vn/Uploads/%E1%BA%A2nh%20b%C3%A0i%20vi%E1%BA%BFt/Poster%20Mobile%20app_A4-02%20(2).jpg',
+          'assets/images/list_images/image_5.jpg',
       description: [
         DescriptionModel(
             image: 'https://cdn-icons-png.flaticon.com/512/1933/1933691.png',
@@ -403,7 +403,7 @@ final listNoti = [
       date: '22/03/2023',
       time: '14:55',
       image:
-          'https://haymora.com/upload/images/tai_chinh_ngan_hang/ngan_hang_lien_doanh_viet_-_nga_-_vrb/vrb-doi-ngu-nhan-su-source-dantri.jpg',
+          'assets/images/list_images/image_6.jpg',
       description: [
         DescriptionModel(
             image: 'https://cdn-icons-png.flaticon.com/512/1933/1933691.png',
@@ -559,7 +559,6 @@ List historyTransfer = [
     tradingCode: 847103436,
     plus: true,
   ),
-
   HistoryTransferModel(
     cardNumber: '9704XXXXXX59000000',
     dateTime: '08/04/2023 17:20:41',
@@ -567,7 +566,6 @@ List historyTransfer = [
     tradingCode: 847103436,
     plus: false,
   ),
-
   HistoryTransferModel(
     cardNumber: '19998XXXXXX59000000',
     dateTime: '08/04/2023 17:20:41',
@@ -575,7 +573,6 @@ List historyTransfer = [
     tradingCode: 847103436,
     plus: true,
   ),
-
   HistoryTransferModel(
     cardNumber: '970418XXXXXX59000000',
     dateTime: '08/04/2023 17:20:41',
@@ -583,7 +580,6 @@ List historyTransfer = [
     tradingCode: 847103436,
     plus: false,
   ),
-
   HistoryTransferModel(
     cardNumber: '970418XXXXXX59000000',
     dateTime: '08/04/2023 17:20:41',
@@ -591,7 +587,6 @@ List historyTransfer = [
     tradingCode: 847103436,
     plus: false,
   ),
-
   HistoryTransferModel(
     cardNumber: '970418XXXXXX59000000',
     dateTime: '08/04/2023 17:20:41',
@@ -599,7 +594,6 @@ List historyTransfer = [
     tradingCode: 847103436,
     plus: false,
   ),
-
   HistoryTransferModel(
     cardNumber: '970418XXXXXX59000000',
     dateTime: '08/04/2023 17:20:41',
@@ -607,7 +601,6 @@ List historyTransfer = [
     tradingCode: 847103436,
     plus: false,
   ),
-
   HistoryTransferModel(
     cardNumber: '970418XXXXXX59000000',
     dateTime: '08/04/2023 17:20:41',
@@ -615,4 +608,20 @@ List historyTransfer = [
     tradingCode: 847103436,
     plus: false,
   ),
+];
+
+final listNotification2 = [
+  NotificationModel2(
+      dateTime: '15:04 10/04/2023',
+      numberUser: 21610000542522,
+      money: '5,000',
+      nameFriends: 'NGUYEN CAO CUONG',
+      numberUser2: 21610000541111),
+
+  NotificationModel2(
+      dateTime: '17:04 01/04/2023',
+      numberUser: 21610000542522,
+      money: '100,000',
+      nameFriends: 'CAO THI CHAM',
+      numberUser2: 21610000542222),
 ];
