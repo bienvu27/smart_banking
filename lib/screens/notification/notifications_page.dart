@@ -5,6 +5,7 @@ import '../../core/style/size.dart';
 import '../../fake_data/data_fake_home.dart';
 import '../transfer/view/tabs/components/search_contacts.dart';
 import 'components/notification_list.dart';
+import 'components/notification_list_2.dart';
 
 class NotificationPage extends StatelessWidget {
   const NotificationPage({Key? key}) : super(key: key);
@@ -109,7 +110,7 @@ class NotificationPage extends StatelessWidget {
             physics: NeverScrollableScrollPhysics(),
             children: [
               NotificationList(list: listNoti, visibleImage: true, visibleIcon: true),
-              NotificationList(list: listNoti, visibleImage: false, visibleIcon: false),
+              NotificationList2(list: listNotification2),
               NotificationList(list: listNoti, visibleImage: false, visibleIcon: false),
             ],
           ),
