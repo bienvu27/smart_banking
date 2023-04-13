@@ -179,7 +179,7 @@ class _FirstTabState extends State<FirstTab> {
               children: [
                 ListContacts(
                   list: listContacts,
-                  callBack: () => Get.toNamed("/transaction_infor", arguments: ''),
+                  callBack: (e) => Get.toNamed("/transaction_infor", arguments: ''),
                 ),
                 ListContactsRecently(
                   list: listContacts,

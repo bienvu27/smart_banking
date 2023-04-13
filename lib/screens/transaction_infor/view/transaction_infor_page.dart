@@ -42,14 +42,14 @@ class TransactionInforPage extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: clr_blue,
                   borderRadius: BorderRadius.circular(border_8),
-                  gradient: linearGradientBg,
+                  gradient: linearGradientButtom,
                 ),
                 child: Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       CircleAvatar(
-                        radius: border_50,
+                        radius: border_16,
                         backgroundColor: clr_d5d6d7,
                         child: Icon(
                           Icons.person,
@@ -68,7 +68,8 @@ class TransactionInforPage extends StatelessWidget {
                             NUMBER_TEST,
                             style: TextStyle(
                               color: clr_white,
-                              fontSize: fontSize_12,
+                              fontFamily: 'open_sans',
+                              fontSize: fontSize_11,
                               fontWeight: FontWeight.w600,
                             ),
                           ),
@@ -79,8 +80,9 @@ class TransactionInforPage extends StatelessWidget {
                             MONEY_TEST,
                             style: TextStyle(
                               color: clr_white,
-                              fontSize: fontSize_12,
-                              fontWeight: FontWeight.w500,
+                              fontFamily: 'open_sans',
+                              fontSize: fontSize_11,
+                              fontWeight: FontWeight.w600,
                             ),
                           ),
                         ],
@@ -101,7 +103,7 @@ class TransactionInforPage extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: clr_blue,
                   borderRadius: BorderRadius.circular(border_8),
-                  gradient: linearGradientBg2,
+                  gradient: linearGradientButtom2,
                 ),
                 child: Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -115,8 +117,9 @@ class TransactionInforPage extends StatelessWidget {
                             '27910000492884',
                             style: TextStyle(
                               color: clr_white,
-                              fontSize: fontSize_12,
                               fontWeight: FontWeight.w600,
+                              fontFamily: 'open_sans',
+                              fontSize: fontSize_11,
                             ),
                           ),
                           SizedBox(
@@ -126,8 +129,9 @@ class TransactionInforPage extends StatelessWidget {
                             'hoang thi thuy mai'.toUpperCase(),
                             style: TextStyle(
                               color: clr_white,
-                              fontSize: fontSize_12,
-                              fontWeight: FontWeight.w500,
+                              fontWeight: FontWeight.w600,
+                              fontFamily: 'open_sans',
+                              fontSize: fontSize_11,
                             ),
                           ),
                         ],
@@ -137,7 +141,7 @@ class TransactionInforPage extends StatelessWidget {
                       ),
                       CircleAvatar(
                         backgroundColor: clr_f6f5f7,
-                        radius: border_50,
+                        radius: border_16,
                         child: Image.asset(
                           icon_vrb,
                           width: width_24,
@@ -181,6 +185,7 @@ class TransactionInforPage extends StatelessWidget {
                 ),
                 child: TextFieldComponent(
                   label: TRANSACTION_CONTENT,
+                  text: TITLE_72,
                   textInputType: TextInputType.text,
                 ),
               )

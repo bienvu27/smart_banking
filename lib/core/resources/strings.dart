@@ -199,3 +199,5 @@ const String TITLE_69 = 'Quý khách vui lòng nhập Số tài khoản/Số th�
 const String TITLE_70 = 'Quý khách vui lòng Chọn ngân hàng thụ hưởng';
 const String TITLE_71 = 'Quý khách vui lòng Nhập số thẻ thụ hưởng';
 const String TITLE_72 = 'VU XUAN BIEN Chuyen tien';
+const String INFOR_USER = 'Thông tin tài khoản';
+const String TITLE_73 = 'Đổi TK mặc định';
