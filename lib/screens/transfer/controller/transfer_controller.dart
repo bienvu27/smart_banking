@@ -8,15 +8,14 @@ import '../../../core/style/size.dart';
 import '../../../fake_data/data_fake_home.dart';
 import '../components/list_benef_account.dart';
 
-import '../../../core/resources/strings.dart';
-
 class TransferController extends GetxController {
   bool isSwitched = true;
   TabController? tabController;
   int? indexBenefAccountSelected;
   bool isSameOwner = false;
-  String? beneficiaryAccount;
   String? titleDialog;
+
+  TextEditingController beneficiaryAccountController = new TextEditingController();
 
   void toggle(){
     isSwitched = !isSwitched;
@@ -26,7 +25,7 @@ class TransferController extends GetxController {
 
   void chooseBenefAccountSelected(int index){
     this.indexBenefAccountSelected = index;
-    beneficiaryAccount = benefList.elementAt(index).account;
+    beneficiaryAccountController.text = benefList.elementAt(index).account!;
     update();
   }
 
@@ -95,8 +94,10 @@ class TransferController extends GetxController {
 
 
   toggleSameOwner(BuildContext context, bool isSameOwner){
+    beneficiaryAccountController.text = "";
     this.isSameOwner = isSameOwner;
     if(isSameOwner) {
+      indexBenefAccountSelected = null;
       showDialog(context);
     }
     update();

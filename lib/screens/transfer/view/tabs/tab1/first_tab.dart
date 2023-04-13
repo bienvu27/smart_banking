@@ -119,13 +119,14 @@ class _FirstTabState extends State<FirstTab> {
                               enabled: false,
                               labelText: TITLE_CHOOSE_BENEF,
                               suffixIcon: Icons.arrow_drop_down_sharp,
-                              title: widget.controller.beneficiaryAccount,
+                              textEditingController: widget.controller.beneficiaryAccountController,
                             ),
                           ) :
                           TextFieldTransFer(
                             enabled: true,
                             labelText: TITLE_33,
                             suffixIcon: Icons.account_box_outlined,
+                            textEditingController: widget.controller.beneficiaryAccountController,
                           ),
                           ContactsContainer(),
                         ],

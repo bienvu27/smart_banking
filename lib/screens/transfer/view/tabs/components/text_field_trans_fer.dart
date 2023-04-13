@@ -31,7 +31,7 @@ class TextFieldTransFer extends StatelessWidget {
                   callback!();
                 }
               },
-              controller: TextEditingController(text: title),
+              controller: textEditingController ?? new TextEditingController(),
 
               style: TextStyle(
                 fontSize: fontSize_12,

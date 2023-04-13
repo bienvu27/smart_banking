@@ -66,7 +66,7 @@ class ListBenefAccount extends StatelessWidget {
                         maxLines: 2,
                         style: TextStyle(
                           color: clr_black,
-                          fontWeight: FontWeight.w600,
+                          fontWeight: FontWeight.normal,
                           fontFamily: 'open_sans',
                           fontSize: fontSize_11,
                           overflow: TextOverflow.ellipsis,
@@ -77,7 +77,7 @@ class ListBenefAccount extends StatelessWidget {
                         maxLines: 2,
                         style: TextStyle(
                           color: clr_black,
-                          fontWeight: FontWeight.normal,
+                          fontWeight: FontWeight.w600,
                           fontFamily: 'open_sans',
                           fontSize: fontSize_11,
                           overflow: TextOverflow.ellipsis,

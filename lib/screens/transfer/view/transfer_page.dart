@@ -149,8 +149,8 @@ class TransferPage extends StatelessWidget {
                   child: ButtonComponent(
                     title: NEXT,
                     bgColor: button_color_home,
-                    callback: (){
-                      if(controller.title == ''){
+                    callback: (){;
+                      if(controller.beneficiaryAccountController.text.isEmpty){
                         showDialog(
                             barrierDismissible: false,
                             context: context,
