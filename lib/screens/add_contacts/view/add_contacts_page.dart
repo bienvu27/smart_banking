@@ -103,18 +103,18 @@ class _AddContactsPageState extends State<AddContactsPage> {
                                 ),
                                 LabeledRadio(
                                   value: '1',
-                                  title: 'Chuyển tiền nội bộ VRBank',
+                                  title: 'Chuyển tiền nội bộVRB',
                                   isFree: true,
                                 ),
                                 SizedBox(
                                   height: height_8,
                                 ),
                                 LabeledRadio(
-                                    value: '2', title: 'Chuyển tiền ngoài VRBank đến số tài khoản', isFree: false),
+                                    value: '2', title: 'Chuyển tiền ngoàiVRBđến số tài khoản', isFree: false),
                                 SizedBox(
                                   height: height_8,
                                 ),
-                                LabeledRadio(value: '3', title: 'Chuyển tiền ngoài VRBank đến số thẻ', isFree: false),
+                                LabeledRadio(value: '3', title: 'Chuyển tiền ngoàiVRBđến số thẻ', isFree: false),
                                 SizedBox(
                                   height: height_8,
                                 ),

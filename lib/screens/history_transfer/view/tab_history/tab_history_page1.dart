@@ -62,7 +62,7 @@ class TabHistoryPage1 extends StatelessWidget {
                     Row(
                       children: [
                         CircleAvatar(
-                          backgroundColor: clr_67748E,
+                          backgroundColor: PRIMARY_COLOR,
                           radius: border_7,
                           child: Icon(
                             Icons.add,
@@ -78,7 +78,7 @@ class TabHistoryPage1 extends StatelessWidget {
                           style: TextStyle(
                             fontSize: fontSize_10,
                             fontFamily: 'open_sans',
-                            color: clr_black54,
+                            color: PRIMARY_COLOR,
                             overflow: TextOverflow.ellipsis,
                             fontWeight: FontWeight.w500,
                           ),
@@ -98,7 +98,7 @@ class TabHistoryPage1 extends StatelessWidget {
                           style: TextStyle(
                             fontSize: fontSize_12,
                             fontFamily: 'open_sans',
-                            color: clr_67748E,
+                            color: clr_4caf50,
                             overflow: TextOverflow.ellipsis,
                             fontWeight: FontWeight.w600,
                           ),
@@ -108,7 +108,7 @@ class TabHistoryPage1 extends StatelessWidget {
                           style: TextStyle(
                             fontSize: fontSize_12,
                             fontFamily: 'open_sans',
-                            color: Colors.redAccent,
+                            color: PRIMARY_COLOR_RED,
                             overflow: TextOverflow.ellipsis,
                             fontWeight: FontWeight.w600,
                           ),
@@ -119,7 +119,7 @@ class TabHistoryPage1 extends StatelessWidget {
                           style: TextStyle(
                             fontSize: fontSize_12,
                             fontFamily: 'open_sans',
-                            color:  historyTransfer[index].plus ? clr_67748E : Colors.redAccent,
+                            color:  historyTransfer[index].plus ? clr_4caf50 : PRIMARY_COLOR_RED,
                             overflow: TextOverflow.ellipsis,
                             fontWeight: FontWeight.w600,
                           ),
@@ -136,7 +136,7 @@ class TabHistoryPage1 extends StatelessWidget {
                         fontFamily: 'open_sans',
                         color: clr_black54,
                         overflow: TextOverflow.ellipsis,
-                        fontWeight: FontWeight.w600,
+                        fontWeight: FontWeight.w500,
                       ),
                     ),
                   ],

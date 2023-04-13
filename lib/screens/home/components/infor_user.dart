@@ -543,7 +543,7 @@ class InforUser extends StatelessWidget {
                       left: width_8,
                     ),
                     decoration: BoxDecoration(
-                      color: clr_black12,
+                      color: clr_black6,
                       borderRadius: BorderRadius.circular(border_16),
                     ),
                     child: Row(

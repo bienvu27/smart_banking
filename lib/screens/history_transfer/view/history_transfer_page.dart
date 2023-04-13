@@ -92,7 +92,7 @@ class _HistoryTransferPageState extends State<HistoryTransferPage> {
                         ),
                       ),
                       Text(
-                        '500,000 VND',
+                        '50,000,000 VND',
                         style: TextStyle(
                           color: clr_white,
                           fontFamily: 'open_sans',
@@ -312,7 +312,7 @@ class _HistoryTransferPageState extends State<HistoryTransferPage> {
                               ),
                               height: height_26,
                               decoration: BoxDecoration(
-                                color: Colors.grey[200],
+                                color: Colors.grey[100],
                                 borderRadius: BorderRadius.circular(
                                   border_16,
                                 ),

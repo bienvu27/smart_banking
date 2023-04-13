@@ -39,11 +39,10 @@ class _UserTab1State extends State<UserTab1> {
                 padding: EdgeInsets.only(
                   left: width_8,
                   right: width_8,
-                  bottom: height_8,
                 ),
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
-                  color: Colors.grey[200],
+                  color: Colors.grey[100],
                   borderRadius: BorderRadius.circular(fontSize_12),
                 ),
                 child: Column(
@@ -109,7 +108,7 @@ class _UserTab1State extends State<UserTab1> {
                                             right: width_8,
                                           ),
                                           decoration: BoxDecoration(
-                                            color: clr_67748E,
+                                            color: PRIMARY_COLOR,
                                             borderRadius: BorderRadius.circular(width_10),
                                           ),
                                           child: Text(DEFAULT,
@@ -217,7 +216,7 @@ class _UserTab1State extends State<UserTab1> {
                                                       ),
                                                       children: [
                                                         TextSpan(
-                                                          text: 'VRBank',
+                                                          text: 'VRB',
                                                           style: TextStyle(
                                                             fontFamily: 'open_sans',
                                                             fontSize: fontSize_10,
@@ -235,7 +234,7 @@ class _UserTab1State extends State<UserTab1> {
                                                           ),
                                                         ),
                                                         TextSpan(
-                                                          text: 'VRBank',
+                                                          text: 'VRB',
                                                           style: TextStyle(
                                                             fontFamily: 'open_sans',
                                                             fontSize: fontSize_10,
@@ -505,7 +504,7 @@ class _UserTab1State extends State<UserTab1> {
                         right: width_4,
                       ),
                       decoration: BoxDecoration(
-                        color: clr_67748E,
+                        color: clr_black6,
                         borderRadius: BorderRadius.circular(width_10),
                       ),
                       child: Row(
@@ -560,11 +559,10 @@ class _UserTab1State extends State<UserTab1> {
                 padding: EdgeInsets.only(
                   left: width_8,
                   right: width_8,
-                  bottom: height_8,
                 ),
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
-                  color: Colors.grey[200],
+                  color: Colors.grey[100],
                   borderRadius: BorderRadius.circular(fontSize_12),
                 ),
                 child: Column(
@@ -616,32 +614,6 @@ class _UserTab1State extends State<UserTab1> {
                                       )
                                     ],
                                   ),
-                                  e.defaultCode == true
-                                      ? SizedBox(
-                                          height: height_4,
-                                        )
-                                      : SizedBox(),
-                                  e.defaultCode == true
-                                      ? Container(
-                                          padding: EdgeInsets.only(
-                                            top: height_1,
-                                            bottom: height_1,
-                                            left: width_8,
-                                            right: width_8,
-                                          ),
-                                          decoration: BoxDecoration(
-                                            color: clr_67748E,
-                                            borderRadius: BorderRadius.circular(width_10),
-                                          ),
-                                          child: Text(DEFAULT,
-                                              style: TextStyle(
-                                                fontSize: fontSize_7,
-                                                fontFamily: 'open_sans',
-                                                color: Colors.white,
-                                                fontWeight: FontWeight.w500,
-                                              )),
-                                        )
-                                      : SizedBox(),
                                   SizedBox(
                                     height: height_4,
                                   ),
@@ -738,7 +710,7 @@ class _UserTab1State extends State<UserTab1> {
                                                       ),
                                                       children: [
                                                         TextSpan(
-                                                          text: 'VRBank',
+                                                          text: 'VRB',
                                                           style: TextStyle(
                                                             fontFamily: 'open_sans',
                                                             fontSize: fontSize_10,
@@ -756,7 +728,7 @@ class _UserTab1State extends State<UserTab1> {
                                                           ),
                                                         ),
                                                         TextSpan(
-                                                          text: 'VRBank',
+                                                          text: 'VRB',
                                                           style: TextStyle(
                                                             fontFamily: 'open_sans',
                                                             fontSize: fontSize_10,
@@ -1023,7 +995,7 @@ class _UserTab1State extends State<UserTab1> {
                         right: width_4,
                       ),
                       decoration: BoxDecoration(
-                        color: clr_67748E,
+                        color: clr_black6,
                         borderRadius: BorderRadius.circular(width_10),
                       ),
                       child: Row(

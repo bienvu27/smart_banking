@@ -553,66 +553,58 @@ List listAvailableBalances2 = [
 
 List historyTransfer = [
   HistoryTransferModel(
-    cardNumber: '970418XXXXXX59000000',
-    dateTime: '08/04/2023 17:20:41',
-    money: 500000,
-    tradingCode: 847103436,
+    cardNumber: '18000526585215',
+    dateTime: '08/04/2023 10:20:41',
+    money: 70000000,
+    tradingCode: 847103566,
     plus: true,
   ),
 
   HistoryTransferModel(
-    cardNumber: '9704XXXXXX59000000',
-    dateTime: '08/04/2023 17:20:41',
-    money: 500000,
-    tradingCode: 847103436,
+    cardNumber: '18000526585237',
+    dateTime: '08/04/2023 12:20:41',
+    money: 50000000,
+    tradingCode: 847107636,
     plus: false,
   ),
 
   HistoryTransferModel(
-    cardNumber: '19998XXXXXX59000000',
+    cardNumber: '18000526585215',
     dateTime: '08/04/2023 17:20:41',
-    money: 500000,
-    tradingCode: 847103436,
+    money: 30000000,
+    tradingCode: 847233567,
+    plus: true,
+  ),
+
+];
+
+List historyTransferIn = [
+  HistoryTransferModel(
+    cardNumber: '18000526585215',
+    dateTime: '08/04/2023 10:20:41',
+    money: 70000000,
+    tradingCode: 847103566,
     plus: true,
   ),
 
   HistoryTransferModel(
-    cardNumber: '970418XXXXXX59000000',
+    cardNumber: '18000526585215',
     dateTime: '08/04/2023 17:20:41',
-    money: 500000,
-    tradingCode: 847103436,
+    money: 30000000,
+    tradingCode: 847233567,
     plus: false,
   ),
 
+];
+
+List historyTransferOut = [
   HistoryTransferModel(
-    cardNumber: '970418XXXXXX59000000',
-    dateTime: '08/04/2023 17:20:41',
-    money: 500000,
-    tradingCode: 847103436,
+    cardNumber: '18000526585237',
+    dateTime: '08/04/2023 12:20:41',
+    money: 50000000,
+    tradingCode: 847107636,
     plus: false,
   ),
 
-  HistoryTransferModel(
-    cardNumber: '970418XXXXXX59000000',
-    dateTime: '08/04/2023 17:20:41',
-    money: 500000,
-    tradingCode: 847103436,
-    plus: false,
-  ),
 
-  HistoryTransferModel(
-    cardNumber: '970418XXXXXX59000000',
-    dateTime: '08/04/2023 17:20:41',
-    money: 500000,
-    tradingCode: 847103436,
-    plus: false,
-  ),
-
-  HistoryTransferModel(
-    cardNumber: '970418XXXXXX59000000',
-    dateTime: '08/04/2023 17:20:41',
-    money: 500000,
-    tradingCode: 847103436,
-    plus: false,
-  ),
 ];
