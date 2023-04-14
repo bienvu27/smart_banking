@@ -61,32 +61,32 @@ class TabHistoryPage3 extends StatelessWidget {
                     SizedBox(
                       height: height_2,
                     ),
-                    Row(
-                      children: [
-                        CircleAvatar(
-                          backgroundColor: PRIMARY_COLOR,
-                          radius: border_7,
-                          child: Icon(
-                            Icons.add,
-                            color: Colors.white,
-                            size: fontSize_11,
-                          ),
-                        ),
-                        SizedBox(
-                          width: width_4,
-                        ),
-                        Text(
-                          'Thêm vào quản lý chi tiêu',
-                          style: TextStyle(
-                            fontSize: fontSize_10,
-                            fontFamily: 'open_sans',
-                            color: PRIMARY_COLOR,
-                            overflow: TextOverflow.ellipsis,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ],
-                    )
+                    // Row(
+                    //   children: [
+                    //     CircleAvatar(
+                    //       backgroundColor: PRIMARY_COLOR,
+                    //       radius: border_7,
+                    //       child: Icon(
+                    //         Icons.add,
+                    //         color: Colors.white,
+                    //         size: fontSize_11,
+                    //       ),
+                    //     ),
+                    //     SizedBox(
+                    //       width: width_4,
+                    //     ),
+                    //     Text(
+                    //       'Thêm vào quản lý chi tiêu',
+                    //       style: TextStyle(
+                    //         fontSize: fontSize_10,
+                    //         fontFamily: 'open_sans',
+                    //         color: PRIMARY_COLOR,
+                    //         overflow: TextOverflow.ellipsis,
+                    //         fontWeight: FontWeight.w500,
+                    //       ),
+                    //     ),
+                    //   ],
+                    // )
                   ],
                 ),
                 Column(

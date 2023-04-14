@@ -9,8 +9,6 @@ import '../../../../../fake_data/data_fake_home.dart';
 import '../components/contacts_container.dart';
 import '../components/search_contacts.dart';
 import '../components/text_field_trans_fer.dart';
-import '../components/text_field_trans_fer_tab2.dart';
-import 'components/list_bank.dart';
 import 'components/list_contacts.dart';
 import 'components/list_contacts_recently.dart';
 import 'components/list_contacts_save.dart';
@@ -114,7 +112,7 @@ class _FirstTabState extends State<FirstTab> {
                             ),
                           ),
                           widget.controller.isSameOwner ? GestureDetector(
-                            onTap: () => widget.controller.showDialog(context),
+                            onTap: () => widget.controller.showDialogBenef(context),
                             child: TextFieldTransFer(
                               enabled: false,
                               labelText: TITLE_CHOOSE_BENEF,

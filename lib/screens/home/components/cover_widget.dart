@@ -22,11 +22,11 @@ class CoverWidget extends StatelessWidget {
     int number = 2;
     final height = MediaQuery.of(context).size.height;
     return SizedBox(
-      height: height / 1.34,
+      height: height / 1.8,
       child: Stack(
         children: [
           Container(
-            height: height / 1.5,
+            height: height / 2,
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: AssetImage(vrb_banner),

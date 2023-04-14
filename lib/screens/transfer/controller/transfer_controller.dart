@@ -6,6 +6,7 @@ import '../../../core/resources/strings.dart';
 import '../../../core/style/colors.dart';
 import '../../../core/style/size.dart';
 import '../../../fake_data/data_fake_home.dart';
+import '../../components/dialog/custom_dialog_transfer.dart';
 import '../components/list_benef_account.dart';
 
 class TransferController extends GetxController {
@@ -14,6 +15,7 @@ class TransferController extends GetxController {
   int? indexBenefAccountSelected;
   bool isSameOwner = false;
   String? titleDialog;
+  int indexTabTransfer = 0;
 
   @override
   void onInit() {
@@ -38,7 +40,7 @@ class TransferController extends GetxController {
     update();
   }
 
-  void showDialog(BuildContext context) {
+  void showDialogBenef(BuildContext context) {
     showModalBottomSheet<void>(
       context: context,
       isScrollControlled: true,
@@ -107,7 +109,7 @@ class TransferController extends GetxController {
     this.isSameOwner = isSameOwner;
     if(isSameOwner) {
       indexBenefAccountSelected = null;
-      showDialog(context);
+      showDialogBenef(context);
     }
     update();
   }
@@ -154,6 +156,7 @@ class TransferController extends GetxController {
     update();
   }
   setTitleDialog(int index){
+    indexTabTransfer = index;
     if(index == 0){
       titleDialog = TITLE_69;
     }else if(index == 1){
@@ -161,6 +164,25 @@ class TransferController extends GetxController {
     }else{
       titleDialog = TITLE_71;
     }
+    update();
+  }
+
+  bool validateForm(BuildContext context) {
+    if(indexTabTransfer == 0 && beneficiaryAccountController.text.isEmpty) {
+      showDialog(
+          barrierDismissible: false,
+          context: context,
+          builder: (BuildContext context) => CustomDialogTransfer(
+            title: titleDialog ?? TITLE_69,
+            cancel: CANCEL2,
+            submit: CANCEL,
+            clickCallback: () {
+              Navigator.pop(context);
+            },
+          ));
+      return false;
+    }
+    return true;
   }
 
 }

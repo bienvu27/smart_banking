@@ -25,8 +25,8 @@ class SecondsTab extends StatefulWidget {
 class _SecondsTabState extends State<SecondsTab> {
   ScrollController? _scrollController;
   bool lastStatus = true;
-  double height = 630.w;
-  double fromHeight = 77.h;
+  double height = height_630;
+  double fromHeight = height_32;
   int index = 1;
   bool statusSearch = true;
   bool visibly = true;
@@ -244,7 +244,7 @@ class _SecondsTabState extends State<SecondsTab> {
                       ),
                     ),
                     bottom: PreferredSize(
-                      preferredSize: Size.fromHeight(fromHeight),
+                      preferredSize: Size.fromHeight(fromHeight + height_8),
                       child: Container(
                         color: clr_white,
                         child: Column(
@@ -336,7 +336,7 @@ class _SecondsTabState extends State<SecondsTab> {
                       list: listContacts2,
                       // callBack: () => Get.toNamed("/transaction_infor", arguments: ''),
                       callBack: (e)=> Get.to(TransactionInforPage2()),
-                      icon: Icons.account_balance_wallet_rounded),
+                      icon: Image.asset("assets/images/napas_transfer.png", height: height_13, width: width_13,),),
                   ListContactsRecently(
                     list: listContacts2,
                     callBack: () => Get.toNamed("/transaction_infor", arguments: ''),

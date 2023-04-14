@@ -10,7 +10,6 @@ import '../../../core/style/colors.dart';
 import '../../../core/style/size.dart';
 import '../../components/button/back_icon_button.dart';
 import '../../components/button/button_component.dart';
-import '../../components/dialog/custom_dialog_transfer.dart';
 import '../controller/transfer_controller.dart';
 
 class TransferPage extends StatelessWidget {
@@ -143,22 +142,9 @@ class TransferPage extends StatelessWidget {
                     title: NEXT,
                     bgColor: button_color_home,
                     callback: (){;
-                      // if(controller.beneficiaryAccountController.text.isEmpty){
-                      //   showDialog(
-                      //       barrierDismissible: false,
-                      //       context: context,
-                      //       builder: (BuildContext context) => CustomDialogTransfer(
-                      //         title: controller.titleDialog ?? TITLE_69,
-                      //         cancel: CANCEL2,
-                      //         submit: CANCEL,
-                      //         clickCallback: () {
-                      //           Navigator.pop(context);
-                      //         },
-                      //       ));
-                      // }else{
-                          Get.toNamed("/transaction_infor", arguments: '');
-                      // }
-
+                          if(controller.validateForm(context)) {
+                            Get.toNamed("/transaction_infor", arguments: '');
+                          }
                     },
                   ),
                 )
