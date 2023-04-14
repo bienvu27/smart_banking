@@ -143,21 +143,21 @@ class TransferPage extends StatelessWidget {
                     title: NEXT,
                     bgColor: button_color_home,
                     callback: (){;
-                      if(controller.beneficiaryAccountController.text.isEmpty){
-                        showDialog(
-                            barrierDismissible: false,
-                            context: context,
-                            builder: (BuildContext context) => CustomDialogTransfer(
-                              title: controller.titleDialog ?? TITLE_69,
-                              cancel: CANCEL2,
-                              submit: CANCEL,
-                              clickCallback: () {
-                                Navigator.pop(context);
-                              },
-                            ));
-                      }else{
+                      // if(controller.beneficiaryAccountController.text.isEmpty){
+                      //   showDialog(
+                      //       barrierDismissible: false,
+                      //       context: context,
+                      //       builder: (BuildContext context) => CustomDialogTransfer(
+                      //         title: controller.titleDialog ?? TITLE_69,
+                      //         cancel: CANCEL2,
+                      //         submit: CANCEL,
+                      //         clickCallback: () {
+                      //           Navigator.pop(context);
+                      //         },
+                      //       ));
+                      // }else{
                           Get.toNamed("/transaction_infor", arguments: '');
-                      }
+                      // }
 
                     },
                   ),
