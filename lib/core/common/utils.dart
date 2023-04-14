@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:smart_banking/router/app_routers.dart';
+import 'package:smart_banking/screens/dashboard/controller/dashboard_controller.dart';
+import 'package:smart_banking/screens/home/controller/home_controller.dart';
 import '../../screens/components/button/button_component.dart';
 import '../../screens/components/dialog/custom_dialog.dart';
 import '../../screens/components/text_field/text_field_icon_component.dart';
@@ -135,6 +138,8 @@ class Utils {
                     SharedPreferences pref = await SharedPreferences.getInstance();
                     await pref.setString("username", phoneController.text);
                     Navigator.of(context).pop();
+                    Navigator.of(context).pushNamedAndRemoveUntil(AppRouters.DASHBOARD, (route) => false);
+                    Get.put(DashboardController());
                   }
                 }),
               ),
@@ -177,7 +182,7 @@ class Utils {
         context: context,
         builder: (BuildContext context) => WarningDialog(
           title: title,
-          cancel: CANCEL2,
+          cancel: CANCEL,
           clickCallback: () {
             Navigator.of(context).pop();
           },

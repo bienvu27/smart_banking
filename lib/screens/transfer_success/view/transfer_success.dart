@@ -6,6 +6,7 @@ import '../../../core/resources/strings.dart';
 import '../../../core/style/colors.dart';
 import '../../../core/style/size.dart';
 
+import '../../../router/app_routers.dart';
 import '../../register/controller/register_controller.dart';
 import '../../transaction_confirmation/view/talk_card_decoration.dart';
 import '../../transaction_confirmation/view/ticket_clipper.dart';
@@ -299,7 +300,10 @@ class TransferSuccessPage extends StatelessWidget {
               ),
             ),
             InkWell(
-              onTap: () {},
+              onTap: () {
+                Navigator.of(context).pushNamedAndRemoveUntil(AppRouters.HOME, (route) => false);
+                Navigator.of(context).pushNamed(AppRouters.TRANSFER);
+              },
               child: Column(
                 children: [
                   Container(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:smart_banking/screens/home/controller/home_controller.dart';
 import '../../../core/common/utils.dart';
 import '../../../core/resources/strings.dart';
 import '../../../core/style/colors.dart';
@@ -11,9 +11,12 @@ import '../../components/dialog/custom_dialog.dart';
 import '../../service_manager/model/service_favorite_model.dart';
 
 class ServiceFavorite extends StatelessWidget {
-  const ServiceFavorite({
+  HomeController controller;
+
+  ServiceFavorite({
     super.key,
     required this.list,
+    required this.controller
   });
 
   final List<ServiceFavoriteModel> list;
@@ -63,10 +66,8 @@ class ServiceFavorite extends StatelessWidget {
                 shrinkWrap: true,
                 children: list.map((e) {
                   return InkWell(
-                    onTap: () async {
-                      SharedPreferences pref = await SharedPreferences.getInstance();
-                      print(await pref.getString("username").toString() + "vvvv");
-                      await pref.getString("username") == null ?
+                    onTap: () {
+                      !controller.isLogin ?
                       showDialog(
                           barrierDismissible: false,
                           context: context,

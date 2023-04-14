@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
+import '../../core/common/utils.dart';
 import '../../core/resources/strings.dart';
 import '../../core/style/colors.dart';
 import '../../core/style/size.dart';
+import '../../router/app_routers.dart';
+import '../dashboard/controller/dashboard_controller.dart';
 import 'components/settings_component.dart';
 
 class SettingsPage extends StatelessWidget {
@@ -51,7 +57,7 @@ class SettingsPage extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          'Vu Xuan Bien',
+                          NAME_TEST,
                           style: TextStyle(
                             fontSize: fontSize_16,
                             fontWeight: FontWeight.w500,
@@ -64,36 +70,45 @@ class SettingsPage extends StatelessWidget {
                   Positioned(
                       top: height_28,
                       right: width_8,
-                      child: Container(
-                        padding: EdgeInsets.only(
-                          top: height_4,
-                          bottom: height_4,
-                          left: width_8,
-                          right: width_8,
-                        ),
-                        decoration: BoxDecoration(
-                          color: clr_yellow100,
-                          borderRadius: BorderRadius.circular(border_16),
-                        ),
-                        child: Row(
-                          children: [
-                            Text(
-                              EXIT,
-                              style: TextStyle(
-                                fontSize: fontSize_12,
-                                color: PRIMARY_COLOR_RED,
-                                fontWeight: FontWeight.w500,
+                      child: GestureDetector(
+                        onTap: () async {
+                          SharedPreferences pref = await SharedPreferences.getInstance();
+                          pref.remove("username");
+                          Navigator.of(context).pushNamedAndRemoveUntil(AppRouters.DASHBOARD, (route) => false);
+                          Get.put(DashboardController());
+                          Utils.showWarningDialog(context, "Đăng xuất thành công");
+                        },
+                        child: Container(
+                          padding: EdgeInsets.only(
+                            top: height_4,
+                            bottom: height_4,
+                            left: width_8,
+                            right: width_8,
+                          ),
+                          decoration: BoxDecoration(
+                            color: clr_yellow100,
+                            borderRadius: BorderRadius.circular(border_16),
+                          ),
+                          child: Row(
+                            children: [
+                              Text(
+                                EXIT,
+                                style: TextStyle(
+                                  fontSize: fontSize_12,
+                                  color: PRIMARY_COLOR_RED,
+                                  fontWeight: FontWeight.w500,
+                                ),
                               ),
-                            ),
-                            SizedBox(
-                              width: width_4,
-                            ),
-                            Icon(
-                              Icons.arrow_forward_ios,
-                              size: fontSize_11,
-                              color: PRIMARY_COLOR_RED,
-                            )
-                          ],
+                              SizedBox(
+                                width: width_4,
+                              ),
+                              Icon(
+                                Icons.arrow_forward_ios,
+                                size: fontSize_11,
+                                color: PRIMARY_COLOR_RED,
+                              )
+                            ],
+                          ),
                         ),
                       ))
                 ],

@@ -15,6 +15,15 @@ class TransferController extends GetxController {
   bool isSameOwner = false;
   String? titleDialog;
 
+  @override
+  void onInit() {
+    // TODO: implement onInit
+    super.onInit();
+    isSameOwner = false;
+    beneficiaryAccountController.clear();
+    update();
+  }
+
   TextEditingController beneficiaryAccountController = new TextEditingController();
 
   void toggle(){

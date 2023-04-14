@@ -4,15 +4,17 @@ import '../../../core/resources/name_icon.dart';
 import '../../../core/resources/strings.dart';
 import '../../../core/style/colors.dart';
 import '../../../core/style/size.dart';
+import '../controller/home_controller.dart';
 import 'authentication.dart';
 import 'infor_user.dart';
 
 class CoverWidget extends StatelessWidget {
-  bool? isLogin;
+
+  HomeController controller;
 
   CoverWidget({
     super.key,
-    bool? isLogin
+    required this.controller
   });
 
   @override
@@ -131,7 +133,7 @@ class CoverWidget extends StatelessWidget {
                                 fontWeight: FontWeight.w600,
                                 color: clr_white70),
                           ),
-                          isLogin != null && isLogin! ? Text(
+                          controller.isLogin != null && controller.isLogin! ? Text(
                             NAME_TEST.toUpperCase(),
                             style: TextStyle(
                               fontSize: fontSize_12,
@@ -148,7 +150,7 @@ class CoverWidget extends StatelessWidget {
               ],
             ),
           ),
-          if (number == 1) ...[
+          if (!controller.isLogin) ...[
             const Authentication(),
           ] else ...[
             const InforUser(),

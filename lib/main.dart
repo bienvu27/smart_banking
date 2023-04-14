@@ -9,13 +9,17 @@ import 'core/resources/constant.dart';
 import 'core/widgets/root_layout.dart';
 
 void main()  {
-  // SharedPreferences pref = await SharedPreferences.getInstance();
-  // isLogin = await pref.getString("username") != null;
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class MyApp extends StatefulWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
@@ -36,4 +40,6 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+
 
