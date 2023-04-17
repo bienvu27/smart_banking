@@ -50,7 +50,7 @@ class AppPages {
 
     GetPage(
         name: AppRouters.HOME,
-        page: () => const HomePage(),
+        page: () => HomePage(),
         binding: HomedBinding()),
 
     GetPage(

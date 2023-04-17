@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:smart_banking/screens/components/dialog/custom_dialog.dart';
 import 'package:get/get.dart';
+import 'package:smart_banking/screens/home/controller/home_controller.dart';
+import '../../../core/common/utils.dart';
 import '../../../core/resources/name_icon.dart';
 import '../../../core/resources/strings.dart';
 import '../../../core/style/colors.dart';
@@ -8,8 +10,10 @@ import '../../../core/style/size.dart';
 import 'grid_menu_component.dart';
 
 class GridMenu extends StatelessWidget {
-  const GridMenu({
+  HomeController controller;
+   GridMenu({
     super.key,
+     required this.controller
   });
 
   @override
@@ -31,6 +35,19 @@ class GridMenu extends StatelessWidget {
                   ),
                   child: GridMenuComponent(
                     callback: () {
+                      !controller.isLogin ?
+                      showDialog(
+                          barrierDismissible: false,
+                          context: context,
+                          builder: (BuildContext context) => CustomDialog(
+                            title: TITLE_31,
+                            cancel: CANCEL2,
+                            submit: LOGIN,
+                            clickCallback: () {
+                              Navigator.of(context).pop();
+                              Utils.showAuthenticationDialog(context);
+                            },
+                          )) :
                       Get.toNamed("/transfer", arguments: '');
                     },
                     title: TRANSFER,
@@ -50,15 +67,19 @@ class GridMenu extends StatelessWidget {
                   padding: EdgeInsets.only(left: width_4, right: width_10),
                   child: GridMenuComponent(
                     callback: () {
+                      !controller.isLogin ?
                       showDialog(
                           barrierDismissible: false,
                           context: context,
                           builder: (BuildContext context) => CustomDialog(
-                                title: TITLE_31,
-                                cancel: CANCEL2,
-                                submit: LOGIN,
-                                clickCallback: () {},
-                              ));
+                            title: TITLE_31,
+                            cancel: CANCEL2,
+                            submit: LOGIN,
+                            clickCallback: () {
+                              Navigator.of(context).pop();
+                              Utils.showAuthenticationDialog(context);
+                            },
+                          )):Utils.showWarningDialog(context, "Chưa cập nhật");
                     },
                     title: SERVICE_CARD,
                     icon: image_service_card,
@@ -84,15 +105,19 @@ class GridMenu extends StatelessWidget {
                   padding: EdgeInsets.only(left: width_10, right: width_4),
                   child: GridMenuComponent(
                     callback: () {
+                      !controller.isLogin ?
                       showDialog(
                           barrierDismissible: false,
                           context: context,
                           builder: (BuildContext context) => CustomDialog(
-                                title: TITLE_31,
-                                cancel: CANCEL2,
-                                submit: LOGIN,
-                                clickCallback: () {},
-                              ));
+                            title: TITLE_31,
+                            cancel: CANCEL2,
+                            submit: LOGIN,
+                            clickCallback: () {
+                              Navigator.of(context).pop();
+                              Utils.showAuthenticationDialog(context);
+                            },
+                          )):Utils.showWarningDialog(context, "Chưa cập nhật");
                     },
                     title: PAYMENT,
                     icon: image_payment,
@@ -111,15 +136,19 @@ class GridMenu extends StatelessWidget {
                   padding: EdgeInsets.only(left: width_4, right: width_10),
                   child: GridMenuComponent(
                     callback: () {
+                      !controller.isLogin ?
                       showDialog(
                           barrierDismissible: false,
                           context: context,
                           builder: (BuildContext context) => CustomDialog(
-                                title: TITLE_31,
-                                cancel: CANCEL2,
-                                submit: LOGIN,
-                                clickCallback: () {},
-                              ));
+                            title: TITLE_31,
+                            cancel: CANCEL2,
+                            submit: LOGIN,
+                            clickCallback: () {
+                              Navigator.of(context).pop();
+                              Utils.showAuthenticationDialog(context);
+                            },
+                          )):Utils.showWarningDialog(context, "Chưa cập nhật");
                     },
                     title: DEPOSITS,
                     icon: image_save_money,

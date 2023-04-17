@@ -60,7 +60,7 @@ class UserPage extends StatelessWidget {
                     ),
                     height: height_26,
                     decoration: BoxDecoration(
-                      color: Colors.grey[200],
+                      color: Colors.grey[100],
                       borderRadius: BorderRadius.circular(
                         border_16,
                       ),

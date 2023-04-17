@@ -10,7 +10,7 @@ class ListContacts extends StatelessWidget {
   });
 
   final List<ListContactsModel> list;
-  IconData? icon;
+  Widget? icon;
   Function?  callBack;
 
   @override
@@ -27,12 +27,12 @@ class ListContacts extends StatelessWidget {
               if(callBack != null){
                 callBack!(e);
               }
-            } ,
+            },
             child: Container(
               margin: EdgeInsets.only(top: height_12,),
               color: clr_white,
               child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Row(
@@ -80,7 +80,7 @@ class ListContacts extends StatelessWidget {
                       ),
                     ],
                   ),
-                  Icon(icon, color: clr_black26, size: fontSize_12,)
+                  icon ?? SizedBox()
                 ],
               ),
             ),

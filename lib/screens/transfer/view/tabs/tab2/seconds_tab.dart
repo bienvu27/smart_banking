@@ -7,12 +7,10 @@ import '../../../../../core/resources/strings.dart';
 import '../../../../../core/style/colors.dart';
 import '../../../../../core/style/size.dart';
 import '../../../../../fake_data/data_fake_home.dart';
-import '../../../../components/button/button_component.dart';
 import '../../../../transaction_infor/view/transaction_infor_page2.dart';
 import '../../../controller/transfer_controller.dart';
 import '../components/contacts_container.dart';
 import '../components/search_contacts.dart';
-import '../components/text_field_trans_fer.dart';
 import '../components/text_field_trans_fer_tab2.dart';
 import '../tab1/components/list_bank.dart';
 import '../tab1/components/list_contacts_save.dart';
@@ -27,8 +25,8 @@ class SecondsTab extends StatefulWidget {
 class _SecondsTabState extends State<SecondsTab> {
   ScrollController? _scrollController;
   bool lastStatus = true;
-  double height = 630.w;
-  double fromHeight = 77.h;
+  double height = height_630;
+  double fromHeight = height_32;
   int index = 1;
   bool statusSearch = true;
   bool visibly = true;
@@ -246,7 +244,7 @@ class _SecondsTabState extends State<SecondsTab> {
                       ),
                     ),
                     bottom: PreferredSize(
-                      preferredSize: Size.fromHeight(fromHeight),
+                      preferredSize: Size.fromHeight(fromHeight + height_8),
                       child: Container(
                         color: clr_white,
                         child: Column(
@@ -338,7 +336,7 @@ class _SecondsTabState extends State<SecondsTab> {
                       list: listContacts2,
                       // callBack: () => Get.toNamed("/transaction_infor", arguments: ''),
                       callBack: (e)=> Get.to(TransactionInforPage2()),
-                      icon: Icons.account_balance_wallet_rounded),
+                      icon: Image.asset("assets/images/napas_transfer.png", height: height_13, width: width_13,),),
                   ListContactsRecently(
                     list: listContacts2,
                     callBack: () => Get.toNamed("/transaction_infor", arguments: ''),

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:smart_banking/screens/home/controller/home_controller.dart';
+import '../../../core/common/utils.dart';
 import '../../../core/resources/strings.dart';
 import '../../../core/style/colors.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -9,9 +11,12 @@ import '../../components/dialog/custom_dialog.dart';
 import '../../service_manager/model/service_favorite_model.dart';
 
 class ServiceFavorite extends StatelessWidget {
-  const ServiceFavorite({
+  HomeController controller;
+
+  ServiceFavorite({
     super.key,
     required this.list,
+    required this.controller
   });
 
   final List<ServiceFavoriteModel> list;
@@ -62,6 +67,7 @@ class ServiceFavorite extends StatelessWidget {
                 children: list.map((e) {
                   return InkWell(
                     onTap: () {
+                      !controller.isLogin ?
                       showDialog(
                           barrierDismissible: false,
                           context: context,
@@ -69,8 +75,11 @@ class ServiceFavorite extends StatelessWidget {
                                 title: TITLE_31,
                                 cancel: CANCEL2,
                                 submit: LOGIN,
-                                clickCallback: () {},
-                              ));
+                                clickCallback: () {
+                                  Navigator.of(context).pop();
+                                  Utils.showAuthenticationDialog(context);
+                                },
+                              )):Utils.showWarningDialog(context, "Chưa cập nhật");
                     },
                     child: Column(
                       children: [

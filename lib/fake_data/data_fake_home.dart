@@ -9,6 +9,7 @@ import '../screens/notification/model/notification_model2.dart';
 import '../screens/promotion/model/promotion_model.dart';
 import '../screens/service_manager/components/services/service_name.dart';
 import '../screens/service_manager/model/service_favorite_model.dart';
+import '../screens/transfer/models/BeneficiaryAccount.dart';
 import '../screens/transfer/models/list_contacts_model.dart';
 import '../screens/transfer/view/tabs/tab2/model/icon_bank_model.dart';
 
@@ -543,6 +544,19 @@ final listBanks = [
   ),
 ];
 
+List<BeneficiaryAccount> beneficiaryList = [
+  BeneficiaryAccount(
+    account: "22210004128293",
+    surplus: "25.000"
+  ),
+  BeneficiaryAccount(
+      account: "22210004125524",
+      surplus: "30.000"
+  ),
+];
+
+
+
 List listAvailableBalances = [
   AvailableBalancesModel(number: 48010001079251, defaultCode: true, money: '50000000'),
   AvailableBalancesModel(number: 48010001079252, defaultCode: false, money: '150000000'),
@@ -553,61 +567,57 @@ List listAvailableBalances2 = [
 
 List historyTransfer = [
   HistoryTransferModel(
-    cardNumber: '970418XXXXXX59000000',
-    dateTime: '08/04/2023 17:20:41',
-    money: 500000,
-    tradingCode: 847103436,
+    cardNumber: '18000526585215',
+    dateTime: '08/04/2023 10:20:41',
+    money: 70000000,
+    tradingCode: 847103566,
     plus: true,
   ),
   HistoryTransferModel(
-    cardNumber: '9704XXXXXX59000000',
-    dateTime: '08/04/2023 17:20:41',
-    money: 500000,
-    tradingCode: 847103436,
+    cardNumber: '18000526585237',
+    dateTime: '08/04/2023 12:20:41',
+    money: 50000000,
+    tradingCode: 847107636,
     plus: false,
   ),
   HistoryTransferModel(
-    cardNumber: '19998XXXXXX59000000',
+    cardNumber: '18000526585215',
     dateTime: '08/04/2023 17:20:41',
-    money: 500000,
-    tradingCode: 847103436,
+    money: 30000000,
+    tradingCode: 847233567,
+    plus: true,
+  ),
+
+];
+
+List historyTransferIn = [
+  HistoryTransferModel(
+    cardNumber: '18000526585215',
+    dateTime: '08/04/2023 10:20:41',
+    money: 70000000,
+    tradingCode: 847103566,
     plus: true,
   ),
   HistoryTransferModel(
-    cardNumber: '970418XXXXXX59000000',
+    cardNumber: '18000526585215',
     dateTime: '08/04/2023 17:20:41',
-    money: 500000,
-    tradingCode: 847103436,
+    money: 30000000,
+    tradingCode: 847233567,
     plus: false,
   ),
+
+];
+
+List historyTransferOut = [
   HistoryTransferModel(
-    cardNumber: '970418XXXXXX59000000',
-    dateTime: '08/04/2023 17:20:41',
-    money: 500000,
-    tradingCode: 847103436,
+    cardNumber: '18000526585237',
+    dateTime: '08/04/2023 12:20:41',
+    money: 50000000,
+    tradingCode: 847107636,
     plus: false,
   ),
-  HistoryTransferModel(
-    cardNumber: '970418XXXXXX59000000',
-    dateTime: '08/04/2023 17:20:41',
-    money: 500000,
-    tradingCode: 847103436,
-    plus: false,
-  ),
-  HistoryTransferModel(
-    cardNumber: '970418XXXXXX59000000',
-    dateTime: '08/04/2023 17:20:41',
-    money: 500000,
-    tradingCode: 847103436,
-    plus: false,
-  ),
-  HistoryTransferModel(
-    cardNumber: '970418XXXXXX59000000',
-    dateTime: '08/04/2023 17:20:41',
-    money: 500000,
-    tradingCode: 847103436,
-    plus: false,
-  ),
+
+
 ];
 
 final listNotification2 = [

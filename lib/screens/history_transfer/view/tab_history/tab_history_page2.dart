@@ -15,9 +15,9 @@ class TabHistoryPage2 extends StatelessWidget {
       height: MediaQuery.of(context).size.height,
       color: Colors.white,
       child: ListView.builder(
-        itemCount: historyTransfer.length,
+        itemCount: historyTransferIn.length,
         itemBuilder: (context, index) {
-          var money = NumberFormat.decimalPattern().format(historyTransfer[index].money);
+          var money = NumberFormat.decimalPattern().format(historyTransferIn[index].money);
           return Container(
             padding: EdgeInsets.only(
               left: width_16,
@@ -34,7 +34,7 @@ class TabHistoryPage2 extends StatelessWidget {
                     SizedBox(
                       width: MediaQuery.of(context).size.width / 2.4,
                       child: Text(
-                        '${historyTransfer[index].cardNumber}',
+                        '${historyTransferIn[index].cardNumber}',
                         maxLines: 1,
                         style: TextStyle(
                           fontSize: fontSize_12,
@@ -49,7 +49,7 @@ class TabHistoryPage2 extends StatelessWidget {
                       height: height_2,
                     ),
                     Text(
-                      '${historyTransfer[index].dateTime}',
+                      '${historyTransferIn[index].dateTime}',
                       style: TextStyle(
                         fontSize: fontSize_10,
                         fontFamily: 'open_sans',
@@ -61,32 +61,32 @@ class TabHistoryPage2 extends StatelessWidget {
                     SizedBox(
                       height: height_2,
                     ),
-                    Row(
-                      children: [
-                        CircleAvatar(
-                          backgroundColor: clr_67748E,
-                          radius: border_7,
-                          child: Icon(
-                            Icons.add,
-                            color: Colors.white,
-                            size: fontSize_11,
-                          ),
-                        ),
-                        SizedBox(
-                          width: width_4,
-                        ),
-                        Text(
-                          'Thêm vào quản lý chi tiêu',
-                          style: TextStyle(
-                            fontSize: fontSize_10,
-                            fontFamily: 'open_sans',
-                            color: clr_black54,
-                            overflow: TextOverflow.ellipsis,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ],
-                    )
+                    // Row(
+                    //   children: [
+                    //     CircleAvatar(
+                    //       backgroundColor: PRIMARY_COLOR,
+                    //       radius: border_7,
+                    //       child: Icon(
+                    //         Icons.add,
+                    //         color: Colors.white,
+                    //         size: fontSize_11,
+                    //       ),
+                    //     ),
+                    //     SizedBox(
+                    //       width: width_4,
+                    //     ),
+                    //     Text(
+                    //       'Thêm vào quản lý chi tiêu',
+                    //       style: TextStyle(
+                    //         fontSize: fontSize_10,
+                    //         fontFamily: 'open_sans',
+                    //         color: PRIMARY_COLOR,
+                    //         overflow: TextOverflow.ellipsis,
+                    //         fontWeight: FontWeight.w500,
+                    //       ),
+                    //     ),
+                    //   ],
+                    // )
                   ],
                 ),
                 Column(
@@ -100,7 +100,7 @@ class TabHistoryPage2 extends StatelessWidget {
                           style: TextStyle(
                             fontSize: fontSize_12,
                             fontFamily: 'open_sans',
-                            color: clr_67748E,
+                            color: clr_4caf50,
                             overflow: TextOverflow.ellipsis,
                             fontWeight: FontWeight.w600,
                           ),
@@ -111,7 +111,7 @@ class TabHistoryPage2 extends StatelessWidget {
                           style: TextStyle(
                             fontSize: fontSize_12,
                             fontFamily: 'open_sans',
-                            color: clr_67748E,
+                            color: clr_4caf50,
                             overflow: TextOverflow.ellipsis,
                             fontWeight: FontWeight.w600,
                           ),
@@ -122,13 +122,13 @@ class TabHistoryPage2 extends StatelessWidget {
                       height: height_2,
                     ),
                     Text(
-                      'Mã GD: ${historyTransfer[index].tradingCode}',
+                      'Mã GD: ${historyTransferIn[index].tradingCode}',
                       style: TextStyle(
                         fontSize: fontSize_9,
                         fontFamily: 'open_sans',
                         color: clr_black54,
                         overflow: TextOverflow.ellipsis,
-                        fontWeight: FontWeight.w600,
+                        fontWeight: FontWeight.w500,
                       ),
                     ),
                   ],

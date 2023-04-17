@@ -25,7 +25,7 @@ class DashBoardPage extends GetView<DashboardController> {
               ),
               floatingActionButton: const DashBoardFloatingActionButton(),
               floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-              bottomNavigationBar: DashboardBottomNavigatorBar(),
+              bottomNavigationBar: DashboardBottomNavigatorBar(controller: controller,),
             );
           },
         ));

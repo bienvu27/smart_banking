@@ -4,12 +4,17 @@ import '../../../core/resources/name_icon.dart';
 import '../../../core/resources/strings.dart';
 import '../../../core/style/colors.dart';
 import '../../../core/style/size.dart';
+import '../controller/home_controller.dart';
 import 'authentication.dart';
 import 'infor_user.dart';
 
 class CoverWidget extends StatelessWidget {
-  const CoverWidget({
+
+  HomeController controller;
+
+  CoverWidget({
     super.key,
+    required this.controller
   });
 
   @override
@@ -17,19 +22,19 @@ class CoverWidget extends StatelessWidget {
     int number = 2;
     final height = MediaQuery.of(context).size.height;
     return SizedBox(
-      height: height / 1.34,
+      height: height / 1.8,
       child: Stack(
         children: [
           Container(
-            height: height / 1.5,
+            height: height / 2,
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: AssetImage(vrb_banner),
                 fit: BoxFit.fill,
-                colorFilter: ColorFilter.mode(
-                  Colors.black.withOpacity(1.0),
-                  BlendMode.softLight,
-                ),
+                // colorFilter: ColorFilter.mode(
+                //   Colors.black.withOpacity(1.0),
+                //   BlendMode.softLight,
+                // ),
               ),
             ),
           ),
@@ -128,7 +133,7 @@ class CoverWidget extends StatelessWidget {
                                 fontWeight: FontWeight.w600,
                                 color: clr_white70),
                           ),
-                          Text(
+                          controller.isLogin != null && controller.isLogin! ? Text(
                             NAME_TEST.toUpperCase(),
                             style: TextStyle(
                               fontSize: fontSize_12,
@@ -136,7 +141,7 @@ class CoverWidget extends StatelessWidget {
                               fontWeight: FontWeight.w700,
                               color: clr_white,
                             ),
-                          ),
+                          ) : SizedBox(),
                         ],
                       ),
                     )
@@ -145,7 +150,7 @@ class CoverWidget extends StatelessWidget {
               ],
             ),
           ),
-          if (number == 1) ...[
+          if (!controller.isLogin) ...[
             const Authentication(),
           ] else ...[
             const InforUser(),

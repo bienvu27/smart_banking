@@ -89,7 +89,7 @@ class CustomDialog extends StatelessWidget {
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(border_5),
-                          gradient: linearGradientBtnDialog),
+                          gradient: linearGradientButtom),
                       child: Text(
                         submit,
                         style: TextStyle(

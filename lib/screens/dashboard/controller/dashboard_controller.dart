@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
-
+import 'package:smart_banking/screens/home/controller/home_controller.dart';
 import '../../home/view/home_page.dart';
 import '../../notification/notifications_page.dart';
 import '../../promotion/promotion_page.dart';
@@ -11,6 +11,7 @@ import '../view/dashboard_page.dart';
 
 class DashboardController extends GetxController {
   int currentTab = 0;
+
   final List<Widget> screens = [
     const DashBoardPage(),
     const PromotionPage(),
@@ -26,4 +27,14 @@ class DashboardController extends GetxController {
     currentTab = index;
     update();
   }
+  @override
+  void onInit() {
+    // TODO: implement onInit
+    super.onInit();
+    currentTab = 0;
+    currentScreen = const HomePage();
+    Get.put(HomeController());
+    update();;
+  }
+
 }

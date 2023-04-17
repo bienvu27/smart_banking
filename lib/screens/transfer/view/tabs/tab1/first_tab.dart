@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:smart_banking/screens/transfer/controller/transfer_controller.dart';
 import '../../../../../core/resources/strings.dart';
 import '../../../../../core/style/colors.dart';
 import '../../../../../core/style/size.dart';
 import '../../../../../fake_data/data_fake_home.dart';
-import '../../../../components/button/button_component.dart';
 import '../components/contacts_container.dart';
 import '../components/search_contacts.dart';
 import '../components/text_field_trans_fer.dart';
@@ -14,8 +14,10 @@ import 'components/list_contacts_recently.dart';
 import 'components/list_contacts_save.dart';
 
 class FirstTab extends StatefulWidget {
-  const FirstTab({Key? key}) : super(key: key);
+  const FirstTab({Key? key, required this.controller}) : super(key: key);
 
+  final TransferController controller;
+  
   @override
   State<FirstTab> createState() => _FirstTabState();
 }
@@ -56,6 +58,8 @@ class _FirstTabState extends State<FirstTab> {
     super.dispose();
   }
 
+
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -77,10 +81,50 @@ class _FirstTabState extends State<FirstTab> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
+                          Container(
+                            decoration: BoxDecoration(
+                              color: clr_f5f5f5,
+                              borderRadius: BorderRadius.circular(border_10),
+                            ),
+                            margin: EdgeInsets.only(top: height_10, right: width_13, left: width_13),
+                            child: Padding(
+                              padding: EdgeInsets.symmetric(vertical: height_5, horizontal: width_10),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text("Cùng chủ tài khoản",
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      fontSize: fontSize_11,
+                                      fontFamily: 'open_sans',
+                                      fontWeight: FontWeight.bold,
+                                      color: clr_Text_Grey,
+                                      height: lineHeight_1_2,
+                                    ),
+                                  ),
+                                  Switch(
+                                    value: widget.controller.isSameOwner,
+                                    onChanged: (value) => widget.controller.toggleSameOwner(context, !widget.controller.isSameOwner),
+                                    activeColor: PRIMARY_COLOR,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                          widget.controller.isSameOwner ? GestureDetector(
+                            onTap: () => widget.controller.showDialogBenef(context),
+                            child: TextFieldTransFer(
+                              enabled: false,
+                              labelText: TITLE_CHOOSE_BENEF,
+                              suffixIcon: Icons.arrow_drop_down_sharp,
+                              textEditingController: widget.controller.beneficiaryAccountController,
+                            ),
+                          ) :
                           TextFieldTransFer(
                             enabled: true,
                             labelText: TITLE_33,
                             suffixIcon: Icons.account_box_outlined,
+                            textEditingController: widget.controller.beneficiaryAccountController,
                           ),
                           ContactsContainer(),
                         ],

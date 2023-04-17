@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:smart_banking/core/common/utils.dart';
 
 import '../../../core/resources/strings.dart';
 import '../../../core/style/colors.dart';
@@ -13,11 +15,13 @@ import '../../settings/settings_page.dart';
 import '../controller/dashboard_controller.dart';
 
 class DashboardBottomNavigatorBar extends StatelessWidget {
+
+  DashboardController controller;
+
    DashboardBottomNavigatorBar({
     super.key,
+     required this.controller
   });
-
-  final controller = Get.put(DashboardController());
 
   @override
   Widget build(BuildContext context) {
@@ -164,9 +168,15 @@ class DashboardBottomNavigatorBar extends StatelessWidget {
                     ),
                   ),
                   InkWell(
-                    onTap: () {
-                      controller.currentScreen = const SettingsPage();
-                      controller.changeTabIndex(5);
+                    onTap: () async {
+                      SharedPreferences pref = await SharedPreferences.getInstance();
+                      bool isLogin = await pref.getString("username") != null;
+                      if(isLogin) {
+                        controller.currentScreen = const SettingsPage();
+                        controller.changeTabIndex(5);
+                      } else {
+                        Utils.showAuthenticationDialog(context);
+                      }
                       // controller.changeTabIndex(0);
                     },
                     child: Column(

@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:get/get_connect/http/src/utils/utils.dart';
-import '../../../../../core/resources/name_icon.dart';
 import '../../../../../core/style/colors.dart';
 import '../../../../../core/style/size.dart';
-import '../../../controller/transfer_controller.dart';
 
 class TextFieldTransFerTab2 extends StatelessWidget {
   TextFieldTransFerTab2({
@@ -47,18 +44,14 @@ class TextFieldTransFerTab2 extends StatelessWidget {
         ),
         decoration: InputDecoration(
           labelText: labelText,
-          prefix: Padding(
+          prefix: subfix != null && subfix!.isNotEmpty ? Padding(
             padding: EdgeInsets.only(right: width_8),
             child: CircleAvatar(
               backgroundColor: Colors.black12,
               radius: 15.r,
-              child: Image.asset(
-                subfix ?? '',
-                width: width_8,
-                height: height_8,
-              ),
+              child: Image.asset(subfix!, width: width_8, height: height_8,) ,
             ),
-          ),
+          ) : SizedBox(),
           suffixIcon: InkWell(
             onTap: () => Get.toNamed("/contacts_manager", arguments: ''),
             child: Icon(

@@ -22,13 +22,16 @@ class TextFieldTransFer extends StatelessWidget {
             padding: EdgeInsets.only(
               left: width_16,
               right: width_16,
-              top: height_12,
             ),
             child: TextField(
               keyboardType: TextInputType.number,
               enabled: enabled,
-              onTap: () => callback!(),
-              controller: TextEditingController(text: title),
+              onTap: () {
+                if(callback != null) {
+                  callback!();
+                }
+              },
+              controller: textEditingController ?? new TextEditingController(),
 
               style: TextStyle(
                 fontSize: fontSize_12,

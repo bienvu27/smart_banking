@@ -268,8 +268,7 @@ class TransactionInforPage2 extends StatelessWidget {
                       ),
                       Switch(
                         value: controller.isSwitched,
-                        thumbColor: MaterialStatePropertyAll<Color>(controller.isSwitched ? clr_1ac5b6 : clr_e2e3e3),
-                        activeColor: clr_adb5bd,
+                        activeColor: PRIMARY_COLOR,
                         onChanged: (value) {
                           controller.toggle();
                           // controller.isSwitched = value;
