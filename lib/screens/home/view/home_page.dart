@@ -38,7 +38,7 @@ class _HomePageState extends State<HomePage> {
                         width: width_80,
                         height: height_80,
                         color: color_white_opacity,
-                        colorBlendMode: BlendMode.modulate,
+                        colorBlendMode: BlendMode.softLight,
                       ),
                     ),
                   ),

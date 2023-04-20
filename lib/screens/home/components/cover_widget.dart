@@ -31,10 +31,10 @@ class CoverWidget extends StatelessWidget {
               image: DecorationImage(
                 image: AssetImage(vrb_banner),
                 fit: BoxFit.fill,
-                // colorFilter: ColorFilter.mode(
-                //   Colors.black.withOpacity(1.0),
-                //   BlendMode.softLight,
-                // ),
+                colorFilter: ColorFilter.mode(
+                  Colors.black.withOpacity(1.0),
+                  BlendMode.softLight,
+                ),
               ),
             ),
           ),
