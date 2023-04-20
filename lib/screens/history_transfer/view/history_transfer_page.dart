@@ -123,145 +123,303 @@ class _HistoryTransferPageState extends State<HistoryTransferPage> {
                                   right: width_12,
                                 ),
                                 height: MediaQuery.of(context).size.height / 1.1,
-                                child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      Row(
-                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          Text(
-                                            DETAIL_USER,
-                                            style: TextStyle(
-                                              fontFamily: 'open_sans',
-                                              fontSize: fontSize_11,
-                                              fontWeight: FontWeight.w600,
-                                            ),
-                                          ),
-                                          InkWell(
-                                            onTap: () => Navigator.pop(context),
-                                            child: Text(
-                                              CANCEL,
+                                child: SingleChildScrollView(
+                                  child: Column(
+                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        Row(
+                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Text(
+                                              DETAIL_USER,
                                               style: TextStyle(
-                                                fontSize: fontSize_11,
-                                                color: PRIMARY_COLOR,
                                                 fontFamily: 'open_sans',
+                                                fontSize: fontSize_11,
                                                 fontWeight: FontWeight.w600,
                                               ),
                                             ),
-                                          ),
-                                        ],
-                                      ),
-                                      SizedBox(
-                                        height: height_16,
-                                      ),
-                                      Column(
-                                        children: [
-                                          RowTitle(
-                                            title: TITLE_55,
-                                            subTitle: NAME_TEST,
-                                          ),
-                                          SizedBox(
-                                            height: height_12,
-                                          ),
-                                          RowTitle(
-                                            title: ACCOUNT_NUMBER,
-                                            subTitle: NUMBER_TEST,
-                                          ),
-                                          SizedBox(
-                                            height: height_12,
-                                          ),
-                                          RowTitle(
-                                            title: TITLE_56,
-                                            subTitle: DATE_TEST,
-                                          ),
-                                          SizedBox(
-                                            height: height_12,
-                                          ),
-                                          RowTitle(
-                                            title: AVAILABLE,
-                                            subTitle: MONEY_TEST,
-                                          ),
-                                          SizedBox(
-                                            height: height_12,
-                                          ),
-                                          RowTitle(
-                                            title: AVAILABLE_BALANCES,
-                                            subTitle: MONEY_TEST,
-                                          ),
-                                          SizedBox(
-                                            height: height_12,
-                                          ),
-                                          RowTitle(
-                                            title: TITLE_57,
-                                            subTitle: TITLE_58,
-                                          ),
-                                          SizedBox(
-                                            height: height_12,
-                                          ),
-                                          RowTitle(
-                                            title: TITLE_59,
-                                            subTitle: VND,
-                                          ),
-                                          SizedBox(
-                                            height: height_12,
-                                          ),
-                                          RowTitle(
-                                            title: TITLE_60,
-                                            subTitle: TITLE_61,
-                                          ),
-                                          SizedBox(
-                                            height: height_12,
-                                          ),
-                                        ],
-                                      ),
-                                      SizedBox(
-                                        height: height_8,
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsets.only(bottom: height_8),
-                                        child: Container(
-                                          margin: EdgeInsets.only(
-                                            right: width_2_5,
-                                          ),
-                                          padding: EdgeInsets.only(
-                                            top: height_2,
-                                            bottom: height_2,
-                                          ),
-                                          alignment: Alignment.center,
-                                          decoration: BoxDecoration(
-                                            borderRadius: BorderRadius.circular(border_8),
-                                            color: button_color_home,
-                                          ),
-                                          child: Row(
-                                            children: [
-                                              GetBuilder<HistoryTransferController>(
-                                                init: HistoryTransferController(),
-                                                builder: (controller) {
-                                                  return Checkbox(
-                                                    value: controller.isChecked,
-                                                    onChanged: (value) {
-                                                      controller.toggleCheckbox(controller.isChecked);
-                                                    },
-                                                    activeColor: PRIMARY_COLOR,
-                                                    checkColor: clr_white,
-                                                    tristate: false,
-                                                  );
-                                                },
-                                              ),
-                                              Text(
-                                                TITLE_62,
+                                            InkWell(
+                                              onTap: () => Navigator.pop(context),
+                                              child: Text(
+                                                CANCEL,
                                                 style: TextStyle(
-                                                    fontSize: fontSize_10,
-                                                    fontFamily: 'open_sans',
-                                                    fontWeight: FontWeight.w500,
-                                                    color: PRIMARY_COLOR),
+                                                  fontSize: fontSize_11,
+                                                  color: PRIMARY_COLOR,
+                                                  fontFamily: 'open_sans',
+                                                  fontWeight: FontWeight.w600,
+                                                ),
                                               ),
-                                            ],
+                                            ),
+                                          ],
+                                        ),
+
+                                        SizedBox(
+                                          height: height_16,
+                                        ),
+
+                                        Column(
+                                          children: [
+
+                                            RowTitle(
+                                              title: ACCOUNT_NUMBER,
+                                              subTitle: NUMBER_TEST,
+                                            ),
+
+                                            SizedBox(
+                                              height: height_12,
+                                            ),
+
+                                            RowTitle(
+                                              title: "Thời đuển truy vấn",
+                                              subTitle: "16:00:00 19/04/2023",
+                                            ),
+
+                                            SizedBox(
+                                              height: height_12,
+                                            ),
+
+                                            RowTitle(
+                                              title: TITLE_55,
+                                              subTitle: NAME_TEST,
+                                            ),
+
+                                            SizedBox(
+                                              height: height_12,
+                                            ),
+
+                                            RowTitle(
+                                              title: "Loại sản phẩm",
+                                              subTitle: "TK THANH TOAN TRUC TUYEN",
+                                            ),
+
+                                            SizedBox(
+                                              height: height_12,
+                                            ),
+
+                                            RowTitle(
+                                              title: TITLE_60,
+                                              subTitle: TITLE_61,
+                                            ),
+
+                                            SizedBox(
+                                              height: height_12,
+                                            ),
+
+                                            RowTitle(
+                                              title: TITLE_56,
+                                              subTitle: DATE_TEST,
+                                            ),
+
+                                            SizedBox(
+                                              height: height_12,
+                                            ),
+
+                                            RowTitle(
+                                              title: "Trạng thái",
+                                              subTitle: "Hoạt động",
+                                            ),
+
+                                            SizedBox(
+                                              height: height_12,
+                                            ),
+
+                                          ],
+                                        ),
+
+                                        SizedBox(
+                                          height: height_8,
+                                        ),
+
+                                        Row(
+                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Text(
+                                              "Chi tiết số dư",
+                                              style: TextStyle(
+                                                fontFamily: 'open_sans',
+                                                fontSize: fontSize_11,
+                                                fontWeight: FontWeight.w600,
+                                              ),
+                                            ),
+                                            SizedBox()
+                                          ],
+                                        ),
+
+                                        SizedBox(
+                                          height: height_16,
+                                        ),
+
+                                        Column(
+                                          children: [
+
+                                            RowTitle(
+                                              title: TITLE_59,
+                                              subTitle: VND,
+                                            ),
+
+                                            SizedBox(
+                                              height: height_12,
+                                            ),
+
+                                            RowTitle(
+                                              title: AVAILABLE_BALANCES,
+                                              subTitle: MONEY_TEST,
+                                            ),
+
+                                            SizedBox(
+                                              height: height_12,
+                                            ),
+
+                                            RowTitle(
+                                              title: AVAILABLE,
+                                              subTitle: MONEY_TEST,
+                                            ),
+
+                                            SizedBox(
+                                              height: height_12,
+                                            ),
+
+                                            RowTitle(
+                                              title: "Số tiền phong tỏa",
+                                              subTitle: '0',
+                                            ),
+
+                                            SizedBox(
+                                              height: height_12,
+                                            ),
+
+                                            RowTitle(
+                                              title: TITLE_57,
+                                              subTitle: TITLE_58,
+                                            ),
+
+                                            SizedBox(
+                                              height: height_12,
+                                            ),
+
+                                            RowTitle(
+                                              title: "Lãi cộng dồn",
+                                              subTitle: TITLE_58,
+                                            ),
+
+                                            SizedBox(
+                                              height: height_12,
+                                            ),
+
+                                          ]
+                                        ),
+
+                                        SizedBox(
+                                          height: height_8,
+                                        ),
+
+                                        Row(
+                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Text(
+                                              "Thấu chi",
+                                              style: TextStyle(
+                                                fontFamily: 'open_sans',
+                                                fontSize: fontSize_11,
+                                                fontWeight: FontWeight.w600,
+                                              ),
+                                            ),
+                                            SizedBox()
+                                          ],
+                                        ),
+
+                                        SizedBox(
+                                          height: height_16,
+                                        ),
+
+                                        Column(
+                                            children: [
+
+                                              RowTitle(
+                                                title: "Hạn mức được cấp",
+                                                subTitle: "0",
+                                              ),
+
+                                              SizedBox(
+                                                height: height_12,
+                                              ),
+
+                                              RowTitle(
+                                                title: "Hạn mức đã sử dụng",
+                                                subTitle: "0",
+                                              ),
+
+                                              SizedBox(
+                                                height: height_12,
+                                              ),
+
+                                              RowTitle(
+                                                title: "Hạn mức còn lại",
+                                                subTitle: "0",
+                                              ),
+
+                                              SizedBox(
+                                                height: height_12,
+                                              ),
+
+                                              RowTitle(
+                                                title: "Lãi",
+                                                subTitle: '0%',
+                                              ),
+
+                                              SizedBox(
+                                                height: height_12,
+                                              ),
+
+                                            ]
+                                        ),
+
+                                        Padding(
+                                          padding: EdgeInsets.only(bottom: height_8),
+                                          child: Container(
+                                            margin: EdgeInsets.only(
+                                              right: width_2_5,
+                                            ),
+                                            padding: EdgeInsets.only(
+                                              top: height_2,
+                                              bottom: height_2,
+                                            ),
+                                            alignment: Alignment.center,
+                                            decoration: BoxDecoration(
+                                              borderRadius: BorderRadius.circular(border_8),
+                                              color: button_color_home,
+                                            ),
+                                            child: Row(
+                                              children: [
+                                                GetBuilder<HistoryTransferController>(
+                                                  init: HistoryTransferController(),
+                                                  builder: (controller) {
+                                                    return Checkbox(
+                                                      value: controller.isChecked,
+                                                      onChanged: (value) {
+                                                        controller.toggleCheckbox(controller.isChecked);
+                                                      },
+                                                      activeColor: PRIMARY_COLOR,
+                                                      checkColor: clr_white,
+                                                      tristate: false,
+                                                    );
+                                                  },
+                                                ),
+                                                Text(
+                                                  TITLE_62,
+                                                  style: TextStyle(
+                                                      fontSize: fontSize_10,
+                                                      fontFamily: 'open_sans',
+                                                      fontWeight: FontWeight.w500,
+                                                      color: PRIMARY_COLOR),
+                                                ),
+                                              ],
+                                            ),
                                           ),
                                         ),
-                                      ),
-                                    ]),
+                                      ]),
+                                ),
                               );
                             },
                           );

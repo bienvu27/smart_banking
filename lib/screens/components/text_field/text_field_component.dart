@@ -7,18 +7,27 @@ class TextFieldComponent extends StatelessWidget {
     super.key,
     required this.label,
     required this.textInputType,
+     this.textController,
+     this.onChange,
     this.text
   });
 
   final String label;
   String? text;
+  TextEditingController? textController;
+  Function? onChange;
   final TextInputType textInputType;
 
   @override
   Widget build(BuildContext context) {
     return TextField(
       keyboardType: textInputType,
-      controller: TextEditingController(text: text),
+      controller: textController ?? TextEditingController(text: text),
+      onChanged: (_) {
+        if(onChange != null) {
+          onChange!(_);
+        }
+      },
       style: TextStyle(
         fontSize: fontSize_12,
         fontWeight: FontWeight.w600,
