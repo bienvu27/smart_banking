@@ -41,6 +41,7 @@ class GridViewComponent extends StatelessWidget {
               ),
             ],
           ),
+          SizedBox(height: height_16,),
           GridView.count(
               physics: const NeverScrollableScrollPhysics(),
               shrinkWrap: true,

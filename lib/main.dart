@@ -52,10 +52,17 @@ class TestEntrust extends StatefulWidget {
 }
 
 class _TestEntrustState extends State<TestEntrust> {
-  static const platform = MethodChannel('entrust.sdk/flutter');
+  static const platform = MethodChannel('entrust.sdk.dev/flutter');
 
   Future<void> testEntrust() async {
-    await platform.invokeMethod("test");
+    try {
+      final package =
+      await platform.invokeMethod("test");
+      print(package);
+    } on PlatformException catch (e) {
+      print("Failed to get battery level: ${e.message}");
+    }
+
   }
 
   @override

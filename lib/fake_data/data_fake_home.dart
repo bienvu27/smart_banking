@@ -1,6 +1,7 @@
 import 'package:smart_banking/screens/transfer/models/list_bank_model.dart';
 import 'package:smart_banking/screens/user/model/list_available_balances_model.dart';
 
+import '../screens/card_service/card_model.dart';
 import '../screens/history_transfer/model/history_transfer_model.dart';
 import '../screens/home/model/list_service_model.dart';
 import '../screens/notification/model/description_model.dart';
@@ -22,10 +23,26 @@ final list = [
   ServiceFavoriteModel(image: 'assets/svg/icon_gradient/220107.svg', title: 'Thông báo ngân hàng')
 ];
 
+final listCardService = [
+  ServiceFavoriteModel(image: 'assets/svg/icon_gradient/210405.svg', title: 'Phát hành thẻ Online'),
+  ServiceFavoriteModel(image: 'assets/svg/icon_gradient/210501.svg', title: 'Thanh toán sao kê'),
+  ServiceFavoriteModel(image: 'assets/svg/icon_gradient/210208.svg', title: 'Chuyển đổi thẻ từ sang thẻ chip'),
+];
+
+final imagesCard = [
+  CardModel(image:  "assets/images/card.png", numberCard: "5119 xxxxxxxx 7103", name: "VU XUAN BIEN"),
+];
+
+
 List<String> images = [
   "assets/images/list_images/image_3.jpg",
   "assets/images/list_images/image_2.jpg",
   "assets/images/list_images/image_1.jpg",
+];
+
+List<String> imagesCardService = [
+  "assets/images/list_images/image_7.jpg",
+  "assets/images/list_images/image_8.png",
 ];
 
 final listService = [

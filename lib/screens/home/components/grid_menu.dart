@@ -79,7 +79,9 @@ class GridMenu extends StatelessWidget {
                               Navigator.of(context).pop();
                               Utils.showAuthenticationDialog(context);
                             },
-                          )):Utils.showWarningDialog(context, "Chưa cập nhật");
+                          ),)
+                          : Get.toNamed("/card_service", arguments: '');
+                      // Utils.showWarningDialog(context, "Chưa cập nhật");
                     },
                     title: SERVICE_CARD,
                     icon: image_service_card,
