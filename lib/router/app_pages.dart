@@ -65,7 +65,7 @@ class AppPages {
 
     GetPage(
         name: AppRouters.TRANSACTION_INFOR,
-        page: () => const TransactionInforPage(),
+        page: () => TransactionInforPage(),
         binding: TransactionInforBinding()),
 
     GetPage(
