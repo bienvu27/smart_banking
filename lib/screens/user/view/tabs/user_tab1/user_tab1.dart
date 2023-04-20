@@ -225,7 +225,7 @@ class _UserTab1State extends State<UserTab1> {
                                                           ),
                                                         ),
                                                         TextSpan(
-                                                          text: ', ngoài ',
+                                                          text: ',\n ngoài ',
                                                           style: TextStyle(
                                                             fontFamily: 'open_sans',
                                                             fontSize: fontSize_10,
@@ -243,7 +243,7 @@ class _UserTab1State extends State<UserTab1> {
                                                           ),
                                                         ),
                                                         TextSpan(
-                                                          text: ' (song phương, ',
+                                                          text: ' (Liên ngân hàng, ',
                                                           style: TextStyle(
                                                             fontFamily: 'open_sans',
                                                             fontSize: fontSize_10,
@@ -252,14 +252,7 @@ class _UserTab1State extends State<UserTab1> {
                                                           ),
                                                         ),
                                                         WidgetSpan(
-                                                          child: Container(
-                                                            height: height_11,
-                                                            width: width_40,
-                                                            decoration: BoxDecoration(
-                                                                image: DecorationImage(
-                                                              image: AssetImage(image_napas),
-                                                            )),
-                                                          ),
+                                                          child: Image.asset(image_napas247, width: 70,  fit: BoxFit.fill,)
                                                         ),
                                                         TextSpan(
                                                           text: ')',

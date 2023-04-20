@@ -71,4 +71,6 @@ dependencies {
     implementation files("libs/igmobile-sdk-android-4.5.0.1.aar")
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'com.android.support:multidex:1.0.3'
+    implementation 'org.tinylog:tinylog-api:2.4.1'
+    runtimeOnly 'org.tinylog:tinylog-impl:2.4.1'
 }

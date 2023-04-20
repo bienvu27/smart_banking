@@ -10,6 +10,7 @@ const image_shopping = "assets/svg/icon_white/210101.svg";
 const image_transfer_success = "https://www.bidv.com.vn/smartbanking/grandsale2023/grandsale/bfb.jpg";
 const image_payment = "assets/svg/icon_white/2105.svg";
 const image_napas = "assets/images/logo_napas.png";
+const image_napas247 = "assets/images/logo_napas247.png";
 const image_vietqr = "assets/images/icons_bank/icon_vietqr.webp";
 const image_qr = "assets/images/qr_code.png";
 const card_mobile = "assets/svg/icon_gradient/210502.svg";
