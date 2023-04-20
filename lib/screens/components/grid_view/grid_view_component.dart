@@ -8,11 +8,12 @@ import '../../components/dialog/custom_dialog.dart';
 import '../../service_manager/model/service_favorite_model.dart';
 
 class GridViewComponent extends StatelessWidget {
-  GridViewComponent({super.key, required this.list, required this.title, this.subTitle});
+  GridViewComponent({super.key, required this.list, required this.title, this.subTitle, this.callback});
 
   final List<ServiceFavoriteModel> list;
   final String title;
   String? subTitle;
+  VoidCallback? callback;
 
   @override
   Widget build(BuildContext context) {
@@ -31,12 +32,15 @@ class GridViewComponent extends StatelessWidget {
                   color: clr_black,
                 ),
               ),
-              Text(
-                subTitle ?? '',
-                style: TextStyle(
-                  fontSize: fontSize_12,
-                  fontWeight: FontWeight.w600,
-                  color: PRIMARY_COLOR,
+              InkWell(
+                onTap: ()=> callback!(),
+                child: Text(
+                  subTitle ?? '',
+                  style: TextStyle(
+                    fontSize: fontSize_12,
+                    fontWeight: FontWeight.w600,
+                    color: PRIMARY_COLOR,
+                  ),
                 ),
               ),
             ],

@@ -29,6 +29,13 @@ final listCardService = [
   ServiceFavoriteModel(image: 'assets/svg/icon_gradient/210208.svg', title: 'Chuyển đổi thẻ từ sang thẻ chip'),
 ];
 
+final listCardService2 = [
+  ServiceFavoriteModel(image: 'assets/svg/icon_gradient/210405.svg', title: 'Phát hành thẻ Online'),
+  ServiceFavoriteModel(image: 'assets/svg/icon_gradient/210501.svg', title: 'Thanh toán sao kê'),
+  ServiceFavoriteModel(image: 'assets/svg/icon_gradient/210208.svg', title: 'Chuyển đổi thẻ từ sang thẻ chip'),
+  ServiceFavoriteModel(image: 'assets/svg/icon_gradient/210102.svg', title: 'Thanh toán viện phí'),
+];
+
 final imagesCard = [
   CardModel(image:  "assets/images/card.png", numberCard: "5119 xxxxxxxx 7103", name: "VU XUAN BIEN"),
 ];

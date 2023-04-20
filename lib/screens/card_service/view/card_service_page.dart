@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:smart_banking/screens/components/app_bar/app_bar_component.dart';
 
 import '../../../core/resources/strings.dart';
@@ -81,6 +82,119 @@ class CardServicePage extends StatelessWidget {
                       list: listCardService,
                       title: LIST_SERVICE,
                       subTitle: SEE_ALL_SERVICES_2,
+                      callback: () {
+                        showModalBottomSheet<void>(
+                          backgroundColor: Colors.white,
+                          context: context,
+                          isScrollControlled: true,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.vertical(
+                              top: Radius.circular(border_10),
+                            ),
+                          ),
+                          builder: (BuildContext context) {
+                            return Container(
+                              margin: EdgeInsets.only(
+                                top: height_8,
+                              ),
+                              color: Colors.white,
+                              padding: EdgeInsets.only(
+                                top: height_12,
+                                left: width_12,
+                                right: width_12,
+                              ),
+                              // height: MediaQuery.of(context).size.height / 2.3,
+                              child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Row(
+                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Text(
+                                          SEE_ALL_SERVICES_2,
+                                          style: TextStyle(
+                                            fontFamily: 'open_sans',
+                                            fontSize: fontSize_12,
+                                            fontWeight: FontWeight.w600,
+                                          ),
+                                        ),
+                                        InkWell(
+                                          onTap: () => Navigator.pop(context),
+                                          child: Text(
+                                            CANCEL,
+                                            style: TextStyle(
+                                              fontSize: fontSize_12,
+                                              color: PRIMARY_COLOR,
+                                              fontFamily: 'open_sans',
+                                              fontWeight: FontWeight.w600,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    SizedBox(
+                                      height: height_16,
+                                    ),
+                                    GridView.count(
+                                        physics: const NeverScrollableScrollPhysics(),
+                                        shrinkWrap: true,
+                                        primary: false,
+                                        crossAxisSpacing: 10,
+                                        mainAxisSpacing: 10,
+                                        crossAxisCount: 3,
+                                        children: listCardService2.map((e) {
+                                          return InkWell(
+                                            onTap: () {
+                                            },
+                                            child: Column(
+                                              children: [
+                                                Stack(
+                                                  alignment: Alignment.center,
+                                                  children: [
+                                                    SvgPicture.asset(
+                                                      '${e.image}',
+                                                      width: width_40,
+                                                      height: height_40,
+                                                      fit: BoxFit.contain,
+                                                    ),
+                                                    Positioned(
+                                                      bottom: height_5,
+                                                      child: Container(
+                                                        width: width_20,
+                                                        height: 0.1.h,
+                                                        decoration: BoxDecoration(
+                                                          boxShadow: [boxShadowIcon],
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                                SizedBox(
+                                                  height: height_6,
+                                                ),
+                                                Flexible(
+                                                  child: Text(
+                                                    e.title ?? '',
+                                                    maxLines: 2,
+                                                    textAlign: TextAlign.center,
+                                                    style: TextStyle(
+                                                      fontSize: fontSize_10,
+                                                      overflow: TextOverflow.ellipsis,
+                                                      fontWeight: FontWeight.w600,
+                                                    ),
+                                                  ),
+                                                )
+                                              ],
+                                            ),
+                                          );
+                                        }).toList()),
+
+                                  ]),
+                            );
+                          },
+                        );
+                      },
                     ),
                   ),
                   Container(
