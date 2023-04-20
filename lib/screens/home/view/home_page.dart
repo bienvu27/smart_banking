@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/src/simple/get_state.dart';
 import 'package:smart_banking/screens/home/controller/home_controller.dart';
+import '../../../core/resources/name_icon.dart';
 import '../../../core/resources/strings.dart';
+import '../../../core/style/colors.dart';
 import '../../../core/style/size.dart';
 import '../../../fake_data/data_fake_home.dart';
 import '../components/cover_widget.dart';
@@ -27,18 +29,18 @@ class _HomePageState extends State<HomePage> {
               resizeToAvoidBottomInset: false,
               body: Stack(
                 children: [
-                  // SizedBox(
-                  //   height: MediaQuery.of(context).size.height,
-                  //   child: Center(
-                  //     child: Image.asset(
-                  //       icon_vrb,
-                  //       width: width_80,
-                  //       height: height_80,
-                  //       color: color_white_opacity,
-                  //       colorBlendMode: BlendMode.modulate,
-                  //     ),
-                  //   ),
-                  // ),
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height,
+                    child: Center(
+                      child: Image.asset(
+                        icon_vrb,
+                        width: width_80,
+                        height: height_80,
+                        color: color_white_opacity,
+                        colorBlendMode: BlendMode.modulate,
+                      ),
+                    ),
+                  ),
                   SingleChildScrollView(
                     child: Column(
                       children: [
