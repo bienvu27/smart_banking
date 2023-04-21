@@ -7,6 +7,7 @@ import '../../../../../core/resources/strings.dart';
 import '../../../../../core/style/colors.dart';
 import '../../../../../core/style/size.dart';
 import '../../../../../fake_data/data_fake_home.dart';
+import '../../../../transaction_infor/view/transaction_infor_page.dart';
 import '../../../../transaction_infor/view/transaction_infor_page2.dart';
 import '../../../controller/transfer_controller.dart';
 import '../components/contacts_container.dart';
@@ -335,7 +336,7 @@ class _SecondsTabState extends State<SecondsTab> {
                   ListContacts(
                       list: listContacts2,
                       // callBack: () => Get.toNamed("/transaction_infor", arguments: ''),
-                      callBack: (e)=> Get.to(TransactionInforPage2()),
+                      callBack: (e)=> Get.to(TransactionInforPage(isNapas: true,)),
                       icon: Image.asset("assets/images/napas_transfer.png", height: height_13, width: width_13,),),
                   ListContactsRecently(
                     list: listContacts2,
