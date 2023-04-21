@@ -8,7 +8,6 @@ import '../../../../../core/style/colors.dart';
 import '../../../../../core/style/size.dart';
 import '../../../../../fake_data/data_fake_home.dart';
 import '../../../../transaction_infor/view/transaction_infor_page.dart';
-import '../../../../transaction_infor/view/transaction_infor_page2.dart';
 import '../../../controller/transfer_controller.dart';
 import '../components/contacts_container.dart';
 import '../components/search_contacts.dart';
