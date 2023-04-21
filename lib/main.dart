@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:smart_banking/router/app_pages.dart';
 import 'package:smart_banking/router/app_routers.dart';
 import 'package:get/get.dart';
 
-import 'core/resources/constant.dart';
 import 'core/widgets/root_layout.dart';
 
 void main()  {
