@@ -171,7 +171,7 @@ class _LastTabState extends State<LastTab> {
           body: TabBarView(
             physics: const NeverScrollableScrollPhysics(),
             children: [
-              ListContacts(list: listContacts, callBack: () => Get.toNamed("/transaction_infor", arguments: '')),
+              ListContacts(list: listContacts, callBack: (e) => Get.toNamed("/transaction_infor", arguments: '')),
               ListContactsRecently(list: listContacts, callBack: () => Get.toNamed("/transaction_infor", arguments: '')),
               ListContactsSave(),
             ],
