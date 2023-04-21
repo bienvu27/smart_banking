@@ -11,6 +11,7 @@ import '../components/grid_menu.dart';
 import '../components/list_service.dart';
 import '../components/service_favorite.dart';
 
+
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -37,7 +38,7 @@ class _HomePageState extends State<HomePage> {
                         width: width_80,
                         height: height_80,
                         color: color_white_opacity,
-                        colorBlendMode: BlendMode.modulate,
+                        colorBlendMode: BlendMode.softLight,
                       ),
                     ),
                   ),
@@ -63,6 +64,7 @@ class _HomePageState extends State<HomePage> {
                           ),
                           height: height_96,
                           child: PageView.builder(
+                            controller: controller.pageController,
                               itemCount: images.length,
                               pageSnapping: true,
                               itemBuilder: (context, pagePosition) {

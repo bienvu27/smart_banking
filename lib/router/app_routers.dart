@@ -14,5 +14,6 @@ class AppRouters{
   static const String CARD_MOBILE = '/card_mobile';
   static const String ALL_CONTACTS = '/all_contacts';
   static const String ADD_CONTACTS = '/add_contacts';
+  static const String CARD_SERVICE = '/card_service';
 
 }

@@ -2,13 +2,10 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
-class HomeController extends GetxController {
-
-  bool isLogin = false;
-
+class CardServiceController extends GetxController {
   final PageController pageController = PageController(initialPage: 0);
+  final PageController cardController = PageController(initialPage: 0);
   int _currentPage = 0;
   bool end = false;
 
@@ -35,14 +32,26 @@ class HomeController extends GetxController {
     update();
   }
 
+  void nextPage(){
+    cardController.animateToPage(cardController.page!.toInt() - 1,
+        duration: Duration(milliseconds: 400),
+        curve: Curves.easeIn
+    );
+
+  }
+
+  void previousPage(){
+    cardController.animateToPage(cardController.page!.toInt() +1,
+        duration: Duration(milliseconds: 400),
+        curve: Curves.easeIn
+    );
+
+  }
+
   @override
   void onInit() async {
     // TODO: implement onInit
     super.onInit();
-    SharedPreferences.getInstance().then((pref) async {
-      isLogin = await pref.getString("username") != null;
-      update();
-    });
     await autoScrollPageView();
   }
 }

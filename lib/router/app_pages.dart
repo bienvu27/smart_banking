@@ -9,6 +9,8 @@ import '../screens/all_contacts/binding/all_contacts_binding.dart';
 import '../screens/all_contacts/view/all_contacts_page.dart';
 import '../screens/card_mobile/binding/card_mobile_binding.dart';
 import '../screens/card_mobile/view/card_mobile_page.dart';
+import '../screens/card_service/binding/card_service_binding.dart';
+import '../screens/card_service/view/card_service_page.dart';
 import '../screens/contacts_manager/binding/contacts_manager_binding.dart';
 import '../screens/contacts_manager/view/contacts_manager.dart';
 import '../screens/dashboard/binding/dashboard_binding.dart';
@@ -107,6 +109,11 @@ class AppPages {
         name: AppRouters.ADD_CONTACTS,
         page: () => AddContactsPage(),
         binding: AddContactsBinding()),
+
+    GetPage(
+        name: AppRouters.CARD_SERVICE,
+        page: () => CardServicePage(),
+        binding: CardServiceBinding()),
 
   ];
 }

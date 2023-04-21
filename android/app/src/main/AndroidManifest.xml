@@ -4,6 +4,18 @@
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.WRITE_CONTACTS" />
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-sdk tools:overrideLibrary="androidx.security" />
+    <!--
+ Required permission to be able to create and administer tokens in the Samsung
+     KNOX Trusted Execution Environment.
+    -->
+    <uses-permission android:name="android.permission.sec.OTP_PROVISION" />
+    <!-- Require external write permission in order to write log files. -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
    <application
         android:label="VRBanking"
         android:name="${applicationName}"
