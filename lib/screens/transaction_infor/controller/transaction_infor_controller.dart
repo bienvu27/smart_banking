@@ -5,14 +5,17 @@ class TransactionInforController extends GetxController{
   TextEditingController moneyController = new TextEditingController();
   String sAmount = "";
 
+  bool isSwitched = true;
+
+  void toggle(){
+    isSwitched = !isSwitched;
+    update();
+  }
+
   void convertMoneyNumberToText(String currencyCode) {
     sAmount = moneyController.text;
-    if (sAmount.length == 0) {
-      return;
-    }
-
     int amtLen = sAmount.length;
-    String currenyStr = "";
+    String currencyStr = "";
     for (int i = amtLen - 1; i >= 0; i--) {
       if (sAmount == ",") {
         String amtTmp = sAmount.substring(0, i);
@@ -36,20 +39,23 @@ class TransactionInforController extends GetxController{
     int c = len;
     int b = 3;
     double a = c / b;
-    int cols = int.parse(a.toStringAsFixed(0));
-
+    int cols = int.parse(a.ceil().toString());
     int first = len - cols * 3;
+    print(first);
     String num3 = "";
     for (int i = first, j = 0; i < len; i += 3) {
       ++j;
-      if (i >= 0)
+
+      if (i >= 0) {
         num3 = roundAmount.substring(i, i + 3);
-      else
+      } else {
         num3 = roundAmount.substring(0, first + 3);
+      }
+
       String strEng = EnglishNTe(num3); // add US DOLLARS
 
       if ("VND" != currencyCode) {
-        currenyStr = currencyCode;
+        currencyStr = currencyCode;
       }
 
       if ("" != strEng) {
@@ -59,7 +65,7 @@ class TransactionInforController extends GetxController{
       }
 
     }
-    strRet = strRet + " " + currenyStr;
+    strRet = strRet + " " + currencyStr;
     // Decimal
 
     String abc = "";
@@ -68,7 +74,7 @@ class TransactionInforController extends GetxController{
       //abc = " " + currencyCode;
     }
     if("VND" == currencyCode){
-      abc = " dong";
+      abc = "đồng";
     }
 
     String only = "";
@@ -81,7 +87,7 @@ class TransactionInforController extends GetxController{
         //	abc = " CENTS";
       }
       if("VND" == currencyCode){
-        abc = " dong";
+        abc = "đồng";
       }
       String dcRet = "";
       String strEng = EnglishNTe(decimalAmount);
@@ -113,9 +119,9 @@ class TransactionInforController extends GetxController{
     if ((num.length == 4) && ("0000" != num.substring(0, 4))) {
       if (("0" != num.substring(0, 1))) {
         strRet += arr3NTe[int.parse(num.substring(0, 1))]
-            + " nghìn";
-        if (num.substring(1, 2) != "00")
-          strRet += " và ";
+            + " nghìn ";
+        // if (num.substring(1, 2) != "00")
+        //   strRet += " và ";
       }
       num = num.substring(1);
     }
@@ -123,8 +129,8 @@ class TransactionInforController extends GetxController{
       if ((num.substring(0, 1) != "0")) {
         strRet += arr3NTe[int.parse(num.substring(0, 1))]
             + " trăm ";
-        if ("00" != num.substring(1, 2) && "0" != num.substring(1, 2))
-          strRet += " và ";
+        // if ("00" != num.substring(1, 2) && "0" != num.substring(1, 2))
+        //   strRet += " và ";
       }
       num = num.substring(1);
     }

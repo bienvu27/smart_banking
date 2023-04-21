@@ -9,13 +9,18 @@ class TextFieldComponent extends StatelessWidget {
     required this.textInputType,
      this.textController,
      this.onChange,
-    this.text
+    this.text,
+    this.suffix,
+    this.counter,
+    this.maxLength,
   });
 
   final String label;
   String? text;
   TextEditingController? textController;
   Function? onChange;
+  Widget? suffix, counter;
+  int? maxLength;
   final TextInputType textInputType;
 
   @override
@@ -28,13 +33,17 @@ class TextFieldComponent extends StatelessWidget {
           onChange!(_);
         }
       },
+      maxLength: maxLength,
       style: TextStyle(
         fontSize: fontSize_12,
         fontWeight: FontWeight.w600,
         fontFamily: 'open_sans',
       ),
       decoration: InputDecoration(
+        counter: textController != null && textController!.text.isNotEmpty ? counter : null,
+        counterText: "",
         labelText: label,
+        suffixIcon: suffix,
         labelStyle: TextStyle(
           fontSize: fontSize_11,
           fontFamily: 'open_sans',
