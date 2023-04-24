@@ -17,8 +17,15 @@ class ServiceManager extends StatefulWidget {
 
 class _ServiceManagerState extends State<ServiceManager> {
   String selectVal = "Tất cả các dịch vụ";
+  var data = Get.arguments;
+  String id = "1";
 
-  String id = Get.arguments != null && Get.arguments.toString().isNotEmpty ? Get.arguments.toString() : "1";
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    id = data != null && data.toString().isNotEmpty ? data.toString() : "1";
+  }
 
   @override
   Widget build(BuildContext context) {
