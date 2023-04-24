@@ -48,6 +48,7 @@ const Color clr_2dcabc = Color(0xff2dcabc);
 const Color clr_adb5bd = Color(0xffadb5bd);
 const Color clr_1ac5b6 = Color(0xff1ac5b6);
 const Color clr_e2e3e3 = Color(0xffe2e3e3);
+const Color clr_f1faff = Color(0xfff1faff);
 
 const Color clr_gradient_1 = Color(0xff0e51a2);
 const Color clr_gradient_2 = Color(0xff2869b3);
