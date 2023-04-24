@@ -185,64 +185,64 @@ final listImageBank = [
 final listPromotion = [
   PromotionModel(
       image:
-          'https://play-lh.googleusercontent.com/Hf7XwXAW9ringub6PP_scB6sN8n6yrR1Q-8p9fa_iTTQhskZCg6tvwJhpPx1pSmcZ8at=w526-h296-rw',
+          'assets/images/list_images/image_9.jpg',
       title: 'Nạp tiền điện thoại mệnh giá 10.000 VNĐ',
       subTitle: '31/12/2023',
       point: '50.000',
       like: 5360),
   PromotionModel(
-      image: 'https://media.vneconomy.vn/images/upload/2022/03/01/ngan-hang-viet-nga.jpeg',
-      title: 'Nạp tiền điện thoại mệnh giá 10.000 VNĐ',
+      image: 'assets/images/list_images/image_11.jpg',
+      title: 'Hoàn tiền',
+      subTitle: '31/12/2024',
+      point: '50.000',
+      like: 5360),
+  PromotionModel(
+      image: 'assets/images/list_images/image_10.png',
+      title: 'Nạp tiền tài khoản giao thông',
       subTitle: '31/12/2023',
       point: '50.000',
       like: 5360),
   PromotionModel(
-      image: 'https://image.mekongasean.vn/1200x630/Uploaded/2023/mrwqwqdwp/2022_03_02/viet-nga-5013.jpeg',
-      title: 'Nạp tiền điện thoại mệnh giá 10.000 VNĐ',
-      subTitle: '31/12/2023',
-      point: '50.000',
-      like: 5360),
-  PromotionModel(
-      image: 'https://cdn1.nhatrangtoday.vn/images/photos/Ngan-hang-Viet-Nga-VRB-3.jpg',
-      title: 'Nạp tiền điện thoại mệnh giá 10.000 VNĐ',
-      subTitle: '31/12/2023',
-      point: '50.000',
-      like: 5360),
-  PromotionModel(
-      image:
-          'https://play-lh.googleusercontent.com/Hf7XwXAW9ringub6PP_scB6sN8n6yrR1Q-8p9fa_iTTQhskZCg6tvwJhpPx1pSmcZ8at=w526-h296-rw',
-      title: 'Nạp tiền điện thoại mệnh giá 10.000 VNĐ',
-      subTitle: '31/12/2023',
-      point: '50.000',
-      like: 5360),
-  PromotionModel(
-      image: 'https://cdn1.nhatrangtoday.vn/images/photos/Ngan-hang-Viet-Nga-VRB-5.jpg',
-      title: 'Nạp tiền điện thoại mệnh giá 10.000 VNĐ',
+      image: 'assets/images/list_images/image_12.jpg',
+      title: 'Thẻ quà tặng Phuc Long',
       subTitle: '31/12/2023',
       point: '50.000',
       like: 5360),
   PromotionModel(
       image:
-          'https://i1-kinhdoanh.vnecdn.net/2021/12/10/vrb-anh-k-text-2498-1639108454.jpg?w=0&h=0&q=100&dpr=2&fit=crop&s=RdZ1tnbf7FCSmdpRjMnW8w',
-      title: 'Nạp tiền điện thoại mệnh giá 10.000 VNĐ',
+          'assets/images/list_images/image_13.png',
+      title: 'Quà tặng Highlands Coffe',
       subTitle: '31/12/2023',
       point: '50.000',
       like: 5360),
   PromotionModel(
-      image: 'https://cashgo.vn/wp-content/uploads/2021/06/vrb-la-ngan-hang-gi.jpg',
-      title: 'Nạp tiền điện thoại mệnh giá 10.000 VNĐ',
+      image: 'assets/images/list_images/image_14.jpg',
+      title: 'Mã giảm giá 15.000 VND khi đặt Vé xem phim',
       subTitle: '31/12/2023',
       point: '50.000',
       like: 5360),
   PromotionModel(
-      image: 'https://image.mekongasean.vn/1200x630/Uploaded/2023/mrwqwqdwp/2022_03_02/viet-nga-5013.jpeg',
-      title: 'Nạp tiền điện thoại mệnh giá 10.000 VNĐ',
+      image:
+          'assets/images/list_images/image_15.jpg',
+      title: 'Thẻ quà tặng GoGi House',
       subTitle: '31/12/2023',
       point: '50.000',
       like: 5360),
   PromotionModel(
-      image: 'https://vtv1.mediacdn.vn/thumb_w/650/2019/9/12/1-1568263433284635129991.jpg',
-      title: 'Nạp tiền điện thoại mệnh giá 10.000 VNĐ',
+      image: 'assets/images/list_images/image_16.png',
+      title: 'Quà tặng Ding Tea',
+      subTitle: '31/12/2023',
+      point: '50.000',
+      like: 5360),
+  PromotionModel(
+      image: 'assets/images/list_images/image_9.jpg',
+      title: 'Nạp tiền điện thoại mệnh giá 50.000 VNĐ',
+      subTitle: '31/12/2023',
+      point: '50.000',
+      like: 5360),
+  PromotionModel(
+      image: 'assets/images/list_images/image_9.jpg',
+      title: 'Nạp tiền điện thoại mệnh giá 100.000 VNĐ',
       subTitle: '31/12/2023',
       point: '50.000',
       like: 5360),
