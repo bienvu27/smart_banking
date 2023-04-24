@@ -54,21 +54,21 @@ List<String> imagesCardService = [
 
 final listService = [
   ListServiceModel(
-      1,
+      2,
       'assets/svg/icon_gradient/210201.svg',
       'Dịch vụ ngân hàng',
       '- Dịch vụ ngân hàng: Ngân hàng số 24/7 đáp ứng mọi nhu cầu: Chuyển tiền - Thanh toán - Tiền gửi - Tiền vay - Thẻ ...',
       5),
-  ListServiceModel(2,'assets/svg/icon_gradient/210423.svg', 'Đăng ký dịch vụ',
+  ListServiceModel(5,'assets/svg/icon_gradient/210423.svg', 'Đăng ký dịch vụ',
       '- Đăng ký dịch vụ: Đăng ký dịch vụ mong muốn chỉ trong vài phút và dễ dàng kết nối bạn bè ...', 5),
   ListServiceModel(
-    3,
+    8,
       'assets/svg/icon_gradient/220102.svg',
       'Hỗ trợ khách hàng',
       '- Hỗ trợ khách hàng: Dễ dàng tra cứu thông tin tài khoản và thông tin Ngân hàng hữu ích khác, hỗ trợ tra soát giao dịch và tài chính cá nhân ...',
       5),
-  ListServiceModel(4,'assets/svg/icon_gradient/2202.svg', 'Cài đặt',
-      '- Cài đặt: Cài đặt các mẫu chuyển tiền, mẫu thanh toán tiện lợi nhanh chóng, đổi mật khẩu ...', 5),
+  ListServiceModel(3,'assets/svg/icon_gradient/211004.svg', 'Dịch vụ bảo hiểm',
+      'Kiến tạo tương lai vững chắc về sức khoẻ và tài chính với bảo hiểm nhân thọ và phi nhân thọ', 5),
 ];
 
 final listContacts = [
