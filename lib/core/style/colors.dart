@@ -70,7 +70,7 @@ const Color button_color_home = Color(0xFFeaf7ff);
 const Color button_color_bg_dialog = Color(0xffeaf7ff);
 const Color button_dropdown_color_bg = Color(0xff00bfaf);
 
-final Color color_white_opacity = Colors.white.withOpacity(0.5);
+final Color color_white_opacity = Colors.white.withOpacity(1);
 
 BoxShadow boxShadow = BoxShadow(
   color: Colors.grey.withOpacity(0.9),

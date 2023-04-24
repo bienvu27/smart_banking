@@ -1,7 +1,7 @@
 import 'package:smart_banking/screens/transfer/models/list_bank_model.dart';
 import 'package:smart_banking/screens/user/model/list_available_balances_model.dart';
 
-import '../screens/card_service/card_model.dart';
+import '../screens/card_service/model/card_model.dart';
 import '../screens/history_transfer/model/history_transfer_model.dart';
 import '../screens/home/model/list_service_model.dart';
 import '../screens/notification/model/description_model.dart';
@@ -54,18 +54,20 @@ List<String> imagesCardService = [
 
 final listService = [
   ListServiceModel(
+      1,
       'assets/svg/icon_gradient/210201.svg',
       'Dịch vụ ngân hàng',
       '- Dịch vụ ngân hàng: Ngân hàng số 24/7 đáp ứng mọi nhu cầu: Chuyển tiền - Thanh toán - Tiền gửi - Tiền vay - Thẻ ...',
       5),
-  ListServiceModel('assets/svg/icon_gradient/210423.svg', 'Đăng ký dịch vụ',
+  ListServiceModel(2,'assets/svg/icon_gradient/210423.svg', 'Đăng ký dịch vụ',
       '- Đăng ký dịch vụ: Đăng ký dịch vụ mong muốn chỉ trong vài phút và dễ dàng kết nối bạn bè ...', 5),
   ListServiceModel(
+    3,
       'assets/svg/icon_gradient/220102.svg',
       'Hỗ trợ khách hàng',
       '- Hỗ trợ khách hàng: Dễ dàng tra cứu thông tin tài khoản và thông tin Ngân hàng hữu ích khác, hỗ trợ tra soát giao dịch và tài chính cá nhân ...',
       5),
-  ListServiceModel('assets/svg/icon_gradient/2202.svg', 'Cài đặt',
+  ListServiceModel(4,'assets/svg/icon_gradient/2202.svg', 'Cài đặt',
       '- Cài đặt: Cài đặt các mẫu chuyển tiền, mẫu thanh toán tiện lợi nhanh chóng, đổi mật khẩu ...', 5),
 ];
 

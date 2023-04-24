@@ -22,7 +22,6 @@ class _ServiceManagerState extends State<ServiceManager> {
   @override
   Widget build(BuildContext context) {
 
-
     return Scaffold(
       appBar: AppBarComponent(
         bgColor: clr_white,
@@ -95,7 +94,7 @@ class _ServiceManagerState extends State<ServiceManager> {
             height: height_28,
             alignment: Alignment.center,
             decoration: BoxDecoration(
-              color: button_dropdown_color_bg,
+              color: PRIMARY_COLOR,
               borderRadius: BorderRadius.circular(border_16),
             ),
             child: Container(
@@ -109,7 +108,7 @@ class _ServiceManagerState extends State<ServiceManager> {
                   });
                 },
                 alignment: Alignment.center,
-                dropdownColor: button_dropdown_color_bg,
+                dropdownColor: PRIMARY_COLOR,
                 borderRadius: BorderRadius.circular(20.r),
                 icon: Icon(
                   Icons.keyboard_arrow_down_sharp,
