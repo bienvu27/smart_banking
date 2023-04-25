@@ -64,7 +64,7 @@ final listService = [
   ListServiceModel(
     8,
       'assets/svg/icon_gradient/220102.svg',
-      'Hỗ trợ khách hàng',
+      'Hỗ trợ',
       '- Hỗ trợ khách hàng: Dễ dàng tra cứu thông tin tài khoản và thông tin Ngân hàng hữu ích khác, hỗ trợ tra soát giao dịch và tài chính cá nhân ...',
       5),
   ListServiceModel(3,'assets/svg/icon_gradient/211004.svg', 'Dịch vụ bảo hiểm',

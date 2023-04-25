@@ -19,12 +19,14 @@ class _ServiceManagerState extends State<ServiceManager> {
   String selectVal = "Tất cả các dịch vụ";
   var data = Get.arguments;
   String id = "1";
+  String name = Get.arguments[1];
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
-    id = data != null && data.toString().isNotEmpty ? data.toString() : "1";
+    id = data[0] != null && data[0].toString().isNotEmpty ? data[0].toString() : "1";
+    selectVal = selectVal.isNotEmpty ?  name : "Tất cả các dịch vụ";
+    print(name);
   }
 
   @override
@@ -141,7 +143,7 @@ class _ServiceManagerState extends State<ServiceManager> {
                       onTap: () {
                         id = item.id!.toString();
                       },
-                      value: item.name,
+                      value: item.name ,
                       child: Center(
                         child: Text(
                           item.name ?? '',
