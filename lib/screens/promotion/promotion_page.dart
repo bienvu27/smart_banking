@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:smart_banking/screens/components/grid_view/grid_view_component.dart';
+import '../../core/common/utils.dart';
 import '../../core/resources/strings.dart';
 import '../../core/style/colors.dart';
 import '../../core/style/size.dart';
 import '../../fake_data/data_fake_home.dart';
+import '../components/dialog/custom_dialog.dart';
+import '../home/controller/home_controller.dart';
 import 'components/list_promotion.dart';
 import 'components/sliver_app_bar.dart';
 
@@ -32,8 +36,7 @@ class _PromotionPageState extends State<PromotionPage> {
   }
 
   bool get _isSliverAppBarExpanded {
-    return _scrollController.hasClients &&
-        _scrollController.offset > kExpandedHeight - kToolbarHeight;
+    return _scrollController.hasClients && _scrollController.offset > kExpandedHeight - kToolbarHeight;
   }
 
   @override
@@ -42,9 +45,7 @@ class _PromotionPageState extends State<PromotionPage> {
       body: CustomScrollView(
         controller: _scrollController,
         slivers: [
-          SliverAppBarCustom(
-              isSliverAppBarExpanded: _isSliverAppBarExpanded,
-              kExpandedHeight: kExpandedHeight),
+          SliverAppBarCustom(isSliverAppBarExpanded: _isSliverAppBarExpanded, kExpandedHeight: kExpandedHeight),
           SliverToBoxAdapter(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -55,9 +56,47 @@ class _PromotionPageState extends State<PromotionPage> {
                   child: GridViewComponent(
                     list: list,
                     title: PROMOTION,
+                    onTap: () {
+                      final controller = Get.put(HomeController());
+                      !controller.isLogin
+                          ? showDialog(
+                              barrierDismissible: false,
+                              context: context,
+                              builder: (BuildContext context) => CustomDialog(
+                                    title: TITLE_31,
+                                    cancel: CANCEL2,
+                                    submit: LOGIN,
+                                    clickCallback: () {
+                                      Navigator.of(context).pop();
+                                      Utils.showAuthenticationDialog(context);
+                                    },
+                                  ))
+                          : Utils.showWarningDialog(context, "Chưa cập nhật");
+                    },
                   ),
                 ),
-                ListPromotion(listPromotion: listPromotion)
+                ListPromotion(
+                    listPromotion: listPromotion,
+                    onTap: () {
+                      final controller = Get.put(HomeController());
+                      !controller.isLogin
+                          ? showDialog(
+                          barrierDismissible: false,
+                          context: context,
+                          builder: (BuildContext context) => CustomDialog(
+                            title: TITLE_31,
+                            cancel: CANCEL2,
+                            submit: LOGIN,
+                            clickCallback: () {
+                              Navigator.of(context).pop();
+                              Utils.showAuthenticationDialog(context);
+                            },
+                          ))
+                          : Utils.showWarningDialog(context, "Chưa cập nhật");
+                    }),
+                SizedBox(
+                  height: height_10,
+                ),
               ],
             ),
           ),
@@ -66,5 +105,3 @@ class _PromotionPageState extends State<PromotionPage> {
     );
   }
 }
-
-

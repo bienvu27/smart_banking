@@ -9,13 +9,9 @@ import 'authentication.dart';
 import 'infor_user.dart';
 
 class CoverWidget extends StatelessWidget {
-
   HomeController controller;
 
-  CoverWidget({
-    super.key,
-    required this.controller
-  });
+  CoverWidget({super.key, required this.controller});
 
   @override
   Widget build(BuildContext context) {
@@ -38,6 +34,22 @@ class CoverWidget extends StatelessWidget {
               ),
             ),
           ),
+          Container(
+            height: height / 4,
+            decoration: BoxDecoration(
+                color: Colors.white,
+                gradient: LinearGradient(
+                    begin: FractionalOffset.bottomCenter,
+                    end: FractionalOffset.topCenter,
+                    colors: [
+                      Colors.grey.withOpacity(0.1),
+                      Colors.black87,
+                    ],
+                    stops: [
+                      0.0,
+                      1.0
+                    ])),
+          ),
           Padding(
             padding: EdgeInsets.only(
               left: width_12,
@@ -49,7 +61,7 @@ class CoverWidget extends StatelessWidget {
                 Row(
                   children: [
                     Image.asset(
-                      icon_vrb,
+                      vrb_banner_icon,
                       width: width_80,
                       height: height_48,
                     ),
@@ -60,7 +72,9 @@ class CoverWidget extends StatelessWidget {
                       child: TextField(
                         enabled: false,
                         maxLines: 1,
-                        style: TextStyle(fontSize: fontSize_10),
+                        style: TextStyle(
+                          fontSize: fontSize_10,
+                        ),
                         textAlignVertical: TextAlignVertical.center,
                         decoration: InputDecoration(
                           filled: true,
@@ -74,7 +88,7 @@ class CoverWidget extends StatelessWidget {
                               borderRadius: BorderRadius.all(
                                 Radius.circular(border_16),
                               )),
-                          fillColor: clr_black54,
+                          fillColor: clr_black26,
                           contentPadding: EdgeInsets.zero,
                           hintText: SEARCH,
                           hintStyle: TextStyle(
@@ -133,15 +147,17 @@ class CoverWidget extends StatelessWidget {
                                 fontWeight: FontWeight.w600,
                                 color: clr_white70),
                           ),
-                          controller.isLogin != null && controller.isLogin! ? Text(
-                            NAME_TEST.toUpperCase(),
-                            style: TextStyle(
-                              fontSize: fontSize_12,
-                              fontFamily: 'open_sans',
-                              fontWeight: FontWeight.w700,
-                              color: clr_white,
-                            ),
-                          ) : SizedBox(),
+                          controller.isLogin != null && controller.isLogin!
+                              ? Text(
+                                  NAME_TEST.toUpperCase(),
+                                  style: TextStyle(
+                                    fontSize: fontSize_12,
+                                    fontFamily: 'open_sans',
+                                    fontWeight: FontWeight.w700,
+                                    color: clr_white,
+                                  ),
+                                )
+                              : SizedBox(),
                         ],
                       ),
                     )

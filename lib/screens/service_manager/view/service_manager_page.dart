@@ -7,6 +7,7 @@ import '../../../core/style/size.dart';
 import '../../../fake_data/data_fake_home.dart';
 import '../../components/app_bar/app_bar_component.dart';
 import '../components/services/service_list.dart';
+
 class ServiceManager extends StatefulWidget {
   const ServiceManager({Key? key}) : super(key: key);
 
@@ -15,14 +16,19 @@ class ServiceManager extends StatefulWidget {
 }
 
 class _ServiceManagerState extends State<ServiceManager> {
-
   String selectVal = "Tất cả các dịch vụ";
-  int id = 1;
+  var data = Get.arguments;
+  String id = "1";
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    id = data != null && data.toString().isNotEmpty ? data.toString() : "1";
+  }
 
   @override
   Widget build(BuildContext context) {
-
-
     return Scaffold(
       appBar: AppBarComponent(
         bgColor: clr_white,
@@ -34,7 +40,7 @@ class _ServiceManagerState extends State<ServiceManager> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            if (id == 1) ...[
+            if (id == "1") ...[
               ServiceList(title: SERVICES_BANK, list: listBank),
               ServiceList(title: SERVICES_INSURANCE, list: listInsurance),
               ServiceList(title: SERVICES_STOCK, list: listStock),
@@ -46,41 +52,53 @@ class _ServiceManagerState extends State<ServiceManager> {
                 color: Colors.white,
                 height: 100.h,
               ),
-            ] else if (id == 2) ...[
+            ] else if (id == "2") ...[
               Container(
-                  color: clr_white,
-                  height: Get.size.height,
-                  child: ServiceList(title: SERVICES_BANK, list: listBank)),
-            ] else if (id == 3) ...[
+                color: clr_white,
+                height: Get.size.height,
+                child: ServiceList(
+                  title: SERVICES_BANK,
+                  list: listBank,
+                ),
+              ),
+            ] else if (id == "3") ...[
               Container(
                   color: clr_white,
                   height: Get.size.height,
                   child: ServiceList(title: SERVICES_INSURANCE, list: listInsurance)),
-            ] else if (id == 4) ...[
+            ] else if (id == "4") ...[
               Container(
                   color: clr_white,
                   height: Get.size.height,
                   child: ServiceList(title: SERVICES_STOCK, list: listStock)),
-            ] else if (id == 5) ...[
+            ] else if (id == "5") ...[
               Container(
                   color: clr_white,
                   height: Get.size.height,
                   child: ServiceList(title: REGISTER_SERVICES, list: listRegisterService)),
-            ] else if (id == 6) ...[
+            ] else if (id == "6") ...[
               Container(
-                  color: clr_white,
-                  height: Get.size.height,
-                  child: ServiceList(title: SHOPPING, list: listShopping)),
-            ] else if (id == 7) ...[
+                color: clr_white,
+                height: Get.size.height,
+                child: ServiceList(
+                  title: SHOPPING,
+                  list: listShopping,
+                ),
+              ),
+            ] else if (id == "7") ...[
               Container(
                   color: clr_white,
                   height: Get.size.height,
                   child: ServiceList(title: SERVICE_CHARITY, list: listCharity)),
-            ] else if (id == 8) ...[
+            ] else if (id == "8") ...[
               Container(
-                  color: clr_white,
-                  height: Get.size.height,
-                  child: ServiceList(title: SUPPORT, list: listSupport)),
+                color: clr_white,
+                height: Get.size.height,
+                child: ServiceList(
+                  title: SUPPORT,
+                  list: listSupport,
+                ),
+              ),
             ]
           ],
         ),
@@ -90,12 +108,14 @@ class _ServiceManagerState extends State<ServiceManager> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-            margin: EdgeInsets.only(bottom: height_16,),
+            margin: EdgeInsets.only(
+              bottom: height_16,
+            ),
             padding: EdgeInsets.only(left: width_4, right: width_4),
             height: height_28,
             alignment: Alignment.center,
             decoration: BoxDecoration(
-              color: button_dropdown_color_bg,
+              color: PRIMARY_COLOR,
               borderRadius: BorderRadius.circular(border_16),
             ),
             child: Container(
@@ -109,7 +129,7 @@ class _ServiceManagerState extends State<ServiceManager> {
                   });
                 },
                 alignment: Alignment.center,
-                dropdownColor: button_dropdown_color_bg,
+                dropdownColor: PRIMARY_COLOR,
                 borderRadius: BorderRadius.circular(20.r),
                 icon: Icon(
                   Icons.keyboard_arrow_down_sharp,
@@ -119,7 +139,7 @@ class _ServiceManagerState extends State<ServiceManager> {
                 items: listItems.map((item) {
                   return DropdownMenuItem(
                       onTap: () {
-                        id = item.id!;
+                        id = item.id!.toString();
                       },
                       value: item.name,
                       child: Center(

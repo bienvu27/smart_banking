@@ -35,30 +35,46 @@ class NotificationList extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Hôm qua, ${e.date}',
+                        '${e.date}',
                         style: TextStyle(
-                            fontSize: fontSize_10, fontWeight: FontWeight.w500),
+                          fontSize: fontSize_10,
+                          fontWeight: FontWeight.w500,
+                        ),
                       ),
                       SizedBox(
                         height: height_8,
                       ),
                       Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Icon(
-                            Icons.verified_outlined,
-                            size: fontSize_12,
-                            color: Colors.black54,
+                          Row(
+                            children: [
+                              Icon(
+                                Icons.verified_outlined,
+                                size: fontSize_12,
+                                color: Colors.black54,
+                              ),
+                              SizedBox(
+                                width: width_4,
+                              ),
+                              Text(
+                                '14:55',
+                                style: TextStyle(
+                                  fontSize: fontSize_10,
+                                  fontWeight: FontWeight.w500,
+                                  color: Colors.black54,
+                                ),
+                              )
+                            ],
                           ),
-                          SizedBox(
-                            width: width_4,
+                          Padding(
+                            padding: EdgeInsets.only(right: width_16),
+                            child: Icon(
+                              Icons.more_vert,
+                              size: fontSize_12,
+                              color: Colors.black54,
+                            ),
                           ),
-                          Text(
-                            '14:55',
-                            style: TextStyle(
-                                fontSize: fontSize_10,
-                                fontWeight: FontWeight.w500,
-                                color: Colors.black54),
-                          )
                         ],
                       ),
                     ],
@@ -79,47 +95,54 @@ class NotificationList extends StatelessWidget {
                   ),
                 ),
                 Container(
-                    margin: EdgeInsets.only(top: height_8, right: width_8, left: width_8),
+                    margin: EdgeInsets.only(
+                      top: height_8,
+                      right: width_8,
+                      left: width_8,
+                    ),
                     padding: EdgeInsets.only(
-                        top: height_8, bottom: height_8, right: width_8, left: width_8),
+                      top: height_8,
+                      bottom: height_8,
+                      right: width_8,
+                      left: width_8,
+                    ),
                     width: MediaQuery.of(context).size.width,
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(border_4),
-                        color: Colors.grey[100]),
+                      borderRadius: BorderRadius.circular(border_4),
+                      color: clr_f1faff,
+                    ),
                     child: ListView(
                       shrinkWrap: true,
                       physics: const NeverScrollableScrollPhysics(),
                       children: e.description!.map((data) {
-                        return Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Flexible(
-                              child: RichText(
-                                text: TextSpan(children: [
-                                  WidgetSpan(
-                                    child: Visibility(
-                                      visible: visibleIcon,
-                                      child: Container(
-                                          margin: EdgeInsets.only(
-                                              top: height_2, right: width_4),
-                                          child: Image.network(
-                                            data.image ?? '',
-                                            width: width_12,
-                                            height: width_12,
-                                          )),
-                                    ),
-                                  ),
-                                  TextSpan(
-                                    text: data.description,
-                                    style: TextStyle(
-                                        fontSize: fontSize_12,
-                                        height: lineHeight_1_2,
-                                        color: clr_black),
-                                  ),
-                                ]),
+                        return Flexible(
+                          child: RichText(
+                            text: TextSpan(children: [
+                              WidgetSpan(
+                                child: Visibility(
+                                  visible: visibleIcon,
+                                  child: Container(
+                                      margin: EdgeInsets.only(
+                                        top: height_2,
+                                        right: width_4,
+                                      ),
+                                      child: Image.asset(
+                                        data.image ?? '',
+                                        width: width_12,
+                                        height: width_12,
+                                      )),
+                                ),
                               ),
-                            ),
-                          ],
+                              TextSpan(
+                                text: data.description,
+                                style: TextStyle(
+                                  fontSize: fontSize_12,
+                                  height: lineHeight_1_5,
+                                  color: clr_black,
+                                ),
+                              ),
+                            ]),
+                          ),
                         );
                       }).toList(),
                     ))

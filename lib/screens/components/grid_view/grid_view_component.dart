@@ -1,24 +1,39 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import '../../../core/common/utils.dart';
 import '../../../core/resources/strings.dart';
 import '../../../core/style/colors.dart';
 import '../../../core/style/size.dart';
 import '../../components/dialog/custom_dialog.dart';
+import '../../home/controller/home_controller.dart';
 import '../../service_manager/model/service_favorite_model.dart';
 
 class GridViewComponent extends StatelessWidget {
-  GridViewComponent({super.key, required this.list, required this.title, this.subTitle, this.callback});
+  GridViewComponent({
+    super.key,
+    required this.list,
+    required this.title,
+    this.subTitle,
+    this.callback,
+    this.onTap
+  });
 
   final List<ServiceFavoriteModel> list;
   final String title;
   String? subTitle;
   VoidCallback? callback;
+  Function? onTap;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(left: width_10, right: width_10, bottom: height_4),
+      padding: EdgeInsets.only(
+        left: width_10,
+        right: width_10,
+      ),
       child: Column(
         children: [
           Row(
@@ -27,25 +42,26 @@ class GridViewComponent extends StatelessWidget {
               Text(
                 title,
                 style: TextStyle(
-                  fontSize: fontSize_12,
+                  fontSize: fontSize_11,
                   fontWeight: FontWeight.w600,
+                  fontFamily: 'open_sans',
                   color: clr_black,
                 ),
               ),
               InkWell(
-                onTap: ()=> callback!(),
+                onTap: () => callback!(),
                 child: Text(
                   subTitle ?? '',
                   style: TextStyle(
-                    fontSize: fontSize_12,
+                    fontSize: fontSize_11,
                     fontWeight: FontWeight.w600,
+                    fontFamily: 'open_sans',
                     color: PRIMARY_COLOR,
                   ),
                 ),
               ),
             ],
           ),
-          SizedBox(height: height_16,),
           GridView.count(
               physics: const NeverScrollableScrollPhysics(),
               shrinkWrap: true,
@@ -55,17 +71,7 @@ class GridViewComponent extends StatelessWidget {
               crossAxisCount: 3,
               children: list.map((e) {
                 return InkWell(
-                  onTap: () {
-                    showDialog(
-                        barrierDismissible: false,
-                        context: context,
-                        builder: (BuildContext context) => CustomDialog(
-                              title: TITLE_31,
-                              cancel: CANCEL2,
-                              submit: LOGIN,
-                              clickCallback: () {},
-                            ));
-                  },
+                  onTap: () => onTap!() ,
                   child: Column(
                     children: [
                       Stack(
