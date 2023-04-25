@@ -44,6 +44,7 @@ flutter:
     - assets/images/list_images/
     - assets/images/emoji/
     - assets/svg/
+    - assets/i18n/
     - assets/svg/icon_white/
     - assets/svg/icon_gradient/
 
