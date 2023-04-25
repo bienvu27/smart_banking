@@ -127,7 +127,7 @@ class ServiceFavorite extends StatelessWidget {
           ),
         ),
         InkWell(
-          onTap: () => Get.toNamed("/service_manager", arguments: ''),
+          onTap: () => Get.toNamed("/service_manager", arguments: [1, "Tất cả các dịch vụ"]),
           child: Container(
             margin: EdgeInsets.only(
               left: width_10,

@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_state_manager/src/simple/get_state.dart';
 import 'package:smart_banking/screens/home/controller/home_controller.dart';
 import '../../../core/resources/name_icon.dart';
 import '../../../core/resources/strings.dart';
-import '../../../core/style/colors.dart';
 import '../../../core/style/size.dart';
 import '../../../fake_data/data_fake_home.dart';
 import '../components/cover_widget.dart';
@@ -36,7 +34,7 @@ class _HomePageState extends State<HomePage> {
                         icon_vrb,
                         width: width_80,
                         height: height_80,
-                        color: Colors.white.withOpacity(0.2),
+                        color: Colors.white.withOpacity(0.05),
                         colorBlendMode: BlendMode.modulate,
                       ),
                     ),
@@ -96,7 +94,7 @@ class _HomePageState extends State<HomePage> {
                         ),
                         ListService(
                           listService: listService,
-                          onTap: (e) => Get.toNamed("/service_manager", arguments: e.id),
+                          onTap: (e) => Get.toNamed("/service_manager", arguments: [e.id, e.title]),
                         )
                       ],
                     ),
