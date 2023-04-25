@@ -28,15 +28,22 @@ class SliverAppBarCustom extends StatelessWidget {
       centerTitle: true,
       snap: false,
       title: Text(PROMOTION_SCREEN,
-          style:
-              TextStyle(color: _isSliverAppBarExpanded ? clr_black : Colors.transparent, fontWeight: FontWeight.w500)),
+          style: TextStyle(
+            color: _isSliverAppBarExpanded ? clr_black : Colors.transparent,
+            fontWeight: FontWeight.w600,
+            fontFamily: 'open_sans',
+            fontSize: fontSize_12,
+          )),
       backgroundColor: clr_white,
       flexibleSpace: FlexibleSpaceBar(
-        background: Image.network(
-          image_cover_promotion,
+        background: Image.asset(
+          image_success,
           fit: BoxFit.fill,
         ),
-        titlePadding: EdgeInsets.only(left: width_8, bottom: height_4),
+        titlePadding: EdgeInsets.only(
+          left: width_8,
+          bottom: height_4,
+        ),
         title: _isSliverAppBarExpanded
             ? null
             : Row(
@@ -46,9 +53,12 @@ class SliverAppBarCustom extends StatelessWidget {
                       top: height_2,
                       left: width_4,
                       right: width_2,
-                      bottom: width_4,
+                      bottom: height_2,
                     ),
-                    decoration: BoxDecoration(color: clr_black54, borderRadius: BorderRadius.circular(border_8)),
+                    decoration: BoxDecoration(
+                      color: clr_black54,
+                      borderRadius: BorderRadius.circular(border_8),
+                    ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -58,11 +68,21 @@ class SliverAppBarCustom extends StatelessWidget {
                           color: Colors.white,
                           size: fontSize_10,
                         ),
-                        SizedBox(width: height_2,),
+                        SizedBox(
+                          width: width_2,
+                        ),
                         Text(
                           SUPPORT,
-                          style: TextStyle(fontSize: fontSize_8, color: clr_white, fontWeight: FontWeight.w500),
-                        )
+                          style: TextStyle(
+                            fontSize: fontSize_6,
+                            color: clr_white,
+                            fontFamily: 'open_sans',
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                        SizedBox(
+                          width: width_2,
+                        ),
                       ],
                     ),
                   ),

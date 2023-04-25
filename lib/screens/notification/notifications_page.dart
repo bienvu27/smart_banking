@@ -20,7 +20,12 @@ class NotificationPage extends StatelessWidget {
               centerTitle: true,
               title: Text(
                 NOTIFICATION,
-                style: TextStyle(color: clr_black, fontSize: fontSize_12, fontWeight: FontWeight.w600),
+                style: TextStyle(
+                  color: clr_black,
+                  fontFamily: 'open_sans',
+                  fontSize: fontSize_12,
+                  fontWeight: FontWeight.w600,
+                ),
               ),
               backgroundColor: clr_white,
               actions: [
@@ -36,7 +41,7 @@ class NotificationPage extends StatelessWidget {
                 )
               ],
               bottom: PreferredSize(
-                preferredSize: Size.fromHeight(height_56),
+                preferredSize: Size.fromHeight(height_64),
                 child: Column(
                   children: [
                     Container(
@@ -103,6 +108,7 @@ class NotificationPage extends StatelessWidget {
                       visibly: true,
                       title: SEARCH,
                     ),
+                    SizedBox(height: height_4,),
                   ],
                 ),
               )),
