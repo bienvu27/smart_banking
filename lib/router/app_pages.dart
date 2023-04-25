@@ -13,6 +13,8 @@ import '../screens/card_mobile/binding/card_mobile_binding.dart';
 import '../screens/card_mobile/view/card_mobile_page.dart';
 import '../screens/card_service/binding/card_service_binding.dart';
 import '../screens/card_service/view/card_service_page.dart';
+import '../screens/contact_bank/binding/contact_bank_binding.dart';
+import '../screens/contact_bank/view/contact_bank_page.dart';
 import '../screens/contacts_manager/binding/contacts_manager_binding.dart';
 import '../screens/contacts_manager/view/contacts_manager.dart';
 import '../screens/dashboard/binding/dashboard_binding.dart';
@@ -33,6 +35,8 @@ import '../screens/transfer_success/binding/transfer_success_binding.dart';
 import '../screens/transfer_success/view/transfer_success.dart';
 import '../screens/user/binding/user_bindding.dart';
 import '../screens/user/view/user_page.dart';
+import '../screens/user_manual/binding/user_manual_binding.dart';
+import '../screens/user_manual/view/user_manual_page.dart';
 import 'app_routers.dart';
 
 class AppPages {
@@ -121,6 +125,16 @@ class AppPages {
         name: AppRouters.WEB_VIEW,
         page: () => WebViewPage(),
         binding: WebViewBinding()),
+
+    GetPage(
+        name: AppRouters.USER_MANUAL,
+        page: () => UserManualPage(),
+        binding: UserManualBinding()),
+
+    GetPage(
+        name: AppRouters.CONTACT_BANK,
+        page: () => ContactBankPage(),
+        binding: ContactBankBinding()),
 
   ];
 }
