@@ -94,7 +94,10 @@ class _HomePageState extends State<HomePage> {
                         ),
                         ListService(
                           listService: listService,
-                          onTap: (e) => Get.toNamed("/service_manager", arguments: [e.id, e.title]),
+                          onTap: (e) => Get.toNamed(
+                            "/service_manager",
+                            arguments: [e.id, e.title],
+                          ),
                         )
                       ],
                     ),
