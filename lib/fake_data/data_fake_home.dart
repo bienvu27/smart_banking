@@ -401,12 +401,12 @@ final listCharity = [
   ServiceFavoriteModel(image: 'assets/svg/icon_gradient/210608.svg', title: 'Chuyển tiền từ thiện'),
 ];
 final listSupport = [
-  ServiceFavoriteModel(image: 'assets/svg/icon_gradient/210901.svg', title: 'Báo cáo giao dịch'),
-  ServiceFavoriteModel(image: 'assets/svg/icon_gradient/210902.svg', title: 'quản lý tài chính cá nhân'),
-  ServiceFavoriteModel(image: 'assets/svg/icon_gradient/210904.svg', title: 'Tìm kiếm ATM/CN'),
-  ServiceFavoriteModel(image: 'assets/svg/icon_gradient/211001.svg', title: 'Lãi suất'),
-  ServiceFavoriteModel(image: 'assets/svg/icon_gradient/211002.svg', title: 'Tỷ giá'),
-  ServiceFavoriteModel(image: 'assets/svg/icon_gradient/211003.svg', title: 'Hỗ trợ'),
+  ServiceFavoriteModel(id: 1, image: 'assets/svg/icon_gradient/210901.svg', title: 'Báo cáo giao dịch'),
+  ServiceFavoriteModel(id: 2, image: 'assets/svg/icon_gradient/210902.svg', title: 'quản lý tài chính cá nhân'),
+  ServiceFavoriteModel(id: 3, image: 'assets/svg/icon_gradient/210904.svg', title: 'Tìm kiếm ATM/CN'),
+  ServiceFavoriteModel(id: 4, image: 'assets/svg/icon_gradient/211001.svg', title: 'Lãi suất'),
+  ServiceFavoriteModel(id: 5, image: 'assets/svg/icon_gradient/211002.svg', title: 'Tỷ giá'),
+  ServiceFavoriteModel(id: 6, image: 'assets/svg/icon_gradient/211003.svg', title: 'Hỗ trợ'),
 ];
 
 List<ServiceName> listItems = [

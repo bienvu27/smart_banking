@@ -14,7 +14,6 @@ class ServiceName {
       ServiceName(id: 6, name: 'Mua sắm'),
       ServiceName(id: 7, name: 'Từ thiện'),
       ServiceName(id: 8, name: 'Hỗ trợ'),
-      ServiceName(id: 9, name: 'Tất cả dịch vụ'),
     ];
   }
 }

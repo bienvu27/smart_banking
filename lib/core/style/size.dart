@@ -76,6 +76,7 @@ double width_2 = 5.w;
 double width_2_5 = 7.w;
 double width_3 = 7.5.w;
 double width_4 = 10.w;
+double width_6 = 15.w;
 double width_8 = 20.w;
 double width_10 = 25.w;
 double width_12 = 30.w;
