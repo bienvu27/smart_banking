@@ -7,14 +7,16 @@ import '../../../../core/style/size.dart';
 import '../../model/service_favorite_model.dart';
 
 class ServiceList extends StatelessWidget {
-  const ServiceList({
+   ServiceList({
     super.key,
     required this.list,
     required this.title,
+    this.onTap,
   });
 
   final List<ServiceFavoriteModel> list;
   final String title;
+  Function? onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -48,42 +50,45 @@ class ServiceList extends StatelessWidget {
                 mainAxisSpacing: 10,
                 crossAxisCount: 3,
                 children: list.map((e) {
-                  return Column(
-                    children: [
-                      Stack(
-                        alignment: Alignment.center,
-                        children: [
-                          SvgPicture.asset(
-                            '${e.image}',
-                            width: width_40,
-                            height: height_40,
-                            fit: BoxFit.contain,
-                          ),
-                          Positioned(
-                            bottom: height_5,
-                            child: Container(
-                              width: width_20,
-                              height: 0.1.h,
-                              decoration: BoxDecoration(
-                                boxShadow: [boxShadowIcon],
+                  return InkWell(
+                    onTap: ()=> onTap!(e),
+                    child: Column(
+                      children: [
+                        Stack(
+                          alignment: Alignment.center,
+                          children: [
+                            SvgPicture.asset(
+                              '${e.image}',
+                              width: width_40,
+                              height: height_40,
+                              fit: BoxFit.contain,
+                            ),
+                            Positioned(
+                              bottom: height_5,
+                              child: Container(
+                                width: width_20,
+                                height: 0.1.h,
+                                decoration: BoxDecoration(
+                                  boxShadow: [boxShadowIcon],
+                                ),
                               ),
                             ),
-                          ),
-                        ],
-                      ),
-                      SizedBox(
-                        height: height_6,
-                      ),
-                      Text(
-                        e.title ?? '',
-                        maxLines: 3,
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontSize: fontSize_10,
-                          fontWeight: FontWeight.w600,
+                          ],
                         ),
-                      )
-                    ],
+                        SizedBox(
+                          height: height_6,
+                        ),
+                        Text(
+                          e.title ?? '',
+                          maxLines: 3,
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: fontSize_10,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        )
+                      ],
+                    ),
                   );
                 }).toList()),
           ),

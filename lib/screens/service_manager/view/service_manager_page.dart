@@ -25,7 +25,7 @@ class _ServiceManagerState extends State<ServiceManager> {
   void initState() {
     super.initState();
     id = data[0] != null && data[0].toString().isNotEmpty ? data[0].toString() : "1";
-    selectVal = selectVal.isNotEmpty ?  name : "Tất cả các dịch vụ";
+    selectVal = selectVal.isNotEmpty ? name : "Tất cả các dịch vụ";
     print(name);
   }
 
@@ -49,7 +49,34 @@ class _ServiceManagerState extends State<ServiceManager> {
               ServiceList(title: REGISTER_SERVICES, list: listRegisterService),
               ServiceList(title: SHOPPING, list: listShopping),
               ServiceList(title: SERVICE_CHARITY, list: listCharity),
-              ServiceList(title: SUPPORT, list: listSupport),
+              ServiceList(
+                title: SUPPORT,
+                list: listSupport,
+                onTap: (e) {
+                  print(e.id);
+                 switch(e.id){
+                   case 1:
+                     break;
+
+                   case 2:
+                     break;
+
+                   case 3:
+                     break;
+
+                   case 4:
+                     Get.toNamed("/web_view", arguments: ['Lãi suất','https://vrbank.com.vn/vi/lai-suat-1/']);
+                     break;
+
+                   case 5:
+                     Get.toNamed("/web_view", arguments: ['Tỷ giá', 'https://vrbank.com.vn/vi/ty-gia-ngoai-te/']);
+                     break;
+
+                   case 6:
+                     break;
+                 }
+                },
+              ),
               Container(
                 color: Colors.white,
                 height: 100.h,
@@ -91,7 +118,10 @@ class _ServiceManagerState extends State<ServiceManager> {
               Container(
                   color: clr_white,
                   height: Get.size.height,
-                  child: ServiceList(title: SERVICE_CHARITY, list: listCharity)),
+                  child: ServiceList(
+                    title: SERVICE_CHARITY,
+                    list: listCharity,
+                  )),
             ] else if (id == "8") ...[
               Container(
                 color: clr_white,
@@ -143,7 +173,7 @@ class _ServiceManagerState extends State<ServiceManager> {
                       onTap: () {
                         id = item.id!.toString();
                       },
-                      value: item.name ,
+                      value: item.name,
                       child: Center(
                         child: Text(
                           item.name ?? '',
