@@ -18,5 +18,6 @@ class AppRouters{
   static const String WEB_VIEW = '/web_view';
   static const String USER_MANUAL = '/user_manual';
   static const String CONTACT_BANK = '/contact_bank';
+  static const String QUESTIONS = '/questions';
 
 }

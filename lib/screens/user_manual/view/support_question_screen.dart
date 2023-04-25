@@ -16,18 +16,17 @@ class _SupportQuestion extends State<SupportQuestion> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
+
     getListQuestion();
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
           padding:
-              const EdgeInsets.only(top: 10, left: 15, right: 15, bottom: 10),
+              const EdgeInsets.only(top: 10, left: 15, right: 15, bottom: 10,),
           child: ListView.builder(
               key: Key('builder ${(selected).toString()}'),
               shrinkWrap: true,
@@ -71,8 +70,7 @@ class _SupportQuestion extends State<SupportQuestion> {
                             padding: const EdgeInsets.only(left: 15, right: 10),
                             child: Text(
                               listQuestions[i].answer!,
-                              // defaultTextStyle: text_normal_size,
-                              // customTextAlign: (element) => TextAlign.justify,
+
                             ),
                           )
                         ],
@@ -93,7 +91,6 @@ class _SupportQuestion extends State<SupportQuestion> {
       ),
     );
   }
-
   void getListQuestion() async {
     var dataGroupList = json.decode(await getJson())['faq']['listGroups'];
     for (var i in dataGroupList) {

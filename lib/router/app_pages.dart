@@ -22,6 +22,8 @@ import '../screens/dashboard/view/dashboard_page.dart';
 import '../screens/history_transfer/binding/history_transfer_binding.dart';
 import '../screens/history_transfer/view/history_transfer_page.dart';
 import '../screens/home/binding/home_binding.dart';
+import '../screens/questions/binding/questions_binding.dart';
+import '../screens/questions/view/question_page.dart';
 import '../screens/service_manager/binding/service_manager_binding.dart';
 import '../screens/splash_screen/binding/splash_screen_binding.dart';
 import '../screens/splash_screen/view/splash_screen.dart';
@@ -135,6 +137,11 @@ class AppPages {
         name: AppRouters.CONTACT_BANK,
         page: () => ContactBankPage(),
         binding: ContactBankBinding()),
+
+    GetPage(
+        name: AppRouters.QUESTIONS,
+        page: () => QuestionsPage(),
+        binding: QuestionsBinding()),
 
   ];
 }

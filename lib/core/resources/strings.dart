@@ -226,3 +226,4 @@ const String VERSION = 'Phiên bản';
 const String UPDATE = 'Cập nhật';
 const String TITLE_84 = 'Dung lượng';
 const String LANGUAGE = 'Ngôn ngữ';
+const String QUESTIONS = 'Câu hỏi thường gặp';

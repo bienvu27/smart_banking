@@ -670,90 +670,30 @@
     "listGroups": [
       {
         "groupQ1": {
-          "title": "I. Thông tin chung",
+          "title": "Thông tin chung về VRB",
           "listQuestions": [
             {
               "question1": {
-                "title": "1. Dịch vụ eTax Mobile là gì?",
-                "answer": "<p>eTax Mobile - Ứng dụng dịch vụ thuế điện tử do Tổng cục thuế và nhà thầu phát triển. Ứng dụng được cài đặt trên thiết bị thông minh: di động, máy tính bảng,… trên hệ điều hành IOS hoặc Android.</p>"
+                "title": "1. Mục tiêu hoạt động:",
+                "answer": " -  Là ngân hàng thương mại kinh doanh đa năng theo mô hình ngân hàng hiện đại với nguyên tắc phát triển bền vững, an toàn, hiệu quả và hội nhập. Đáp ứng đầy đủ các chỉ số an toàn trong hoạt động ngân hàng theo thông lệ quốc tế.\n     - Là ngân hàng hàng đầu trong việc cung cấp dịch vụ tài chính ngân hàng, tài trợ vốn và thanh toán cho các hoạt động trao đổi thương mại và đầu tư giữa hai nước Việt Nam – Liên Bang Nga. "
               }
             },
             {
               "question2": {
-                "title": "2. Tại sao tôi nên chọn sử dụng dịch vụ eTax Mobile?",
-                "answer": "<p>Với dịch vụ eTax Mobile, thông qua thiết bị máy tính, máy tính bảng, điện thoại thông minh có kết nối 3G/4G/Wifi/GPRS, Người nộp thuế sẽ được trải nghiệm nhiều tiện ích và nhanh chóng, mọi lúc mọi nơi. eTax Mobile giúp NNT có thể tra cứu tờ khai, nộp thuế điện tử và cung cấp các chức năng tiện ích khắc phục vụ nhu cầu của người nộp thuế.</p>"
+                "title": "2. Cam kết của VRB hướng tới khách hàng:",
+                "answer": " Đem lại sự tiện lợi để khách hàng tiếp cận với nguồn vốn, sản phẩm, dịch vụ của Ngân hàng; luôn hướng tới mục tiêu gia tăng giá trị, hiệu quả kinh doanh cho khách hàng và ngân hàng.\n      Đảm bảo: “Kết nối thành công, đồng hành phát triển”."
               }
             },
             {
               "question3": {
-                "title": "3. Ai có thể sử dụng dịch vụ eTax Mobile? ",
-                "answer": "<p><strong>Dịch vụ eTax Mobile được cung cấp cho khách hàng có đủ đồng thời các điều kiện sau: </strong></p><p>- NNT là cá nhân đã có tài khoản trên hệ thống Thuế điện tử dành cho cá nhân.  </p><p>- Có điện thoại đăng ký mạng viễn thông của Việt Nam. </p><p>- Trường hợp Quý khách sử dụng dịch vụ eTax Mobile trên ứng dụng di động, thiết bị di động tương ứng cần có hệ điều hành IOS phiên bản từ 9.0 trở lên hoặc hệ điều hành Android phiên bản từ 4.0 trở lên hoặc theo quy định của eTax theo từng thời kỳ.  </p>"
+                "title": "3. Lĩnh vực hoạt động chính:",
+                "answer": " a/ Đầu tư: \n      - Tư vấn và cung cấp thông tin về cơ hội đầu tư.\n      - Thu xếp vốn đầu tư và trực tiếp cho vay hoặc đồng tài trợ cho các dự án.\n      - Cung cấp dịch vụ bảo lãnh thanh toán, bảo lãnh dự thầu và bảo lãnh thực hiện hợp đồng, tư vấn về thực hiện dự án.\n     - Đầu tư trực tiếp qua hình thức góp vốn mua cổ phần các doanh nghiệp hai nước hoặc đầu tư gián tiếp thông qua các hoạt động trên thị trường liên ngân hàng hoặc thị trường tài chính. \n     b/ Xúc tiến thương mại: \n      - Tiến hành các hoạt động xúc tiến thương mại.\n      - Hỗ trợ chia sẻ thông tin về thị trường, khách hàng.\n      - Phối hợp thẩm định về đối tác và dự án đầu tư tại Việt Nam hoặc Liên bang Nga nhằm phát triển hoạt động giao thương giữa hai nước"
               }
             },
             {
               "question4": {
-                "title": "4. Có phải dịch vụ eTax Mobile hoạt động liên tục 24h? ",
-                "answer": "<p>Đúng, dịch vụ eTax Mobile hoạt động 24h một ngày và 7 ngày trong tuần, bao gồm cả ngày nghỉ/ngày lễ.</p>"
-              }
-            },
-            {
-              "question5": {
-                "title": "5. Tôi có thể nhận hỗ trợ như thế nào nếu tôi gặp trục trặc khi sử dụng dịch vụ eTax Mobile? ",
-                "answer": "<p>Khi có bất kỳ vướng mắc trong quá trình sử dụng dịch vụ, Quý khách có thể liên hệ Hotline 24/7 theo số điện thoại 024.37689679 (số máy lẻ 2180) hoặc gửi email qua hòm thư: nhomhttdt@gdt.gov.vn.</p>"
-              }
-            }
-          ]
-        }
-      },
-      {
-        "groupQ2": {
-          "title": "II. Đăng nhập",
-          "listQuestions": [
-            {
-              "question1": {
-                "title": "1. Làm thế nào để đăng nhập vào dịch vụ eTax Mobile?",
-                "answer": "<p>- NNT tải ứng dụng eTax Mobile trên chợ ứng dụng về thiết bị di động.</p><p>- Trường hợp NNT đã có tài khoản và được cơ quan thuế cấp thì nhập mã số thuế và mật khẩu để đăng nhập.</p><p>- Trường hợp NNT chưa có tài khoản đăng nhập, NNT chọn chức năng <Đăng ký ngay> trên app Mobile hoặc đăng ký qua cổng thông tin của TCT hoặc cổng thông tin điện tử của DVC quốc gia.</p>"
-              }
-            },
-            {
-              "question2": {
-                "title": "2. Tôi cần làm gì trong lần đăng nhập đầu tiên hoặc đổi sang thiết bị mới?",
-                "answer": "<p>Khi đăng nhập lần đầu vào hệ thống NNT hoặc đổi sang thiết bị mới thì NNT phải nhập mã OTP xác thực được gửi về số điện thoại đã đăng ký trên hệ thống Thuế điện tử dành cho cá nhân.</p>"
-              }
-            },
-            {
-              "question3": {
-                "title": "3. Mật khẩu sử dụng dịch vụ eTax Mobile nên được đặt như thế nào?",
-                "answer": "<p>- Mật khẩu sử dụng dịch vụ eTax Mobile theo quy tắc: chữ thường, chữ hoa hoặc chữ số hoặc ký tự đặc biệt. Mật khẩu truy cập phải dài từ 6 đến 20 ký tự và không có dấu cách (khoảng trống)</p><p>- Để đảm bảo an toàn, NNT không cài đặt mật khẩu bằng thông tin mang tính cá nhân mà người khác dễ suy đoán như ngày tháng năm sinh, số điện thoại, tên bản thân, dãy số liên tục đơn giản như 23456…., tránh viết mật khẩu ra giấy hoặc ghi chép dưới hình thức khác.</p>"
-              }
-            },
-            {
-              "question4": {
-                "title": "4. Tôi phải làm gì nếu quên Tên đăng nhập hoặc mật khẩu của dịch vụ eTax Mobile?  ",
-                "answer": "<p>- Liên hệ Cơ quan thuế quản lý trực tiếp để được hỗ trợ.</p><p>- Liên hệ Hotline 24/7 của eTax qua số điện thoại 024.37689679 (số máy lẻ 2180) hoặc gửi email qua hòm thư: nhomhttdt@gdt.gov.vn</p><p>- Trên mobile đăng nhập eTax Mobile (áp dụng đối với NNT cá nhân cấp lại mật khẩu với điều kiện tên truy cập chưa bị khóa).</p>"
-              }
-            }
-          ]
-        }
-      },
-      {
-        "groupQ3": {
-          "title": "III. Sử dụng dịch vụ",
-          "listQuestions": [
-            {
-              "question1": {
-                "title": "1. Tính năng Cài đặt yêu thích có gì nổi bật?",
-                "answer": "<p>Tính năng cài đặt chức năng yêu thích giúp NNT tự cài đặt chức năng, dịch vụ thường xuyên sử dụng, để hiển thị tại vị trí dễ quan sát trên màn hình, giúp NNT thực hiện tra cứu tờ khai nhanh chóng theo nhu cầu của mình.</p>"
-              }},
-            {
-              "question2": {
-                "title": "2. Tôi đang sử dụng dịch vụ eTax Mobile thì chương trình hiển thị thông báo “Phiên giao dịch sử dụng dịch vụ đã hết. Quý khách vui lòng đăng nhập lại?",
-                "answer": "<p>Vì lý do an toàn của NNT, nếu NNT đăng nhập trong một khoảng thời gian nhất định không có thao tác sử dụng dịch vụ, hệ thống sẽ thông báo hết thời gian truy cập. Khi nhận được thông báo này, NNT chỉ cần sử dụng đúng Tên đăng nhập và Mật khẩu để đăng nhập lại.</p>"
-              }},
-            {
-              "question3": {
-                "title": "3. One – time – password (OTP) là gì?",
-                "answer": "<p>OTP là mật khẩu sử dụng một lần do eTax Mobile cung cấp cho NNT mỗi khi khách hàng thực hiện đăng nhập lần đầu hoặc quên mật khẩu để định danh chính xác NNT. Mật khẩu này chỉ có giá trị sử dụng một lần duy nhất nên có thể đảm bảo an toàn cho NNT.</p>"
+                "title": "4. Sản phẩm – Dịch vụ:",
+                "answer": "- Sản phẩm tiền gửi dành cho cá nhân và doanh nghiệp\n    - Dịch vụ tài khoản dành cho cá nhân và doanh nghiệp\n    - Sản phẩm Thẻ dành cho cá nhân và doanh nghiệp\n    - Tín dụng cá nhân và doanh nghiệp\n    - Chuyển tiền trong nước và quốc tế: VRB thực hiện nghiệp vụ chuyển tiền trực tiếp giữa Việt Nam và LB Nga bằng 4 loại tiền: VND, RUB, EURO, USD. \n    - Dịch vụ Ngân hàng điện tử: Internet Banking, Mobile Banking, SMS Banking.   \n    - Nghiệp vụ bảo lãnh\n    - Tài trợ thương mại\n    - Kinh doanh ngoại tệ\n    - Các sản phẩm dịch vụ khác."
               }
             }
           ]

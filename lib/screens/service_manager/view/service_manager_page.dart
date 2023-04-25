@@ -188,7 +188,13 @@ class _ServiceManagerState extends State<ServiceManager> {
                                     height: height_16,
                                   ),
                                   InkWell(
-                                    onTap: () {},
+                                    onTap: () {
+                                      Navigator.pop(context);
+                                      Get.toNamed(
+                                        "/questions",
+                                        arguments: "",
+                                      );
+                                    },
                                     child: Text(
                                       TITLE_80,
                                       style: TextStyle(
@@ -202,10 +208,13 @@ class _ServiceManagerState extends State<ServiceManager> {
                                     height: height_16,
                                   ),
                                   InkWell(
-                                    onTap: () => Get.toNamed(
-                                      "/contact_bank",
-                                      arguments: "",
-                                    ),
+                                    onTap: () {
+                                      Navigator.pop(context);
+                                      Get.toNamed(
+                                        "/contact_bank",
+                                        arguments: "",
+                                      );
+                                    },
                                     child: Text(
                                       TITLE_81,
                                       style: TextStyle(
@@ -407,7 +416,13 @@ class _ServiceManagerState extends State<ServiceManager> {
                                       height: height_16,
                                     ),
                                     InkWell(
-                                      onTap: () {},
+                                      onTap: () {
+                                        Navigator.pop(context);
+                                        Get.toNamed(
+                                          "/questions",
+                                          arguments: "",
+                                        );
+                                      },
                                       child: Text(
                                         TITLE_80,
                                         style: TextStyle(
@@ -421,10 +436,13 @@ class _ServiceManagerState extends State<ServiceManager> {
                                       height: height_16,
                                     ),
                                     InkWell(
-                                      onTap: () => Get.toNamed(
-                                        "/contact_bank",
-                                        arguments: "",
-                                      ),
+                                      onTap: () {
+                                        Navigator.pop(context);
+                                        Get.toNamed(
+                                          "/contact_bank",
+                                          arguments: "",
+                                        );
+                                      },
                                       child: Text(
                                         TITLE_81,
                                         style: TextStyle(
