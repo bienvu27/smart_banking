@@ -73,8 +73,6 @@ class TransferPage extends StatelessWidget {
                           borderRadius: BorderRadius.circular(
                             border_10,
                           ),
-                          // color: clr_66cacef,
-                          // color: clr_gradient_3,
                           color: clr_adb5bd,
                         ),
                         labelColor: clr_white,
