@@ -17,7 +17,7 @@ class SettingsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        color: clr_white,
+
         height: MediaQuery.of(context).size.height,
         child: SingleChildScrollView(
           child: Column(
@@ -50,15 +50,18 @@ class SettingsPage extends StatelessWidget {
                         Text(
                           GOOD_MORNING,
                           style: TextStyle(
-                            fontSize: fontSize_12,
-                            fontWeight: FontWeight.w500,
+                            fontSize: fontSize_11,
+                            fontWeight: FontWeight.w400,
                             color: clr_black12,
                           ),
+                        ),
+                        SizedBox(
+                          height: height_4,
                         ),
                         Text(
                           NAME_TEST,
                           style: TextStyle(
-                            fontSize: fontSize_16,
+                            fontSize: fontSize_14,
                             fontWeight: FontWeight.w500,
                             color: clr_black,
                           ),
@@ -113,7 +116,11 @@ class SettingsPage extends StatelessWidget {
                 ],
               ),
               Container(
-                padding: EdgeInsets.only(left: width_8, right: width_8, top: height_16),
+                padding: EdgeInsets.only(
+                  left: width_8,
+                  right: width_8,
+                  top: height_16,
+                ),
                 color: clr_white,
                 width: MediaQuery.of(context).size.width,
                 child: Column(
@@ -122,13 +129,13 @@ class SettingsPage extends StatelessWidget {
                     Text(
                       PERSONAL,
                       style: TextStyle(
-                        fontSize: fontSize_16,
+                        fontSize: fontSize_14,
                         fontWeight: FontWeight.w500,
                         color: clr_black,
                       ),
                     ),
                     SizedBox(
-                      height: height_8,
+                      height: height_16,
                     ),
                     SettingComponent(
                       title: CHANGE_AVATAR,
@@ -144,8 +151,8 @@ class SettingsPage extends StatelessWidget {
                 ),
               ),
               Container(
-                margin: EdgeInsets.only(top: height_8),
-                padding: EdgeInsets.only(left: width_8, right: width_8, top: height_16),
+                margin: EdgeInsets.only(top: height_6),
+                padding: EdgeInsets.only(left: width_8, right: width_8, top: height_16,),
                 color: clr_white,
                 width: MediaQuery.of(context).size.width,
                 child: Column(
@@ -154,13 +161,13 @@ class SettingsPage extends StatelessWidget {
                     Text(
                       ADVANCED_SETTINGS,
                       style: TextStyle(
-                        fontSize: fontSize_16,
+                        fontSize: fontSize_14,
                         fontWeight: FontWeight.w500,
                         color: clr_black,
                       ),
                     ),
                     SizedBox(
-                      height: height_8,
+                      height: height_16,
                     ),
                     SettingComponent(
                       title: TRANSFER_CONTACTS,
