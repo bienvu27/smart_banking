@@ -31,6 +31,8 @@ import '../screens/transaction_confirmation/binding/transaction_confirmation_bin
 import '../screens/transaction_confirmation/view/transaction_confirmation_page.dart';
 import '../screens/transaction_infor/binding/transaction_infor_binding.dart';
 import '../screens/transaction_infor/view/transaction_infor_page.dart';
+import '../screens/transaction_limit/binding/tansaction_limit_binding.dart';
+import '../screens/transaction_limit/view/transaction_limit_page.dart';
 import '../screens/transfer/binding/transfer_binding.dart';
 import '../screens/transfer/view/transfer_page.dart';
 import '../screens/transfer_success/binding/transfer_success_binding.dart';
@@ -142,6 +144,11 @@ class AppPages {
         name: AppRouters.QUESTIONS,
         page: () => QuestionsPage(),
         binding: QuestionsBinding()),
+
+    GetPage(
+        name: AppRouters.TRANSACTION_LIMIT,
+        page: () => TransactionLimitPage(),
+        binding: TransactionLimitBinding()),
 
   ];
 }
