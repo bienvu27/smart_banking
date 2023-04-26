@@ -14,7 +14,6 @@ class NotificationList2 extends StatelessWidget {
 
   final List<NotificationModel2> list;
 
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -36,8 +35,7 @@ class NotificationList2 extends StatelessWidget {
                     children: [
                       Text(
                         'Hôm qua, ${e.dateTime}',
-                        style: TextStyle(
-                            fontSize: fontSize_10, fontWeight: FontWeight.w500),
+                        style: TextStyle(fontSize: fontSize_10, fontWeight: FontWeight.w500),
                       ),
                       SizedBox(
                         height: height_8,
@@ -58,9 +56,7 @@ class NotificationList2 extends StatelessWidget {
                               Text(
                                 '14:55',
                                 style: TextStyle(
-                                    fontSize: fontSize_10,
-                                    fontWeight: FontWeight.w500,
-                                    color: Colors.black54),
+                                    fontSize: fontSize_10, fontWeight: FontWeight.w500, color: Colors.black54),
                               )
                             ],
                           ),
@@ -78,19 +74,28 @@ class NotificationList2 extends StatelessWidget {
                   ),
                 ),
                 Container(
-                    margin: EdgeInsets.only(top: height_8, right: width_8, left: width_8),
+                    margin: EdgeInsets.only(
+                      top: height_8,
+                      right: width_8,
+                      left: width_8,
+                    ),
                     padding: EdgeInsets.only(
-                        top: height_8, bottom: height_8, right: width_8, left: width_8),
+                      top: height_8,
+                      bottom: height_8,
+                      right: width_8,
+                      left: width_8,
+                    ),
                     width: MediaQuery.of(context).size.width,
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(border_16),
-                        color: Colors.grey[100]),
+                      borderRadius: BorderRadius.circular(border_16),
+                      color: clr_f1faff,
+                    ),
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Flexible(
                           child: SizedBox(
-                            width: MediaQuery.of(context).size.width/1.2,
+                            width: MediaQuery.of(context).size.width / 1.2,
                             child: RichText(
                               text: TextSpan(children: [
                                 TextSpan(
@@ -157,7 +162,8 @@ class NotificationList2 extends StatelessWidget {
                                       color: PRIMARY_COLOR),
                                 ),
                                 TextSpan(
-                                  text: 'Nội dung giao dịch: Số tài khoản nguồn: ${e.numberUser2} ${e.nameFriends} Chuyen tien',
+                                  text:
+                                      'Nội dung giao dịch: Số tài khoản nguồn: ${e.numberUser2} ${e.nameFriends} Chuyen tien',
                                   style: TextStyle(
                                       fontSize: fontSize_12,
                                       height: lineHeight_1_2,

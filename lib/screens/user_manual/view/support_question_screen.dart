@@ -20,13 +20,18 @@ class _SupportQuestion extends State<SupportQuestion> {
 
     getListQuestion();
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-          padding:
-              const EdgeInsets.only(top: 10, left: 15, right: 15, bottom: 10,),
+          padding: const EdgeInsets.only(
+            top: 10,
+            left: 15,
+            right: 15,
+            bottom: 10,
+          ),
           child: ListView.builder(
               key: Key('builder ${(selected).toString()}'),
               shrinkWrap: true,
@@ -36,15 +41,13 @@ class _SupportQuestion extends State<SupportQuestion> {
                 return Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    listQuestions[i].question ==
-                            groups[listQuestions[i].idGroup!].questions![0].question
+                    listQuestions[i].question == groups[listQuestions[i].idGroup!].questions![0].question
                         ? Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               i != 0
                                   ? Padding(
-                                      padding: const EdgeInsets.only(
-                                          right: 8, left: 8, bottom: 10),
+                                      padding: const EdgeInsets.only(right: 8, left: 8, bottom: 10),
                                       child: Divider(
                                         thickness: 2,
                                       ),
@@ -60,30 +63,31 @@ class _SupportQuestion extends State<SupportQuestion> {
                           )
                         : Container(),
                     ExpansionTile(
-                        key: Key(i.toString()),
-                        initiallyExpanded: selected == i,
-                        title: Text(listQuestions[i].question!,
-                            textAlign: TextAlign.justify,
+                      key: Key(i.toString()),
+                      initiallyExpanded: selected == i,
+                      title: Text(
+                        listQuestions[i].question!,
+                        textAlign: TextAlign.justify,
+                      ),
+                      children: <Widget>[
+                        Padding(
+                          padding: const EdgeInsets.only(left: 15, right: 10),
+                          child: Text(
+                            listQuestions[i].answer!,
+                          ),
+                        )
+                      ],
+                      onExpansionChanged: ((newState) {
+                        if (newState)
+                          setState(() {
+                            selected = i;
+                          });
+                        else
+                          setState(() {
+                            selected = -1;
+                          });
+                      }),
                     ),
-                        children: <Widget>[
-                          Padding(
-                            padding: const EdgeInsets.only(left: 15, right: 10),
-                            child: Text(
-                              listQuestions[i].answer!,
-
-                            ),
-                          )
-                        ],
-                        onExpansionChanged: ((newState) {
-                          if (newState)
-                            setState(() {
-                              selected = i;
-                            });
-                          else
-                            setState(() {
-                              selected = -1;
-                            });
-                        })),
                   ],
                 );
               }),
@@ -91,6 +95,7 @@ class _SupportQuestion extends State<SupportQuestion> {
       ),
     );
   }
+
   void getListQuestion() async {
     var dataGroupList = json.decode(await getJson())['faq']['listGroups'];
     for (var i in dataGroupList) {
@@ -105,9 +110,7 @@ class _SupportQuestion extends State<SupportQuestion> {
             idGroup: index);
         questions.add(question);
       }
-      Group group = new Group(
-          title: i['groupQ${index + 1}']['title'].toString(),
-          questions: questions);
+      Group group = new Group(title: i['groupQ${index + 1}']['title'].toString(), questions: questions);
       groups.add(group);
       listQuestions.addAll(questions);
     }
@@ -117,7 +120,6 @@ class _SupportQuestion extends State<SupportQuestion> {
     return rootBundle.loadString('assets/i18n/vi.json');
   }
 }
-
 
 class Group {
   String? title;
