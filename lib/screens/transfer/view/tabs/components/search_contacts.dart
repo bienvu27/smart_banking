@@ -3,14 +3,18 @@ import '../../../../../core/style/colors.dart';
 import '../../../../../core/style/size.dart';
 
 class SearchContacts extends StatelessWidget {
-  const SearchContacts({
+   SearchContacts({
     super.key,
     required this.visibly,
     required this.title,
+    this.searchTextController,
+    this.onChange,
   });
 
   final bool visibly;
   final String title;
+   TextEditingController? searchTextController;
+   Function? onChange;
 
   @override
   Widget build(BuildContext context) {
@@ -31,8 +35,14 @@ class SearchContacts extends StatelessWidget {
             ),
             child: TextField(
               maxLines: 1,
+              controller: searchTextController,
               style: TextStyle(fontSize: fontSize_12),
               textAlignVertical: TextAlignVertical.center,
+              onChanged: (_) {
+                if(onChange != null) {
+                  onChange!(_);
+                }
+              },
               decoration: InputDecoration(
                 filled: true,
                 prefixIcon: Icon(

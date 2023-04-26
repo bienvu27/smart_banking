@@ -165,7 +165,7 @@ class TransactionInforPage extends StatelessWidget {
                         label: AMOUT_OF_MONEY,
                         textController: controller.moneyController,
                         textInputType: TextInputType.number,
-                        maxLength: 12,
+                        maxLength: 15,
                         counter: Text(
                           controller.sAmount.capitalizeFirst!,
                           style: TextStyle(
@@ -190,7 +190,7 @@ class TransactionInforPage extends StatelessWidget {
                           ),
                         ),
                         onChange: (_) {
-                          controller.convertMoneyNumberToText(VND);
+                          controller.convertMoneyNumberToText(VND,context);
                         },
                       ),
                     ),

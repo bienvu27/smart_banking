@@ -1,3 +1,5 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:smart_banking/screens/transfer/models/list_bank_model.dart';
 import 'package:smart_banking/screens/user/model/list_available_balances_model.dart';
 
@@ -543,4 +545,21 @@ final listNotification2 = [
       money: '100,000',
       nameFriends: 'CAO THI CHAM',
       numberUser2: 21610000542222),
+];
+
+
+class SearchHomeTestModel {
+  int? id;
+  IconData? icon;
+  String? title;
+
+  SearchHomeTestModel({this.id, this.icon, this.title});
+
+}
+
+final listSearchHomeTest = [
+  SearchHomeTestModel(icon: Icons.settings, title: 'Các chức năng, dịch vụ trong ứng dụng SmartBanking'),
+  SearchHomeTestModel(icon: Icons.account_box_rounded, title: 'Danh bạ thụ hưởng chuyển tiền'),
+  SearchHomeTestModel(icon: Icons.sticky_note_2_outlined, title: 'Mẫu thanh toán hóa đơn'),
+  SearchHomeTestModel(icon: Icons.monetization_on, title: 'Ngân hàng chuyển tiền ngoài BIDV'),
 ];

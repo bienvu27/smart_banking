@@ -12,6 +12,7 @@ class TextFieldComponent extends StatelessWidget {
     this.text,
     this.suffix,
     this.counter,
+    this.focusNode,
     this.maxLength,
   });
 
@@ -21,12 +22,14 @@ class TextFieldComponent extends StatelessWidget {
   Function? onChange;
   Widget? suffix, counter;
   int? maxLength;
+  FocusNode? focusNode;
   final TextInputType textInputType;
 
   @override
   Widget build(BuildContext context) {
     return TextField(
       keyboardType: textInputType,
+      focusNode: focusNode,
       controller: textController ?? TextEditingController(text: text),
       onChanged: (_) {
         if(onChange != null) {

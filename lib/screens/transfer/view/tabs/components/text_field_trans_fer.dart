@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_contacts/flutter_contacts.dart';
 import 'package:get/get.dart';
 import 'package:get/get_connect/http/src/utils/utils.dart';
 import '../../../../../core/resources/name_icon.dart';
@@ -41,7 +42,14 @@ class TextFieldTransFer extends StatelessWidget {
               decoration: InputDecoration(
                 labelText: labelText,
                 suffixIcon: InkWell(
-                  onTap: () => Get.toNamed("/contacts_manager", arguments: ''),
+                  onTap: () {
+                    FlutterContacts.requestPermission().then((valuePermission) {
+                      FlutterContacts.getContacts(withProperties: true, withPhoto: true)
+                          .then((valueContact) {
+                        Get.toNamed("/contacts_manager", arguments: valueContact);
+                      });
+                    });
+                  },
                   child: Icon(
                     suffixIcon,
                     size: fontSize_15,
