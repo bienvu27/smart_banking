@@ -226,7 +226,7 @@ class CardServicePage extends StatelessWidget {
                                 Stack(
                                   children: [
                                     SizedBox(
-                                      height: height_120,
+                                      height: height_300,
                                       child: PageView.builder(
                                           controller: controller.cardController,
                                           itemCount: imagesCard.length,
@@ -242,7 +242,7 @@ class CardServicePage extends StatelessWidget {
                                                     Image.asset(
                                                       imagesCard[pagePosition].image ?? '',
                                                       width: width_248,
-                                                      height: height_120,
+                                                      height: height_300,
                                                       fit: BoxFit.fill,
                                                     ),
                                                     Positioned(

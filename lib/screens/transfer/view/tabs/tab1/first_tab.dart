@@ -26,10 +26,10 @@ class _FirstTabState extends State<FirstTab> {
   bool lastStatus = true;
 
 
-  double height = Get.size.height > 600 ? height_530 : height_630;
-  double heightInit = Get.size.height > 600 ? height_530 : height_630;
-  double fromHeight = Get.size.height > 600 ? height_100 : height_150;
-  double fromHeightInit = Get.size.height > 600 ? height_100 : height_150;
+  double height = Get.size.height > 650 ? height_500 : height_600;
+  double heightInit = Get.size.height > 650 ? height_500 : height_600;
+  double fromHeight = Get.size.height > 650 ? height_100 : height_96;
+  double fromHeightInit = Get.size.height > 650 ? height_100 : height_96;
 
   int index = 1;
   bool statusSearch = true;
@@ -127,20 +127,20 @@ class _FirstTabState extends State<FirstTab> {
                         ),
                         widget.controller.isSameOwner
                             ? GestureDetector(
-                                onTap: () => widget.controller.showDialogBenef(context),
-                                child: TextFieldTransFer(
-                                  enabled: false,
-                                  labelText: TITLE_CHOOSE_BENEF,
-                                  suffixIcon: Icons.arrow_drop_down_sharp,
-                                  textEditingController: widget.controller.beneficiaryAccountController,
-                                ),
-                              )
+                          onTap: () => widget.controller.showDialogBenef(context),
+                          child: TextFieldTransFer(
+                            enabled: false,
+                            labelText: TITLE_CHOOSE_BENEF,
+                            suffixIcon: Icons.arrow_drop_down_sharp,
+                            textEditingController: widget.controller.beneficiaryAccountController,
+                          ),
+                        )
                             : TextFieldTransFer(
-                                enabled: true,
-                                labelText: TITLE_33,
-                                suffixIcon: Icons.account_box_outlined,
-                                textEditingController: widget.controller.beneficiaryAccountController,
-                              ),
+                          enabled: true,
+                          labelText: TITLE_33,
+                          suffixIcon: Icons.account_box_outlined,
+                          textEditingController: widget.controller.beneficiaryAccountController,
+                        ),
                         ContactsContainer(),
                       ],
                     ),
