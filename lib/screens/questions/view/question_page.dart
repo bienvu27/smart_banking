@@ -86,12 +86,6 @@ class QuestionsPage extends StatelessWidget {
                                   ),
                                 )
                               ],
-                              // onExpansionChanged: ((newState) {
-                              //   if (newState)
-                              //     controller.selected = i;
-                              //   else
-                              //     controller.selected = -1;
-                              // }),
                             ),
                           ),
                         ],

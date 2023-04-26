@@ -173,7 +173,15 @@ class _ServiceManagerState extends State<ServiceManager> {
                                   InkWell(
                                     onTap: () {
                                       final controller = Get.put(HomeController());
-                                      !controller.isLogin ? Utils.showAuthenticationDialog(context) : SizedBox();
+                                      if(!controller.isLogin){
+                                        Utils.showAuthenticationDialog(context);
+                                      }else{
+                                        Navigator.pop(context);
+                                        Get.toNamed(
+                                          "/transaction_limit",
+                                          arguments: "",
+                                        );
+                                      }
                                     },
                                     child: Text(
                                       TITLE_79,
@@ -401,7 +409,16 @@ class _ServiceManagerState extends State<ServiceManager> {
                                     InkWell(
                                       onTap: () {
                                         final controller = Get.put(HomeController());
-                                        !controller.isLogin ? Utils.showAuthenticationDialog(context) : SizedBox();
+                                        if(!controller.isLogin){
+                                          Utils.showAuthenticationDialog(context);
+                                        }else{
+                                          Navigator.pop(context);
+                                          Get.toNamed(
+                                            "/transaction_limit",
+                                            arguments: "",
+                                          );
+                                        }
+
                                       },
                                       child: Text(
                                         TITLE_79,

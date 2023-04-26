@@ -19,5 +19,6 @@ class AppRouters{
   static const String USER_MANUAL = '/user_manual';
   static const String CONTACT_BANK = '/contact_bank';
   static const String QUESTIONS = '/questions';
+  static const String TRANSACTION_LIMIT = '/transaction_limit';
 
 }
