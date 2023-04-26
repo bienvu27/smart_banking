@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 import '../../../core/resources/strings.dart';
@@ -25,81 +24,86 @@ class QuestionsPage extends StatelessWidget {
           init: QuesionsController(),
           builder: (controller) {
             return SingleChildScrollView(
-              child: ListView.builder(
-                  key: Key('builder ${(controller.selected).toString()}'),
-                  shrinkWrap: true,
-                  itemCount: controller.listQuestions.length,
-                  physics: NeverScrollableScrollPhysics(),
-                  itemBuilder: (BuildContext context, int i) {
-                    return Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        controller.listQuestions[i].question ==
-                                controller.groups[controller.listQuestions[i].idGroup!].questions![0].question
-                            ? Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsets.only(
-                                      top: height_8,
-                                      bottom: height_4,
-                                      left: width_10,
-                                      right: width_10,
-                                    ),
-                                    child: Text(
-                                      controller.groups[controller.listQuestions[i].idGroup!].title!,
-                                      style: TextStyle(
-                                        fontSize: fontSize_16,
-                                        fontWeight: FontWeight.w500,
+              child: Padding(
+                padding: EdgeInsets.symmetric(
+                  vertical: height_16,
+                  horizontal: width_16,
+                ),
+                child: ListView.builder(
+                    key: Key('builder ${(controller.selected).toString()}'),
+                    shrinkWrap: true,
+                    itemCount: controller.listQuestions.length,
+                    physics: NeverScrollableScrollPhysics(),
+                    itemBuilder: (BuildContext context, int i) {
+                      return Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            controller.listQuestions[i].question ==
+                                    controller
+                                        .groups[controller
+                                            .listQuestions[i].idGroup!]
+                                        .questions![0]
+                                        .question
+                                ? Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Padding(
+                                        padding:
+                                            const EdgeInsets.only(bottom: 10),
+                                        child: Text(
+                                          controller
+                                              .groups[controller
+                                                  .listQuestions[i].idGroup!]
+                                              .title!,
+                                          style: TextStyle(
+                                            fontSize: fontSize_16,
+                                            fontWeight: FontWeight.w500,
+                                          ),
+                                        ),
                                       ),
-                                    ),
-                                  ),
-                                ],
-                              )
-                            : Container(),
-                        Theme(
-                          data: Theme.of(context).copyWith(
-                            unselectedWidgetColor: Colors.black,
-                            dividerColor: Colors.transparent,
-                          ),
-                          child: Container(
-                            color: clr_f0faf9,
-                            child: ExpansionTile(
-                              iconColor: Colors.black,
-                              key: Key(i.toString()),
-                              initiallyExpanded: controller.selected == i,
-                              title: Text(
-                                controller.listQuestions[i].question!,
-                                style: TextStyle(
-                                  fontSize: fontSize_12,
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.w600,
-                                ),
+                                    ],
+                                  )
+                                : Container(),
+                            Theme(
+                              data: Theme.of(context).copyWith(
+                                unselectedWidgetColor: Colors.black,
                               ),
-                              children: <Widget>[
-                                Container(
-                                  padding: EdgeInsets.only(
-                                    top: height_12,
-                                    bottom: height_12,
-                                    left: width_12,
-                                    right: width_12,
+                              child: ExpansionTile(
+                                iconColor: Colors.black,
+                                key: Key(i.toString()),
+                                initiallyExpanded: controller.selected == i,
+                                title: Text(
+                                  controller.listQuestions[i].question!,
+                                  style: TextStyle(
+                                    fontSize: fontSize_12,
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.w600,
                                   ),
-                                  color: Colors.white,
-                                  child: Text(
-                                    controller.listQuestions[i].answer!,
-                                    style: TextStyle(fontSize: fontSize_12),
-                                  ),
-                                )
-                              ],
-                              onExpansionChanged: ((newState) {
-                                controller.select(newState, i);
-                              }),
+                                ),
+                                children: <Widget>[
+                                  Container(
+                                    padding: EdgeInsets.only(
+                                      top: height_12,
+                                      bottom: height_12,
+                                      left: width_12,
+                                      right: width_12,
+                                    ),
+                                    color: Colors.white,
+                                    child: Text(
+                                      controller.listQuestions[i].answer!,
+                                      style: TextStyle(fontSize: fontSize_12),
+                                    ),
+                                  )
+                                ],
+                                onExpansionChanged: ((newState) {
+                                  controller.select(newState, i);
+                                }),
+                              ),
                             ),
-                          ),
-                        ),
-                      ],
-                    );
-                  }),
+                          ]);
+                    }),
+              ),
             );
           },
         ));

@@ -338,7 +338,7 @@ class _HistoryTransferPageState extends State<HistoryTransferPage> {
 
                                               RowTitle(
                                                 title: "Hạn mức được cấp",
-                                                subTitle: "0",
+                                                subTitle: "15,000,000 VND",
                                               ),
 
                                               SizedBox(
@@ -347,7 +347,7 @@ class _HistoryTransferPageState extends State<HistoryTransferPage> {
 
                                               RowTitle(
                                                 title: "Hạn mức đã sử dụng",
-                                                subTitle: "0",
+                                                subTitle: "5,000,000 VND",
                                               ),
 
                                               SizedBox(
@@ -356,7 +356,7 @@ class _HistoryTransferPageState extends State<HistoryTransferPage> {
 
                                               RowTitle(
                                                 title: "Hạn mức còn lại",
-                                                subTitle: "0",
+                                                subTitle: "10,000,000 VND",
                                               ),
 
                                               SizedBox(
@@ -365,7 +365,7 @@ class _HistoryTransferPageState extends State<HistoryTransferPage> {
 
                                               RowTitle(
                                                 title: "Lãi",
-                                                subTitle: '0%',
+                                                subTitle: '0.5%',
                                               ),
 
                                               SizedBox(
