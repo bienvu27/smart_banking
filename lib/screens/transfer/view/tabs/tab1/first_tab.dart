@@ -27,10 +27,9 @@ class _FirstTabState extends State<FirstTab> {
   bool lastStatus = true;
 
   // double height =  460.w;
-  double height = Get.size.height / 2.3;
-
+  double height = Get.size.height / 100 * 39 ;
   // double fromHeight = 95.h;
-  double fromHeight = height_100;
+  double fromHeight = Get.size.height / 15;
   int index = 1;
   bool statusSearch = true;
   bool visibly = true;
@@ -169,18 +168,18 @@ class _FirstTabState extends State<FirstTab> {
                                   // height = Get.size.height / 5.566.w;
                                   // height = Get.size.height / 4.8.w - Get.size.height / 22;
                                   // fromHeight = Get.size.height / 16 - Get.size.height / 22;
-                                  height = Get.size.height / 2.3 - height_28;
-                                  fromHeight = height_100 - height_28;
+                                  height =  Get.size.height / 100 * 39 - height_28;
+                                  fromHeight = Get.size.height / 15 - height_28;
                                 } else if (index == 2) {
                                   statusSearch = false;
                                   visibly = true;
-                                  height = Get.size.height / 2.3;
-                                  fromHeight = height_100;
+                                  height =  Get.size.height / 100 * 39;
+                                  fromHeight = Get.size.height / 15;
                                 } else {
                                   statusSearch = true;
                                   visibly = true;
-                                  height = Get.size.height / 2.3;
-                                  fromHeight = height_100;
+                                  height =  Get.size.height / 100 * 39;
+                                  fromHeight = Get.size.height / 15;
                                 }
                               });
                             },
