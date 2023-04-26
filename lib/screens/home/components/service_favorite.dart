@@ -26,7 +26,7 @@ class ServiceFavorite extends StatelessWidget {
     return Column(
       children: [
         Padding(
-          padding: EdgeInsets.only(left: width_10, right: width_10),
+          padding: EdgeInsets.only(left: width_10, right: width_10,),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [

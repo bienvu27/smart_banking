@@ -16,7 +16,7 @@ class ListContacts extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(left: width_16, right: width_16),
+      padding: EdgeInsets.only(left: width_16, right: width_16,),
       color: clr_white,
       child: ListView(
         shrinkWrap: true,

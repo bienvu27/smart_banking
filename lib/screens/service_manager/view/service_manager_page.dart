@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import '../../../core/common/utils.dart';
 import '../../../core/resources/strings.dart';
 import '../../../core/style/colors.dart';
 import '../../../core/style/size.dart';
 import '../../../fake_data/data_fake_home.dart';
 import '../../components/app_bar/app_bar_component.dart';
+import '../../components/dialog/custom_dialog.dart';
+import '../../home/controller/home_controller.dart';
 import '../components/services/service_list.dart';
 
 class ServiceManager extends StatefulWidget {
@@ -25,7 +28,7 @@ class _ServiceManagerState extends State<ServiceManager> {
   void initState() {
     super.initState();
     id = data[0] != null && data[0].toString().isNotEmpty ? data[0].toString() : "1";
-    selectVal = selectVal.isNotEmpty ?  name : "Tất cả các dịch vụ";
+    selectVal = selectVal.isNotEmpty ? name : "Tất cả các dịch vụ";
     print(name);
   }
 
@@ -49,7 +52,186 @@ class _ServiceManagerState extends State<ServiceManager> {
               ServiceList(title: REGISTER_SERVICES, list: listRegisterService),
               ServiceList(title: SHOPPING, list: listShopping),
               ServiceList(title: SERVICE_CHARITY, list: listCharity),
-              ServiceList(title: SUPPORT, list: listSupport),
+              ServiceList(
+                title: SUPPORT,
+                list: listSupport,
+                onTap: (e) {
+                  print(e.id);
+                  switch (e.id) {
+                    case 1:
+                      break;
+
+                    case 2:
+                      break;
+
+                    case 3:
+                      break;
+
+                    case 4:
+                      Get.toNamed(
+                        "/web_view",
+                        arguments: ['Lãi suất', 'https://vrbank.com.vn/vi/lai-suat-1/'],
+                      );
+                      break;
+
+                    case 5:
+                      Get.toNamed(
+                        "/web_view",
+                        arguments: ['Tỷ giá', 'https://vrbank.com.vn/vi/ty-gia-ngoai-te/'],
+                      );
+                      break;
+
+                    case 6:
+                      showModalBottomSheet<void>(
+                        backgroundColor: Colors.white,
+                        context: context,
+                        isScrollControlled: true,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.vertical(
+                            top: Radius.circular(border_10),
+                          ),
+                        ),
+                        builder: (BuildContext context) {
+                          return Container(
+                            margin: EdgeInsets.only(
+                              top: height_8,
+                            ),
+                            color: Colors.white,
+                            padding: EdgeInsets.only(
+                              top: height_12,
+                              left: width_12,
+                              right: width_12,
+                            ),
+                            height: MediaQuery.of(context).size.height / 2.5,
+                            child: Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text(
+                                        SUPPORT,
+                                        style: TextStyle(
+                                          fontFamily: 'open_sans',
+                                          fontSize: fontSize_12,
+                                          fontWeight: FontWeight.w600,
+                                        ),
+                                      ),
+                                      InkWell(
+                                        onTap: () => Navigator.pop(context),
+                                        child: Text(
+                                          CANCEL,
+                                          style: TextStyle(
+                                            fontSize: fontSize_12,
+                                            color: PRIMARY_COLOR,
+                                            fontFamily: 'open_sans',
+                                            fontWeight: FontWeight.w600,
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  SizedBox(
+                                    height: height_16,
+                                  ),
+                                  InkWell(
+                                    onTap: () => Get.toNamed(
+                                      "/user_manual",
+                                      arguments: "",
+                                    ),
+                                    child: Text(
+                                      TITLE_77,
+                                      style: TextStyle(
+                                        fontFamily: 'open_sans',
+                                        fontSize: fontSize_12,
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: height_16,
+                                  ),
+                                  InkWell(
+                                    onTap: () {
+                                      final controller = Get.put(HomeController());
+                                      !controller.isLogin ? Utils.showAuthenticationDialog(context) : SizedBox();
+                                    },
+                                    child: Text(
+                                      TITLE_78,
+                                      style: TextStyle(
+                                        fontFamily: 'open_sans',
+                                        fontSize: fontSize_12,
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: height_16,
+                                  ),
+                                  InkWell(
+                                    onTap: () {
+                                      final controller = Get.put(HomeController());
+                                      !controller.isLogin ? Utils.showAuthenticationDialog(context) : SizedBox();
+                                    },
+                                    child: Text(
+                                      TITLE_79,
+                                      style: TextStyle(
+                                        fontFamily: 'open_sans',
+                                        fontSize: fontSize_12,
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: height_16,
+                                  ),
+                                  InkWell(
+                                    onTap: () {
+                                      Navigator.pop(context);
+                                      Get.toNamed(
+                                        "/questions",
+                                        arguments: "",
+                                      );
+                                    },
+                                    child: Text(
+                                      TITLE_80,
+                                      style: TextStyle(
+                                        fontFamily: 'open_sans',
+                                        fontSize: fontSize_12,
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: height_16,
+                                  ),
+                                  InkWell(
+                                    onTap: () {
+                                      Navigator.pop(context);
+                                      Get.toNamed(
+                                        "/contact_bank",
+                                        arguments: "",
+                                      );
+                                    },
+                                    child: Text(
+                                      TITLE_81,
+                                      style: TextStyle(
+                                        fontFamily: 'open_sans',
+                                        fontSize: fontSize_12,
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                    ),
+                                  ),
+                                ]),
+                          );
+                        },
+                      );
+                      break;
+                  }
+                },
+              ),
               Container(
                 color: Colors.white,
                 height: 100.h,
@@ -91,13 +273,192 @@ class _ServiceManagerState extends State<ServiceManager> {
               Container(
                   color: clr_white,
                   height: Get.size.height,
-                  child: ServiceList(title: SERVICE_CHARITY, list: listCharity)),
+                  child: ServiceList(
+                    title: SERVICE_CHARITY,
+                    list: listCharity,
+                  )),
             ] else if (id == "8") ...[
               Container(
                 color: clr_white,
                 height: Get.size.height,
                 child: ServiceList(
                   title: SUPPORT,
+                  onTap: (e) {
+                    print(e.id);
+                    switch (e.id) {
+                      case 1:
+                        break;
+
+                      case 2:
+                        break;
+
+                      case 3:
+                        break;
+
+                      case 4:
+                        Get.toNamed(
+                          "/web_view",
+                          arguments: ['Lãi suất', 'https://vrbank.com.vn/vi/lai-suat-1/'],
+                        );
+                        break;
+
+                      case 5:
+                        Get.toNamed(
+                          "/web_view",
+                          arguments: ['Tỷ giá', 'https://vrbank.com.vn/vi/ty-gia-ngoai-te/'],
+                        );
+                        break;
+
+                      case 6:
+                        showModalBottomSheet<void>(
+                          backgroundColor: Colors.white,
+                          context: context,
+                          isScrollControlled: true,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.vertical(
+                              top: Radius.circular(border_10),
+                            ),
+                          ),
+                          builder: (BuildContext context) {
+                            return Container(
+                              margin: EdgeInsets.only(
+                                top: height_8,
+                              ),
+                              color: Colors.white,
+                              padding: EdgeInsets.only(
+                                top: height_12,
+                                left: width_12,
+                                right: width_12,
+                              ),
+                              height: MediaQuery.of(context).size.height / 2.5,
+                              child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Row(
+                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Text(
+                                          SUPPORT,
+                                          style: TextStyle(
+                                            fontFamily: 'open_sans',
+                                            fontSize: fontSize_12,
+                                            fontWeight: FontWeight.w600,
+                                          ),
+                                        ),
+                                        InkWell(
+                                          onTap: () => Navigator.pop(context),
+                                          child: Text(
+                                            CANCEL,
+                                            style: TextStyle(
+                                              fontSize: fontSize_12,
+                                              color: PRIMARY_COLOR,
+                                              fontFamily: 'open_sans',
+                                              fontWeight: FontWeight.w600,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    SizedBox(
+                                      height: height_16,
+                                    ),
+                                    InkWell(
+                                      onTap: () => Get.toNamed(
+                                        "/user_manual",
+                                        arguments: "",
+                                      ),
+                                      child: Text(
+                                        TITLE_77,
+                                        style: TextStyle(
+                                          fontFamily: 'open_sans',
+                                          fontSize: fontSize_12,
+                                          fontWeight: FontWeight.w600,
+                                        ),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: height_16,
+                                    ),
+                                    InkWell(
+                                      onTap: () {
+                                        final controller = Get.put(HomeController());
+                                        !controller.isLogin ? Utils.showAuthenticationDialog(context) : SizedBox();
+                                      },
+                                      child: Text(
+                                        TITLE_78,
+                                        style: TextStyle(
+                                          fontFamily: 'open_sans',
+                                          fontSize: fontSize_12,
+                                          fontWeight: FontWeight.w600,
+                                        ),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: height_16,
+                                    ),
+                                    InkWell(
+                                      onTap: () {
+                                        final controller = Get.put(HomeController());
+                                        !controller.isLogin ? Utils.showAuthenticationDialog(context) : SizedBox();
+                                      },
+                                      child: Text(
+                                        TITLE_79,
+                                        style: TextStyle(
+                                          fontFamily: 'open_sans',
+                                          fontSize: fontSize_12,
+                                          fontWeight: FontWeight.w600,
+                                        ),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: height_16,
+                                    ),
+                                    InkWell(
+                                      onTap: () {
+                                        Navigator.pop(context);
+                                        Get.toNamed(
+                                          "/questions",
+                                          arguments: "",
+                                        );
+                                      },
+                                      child: Text(
+                                        TITLE_80,
+                                        style: TextStyle(
+                                          fontFamily: 'open_sans',
+                                          fontSize: fontSize_12,
+                                          fontWeight: FontWeight.w600,
+                                        ),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: height_16,
+                                    ),
+                                    InkWell(
+                                      onTap: () {
+                                        Navigator.pop(context);
+                                        Get.toNamed(
+                                          "/contact_bank",
+                                          arguments: "",
+                                        );
+                                      },
+                                      child: Text(
+                                        TITLE_81,
+                                        style: TextStyle(
+                                          fontFamily: 'open_sans',
+                                          fontSize: fontSize_12,
+                                          fontWeight: FontWeight.w600,
+                                        ),
+                                      ),
+                                    ),
+                                  ]),
+                            );
+                          },
+                        );
+                        break;
+                    }
+                  },
                   list: listSupport,
                 ),
               ),
@@ -143,7 +504,7 @@ class _ServiceManagerState extends State<ServiceManager> {
                       onTap: () {
                         id = item.id!.toString();
                       },
-                      value: item.name ,
+                      value: item.name,
                       child: Center(
                         child: Text(
                           item.name ?? '',
