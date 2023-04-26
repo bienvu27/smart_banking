@@ -25,8 +25,12 @@ class FirstTab extends StatefulWidget {
 class _FirstTabState extends State<FirstTab> {
   ScrollController? _scrollController;
   bool lastStatus = true;
-  double height = 460.w;
-  double fromHeight = 95.h;
+
+  // double height =  460.w;
+  double height = Get.size.height / 2.3;
+
+  // double fromHeight = 95.h;
+  double fromHeight = height_100;
   int index = 1;
   bool statusSearch = true;
   bool visibly = true;
@@ -146,6 +150,7 @@ class _FirstTabState extends State<FirstTab> {
                   child: Container(
                     color: clr_white,
                     child: Column(
+                      mainAxisSize: MainAxisSize.min,
                       children: [
                         Container(
                           margin: EdgeInsets.only(
@@ -161,20 +166,22 @@ class _FirstTabState extends State<FirstTab> {
                                 if (index == 1) {
                                   visibly = false;
                                   // height = 344.w;
-                                  height = 378.5.w;
-                                  fromHeight = 15.h;
+                                  // height = Get.size.height / 5.566.w;
+                                  // height = Get.size.height / 4.8.w - Get.size.height / 22;
+                                  // fromHeight = Get.size.height / 16 - Get.size.height / 22;
+                                  height = Get.size.height / 2.3 - height_28;
+                                  fromHeight = height_100 - height_28;
                                 } else if (index == 2) {
                                   statusSearch = false;
                                   visibly = true;
-                                  height = 460.w;
-                                  fromHeight = 95.h;
+                                  height = Get.size.height / 2.3;
+                                  fromHeight = height_100;
                                 } else {
                                   statusSearch = true;
                                   visibly = true;
-                                  height = 460.w;
-                                  fromHeight = 95.h;
+                                  height = Get.size.height / 2.3;
+                                  fromHeight = height_100;
                                 }
-                                print(visibly);
                               });
                             },
                             tabs: [
@@ -217,6 +224,9 @@ class _FirstTabState extends State<FirstTab> {
                             ],
                           ),
                         ),
+                        SizedBox(
+                          height: height_10,
+                        ),
                         SearchContacts(
                           visibly: visibly,
                           title: statusSearch ? SEARCH_2 : SEARCH_3,
@@ -235,9 +245,12 @@ class _FirstTabState extends State<FirstTab> {
                 list: widget.controller.isSameOwner ? listContactsSameOwner : listContacts,
                 callBack: (e) => Get.toNamed("/transaction_infor", arguments: ''),
               ),
-              ListContactsRecently(
-                list: listContacts,
-                callBack: () => Get.toNamed("/transaction_infor", arguments: ''),
+              // ListContactsRecently(
+              //   list: listContacts,
+              //   callBack: () => Get.toNamed("/transaction_infor", arguments: ''),
+              // ),
+              SizedBox(
+                height: 666666,
               ),
               ListContactsSave(),
             ],

@@ -85,7 +85,7 @@ class NotificationList extends StatelessWidget {
                   child: Container(
                     margin: EdgeInsets.only(top: height_12),
                     width: MediaQuery.of(context).size.width,
-                    height: height_212,
+                    height: height_530,
                     decoration: BoxDecoration(
                       image: DecorationImage(
                         image: AssetImage('${e.image}'),
