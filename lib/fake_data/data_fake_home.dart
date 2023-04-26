@@ -598,7 +598,7 @@ final listUserManual = [
   UserManualModel(icon: Icons.monetization_on_outlined, title: 'Dịch vụ tài chính', content: "Bao gồm những chức năng tài chính: tài khoản, chuyển tiền, QR Pay, Nạp tiền..."),
   UserManualModel(icon: Icons.credit_card_outlined, title: 'Dịch vụ thẻ', content: "Đăng nhập trên App SmartBanking"),
   UserManualModel(icon: Icons.shopping_cart_outlined, title: 'Dịch vụ tiện ích tiêu dùng', content: "Cung cấp tiện ích đặt vé xem phim, vé máy bay, đặt phòng khách sạn..."),
-  UserManualModel(icon: Icons.keyboard_alt_outlined, title: 'BIDV Smartkeyboard', content: "Dùng trên thiết bị dùng hệ điều hành IOS, thực hiện giao dịch ngay trên ứng dụng chat..."),
+  UserManualModel(icon: Icons.keyboard_alt_outlined, title: 'VRB Smartkeyboard', content: "Dùng trên thiết bị dùng hệ điều hành IOS, thực hiện giao dịch ngay trên ứng dụng chat..."),
   UserManualModel(icon: Icons.watch_outlined, title: 'Smartbanking trên Apple Watch', content: "Dùng Apple Watch thực hiện các tính năng chuyển tiền. nạp tiền điện thoại, thanh toán hóa đơn..."),
   UserManualModel(icon: Icons.settings, title: 'Các chức năng cài đặt', content: "Cung cấp các chức năng hỗ trợ về thay đổi mật khẩu, cài đặt vân tay, thay đổi..."),
 ];

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:smart_banking/core/common/utils.dart';
-import '../../../core/resources/name_icon.dart';
+import '../../../core/resources/asset.dart';
 import '../../../core/resources/strings.dart';
 import '../../../core/style/colors.dart';
 import '../../../core/style/size.dart';
@@ -119,7 +119,15 @@ class CoverWidget extends StatelessWidget {
                     children: [
                       Stack(
                         children: [
-                          CircleAvatar(
+                          controller.isLogin ? CircleAvatar(
+                            backgroundColor: clr_white60,
+                            radius: fontSize_16,
+                            child: Image.asset(
+                              logoSeatech,
+                              width: width_28,
+                              fit: BoxFit.fitWidth,
+                            ),
+                          ) : CircleAvatar(
                             backgroundColor: clr_white60,
                             radius: fontSize_16,
                             child: Icon(
@@ -158,7 +166,7 @@ class CoverWidget extends StatelessWidget {
                                   fontWeight: FontWeight.w600,
                                   color: clr_white70),
                             ),
-                            controller.isLogin!
+                            controller.isLogin
                                 ? Text(
                                     NAME_TEST.toUpperCase(),
                                     style: TextStyle(

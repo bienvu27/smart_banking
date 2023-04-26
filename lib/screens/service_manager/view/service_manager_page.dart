@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import '../../../core/common/utils.dart';
+import '../../../core/resources/constant.dart';
 import '../../../core/resources/strings.dart';
 import '../../../core/style/colors.dart';
 import '../../../core/style/size.dart';
@@ -134,41 +135,51 @@ class _ServiceManagerState extends State<ServiceManager> {
                                     ],
                                   ),
                                   SizedBox(
-                                    height: height_16,
+                                    height: height_6,
                                   ),
                                   InkWell(
                                     onTap: () => Get.toNamed(
                                       "/user_manual",
                                       arguments: "",
                                     ),
-                                    child: Text(
-                                      TITLE_77,
-                                      style: TextStyle(
-                                        fontFamily: 'open_sans',
-                                        fontSize: fontSize_12,
-                                        fontWeight: FontWeight.w600,
+                                    child: SizedBox(
+                                      width: double.infinity,
+                                      child: Padding(
+                                        padding: EdgeInsets.symmetric(vertical: height_6),
+                                        child: Text(
+                                          TITLE_77,
+                                          style: TextStyle(
+                                            fontFamily: 'open_sans',
+                                            fontSize: fontSize_12,
+                                            fontWeight: FontWeight.w600,
+                                          ),
+                                        ),
                                       ),
                                     ),
                                   ),
-                                  SizedBox(
-                                    height: height_16,
-                                  ),
+
                                   InkWell(
                                     onTap: () {
                                       final controller = Get.put(HomeController());
                                       !controller.isLogin ? Utils.showAuthenticationDialog(context) : SizedBox();
                                     },
-                                    child: Text(
-                                      TITLE_78,
-                                      style: TextStyle(
-                                        fontFamily: 'open_sans',
-                                        fontSize: fontSize_12,
-                                        fontWeight: FontWeight.w600,
+                                    child: Padding(
+                                      padding: EdgeInsets.symmetric(vertical: height_6),
+                                      child: SizedBox(
+                                        width: double.infinity,
+                                        child: Text(
+                                          TITLE_78,
+                                          style: TextStyle(
+                                            fontFamily: 'open_sans',
+                                            fontSize: fontSize_12,
+                                            fontWeight: FontWeight.w600,
+                                          ),
+                                        ),
                                       ),
                                     ),
                                   ),
                                   SizedBox(
-                                    height: height_16,
+                                    height: height_6,
                                   ),
                                   InkWell(
                                     onTap: () {
@@ -183,18 +194,26 @@ class _ServiceManagerState extends State<ServiceManager> {
                                         );
                                       }
                                     },
-                                    child: Text(
-                                      TITLE_79,
-                                      style: TextStyle(
-                                        fontFamily: 'open_sans',
-                                        fontSize: fontSize_12,
-                                        fontWeight: FontWeight.w600,
+                                    child: SizedBox(
+                                      width: double.infinity,
+                                      child: Padding(
+                                        padding: EdgeInsets.symmetric(vertical: height_6),
+                                        child: Text(
+                                          TITLE_79,
+                                          style: TextStyle(
+                                            fontFamily: 'open_sans',
+                                            fontSize: fontSize_12,
+                                            fontWeight: FontWeight.w600,
+                                          ),
+                                        ),
                                       ),
                                     ),
                                   ),
+
                                   SizedBox(
-                                    height: height_16,
+                                    height: height_6,
                                   ),
+
                                   InkWell(
                                     onTap: () {
                                       Navigator.pop(context);
@@ -203,18 +222,26 @@ class _ServiceManagerState extends State<ServiceManager> {
                                         arguments: "",
                                       );
                                     },
-                                    child: Text(
-                                      TITLE_80,
-                                      style: TextStyle(
-                                        fontFamily: 'open_sans',
-                                        fontSize: fontSize_12,
-                                        fontWeight: FontWeight.w600,
+                                    child: SizedBox(
+                                      width: double.infinity,
+                                      child: Padding(
+                                        padding: EdgeInsets.symmetric(vertical: height_6),
+                                        child: Text(
+                                          TITLE_80,
+                                          style: TextStyle(
+                                            fontFamily: 'open_sans',
+                                            fontSize: fontSize_12,
+                                            fontWeight: FontWeight.w600,
+                                          ),
+                                        ),
                                       ),
                                     ),
                                   ),
+
                                   SizedBox(
-                                    height: height_16,
+                                    height: height_6,
                                   ),
+
                                   InkWell(
                                     onTap: () {
                                       Navigator.pop(context);
@@ -223,12 +250,18 @@ class _ServiceManagerState extends State<ServiceManager> {
                                         arguments: "",
                                       );
                                     },
-                                    child: Text(
-                                      TITLE_81,
-                                      style: TextStyle(
-                                        fontFamily: 'open_sans',
-                                        fontSize: fontSize_12,
-                                        fontWeight: FontWeight.w600,
+                                    child: SizedBox(
+                                      width: double.infinity,
+                                      child: Padding(
+                                        padding: EdgeInsets.symmetric(vertical: height_6),
+                                        child: Text(
+                                          TITLE_81,
+                                          style: TextStyle(
+                                            fontFamily: 'open_sans',
+                                            fontSize: fontSize_12,
+                                            fontWeight: FontWeight.w600,
+                                          ),
+                                        ),
                                       ),
                                     ),
                                   ),
@@ -338,7 +371,7 @@ class _ServiceManagerState extends State<ServiceManager> {
                                 left: width_12,
                                 right: width_12,
                               ),
-                              height: MediaQuery.of(context).size.height / 2.5,
+                              height: heightScreen(context) / 2.5,
                               child: Column(
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   crossAxisAlignment: CrossAxisAlignment.start,

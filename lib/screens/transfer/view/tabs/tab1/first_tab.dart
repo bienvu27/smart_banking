@@ -10,7 +10,6 @@ import '../components/contacts_container.dart';
 import '../components/search_contacts.dart';
 import '../components/text_field_trans_fer.dart';
 import 'components/list_contacts.dart';
-import 'components/list_contacts_recently.dart';
 import 'components/list_contacts_save.dart';
 
 class FirstTab extends StatefulWidget {
@@ -26,10 +25,12 @@ class _FirstTabState extends State<FirstTab> {
   ScrollController? _scrollController;
   bool lastStatus = true;
 
-  // double height =  460.w;
-  double height = Get.size.height / 100 * 39 ;
-  // double fromHeight = 95.h;
-  double fromHeight = Get.size.height / 15;
+
+  double height = Get.size.height > 650 ? height_500 : height_600;
+  double heightInit = Get.size.height > 650 ? height_500 : height_600;
+  double fromHeight = Get.size.height > 650 ? height_100 : height_96;
+  double fromHeightInit = Get.size.height > 650 ? height_100 : height_96;
+
   int index = 1;
   bool statusSearch = true;
   bool visibly = true;
@@ -52,6 +53,7 @@ class _FirstTabState extends State<FirstTab> {
   void initState() {
     super.initState();
     _scrollController = ScrollController()..addListener(_scrollListener);
+    print(Get.size.height);
   }
 
   @override
@@ -125,20 +127,20 @@ class _FirstTabState extends State<FirstTab> {
                         ),
                         widget.controller.isSameOwner
                             ? GestureDetector(
-                                onTap: () => widget.controller.showDialogBenef(context),
-                                child: TextFieldTransFer(
-                                  enabled: false,
-                                  labelText: TITLE_CHOOSE_BENEF,
-                                  suffixIcon: Icons.arrow_drop_down_sharp,
-                                  textEditingController: widget.controller.beneficiaryAccountController,
-                                ),
-                              )
+                          onTap: () => widget.controller.showDialogBenef(context),
+                          child: TextFieldTransFer(
+                            enabled: false,
+                            labelText: TITLE_CHOOSE_BENEF,
+                            suffixIcon: Icons.arrow_drop_down_sharp,
+                            textEditingController: widget.controller.beneficiaryAccountController,
+                          ),
+                        )
                             : TextFieldTransFer(
-                                enabled: true,
-                                labelText: TITLE_33,
-                                suffixIcon: Icons.account_box_outlined,
-                                textEditingController: widget.controller.beneficiaryAccountController,
-                              ),
+                          enabled: true,
+                          labelText: TITLE_33,
+                          suffixIcon: Icons.account_box_outlined,
+                          textEditingController: widget.controller.beneficiaryAccountController,
+                        ),
                         ContactsContainer(),
                       ],
                     ),
@@ -168,18 +170,18 @@ class _FirstTabState extends State<FirstTab> {
                                   // height = Get.size.height / 5.566.w;
                                   // height = Get.size.height / 4.8.w - Get.size.height / 22;
                                   // fromHeight = Get.size.height / 16 - Get.size.height / 22;
-                                  height =  Get.size.height / 100 * 39 - height_28;
-                                  fromHeight = Get.size.height / 15 - height_28;
+                                  height = heightInit - height_28;
+                                  fromHeight = fromHeightInit - height_28;
                                 } else if (index == 2) {
                                   statusSearch = false;
                                   visibly = true;
-                                  height =  Get.size.height / 100 * 39;
-                                  fromHeight = Get.size.height / 15;
+                                  height = heightInit;
+                                  fromHeight = fromHeightInit;
                                 } else {
                                   statusSearch = true;
                                   visibly = true;
-                                  height =  Get.size.height / 100 * 39;
-                                  fromHeight = Get.size.height / 15;
+                                  height = heightInit;
+                                  fromHeight = fromHeightInit;
                                 }
                               });
                             },

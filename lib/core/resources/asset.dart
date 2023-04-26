@@ -19,3 +19,4 @@ const card_mobile = "assets/svg/icon_gradient/210502.svg";
 const image_success = "assets/images/list_images/image_3.jpg";
 const image_agribank = "assets/images/icons_bank/icon_agribank.webp";
 const icon_lightning = "assets/svg/icon_gradient/icon_lightning.svg";
+const logoSeatech = "assets/images/logo_seatech.png";

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../core/resources/name_icon.dart';
+import '../../../core/resources/asset.dart';
 import '../../../core/resources/strings.dart';
 import '../../../core/style/colors.dart';
 import '../../../core/style/size.dart';
@@ -30,7 +30,7 @@ class TransferSuccessPage extends StatelessWidget {
                 left: width_12,
                 right: width_12,
               ),
-              height: height_96,
+              height: height_240,
               child: SizedBox(
                 width: MediaQuery.of(context).size.width,
                 child: ClipRRect(

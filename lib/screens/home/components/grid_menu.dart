@@ -5,7 +5,7 @@ import 'package:smart_banking/screens/components/dialog/custom_dialog.dart';
 import 'package:get/get.dart';
 import 'package:smart_banking/screens/home/controller/home_controller.dart';
 import '../../../core/common/utils.dart';
-import '../../../core/resources/name_icon.dart';
+import '../../../core/resources/asset.dart';
 import '../../../core/resources/strings.dart';
 import '../../../core/style/colors.dart';
 import '../../../core/style/size.dart';
