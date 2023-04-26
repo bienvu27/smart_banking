@@ -30,7 +30,7 @@ class TransferSuccessPage extends StatelessWidget {
                 left: width_12,
                 right: width_12,
               ),
-              height: height_96,
+              height: height_240,
               child: SizedBox(
                 width: MediaQuery.of(context).size.width,
                 child: ClipRRect(

@@ -10,7 +10,6 @@ import '../components/contacts_container.dart';
 import '../components/search_contacts.dart';
 import '../components/text_field_trans_fer.dart';
 import 'components/list_contacts.dart';
-import 'components/list_contacts_recently.dart';
 import 'components/list_contacts_save.dart';
 
 class FirstTab extends StatefulWidget {
@@ -26,11 +25,12 @@ class _FirstTabState extends State<FirstTab> {
   ScrollController? _scrollController;
   bool lastStatus = true;
 
-  // double height =  460.w;
-  double height = Get.size.height / 2.3;
 
-  // double fromHeight = 95.h;
-  double fromHeight = height_100;
+  double height = Get.size.height > 600 ? height_530 : height_630;
+  double heightInit = Get.size.height > 600 ? height_530 : height_630;
+  double fromHeight = Get.size.height > 600 ? height_100 : height_150;
+  double fromHeightInit = Get.size.height > 600 ? height_100 : height_150;
+
   int index = 1;
   bool statusSearch = true;
   bool visibly = true;
@@ -53,6 +53,7 @@ class _FirstTabState extends State<FirstTab> {
   void initState() {
     super.initState();
     _scrollController = ScrollController()..addListener(_scrollListener);
+    print(Get.size.height);
   }
 
   @override
@@ -169,18 +170,18 @@ class _FirstTabState extends State<FirstTab> {
                                   // height = Get.size.height / 5.566.w;
                                   // height = Get.size.height / 4.8.w - Get.size.height / 22;
                                   // fromHeight = Get.size.height / 16 - Get.size.height / 22;
-                                  height = Get.size.height / 2.3 - height_28;
-                                  fromHeight = height_100 - height_28;
+                                  height = heightInit - height_28;
+                                  fromHeight = fromHeightInit - height_28;
                                 } else if (index == 2) {
                                   statusSearch = false;
                                   visibly = true;
-                                  height = Get.size.height / 2.3;
-                                  fromHeight = height_100;
+                                  height = heightInit;
+                                  fromHeight = fromHeightInit;
                                 } else {
                                   statusSearch = true;
                                   visibly = true;
-                                  height = Get.size.height / 2.3;
-                                  fromHeight = height_100;
+                                  height = heightInit;
+                                  fromHeight = fromHeightInit;
                                 }
                               });
                             },

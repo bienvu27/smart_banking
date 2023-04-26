@@ -64,7 +64,7 @@ class _HomePageState extends State<HomePage> {
                             left: width_12,
                             right: width_12,
                           ),
-                          height: height_96,
+                          height: height_240,
                           child: PageView.builder(
                               controller: controller.pageController,
                               itemCount: images.length,
