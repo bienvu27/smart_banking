@@ -150,6 +150,7 @@ double fontSize_9 = 22.5.sp;
 double fontSize_10 = 25.sp;
 double fontSize_11 = 27.5.sp;
 double fontSize_12 = 30.sp;
+double fontSize_13 = 32.sp;
 double fontSize_14 = 35.sp;
 double fontSize_15 = 37.5.sp;
 double fontSize_16 = 40.sp;

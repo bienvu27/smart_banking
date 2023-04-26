@@ -76,7 +76,7 @@ final listService = [
 final listContacts = [
   ListContactsModel(
     image: 'assets/images/vrbank.png',
-    name: 'VU XUAN BIEN',
+    name: 'NGUYEN DUC VUONG',
     numberAccount: '27910000492884',
     nameBank: 'VRBANK',
     money: '500.000',
@@ -125,10 +125,27 @@ final listContacts = [
   ),
 ];
 
+final listContactsSameOwner = [
+  ListContactsModel(
+    image: 'assets/images/vrbank.png',
+    name: 'VU XUAN BIEN',
+    numberAccount: '22210004128293',
+    nameBank: 'VRBANK',
+    money: '500.000',
+  ),
+  ListContactsModel(
+    image: 'assets/images/vrbank.png',
+    name: 'VU XUAN BIEN',
+    numberAccount: '22210004125524',
+    nameBank: 'VRBANK',
+    money: '4.000.000',
+  ),
+];
+
 final listContacts2 = [
   ListContactsModel(
     image: 'assets/images/icons_bank/icon_agribank.webp',
-    name: 'VU XUAN BIEN',
+    name: 'NGUYEN DUC VUONG',
     numberAccount: '27910000492884',
     nameBank: 'Agribank',
     money: '',
@@ -563,3 +580,31 @@ final listSearchHomeTest = [
   SearchHomeTestModel(icon: Icons.sticky_note_2_outlined, title: 'Mẫu thanh toán hóa đơn'),
   SearchHomeTestModel(icon: Icons.monetization_on, title: 'Ngân hàng chuyển tiền ngoài BIDV'),
 ];
+
+
+class UserManualModel {
+  int? id;
+  IconData? icon;
+  String? title;
+  String? content;
+
+  UserManualModel({this.id, this.icon, this.title, this.content});
+
+}
+
+final listUserManual = [
+  UserManualModel(icon: Icons.person_outline, title: 'Chuyển đổi user', content: "Hướng dẫn chuyển đổi cho khách hàng có user SmartBanking cũ"),
+  UserManualModel(icon: Icons.login, title: 'Đăng nhập', content: "Đăng nhập trên App SmartBanking"),
+  UserManualModel(icon: Icons.monetization_on_outlined, title: 'Dịch vụ tài chính', content: "Bao gồm những chức năng tài chính: tài khoản, chuyển tiền, QR Pay, Nạp tiền..."),
+  UserManualModel(icon: Icons.credit_card_outlined, title: 'Dịch vụ thẻ', content: "Đăng nhập trên App SmartBanking"),
+  UserManualModel(icon: Icons.shopping_cart_outlined, title: 'Dịch vụ tiện ích tiêu dùng', content: "Cung cấp tiện ích đặt vé xem phim, vé máy bay, đặt phòng khách sạn..."),
+  UserManualModel(icon: Icons.keyboard_alt_outlined, title: 'BIDV Smartkeyboard', content: "Dùng trên thiết bị dùng hệ điều hành IOS, thực hiện giao dịch ngay trên ứng dụng chat..."),
+  UserManualModel(icon: Icons.watch_outlined, title: 'Smartbanking trên Apple Watch', content: "Dùng Apple Watch thực hiện các tính năng chuyển tiền. nạp tiền điện thoại, thanh toán hóa đơn..."),
+  UserManualModel(icon: Icons.settings, title: 'Các chức năng cài đặt', content: "Cung cấp các chức năng hỗ trợ về thay đổi mật khẩu, cài đặt vân tay, thay đổi..."),
+];
+
+
+
+
+
+

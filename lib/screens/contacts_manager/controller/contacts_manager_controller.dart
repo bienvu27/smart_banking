@@ -9,13 +9,13 @@ class ContactsManagerController extends GetxController {
 
   void autoFillingWhenSearch(String text) {
     contactsSearch.clear();
-    contacts.forEach((e) => contactsSearch.add(e));
+    contactsSearch.addAll(contacts);
     contactsSearch.removeWhere((e) => !(e.name.first + " " + e.name.last)
         .toUpperCase()
         .contains(text.toUpperCase()));
     if (text.isEmpty) {
       contactsSearch.clear();
-      contacts.forEach((e) => contactsSearch.add(e));
+      contactsSearch.addAll(contacts);
     }
     update();
   }

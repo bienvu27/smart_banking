@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:smart_banking/screens/user_manual/view/support_question_screen.dart';
-
 import '../../../core/resources/strings.dart';
 import '../../../core/style/colors.dart';
+import '../../../core/style/size.dart';
+import '../../../fake_data/data_fake_home.dart';
 import '../../components/app_bar/app_bar_component.dart';
 
 class UserManualPage extends StatelessWidget {
@@ -20,14 +20,73 @@ class UserManualPage extends StatelessWidget {
         callback: () => Get.back(),
       ),
       body: SingleChildScrollView(
-        child: Column(
-          children: [
-            InkWell(
-              onTap: () {
-                Get.to(SupportQuestion());
-              },
-                child: Text("aaaa"))
-          ],
+        child: Padding(
+          padding: EdgeInsets.only(top: height_12),
+          child: ListView.builder(
+              shrinkWrap: true,
+              itemCount: listUserManual.length,
+              physics: NeverScrollableScrollPhysics(),
+              itemBuilder: (BuildContext context, int i) {
+                return Column(
+                  children: [
+                    SizedBox(height: height_10,),
+                    Theme(
+                      data: ThemeData(
+                        dividerColor: Colors.transparent,
+                        splashColor: Colors.transparent,
+                        highlightColor: Colors.transparent,
+                      ),
+
+                      child: ExpansionTile(
+                          key: Key(i.toString()),
+                          initiallyExpanded: false,
+                          expandedAlignment: Alignment.centerLeft,
+                          title: Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding: EdgeInsets.only(top: height_4),
+                                child: Icon(listUserManual[i].icon!, size: fontSize_16_5, color: PRIMARY_COLOR,),
+                              ),
+                              SizedBox(width: width_16,),
+                              Expanded(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      listUserManual[i].title!,
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: fontSize_13
+                                      ),
+                                    ),
+                                    SizedBox(height: height_2,),
+                                    Text(
+                                      listUserManual[i].content!,
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.normal,
+                                          fontSize: fontSize_10,
+                                          height: 1.4
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                          children: [
+
+                          ],
+                          onExpansionChanged: ((newState) {})),
+                    ),
+                    SizedBox(height: height_10,),
+                    Divider(
+                      thickness: 8,
+                      color: clr_black6,
+                    )
+                  ],
+                );
+              }),
         ),
       ),
     );

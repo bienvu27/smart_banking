@@ -222,7 +222,7 @@ class _FirstTabState extends State<FirstTab> {
               physics: const NeverScrollableScrollPhysics(),
               children: [
                 ListContacts(
-                  list: listContacts,
+                  list: widget.controller.isSameOwner ? listContactsSameOwner : listContacts,
                   callBack: (e) => Get.toNamed("/transaction_infor", arguments: ''),
                 ),
                 ListContactsRecently(
