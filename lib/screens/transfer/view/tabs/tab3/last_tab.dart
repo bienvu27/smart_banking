@@ -6,7 +6,6 @@ import '../../../../../core/resources/strings.dart';
 import '../../../../../core/style/colors.dart';
 import '../../../../../core/style/size.dart';
 import '../../../../../fake_data/data_fake_home.dart';
-import '../../../../components/button/button_component.dart';
 import '../components/contacts_container.dart';
 import '../components/search_contacts.dart';
 import '../components/text_field_trans_fer.dart';
@@ -24,8 +23,12 @@ class LastTab extends StatefulWidget {
 class _LastTabState extends State<LastTab> {
   ScrollController? _scrollController;
   bool lastStatus = true;
-  double height = 460.w;
-  double fromHeight = 95.h;
+
+  double height = Get.size.height > 650 ? height_370 : height_460;
+  double heightInit = Get.size.height > 650 ? height_370 : height_460;
+  double fromHeight = Get.size.height > 650 ? height_100 : height_96;
+  double fromHeightInit = Get.size.height > 650 ? height_100 : height_96;
+
   int index = 1;
   bool statusSearch = true;
   bool visibly = true;
@@ -107,18 +110,18 @@ class _LastTabState extends State<LastTab> {
                                 if (index == 1) {
                                   visibly = false;
                                   // height = 344.w;
-                                  height = 378.5.w;
-                                  fromHeight = 0;
+                                  height = heightInit - height_28;
+                                  fromHeight = fromHeightInit;
                                 } else if (index == 2) {
                                   statusSearch = false;
                                   visibly = true;
-                                  height = 460.w;
-                                  fromHeight = 95.h;
+                                  height = heightInit - height_28;
+                                  fromHeight = fromHeightInit;
                                 } else {
                                   statusSearch = true;
                                   visibly = true;
-                                  height = 460.w;
-                                  fromHeight = 95.h;
+                                  height = heightInit - height_28;
+                                  fromHeight = fromHeightInit;
                                 }
                                 print(visibly);
                               });
@@ -159,6 +162,9 @@ class _LastTabState extends State<LastTab> {
                               ),
                             ],
                           ),
+                        ),
+                        SizedBox(
+                          height: height_10,
                         ),
                         SearchContacts(visibly: visibly, title: statusSearch ? SEARCH_2 : SEARCH_3,)
                       ],

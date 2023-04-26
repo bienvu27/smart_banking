@@ -10,6 +10,7 @@ import '../components/contacts_container.dart';
 import '../components/search_contacts.dart';
 import '../components/text_field_trans_fer.dart';
 import 'components/list_contacts.dart';
+import 'components/list_contacts_recently.dart';
 import 'components/list_contacts_save.dart';
 
 class FirstTab extends StatefulWidget {
@@ -166,10 +167,6 @@ class _FirstTabState extends State<FirstTab> {
                               setState(() {
                                 if (index == 1) {
                                   visibly = false;
-                                  // height = 344.w;
-                                  // height = Get.size.height / 5.566.w;
-                                  // height = Get.size.height / 4.8.w - Get.size.height / 22;
-                                  // fromHeight = Get.size.height / 16 - Get.size.height / 22;
                                   height = heightInit - height_28;
                                   fromHeight = fromHeightInit - height_28;
                                 } else if (index == 2) {
@@ -246,12 +243,9 @@ class _FirstTabState extends State<FirstTab> {
                 list: widget.controller.isSameOwner ? listContactsSameOwner : listContacts,
                 callBack: (e) => Get.toNamed("/transaction_infor", arguments: ''),
               ),
-              // ListContactsRecently(
-              //   list: listContacts,
-              //   callBack: () => Get.toNamed("/transaction_infor", arguments: ''),
-              // ),
-              SizedBox(
-                height: 666666,
+              ListContactsRecently(
+                list: listContacts,
+                callBack: () => Get.toNamed("/transaction_infor", arguments: ''),
               ),
               ListContactsSave(),
             ],

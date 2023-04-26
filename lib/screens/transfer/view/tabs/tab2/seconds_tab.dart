@@ -27,8 +27,12 @@ class SecondsTab extends StatefulWidget {
 class _SecondsTabState extends State<SecondsTab> {
   ScrollController? _scrollController;
   bool lastStatus = true;
-  double height = height_630;
-  double fromHeight = height_32;
+
+  double height = Get.size.height > 650 ? height_560 : height_660;
+  double heightInit = Get.size.height > 650 ? height_560 : height_660;
+  double fromHeight = Get.size.height > 650 ? height_100 : height_96;
+  double fromHeightInit = Get.size.height > 650 ? height_100 : height_96;
+
   int index = 1;
   bool statusSearch = true;
   bool visibly = true;
@@ -250,7 +254,7 @@ class _SecondsTabState extends State<SecondsTab> {
                           ),
                         ),
                         bottom: PreferredSize(
-                          preferredSize: Size.fromHeight(fromHeight + height_8),
+                          preferredSize: Size.fromHeight(fromHeight),
                           child: Container(
                             color: clr_white,
                             child: Column(
@@ -268,18 +272,18 @@ class _SecondsTabState extends State<SecondsTab> {
                                       setState(() {
                                         if (index == 1) {
                                           visibly = false;
-                                          height = 547.8.w;
-                                          fromHeight = 10.h;
+                                          height = heightInit - height_28;
+                                          fromHeight = fromHeightInit - height_28;
                                         } else if (index == 2) {
                                           statusSearch = false;
                                           visibly = true;
-                                          height = 630.w;
-                                          fromHeight = 77.h;
+                                          height = heightInit;
+                                          fromHeight = fromHeightInit;
                                         } else {
                                           statusSearch = true;
                                           visibly = true;
-                                          height = 630.w;
-                                          fromHeight = 77.h;
+                                          height = heightInit;
+                                          fromHeight = fromHeightInit;
                                         }
                                       });
                                     },
@@ -324,7 +328,7 @@ class _SecondsTabState extends State<SecondsTab> {
                                   ),
                                 ),
                                 SizedBox(
-                                  height: height_4,
+                                  height: height_10,
                                 ),
                                 SearchContacts(
                                   visibly: visibly,

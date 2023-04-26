@@ -16,7 +16,7 @@ class ContactsContainer extends StatelessWidget {
       color: clr_f5f5f5,
       height: height_28,
       margin: EdgeInsets.only(top: height_12),
-      padding: EdgeInsets.only(top: height_4, left: width_16, right: width_16),
+      padding: EdgeInsets.symmetric(horizontal: width_16,),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
