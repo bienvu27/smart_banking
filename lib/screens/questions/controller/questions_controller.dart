@@ -17,7 +17,13 @@ class QuesionsController extends GetxController{
     super.onInit();
     getListQuestion();
   }
-
+  void select(bool newState, int index){
+    if (newState)
+        selected = index;
+    else
+        selected == -1;
+    update();
+  }
   void getListQuestion() async {
     var dataGroupList = json.decode(await getJson())['faq']['listGroups'];
     for (var i in dataGroupList) {
