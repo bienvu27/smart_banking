@@ -111,6 +111,7 @@ double width_120 = 300.w;
 double width_128 = 320.w;
 double width_148 = 370.w;
 double width_150 = 375.w;
+double width_160 = 400.w;
 double width_170 = 425.w;
 double width_180 = 450.w;
 double width_200 = 500.w;

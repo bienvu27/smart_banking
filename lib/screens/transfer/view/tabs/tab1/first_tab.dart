@@ -86,9 +86,9 @@ class _FirstTabState extends State<FirstTab> {
                               color: clr_f5f5f5,
                               borderRadius: BorderRadius.circular(border_10),
                             ),
-                            margin: EdgeInsets.only(top: height_10, right: width_13, left: width_13),
+                            margin: EdgeInsets.only(top: height_10, right: width_13, left: width_13,),
                             child: Padding(
-                              padding: EdgeInsets.symmetric(vertical: height_5, horizontal: width_10),
+                              padding: EdgeInsets.symmetric(vertical: height_5, horizontal: width_10,),
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: [
@@ -104,7 +104,7 @@ class _FirstTabState extends State<FirstTab> {
                                   ),
                                   Switch(
                                     value: widget.controller.isSameOwner,
-                                    onChanged: (value) => widget.controller.toggleSameOwner(context, !widget.controller.isSameOwner),
+                                    onChanged: (value) => widget.controller.toggleSameOwner(context, !widget.controller.isSameOwner,),
                                     activeColor: PRIMARY_COLOR,
                                   ),
                                 ],
@@ -152,7 +152,7 @@ class _FirstTabState extends State<FirstTab> {
                                     visibly = false;
                                     // height = 344.w;
                                     height = 378.5.w;
-                                    fromHeight = 0;
+                                    fromHeight = 10.h;
                                   } else if (index == 2) {
                                     statusSearch = false;
                                     visibly = true;

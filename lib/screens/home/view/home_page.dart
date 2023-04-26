@@ -31,10 +31,10 @@ class _HomePageState extends State<HomePage> {
                     height: MediaQuery.of(context).size.height,
                     child: Center(
                       child: Image.asset(
-                        icon_vrb,
-                        width: width_80,
-                        height: height_80,
-                        color: Colors.white.withOpacity(0.05),
+                        icon_vrb_white,
+                        width: width_160,
+                        height: height_160,
+                        color: Colors.black.withOpacity(0.05),
                         colorBlendMode: BlendMode.modulate,
                       ),
                     ),
