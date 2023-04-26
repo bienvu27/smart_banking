@@ -27,7 +27,7 @@ class SettingsPage extends StatelessWidget {
                   Container(
                     width: MediaQuery.of(context).size.width,
                     padding: EdgeInsets.only(bottom: height_16),
-                    height: height_160,
+                    height: height_400,
                     color: Colors.grey[100],
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
