@@ -33,7 +33,7 @@ class _HomePageState extends State<HomePage> {
                       child: Image.asset(
                         icon_vrb_white,
                         width: width_160,
-                        height: height_160,
+                        height: height_400,
                         color: Colors.black.withOpacity(0.05),
                         colorBlendMode: BlendMode.modulate,
                       ),

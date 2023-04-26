@@ -95,7 +95,7 @@ class TransactionConfirmationPage extends StatelessWidget {
             bottom: 0,
             child: Container(
                 color: Colors.white,
-                height: height_125,
+                height: height_350,
                 child: Stack(
                   alignment: Alignment.bottomCenter,
                   children: [
