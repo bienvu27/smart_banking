@@ -72,7 +72,7 @@ class AppPages {
 
     GetPage(
         name: AppRouters.CONTACTS_MANAGER,
-        page: () => const ContactsManagerPage(),
+        page: () => ContactsManagerPage(),
         binding: ContactsManagerBinding()),
 
     GetPage(

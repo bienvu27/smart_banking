@@ -141,7 +141,7 @@ class TransferPage extends StatelessWidget {
                   child: ButtonComponent(
                     title: NEXT,
                     bgColor: button_color_home,
-                    callback: (){;
+                    callback: () {
                           if(controller.validateForm(context)) {
                             Get.toNamed("/transaction_infor", arguments: '');
                           }

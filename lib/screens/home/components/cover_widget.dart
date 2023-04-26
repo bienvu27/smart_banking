@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:smart_banking/core/common/utils.dart';
 import '../../../core/resources/name_icon.dart';
 import '../../../core/resources/strings.dart';
 import '../../../core/style/colors.dart';
@@ -15,7 +16,6 @@ class CoverWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    int number = 2;
     final height = MediaQuery.of(context).size.height;
     return SizedBox(
       height: height / 1.8,
@@ -58,110 +58,122 @@ class CoverWidget extends StatelessWidget {
             ),
             child: Column(
               children: [
-                Row(
-                  children: [
-                    Image.asset(
-                      vrb_banner_icon,
-                      width: width_80,
-                      height: height_48,
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(left: width_8),
-                      height: height_22,
-                      width: Get.size.width / 1.6,
-                      child: TextField(
-                        enabled: false,
-                        maxLines: 1,
-                        style: TextStyle(
-                          fontSize: fontSize_10,
-                        ),
-                        textAlignVertical: TextAlignVertical.center,
-                        decoration: InputDecoration(
-                          filled: true,
-                          prefixIcon: Icon(
-                            Icons.search,
-                            color: clr_white70,
-                            size: fontSize_20,
-                          ),
-                          border: OutlineInputBorder(
-                              borderSide: BorderSide.none,
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(border_16),
-                              )),
-                          fillColor: clr_black26,
-                          contentPadding: EdgeInsets.zero,
-                          hintText: SEARCH,
-                          hintStyle: TextStyle(
-                            fontFamily: 'open_sans',
-                            fontSize: fontSize_11,
-                            color: clr_white70,
-                            fontWeight: FontWeight.w400,
-                          ),
+                Padding(
+                  padding: EdgeInsets.only(top: height_16),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Opacity(
+                        opacity: .8,
+                        child: Image.asset(
+                          vrb_banner_icon,
+                          width: height_60,
+                          fit: BoxFit.fitHeight,
                         ),
                       ),
-                    )
-                  ],
-                ),
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Stack(
-                      children: [
-                        CircleAvatar(
-                          backgroundColor: clr_white60,
-                          radius: fontSize_16,
-                          child: Icon(
-                            Icons.person,
-                            color: clr_white,
-                            size: fontSize_20,
+                      InkWell(
+                        onTap: () {
+                          Utils.showSearchDialog(context);
+                        },
+                        child: Container(
+                          height: height_22,
+                          width: Get.size.width / 1.6,
+                          child: TextField(
+                            enabled: false,
+                            maxLines: 1,
+                            style: TextStyle(fontSize: fontSize_10),
+                            textAlignVertical: TextAlignVertical.center,
+                            decoration: InputDecoration(
+                              filled: true,
+                              prefixIcon: Icon(
+                                Icons.search,
+                                color: clr_white54.withOpacity(.3),
+                                size: fontSize_20,
+                              ),
+                              border: OutlineInputBorder(
+                                  borderSide: BorderSide.none,
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(border_16),
+                                  )),
+                              fillColor: clr_black26,
+                              contentPadding: EdgeInsets.zero,
+                              hintText: SEARCH,
+                              hintStyle: TextStyle(
+                                fontFamily: 'open_sans',
+                                fontSize: fontSize_11,
+                                color: clr_white54.withOpacity(.4),
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
                           ),
                         ),
-                        Positioned(
-                            right: width_0,
-                            bottom: size_0,
-                            child: Container(
-                              width: width_10,
-                              height: height_10,
-                              alignment: Alignment.center,
-                              decoration: BoxDecoration(
-                                border: Border.all(color: clr_black12),
-                                color: clr_white,
-                                shape: BoxShape.circle,
-                              ),
-                              child: Icon(Icons.menu, size: fontSize_7),
-                            ))
-                      ],
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(left: width_8),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      )
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(top: height_9),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Stack(
                         children: [
-                          Text(
-                            GOOD_MORNING,
-                            style: TextStyle(
-                                fontFamily: 'open_sans',
-                                fontSize: fontSize_10,
-                                fontWeight: FontWeight.w600,
-                                color: clr_white70),
+                          CircleAvatar(
+                            backgroundColor: clr_white60,
+                            radius: fontSize_16,
+                            child: Icon(
+                              Icons.person,
+                              color: clr_white,
+                              size: fontSize_20,
+                            ),
                           ),
-                          controller.isLogin != null && controller.isLogin!
-                              ? Text(
-                                  NAME_TEST.toUpperCase(),
-                                  style: TextStyle(
-                                    fontSize: fontSize_12,
-                                    fontFamily: 'open_sans',
-                                    fontWeight: FontWeight.w700,
-                                    color: clr_white,
-                                  ),
-                                )
-                              : SizedBox(),
+                          Positioned(
+                              right: width_0,
+                              bottom: size_0,
+                              child: Container(
+                                width: width_10,
+                                height: height_10,
+                                alignment: Alignment.center,
+                                decoration: BoxDecoration(
+                                  border: Border.all(color: clr_black12),
+                                  color: clr_white,
+                                  shape: BoxShape.circle,
+                                ),
+                                child: Icon(Icons.menu, size: fontSize_7),
+                              ))
                         ],
                       ),
-                    )
-                  ],
+                      Padding(
+                        padding: EdgeInsets.only(left: width_8),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Text(
+                              GOOD_MORNING,
+                              style: TextStyle(
+                                  fontFamily: 'open_sans',
+                                  fontSize: fontSize_10,
+                                  fontWeight: FontWeight.w600,
+                                  color: clr_white70),
+                            ),
+                            controller.isLogin!
+                                ? Text(
+                                    NAME_TEST.toUpperCase(),
+                                    style: TextStyle(
+                                      fontSize: fontSize_12,
+                                      fontFamily: 'open_sans',
+                                      fontWeight: FontWeight.w700,
+                                      color: clr_white,
+                                    ),
+                                  )
+                                : SizedBox(),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ],
             ),

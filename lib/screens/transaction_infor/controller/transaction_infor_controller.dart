@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../core/common/utils.dart';
+
 class TransactionInforController extends GetxController{
   TextEditingController moneyController = new TextEditingController();
   String sAmount = "";
@@ -12,8 +14,8 @@ class TransactionInforController extends GetxController{
     update();
   }
 
-  void convertMoneyNumberToText(String currencyCode) {
-    sAmount = moneyController.text;
+  void convertMoneyNumberToText(String currencyCode, BuildContext context) {
+    sAmount = moneyController.text.replaceAll(",", "").replaceAll(".", "");
     int amtLen = sAmount.length;
     String currencyStr = "";
     for (int i = amtLen - 1; i >= 0; i--) {
@@ -41,7 +43,6 @@ class TransactionInforController extends GetxController{
     double a = c / b;
     int cols = int.parse(a.ceil().toString());
     int first = len - cols * 3;
-    print(first);
     String num3 = "";
     for (int i = first, j = 0; i < len; i += 3) {
       ++j;
@@ -105,6 +106,9 @@ class TransactionInforController extends GetxController{
 
     sAmount = strRet + abc + only;
     //return strRet;
+    String money = moneyController.text;
+    moneyController.text = Utils.formatDecimalCurrency(money, false);
+    moneyController.selection = TextSelection.fromPosition(TextPosition(offset: moneyController.text.length));
     update();
   }
 
@@ -128,9 +132,14 @@ class TransactionInforController extends GetxController{
     if ((num.length == 3) && ("000" != num.substring(0, 3))) {
       if ((num.substring(0, 1) != "0")) {
         strRet += arr3NTe[int.parse(num.substring(0, 1))]
-            + " trăm ";
-        // if ("00" != num.substring(1, 2) && "0" != num.substring(1, 2))
-        //   strRet += " và ";
+            + " trăm";
+        print(num.substring(2, 3));
+        if ("0" == num.substring(1, 2) && num.substring(2, 3) != "0") {
+          strRet += " và ";
+        } else if (num.substring(1, 2) != "0") {
+          strRet += " ";
+        }
+
       }
       num = num.substring(1);
     }
@@ -142,7 +151,7 @@ class TransactionInforController extends GetxController{
         strRet += arr4NTe[int.parse(num.substring(1, 2))];
       } else {
         strRet += arr2NTe[int.parse(num.substring(0, 1))];
-        if ("0" != num.substring(1, 1))
+        if ("0" != num.substring(1, 2))
           strRet += " ";
         num = num.substring(1);
       }

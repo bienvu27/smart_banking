@@ -13,11 +13,7 @@ import '../../service_manager/model/service_favorite_model.dart';
 class ServiceFavorite extends StatelessWidget {
   HomeController controller;
 
-  ServiceFavorite({
-    super.key,
-    required this.list,
-    required this.controller
-  });
+  ServiceFavorite({super.key, required this.list, required this.controller});
 
   final List<ServiceFavoriteModel> list;
 
@@ -67,19 +63,9 @@ class ServiceFavorite extends StatelessWidget {
                 children: list.map((e) {
                   return InkWell(
                     onTap: () {
-                      !controller.isLogin ?
-                      showDialog(
-                          barrierDismissible: false,
-                          context: context,
-                          builder: (BuildContext context) => CustomDialog(
-                                title: TITLE_31,
-                                cancel: CANCEL2,
-                                submit: LOGIN,
-                                clickCallback: () {
-                                  Navigator.of(context).pop();
-                                  Utils.showAuthenticationDialog(context);
-                                },
-                              )):Utils.showWarningDialog(context, "Chưa cập nhật");
+                      !controller.isLogin
+                          ? Utils.showAuthenticationDialog(context)
+                          : Utils.showWarningDialog(context, "Chưa cập nhật");
                     },
                     child: Column(
                       children: [
@@ -127,7 +113,8 @@ class ServiceFavorite extends StatelessWidget {
           ),
         ),
         InkWell(
-          onTap: () => Get.toNamed("/service_manager", arguments: [1, "Tất cả các dịch vụ"]),
+          onTap: () => Get.toNamed("/service_manager",
+              arguments: [1, "Tất cả các dịch vụ"]),
           child: Container(
             margin: EdgeInsets.only(
               left: width_10,

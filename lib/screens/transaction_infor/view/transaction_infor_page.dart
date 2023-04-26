@@ -165,7 +165,7 @@ class TransactionInforPage extends StatelessWidget {
                         label: AMOUT_OF_MONEY,
                         textController: controller.moneyController,
                         textInputType: TextInputType.number,
-                        maxLength: 12,
+                        maxLength: 15,
                         counter: Text(
                           controller.sAmount.capitalizeFirst!,
                           style: TextStyle(
@@ -190,7 +190,7 @@ class TransactionInforPage extends StatelessWidget {
                           ),
                         ),
                         onChange: (_) {
-                          controller.convertMoneyNumberToText(VND);
+                          controller.convertMoneyNumberToText(VND,context);
                         },
                       ),
                     ),
@@ -206,8 +206,9 @@ class TransactionInforPage extends StatelessWidget {
                         textInputType: TextInputType.text,
                       ),
                     ),
-                    isNapas != null && isNapas! ? Padding(
-                      padding: EdgeInsets.only(top: height_16),
+
+                    Padding(
+                      padding: EdgeInsets.only(top: height_11),
                       child: Container(
                         margin: EdgeInsets.only(
                           left: width_16,
@@ -221,7 +222,53 @@ class TransactionInforPage extends StatelessWidget {
                         width: MediaQuery.of(context).size.width,
                         decoration: BoxDecoration(
                           color: clr_f5f5f5,
-                          borderRadius: BorderRadius.circular(10),
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(horizontal: width_10),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                               Text(
+                                 'Lưu danh bạ thụ hưởng',
+                                style: TextStyle(
+                                  fontSize: fontSize_12,
+                                  color: clr_black,
+                                  fontFamily: 'open_sans',
+                                  fontWeight: FontWeight.normal,
+                                ),
+                              ),
+                              Switch(
+                                value: controller.isSwitched,
+                                activeColor: PRIMARY_COLOR,
+                                onChanged: (value) {
+                                  controller.toggle();
+                                  // controller.isSwitched = value;
+                                },
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+
+                    isNapas != null && isNapas! ? Padding(
+                      padding: EdgeInsets.only(top: height_11),
+                      child: Container(
+                        margin: EdgeInsets.only(
+                          left: width_16,
+                          right: width_16,
+                          top: height_8,
+                        ),
+                        padding: EdgeInsets.only(
+                          top: height_10,
+                          bottom: height_10,
+                        ),
+                        width: MediaQuery.of(context).size.width,
+                        decoration: BoxDecoration(
+                          color: clr_f5f5f5,
+                          borderRadius: BorderRadius.circular(15),
                         ),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,

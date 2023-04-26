@@ -171,7 +171,7 @@ class _HistoryTransferPageState extends State<HistoryTransferPage> {
                                             ),
 
                                             RowTitle(
-                                              title: "Thời đuển truy vấn",
+                                              title: "Thời điểm truy vấn",
                                               subTitle: "16:00:00 19/04/2023",
                                             ),
 
