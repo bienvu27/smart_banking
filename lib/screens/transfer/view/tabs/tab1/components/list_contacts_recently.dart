@@ -19,22 +19,24 @@ class ListContactsRecently extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(left: width_16, right: width_16),
+      padding: EdgeInsets.only(
+        left: width_16,
+        right: width_16,
+      ),
       color: clr_white,
       child: Center(
           child: Text(
-            TITLE_68,
-            style: TextStyle(
-              color: clr_black26,
-              fontSize: fontSize_11,
-              fontFamily: 'open_sans',
-              fontWeight: FontWeight.w500
-            ),
-          )),
+        TITLE_68,
+        style: TextStyle(
+          color: clr_black26,
+          fontSize: fontSize_11,
+          fontFamily: 'open_sans',
+          fontWeight: FontWeight.w500,
+        ),
+      )),
     );
   }
 }
-
 
 // Container(
 // padding: EdgeInsets.only(left: width_16, right: width_16),
