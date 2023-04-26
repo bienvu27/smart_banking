@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:smart_banking/screens/home/controller/home_controller.dart';
-import '../../../core/resources/name_icon.dart';
+import '../../../core/resources/asset.dart';
 import '../../../core/resources/strings.dart';
 import '../../../core/style/size.dart';
 import '../../../fake_data/data_fake_home.dart';

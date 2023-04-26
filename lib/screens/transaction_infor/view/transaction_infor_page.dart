@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../../core/resources/name_icon.dart';
+import '../../../core/resources/asset.dart';
 import '../../../core/resources/strings.dart';
 import '../../../core/style/colors.dart';
 import '../../../core/style/size.dart';
@@ -53,13 +53,22 @@ class TransactionInforPage extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
+                            // CircleAvatar(
+                            //   radius: border_16,
+                            //   backgroundColor: clr_d5d6d7,
+                            //   child: Icon(
+                            //     Icons.person,
+                            //     color: Colors.white,
+                            //     size: fontSize_26,
+                            //   ),
+                            // ),
                             CircleAvatar(
-                              radius: border_16,
-                              backgroundColor: clr_d5d6d7,
-                              child: Icon(
-                                Icons.person,
-                                color: Colors.white,
-                                size: fontSize_26,
+                              backgroundColor: clr_f6f5f7,
+                              radius: fontSize_16,
+                              child: Image.asset(
+                                logoSeatech,
+                                width: width_28,
+                                fit: BoxFit.fitWidth,
                               ),
                             ),
                             SizedBox(
