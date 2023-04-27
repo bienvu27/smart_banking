@@ -5,7 +5,6 @@ import 'package:smart_banking/screens/contacts_manager/controller/contacts_manag
 import '../../../core/resources/strings.dart';
 import '../../../core/style/colors.dart';
 import '../../../core/style/size.dart';
-import '../../../fake_data/data_fake_home.dart';
 import '../../components/button/back_icon_button.dart';
 import '../../transfer/view/tabs/components/search_contacts.dart';
 import '../../transfer/view/tabs/tab1/components/list_contacts.dart';
@@ -119,7 +118,7 @@ class ContactsManagerPage extends StatelessWidget {
               body: TabBarView(
                 children: [
                   ListContacts(
-                    list: listContacts,
+                    list: controller.listContactsSearch,
                     callBack: () =>
                         Get.toNamed("/transaction_infor", arguments: '',),
 

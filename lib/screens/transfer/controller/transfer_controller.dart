@@ -8,6 +8,8 @@ import '../../../core/style/size.dart';
 import '../../../fake_data/data_fake_home.dart';
 import '../../components/dialog/custom_dialog_transfer.dart';
 import '../components/list_benef_account.dart';
+import '../models/list_bank_model.dart';
+import '../models/list_contacts_model.dart';
 
 class TransferController extends GetxController {
   bool isSwitched = true;
@@ -16,15 +18,6 @@ class TransferController extends GetxController {
   bool isSameOwner = false;
   String? titleDialog;
   int indexTabTransfer = 0;
-
-  @override
-  void onInit() {
-    // TODO: implement onInit
-    super.onInit();
-    isSameOwner = false;
-    beneficiaryAccountController.clear();
-    update();
-  }
 
   TextEditingController beneficiaryAccountController = new TextEditingController();
 
@@ -183,6 +176,74 @@ class TransferController extends GetxController {
       return false;
     }
     return true;
+  }
+
+  TextEditingController searchController = TextEditingController();
+
+  List<ListContactsModel> listContactsSameOwnerSearch = [];
+  List<ListContactsModel> listContactsSearch = [];
+  List<ListContactsModel> listContacts2Search = [];
+  List<ListContactsModel> listContacts3Search = [];
+
+
+  void autoFillingWhenSearch(String text) {
+    listContactsSameOwnerSearch.clear();
+    listContactsSameOwnerSearch.addAll(listContactsSameOwner);
+    listContactsSameOwnerSearch.removeWhere((e) =>
+    !e.name!.toUpperCase().contains(text.toUpperCase()));
+    if (text.isEmpty) {
+      listContactsSameOwnerSearch.clear();
+      listContactsSameOwnerSearch.addAll(listContactsSameOwner);
+    }
+
+    listContactsSearch.clear();
+    listContactsSearch.addAll(listContacts);
+    listContactsSearch.removeWhere((e) =>
+    !e.name!.toUpperCase().contains(text.toUpperCase()));
+    if (text.isEmpty) {
+      listContactsSearch.clear();
+      listContactsSearch.addAll(listContacts);
+    }
+
+    update();
+  }
+
+  void autoFillingWhenSearch2(String text) {
+    listContacts2Search.clear();
+    listContacts2Search.addAll(listContacts2);
+    listContacts2Search.removeWhere((e) =>
+    !e.name!.toUpperCase().contains(text.toUpperCase()));
+    if (text.isEmpty) {
+      listContacts2Search.clear();
+      listContacts2Search.addAll(listContacts2);
+    }
+    update();
+  }
+
+  void autoFillingWhenSearch3(String text) {
+    listContacts3Search.clear();
+    listContacts3Search.addAll(listContacts);
+    listContacts3Search.removeWhere((e) =>
+    !e.name!.toUpperCase().contains(text.toUpperCase()));
+    if (text.isEmpty) {
+      listContacts3Search.clear();
+      listContacts3Search.addAll(listContacts);
+    }
+    update();
+  }
+
+
+  @override
+  void onInit() {
+    // TODO: implement onInit
+    super.onInit();
+    isSameOwner = false;
+    beneficiaryAccountController.clear();
+    listContactsSameOwnerSearch.addAll(listContactsSameOwner);
+    listContactsSearch.addAll(listContacts);
+    listContacts2Search.addAll(listContacts2);
+    listContacts3Search.addAll(listContacts);
+    update();
   }
 
 }

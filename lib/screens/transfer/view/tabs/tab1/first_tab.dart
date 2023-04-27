@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:smart_banking/screens/transfer/controller/transfer_controller.dart';
 import '../../../../../core/resources/strings.dart';
@@ -14,7 +13,7 @@ import 'components/list_contacts_recently.dart';
 import 'components/list_contacts_save.dart';
 
 class FirstTab extends StatefulWidget {
-  const FirstTab({Key? key, required this.controller}) : super(key: key);
+  const  FirstTab({Key? key, required this.controller}) : super(key: key);
 
   final TransferController controller;
 
@@ -228,6 +227,7 @@ class _FirstTabState extends State<FirstTab> {
                         SearchContacts(
                           visibly: visibly,
                           title: statusSearch ? SEARCH_2 : SEARCH_3,
+                          onChange: (_) => widget.controller.autoFillingWhenSearch(_),
                         )
                       ],
                     ),
@@ -240,7 +240,7 @@ class _FirstTabState extends State<FirstTab> {
             physics: const NeverScrollableScrollPhysics(),
             children: [
               ListContacts(
-                list: widget.controller.isSameOwner ? listContactsSameOwner : listContacts,
+                list: widget.controller.isSameOwner ? widget.controller.listContactsSameOwnerSearch : widget.controller.listContactsSearch,
                 callBack: (e) => Get.toNamed("/transaction_infor", arguments: ''),
               ),
               ListContactsRecently(

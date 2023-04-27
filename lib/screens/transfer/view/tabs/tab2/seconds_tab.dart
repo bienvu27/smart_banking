@@ -10,6 +10,7 @@ import '../../../../../core/style/colors.dart';
 import '../../../../../core/style/size.dart';
 import '../../../../../fake_data/data_fake_home.dart';
 import '../../../../transaction_infor/view/transaction_infor_page.dart';
+import '../../../controller/dialog_search_bank_controller.dart';
 import '../../../controller/transfer_controller.dart';
 import '../components/contacts_container.dart';
 import '../components/search_contacts.dart';
@@ -18,7 +19,8 @@ import '../tab1/components/list_bank.dart';
 import '../tab1/components/list_contacts_save.dart';
 
 class SecondsTab extends StatefulWidget {
-  const SecondsTab({Key? key}) : super(key: key);
+  final TransferController controller;
+  SecondsTab({Key? key, required this.controller}) : super(key: key);
 
   @override
   State<SecondsTab> createState() => _SecondsTabState();
@@ -68,10 +70,7 @@ class _SecondsTabState extends State<SecondsTab> {
   Widget build(BuildContext context) {
     return DefaultTabController(
         length: 3,
-        child: GetBuilder<TransferController>(
-            init: TransferController(),
-            builder: (controller) {
-              return Scaffold(
+        child: Scaffold(
                 body: NestedScrollView(
                   controller: _scrollController,
                   headerSliverBuilder: (context, innerBoxIsScrolled) {
@@ -99,94 +98,100 @@ class _SecondsTabState extends State<SecondsTab> {
                                         ),
                                       ),
                                       builder: (BuildContext context) {
-                                        return Container(
-                                          margin: EdgeInsets.only(
-                                            top: height_8,
-                                          ),
-                                          color: Colors.white,
-                                          padding: EdgeInsets.only(
-                                            top: height_12,
-                                            left: width_12,
-                                            right: width_12,
-                                          ),
-                                          height: Get.size.height / 1.05,
-                                          child: Column(
-                                              mainAxisAlignment: MainAxisAlignment.start,
-                                              mainAxisSize: MainAxisSize.min,
-                                              children: [
-                                                Row(
-                                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        return GetBuilder<DialogSearchBankController>(
+                                          init: DialogSearchBankController(),
+                                          builder: (dialogSearchBankController) {
+                                            return Container(
+                                              margin: EdgeInsets.only(
+                                                top: height_8,
+                                              ),
+                                              color: Colors.white,
+                                              padding: EdgeInsets.only(
+                                                top: height_12,
+                                                left: width_12,
+                                                right: width_12,
+                                              ),
+                                              height: Get.size.height / 1.05,
+                                              child: Column(
+                                                  mainAxisAlignment: MainAxisAlignment.start,
+                                                  mainAxisSize: MainAxisSize.min,
                                                   children: [
-                                                    Text(
-                                                      TITLE_43,
-                                                      style: TextStyle(
-                                                        fontSize: fontSize_12,
-                                                        fontWeight: FontWeight.w600,
-                                                      ),
+                                                    Row(
+                                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                      children: [
+                                                        Text(
+                                                          TITLE_43,
+                                                          style: TextStyle(
+                                                            fontSize: fontSize_12,
+                                                            fontWeight: FontWeight.w600,
+                                                          ),
+                                                        ),
+                                                        InkWell(
+                                                          onTap: () => Navigator.pop(context),
+                                                          child: Text(
+                                                            CANCEL,
+                                                            style: TextStyle(
+                                                              fontSize: fontSize_12,
+                                                              color: PRIMARY_COLOR,
+                                                              fontWeight: FontWeight.w600,
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ],
                                                     ),
-                                                    InkWell(
-                                                      onTap: () => Navigator.pop(context),
-                                                      child: Text(
-                                                        CANCEL,
-                                                        style: TextStyle(
-                                                          fontSize: fontSize_12,
-                                                          color: PRIMARY_COLOR,
-                                                          fontWeight: FontWeight.w600,
+                                                    Container(
+                                                      margin: EdgeInsets.only(
+                                                        top: height_16,
+                                                        bottom: height_8,
+                                                      ),
+                                                      height: height_28,
+                                                      child: Container(
+                                                        decoration: BoxDecoration(
+                                                            borderRadius: BorderRadius.circular(border_24),
+                                                            border: Border.all(
+                                                              width: 1,
+                                                              color: clr_black12,
+                                                            )),
+                                                        child: TextField(
+                                                          maxLines: 1,
+                                                          style: TextStyle(fontSize: fontSize_12),
+                                                          onChanged: (_) => dialogSearchBankController.autoFillingWhenSearchBank(_),
+                                                          textAlignVertical: TextAlignVertical.center,
+                                                          decoration: InputDecoration(
+                                                            filled: true,
+                                                            prefixIcon: Icon(
+                                                              Icons.search,
+                                                              color: clr_black12,
+                                                              size: fontSize_20,
+                                                            ),
+                                                            border: OutlineInputBorder(
+                                                                borderSide: BorderSide.none,
+                                                                borderRadius: BorderRadius.all(Radius.circular(
+                                                                  border_16,
+                                                                ))),
+                                                            fillColor: clr_white,
+                                                            contentPadding: EdgeInsets.zero,
+                                                            hintText: SEARCH,
+                                                            hintStyle: TextStyle(
+                                                              fontSize: fontSize_11,
+                                                              fontFamily: 'open_sans',
+                                                              fontWeight: FontWeight.w500,
+                                                              color: clr_black12,
+                                                            ),
+                                                          ),
                                                         ),
                                                       ),
                                                     ),
-                                                  ],
-                                                ),
-                                                Container(
-                                                  margin: EdgeInsets.only(
-                                                    top: height_16,
-                                                    bottom: height_8,
-                                                  ),
-                                                  height: height_28,
-                                                  child: Container(
-                                                    decoration: BoxDecoration(
-                                                        borderRadius: BorderRadius.circular(border_24),
-                                                        border: Border.all(
-                                                          width: 1,
-                                                          color: clr_black12,
-                                                        )),
-                                                    child: TextField(
-                                                      maxLines: 1,
-                                                      style: TextStyle(fontSize: fontSize_12),
-                                                      textAlignVertical: TextAlignVertical.center,
-                                                      decoration: InputDecoration(
-                                                        filled: true,
-                                                        prefixIcon: Icon(
-                                                          Icons.search,
-                                                          color: clr_black12,
-                                                          size: fontSize_20,
-                                                        ),
-                                                        border: OutlineInputBorder(
-                                                            borderSide: BorderSide.none,
-                                                            borderRadius: BorderRadius.all(Radius.circular(
-                                                              border_16,
-                                                            ))),
-                                                        fillColor: clr_white,
-                                                        contentPadding: EdgeInsets.zero,
-                                                        hintText: SEARCH,
-                                                        hintStyle: TextStyle(
-                                                          fontSize: fontSize_11,
-                                                          fontFamily: 'open_sans',
-                                                          fontWeight: FontWeight.w500,
-                                                          color: clr_black12,
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                                ListBank(
-                                                    list: listBanks,
-                                                    onTapElement: (e) {
-                                                      controller.log(e.title!, e.image!, e.subTitle!);
-                                                      Navigator.pop(context);
-                                                    },
-                                                    icon: Icons.account_balance_wallet_rounded),
-                                              ]),
+                                                    ListBank(
+                                                        list: dialogSearchBankController.listBanksSearch,
+                                                        onTapElement: (e) {
+                                                          widget.controller.log(e.title!, e.image!, e.subTitle!);
+                                                          Navigator.pop(context);
+                                                        },
+                                                        icon: Icons.account_balance_wallet_rounded),
+                                                  ]),
+                                            );
+                                          }
                                         );
                                       },
                                     );
@@ -195,9 +200,9 @@ class _SecondsTabState extends State<SecondsTab> {
                                     enabled: false,
                                     labelText: TITLE_43,
                                     suffixIcon: Icons.arrow_drop_down_sharp,
-                                    title: controller.title,
-                                    subfix: controller.image,
-                                    textEditingController: controller.textController,
+                                    title: widget.controller.title,
+                                    subfix: widget.controller.image,
+                                    textEditingController: widget.controller.textController,
                                   ),
                                 ),
                                 Padding(
@@ -224,7 +229,7 @@ class _SecondsTabState extends State<SecondsTab> {
                                           children: listBanks
                                               .map((e) => InkWell(
                                                     onTap: () {
-                                                      controller.log(e.title!, e.image!, e.subTitle!);
+                                                      widget.controller.log(e.title!, e.image!, e.subTitle!);
                                                     },
                                                     child: Container(
                                                       margin: EdgeInsets.only(
@@ -333,6 +338,7 @@ class _SecondsTabState extends State<SecondsTab> {
                                 SearchContacts(
                                   visibly: visibly,
                                   title: statusSearch ? SEARCH_2 : SEARCH_3,
+                                  onChange: (_) => widget.controller.autoFillingWhenSearch2(_),
                                 )
                               ],
                             ),
@@ -345,23 +351,22 @@ class _SecondsTabState extends State<SecondsTab> {
                     physics: const NeverScrollableScrollPhysics(),
                     children: [
                       ListContacts(
-                        list: listContacts2,
-                        // callBack: () => Get.toNamed("/transaction_infor", arguments: ''),
+                        list: widget.controller.listContacts2Search,
                         callBack: (e) => Get.to(TransactionInforPage(
                           isNapas: true,
                         )),
                         icon: _iconLightning()
                       ),
                       ListContactsRecently(
-                        list: listContacts2,
+                        list: widget.controller.listContacts2Search,
                         callBack: () => Get.toNamed("/transaction_infor", arguments: ''),
                       ),
                       ListContactsSave(),
                     ],
                   ),
                 ),
-              );
-            }));
+              )
+    );
   }
 
 }
