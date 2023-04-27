@@ -13,6 +13,7 @@ import '../../screens/components/text_field/text_field_icon_subtile_component.da
 import '../resources/strings.dart';
 import '../style/colors.dart';
 import '../style/size.dart';
+import '../widgets/dialog_logout.dart';
 import '../widgets/warning_dialog.dart';
 
 class Utils {
@@ -30,7 +31,7 @@ class Utils {
       ),
       builder: (BuildContext context) {
         return Container(
-          margin: EdgeInsets.only(left: width_8, right: width_8, top: height_8),
+          margin: EdgeInsets.only(left: width_8, right: width_8, top: height_8,),
           height: Get.size.height / 1.2,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -196,6 +197,28 @@ class Utils {
                 Navigator.of(context).pop();
               },
             ));
+  }
+
+  static showDialogLogout(BuildContext context, String title, String subTitle, String buttonCancel, String buttonSubmit){
+    showDialog(
+        barrierDismissible: false,
+        context: context,
+        builder: (BuildContext context) => DialogLogout(
+          title: title,
+          subTitle: subTitle,
+          buttonCancel: CANCEL,
+          buttonSubmit: buttonSubmit,
+          clickCallback: () {
+            Navigator.of(context).pop();
+          },
+          clickSubmit: () async {
+            SharedPreferences pref = await SharedPreferences.getInstance();
+            pref.remove("username");
+            Navigator.of(context).pushNamedAndRemoveUntil(AppRouters.DASHBOARD, (route) => false);
+            Get.put(DashboardController());
+            Utils.showWarningDialog(context, "Đăng xuất thành công");
+          },
+        ));
   }
 
   static void showSearchDialog(BuildContext context) {

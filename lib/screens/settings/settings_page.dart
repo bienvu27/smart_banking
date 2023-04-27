@@ -74,11 +74,7 @@ class SettingsPage extends StatelessWidget {
                       right: width_8,
                       child: GestureDetector(
                         onTap: () async {
-                          SharedPreferences pref = await SharedPreferences.getInstance();
-                          pref.remove("username");
-                          Navigator.of(context).pushNamedAndRemoveUntil(AppRouters.DASHBOARD, (route) => false);
-                          Get.put(DashboardController());
-                          Utils.showWarningDialog(context, "Đăng xuất thành công");
+                          Utils.showDialogLogout(context, LOGOUT, LOGOUT_2, NO, YES);
                         },
                         child: Container(
                           padding: EdgeInsets.only(

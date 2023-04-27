@@ -30,6 +30,7 @@ class TransactionInforPage extends StatelessWidget {
             body: Container(
               margin: EdgeInsets.only(top: height_8),
               color: clr_white,
+              height: Get.size.height,
               child: SingleChildScrollView(
                 child: Column(
                   children: [

@@ -6,15 +6,15 @@ import '../../../../../../core/style/size.dart';
 import '../../transfer/models/list_contacts_model.dart';
 
 class ListContacts2 extends StatelessWidget {
-  const ListContacts2({
+   ListContacts2({
     super.key,
     required this.list,
-    required this.callBack,
+    required this.callBack, this.iconClick,
   });
 
   final List<ListContactsModel> list;
   final VoidCallback callBack;
-
+  Function? iconClick;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -86,10 +86,13 @@ class ListContacts2 extends StatelessWidget {
                       ),
                     ],
                   ),
-                  Icon(
-                    Icons.more_vert,
-                    color: clr_black26,
-                    size: 25.spMax,
+                  InkWell(
+                    onTap: ()=> iconClick!(),
+                    child: Icon(
+                      Icons.more_vert,
+                      color: clr_black26,
+                      size: 25.spMax,
+                    ),
                   )
                 ],
               ),
