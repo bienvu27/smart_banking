@@ -122,11 +122,11 @@ class TransferPage extends StatelessWidget {
                 children: [
                   FirstTab(controller: controller,),
                   if(controller.textController.text.isEmpty)...[
-                    SecondsTab(),
+                    SecondsTab(controller: controller),
                   ]else ...[
                     SecondsTabIsNotEmpty()
                   ],
-                  LastTab(),
+                  LastTab(controller: controller),
                 ],
               ),
                 bottomNavigationBar: Container(

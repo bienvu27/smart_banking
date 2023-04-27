@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 import '../../../../../core/resources/strings.dart';
 import '../../../../../core/style/colors.dart';
 import '../../../../../core/style/size.dart';
 import '../../../../../fake_data/data_fake_home.dart';
+import '../../../controller/transfer_controller.dart';
 import '../components/contacts_container.dart';
 import '../components/search_contacts.dart';
 import '../components/text_field_trans_fer.dart';
@@ -14,7 +14,8 @@ import '../tab1/components/list_contacts_recently.dart';
 import '../tab1/components/list_contacts_save.dart';
 
 class LastTab extends StatefulWidget {
-  const LastTab({Key? key}) : super(key: key);
+  final TransferController controller;
+  LastTab({Key? key, required this.controller}) : super(key: key);
 
   @override
   State<LastTab> createState() => _LastTabState();
@@ -166,7 +167,11 @@ class _LastTabState extends State<LastTab> {
                         SizedBox(
                           height: height_10,
                         ),
-                        SearchContacts(visibly: visibly, title: statusSearch ? SEARCH_2 : SEARCH_3,)
+                        SearchContacts(
+                          visibly: visibly,
+                          title: statusSearch ? SEARCH_2 : SEARCH_3,
+                          onChange: (_) => widget.controller.autoFillingWhenSearch3(_),
+                        )
                       ],
                     ),
                   ),
@@ -177,13 +182,18 @@ class _LastTabState extends State<LastTab> {
           body: TabBarView(
             physics: const NeverScrollableScrollPhysics(),
             children: [
-              ListContacts(list: listContacts, callBack: (e) => Get.toNamed("/transaction_infor", arguments: '')),
-              ListContactsRecently(list: listContacts, callBack: () => Get.toNamed("/transaction_infor", arguments: '')),
+              ListContacts(
+                  list: widget.controller.listContacts3Search,
+                  callBack: (e) =>
+                      Get.toNamed("/transaction_infor", arguments: '')),
+              ListContactsRecently(
+                  list: widget.controller.listContacts3Search,
+                  callBack: () =>
+                      Get.toNamed("/transaction_infor", arguments: '')),
               ListContactsSave(),
             ],
           ),
         ),
-
       ),
     );
   }
