@@ -228,3 +228,5 @@ const String TITLE_84 = 'Dung lượng';
 const String LANGUAGE = 'Ngôn ngữ';
 const String QUESTIONS = 'Câu hỏi thường gặp';
 const String TRANSACTION_LIMIT = 'Hạn mức giao dịch';
+const String ADD_FAVORITE = 'Thêm yêu thích';
+const String DELETE = 'Xoá';

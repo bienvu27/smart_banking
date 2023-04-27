@@ -18,6 +18,7 @@ class TabView1 extends StatefulWidget {
 
 class _TabView1State extends State<TabView1> {
   bool showHide = true;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -64,7 +65,7 @@ class _TabView1State extends State<TabView1> {
                               showHide = !showHide;
                             });
                           },
-                          child:  Icon(
+                          child: Icon(
                             showHide ? Icons.arrow_drop_up : Icons.arrow_drop_down,
                             color: clr_black,
                             size: fontSize_26,
@@ -78,9 +79,86 @@ class _TabView1State extends State<TabView1> {
                     child: ListContacts2(
                       list: listContacts2,
                       callBack: () => Get.toNamed("/transaction_infor", arguments: ''),
+                      iconClick: () {
+                        showModalBottomSheet<void>(
+                          backgroundColor: Colors.white,
+                          context: context,
+                          isScrollControlled: true,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.vertical(
+                              top: Radius.circular(border_10),
+                            ),
+                          ),
+                          builder: (BuildContext context) {
+                            return Container(
+                              margin: EdgeInsets.only(
+                                top: height_8,
+                              ),
+                              color: Colors.white,
+                              padding: EdgeInsets.only(
+                                top: height_12,
+                                left: width_12,
+                                right: width_12,
+                              ),
+                              height: MediaQuery.of(context).size.height / 7,
+                              child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Row(
+                                      children: [
+                                        InkWell(
+                                            onTap: () => Navigator.pop(context),
+                                            child: Icon(
+                                              Icons.star,
+                                              color: Colors.yellow,
+                                              size: fontSize_16,
+                                            )),
+                                        SizedBox(
+                                          width: width_12,
+                                        ),
+                                        Text(
+                                          ADD_FAVORITE,
+                                          style: TextStyle(
+                                            fontFamily: 'open_sans',
+                                            fontSize: fontSize_12,
+                                            fontWeight: FontWeight.w600,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    SizedBox(
+                                      height: height_16,
+                                    ),
+                                    Row(
+                                      children: [
+                                        InkWell(
+                                            onTap: () => Navigator.pop(context),
+                                            child: Icon(
+                                              Icons.delete_forever,
+                                              color: Colors.redAccent,
+                                              size: fontSize_16,
+                                            )),
+                                        SizedBox(
+                                          width: width_12,
+                                        ),
+                                        Text(
+                                          DELETE,
+                                          style: TextStyle(
+                                            fontFamily: 'open_sans',
+                                            fontSize: fontSize_12,
+                                            fontWeight: FontWeight.w600,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ]),
+                            );
+                          },
+                        );
+                      },
                     ),
                   ),
-
                 ],
               )
             ],
@@ -91,9 +169,14 @@ class _TabView1State extends State<TabView1> {
         width: width_36,
         height: height_36,
         child: FloatingActionButton(
-            backgroundColor: PRIMARY_COLOR,
-            child: Icon(Icons.add, size: fontSize_32, color: Colors.white,),
-            onPressed: ()=> Get.toNamed("/add_contacts", arguments: ''),),
+          backgroundColor: PRIMARY_COLOR,
+          child: Icon(
+            Icons.add,
+            size: fontSize_32,
+            color: Colors.white,
+          ),
+          onPressed: () => Get.toNamed("/add_contacts", arguments: ''),
+        ),
       ),
     );
   }

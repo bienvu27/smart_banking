@@ -121,7 +121,8 @@ class ContactsManagerPage extends StatelessWidget {
                   ListContacts(
                     list: listContacts,
                     callBack: () =>
-                        Get.toNamed("/transaction_infor", arguments: ''),
+                        Get.toNamed("/transaction_infor", arguments: '',),
+
                   ),
                   MyContacts(contacts: controller.contactsSearch, ),
                 ],

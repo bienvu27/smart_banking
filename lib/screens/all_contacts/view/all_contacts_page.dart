@@ -8,9 +8,6 @@ import '../../../core/style/colors.dart';
 import '../../../core/style/size.dart';
 import '../../../fake_data/data_fake_home.dart';
 import '../../components/button/back_icon_button.dart';
-import '../../contacts_manager/view/my_contacts.dart';
-import '../../transfer/view/tabs/components/search_contacts.dart';
-import '../../transfer/view/tabs/tab1/components/list_contacts.dart';
 
 class AllContactsPage extends StatelessWidget {
   const AllContactsPage({Key? key}) : super(key: key);
