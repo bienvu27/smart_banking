@@ -116,12 +116,12 @@ class _LastTabState extends State<LastTab> {
                                 } else if (index == 2) {
                                   statusSearch = false;
                                   visibly = true;
-                                  height = heightInit - height_28;
+                                  height = heightInit;
                                   fromHeight = fromHeightInit;
                                 } else {
                                   statusSearch = true;
                                   visibly = true;
-                                  height = heightInit - height_28;
+                                  height = heightInit;
                                   fromHeight = fromHeightInit;
                                 }
                                 print(visibly);
