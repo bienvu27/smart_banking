@@ -230,3 +230,8 @@ const String QUESTIONS = 'Câu hỏi thường gặp';
 const String TRANSACTION_LIMIT = 'Hạn mức giao dịch';
 const String ADD_FAVORITE = 'Thêm yêu thích';
 const String DELETE = 'Xoá';
+const String CHANGE_AVATER = 'Đổi ảnh đại diện';
+const String LOGOUT = 'Đăng xuất';
+const String LOGOUT_2 = 'Quý khách muốn kết thúc phiên đăng nhập này?';
+const String YES = 'Đồng ý';
+
