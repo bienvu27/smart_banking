@@ -6,20 +6,26 @@ import '../../../../../../core/style/size.dart';
 import '../../transfer/models/list_contacts_model.dart';
 
 class ListContacts2 extends StatelessWidget {
-   ListContacts2({
+  ListContacts2({
     super.key,
     required this.list,
-    required this.callBack, this.iconClick,
+    required this.callBack,
+    this.iconClick,
   });
 
   final List<ListContactsModel> list;
   final VoidCallback callBack;
   Function? iconClick;
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(left: width_16, right: width_16),
-      height: MediaQuery.of(context).size.height/1.5,
+      padding: EdgeInsets.only(
+        left: width_16,
+        right: width_16,
+        bottom: height_40,
+      ),
+      height: MediaQuery.of(context).size.height / 1.5,
       margin: EdgeInsets.only(bottom: height_8),
       color: clr_white,
       child: ListView(
@@ -87,7 +93,7 @@ class ListContacts2 extends StatelessWidget {
                     ],
                   ),
                   InkWell(
-                    onTap: ()=> iconClick!(),
+                    onTap: () => iconClick!(),
                     child: Icon(
                       Icons.more_vert,
                       color: clr_black26,
