@@ -304,14 +304,7 @@ class TransactionInforPage extends StatelessWidget {
                                     ),
                                   ),
                                   WidgetSpan(
-                                    child: Container(
-                                      height: height_11,
-                                      width: width_40,
-                                      decoration: BoxDecoration(
-                                          image: DecorationImage(
-                                        image: AssetImage(image_napas),
-                                      )),
-                                    ),
+                                      child: Image.asset(image_napas247, width: width_120,  fit: BoxFit.fill,)
                                   ),
                                   TextSpan(
                                     text: ' hoặc song phương',

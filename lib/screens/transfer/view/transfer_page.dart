@@ -124,7 +124,7 @@ class TransferPage extends StatelessWidget {
                   if(controller.textController.text.isEmpty)...[
                     SecondsTab(controller: controller),
                   ]else ...[
-                    SecondsTabIsNotEmpty()
+                    SecondsTabIsNotEmpty(controller: controller)
                   ],
                   LastTab(controller: controller),
                 ],

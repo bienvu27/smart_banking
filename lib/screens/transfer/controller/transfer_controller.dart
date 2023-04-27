@@ -10,6 +10,8 @@ import '../../components/dialog/custom_dialog_transfer.dart';
 import '../components/list_benef_account.dart';
 import '../models/list_bank_model.dart';
 import '../models/list_contacts_model.dart';
+import '../view/tabs/tab1/components/list_bank.dart';
+import 'dialog_search_bank_controller.dart';
 
 class TransferController extends GetxController {
   bool isSwitched = true;
@@ -244,6 +246,115 @@ class TransferController extends GetxController {
     listContacts2Search.addAll(listContacts2);
     listContacts3Search.addAll(listContacts);
     update();
+  }
+
+  void showDialogBank(BuildContext context, TransferController controller) {
+    showModalBottomSheet<void>(
+      context: context,
+      isScrollControlled: true,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(
+          top: Radius.circular(25.r),
+        ),
+      ),
+      builder: (BuildContext context) {
+        return GetBuilder<DialogSearchBankController>(
+            init: DialogSearchBankController(),
+            builder: (dialogSearchBankController) {
+              return Container(
+                margin: EdgeInsets.only(
+                  top: height_8,
+                ),
+                color: Colors.white,
+                padding: EdgeInsets.only(
+                  top: height_12,
+                  left: width_12,
+                  right: width_12,
+                ),
+                height: Get.size.height / 1.05,
+                child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            TITLE_43,
+                            style: TextStyle(
+                              fontSize: fontSize_12,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                          InkWell(
+                            onTap: () => Navigator.pop(context),
+                            child: Text(
+                              CANCEL,
+                              style: TextStyle(
+                                fontSize: fontSize_12,
+                                color: PRIMARY_COLOR,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(
+                          top: height_16,
+                          bottom: height_8,
+                        ),
+                        height: height_28,
+                        child: Container(
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(border_24),
+                              border: Border.all(
+                                width: 1,
+                                color: clr_black12,
+                              )),
+                          child: TextField(
+                            maxLines: 1,
+                            style: TextStyle(fontSize: fontSize_12),
+                            onChanged: (_) => dialogSearchBankController.autoFillingWhenSearchBank(_),
+                            textAlignVertical: TextAlignVertical.center,
+                            decoration: InputDecoration(
+                              filled: true,
+                              prefixIcon: Icon(
+                                Icons.search,
+                                color: clr_black12,
+                                size: fontSize_20,
+                              ),
+                              border: OutlineInputBorder(
+                                  borderSide: BorderSide.none,
+                                  borderRadius: BorderRadius.all(Radius.circular(
+                                    border_16,
+                                  ))),
+                              fillColor: clr_white,
+                              contentPadding: EdgeInsets.zero,
+                              hintText: SEARCH,
+                              hintStyle: TextStyle(
+                                fontSize: fontSize_11,
+                                fontFamily: 'open_sans',
+                                fontWeight: FontWeight.w500,
+                                color: clr_black12,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      ListBank(
+                          list: dialogSearchBankController.listBanksSearch,
+                          onTapElement: (e) {
+                            controller.log(e.title!, e.image!, e.subTitle!);
+                            Navigator.pop(context);
+                          },
+                          icon: Icons.account_balance_wallet_rounded),
+                    ]),
+              );
+            }
+        );
+      },
+    );
   }
 
 }
