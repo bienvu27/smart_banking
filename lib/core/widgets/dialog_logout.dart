@@ -48,48 +48,57 @@ class DialogLogout extends StatelessWidget {
             )),
         SizedBox(height: height_16,),
         Row(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            InkWell(
-              child: Container(
-                width: width_120,
-                height: height_36,
-                alignment: Alignment.center,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(border_7),
-                    color: button_color_home),
-                child: Text(
-                  buttonCancel,
-                  style: TextStyle(
-                    color: PRIMARY_COLOR,
-                    fontSize: fontSize_10,
-                    fontWeight: FontWeight.w800,
+            Expanded(
+              child: Padding(
+                padding: EdgeInsets.only(left: width_12),
+                child: InkWell(
+                  child: Container(
+                    width: double.infinity,
+                    height: height_36,
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(border_7),
+                        color: button_color_home),
+                    child: Text(
+                      buttonCancel,
+                      style: TextStyle(
+                        color: PRIMARY_COLOR,
+                        fontSize: fontSize_10,
+                        fontWeight: FontWeight.w800,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
                   ),
-                  textAlign: TextAlign.center,
+                  onTap: () => clickCallback!(),
                 ),
               ),
-              onTap: () => clickCallback!(),
             ),
-            SizedBox(width: width_8,),
-            InkWell(
-              child: Container(
-                width: width_120,
-                height: height_36,
-                alignment: Alignment.center,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(border_7),
-                    gradient: linearGradientButtom),
-                child: Text(
-                  buttonSubmit,
-                  style: TextStyle(
-                    color: clr_white,
-                    fontSize: fontSize_10,
-                    fontWeight: FontWeight.w800,
+            SizedBox(width: width_10,),
+            Expanded(
+              child: Padding(
+                padding: EdgeInsets.only(right: width_12),
+                child: InkWell(
+                  child: Container(
+                    width: double.infinity,
+                    height: height_36,
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(border_7),
+                        gradient: linearGradientButtom),
+                    child: Text(
+                      buttonSubmit,
+                      style: TextStyle(
+                        color: clr_white,
+                        fontSize: fontSize_10,
+                        fontWeight: FontWeight.w800,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
                   ),
-                  textAlign: TextAlign.center,
+                  onTap: () => clickSubmit!(),
                 ),
               ),
-              onTap: () => clickSubmit!(),
             ),
           ],
         ),
