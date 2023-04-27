@@ -28,6 +28,7 @@ class ListContacts2 extends StatelessWidget {
       margin: EdgeInsets.only(bottom: height_8),
       color: clr_white,
       child: ListView(
+        physics: NeverScrollableScrollPhysics(),
         shrinkWrap: true,
         children: list.map((e) {
           return InkWell(

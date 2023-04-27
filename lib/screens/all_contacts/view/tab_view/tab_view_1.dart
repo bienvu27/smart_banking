@@ -23,7 +23,6 @@ class _TabView1State extends State<TabView1> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
-        physics: NeverScrollableScrollPhysics(),
         child: Container(
           color: Colors.white,
           child: Column(
