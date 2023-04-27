@@ -192,6 +192,13 @@ final listContacts2 = [
     nameBank: 'VPBANK',
     money: '',
   ),
+  ListContactsModel(
+    image: 'assets/images/icons_bank/icon_vpbank.webp',
+    name: 'BUI LONG VU',
+    numberAccount: '27910000492884',
+    nameBank: 'VPBANK',
+    money: '',
+  ),
 ];
 
 final listImageBank = [

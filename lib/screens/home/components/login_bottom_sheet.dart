@@ -4,7 +4,6 @@ import '../../../core/resources/strings.dart';
 import '../../../core/style/colors.dart';
 import '../../../core/style/size.dart';
 
-
 class LoginBottomSheet extends StatelessWidget {
   const LoginBottomSheet({
     super.key,
@@ -18,7 +17,11 @@ class LoginBottomSheet extends StatelessWidget {
       },
       child: Text(
         LOGIN,
-        style: TextStyle(fontSize: fontSize_12, fontWeight: FontWeight.w500, color: PRIMARY_COLOR_BLUE),
+        style: TextStyle(
+          fontSize: fontSize_12,
+          fontWeight: FontWeight.w500,
+          color: PRIMARY_COLOR_BLUE,
+        ),
       ),
     );
   }

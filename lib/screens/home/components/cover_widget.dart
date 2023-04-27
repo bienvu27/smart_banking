@@ -21,6 +21,7 @@ class CoverWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
     final isLogin = controller.isLogin;
+   
     return SizedBox(
       height: height / 1.8,
       child: Stack(
@@ -121,9 +122,12 @@ class CoverWidget extends StatelessWidget {
                       Stack(
                         children: [
                           InkWell(
-                            onTap: () {
-                              if (isLogin) {
+                            onTap: () async {
+                              if (isLogin)  {
                                 {
+                                  SharedPreferences pref =
+                                      await SharedPreferences.getInstance();
+                                  
                                   showModalBottomSheet<void>(
                                     backgroundColor: Colors.white,
                                     context: context,
@@ -248,7 +252,7 @@ class CoverWidget extends StatelessWidget {
                                                         SizedBox(height: height_4,),
                                                         Text(
                                                           'Lần đăng nhập gần nhất \n'
-                                                              '27/04/2023 09:05:21'
+                                                              '${pref.get("timeCode")}'
                                                           ,
                                                           style: TextStyle(
                                                             fontFamily: 'open_sans',
