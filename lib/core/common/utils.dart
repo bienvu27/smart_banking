@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:intl/intl.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:smart_banking/fake_data/data_fake_home.dart';
 import 'package:smart_banking/router/app_routers.dart';
@@ -19,6 +20,7 @@ import '../widgets/warning_dialog.dart';
 
 class Utils {
   static void showAuthenticationDialog(BuildContext context) {
+    final timeNow = DateFormat('dd/MM/yyyy HH:mm:ss').format(DateTime.now());
     TextEditingController phoneController = new TextEditingController();
     TextEditingController passwordController = new TextEditingController();
 
@@ -144,9 +146,11 @@ class Utils {
                       } else if (passwordController.text.isEmpty) {
                         showWarningDialog(context, "Vui lòng điền mật khẩu");
                       } else {
+                        print(timeNow);
                         SharedPreferences pref =
                             await SharedPreferences.getInstance();
                         await pref.setString("username", phoneController.text);
+                        await pref.setString("timeCode", timeNow);
                         Navigator.of(context).pop();
                         Navigator.of(context).pushNamedAndRemoveUntil(
                             AppRouters.DASHBOARD, (route) => false);
