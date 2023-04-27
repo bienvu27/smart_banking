@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-
 import '../../core/common/utils.dart';
 import '../../core/resources/strings.dart';
 import '../../core/style/colors.dart';
 import '../../core/style/size.dart';
 import '../../router/app_routers.dart';
-import '../dashboard/controller/dashboard_controller.dart';
+
 import 'components/settings_component.dart';
 
 class SettingsPage extends StatelessWidget {
