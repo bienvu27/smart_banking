@@ -25,10 +25,11 @@ class ListContacts2 extends StatelessWidget {
         right: width_16,
         bottom: height_40,
       ),
-      height: MediaQuery.of(context).size.height / 1.5,
       margin: EdgeInsets.only(bottom: height_8),
       color: clr_white,
       child: ListView(
+        physics: NeverScrollableScrollPhysics(),
+        shrinkWrap: true,
         children: list.map((e) {
           return InkWell(
             onTap: () => callBack(),
