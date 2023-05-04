@@ -6,9 +6,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:smart_banking/fake_data/data_fake_home.dart';
 import 'package:smart_banking/router/app_routers.dart';
 import 'package:smart_banking/screens/dashboard/controller/dashboard_controller.dart';
-import 'package:smart_banking/screens/home/controller/home_controller.dart';
 import '../../screens/components/button/button_component.dart';
-import '../../screens/components/dialog/custom_dialog.dart';
 import '../../screens/components/text_field/text_field_icon_component.dart';
 import '../../screens/components/text_field/text_field_icon_subtile_component.dart';
 import '../resources/asset.dart';
@@ -21,8 +19,8 @@ import '../widgets/warning_dialog.dart';
 class Utils {
   static void showAuthenticationDialog(BuildContext context) {
     final timeNow = DateFormat('dd/MM/yyyy HH:mm:ss').format(DateTime.now());
-    TextEditingController phoneController = new TextEditingController();
-    TextEditingController passwordController = new TextEditingController();
+    TextEditingController phoneController = TextEditingController();
+    TextEditingController passwordController = TextEditingController();
 
     showModalBottomSheet<void>(
       context: context,
