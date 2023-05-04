@@ -40,18 +40,22 @@ class RegisterStep2Page extends StatelessWidget {
                       TITLE_5,
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                          fontSize: fontSize_14,
-                          fontWeight: FontWeight.w500,
-                          color: clr_black),
+                        fontSize: fontSize_14,
+                        fontWeight: FontWeight.w500,
+                        color: clr_black,
+                      ),
                     ),
                   ),
                 ),
-                Image.network(
+                Image.asset(
                   image_register,
                   width: width_200,
                 ),
                 Padding(
-                  padding: EdgeInsets.only(left: width_8, top: height_16),
+                  padding: EdgeInsets.only(
+                    left: width_8,
+                    top: height_16,
+                  ),
                   child: SizedBox(
                     width: MediaQuery.of(context).size.width,
                     child: Column(
@@ -92,9 +96,7 @@ class RegisterStep2Page extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Icon(
-                                (Icons.phone_iphone), size: fontSize_20
-                              ),
+                              Icon((Icons.phone_iphone), size: fontSize_20),
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
@@ -158,9 +160,7 @@ class RegisterStep2Page extends StatelessWidget {
           padding: EdgeInsets.only(top: height_12),
           decoration: BoxDecoration(
             color: clr_white,
-            boxShadow: [
-              bottomNavigationBar
-            ],
+            boxShadow: [bottomNavigationBar],
           ), // Get.to(const RegisterStep3Page()
           child: ButtonComponent(
             title: REGISTER_NOW,

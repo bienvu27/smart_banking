@@ -26,14 +26,20 @@ class RegisterStep3Page extends StatelessWidget {
         ),
         body: Container(
           margin: EdgeInsets.only(top: height_8),
-          padding: EdgeInsets.only(left: width_16, right: width_16),
+          padding: EdgeInsets.only(
+            left: width_16,
+            right: width_16,
+          ),
           height: Get.size.height,
           color: clr_white,
           child: SingleChildScrollView(
             child: Column(
               children: [
                 Container(
-                  margin: EdgeInsets.only(bottom: height_16, top: height_8),
+                  margin: EdgeInsets.only(
+                    bottom: height_16,
+                    top: height_8,
+                  ),
                   alignment: Alignment.center,
                   width: Get.size.width,
                   child: SizedBox(
