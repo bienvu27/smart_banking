@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -143,56 +144,60 @@ class _RegisterInformationState extends State<RegisterInformation> {
         ),
         child: Column(
           children: [
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                GetBuilder<RegisterPageController>(
-                  init: RegisterPageController(),
-                  builder: (controller) {
-                    return Checkbox(
-                      value: controller.isChecked,
-                      onChanged: (value) {
-                        controller.toggleCheckbox(controller.isChecked);
-                      },
-                      activeColor: PRIMARY_COLOR,
-                      checkColor: clr_white,
-                      tristate: false,
-                    );
-                  },
-                ),
-                Container(
-                  padding: EdgeInsets.only(top: 10.h),
-                  width: Get.size.width / 1.2,
-                  child: RichText(
-                    text: TextSpan(
-                      text: '$TITLE_27 ',
-                      style: TextStyle(
-                        fontSize: fontSize_12,
-                        color: clr_black54,
+            GetBuilder<RegisterPageController>(
+                init: RegisterPageController(),
+                builder: (controller) {
+                  return Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Checkbox(
+                        value: controller.isChecked,
+                        onChanged: (value) {
+                          controller.toggleCheckbox(controller.isChecked);
+                        },
+                        activeColor: PRIMARY_COLOR,
+                        checkColor: clr_white,
+                        tristate: false,
                       ),
-                      children: [
-                        TextSpan(
-                          text: '$TITLE_28 ',
-                          style: TextStyle(
-                            fontSize: fontSize_12,
-                            color: PRIMARY_COLOR,
-                            fontWeight: FontWeight.w500,
-                            decoration: TextDecoration.underline,
+                      Container(
+                        padding: EdgeInsets.only(top: 10.h),
+                        width: Get.size.width / 1.2,
+                        child: RichText(
+                          text: TextSpan(
+                            text: '$TITLE_27 ',
+                            style: TextStyle(
+                              fontSize: fontSize_12,
+                              color: clr_black54,
+                            ),
+                  recognizer: TapGestureRecognizer()..onTap = ()=>  controller.toggleCheckbox(controller.isChecked),
+                            children: [
+                              TextSpan(
+                                text: '$TITLE_28 ',
+                                style: TextStyle(
+                                  fontSize: fontSize_12,
+                                  color: PRIMARY_COLOR,
+                                  fontWeight: FontWeight.w500,
+                                  decoration: TextDecoration.underline,
+                                ),
+                                  recognizer: TapGestureRecognizer()..onTap = (){
+                                  print('Test');
+                                  }
+                              ),
+                              TextSpan(
+                                text: TITLE_29,
+                                style: TextStyle(
+                                  fontSize: fontSize_12,
+                                  color: clr_black54,
+                                ),
+                                recognizer: TapGestureRecognizer()..onTap = ()=>  controller.toggleCheckbox(controller.isChecked),
+                              ),
+                            ],
                           ),
                         ),
-                        TextSpan(
-                          text: TITLE_29,
-                          style: TextStyle(
-                            fontSize: fontSize_12,
-                            color: clr_black54,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                )
-              ],
-            ),
+                      )
+                    ],
+                  );
+                }),
             Spacer(),
             Padding(
               padding: EdgeInsets.only(bottom: height_10),
