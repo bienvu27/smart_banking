@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../core/style/colors.dart';
-
+import '../../../core/style/size.dart';
 
 class TextFieldPopupIconComponent extends StatelessWidget {
   const TextFieldPopupIconComponent({
-    super.key, required this.label, required this.icon,
+    super.key,
+    required this.label,
+    required this.icon,
   });
 
   final String label;
@@ -20,13 +22,19 @@ class TextFieldPopupIconComponent extends StatelessWidget {
         TextField(
             enabled: false,
             obscureText: false,
-            style: TextStyle(fontSize: 15.sp, fontWeight: FontWeight.w900),
+            style: TextStyle(
+              fontSize: fontSize_12,
+              fontWeight: FontWeight.w500,
+              fontFamily: 'open_sans',
+            ),
             decoration: InputDecoration(
                 labelText: label,
                 labelStyle: TextStyle(
-                    fontSize: 17.sp,
-                    color: clr_black54,
-                    fontWeight: FontWeight.w500),
+                  fontSize: fontSize_12,
+                  fontWeight: FontWeight.w500,
+                  fontFamily: 'open_sans',
+                  color: clr_black54,
+                ),
                 focusedBorder: const UnderlineInputBorder(
                   borderSide: BorderSide(color: clr_black54),
                 ),

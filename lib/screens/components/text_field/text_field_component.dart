@@ -48,7 +48,7 @@ class TextFieldComponent extends StatelessWidget {
         labelText: label,
         suffixIcon: suffix,
         labelStyle: TextStyle(
-          fontSize: fontSize_11,
+          fontSize: fontSize_12,
           fontFamily: 'open_sans',
           color: clr_black54,
           fontWeight: FontWeight.w500,

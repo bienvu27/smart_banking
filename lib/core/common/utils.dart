@@ -171,12 +171,15 @@ class Utils {
                     SizedBox(
                       height: height_16,
                     ),
-                    Text(
-                      SIGN_IN,
-                      style: TextStyle(
-                        fontSize: fontSize_12,
-                        fontWeight: FontWeight.w500,
-                        color: PRIMARY_COLOR,
+                    InkWell(
+                      onTap: () => Get.toNamed("/register", arguments: ''),
+                      child: Text(
+                        SIGN_IN,
+                        style: TextStyle(
+                          fontSize: fontSize_12,
+                          fontWeight: FontWeight.w500,
+                          color: PRIMARY_COLOR,
+                        ),
                       ),
                     ),
                   ],

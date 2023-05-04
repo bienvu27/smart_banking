@@ -5,6 +5,7 @@ import 'package:smart_banking/screens/components/button/button_component.dart';
 
 import '../../../../core/resources/strings.dart';
 import '../../../../core/style/colors.dart';
+import '../../../../core/style/size.dart';
 import '../../../components/app_bar/app_bar_component.dart';
 import '../../../components/text_field/text_field_component.dart';
 import '../../../components/text_field/text_field_popup_icon_component.dart';
@@ -30,7 +31,6 @@ class _RegisterInformationState extends State<RegisterInformation> {
         title: INFRO_REGISTER,
         callback: () => Get.back(),
       ),
-
       body: SingleChildScrollView(
         child: Container(
           margin: EdgeInsets.only(top: 10.h),
@@ -42,14 +42,14 @@ class _RegisterInformationState extends State<RegisterInformation> {
               children: [
                 Container(
                   margin: EdgeInsets.only(bottom: 20.h),
-                  child:  TextFieldComponent(
+                  child: TextFieldComponent(
                     label: FULL_NAME,
                     textInputType: TextInputType.text,
                   ),
                 ),
                 Container(
                   margin: EdgeInsets.only(bottom: 20.h),
-                  child:  TextFieldComponent(
+                  child: TextFieldComponent(
                       label: ACCOUNT_NUMBER, textInputType: TextInputType.text),
                 ),
                 Container(
@@ -59,27 +59,27 @@ class _RegisterInformationState extends State<RegisterInformation> {
                 ),
                 Container(
                   margin: EdgeInsets.only(bottom: 20.h),
-                  child:  TextFieldComponent(
+                  child: TextFieldComponent(
                     label: CCCD,
                     textInputType: TextInputType.text,
                   ),
                 ),
                 Container(
                   margin: EdgeInsets.only(bottom: 20.h),
-                  child:  TextFieldComponent(
+                  child: TextFieldComponent(
                       label: PHONE_NUMBER_REGISTER_1,
                       textInputType: TextInputType.phone),
                 ),
                 Container(
                   margin: EdgeInsets.only(bottom: 20.h),
-                  child:  TextFieldComponent(
+                  child: TextFieldComponent(
                       label: PHONE_NUMBER_REGISTER_2,
                       textInputType: TextInputType.phone),
                 ),
                 Stack(
                   children: [
                     Container(
-                      margin: EdgeInsets.only(bottom: 20.h),
+                      margin: EdgeInsets.only(bottom: 50.h),
                       child: const TextFieldPopupIconComponent(
                           label: CHOSE_SERVICES,
                           icon: Icons.arrow_drop_down_sharp),
@@ -90,7 +90,7 @@ class _RegisterInformationState extends State<RegisterInformation> {
                         child: Text(
                           LIMIT_INFOR,
                           style: TextStyle(
-                              fontSize: 13.sp,
+                              fontSize: fontSize_12,
                               fontWeight: FontWeight.w500,
                               color: PRIMARY_COLOR),
                         ))
@@ -105,14 +105,14 @@ class _RegisterInformationState extends State<RegisterInformation> {
                 ),
                 Container(
                   margin: const EdgeInsets.only(bottom: 20),
-                  child:  TextFieldSubTitleComponent(
+                  child: TextFieldSubTitleComponent(
                       label: CODE_USE,
                       subTitle: OPTIONAL,
                       textInputType: TextInputType.text),
                 ),
                 Container(
                   margin: EdgeInsets.only(bottom: 20.h),
-                  child:  TextFieldSubTitleComponent(
+                  child: TextFieldSubTitleComponent(
                       label: PHONE_NUMBER_REGISTER_3,
                       subTitle: OPTIONAL,
                       textInputType: TextInputType.phone),
@@ -129,7 +129,7 @@ class _RegisterInformationState extends State<RegisterInformation> {
         ),
       ),
       bottomNavigationBar: Container(
-        height: 110.h,
+        height: Get.size.height / 6,
         decoration: BoxDecoration(
           color: clr_white,
           boxShadow: [
@@ -166,12 +166,15 @@ class _RegisterInformationState extends State<RegisterInformation> {
                   child: RichText(
                     text: TextSpan(
                       text: '$TITLE_27 ',
-                      style: TextStyle(fontSize: 13.sp, color: clr_black54),
+                      style: TextStyle(
+                        fontSize: fontSize_12,
+                        color: clr_black54,
+                      ),
                       children: [
                         TextSpan(
                           text: '$TITLE_28 ',
                           style: TextStyle(
-                            fontSize: 13.sp,
+                            fontSize: fontSize_12,
                             color: PRIMARY_COLOR,
                             fontWeight: FontWeight.w500,
                             decoration: TextDecoration.underline,
@@ -179,7 +182,10 @@ class _RegisterInformationState extends State<RegisterInformation> {
                         ),
                         TextSpan(
                           text: TITLE_29,
-                          style: TextStyle(fontSize: 13.sp, color: clr_black54),
+                          style: TextStyle(
+                            fontSize: fontSize_12,
+                            color: clr_black54,
+                          ),
                         ),
                       ],
                     ),
@@ -187,12 +193,14 @@ class _RegisterInformationState extends State<RegisterInformation> {
                 )
               ],
             ),
-            const Spacer(),
-
-            ButtonComponent(
-              title: NEXT,
-              bgColor: button_color_home,
-              callback: () {},
+            Spacer(),
+            Padding(
+              padding: EdgeInsets.only(bottom: height_10),
+              child: ButtonComponent(
+                title: NEXT,
+                bgColor: button_color_home,
+                callback: () {},
+              ),
             ),
           ],
         ),

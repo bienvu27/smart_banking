@@ -6,8 +6,6 @@ import '../../../core/resources/asset.dart';
 import '../../../core/resources/strings.dart';
 import '../../../core/style/colors.dart';
 import '../../../core/style/size.dart';
-import '../../../router/app_routers.dart';
-import '../../dashboard/controller/dashboard_controller.dart';
 import '../controller/home_controller.dart';
 import 'authentication.dart';
 import 'infor_user.dart';
