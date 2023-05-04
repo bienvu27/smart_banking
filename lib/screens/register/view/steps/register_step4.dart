@@ -16,10 +16,6 @@ class RegisterStep4Page extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final GlobalKey imageKey = GlobalKey();
-    Size imageSize = Size(0, 0);
-    Offset imagePos = Offset.zero;
-
     return Container(
       height: Get.size.height,
       decoration: BoxDecoration(gradient: linearGradientBgRegister),

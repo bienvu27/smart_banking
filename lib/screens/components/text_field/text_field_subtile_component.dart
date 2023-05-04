@@ -5,18 +5,18 @@ import '../../../core/style/colors.dart';
 import '../../../core/style/size.dart';
 
 class TextFieldSubTitleComponent extends StatelessWidget {
-   TextFieldSubTitleComponent({
-    super.key,
-    required this.label,
-    required this.subTitle,
-    required this.textInputType,
-    this.enabled
-  });
+  TextFieldSubTitleComponent(
+      {super.key,
+      required this.label,
+      required this.subTitle,
+      required this.textInputType,
+      this.enabled});
 
   final String label;
   final String subTitle;
   final TextInputType textInputType;
-  bool? enabled = true ;
+  bool? enabled = true;
+
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -34,7 +34,11 @@ class TextFieldSubTitleComponent extends StatelessWidget {
           decoration: InputDecoration(
             labelText: label,
             labelStyle: TextStyle(
-                fontSize: fontSize_10, fontWeight: FontWeight.w500, fontFamily: 'open_sans', color: clr_black54),
+              fontSize: fontSize_12,
+              fontWeight: FontWeight.w500,
+              fontFamily: 'open_sans',
+              color: clr_black54,
+            ),
             focusedBorder: const UnderlineInputBorder(
               borderSide: BorderSide(color: PRIMARY_COLOR),
             ),
@@ -42,7 +46,8 @@ class TextFieldSubTitleComponent extends StatelessWidget {
               borderSide: BorderSide(
                 width: 0.5,
                 color: clr_black12,
-              ),),
+              ),
+            ),
           ),
         ),
         Positioned(
