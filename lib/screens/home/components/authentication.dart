@@ -34,7 +34,9 @@ class Authentication extends StatelessWidget {
               children: [
                 const LoginBottomSheet(),
                 InkWell(
-                  onTap: () => Get.toNamed("/register", arguments: ''),
+                  onTap: () {
+                    Get.toNamed("/register", arguments: '');
+                  },
                   child: Text(
                     SIGN_IN,
                     style: TextStyle(

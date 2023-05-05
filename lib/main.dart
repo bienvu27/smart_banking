@@ -1,3 +1,4 @@
+import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -7,8 +8,11 @@ import 'package:get/get.dart';
 
 import 'core/widgets/root_layout.dart';
 
+List<CameraDescription>? cameras;
+
 void main() async {
   await ScreenUtil.ensureScreenSize();
+  cameras = await availableCameras();
   runApp(const MyApp());
 }
 

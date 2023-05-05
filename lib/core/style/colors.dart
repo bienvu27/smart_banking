@@ -7,6 +7,7 @@ const Color PRIMARY_COLOR = Color(0xff002d85);
 const Color PRIMARY_COLOR_BLUE = Color(0xFF013aa9);
 
 const Color clr_366173 = Color(0xFF366173);
+const Color clrRedWarning = Color(0xff8c0202);
 const Color clr_4caf50 = Color(0xFF4CAF50);
 const Color clr_78abd3 = Color(0xFF78abd3);
 const Color clr_67748E = Color(0xFF67748E);

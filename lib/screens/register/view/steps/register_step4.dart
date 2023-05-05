@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:smart_banking/screens/register/view/steps/photo_id_screen.dart';
 
 import '../../../../core/resources/asset.dart';
 import '../../../../core/resources/strings.dart';
@@ -76,7 +77,6 @@ class RegisterStep4Page extends StatelessWidget {
               bottom: height_8,
             ),
             child: SingleChildScrollView(
-
               child: SizedBox(
                 height: Get.size.height / 2.2,
                 child: Column(
@@ -253,7 +253,8 @@ class RegisterStep4Page extends StatelessWidget {
                                 child: const Text(
                                   TITLE_25,
                                   textAlign: TextAlign.center,
-                                  style: TextStyle(color: PRIMARY_COLOR_RED, height: 1.5),
+                                  style: TextStyle(
+                                      color: PRIMARY_COLOR_RED, height: 1.5),
                                 ),
                               )
                             ],
@@ -299,7 +300,8 @@ class RegisterStep4Page extends StatelessWidget {
                                 child: const Text(
                                   TITLE_26,
                                   textAlign: TextAlign.center,
-                                  style: TextStyle(color: PRIMARY_COLOR_RED, height: 1.5),
+                                  style: TextStyle(
+                                      color: PRIMARY_COLOR_RED, height: 1.5),
                                 ),
                               )
                             ],
@@ -310,10 +312,17 @@ class RegisterStep4Page extends StatelessWidget {
                     Spacer(),
                     Container(
                         child: ButtonComponent(
-                          title: NEXT,
-                          bgColor: button_color_home,
-                          callback: () {},
-                        ))
+                      title: NEXT,
+                      bgColor: button_color_home,
+                      callback: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => PhotoIdScreen(
+                                      sideID: "front",
+                                    )));
+                      },
+                    ))
                   ],
                 ),
               ),

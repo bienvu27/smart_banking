@@ -39,7 +39,8 @@ class DashBoardFloatingActionButton extends StatelessWidget {
 
   void scanQRCode() async {
     try {
-      final qrCode = await FlutterBarcodeScanner.scanBarcode('#ff6666', 'Cancel', true, ScanMode.QR);
+      final qrCode = await FlutterBarcodeScanner.scanBarcode(
+          '#ff6666', 'Cancel', true, ScanMode.QR);
 
       // if (!mounted) return;
 
