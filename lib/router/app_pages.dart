@@ -27,6 +27,8 @@ import '../screens/questions/view/question_page.dart';
 import '../screens/service_manager/binding/service_manager_binding.dart';
 import '../screens/splash_screen/binding/splash_screen_binding.dart';
 import '../screens/splash_screen/view/splash_screen.dart';
+import '../screens/terms_and_conditions/binding/terms_and_conditions_binding.dart';
+import '../screens/terms_and_conditions/view/terms_and_conditions_page.dart';
 import '../screens/transaction_confirmation/binding/transaction_confirmation_binding.dart';
 import '../screens/transaction_confirmation/view/transaction_confirmation_page.dart';
 import '../screens/transaction_infor/binding/transaction_infor_binding.dart';
@@ -149,6 +151,11 @@ class AppPages {
         name: AppRouters.TRANSACTION_LIMIT,
         page: () => TransactionLimitPage(),
         binding: TransactionLimitBinding()),
+
+    GetPage(
+        name: AppRouters.TERMS,
+        page: () => TermsAndConditionsPage(),
+        binding: TermsAndConditionsBindig()),
 
   ];
 }
