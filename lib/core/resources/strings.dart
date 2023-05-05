@@ -234,4 +234,5 @@ const String CHANGE_AVATER = 'Đổi ảnh đại diện';
 const String LOGOUT = 'Đăng xuất';
 const String LOGOUT_2 = 'Quý khách muốn kết thúc phiên đăng nhập này?';
 const String YES = 'Đồng ý';
+const String TERMS_AND_CONDITIONS = 'Điều kiện và điều khoản';
 

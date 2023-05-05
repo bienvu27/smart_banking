@@ -49,6 +49,7 @@ flutter:
     - assets/i18n/
     - assets/svg/icon_white/
     - assets/svg/icon_gradient/
+    - assets/json/
 
   fonts:
     - family: open_sans
