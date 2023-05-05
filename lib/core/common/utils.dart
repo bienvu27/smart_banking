@@ -9,6 +9,7 @@ import 'package:smart_banking/screens/dashboard/controller/dashboard_controller.
 import '../../screens/components/button/button_component.dart';
 import '../../screens/components/text_field/text_field_icon_component.dart';
 import '../../screens/components/text_field/text_field_icon_subtile_component.dart';
+import '../../screens/register/view/components/radio_button_bottom_sheet.dart';
 import '../resources/asset.dart';
 import '../resources/strings.dart';
 import '../style/colors.dart';
@@ -32,7 +33,11 @@ class Utils {
       ),
       builder: (BuildContext context) {
         return Container(
-          margin: EdgeInsets.only(left: width_8, right: width_8, top: height_8,),
+          margin: EdgeInsets.only(
+            left: width_8,
+            right: width_8,
+            top: height_8,
+          ),
           height: Get.size.height / 1.2,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -205,26 +210,80 @@ class Utils {
             ));
   }
 
-  static showDialogLogout(BuildContext context, String title, String subTitle, String buttonCancel, String buttonSubmit){
+  static showDialogLogout(BuildContext context, String title, String subTitle,
+      String buttonCancel, String buttonSubmit) {
     showDialog(
         barrierDismissible: false,
         context: context,
         builder: (BuildContext context) => DialogLogout(
-          title: title,
-          subTitle: subTitle,
-          buttonCancel: CANCEL,
-          buttonSubmit: buttonSubmit,
-          clickCallback: () {
-            Navigator.of(context).pop();
-          },
-          clickSubmit: () async {
-            SharedPreferences pref = await SharedPreferences.getInstance();
-            pref.remove("username");
-            Navigator.of(context).pushNamedAndRemoveUntil(AppRouters.DASHBOARD, (route) => false);
-            Get.put(DashboardController());
-            Utils.showWarningDialog(context, "Đăng xuất thành công");
-          },
-        ));
+              title: title,
+              subTitle: subTitle,
+              buttonCancel: CANCEL,
+              buttonSubmit: buttonSubmit,
+              clickCallback: () {
+                Navigator.of(context).pop();
+              },
+              clickSubmit: () async {
+                SharedPreferences pref = await SharedPreferences.getInstance();
+                pref.remove("username");
+                Navigator.of(context).pushNamedAndRemoveUntil(
+                    AppRouters.DASHBOARD, (route) => false);
+                Get.put(DashboardController());
+                Utils.showWarningDialog(context, "Đăng xuất thành công");
+              },
+            ));
+  }
+
+  static void showSelectService(BuildContext context) {
+    showModalBottomSheet<void>(
+        context: context,
+        isScrollControlled: true,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(
+            top: Radius.circular(25.r),
+          ),
+        ),
+        builder: (BuildContext context) {
+          return Container(
+              margin: EdgeInsets.only(
+                left: width_8,
+                right: width_8,
+                top: height_8,
+              ),
+              height: Get.size.height / 1.2,
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          CHOSE_SERVICES,
+                          style: TextStyle(
+                            fontFamily: 'open_sans',
+                            fontSize: fontSize_12,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                        InkWell(
+                          onTap: () => Navigator.pop(context),
+                          child: Text(
+                            CANCEL,
+                            style: TextStyle(
+                              fontSize: fontSize_12,
+                              color: PRIMARY_COLOR,
+                              fontFamily: 'open_sans',
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    RadioButtonBottomSheet(),
+                  ],
+                ),
+              ));
+        });
   }
 
   static void showSearchDialog(BuildContext context) {
@@ -392,33 +451,32 @@ class Utils {
 
   static String formatCurrency(String text) {
     /// Check xem có dấu trừ ở trươc không để trả về cả dấu "-"
-    if(text.isEmpty) return '';
-    bool hasSub = text[0]=="-";
+    if (text.isEmpty) return '';
+    bool hasSub = text[0] == "-";
     if (text.contains(".")) {
       text = text.substring(0, text.indexOf("."));
     }
     if (text.length > 2) {
-      if(text[0]=="0"){
-        text = text.substring(1,text.length);
+      if (text[0] == "0") {
+        text = text.substring(1, text.length);
       }
       var value = text;
       value = value.replaceAll(RegExp(r'\D'), '');
       value = value.replaceAll(RegExp(r'\B(?=(\d{3})+(?!\d))'), ',');
-      if(hasSub){
-        return "- "+value;
-
-      }else{
+      if (hasSub) {
+        return "- " + value;
+      } else {
         return value;
       }
     }
-    if(hasSub){
-      return "-"+ text.replaceAll(
-          RegExp(r'\D'), ''); // nhập không phải là số thì xóa hết
-    }else{
+    if (hasSub) {
+      return "-" +
+          text.replaceAll(
+              RegExp(r'\D'), ''); // nhập không phải là số thì xóa hết
+    } else {
       return text.replaceAll(
           RegExp(r'\D'), ''); // nhập không phải là số thì xóa hết
     }
-
   }
 
   static void showQRDialog(BuildContext context) {
@@ -526,8 +584,11 @@ class Utils {
                           ),
                         ),
                         WidgetSpan(
-                            child: Image.asset(image_napas247, width: width_125,  fit: BoxFit.fill,)
-                        ),
+                            child: Image.asset(
+                          image_napas247,
+                          width: width_125,
+                          fit: BoxFit.fill,
+                        )),
                         TextSpan(
                           text: ')',
                           style: TextStyle(
@@ -671,5 +732,4 @@ class Utils {
       },
     );
   }
-
 }

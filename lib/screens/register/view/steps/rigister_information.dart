@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:smart_banking/screens/components/button/button_component.dart';
 
+import '../../../../core/common/utils.dart';
 import '../../../../core/resources/strings.dart';
 import '../../../../core/style/colors.dart';
 import '../../../../core/style/size.dart';
@@ -87,11 +88,18 @@ class RegisterInformation extends StatelessWidget {
                       ),
                       Stack(
                         children: [
-                          Container(
-                            margin: EdgeInsets.only(bottom: 50.h),
-                            child: TextFieldPopupIconComponent(
-                                label: CHOSE_SERVICES,
-                                icon: Icons.arrow_drop_down_sharp),
+                          InkWell(
+                            onTap: (){
+                              Utils.showSelectService(context);
+                            },
+                            child: Container(
+                              margin: EdgeInsets.only(bottom: 50.h),
+                              child: TextFieldPopupIconComponent(
+                                  setDate: controller.setDate,
+                                  textEditingController: controller.selectServiceController,
+                                  label: CHOSE_SERVICES,
+                                  icon: Icons.arrow_drop_down_sharp),
+                            ),
                           ),
                           Positioned(
                               bottom: 1.h,
@@ -113,7 +121,7 @@ class RegisterInformation extends StatelessWidget {
                             textInputType: TextInputType.emailAddress),
                       ),
                       Container(
-                        margin: const EdgeInsets.only(bottom: 20),
+                        margin: EdgeInsets.only(bottom: 20.h),
                         child: TextFieldSubTitleComponent(
                             label: CODE_USE,
                             subTitle: OPTIONAL,
