@@ -5,26 +5,31 @@ import '../../../core/style/colors.dart';
 import '../../../core/style/size.dart';
 
 class TextFieldPopupIconComponent extends StatelessWidget {
-  const TextFieldPopupIconComponent({
+   TextFieldPopupIconComponent({
     super.key,
     required this.label,
-    required this.icon,
+    required this.icon,  this.textEditingController, this.setDate,
   });
 
   final String label;
   final IconData icon;
-
+  final TextEditingController? textEditingController;
+  String? setDate;
   @override
   Widget build(BuildContext context) {
     return Stack(
       alignment: Alignment.center,
       children: [
         TextField(
+          onChanged: (String val){
+            setDate = val;
+          },
+          controller: textEditingController,
             enabled: false,
             obscureText: false,
             style: TextStyle(
               fontSize: fontSize_12,
-              fontWeight: FontWeight.w500,
+              fontWeight: FontWeight.w600,
               fontFamily: 'open_sans',
             ),
             decoration: InputDecoration(

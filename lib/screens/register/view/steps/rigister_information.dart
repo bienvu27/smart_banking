@@ -13,143 +13,146 @@ import '../../../components/text_field/text_field_popup_icon_component.dart';
 import '../../../components/text_field/text_field_subtile_component.dart';
 import '../../controller/register_controller.dart';
 
-class RegisterInformation extends StatefulWidget {
+class RegisterInformation extends StatelessWidget {
   const RegisterInformation({Key? key}) : super(key: key);
 
   @override
-  State<RegisterInformation> createState() => _RegisterInformationState();
-}
-
-class _RegisterInformationState extends State<RegisterInformation> {
-  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      resizeToAvoidBottomInset: false,
-      appBar: AppBarComponent(
-        bgColor: clr_white,
-        colorTitle: clr_black,
-        colorIcon: clr_black,
-        title: INFRO_REGISTER,
-        callback: () => Get.back(),
-      ),
-      body: SingleChildScrollView(
-        child: Container(
-          margin: EdgeInsets.only(top: 10.h),
-          width: Get.size.width,
-          color: clr_white,
-          child: Padding(
-            padding: const EdgeInsets.all(20),
-            child: Column(
-              children: [
-                Container(
-                  margin: EdgeInsets.only(bottom: 20.h),
-                  child: TextFieldComponent(
-                    label: FULL_NAME,
-                    textInputType: TextInputType.text,
-                  ),
-                ),
-                Container(
-                  margin: EdgeInsets.only(bottom: 20.h),
-                  child: TextFieldComponent(
-                    label: ACCOUNT_NUMBER,
-                    textInputType: TextInputType.text,
-                  ),
-                ),
-                Container(
-                  margin: EdgeInsets.only(bottom: 20.h),
-                  child: const TextFieldPopupIconComponent(
-                      label: DATE_OF_BIRTH, icon: Icons.date_range),
-                ),
-                Container(
-                  margin: EdgeInsets.only(bottom: 20.h),
-                  child: TextFieldComponent(
-                    label: CCCD,
-                    textInputType: TextInputType.text,
-                  ),
-                ),
-                Container(
-                  margin: EdgeInsets.only(bottom: 20.h),
-                  child: TextFieldComponent(
-                      label: PHONE_NUMBER_REGISTER_1,
-                      textInputType: TextInputType.phone),
-                ),
-                Container(
-                  margin: EdgeInsets.only(bottom: 20.h),
-                  child: TextFieldComponent(
-                      label: PHONE_NUMBER_REGISTER_2,
-                      textInputType: TextInputType.phone),
-                ),
-                Stack(
-                  children: [
-                    Container(
-                      margin: EdgeInsets.only(bottom: 50.h),
-                      child: const TextFieldPopupIconComponent(
-                          label: CHOSE_SERVICES,
-                          icon: Icons.arrow_drop_down_sharp),
-                    ),
-                    Positioned(
-                        bottom: 1.h,
-                        right: 1.w,
-                        child: Text(
-                          LIMIT_INFOR,
-                          style: TextStyle(
-                              fontSize: fontSize_12,
-                              fontWeight: FontWeight.w500,
-                              color: PRIMARY_COLOR),
-                        ))
-                  ],
-                ),
-                Container(
-                  margin: EdgeInsets.only(bottom: 20.h),
-                  child: TextFieldSubTitleComponent(
-                      label: EMAIL,
-                      subTitle: OPTIONAL,
-                      textInputType: TextInputType.emailAddress),
-                ),
-                Container(
-                  margin: const EdgeInsets.only(bottom: 20),
-                  child: TextFieldSubTitleComponent(
-                      label: CODE_USE,
-                      subTitle: OPTIONAL,
-                      textInputType: TextInputType.text),
-                ),
-                Container(
-                  margin: EdgeInsets.only(bottom: 20.h),
-                  child: TextFieldSubTitleComponent(
-                      label: PHONE_NUMBER_REGISTER_3,
-                      subTitle: OPTIONAL,
-                      textInputType: TextInputType.phone),
-                ),
-                Container(
-                  margin: EdgeInsets.only(bottom: 20.h),
-                  child: const TextFieldPopupIconComponent(
-                      label: PHONE_NUMBER_REGISTER_4,
-                      icon: Icons.arrow_drop_down_sharp),
-                ),
-              ],
+    return GetBuilder<RegisterPageController>(
+        init: RegisterPageController(),
+        builder: (controller) {
+          return Scaffold(
+            resizeToAvoidBottomInset: false,
+            appBar: AppBarComponent(
+              bgColor: clr_white,
+              colorTitle: clr_black,
+              colorIcon: clr_black,
+              title: INFRO_REGISTER,
+              callback: () => Get.back(),
             ),
-          ),
-        ),
-      ),
-      bottomNavigationBar: Container(
-        height: Get.size.height / 6,
-        decoration: BoxDecoration(
-          color: clr_white,
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey.withOpacity(0.9),
-              spreadRadius: 3,
-              blurRadius: 1,
-              offset: const Offset(0, 3),
-            )
-          ],
-        ),
-        child: Column(
-          children: [
-            GetBuilder<RegisterPageController>(
-                init: RegisterPageController(),
-                builder: (controller) {
-                  return Row(
+            body: SingleChildScrollView(
+              child: Container(
+                margin: EdgeInsets.only(top: 10.h),
+                width: Get.size.width,
+                color: clr_white,
+                child: Padding(
+                  padding: const EdgeInsets.all(20),
+                  child: Column(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.only(bottom: 20.h),
+                        child: TextFieldComponent(
+                          label: FULL_NAME,
+                          textInputType: TextInputType.text,
+                        ),
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(bottom: 20.h),
+                        child: TextFieldComponent(
+                          label: ACCOUNT_NUMBER,
+                          textInputType: TextInputType.text,
+                        ),
+                      ),
+                      InkWell(
+                        onTap: () {
+                          print('date');
+                          controller.selectDate(context);
+                        },
+                        child: Container(
+                          margin: EdgeInsets.only(bottom: 20.h),
+                          child: TextFieldPopupIconComponent(
+                            setDate: controller.setDate,
+                            textEditingController: controller.dateController,
+                              label: DATE_OF_BIRTH, icon: Icons.date_range),
+                        ),
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(bottom: 20.h),
+                        child: TextFieldComponent(
+                          label: CCCD,
+                          textInputType: TextInputType.text,
+                        ),
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(bottom: 20.h),
+                        child: TextFieldComponent(
+                            label: PHONE_NUMBER_REGISTER_1,
+                            textInputType: TextInputType.phone),
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(bottom: 20.h),
+                        child: TextFieldComponent(
+                            label: PHONE_NUMBER_REGISTER_2,
+                            textInputType: TextInputType.phone),
+                      ),
+                      Stack(
+                        children: [
+                          Container(
+                            margin: EdgeInsets.only(bottom: 50.h),
+                            child: TextFieldPopupIconComponent(
+                                label: CHOSE_SERVICES,
+                                icon: Icons.arrow_drop_down_sharp),
+                          ),
+                          Positioned(
+                              bottom: 1.h,
+                              right: 1.w,
+                              child: Text(
+                                LIMIT_INFOR,
+                                style: TextStyle(
+                                    fontSize: fontSize_12,
+                                    fontWeight: FontWeight.w500,
+                                    color: PRIMARY_COLOR),
+                              ))
+                        ],
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(bottom: 20.h),
+                        child: TextFieldSubTitleComponent(
+                            label: EMAIL,
+                            subTitle: OPTIONAL,
+                            textInputType: TextInputType.emailAddress),
+                      ),
+                      Container(
+                        margin: const EdgeInsets.only(bottom: 20),
+                        child: TextFieldSubTitleComponent(
+                            label: CODE_USE,
+                            subTitle: OPTIONAL,
+                            textInputType: TextInputType.text),
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(bottom: 20.h),
+                        child: TextFieldSubTitleComponent(
+                            label: PHONE_NUMBER_REGISTER_3,
+                            subTitle: OPTIONAL,
+                            textInputType: TextInputType.phone),
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(bottom: 20.h),
+                        child: TextFieldPopupIconComponent(
+                            label: PHONE_NUMBER_REGISTER_4,
+                            icon: Icons.arrow_drop_down_sharp),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            bottomNavigationBar: Container(
+              height: Get.size.height / 6,
+              decoration: BoxDecoration(
+                color: clr_white,
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.9),
+                    spreadRadius: 3,
+                    blurRadius: 1,
+                    offset: const Offset(0, 3),
+                  )
+                ],
+              ),
+              child: Column(
+                children: [
+                  Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Checkbox(
@@ -176,7 +179,7 @@ class _RegisterInformationState extends State<RegisterInformation> {
                                   .toggleCheckbox(controller.isChecked),
                             children: [
                               TextSpan(
-                                  text: '$TITLE_28 ',
+                                  text: '$TITLE_28',
                                   style: TextStyle(
                                     fontSize: fontSize_12,
                                     color: PRIMARY_COLOR,
@@ -184,9 +187,10 @@ class _RegisterInformationState extends State<RegisterInformation> {
                                     decoration: TextDecoration.underline,
                                   ),
                                   recognizer: TapGestureRecognizer()
-                                    ..onTap = ()=> Get.toNamed('/terms_page', arguments: '')),
+                                    ..onTap = () => Get.toNamed('/terms_page',
+                                        arguments: '')),
                               TextSpan(
-                                text: TITLE_29,
+                                text: ' $TITLE_29',
                                 style: TextStyle(
                                   fontSize: fontSize_12,
                                   color: clr_black54,
@@ -200,20 +204,20 @@ class _RegisterInformationState extends State<RegisterInformation> {
                         ),
                       )
                     ],
-                  );
-                }),
-            Spacer(),
-            Padding(
-              padding: EdgeInsets.only(bottom: height_10),
-              child: ButtonComponent(
-                title: NEXT,
-                bgColor: button_color_home,
-                callback: () {},
+                  ),
+                  Spacer(),
+                  Padding(
+                    padding: EdgeInsets.only(bottom: height_10),
+                    child: ButtonComponent(
+                      title: NEXT,
+                      bgColor: button_color_home,
+                      callback: () {},
+                    ),
+                  ),
+                ],
               ),
             ),
-          ],
-        ),
-      ),
-    );
+          );
+        });
   }
 }
