@@ -235,4 +235,12 @@ const String LOGOUT = 'Đăng xuất';
 const String LOGOUT_2 = 'Quý khách muốn kết thúc phiên đăng nhập này?';
 const String YES = 'Đồng ý';
 const String TERMS_AND_CONDITIONS = 'Điều kiện và điều khoản';
+const String TITLE_85 = 'Chính sách miễn phí mới';
+const String TITLE_86 = 'Kể từ ngày 01/01/2022, VRB chính thức miễn phí các loại phí gồm:';
+const String TITLE_87 = '- Phí chuyển tiền trên Smartbanking (trong VRB, ngoài VRB, chuyển tiền 247)';
+const String TITLE_88 = '- Phí duy trì Smartbanking';
+const String TITLE_89 = '- Phí quản lý tài khoản (1 tài khoản mặc định đng ký dịch vụ Smartbanking) nếu phát sinh giao dic trên Smartbanking tháng liền trước';
+const String TITLE_90 = '- Phí OOT';
+const String TITLE_91 = '- Phí phát hành và phí thường niên trọn đời thẻ Phi vật lý phát hành trên Smartbanking.';
+const String TITLE_92 = 'Lưu ý: Khách hàng đang sử dụng gói B-free sau khi lựa chọn chính sách miễn phí mới sẽ áp dụng theo chính sách mới(không mễn phí phát hành và phí thường niên thẻ năm đầu), và không đăng ký lại gói B-free.';
 
