@@ -63,9 +63,11 @@ class ServiceFavorite extends StatelessWidget {
                 children: list.map((e) {
                   return InkWell(
                     onTap: () {
-                      !controller.isLogin
-                          ? Utils.showAuthenticationDialog(context)
-                          : Utils.showWarningDialog(context, "Chưa cập nhật");
+                      if(!controller.isLogin) {
+                        Utils.showAuthenticationDialog(context);
+                      } else {
+                        Utils.showWarningDialog(context, "Chưa cập nhật");
+                      }
                     },
                     child: Column(
                       children: [
