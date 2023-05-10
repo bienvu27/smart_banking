@@ -19,6 +19,11 @@ class EstablishPIN : Activity() {
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.establish_pin)
+
+        val bundle: Bundle? = intent.extras
+        val dataPin: String? = intent.getStringExtra("pin")
+        println("data: $dataPin")
+
         val intent = intent
         val extras = intent.extras
         onlineActivation = extras != null && extras.getBoolean("online")

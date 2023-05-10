@@ -1,25 +1,23 @@
 package com.example.smart_banking
 
+import CreateIdentity
 import android.annotation.SuppressLint
-import android.app.Dialog
 import android.content.Intent
-import android.widget.Button
+import android.telephony.TelephonyManager
 import androidx.annotation.NonNull
-import androidx.fragment.app.FragmentManager
 import com.entrust.identityGuard.mobile.sdk.Identity
 import com.entrust.identityGuard.mobile.sdk.IdentityProvider
 import com.entrust.identityGuard.mobile.sdk.PlatformDelegate
 import com.entrust.identityGuard.mobile.sdk.tokenproviders.ThirdPartyTokenManagerFactory
 import com.example.smart_banking.Util.deviceId
 import com.example.smart_banking.Util.showErrorDialog
-import com.google.android.material.bottomsheet.BottomSheetDialog
 import io.flutter.embedding.android.FlutterActivity
 import io.flutter.embedding.engine.FlutterEngine
 import io.flutter.plugin.common.MethodChannel
 import org.tinylog.Logger
 
 
-class MainActivity: FlutterActivity() {
+class MainActivity : FlutterActivity() {
     private val CHANNEL = "entrust.sdk.dev/flutter"
 
     @SuppressLint("MissingInflatedId")
@@ -28,16 +26,26 @@ class MainActivity: FlutterActivity() {
         PlatformDelegate.initialize(this);
         ThirdPartyTokenManagerFactory.setContext(this);
         MethodChannel(
-                flutterEngine.dartExecutor.binaryMessenger,
-                CHANNEL
+            flutterEngine.dartExecutor.binaryMessenger,
+            CHANNEL
         ).setMethodCallHandler { call, result ->
-            if(call.method == "test"){
+            if (call.method == "test") {
                 try {
+                    val createIdentity: CreateIdentity = CreateIdentity()
+                    createIdentity.createNewSoftTokenIdentityOnline(
+                        "3356790620",
+                        "1941046252076396",
+                        "https://softtoken.vrbank.com.vn:443/igst"
+                    )
+                    println(createIdentity)
+
                     val identity: Identity =
-                            IdentityProvider.generate(
-                                    DEVICE_ID,
-                                    "6935019387", "0505428340110157"
-                            )
+                        IdentityProvider.generate(
+                            DEVICE_ID,
+                            "6935019387", "0505428340110157"
+                        )
+
+
                     println(identity)
                     // Store our identity so it can be accessed by other activities
                     Util.identity = identity
@@ -45,6 +53,7 @@ class MainActivity: FlutterActivity() {
                     if (identity.isPINRequired) {
                         // Our soft token identity requires a PIN
                         startActivity(Intent(this@MainActivity, EstablishPIN::class.java))
+//                        startActivity(Intent(this@MainActivity, EnterPinCodeActivity::class.java))
 
                     } else {
                         // Go directly to showing the user the registration code.
@@ -55,13 +64,15 @@ class MainActivity: FlutterActivity() {
                     Logger.error("Error generating identity", "")
                     // Since we have validated beforehand, this should not happen.
                     showErrorDialog(
-                            this@MainActivity,
-                            getString(R.string.error_createFailure)
+                        this@MainActivity,
+                        getString(R.string.error_createFailure)
                     )
                 }
             }
         }
+
     }
+
     companion object {
         // Used when registering for transaction verification.  This can be null
         // if transaction verification is not required.

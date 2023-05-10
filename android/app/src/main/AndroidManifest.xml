@@ -6,6 +6,7 @@
     <uses-sdk tools:overrideLibrary="androidx.security" />
 
     <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_PRIVILEGED_PHONE_STATE" />
     <uses-permission android:name="android.permission.WRITE_CONTACTS" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -15,6 +16,7 @@
     -->
     <uses-permission android:name="android.permission.sec.OTP_PROVISION" /> <!-- Require external write permission in order to write log files. -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <queries>
 
@@ -31,6 +33,9 @@
         android:icon="@mipmap/ic_launcher"
         android:label="VRBanking"
         tools:replace="android:label">
+        <activity
+            android:name=".EnterPinCodeActivity"
+            android:exported="false" />
         <activity
             android:name=".ClassicTransaction"
             android:exported="false" />
