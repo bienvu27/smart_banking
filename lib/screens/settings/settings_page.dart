@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:smart_banking/screens/settings/view/other_settings.dart';
 import '../../core/common/utils.dart';
 import '../../core/resources/strings.dart';
 import '../../core/style/colors.dart';
 import '../../core/style/size.dart';
-import '../../router/app_routers.dart';
 
 import 'components/settings_component.dart';
 
@@ -185,7 +186,7 @@ class SettingsPage extends StatelessWidget {
                     SettingComponent(
                       title: OTHER_SETTINGS,
                       icon: Icons.fingerprint,
-                      callback: () {},
+                      callback: () => Get.to(() => OtherSettings()),
                     ),
                   ],
                 ),

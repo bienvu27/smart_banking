@@ -24,28 +24,31 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: Size(750 , 1334),
-      builder: (context, child){
+      designSize: Size(750, 1334),
+      builder: (context, child) {
         return GetMaterialApp(
           initialRoute: AppRouters.DASHBOARD,
           getPages: AppPages.list,
           debugShowCheckedModeBanner: false,
           themeMode: ThemeMode.system,
           // home: TestEntrust(),
-          builder: (context, child){
-            return MediaQuery(data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
-                child: RootLayout(child: child,));
+          builder: (context, child) {
+            return MediaQuery(
+                data: MediaQuery.of(context).copyWith(
+                  textScaleFactor: 1.0,
+                ),
+                child: RootLayout(
+                  child: child,
+                ));
           },
         );
       },
     );
   }
 }
-
 
 class TestEntrust extends StatefulWidget {
   const TestEntrust({Key? key}) : super(key: key);
@@ -59,25 +62,23 @@ class _TestEntrustState extends State<TestEntrust> {
 
   Future<void> testEntrust() async {
     try {
-      final package =
-      await platform.invokeMethod("test");
+      final package = await platform.invokeMethod("test");
       print(package);
     } on PlatformException catch (e) {
       print("Failed to get battery level: ${e.message}");
     }
-
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: ElevatedButton(onPressed: (){
-          testEntrust();
-        }, child: Text('Button')),
+        child: ElevatedButton(
+            onPressed: () {
+              testEntrust();
+            },
+            child: Text('Button')),
       ),
-
     );
   }
 }
-
