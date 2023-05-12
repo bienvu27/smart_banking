@@ -34,6 +34,12 @@
         android:label="VRBanking"
         tools:replace="android:label">
         <activity
+            android:name=".EnterPinCodeExisActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ConfirmPinActivity"
+            android:exported="false" />
+        <activity
             android:name=".EnterPinCodeActivity"
             android:exported="false" />
         <activity

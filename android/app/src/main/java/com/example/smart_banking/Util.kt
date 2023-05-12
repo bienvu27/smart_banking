@@ -22,6 +22,7 @@ import java.util.*
  */
 object Util {
     private const val IDENTITY = "Identity"
+    private const val IDENTITY2 = "Identity2"
     private const val REGISTRATION_URL = "IdentityRegistrationURL"
     /**
      * Return the identity we stored
@@ -127,7 +128,9 @@ object Util {
     /**
      * Save the Encrypted Identity, RegistrationURL and DeviceAPIVersion in saved preferences.
      */
+
     fun saveIdentityInformation(context: Context) {
+        //    Lưu lại code otp
         try {
             val sharedPreferences = context.getSharedPreferences(IDENTITY, Context.MODE_PRIVATE)
             val editor = sharedPreferences.edit()
@@ -138,6 +141,24 @@ object Util {
             editor.putString(
                 REGISTRATION_URL,
                 address
+            )
+            editor.apply()
+        } catch (e: Exception) {
+            Logger.error(e, "Error saving identity info")
+        }
+    }
+    fun saveIdentityInformation2(context: Context) {
+        //    Lưu lại code otp
+        try {
+            val sharedPreferences = context.getSharedPreferences(IDENTITY2, Context.MODE_PRIVATE)
+            val editor = sharedPreferences.edit()
+            val jsonIdentity = identity!!.toJSON()
+            val encryptedIdentity =
+                    PlatformDelegate.encryptData(jsonIdentity.toString().toByteArray())
+            editor.putString(IDENTITY2, Base64.encodeToString(encryptedIdentity, Base64.DEFAULT))
+            editor.putString(
+                    REGISTRATION_URL,
+                    address
             )
             editor.apply()
         } catch (e: Exception) {
@@ -170,6 +191,7 @@ object Util {
      */
     fun extractIdentityInformation(context: Context): Boolean {
         try {
+            println("Vo day ne")
             val sharedPreferences = context.getSharedPreferences(IDENTITY, Context.MODE_PRIVATE)
             val editor = sharedPreferences.edit()
             val identityString = sharedPreferences.getString(IDENTITY, "")
@@ -215,6 +237,7 @@ object Util {
      * @return An identifier for the device.
      */
     val deviceId: String
+    // lấy id của thiết bị
         get() {
             // To register with the transaction component just
             // requires a non-null identifier. A real identifier -

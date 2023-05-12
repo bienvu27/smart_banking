@@ -3,7 +3,6 @@ package com.example.smart_banking
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import android.widget.Toast
 import com.chaos.view.PinView
@@ -18,7 +17,7 @@ class EnterPinCodeActivity : AppCompatActivity() {
         nextButton.setOnClickListener{
             val msg: String = pinText.text.toString()
             if(msg.trim().isNotEmpty()) {
-                val intent = Intent(this, EstablishPIN::class.java)
+                val intent = Intent(this, ConfirmPinActivity::class.java)
                 intent.putExtra("pin", msg)
                 startActivity(intent)
             }else {

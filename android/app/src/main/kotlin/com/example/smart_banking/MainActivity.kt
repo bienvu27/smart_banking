@@ -2,14 +2,17 @@ package com.example.smart_banking
 
 import CreateIdentity
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
 import android.telephony.TelephonyManager
+import android.widget.Toast
 import androidx.annotation.NonNull
 import com.entrust.identityGuard.mobile.sdk.Identity
 import com.entrust.identityGuard.mobile.sdk.IdentityProvider
 import com.entrust.identityGuard.mobile.sdk.PlatformDelegate
 import com.entrust.identityGuard.mobile.sdk.tokenproviders.ThirdPartyTokenManagerFactory
 import com.example.smart_banking.Util.deviceId
+import com.example.smart_banking.Util.extractIdentityInformation
 import com.example.smart_banking.Util.showErrorDialog
 import io.flutter.embedding.android.FlutterActivity
 import io.flutter.embedding.engine.FlutterEngine
@@ -30,44 +33,56 @@ class MainActivity : FlutterActivity() {
             CHANNEL
         ).setMethodCallHandler { call, result ->
             if (call.method == "test") {
-                try {
-                    val createIdentity: CreateIdentity = CreateIdentity()
-                    createIdentity.createNewSoftTokenIdentityOnline(
-                        "3356790620",
-                        "1941046252076396",
-                        "https://softtoken.vrbank.com.vn:443/igst"
-                    )
-                    println(createIdentity)
 
-                    val identity: Identity =
-                        IdentityProvider.generate(
-                            DEVICE_ID,
-                            "6935019387", "0505428340110157"
-                        )
-
-
-                    println(identity)
-                    // Store our identity so it can be accessed by other activities
-                    Util.identity = identity
-                    // Determine whether the soft token identity requires a PIN to protect it.
-                    if (identity.isPINRequired) {
-                        // Our soft token identity requires a PIN
-                        startActivity(Intent(this@MainActivity, EstablishPIN::class.java))
-//                        startActivity(Intent(this@MainActivity, EnterPinCodeActivity::class.java))
-
-                    } else {
-                        // Go directly to showing the user the registration code.
-                        startActivity(Intent(this@MainActivity, RegistrationCode::class.java))
-                    }
+                if (checkIdentityExistOrNot(this@MainActivity)) {
+//                    val intent = Intent(this@MainActivity, SecurityCode::class.java)
+                    val intent = Intent(this@MainActivity, EnterPinCodeExisActivity::class.java)
+                    intent.putExtra(SecurityCode.IS_IDENTITY_SAVED, true)
+                    startActivity(intent)
                     finish()
-                } catch (e: Exception) {
-                    Logger.error("Error generating identity", "")
-                    // Since we have validated beforehand, this should not happen.
-                    showErrorDialog(
-                        this@MainActivity,
-                        getString(R.string.error_createFailure)
-                    )
+                }else{
+                    try {
+//                    val createIdentity: Identity? = CreateIdentity().createNewSoftTokenIdentityOnline(
+//                        "6042283652",
+//                        "0777507351979575",
+//                        "https://devtoken.vrbank.com.vn/igst/"
+//                    )
+//                    println("vo day ne: $createIdentity")
+
+
+                        val identity: Identity =
+                                IdentityProvider.generate(
+                                        null,
+                                        "6935019387", "0505428340110157"
+                                )
+
+                        println(identity)
+                        // Store our identity so it can be accessed by other activities
+                        Util.identity = identity
+                        // Determine whether the soft token identity requires a PIN to protect it.
+                        if (identity.isPINRequired) {
+                            // Our soft token identity requires a PIN
+//                            startActivity(Intent(this@MainActivity, EstablishPIN::class.java))
+                        startActivity(Intent(this@MainActivity, EnterPinCodeActivity::class.java))
+
+                        } else {
+                            // Go directly to showing the user the registration code.
+                            startActivity(Intent(this@MainActivity, RegistrationCode::class.java))
+                        }
+                        finish()
+                    } catch (e: Exception) {
+                        Logger.error("Error generating identity", "")
+                        // Since we have validated beforehand, this should not happen.
+                        showErrorDialog(
+                                this@MainActivity,
+                                getString(R.string.error_createFailure)
+                        )
+                    }
                 }
+
+
+
+
             }
         }
 
@@ -86,5 +101,7 @@ class MainActivity : FlutterActivity() {
         private const val SCAN_RESULT_FORMAT = "SCAN_RESULT_FORMAT"
         private const val QR_CODE_FORMAT = "QR_CODE"
     }
-}
+    private fun checkIdentityExistOrNot(context: Context): Boolean {
+        return extractIdentityInformation(context)
+    }}
 

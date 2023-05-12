@@ -8,6 +8,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import com.example.smart_banking.Util.extractIdentityInformation
 import com.example.smart_banking.Util.showErrorDialog
 
 class EstablishPIN : Activity() {
@@ -23,7 +24,7 @@ class EstablishPIN : Activity() {
         val bundle: Bundle? = intent.extras
         val dataPin: String? = intent.getStringExtra("pin")
         println("data: $dataPin")
-
+//////////////////////////////////////////////////
         val intent = intent
         val extras = intent.extras
         onlineActivation = extras != null && extras.getBoolean("online")
@@ -32,6 +33,7 @@ class EstablishPIN : Activity() {
         mPin = findViewById<View>(R.id.pin) as EditText
         mPinConfirm = findViewById<View>(R.id.pinConfirm) as EditText
         val okButton = findViewById<View>(R.id.ok) as Button
+
         okButton.setOnClickListener {
             // Get the values the user entered for the PIN and its confirmation
             val pinValue = mPin!!.text.toString()
@@ -41,8 +43,10 @@ class EstablishPIN : Activity() {
             if (pinValue.isNotEmpty() && pinValueConfirm.isNotEmpty() && pinValue == pinValueConfirm) {
                 // Move on to display the registration code.
                 if (onlineActivation) {
+
                     startActivity(Intent(this@EstablishPIN, SecurityCode::class.java))
                 } else {
+//                    extractIdentityInformation(this)
                     startActivity(Intent(this@EstablishPIN, RegistrationCode::class.java))
                 }
                 finish()

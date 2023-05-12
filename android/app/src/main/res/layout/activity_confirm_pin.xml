@@ -6,6 +6,11 @@
     android:layout_height="match_parent"
     android:background="@color/design_default_color_background">
 
+    <TextView android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/pinIntroHide"
+       />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -18,21 +23,21 @@
             android:layout_height="wrap_content"
             android:padding="5dp"
             android:src="@drawable/vrbank"
-             />
+            />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:includeFontPadding="false"
-            android:text="Nhập mã pin"
+            android:text="Xác nhận mã Pin"
             android:textAlignment="center"
             android:textAllCaps="true"
             android:textColor="@color/cardview_dark_background"
             android:textSize="20sp" />
 
         <com.chaos.view.PinView
-            android:id="@+id/pin_view"
+            android:id="@+id/pin_view_confirm"
             style="@style/PinWidget.PinView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

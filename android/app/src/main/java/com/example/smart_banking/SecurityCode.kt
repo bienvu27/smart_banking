@@ -42,9 +42,15 @@ class SecurityCode : Activity() {
         context = this
 
         //If Identity tag exist in extras then create identity if not then save newly created Identity in Preference.
+
+
+//        Lưu mã code vào local máy
         if (!intent.hasExtra(IS_IDENTITY_SAVED)) {
             Util.saveIdentityInformation(applicationContext)
         }
+//        val sharedPreferences = this.getSharedPreferences("Identity", Context.MODE_PRIVATE)
+//        var shared = sharedPreferences.getString("Identity", null)
+//        println("Token nha: $shared")
 
         // Display the security code (OTP) value and a progress bar that represents
         // a countdown until a new security code needs to be generated (i.e., the
@@ -60,7 +66,7 @@ class SecurityCode : Activity() {
         } catch (e: IdentityGuardMobileException) {
             Logger.error(e, "Failed to get the current OTP")
         } finally {
-            mOTP?.text = IdentityProvider.formatCode(otp, mIdentity.otpLength / 2, '-')
+            mOTP?.text = otp //IdentityProvider.formatCode(otp, mIdentity.otpLength / 2, '-')
         }
         mCountdown = findViewById<View>(R.id.countdown) as ProgressBar
         // Set up a fixed rate timer that counts down until a new security code should be generated.
@@ -84,51 +90,51 @@ class SecurityCode : Activity() {
                             otp += "0"
                         }
                         try {
-                            otp = mIdentity?.otp
+                            otp = mIdentity.otp
                         } catch (e: IdentityGuardMobileException) {
                             Logger.error(e, "Failed to get the current OTP")
                         } finally {
-                            mOTP?.text = IdentityProvider.formatCode(otp, mIdentity.otpLength / 2, '-')
+                            mOTP?.text = otp //IdentityProvider.formatCode(otp, mIdentity.otpLength / 2, '-')
                         }
                     }
                     mCountdown?.progress = ticks
                 }
             }
         }, 1000, 1000)
-        val newTransactions = findViewById<View>(R.id.ok) as Button
-        newTransactions.setOnClickListener { // Check for new transaction's for the soft token identity.
-            val txnTask = TransactionTask(this@SecurityCode)
-            txnTask.execute()
-        }
-        val qrCodeButton = findViewById<View>(R.id.qr_code) as Button
-        qrCodeButton.setOnClickListener {
-            try {
-                // Create a new intent to be handled by any app which supports the
-                // action specified. If more than one app supporting the action exists on the
-                // device, an app chooser will be presented to the user.
-                val intent = Intent(SCAN_INTENT)
-                intent.putExtra(SCAN_MODE, QR_CODE_MODE)
-
-                // The device will switch to the chosen app to scan the QR code. When the code
-                // has been scanned, the {@link #onActivityResult(int, int, Intent)} callback
-                // will be called.
-                startActivityForResult(intent, SCAN_REQUEST_CODE)
-            } catch (e: Exception) {
-                // No app exists supporting the given action. Redirect the user to the Play
-                // Store to download an app which can scan QR codes.
-                val playStoreUri = Uri.parse(PLAY_STORE_URI)
-                val playStoreIntent = Intent(Intent.ACTION_VIEW, playStoreUri)
-                startActivity(playStoreIntent)
-            }
-        }
-        transactionClicked = object : TransactionClicked {
-            override fun onClicked(transaction: Transaction?, position: Int) {
-                handleTransaction(transaction)
-                pendingTransactions = ArrayList()
-                pendingList = PendingList(pendingTransactions!!, this@SecurityCode, transactionClicked)
-                recyclerView?.adapter = pendingList
-            }
-        }
+//        val newTransactions = findViewById<View>(R.id.ok) as Button
+//        newTransactions.setOnClickListener { // Check for new transaction's for the soft token identity.
+//            val txnTask = TransactionTask(this@SecurityCode)
+//            txnTask.execute()
+//        }
+//        val qrCodeButton = findViewById<View>(R.id.qr_code) as Button
+//        qrCodeButton.setOnClickListener {
+//            try {
+//                // Create a new intent to be handled by any app which supports the
+//                // action specified. If more than one app supporting the action exists on the
+//                // device, an app chooser will be presented to the user.
+//                val intent = Intent(SCAN_INTENT)
+//                intent.putExtra(SCAN_MODE, QR_CODE_MODE)
+//
+//                // The device will switch to the chosen app to scan the QR code. When the code
+//                // has been scanned, the {@link #onActivityResult(int, int, Intent)} callback
+//                // will be called.
+//                startActivityForResult(intent, SCAN_REQUEST_CODE)
+//            } catch (e: Exception) {
+//                // No app exists supporting the given action. Redirect the user to the Play
+//                // Store to download an app which can scan QR codes.
+//                val playStoreUri = Uri.parse(PLAY_STORE_URI)
+//                val playStoreIntent = Intent(Intent.ACTION_VIEW, playStoreUri)
+//                startActivity(playStoreIntent)
+//            }
+//        }
+//        transactionClicked = object : TransactionClicked {
+//            override fun onClicked(transaction: Transaction?, position: Int) {
+//                handleTransaction(transaction)
+//                pendingTransactions = ArrayList()
+//                pendingList = PendingList(pendingTransactions!!, this@SecurityCode, transactionClicked)
+//                recyclerView?.adapter = pendingList
+//            }
+//        }
     }
 
     /* (non-Javadoc)
