@@ -5,7 +5,7 @@ import '../../../core/resources/strings.dart';
 import '../../../core/style/colors.dart';
 import '../../../core/style/size.dart';
 
-class AppBarTransfer extends StatelessWidget with PreferredSizeWidget{
+class AppBarTransfer extends StatelessWidget implements PreferredSizeWidget{
   const AppBarTransfer({
     super.key,
   });
