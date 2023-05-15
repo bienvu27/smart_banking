@@ -5,7 +5,7 @@ import '../../../core/resources/strings.dart';
 import '../../../core/style/colors.dart';
 import '../../../core/style/size.dart';
 
-class AppBarTransfer extends StatelessWidget implements PreferredSizeWidget{
+class AppBarTransfer extends StatelessWidget implements PreferredSizeWidget {
   const AppBarTransfer({
     super.key,
   });
@@ -17,7 +17,10 @@ class AppBarTransfer extends StatelessWidget implements PreferredSizeWidget{
         centerTitle: true,
         title: Text(
           CHOOSE_PEOPLE,
-          style: TextStyle(color: clr_black, fontSize: fontSize_12, fontWeight: FontWeight.w600),
+          style: TextStyle(
+              color: clr_black,
+              fontSize: fontSize_12,
+              fontWeight: FontWeight.w600),
         ),
         backgroundColor: clr_white,
         leading: InkWell(

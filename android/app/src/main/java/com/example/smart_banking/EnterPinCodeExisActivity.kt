@@ -51,7 +51,9 @@ class EnterPinCodeExisActivity : AppCompatActivity() {
                     } catch (e: IdentityGuardMobileException) {
                         Logger.error(e, "Failed to get the current OTP")
                     } finally {
-                        println("OTPHEHE: $otp")                       // mOTP?.text = otp //IdentityProvider.formatCode(otp, mIdentity.otpLength / 2, '-')
+                        println("OTPHEHE: $otp")
+                        Toast.makeText(applicationContext, "Mã Pin: $otp", Toast.LENGTH_SHORT).show()
+// mOTP?.text = otp //IdentityProvider.formatCode(otp, mIdentity.otpLength / 2, '-')
                     }
                 }
             }else {

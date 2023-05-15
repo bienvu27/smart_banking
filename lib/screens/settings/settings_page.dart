@@ -15,7 +15,6 @@ class SettingsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-
         height: MediaQuery.of(context).size.height,
         child: SingleChildScrollView(
           child: Column(
@@ -32,7 +31,8 @@ class SettingsPage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         Container(
-                          margin: EdgeInsets.only(top: height_24, bottom: height_8),
+                          margin:
+                              EdgeInsets.only(top: height_24, bottom: height_8),
                           width: height_40,
                           height: width_40,
                           decoration: const BoxDecoration(
@@ -72,7 +72,8 @@ class SettingsPage extends StatelessWidget {
                       right: width_8,
                       child: GestureDetector(
                         onTap: () async {
-                          Utils.showDialogLogout(context, LOGOUT, LOGOUT_2, NO, YES);
+                          Utils.showDialogLogout(
+                              context, LOGOUT, LOGOUT_2, NO, YES);
                         },
                         child: Container(
                           padding: EdgeInsets.only(
@@ -146,7 +147,11 @@ class SettingsPage extends StatelessWidget {
               ),
               Container(
                 margin: EdgeInsets.only(top: height_6),
-                padding: EdgeInsets.only(left: width_8, right: width_8, top: height_16,),
+                padding: EdgeInsets.only(
+                  left: width_8,
+                  right: width_8,
+                  top: height_16,
+                ),
                 color: clr_white,
                 width: MediaQuery.of(context).size.width,
                 child: Column(

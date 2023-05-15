@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:smart_banking/core/common/utils.dart';
 import 'package:smart_banking/screens/components/app_bar/app_bar_component.dart';
 
 import '../../../core/resources/strings.dart';
 import '../../../core/style/colors.dart';
+import '../../../core/style/size.dart';
 import '../components/other_settings_button.dart';
 
 class OtherSettings extends StatefulWidget {
@@ -17,15 +20,31 @@ class OtherSettings extends StatefulWidget {
 class _OtherSettingsState extends State<OtherSettings> {
   static const platform = MethodChannel('entrust.sdk.dev/flutter');
 
+  TextEditingController controllerTextF = TextEditingController();
+  String valueText = "";
+
   Future<void> testEntrust() async {
     try {
-      final package =
-      await platform.invokeMethod("test");
+      final package = await platform.invokeMethod("test");
       print(package);
     } on PlatformException catch (e) {
       print("Failed to get battery level: ${e.message}");
     }
   }
+
+  Future<void> testEntrust2(String enterCode) async {
+    try {
+      final String arg1 = valueText;
+
+      final package = await platform.invokeMethod("test_2", {
+        "enter_code" : arg1
+      });
+      print(package);
+    } on PlatformException catch (e) {
+      print("Failed to get battery level: ${e.message}");
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
 
@@ -46,6 +65,91 @@ class _OtherSettingsState extends State<OtherSettings> {
               testEntrust();
             },
           ),
+          OtherSettingButton(
+              icon: Icons.token,
+              title: 'Đã có Soft Token',
+              onTap: () {
+                showModalBottomSheet<void>(
+                    context: context,
+                    isScrollControlled: true,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.vertical(
+                        top: Radius.circular(25.r),
+                      ),
+                    ),
+                    builder: (BuildContext context) {
+
+                      return Container(
+                          margin: EdgeInsets.only(
+                            left: width_8,
+                            right: width_8,
+                            top: height_8,
+                          ),
+                          height: Get.size.height / 1.2,
+                          child: SingleChildScrollView(
+                            child: Column(
+                              children: [
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      ENTER_PIN,
+                                      style: TextStyle(
+                                        fontFamily: 'open_sans',
+                                        fontSize: fontSize_12,
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                    ),
+                                    InkWell(
+                                      onTap: () => Navigator.pop(context),
+                                      child: Text(
+                                        CANCEL,
+                                        style: TextStyle(
+                                          fontSize: fontSize_12,
+                                          color: PRIMARY_COLOR,
+                                          fontFamily: 'open_sans',
+                                          fontWeight: FontWeight.w600,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                TextField(
+                                    keyboardType: TextInputType.number,
+                                    maxLength: 4,
+                                    controller: controllerTextF,
+                                    onChanged: (value) {
+                                     valueText = value;
+                                    },
+                                    style: TextStyle(
+                                      fontSize: fontSize_11,
+                                      color: clr_black,
+                                      fontFamily: 'open_sans',
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                    decoration: InputDecoration(
+                                      labelText: ENTER_PIN,
+                                      suffixIconColor: clr_black54,
+                                      labelStyle: TextStyle(
+                                        fontSize: fontSize_11,
+                                        color: clr_black,
+                                        fontFamily: 'open_sans',
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                    )),
+                                ElevatedButton(
+                                    onPressed: () {
+
+                                      testEntrust2(valueText);
+                                      // testEntrust2(controllerTextF.text.toString());
+                                    },
+                                    child: Text("test"))
+                              ],
+                            ),
+                          ));
+                    });
+              }),
         ],
       ),
     );

@@ -51,6 +51,7 @@ const String CUSTOMIZATION  = 'Tuỳ chỉnh';
 const String SERVICE  = 'dịch vụ';
 const String SERVICE_CHARITY  = 'Từ thiện';
 const String SUPPORT  = 'Hỗ trợ';
+const String ENTER_PIN  = 'Nhập mã Pin';
 const String PHONE_NUMBER  = 'Số điện thoại';
 const String PHONE_NUMBER_REGISTER  = 'Số điện thoại đăng ký';
 const String PHONE_NUMBER_REGISTER_1  = 'Số điện thoại đăng nhập';

@@ -5,11 +5,14 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.telephony.TelephonyManager
+import android.view.View
+import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.NonNull
 import com.entrust.identityGuard.mobile.sdk.Identity
 import com.entrust.identityGuard.mobile.sdk.IdentityProvider
 import com.entrust.identityGuard.mobile.sdk.PlatformDelegate
+import com.entrust.identityGuard.mobile.sdk.exception.IdentityGuardMobileException
 import com.entrust.identityGuard.mobile.sdk.tokenproviders.ThirdPartyTokenManagerFactory
 import com.example.smart_banking.Util.deviceId
 import com.example.smart_banking.Util.extractIdentityInformation
@@ -29,8 +32,8 @@ class MainActivity : FlutterActivity() {
         PlatformDelegate.initialize(this);
         ThirdPartyTokenManagerFactory.setContext(this);
         MethodChannel(
-            flutterEngine.dartExecutor.binaryMessenger,
-            CHANNEL
+                flutterEngine.dartExecutor.binaryMessenger,
+                CHANNEL
         ).setMethodCallHandler { call, result ->
             if (call.method == "test") {
 
@@ -41,7 +44,7 @@ class MainActivity : FlutterActivity() {
                     startActivity(intent)
                     finish()
 
-                }else{
+                } else {
                     try {
 
                         val identity: Identity =
@@ -57,7 +60,7 @@ class MainActivity : FlutterActivity() {
                         if (identity.isPINRequired) {
                             // Our soft token identity requires a PIN
 //                            startActivity(Intent(this@MainActivity, EstablishPIN::class.java))
-                        startActivity(Intent(this@MainActivity, EnterPinCodeActivity::class.java))
+                            startActivity(Intent(this@MainActivity, EnterPinCodeActivity::class.java))
 
                         } else {
                             // Go directly to showing the user the registration code.
@@ -75,8 +78,9 @@ class MainActivity : FlutterActivity() {
                 }
 
 
-
-
+            } else if (call.method == "test_2") {
+                var argEnterCode : String? = call.argument("enter_code");
+                entrust(argEnterCode)
             }
         }
 
@@ -94,8 +98,101 @@ class MainActivity : FlutterActivity() {
         private const val SCAN_RESULT = "SCAN_RESULT"
         private const val SCAN_RESULT_FORMAT = "SCAN_RESULT_FORMAT"
         private const val QR_CODE_FORMAT = "QR_CODE"
+        private var onlineActivation = false
+        private const val PIN_LENGTH = 4
+        private val mIdentity = Util.identity
     }
+
     private fun checkIdentityExistOrNot(context: Context): Boolean {
         return extractIdentityInformation(context)
-    }}
+    }
+
+    private fun entrust(code: String?){
+        if (checkIdentityExistOrNot(this@MainActivity)) {
+
+            if (code != null) {
+                enterPinCode(code)
+            }
+//                    val intent = Intent(this@MainActivity, SecurityCode::class.java)
+//            val intent = Intent(this@MainActivity, EnterPinCodeExisActivity::class.java)
+//            intent.putExtra(SecurityCode.IS_IDENTITY_SAVED, true)
+//            startActivity(intent)
+//            finish()
+
+        } else {
+            try {
+
+                val identity: Identity =
+                        IdentityProvider.generate(
+                                null,
+                                "6935019387", "0505428340110157"
+                        )
+
+                println(identity)
+                // Store our identity so it can be accessed by other activities
+                Util.identity = identity
+                // Determine whether the soft token identity requires a PIN to protect it.
+                if (identity.isPINRequired) {
+                    // Our soft token identity requires a PIN
+//                            startActivity(Intent(this@MainActivity, EstablishPIN::class.java))
+                    startActivity(Intent(this@MainActivity, EnterPinCodeActivity::class.java))
+
+                } else {
+                    // Go directly to showing the user the registration code.
+                    startActivity(Intent(this@MainActivity, RegistrationCode::class.java))
+                }
+                finish()
+            } catch (e: Exception) {
+                Logger.error("Error generating identity", "")
+                // Since we have validated beforehand, this should not happen.
+                showErrorDialog(
+                        this@MainActivity,
+                        getString(R.string.error_createFailure)
+                )
+            }
+        }
+    }
+    private fun enterPinCode(pinText: String){
+//        val text = pinText.text.toString()
+        val sharedPreferences = this.getSharedPreferences("pinValue", Context.MODE_PRIVATE)
+        var sharedPin = sharedPreferences.getString("pinValue", null)
+
+        val intent = intent
+        val extras = intent.extras
+        onlineActivation = extras != null && extras.getBoolean("online")
+        val intro = getString(R.string.intro_PIN, PIN_LENGTH)
+//        (findViewById<View>(R.id.pinIntroHideExis) as TextView).text = intro
+
+        val msg: String = pinText //.text.toString()
+        if(msg.trim().isNotEmpty()) {
+            if (msg.trim() != sharedPin){
+                Toast.makeText(applicationContext, "Mã Pin không chính xác", Toast.LENGTH_SHORT).show()
+            }else{
+
+                Toast.makeText(applicationContext, "Mã Pin chính xác", Toast
+                        .LENGTH_SHORT).show()
+
+//                    startActivity(Intent(this@MainActivity, SecurityCode::class.java))
+                if (!intent.hasExtra(SecurityCode.IS_IDENTITY_SAVED)) {
+                    Util.saveIdentityInformation(applicationContext)
+                }
+                var otp: String? = ""
+                for (i in 0 until mIdentity?.otpLength!!) {
+                    otp += "0"
+                }
+                try {
+                    otp = mIdentity.otp
+                } catch (e: IdentityGuardMobileException) {
+                    Logger.error(e, "Failed to get the current OTP")
+                } finally {
+                    println("OTPHEHE: $otp")
+                    Toast.makeText(applicationContext, "Mã Pin: $otp", Toast.LENGTH_SHORT).show()
+// mOTP?.text = otp //IdentityProvider.formatCode(otp, mIdentity.otpLength / 2, '-')
+                }
+            }
+        }else {
+            Toast.makeText(applicationContext, "Please enter Pin Code! ", Toast.LENGTH_SHORT).show()
+        }
+    }
+}
 
