@@ -13,7 +13,7 @@ import 'components/list_contacts_recently.dart';
 import 'components/list_contacts_save.dart';
 
 class FirstTab extends StatefulWidget {
-  const  FirstTab({Key? key, required this.controller}) : super(key: key);
+  const FirstTab({Key? key, required this.controller}) : super(key: key);
 
   final TransferController controller;
 
@@ -24,7 +24,6 @@ class FirstTab extends StatefulWidget {
 class _FirstTabState extends State<FirstTab> {
   ScrollController? _scrollController;
   bool lastStatus = true;
-
 
   double height = Get.size.height > 650 ? height_500 : height_600;
   double heightInit = Get.size.height > 650 ? height_500 : height_600;
@@ -127,20 +126,20 @@ class _FirstTabState extends State<FirstTab> {
                         ),
                         widget.controller.isSameOwner
                             ? GestureDetector(
-                          onTap: () => widget.controller.showDialogBenef(context),
-                          child: TextFieldTransFer(
-                            enabled: false,
-                            labelText: TITLE_CHOOSE_BENEF,
-                            suffixIcon: Icons.arrow_drop_down_sharp,
-                            textEditingController: widget.controller.beneficiaryAccountController,
-                          ),
-                        )
+                                onTap: () => widget.controller.showDialogBenef(context),
+                                child: TextFieldTransFer(
+                                  enabled: false,
+                                  labelText: TITLE_CHOOSE_BENEF,
+                                  suffixIcon: Icons.arrow_drop_down_sharp,
+                                  textEditingController: widget.controller.beneficiaryAccountController,
+                                ),
+                              )
                             : TextFieldTransFer(
-                          enabled: true,
-                          labelText: TITLE_33,
-                          suffixIcon: Icons.account_box_outlined,
-                          textEditingController: widget.controller.beneficiaryAccountController,
-                        ),
+                                enabled: true,
+                                labelText: TITLE_33,
+                                suffixIcon: Icons.account_box_outlined,
+                                textEditingController: widget.controller.beneficiaryAccountController,
+                              ),
                         ContactsContainer(),
                       ],
                     ),
@@ -240,7 +239,9 @@ class _FirstTabState extends State<FirstTab> {
             physics: const NeverScrollableScrollPhysics(),
             children: [
               ListContacts(
-                list: widget.controller.isSameOwner ? widget.controller.listContactsSameOwnerSearch : widget.controller.listContactsSearch,
+                list: widget.controller.isSameOwner
+                    ? widget.controller.listContactsSameOwnerSearch
+                    : widget.controller.listContactsSearch,
                 callBack: (e) => Get.toNamed("/transaction_infor", arguments: ''),
               ),
               ListContactsRecently(

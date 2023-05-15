@@ -40,15 +40,9 @@ class MainActivity : FlutterActivity() {
                     intent.putExtra(SecurityCode.IS_IDENTITY_SAVED, true)
                     startActivity(intent)
                     finish()
+
                 }else{
                     try {
-//                    val createIdentity: Identity? = CreateIdentity().createNewSoftTokenIdentityOnline(
-//                        "6042283652",
-//                        "0777507351979575",
-//                        "https://devtoken.vrbank.com.vn/igst/"
-//                    )
-//                    println("vo day ne: $createIdentity")
-
 
                         val identity: Identity =
                                 IdentityProvider.generate(

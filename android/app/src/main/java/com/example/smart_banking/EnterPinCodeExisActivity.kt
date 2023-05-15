@@ -11,6 +11,8 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.chaos.view.PinView
 import com.entrust.identityGuard.mobile.sdk.Identity
+import com.entrust.identityGuard.mobile.sdk.exception.IdentityGuardMobileException
+import org.tinylog.Logger
 
 class EnterPinCodeExisActivity : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
@@ -33,16 +35,24 @@ class EnterPinCodeExisActivity : AppCompatActivity() {
         nextButton.setOnClickListener{
             val msg: String = pinText.text.toString()
             if(msg.trim().isNotEmpty()) {
-//                Util.saveIdentityInformation2(applicationContext)
-//                Toast.makeText(applicationContext, "$shared", Toast.LENGTH_SHORT).show()
-//                identity?.let { it1 -> validateUnlockResponse(it1, msg, "") }
-//                val intent = Intent(this, SecurityCode::class.java)
-//                intent.putExtra("pin", msg)
-//                startActivity(intent)
                 if (msg.trim() != sharedPin){
                     Toast.makeText(applicationContext, "Mã Pin không chính xác", Toast.LENGTH_SHORT).show()
                 }else{
-                    startActivity(Intent(this@EnterPinCodeExisActivity, SecurityCode::class.java))
+//                    startActivity(Intent(this@EnterPinCodeExisActivity, SecurityCode::class.java))
+                    if (!intent.hasExtra(SecurityCode.IS_IDENTITY_SAVED)) {
+                        Util.saveIdentityInformation(applicationContext)
+                    }
+                    var otp: String? = ""
+                    for (i in 0 until mIdentity?.otpLength!!) {
+                        otp += "0"
+                    }
+                    try {
+                        otp = mIdentity.otp
+                    } catch (e: IdentityGuardMobileException) {
+                        Logger.error(e, "Failed to get the current OTP")
+                    } finally {
+                        println("OTPHEHE: $otp")                       // mOTP?.text = otp //IdentityProvider.formatCode(otp, mIdentity.otpLength / 2, '-')
+                    }
                 }
             }else {
                 Toast.makeText(applicationContext, "Please enter Pin Code! ", Toast.LENGTH_SHORT).show()
@@ -56,5 +66,6 @@ class EnterPinCodeExisActivity : AppCompatActivity() {
         private var onlineActivation = false
         private const val PIN_LENGTH = 4
         var identity: Identity? = null
+        private val mIdentity = Util.identity
     }
     }

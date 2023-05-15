@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import '../../../core/resources/asset.dart';
 import '../../../core/resources/strings.dart';
@@ -9,10 +10,28 @@ import '../../components/button/button_component.dart';
 import '../../components/text_field/text_field_component.dart';
 import '../controller/transaction_infor_controller.dart';
 
-class TransactionInforPage extends StatelessWidget {
+class TransactionInforPage extends StatefulWidget {
   final bool? isNapas;
   TransactionInforPage({Key? key, this.isNapas}) : super(key: key);
 
+  @override
+  State<TransactionInforPage> createState() => _TransactionInforPageState();
+}
+
+
+
+class _TransactionInforPageState extends State<TransactionInforPage> {
+  static const platform = MethodChannel('entrust.sdk.dev/flutter');
+
+  Future<void> testEntrust() async {
+    try {
+      final package =
+      await platform.invokeMethod("test");
+      print(package);
+    } on PlatformException catch (e) {
+      print("Failed to get battery level: ${e.message}");
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return GetBuilder<TransactionInforController>(
@@ -263,7 +282,7 @@ class TransactionInforPage extends StatelessWidget {
                       ),
                     ),
 
-                    isNapas != null && isNapas! ? Padding(
+                    widget.isNapas != null && widget.isNapas! ? Padding(
                       padding: EdgeInsets.only(top: height_11),
                       child: Container(
                         margin: EdgeInsets.only(
@@ -344,8 +363,8 @@ class TransactionInforPage extends StatelessWidget {
               child: ButtonComponent(
                   title: NEXT,
                   bgColor: button_color_home,
-                  callback: () =>
-                      Get.toNamed("/transaction_confirm", arguments: '')),
+                  callback: () =>  testEntrust())
+                     // Get.toNamed("/transaction_confirm", arguments: '')),
             ),
           );
         });
