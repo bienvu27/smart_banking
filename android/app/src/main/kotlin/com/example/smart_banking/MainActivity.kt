@@ -25,6 +25,8 @@ import org.tinylog.Logger
 
 class MainActivity : FlutterActivity() {
     private val CHANNEL = "entrust.sdk.dev/flutter"
+    private var data: String? = "";
+    private  var checkPin: Boolean = false;
 
     @SuppressLint("MissingInflatedId")
     override fun configureFlutterEngine(@NonNull flutterEngine: FlutterEngine) {
@@ -36,7 +38,6 @@ class MainActivity : FlutterActivity() {
                 CHANNEL
         ).setMethodCallHandler { call, result ->
             if (call.method == "test") {
-
                 if (checkIdentityExistOrNot(this@MainActivity)) {
 //                    val intent = Intent(this@MainActivity, SecurityCode::class.java)
                     val intent = Intent(this@MainActivity, EnterPinCodeExisActivity::class.java)
@@ -79,45 +80,24 @@ class MainActivity : FlutterActivity() {
 
 
             } else if (call.method == "test_2") {
-                var argEnterCode : String? = call.argument("enter_code");
+                var argEnterCode: String? = call.argument("enter_code");
+                var otpNative: String? = call.argument("otp_code")
                 entrust(argEnterCode)
+            } else if (call.method == "fill_text") {
+                result.success(data)
+            }else if(call.method == "check_pin"){
+                result.success(checkPin)
             }
         }
 
     }
 
-    companion object {
-        // Used when registering for transaction verification.  This can be null
-        // if transaction verification is not required.
-        private val DEVICE_ID = deviceId
-        private const val SCAN_REQUEST_CODE = 0
-        private const val SCAN_MODE = "SCAN_MODE"
-        private const val QR_CODE_MODE = "QR_CODE_MODE"
-        private const val SCAN_INTENT = "com.google.zxing.client.android.SCAN"
-        private const val PLAY_STORE_URI = "market://details?id=com.google.zxing.client.android"
-        private const val SCAN_RESULT = "SCAN_RESULT"
-        private const val SCAN_RESULT_FORMAT = "SCAN_RESULT_FORMAT"
-        private const val QR_CODE_FORMAT = "QR_CODE"
-        private var onlineActivation = false
-        private const val PIN_LENGTH = 4
-        private val mIdentity = Util.identity
-    }
-
-    private fun checkIdentityExistOrNot(context: Context): Boolean {
-        return extractIdentityInformation(context)
-    }
-
-    private fun entrust(code: String?){
+    private fun entrust(code: String?) {
         if (checkIdentityExistOrNot(this@MainActivity)) {
 
             if (code != null) {
                 enterPinCode(code)
             }
-//                    val intent = Intent(this@MainActivity, SecurityCode::class.java)
-//            val intent = Intent(this@MainActivity, EnterPinCodeExisActivity::class.java)
-//            intent.putExtra(SecurityCode.IS_IDENTITY_SAVED, true)
-//            startActivity(intent)
-//            finish()
 
         } else {
             try {
@@ -152,47 +132,66 @@ class MainActivity : FlutterActivity() {
             }
         }
     }
-    private fun enterPinCode(pinText: String){
+
+    private fun enterPinCode(pinText: String) {
 //        val text = pinText.text.toString()
         val sharedPreferences = this.getSharedPreferences("pinValue", Context.MODE_PRIVATE)
         var sharedPin = sharedPreferences.getString("pinValue", null)
-
-        val intent = intent
-        val extras = intent.extras
-        onlineActivation = extras != null && extras.getBoolean("online")
-        val intro = getString(R.string.intro_PIN, PIN_LENGTH)
-//        (findViewById<View>(R.id.pinIntroHideExis) as TextView).text = intro
-
         val msg: String = pinText //.text.toString()
-        if(msg.trim().isNotEmpty()) {
-            if (msg.trim() != sharedPin){
+        if (msg.trim().isNotEmpty()) {
+            if (msg.trim() != sharedPin) {
                 Toast.makeText(applicationContext, "Mã Pin không chính xác", Toast.LENGTH_SHORT).show()
-            }else{
-
-                Toast.makeText(applicationContext, "Mã Pin chính xác", Toast
-                        .LENGTH_SHORT).show()
-
-//                    startActivity(Intent(this@MainActivity, SecurityCode::class.java))
+                checkPin = false
+            } else {
+                checkPin = true
                 if (!intent.hasExtra(SecurityCode.IS_IDENTITY_SAVED)) {
                     Util.saveIdentityInformation(applicationContext)
                 }
                 var otp: String? = ""
-                for (i in 0 until mIdentity?.otpLength!!) {
+                for (i in 0 until Util.identity?.otpLength!!) {
                     otp += "0"
                 }
                 try {
-                    otp = mIdentity.otp
+                    otp = Util.identity?.otp
                 } catch (e: IdentityGuardMobileException) {
                     Logger.error(e, "Failed to get the current OTP")
                 } finally {
+
                     println("OTPHEHE: $otp")
-                    Toast.makeText(applicationContext, "Mã Pin: $otp", Toast.LENGTH_SHORT).show()
+                    data = otp
+                    println("datahehe: $data")
+//                    Toast.makeText(applicationContext, "Mã Pin: $data", Toast
+//                            .LENGTH_SHORT).show()
 // mOTP?.text = otp //IdentityProvider.formatCode(otp, mIdentity.otpLength / 2, '-')
                 }
             }
-        }else {
+        } else {
             Toast.makeText(applicationContext, "Please enter Pin Code! ", Toast.LENGTH_SHORT).show()
         }
     }
+
+    companion object {
+        // Used when registering for transaction verification.  This can be null
+        // if transaction verification is not required.
+        private val DEVICE_ID = deviceId
+        private const val SCAN_REQUEST_CODE = 0
+        private const val SCAN_MODE = "SCAN_MODE"
+        private const val QR_CODE_MODE = "QR_CODE_MODE"
+        private const val SCAN_INTENT = "com.google.zxing.client.android.SCAN"
+        private const val PLAY_STORE_URI = "market://details?id=com.google.zxing.client.android"
+        private const val SCAN_RESULT = "SCAN_RESULT"
+        private const val SCAN_RESULT_FORMAT = "SCAN_RESULT_FORMAT"
+        private const val QR_CODE_FORMAT = "QR_CODE"
+        private var onlineActivation = false
+        private const val PIN_LENGTH = 4
+        private val mIdentity = Util.identity
+        private var onlineCode = true
+    }
+
+    private fun checkIdentityExistOrNot(context: Context): Boolean {
+        return extractIdentityInformation(context)
+    }
+
+
 }
 

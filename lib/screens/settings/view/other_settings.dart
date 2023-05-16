@@ -9,6 +9,7 @@ import '../../../core/resources/strings.dart';
 import '../../../core/style/colors.dart';
 import '../../../core/style/size.dart';
 import '../components/other_settings_button.dart';
+import '../controller/other_settings_controller.dart';
 
 class OtherSettings extends StatefulWidget {
   const OtherSettings({Key? key}) : super(key: key);
@@ -23,6 +24,8 @@ class _OtherSettingsState extends State<OtherSettings> {
   TextEditingController controllerTextF = TextEditingController();
   String valueText = "";
 
+  final controller = Get.put(OtherSettingsController());
+
   Future<void> testEntrust() async {
     try {
       final package = await platform.invokeMethod("test");
@@ -33,13 +36,23 @@ class _OtherSettingsState extends State<OtherSettings> {
   }
 
   Future<void> testEntrust2(String enterCode) async {
+    final String arg1 = valueText;
+    String? arg2;
     try {
-      final String arg1 = valueText;
-
-      final package = await platform.invokeMethod("test_2", {
-        "enter_code" : arg1
-      });
+      final package =
+          await platform.invokeMethod("test_2", {"enter_code": arg1});
+      arg2 = "hahahaha";
       print(package);
+    } on PlatformException catch (e) {
+      print("Failed to get battery level: ${e.message}");
+    }
+  }
+
+  Future<void> passData() async {
+    try {
+      var res = await platform.invokeMethod("fill_text");
+      await controller.setText(res);
+      print("-----------${controller.name}");
     } on PlatformException catch (e) {
       print("Failed to get battery level: ${e.message}");
     }
@@ -47,7 +60,6 @@ class _OtherSettingsState extends State<OtherSettings> {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBarComponent(
         bgColor: Colors.white,
@@ -78,14 +90,13 @@ class _OtherSettingsState extends State<OtherSettings> {
                       ),
                     ),
                     builder: (BuildContext context) {
-
                       return Container(
                           margin: EdgeInsets.only(
                             left: width_8,
                             right: width_8,
                             top: height_8,
                           ),
-                          height: Get.size.height / 1.2,
+                          height: Get.size.height / 3,
                           child: SingleChildScrollView(
                             child: Column(
                               children: [
@@ -120,7 +131,7 @@ class _OtherSettingsState extends State<OtherSettings> {
                                     maxLength: 4,
                                     controller: controllerTextF,
                                     onChanged: (value) {
-                                     valueText = value;
+                                      valueText = value;
                                     },
                                     style: TextStyle(
                                       fontSize: fontSize_11,
@@ -140,11 +151,21 @@ class _OtherSettingsState extends State<OtherSettings> {
                                     )),
                                 ElevatedButton(
                                     onPressed: () {
-
-                                      testEntrust2(valueText);
-                                      // testEntrust2(controllerTextF.text.toString());
+                                      if(controllerTextF.text.isNotEmpty) {
+                                        testEntrust2(valueText);
+                                        passData();
+                                      }else{
+                                        controllerTextF.text = "";
+                                      }
                                     },
-                                    child: Text("test"))
+                                    child: Text("test")),
+                                GetBuilder<OtherSettingsController>(
+                                    builder: (c) => Text(
+                                      controller.name ?? '',
+                                          style: TextStyle(
+                                            color: Colors.black,
+                                          ),
+                                        ))
                               ],
                             ),
                           ));

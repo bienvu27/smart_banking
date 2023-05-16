@@ -363,8 +363,8 @@ class _TransactionInforPageState extends State<TransactionInforPage> {
               child: ButtonComponent(
                   title: NEXT,
                   bgColor: button_color_home,
-                  callback: () =>  testEntrust())
-                     // Get.toNamed("/transaction_confirm", arguments: '')),
+                  callback: () => Get.toNamed("/transaction_confirm", arguments: '')),
+
             ),
           );
         });

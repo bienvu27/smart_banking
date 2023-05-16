@@ -19,16 +19,20 @@ class EnterPinCodeExisActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_enter_pin_code_exis)
+
         val pinText = findViewById<PinView>(R.id.pin_view_exis)
         val nextButton = findViewById<Button>(R.id.nextButton)
         val text = pinText.text.toString()
+
         val sharedPreferences = this.getSharedPreferences("pinValue", Context.MODE_PRIVATE)
         var sharedPin = sharedPreferences.getString("pinValue", null)
 
 
         val intent = intent
         val extras = intent.extras
+        println("extrashehe: $extras")
         onlineActivation = extras != null && extras.getBoolean("online")
+        println("okela ${extras != null && extras.getBoolean("online")}")
         val intro = getString(R.string.intro_PIN, PIN_LENGTH)
         (findViewById<View>(R.id.pinIntroHideExis) as TextView).text = intro
 
