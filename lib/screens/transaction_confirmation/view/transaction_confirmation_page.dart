@@ -1,17 +1,77 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:otp_text_field/otp_field.dart';
 import 'package:otp_text_field/style.dart';
+import 'package:sms_autofill/sms_autofill.dart';
 
 import '../../../core/resources/strings.dart';
 import '../../../core/style/colors.dart';
 import '../../../core/style/size.dart';
 import '../../components/app_bar/app_bar_component.dart';
 import '../../components/button/button_component.dart';
+import '../../settings/controller/other_settings_controller.dart';
 import '../components/title_components.dart';
 
-class TransactionConfirmationPage extends StatelessWidget {
+class TransactionConfirmationPage extends StatefulWidget {
   const TransactionConfirmationPage({Key? key}) : super(key: key);
+
+  @override
+  State<TransactionConfirmationPage> createState() =>
+      _TransactionConfirmationPageState();
+}
+
+class _TransactionConfirmationPageState
+    extends State<TransactionConfirmationPage> {
+  static const platform = MethodChannel('entrust.sdk.dev/flutter');
+
+  TextEditingController controllerTextF = TextEditingController();
+  String valueText = "";
+  final controller = Get.put(OtherSettingsController());
+
+  Future<void> testEntrust2(String enterCode) async {
+    final String arg1 = valueText;
+    String? arg2;
+    try {
+      final package =
+          await platform.invokeMethod("test_2", {"enter_code": arg1});
+      arg2 = "hahahaha";
+      print(package);
+    } on PlatformException catch (e) {
+      print("Failed to get battery level: ${e.message}");
+    }
+  }
+
+  Future<void> passData() async {
+    try {
+      var res = await platform.invokeMethod("fill_text");
+      await controller.setText(res);
+      print("-----------${controller.name}");
+    } on PlatformException catch (e) {
+      print("Failed to get battery level: ${e.message}");
+    }
+  }
+
+  Future<void> checkPin() async {
+    try {
+      var res = await platform.invokeMethod("check_pin");
+      await controller.checkPin(res);
+      print("-----------${controller.pin}");
+    } on PlatformException catch (e) {
+      print("Failed to get battery level: ${e.message}");
+    }
+  }
+
+
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    controller.timer?.cancel();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -37,10 +97,22 @@ class TransactionConfirmationPage extends StatelessWidget {
                     color: clr_white,
                     child: Column(
                       children: const [
-                        TitleComponents(title: TITLE_37, subTitle: '2160000542522', color: clr_black),
-                        TitleComponents(title: TITLE_38, subTitle: '2160000542522', color: PRIMARY_COLOR),
-                        TitleComponents(title: TITLE_39, subTitle: 'HOÀNG THỊ THUỲ MAI', color: PRIMARY_COLOR),
-                        TitleComponents(title: TITLE_40, subTitle: 'BIDV', color: PRIMARY_COLOR),
+                        TitleComponents(
+                            title: TITLE_37,
+                            subTitle: '2160000542522',
+                            color: clr_black),
+                        TitleComponents(
+                            title: TITLE_38,
+                            subTitle: '2160000542522',
+                            color: PRIMARY_COLOR),
+                        TitleComponents(
+                            title: TITLE_39,
+                            subTitle: 'HOÀNG THỊ THUỲ MAI',
+                            color: PRIMARY_COLOR),
+                        TitleComponents(
+                            title: TITLE_40,
+                            subTitle: 'BIDV',
+                            color: PRIMARY_COLOR),
                       ],
                     ),
                   ),
@@ -140,22 +212,42 @@ class TransactionConfirmationPage extends StatelessWidget {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
-                                  OTPTextField(
-                                    length: 6,
-                                    width: MediaQuery.of(context).size.width / 1.5,
-                                    fieldWidth: width_24,
-                                    style: TextStyle(
-                                      fontSize: fontSize_20,
-                                      fontWeight: FontWeight.w900,
-                                    ),
-                                    textFieldAlignment: MainAxisAlignment.spaceAround,
-                                    fieldStyle: FieldStyle.underline,
-                                    onChanged: (_) {
+                                  // OTPTextField(
+                                  //   length: 6,
+                                  //   width:
+                                  //       MediaQuery.of(context).size.width / 1.5,
+                                  //   fieldWidth: width_24,
+                                  //   style: TextStyle(
+                                  //     fontSize: fontSize_20,
+                                  //     fontWeight: FontWeight.w900,
+                                  //   ),
+                                  //   textFieldAlignment:
+                                  //       MainAxisAlignment.spaceAround,
+                                  //   fieldStyle: FieldStyle.underline,
+                                  //   onChanged: (_) {},
+                                  //   onCompleted: (pin) {
+                                  //     print("Completed: " + pin);
+                                  //   },
+                                  // ),
+                                  SizedBox(
+                                    width:
+                                        MediaQuery.of(context).size.width / 1.5,
+                                    child: PinFieldAutoFill(
+                                        decoration: UnderlineDecoration(
+                                          textStyle: const TextStyle(
+                                              fontSize: 20,
+                                              color: Colors.black),
+                                          colorBuilder: FixedColorBuilder(
+                                              Colors.black.withOpacity(0.3)),
+                                        ),
 
-                                    },
-                                    onCompleted: (pin) {
-                                      print("Completed: " + pin);
-                                    },
+                                        // UnderlineDecoration,
+                                        // BoxLooseDecoration or BoxTightDecoration see https://github.com/TinoGuo/pin_input_text_field for more info,
+                                        //currentCode: // prefill with a code
+                                        // onCodeSubmitted: //code submitted callback
+                                        // onCodeChanged: //code changed callback
+                                        codeLength: 8 //code length, default 6
+                                        ),
                                   ),
                                   Icon(
                                     Icons.keyboard_voice_outlined,
@@ -173,8 +265,221 @@ class TransactionConfirmationPage extends StatelessWidget {
                                     title: CONFIRM,
                                     bgColor: button_color_home,
                                     callback: () {
-                                      Navigator.of(context).pop();
-                                      Get.toNamed("/transfer_success", arguments: '');
+                                      showModalBottomSheet<void>(
+                                          context: context,
+                                          isScrollControlled: true,
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.vertical(
+                                              top: Radius.circular(25),
+                                            ),
+                                          ),
+                                          builder: (BuildContext context) {
+                                            return Container(
+                                                margin: EdgeInsets.only(
+                                                  left: width_8,
+                                                  right: width_8,
+                                                  top: height_8,
+                                                ),
+                                                height: Get.size.height / 3,
+                                                child: SingleChildScrollView(
+                                                  child: Column(
+                                                    children: [
+                                                      Row(
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .spaceBetween,
+                                                        children: [
+                                                          Text(
+                                                            ENTER_PIN,
+                                                            style: TextStyle(
+                                                              fontFamily:
+                                                                  'open_sans',
+                                                              fontSize:
+                                                                  fontSize_12,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w600,
+                                                            ),
+                                                          ),
+                                                          InkWell(
+                                                            onTap: () =>
+                                                                Navigator.pop(
+                                                                    context),
+                                                            child: Text(
+                                                              CANCEL,
+                                                              style: TextStyle(
+                                                                fontSize:
+                                                                    fontSize_12,
+                                                                color:
+                                                                    PRIMARY_COLOR,
+                                                                fontFamily:
+                                                                    'open_sans',
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w600,
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                      SizedBox(
+                                                        width: MediaQuery.of(
+                                                                    context)
+                                                                .size
+                                                                .width /
+                                                            1.5,
+                                                        child: PinFieldAutoFill(
+                                                          decoration:
+                                                              UnderlineDecoration(
+                                                            textStyle:
+                                                                const TextStyle(
+                                                                    fontSize:
+                                                                        20,
+                                                                    color: Colors
+                                                                        .black),
+                                                            colorBuilder:
+                                                                FixedColorBuilder(Colors
+                                                                    .black
+                                                                    .withOpacity(
+                                                                        0.3)),
+                                                          ),
+                                                          codeLength: 4,
+                                                          keyboardType:
+                                                              TextInputType
+                                                                  .number,
+                                                          controller:
+                                                              controllerTextF,
+                                                          onCodeChanged:
+                                                              (value) {
+                                                            valueText =
+                                                                value ?? '';
+                                                          },
+                                                        ),
+                                                      ),
+                                                      ElevatedButton(
+                                                          onPressed: () async {
+                                                            if (controllerTextF
+                                                                .text
+                                                                .isNotEmpty) {
+                                                              testEntrust2(
+                                                                  valueText);
+                                                              passData();
+                                                              if (controller
+                                                                      .name !=
+                                                                  "") {
+                                                                await checkPin();
+                                                                if (controller
+                                                                    .pin) {
+                                                                  print(
+                                                                      'PinValue true: ${controller.pin}');
+                                                                  Navigator.pop(
+                                                                      context);
+                                                                  controller
+                                                                      .startTimer();
+                                                                  showModalBottomSheet<
+                                                                          void>(
+                                                                      context:
+                                                                          context,
+                                                                      isScrollControlled:
+                                                                          true,
+                                                                      shape:
+                                                                          RoundedRectangleBorder(
+                                                                        borderRadius:
+                                                                            BorderRadius.vertical(
+                                                                          top: Radius.circular(
+                                                                              25),
+                                                                        ),
+                                                                      ),
+                                                                      builder:
+                                                                          (BuildContext
+                                                                              context) {
+                                                                        return Container(
+                                                                            margin: EdgeInsets
+                                                                                .only(
+                                                                              left: width_8,
+                                                                              right: width_8,
+                                                                              top: height_8,
+                                                                            ),
+                                                                            height: Get.size.height /
+                                                                                3,
+                                                                            child:
+                                                                                SingleChildScrollView(
+                                                                              child: Column(
+                                                                                children: [
+                                                                                  Row(
+                                                                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                                                    children: [
+                                                                                      Text(
+                                                                                        ENTER_PIN,
+                                                                                        style: TextStyle(
+                                                                                          fontFamily: 'open_sans',
+                                                                                          fontSize: fontSize_12,
+                                                                                          fontWeight: FontWeight.w600,
+                                                                                        ),
+                                                                                      ),
+                                                                                      InkWell(
+                                                                                        onTap: () => Navigator.pop(context),
+                                                                                        child: Text(
+                                                                                          CANCEL,
+                                                                                          style: TextStyle(
+                                                                                            fontSize: fontSize_12,
+                                                                                            color: PRIMARY_COLOR,
+                                                                                            fontFamily: 'open_sans',
+                                                                                            fontWeight: FontWeight.w600,
+                                                                                          ),
+                                                                                        ),
+                                                                                      ),
+                                                                                    ],
+                                                                                  ),
+                                                                                  GetBuilder<OtherSettingsController>(
+                                                                                      builder: (c) => Column(
+                                                                                        children: [
+                                                                                          Text(
+                                                                                                controller.name ?? '',
+                                                                                                style: TextStyle(
+                                                                                                  color: Colors.black,
+                                                                                                ),
+                                                                                              ),
+                                                                                          SizedBox(height: 20,),
+                                                                                          Text('${c.start} (s)'),
+                                                                                        ],
+                                                                                      )),
+                                                                                  SizedBox(height: 20,),
+                                                                                  ElevatedButton(
+                                                                                      onPressed: () {
+                                                                                        Get.toNamed("/transfer_success", arguments: '');
+                                                                                      },
+                                                                                      child: Text("Finish")),
+                                                                                ],
+                                                                              ),
+                                                                            ));
+                                                                      });
+                                                                } else {
+                                                                  print(
+                                                                      'PinValue false: ${controller.pin}');
+                                                                }
+                                                              }
+                                                            } else {
+                                                              controllerTextF
+                                                                  .text = "";
+                                                            }
+                                                          },
+                                                          child:
+                                                              Text("Confirm")),
+                                                      // GetBuilder<OtherSettingsController>(
+                                                      //     builder: (c) => Text(
+                                                      //       controller.name ?? '',
+                                                      //       style: TextStyle(
+                                                      //         color: Colors.black,
+                                                      //       ),
+                                                      //     ))
+                                                    ],
+                                                  ),
+                                                ));
+                                          });
+                                      // Navigator.of(context).pop();
+                                      // Get.toNamed("/transfer_success",
+                                      //     arguments: '');
                                     }),
                               ),
                             ),

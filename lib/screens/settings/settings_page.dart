@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:smart_banking/screens/settings/view/other_settings.dart';
 import '../../core/common/utils.dart';
 import '../../core/resources/strings.dart';
 import '../../core/style/colors.dart';
 import '../../core/style/size.dart';
-import '../../router/app_routers.dart';
 
 import 'components/settings_component.dart';
 
@@ -14,7 +15,6 @@ class SettingsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-
         height: MediaQuery.of(context).size.height,
         child: SingleChildScrollView(
           child: Column(
@@ -31,7 +31,8 @@ class SettingsPage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         Container(
-                          margin: EdgeInsets.only(top: height_24, bottom: height_8),
+                          margin:
+                              EdgeInsets.only(top: height_24, bottom: height_8),
                           width: height_40,
                           height: width_40,
                           decoration: const BoxDecoration(
@@ -71,7 +72,8 @@ class SettingsPage extends StatelessWidget {
                       right: width_8,
                       child: GestureDetector(
                         onTap: () async {
-                          Utils.showDialogLogout(context, LOGOUT, LOGOUT_2, NO, YES);
+                          Utils.showDialogLogout(
+                              context, LOGOUT, LOGOUT_2, NO, YES);
                         },
                         child: Container(
                           padding: EdgeInsets.only(
@@ -145,7 +147,11 @@ class SettingsPage extends StatelessWidget {
               ),
               Container(
                 margin: EdgeInsets.only(top: height_6),
-                padding: EdgeInsets.only(left: width_8, right: width_8, top: height_16,),
+                padding: EdgeInsets.only(
+                  left: width_8,
+                  right: width_8,
+                  top: height_16,
+                ),
                 color: clr_white,
                 width: MediaQuery.of(context).size.width,
                 child: Column(
@@ -185,7 +191,7 @@ class SettingsPage extends StatelessWidget {
                     SettingComponent(
                       title: OTHER_SETTINGS,
                       icon: Icons.fingerprint,
-                      callback: () {},
+                      callback: () => Get.to(() => OtherSettings()),
                     ),
                   ],
                 ),

@@ -18,7 +18,7 @@ class SettingComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => callback,
+      onTap: () => callback(),
       child: Container(
         margin: EdgeInsets.only(
           bottom: height_16,
@@ -37,7 +37,11 @@ class SettingComponent extends StatelessWidget {
           children: [
             Text(
               title,
-              style: TextStyle(fontSize: fontSize_12, fontWeight: FontWeight.w300, color: clr_black),
+              style: TextStyle(
+                fontSize: fontSize_12,
+                fontWeight: FontWeight.w300,
+                color: clr_black,
+              ),
             ),
             Icon(
               icon,

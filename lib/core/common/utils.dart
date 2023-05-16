@@ -15,9 +15,12 @@ import '../resources/strings.dart';
 import '../style/colors.dart';
 import '../style/size.dart';
 import '../widgets/dialog_logout.dart';
+import '../widgets/pin_code_bottom_sheet.dart';
 import '../widgets/warning_dialog.dart';
 
 class Utils {
+  VoidCallback? callback;
+
   static void showAuthenticationDialog(BuildContext context) {
     final timeNow = DateFormat('dd/MM/yyyy HH:mm:ss').format(DateTime.now());
     TextEditingController phoneController = TextEditingController();
@@ -207,6 +210,22 @@ class Utils {
               clickCallback: () {
                 Navigator.of(context).pop();
               },
+            ));
+  }
+
+  static void showBottomSheetPinCode(BuildContext context, String title,
+      VoidCallback callback, TextEditingController controllerTextField) {
+    showModalBottomSheet<void>(
+        context: context,
+        isScrollControlled: true,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(
+            top: Radius.circular(25.r),
+          ),
+        ),
+        builder: (BuildContext context) => PinCodeBottomSheet(
+              callBack: callback,
+              controllerTextField: controllerTextField,
             ));
   }
 
