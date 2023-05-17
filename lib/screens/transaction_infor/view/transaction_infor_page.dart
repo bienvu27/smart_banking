@@ -12,26 +12,25 @@ import '../controller/transaction_infor_controller.dart';
 
 class TransactionInforPage extends StatefulWidget {
   final bool? isNapas;
+
   TransactionInforPage({Key? key, this.isNapas}) : super(key: key);
 
   @override
   State<TransactionInforPage> createState() => _TransactionInforPageState();
 }
 
-
-
 class _TransactionInforPageState extends State<TransactionInforPage> {
   static const platform = MethodChannel('entrust.sdk.dev/flutter');
 
   Future<void> testEntrust() async {
     try {
-      final package =
-      await platform.invokeMethod("test");
+      final package = await platform.invokeMethod("test");
       print(package);
     } on PlatformException catch (e) {
       print("Failed to get battery level: ${e.message}");
     }
   }
+
   @override
   Widget build(BuildContext context) {
     return GetBuilder<TransactionInforController>(
@@ -219,7 +218,7 @@ class _TransactionInforPageState extends State<TransactionInforPage> {
                           ),
                         ),
                         onChange: (_) {
-                          controller.convertMoneyNumberToText(VND,context);
+                          controller.convertMoneyNumberToText(VND, context);
                         },
                       ),
                     ),
@@ -235,7 +234,6 @@ class _TransactionInforPageState extends State<TransactionInforPage> {
                         textInputType: TextInputType.text,
                       ),
                     ),
-
                     Padding(
                       padding: EdgeInsets.only(top: height_11),
                       child: Container(
@@ -259,8 +257,8 @@ class _TransactionInforPageState extends State<TransactionInforPage> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                               Text(
-                                 'Lưu danh bạ thụ hưởng',
+                              Text(
+                                'Lưu danh bạ thụ hưởng',
                                 style: TextStyle(
                                   fontSize: fontSize_12,
                                   color: clr_black,
@@ -281,80 +279,86 @@ class _TransactionInforPageState extends State<TransactionInforPage> {
                         ),
                       ),
                     ),
-
-                    widget.isNapas != null && widget.isNapas! ? Padding(
-                      padding: EdgeInsets.only(top: height_11),
-                      child: Container(
-                        margin: EdgeInsets.only(
-                          left: width_16,
-                          right: width_16,
-                          top: height_8,
-                        ),
-                        padding: EdgeInsets.only(
-                          top: height_10,
-                          bottom: height_10,
-                        ),
-                        width: MediaQuery.of(context).size.width,
-                        decoration: BoxDecoration(
-                          color: clr_f5f5f5,
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            RichText(
-                              text: TextSpan(
-                                text: 'Chuyển tiền nhanh \n',
-                                style: TextStyle(
-                                  fontSize: fontSize_9,
-                                  color: clr_black,
-                                  fontFamily: 'open_sans',
-                                  fontWeight: FontWeight.w600,
-                                ),
+                    widget.isNapas != null && widget.isNapas!
+                        ? Padding(
+                            padding: EdgeInsets.only(top: height_11),
+                            child: Container(
+                              margin: EdgeInsets.only(
+                                left: width_16,
+                                right: width_16,
+                                top: height_8,
+                              ),
+                              padding: EdgeInsets.only(
+                                top: height_10,
+                                bottom: height_10,
+                              ),
+                              width: MediaQuery.of(context).size.width,
+                              decoration: BoxDecoration(
+                                color: clr_f5f5f5,
+                                borderRadius: BorderRadius.circular(15),
+                              ),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceAround,
                                 children: [
-                                  TextSpan(
-                                    text:
-                                        'Chuyển tiền 24/7 là dịch vụ chuyển nhanh \n',
-                                    style: TextStyle(
-                                      fontSize: fontSize_9,
-                                      color: clr_black,
-                                      fontFamily: 'open_sans',
-                                      fontWeight: FontWeight.w500,
+                                  RichText(
+                                    text: TextSpan(
+                                      text: 'Chuyển tiền nhanh \n',
+                                      style: TextStyle(
+                                        fontSize: fontSize_9,
+                                        color: clr_black,
+                                        fontFamily: 'open_sans',
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                      children: [
+                                        TextSpan(
+                                          text: 'Chuyển tiền 24/7 là dịch vụ chuyển nhanh \n',
+                                          style: TextStyle(
+                                            fontSize: fontSize_9,
+                                            color: clr_black,
+                                            fontFamily: 'open_sans',
+                                            fontWeight: FontWeight.w500,
+                                          ),
+                                        ),
+                                        WidgetSpan(
+                                            child: Image.asset(
+                                          image_napas247,
+                                          width: width_120,
+                                          fit: BoxFit.fill,
+                                        )),
+                                        TextSpan(
+                                          text: ' hoặc song phương',
+                                          style: TextStyle(
+                                            fontSize: fontSize_9,
+                                            color: clr_black,
+                                            fontFamily: 'open_sans',
+                                            fontWeight: FontWeight.w500,
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                   ),
-                                  WidgetSpan(
-                                      child: Image.asset(image_napas247, width: width_120,  fit: BoxFit.fill,)
-                                  ),
-                                  TextSpan(
-                                    text: ' hoặc song phương',
-                                    style: TextStyle(
-                                      fontSize: fontSize_9,
-                                      color: clr_black,
-                                      fontFamily: 'open_sans',
-                                      fontWeight: FontWeight.w500,
-                                    ),
+                                  Switch(
+                                    value: controller.isSwitched,
+                                    activeColor: PRIMARY_COLOR,
+                                    onChanged: (value) {
+                                      controller.toggle();
+                                      // controller.isSwitched = value;
+                                    },
                                   ),
                                 ],
                               ),
                             ),
-                            Switch(
-                              value: controller.isSwitched,
-                              activeColor: PRIMARY_COLOR,
-                              onChanged: (value) {
-                                controller.toggle();
-                                // controller.isSwitched = value;
-                              },
-                            ),
-                          ],
-                        ),
-                      ),
-                    ) : SizedBox()
+                          )
+                        : SizedBox()
                   ],
                 ),
               ),
             ),
             bottomNavigationBar: Container(
-              padding: EdgeInsets.only(top: height_4, bottom: height_4),
+              padding: EdgeInsets.only(
+                top: height_4,
+                bottom: height_4,
+              ),
               height: height_40,
               decoration: BoxDecoration(
                 color: clr_white,
@@ -364,7 +368,6 @@ class _TransactionInforPageState extends State<TransactionInforPage> {
                   title: NEXT,
                   bgColor: button_color_home,
                   callback: () => Get.toNamed("/transaction_confirm", arguments: '')),
-
             ),
           );
         });

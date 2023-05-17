@@ -140,7 +140,7 @@ class MainActivity : FlutterActivity() {
         val msg: String = pinText //.text.toString()
         if (msg.trim().isNotEmpty()) {
             if (msg.trim() != sharedPin) {
-                Toast.makeText(applicationContext, "Mã Pin không chính xác", Toast.LENGTH_SHORT).show()
+//                Toast.makeText(applicationContext, "Mã Pin không chính xác", Toast.LENGTH_SHORT).show()
                 checkPin = false
             } else {
                 checkPin = true

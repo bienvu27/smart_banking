@@ -1,10 +1,21 @@
 import 'dart:async';
 
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
 class OtherSettingsController extends GetxController {
   String? name = "haha";
   bool pin = false;
+  String textError = "";
+
+  Timer? timer;
+  int start = 30;
+
+
+  checkErrorText(String text){
+    textError = text;
+    update();
+  }
 
   setText(title) {
     name = title;
@@ -15,9 +26,6 @@ class OtherSettingsController extends GetxController {
     pin = pinValue;
     update();
   }
-
-  Timer? timer;
-  int start = 30;
 
   void startTimer() {
     const oneSec = const Duration(seconds: 1);
@@ -32,5 +40,14 @@ class OtherSettingsController extends GetxController {
         update();
       },
     );
+  }
+
+  void offBottomSheet(BuildContext context){
+    if(start == 0){
+      Navigator.pop(context);
+      update();
+      // Navigator.of(context).pop();
+    }
+
   }
 }

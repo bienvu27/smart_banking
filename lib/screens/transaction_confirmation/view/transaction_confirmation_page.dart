@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:otp_text_field/otp_field.dart';
 import 'package:otp_text_field/style.dart';
+import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:sms_autofill/sms_autofill.dart';
 
 import '../../../core/resources/strings.dart';
@@ -19,12 +20,10 @@ class TransactionConfirmationPage extends StatefulWidget {
   const TransactionConfirmationPage({Key? key}) : super(key: key);
 
   @override
-  State<TransactionConfirmationPage> createState() =>
-      _TransactionConfirmationPageState();
+  State<TransactionConfirmationPage> createState() => _TransactionConfirmationPageState();
 }
 
-class _TransactionConfirmationPageState
-    extends State<TransactionConfirmationPage> {
+class _TransactionConfirmationPageState extends State<TransactionConfirmationPage> {
   static const platform = MethodChannel('entrust.sdk.dev/flutter');
 
   TextEditingController controllerTextF = TextEditingController();
@@ -35,8 +34,7 @@ class _TransactionConfirmationPageState
     final String arg1 = valueText;
     String? arg2;
     try {
-      final package =
-          await platform.invokeMethod("test_2", {"enter_code": arg1});
+      final package = await platform.invokeMethod("test_2", {"enter_code": arg1});
       arg2 = "hahahaha";
       print(package);
     } on PlatformException catch (e) {
@@ -64,12 +62,11 @@ class _TransactionConfirmationPageState
     }
   }
 
-
-
   @override
   void dispose() {
     // TODO: implement dispose
     controller.timer?.cancel();
+    controllerTextF.dispose();
     super.dispose();
   }
 
@@ -84,422 +81,279 @@ class _TransactionConfirmationPageState
         title: TRANSACTION_CONFIRM,
         callback: () => Get.back(),
       ),
-      body: Column(
-        children: [
-          Expanded(
-            child: SingleChildScrollView(
-              child: Column(
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  Container(
-                    margin: EdgeInsets.only(top: height_8),
-                    padding: EdgeInsets.only(bottom: height_8),
-                    color: clr_white,
-                    child: Column(
-                      children: const [
-                        TitleComponents(
-                            title: TITLE_37,
-                            subTitle: '2160000542522',
-                            color: clr_black),
-                        TitleComponents(
-                            title: TITLE_38,
-                            subTitle: '2160000542522',
-                            color: PRIMARY_COLOR),
-                        TitleComponents(
-                            title: TITLE_39,
-                            subTitle: 'HOÀNG THỊ THUỲ MAI',
-                            color: PRIMARY_COLOR),
-                        TitleComponents(
-                            title: TITLE_40,
-                            subTitle: 'BIDV',
-                            color: PRIMARY_COLOR),
-                      ],
-                    ),
+      body: SingleChildScrollView(
+        physics: NeverScrollableScrollPhysics(),
+        child: Column(
+          children: [
+            Column(
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                Container(
+                  margin: EdgeInsets.only(top: height_8),
+                  padding: EdgeInsets.only(bottom: height_8),
+                  color: clr_white,
+                  child: Column(
+                    children: const [
+                      TitleComponents(title: TITLE_37, subTitle: '2160000542522', color: clr_black),
+                      TitleComponents(title: TITLE_38, subTitle: '2160000542522', color: PRIMARY_COLOR),
+                      TitleComponents(title: TITLE_39, subTitle: 'HOÀNG THỊ THUỲ MAI', color: PRIMARY_COLOR),
+                      TitleComponents(title: TITLE_40, subTitle: 'BIDV', color: PRIMARY_COLOR),
+                    ],
                   ),
-                  Container(
-                    margin: EdgeInsets.only(top: height_8),
-                    padding: EdgeInsets.only(bottom: height_8),
-                    color: clr_white,
-                    child: Column(
-                      children: const [
-                        TitleComponents(
-                          title: AMOUT_OF_MONEY,
-                          subTitle: '10,000 VND',
-                          color: PRIMARY_COLOR,
-                        ),
-                        TitleComponents(
-                          title: AMOUT_OF_MONEY2,
-                          subTitle: '10,000 VND',
-                          color: PRIMARY_COLOR,
-                        ),
-                      ],
-                    ),
+                ),
+                Container(
+                  margin: EdgeInsets.only(top: height_8),
+                  padding: EdgeInsets.only(bottom: height_8),
+                  color: clr_white,
+                  child: Column(
+                    children: const [
+                      TitleComponents(
+                        title: AMOUT_OF_MONEY,
+                        subTitle: '10,000 VND',
+                        color: PRIMARY_COLOR,
+                      ),
+                      TitleComponents(
+                        title: AMOUT_OF_MONEY2,
+                        subTitle: '10,000 VND',
+                        color: PRIMARY_COLOR,
+                      ),
+                    ],
                   ),
-                  Container(
-                    margin: EdgeInsets.only(top: height_8),
-                    padding: EdgeInsets.only(bottom: height_8),
-                    height: MediaQuery.of(context).size.height / 3,
-                    color: clr_white,
-                    child: Column(
-                      children: const [
-                        TitleComponents(
-                          title: TITLE_41,
-                          subTitle: '28/03/2023 15:19:57',
-                          color: clr_black,
-                        ),
-                        TitleComponents(
-                          title: DESCRIPTIONS,
-                          subTitle: 'CAO VAN HOANG Chuyen tien',
-                          color: clr_black,
-                        ),
-                      ],
-                    ),
+                ),
+                Container(
+                  margin: EdgeInsets.only(top: height_8),
+                  padding: EdgeInsets.only(bottom: height_8),
+                  height: MediaQuery.of(context).size.height,
+                  color: clr_white,
+                  child: Column(
+                    children: const [
+                      TitleComponents(
+                        title: TITLE_41,
+                        subTitle: '28/03/2023 15:19:57',
+                        color: clr_black,
+                      ),
+                      TitleComponents(
+                        title: DESCRIPTIONS,
+                        subTitle: 'CAO VAN HOANG Chuyen tien',
+                        color: clr_black,
+                      ),
+                    ],
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
-          ),
-          Container(
-              color: Colors.white,
-              height: height_350,
-              child: Stack(
-                alignment: Alignment.bottomCenter,
-                children: [
-                  SizedBox(
-                      height: height_121,
-                      child: Container(
-                        padding: EdgeInsets.only(
-                          left: width_8,
-                          right: width_8,
-                          bottom: height_10,
-                        ),
-                        decoration: BoxDecoration(
-                            color: clr_white,
-                            borderRadius: BorderRadius.only(
-                              topRight: Radius.circular(border_8),
-                              topLeft: Radius.circular(border_8),
-                            ),
-                            boxShadow: const [
-                              BoxShadow(
-                                color: Colors.grey,
-                                offset: Offset(0.0, 1.0), //(x,y)
-                                blurRadius: 2.0,
-                              ),
-                            ]),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            Flexible(
-                              flex: 2,
-                              child: Container(
-                                margin: EdgeInsets.only(
-                                  top: height_8,
-                                ),
-                                child: Text(
-                                  TITLE_42,
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                    color: clr_black,
-                                    fontSize: fontSize_12,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Flexible(
-                              flex: 2,
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  // OTPTextField(
-                                  //   length: 6,
-                                  //   width:
-                                  //       MediaQuery.of(context).size.width / 1.5,
-                                  //   fieldWidth: width_24,
-                                  //   style: TextStyle(
-                                  //     fontSize: fontSize_20,
-                                  //     fontWeight: FontWeight.w900,
-                                  //   ),
-                                  //   textFieldAlignment:
-                                  //       MainAxisAlignment.spaceAround,
-                                  //   fieldStyle: FieldStyle.underline,
-                                  //   onChanged: (_) {},
-                                  //   onCompleted: (pin) {
-                                  //     print("Completed: " + pin);
-                                  //   },
-                                  // ),
-                                  SizedBox(
-                                    width:
-                                        MediaQuery.of(context).size.width / 1.5,
-                                    child: PinFieldAutoFill(
-                                        decoration: UnderlineDecoration(
-                                          textStyle: const TextStyle(
-                                              fontSize: 20,
-                                              color: Colors.black),
-                                          colorBuilder: FixedColorBuilder(
-                                              Colors.black.withOpacity(0.3)),
-                                        ),
-
-                                        // UnderlineDecoration,
-                                        // BoxLooseDecoration or BoxTightDecoration see https://github.com/TinoGuo/pin_input_text_field for more info,
-                                        //currentCode: // prefill with a code
-                                        // onCodeSubmitted: //code submitted callback
-                                        // onCodeChanged: //code changed callback
-                                        codeLength: 8 //code length, default 6
-                                        ),
-                                  ),
-                                  Icon(
-                                    Icons.keyboard_voice_outlined,
-                                    size: fontSize_20,
-                                    color: clr_black26,
-                                  )
-                                ],
-                              ),
-                            ),
-                            Flexible(
-                              flex: 2,
-                              child: Container(
-                                padding: EdgeInsets.only(top: height_8),
-                                child: ButtonComponent(
-                                    title: CONFIRM,
-                                    bgColor: button_color_home,
-                                    callback: () {
-                                      showModalBottomSheet<void>(
-                                          context: context,
-                                          isScrollControlled: true,
-                                          shape: RoundedRectangleBorder(
-                                            borderRadius: BorderRadius.vertical(
-                                              top: Radius.circular(25),
-                                            ),
-                                          ),
-                                          builder: (BuildContext context) {
-                                            return Container(
-                                                margin: EdgeInsets.only(
-                                                  left: width_8,
-                                                  right: width_8,
-                                                  top: height_8,
-                                                ),
-                                                height: Get.size.height / 3,
-                                                child: SingleChildScrollView(
-                                                  child: Column(
-                                                    children: [
-                                                      Row(
-                                                        mainAxisAlignment:
-                                                            MainAxisAlignment
-                                                                .spaceBetween,
-                                                        children: [
-                                                          Text(
-                                                            ENTER_PIN,
-                                                            style: TextStyle(
-                                                              fontFamily:
-                                                                  'open_sans',
-                                                              fontSize:
-                                                                  fontSize_12,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w600,
-                                                            ),
-                                                          ),
-                                                          InkWell(
-                                                            onTap: () =>
-                                                                Navigator.pop(
-                                                                    context),
-                                                            child: Text(
-                                                              CANCEL,
-                                                              style: TextStyle(
-                                                                fontSize:
-                                                                    fontSize_12,
-                                                                color:
-                                                                    PRIMARY_COLOR,
-                                                                fontFamily:
-                                                                    'open_sans',
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w600,
-                                                              ),
-                                                            ),
-                                                          ),
-                                                        ],
-                                                      ),
-                                                      SizedBox(
-                                                        width: MediaQuery.of(
-                                                                    context)
-                                                                .size
-                                                                .width /
-                                                            1.5,
-                                                        child: PinFieldAutoFill(
-                                                          decoration:
-                                                              UnderlineDecoration(
-                                                            textStyle:
-                                                                const TextStyle(
-                                                                    fontSize:
-                                                                        20,
-                                                                    color: Colors
-                                                                        .black),
-                                                            colorBuilder:
-                                                                FixedColorBuilder(Colors
-                                                                    .black
-                                                                    .withOpacity(
-                                                                        0.3)),
-                                                          ),
-                                                          codeLength: 4,
-                                                          keyboardType:
-                                                              TextInputType
-                                                                  .number,
-                                                          controller:
-                                                              controllerTextF,
-                                                          onCodeChanged:
-                                                              (value) {
-                                                            valueText =
-                                                                value ?? '';
-                                                          },
-                                                        ),
-                                                      ),
-                                                      ElevatedButton(
-                                                          onPressed: () async {
-                                                            if (controllerTextF
-                                                                .text
-                                                                .isNotEmpty) {
-                                                              testEntrust2(
-                                                                  valueText);
-                                                              passData();
-                                                              if (controller
-                                                                      .name !=
-                                                                  "") {
-                                                                await checkPin();
-                                                                if (controller
-                                                                    .pin) {
-                                                                  print(
-                                                                      'PinValue true: ${controller.pin}');
-                                                                  Navigator.pop(
-                                                                      context);
-                                                                  controller
-                                                                      .startTimer();
-                                                                  showModalBottomSheet<
-                                                                          void>(
-                                                                      context:
-                                                                          context,
-                                                                      isScrollControlled:
-                                                                          true,
-                                                                      shape:
-                                                                          RoundedRectangleBorder(
-                                                                        borderRadius:
-                                                                            BorderRadius.vertical(
-                                                                          top: Radius.circular(
-                                                                              25),
-                                                                        ),
-                                                                      ),
-                                                                      builder:
-                                                                          (BuildContext
-                                                                              context) {
-                                                                        return Container(
-                                                                            margin: EdgeInsets
-                                                                                .only(
-                                                                              left: width_8,
-                                                                              right: width_8,
-                                                                              top: height_8,
-                                                                            ),
-                                                                            height: Get.size.height /
-                                                                                3,
-                                                                            child:
-                                                                                SingleChildScrollView(
-                                                                              child: Column(
-                                                                                children: [
-                                                                                  Row(
-                                                                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                                                                    children: [
-                                                                                      Text(
-                                                                                        ENTER_PIN,
-                                                                                        style: TextStyle(
-                                                                                          fontFamily: 'open_sans',
-                                                                                          fontSize: fontSize_12,
-                                                                                          fontWeight: FontWeight.w600,
-                                                                                        ),
-                                                                                      ),
-                                                                                      InkWell(
-                                                                                        onTap: () => Navigator.pop(context),
-                                                                                        child: Text(
-                                                                                          CANCEL,
-                                                                                          style: TextStyle(
-                                                                                            fontSize: fontSize_12,
-                                                                                            color: PRIMARY_COLOR,
-                                                                                            fontFamily: 'open_sans',
-                                                                                            fontWeight: FontWeight.w600,
-                                                                                          ),
-                                                                                        ),
-                                                                                      ),
-                                                                                    ],
-                                                                                  ),
-                                                                                  GetBuilder<OtherSettingsController>(
-                                                                                      builder: (c) => Column(
-                                                                                        children: [
-                                                                                          Text(
-                                                                                                controller.name ?? '',
-                                                                                                style: TextStyle(
-                                                                                                  color: Colors.black,
-                                                                                                ),
-                                                                                              ),
-                                                                                          SizedBox(height: 20,),
-                                                                                          Text('${c.start} (s)'),
-                                                                                        ],
-                                                                                      )),
-                                                                                  SizedBox(height: 20,),
-                                                                                  ElevatedButton(
-                                                                                      onPressed: () {
-                                                                                        Get.toNamed("/transfer_success", arguments: '');
-                                                                                      },
-                                                                                      child: Text("Finish")),
-                                                                                ],
-                                                                              ),
-                                                                            ));
-                                                                      });
-                                                                } else {
-                                                                  print(
-                                                                      'PinValue false: ${controller.pin}');
-                                                                }
-                                                              }
-                                                            } else {
-                                                              controllerTextF
-                                                                  .text = "";
-                                                            }
-                                                          },
-                                                          child:
-                                                              Text("Confirm")),
-                                                      // GetBuilder<OtherSettingsController>(
-                                                      //     builder: (c) => Text(
-                                                      //       controller.name ?? '',
-                                                      //       style: TextStyle(
-                                                      //         color: Colors.black,
-                                                      //       ),
-                                                      //     ))
-                                                    ],
-                                                  ),
-                                                ));
-                                          });
-                                      // Navigator.of(context).pop();
-                                      // Get.toNamed("/transfer_success",
-                                      //     arguments: '');
-                                    }),
-                              ),
-                            ),
-                          ],
-                        ),
-                      )),
-                  Positioned(
-                    top: size_0,
-                    child: CircleAvatar(
-                        backgroundColor: clr_2dcabc,
-                        radius: border_8,
-                        child: Icon(
-                          Icons.keyboard_arrow_down,
-                          size: fontSize_15,
-                          color: clr_white,
-                        )),
+          ],
+        ),
+      ),
+      bottomNavigationBar: Container(
+        height: height_40,
+        padding: EdgeInsets.only(
+          top: height_4,
+          bottom: height_4,
+        ),
+        decoration: BoxDecoration(
+          color: clr_white,
+          boxShadow: [bottomNavigationBar],
+        ),
+        child: ButtonComponent(
+            title: CONFIRM,
+            bgColor: button_color_home,
+            callback: () {
+              showModalBottomSheet<void>(
+                  context: context,
+                  isScrollControlled: true,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.vertical(
+                      top: Radius.circular(25),
+                    ),
                   ),
-                ],
-              )),
-        ],
+                  builder: (BuildContext contextBottomSheet) {
+                    return Padding(
+                      padding: MediaQuery.of(context).viewInsets,
+                      child: Container(
+                          margin: EdgeInsets.only(
+                            left: width_8,
+                            right: width_8,
+                            top: height_8,
+                          ),
+                          height: Get.size.height / 4,
+                          child: SingleChildScrollView(
+                            child: Column(
+                              children: [
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  children: [
+                                    InkWell(
+                                      onTap: () => Navigator.pop(contextBottomSheet),
+                                      child: Text(
+                                        CANCEL,
+                                        style: TextStyle(
+                                          fontSize: fontSize_12,
+                                          color: PRIMARY_COLOR,
+                                          fontFamily: 'open_sans',
+                                          fontWeight: FontWeight.w600,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                SizedBox(
+                                  height: height_8,
+                                ),
+                                Text(
+                                  ENTER_PIN,
+                                  style: TextStyle(
+                                    fontFamily: 'open_sans',
+                                    fontSize: fontSize_12,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: height_8,
+                                ),
+                                SizedBox(
+                                  width: MediaQuery.of(contextBottomSheet).size.width / 1.5,
+                                  child: PinCodeTextField(
+                                    appContext: contextBottomSheet,
+                                    pinTheme: PinTheme(
+                                      shape: PinCodeFieldShape.circle,
+                                      borderRadius: BorderRadius.circular(5),
+                                      fieldHeight: 50,
+                                      fieldWidth: 40,
+                                      activeFillColor: Colors.white,
+                                    ),
+                                    obscureText: true,
+                                    length: 4,
+                                    keyboardType: TextInputType.number,
+                                    controller: controllerTextF,
+                                    autoDisposeControllers: false,
+                                    onChanged: (value) {
+                                      valueText = value ?? '';
+                                    },
+                                    autoFocus: true,
+                                    onCompleted: (_) async {
+                                      if (controllerTextF.text.isNotEmpty) {
+                                        testEntrust2(valueText);
+                                        passData();
+                                        controllerTextF.text = "";
+                                        if (controller.name != "") {
+                                          await checkPin();
+                                          if (controller.pin) {
+                                            print('PinValue true: ${controller.pin}');
+
+                                            Navigator.pop(contextBottomSheet);
+                                            controller.startTimer();
+                                            showModalBottomSheet<void>(
+                                                context: contextBottomSheet,
+                                                isScrollControlled: true,
+                                                shape: RoundedRectangleBorder(
+                                                  borderRadius: BorderRadius.vertical(
+                                                    top: Radius.circular(25),
+                                                  ),
+                                                ),
+                                                builder: (BuildContext contextBottomSheet2) {
+                                                  return Padding(
+                                                    padding: EdgeInsets.only(
+                                                        bottom: MediaQuery.of(contextBottomSheet2).viewInsets.bottom),
+                                                    child: Container(
+                                                        margin: EdgeInsets.only(
+                                                          left: width_8,
+                                                          right: width_8,
+                                                          top: height_8,
+                                                        ),
+                                                        height: Get.size.height / 2,
+                                                        child: Column(
+                                                          mainAxisSize: MainAxisSize.min,
+                                                          children: [
+                                                            GetBuilder<OtherSettingsController>(
+                                                                builder: (c) => Column(
+                                                                      children: [
+                                                                        Icon(
+                                                                          Icons.key,
+                                                                          size: fontSize_40,
+                                                                        ),
+                                                                        SizedBox(
+                                                                          height: height_16,
+                                                                        ),
+                                                                        Text(
+                                                                          'Mã xác nhận của bạn là:',
+                                                                          style: TextStyle(
+                                                                            color: Colors.black,
+                                                                            fontSize: fontSize_16,
+                                                                          ),
+                                                                        ),
+                                                                        SizedBox(
+                                                                          height: height_16,
+                                                                        ),
+                                                                        Text(
+                                                                          controller.name ?? '',
+                                                                          style: TextStyle(
+                                                                            color: Colors.black,
+                                                                            fontWeight: FontWeight.w600,
+                                                                            fontSize: fontSize_16,
+                                                                          ),
+                                                                        ),
+                                                                        SizedBox(
+                                                                          height: height_16,
+                                                                        ),
+                                                                        Text(
+                                                                            'Mã xác thực sẽ hết thời gian trong: ${c.start} (s)'),
+                                                                        SizedBox(
+                                                                          height: height_16,
+                                                                        ),
+                                                                        Text(
+                                                                            'Chọn hoàn tất, mã xác nhận sẽ tự động được điền'),
+                                                                        SizedBox(
+                                                                          height: height_16,
+                                                                        ),
+                                                                        Text(
+                                                                            'Vui lòng không cung cấp mã xác nhận cho bất cứ ai.'),
+                                                                      ],
+                                                                    )),
+                                                            const Spacer(),
+                                                            ButtonComponent(
+                                                                title: "Xác nhận",
+                                                                bgColor: button_color_home,
+                                                                callback: () => Get.toNamed("/transfer_success", arguments: '')),
+                                                            SizedBox(height: height_16 ,),
+                                                          ],
+                                                        )),
+                                                  );
+                                                });
+                                          } else {
+                                            print('PinValue false: ${controller.pin}');
+                                            controller.checkErrorText("Mã Pin không chính xác");
+                                          }
+                                        }
+                                      } else {
+                                        controllerTextF.text = "";
+                                        controller.checkErrorText("Mã Pin không chính xác");
+                                      }
+                                    },
+                                    beforeTextPaste: (text) {
+                                      print("Allowing to paste");
+                                      return true;
+                                    },
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: height_8,
+                                ),
+                                GetBuilder<OtherSettingsController>(
+                                  builder: (c) => Text(
+                                    c.textError,
+                                    style: TextStyle(color: Colors.red),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          )),
+                    );
+                  });
+              // Navigator.of(context).pop();
+              // Get.toNamed("/transfer_success",
+              //     arguments: '');
+            }),
       ),
     );
   }
