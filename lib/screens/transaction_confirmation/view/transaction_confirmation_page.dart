@@ -3,10 +3,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:otp_text_field/otp_field.dart';
-import 'package:otp_text_field/style.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
-import 'package:sms_autofill/sms_autofill.dart';
+
 
 import '../../../core/resources/strings.dart';
 import '../../../core/style/colors.dart';
@@ -26,23 +24,21 @@ class TransactionConfirmationPage extends StatefulWidget {
 class _TransactionConfirmationPageState extends State<TransactionConfirmationPage> {
   static const platform = MethodChannel('entrust.sdk.dev/flutter');
 
-  TextEditingController controllerTextF = TextEditingController();
+  TextEditingController controllerPinTextField = TextEditingController();
   String valueText = "";
   final controller = Get.put(OtherSettingsController());
 
-  Future<void> testEntrust2(String enterCode) async {
+  Future<void> exportPinFlutterToNative(String enterCode) async {
     final String arg1 = valueText;
-    String? arg2;
     try {
       final package = await platform.invokeMethod("test_2", {"enter_code": arg1});
-      arg2 = "hahahaha";
       print(package);
     } on PlatformException catch (e) {
       print("Failed to get battery level: ${e.message}");
     }
   }
 
-  Future<void> passData() async {
+  Future<void> getDataOTPNative() async {
     try {
       var res = await platform.invokeMethod("fill_text");
       await controller.setText(res);
@@ -52,7 +48,7 @@ class _TransactionConfirmationPageState extends State<TransactionConfirmationPag
     }
   }
 
-  Future<void> checkPin() async {
+  Future<void> checkPinNative() async {
     try {
       var res = await platform.invokeMethod("check_pin");
       await controller.checkPin(res);
@@ -66,7 +62,7 @@ class _TransactionConfirmationPageState extends State<TransactionConfirmationPag
   void dispose() {
     // TODO: implement dispose
     controller.timer?.cancel();
-    controllerTextF.dispose();
+    controllerPinTextField.dispose();
     super.dispose();
   }
 
@@ -225,21 +221,20 @@ class _TransactionConfirmationPageState extends State<TransactionConfirmationPag
                                     obscureText: true,
                                     length: 4,
                                     keyboardType: TextInputType.number,
-                                    controller: controllerTextF,
+                                    controller: controllerPinTextField,
                                     autoDisposeControllers: false,
                                     onChanged: (value) {
-                                      valueText = value ?? '';
+                                      valueText = value;
                                     },
                                     autoFocus: true,
                                     onCompleted: (_) async {
-                                      testEntrust2(valueText);
-                                      passData();
-                                      controllerTextF.text = "";
-                                      await checkPin();
+                                      exportPinFlutterToNative(valueText);
+                                      getDataOTPNative();
+                                      controllerPinTextField.text = "";
+                                      await checkPinNative();
                                       if (controller.pin) {
                                         print('PinValue true: ${controller.pin}');
                                         Navigator.pop(contextBottomSheet);
-                                        // controller.startTimer(contextBottomSheet);
                                         showModalBottomSheet<void>(
                                             context: contextBottomSheet,
                                             isScrollControlled: true,
@@ -312,7 +307,10 @@ class _TransactionConfirmationPageState extends State<TransactionConfirmationPag
                                                         ButtonComponent(
                                                             title: "Xác nhận",
                                                             bgColor: button_color_home,
-                                                            callback: () => Get.toNamed("/transfer_success", arguments: '')),
+                                                            callback: (){
+                                                              Navigator.pop(context);
+                                                              Get.toNamed("/transfer_success", arguments: '');
+                                                            }),
                                                         SizedBox(height: height_16 ,),
                                                       ],
                                                     )),
@@ -343,9 +341,6 @@ class _TransactionConfirmationPageState extends State<TransactionConfirmationPag
                           )),
                     );
                   });
-              // Navigator.of(context).pop();
-              // Get.toNamed("/transfer_success",
-              //     arguments: '');
             }),
       ),
     );
