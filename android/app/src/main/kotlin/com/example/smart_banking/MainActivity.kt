@@ -67,7 +67,7 @@ class MainActivity : FlutterActivity() {
                             // Go directly to showing the user the registration code.
                             startActivity(Intent(this@MainActivity, RegistrationCode::class.java))
                         }
-                        finish()
+//                        finish()
                     } catch (e: Exception) {
                         Logger.error("Error generating identity", "")
                         // Since we have validated beforehand, this should not happen.
@@ -87,9 +87,24 @@ class MainActivity : FlutterActivity() {
                 result.success(data)
             }else if(call.method == "check_pin"){
                 result.success(checkPin)
+            }else if(call.method == "create_pin"){
+                var pinCode: String? = call.argument("create_pin");
+                var confirmCode: String? = call.argument("confirm_pin");
+                createPin(pinCode, confirmCode);
+                result.success(checkPin)
             }
         }
 
+    }
+
+    private fun createPin(pinCode: String?, confirmPin: String?){
+        val sharedPreferences = this.getSharedPreferences("pinValue", Context.MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+        editor.putString("pinValue", confirmPin)
+        editor.apply()
+
+//        Util.identity?.clearRegistrationCode()
+//        checkPin = true
     }
 
     private fun entrust(code: String?) {
@@ -140,7 +155,7 @@ class MainActivity : FlutterActivity() {
         val msg: String = pinText //.text.toString()
         if (msg.trim().isNotEmpty()) {
             if (msg.trim() != sharedPin) {
-                Toast.makeText(applicationContext, "Mã Pin không chính xác", Toast.LENGTH_SHORT).show()
+//                Toast.makeText(applicationContext, "Mã Pin không chính xác", Toast.LENGTH_SHORT).show()
                 checkPin = false
             } else {
                 checkPin = true
@@ -166,7 +181,7 @@ class MainActivity : FlutterActivity() {
                 }
             }
         } else {
-            Toast.makeText(applicationContext, "Please enter Pin Code! ", Toast.LENGTH_SHORT).show()
+//            Toast.makeText(applicationContext, "Please enter Pin Code! ", Toast.LENGTH_SHORT).show()
         }
     }
 
