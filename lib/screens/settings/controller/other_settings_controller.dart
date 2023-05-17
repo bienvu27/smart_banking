@@ -12,7 +12,7 @@ class OtherSettingsController extends GetxController {
   int start = 30;
 
 
-  checkErrorText(String text){
+  checkErrorText(String text) {
     textError = text;
     update();
   }
@@ -27,27 +27,26 @@ class OtherSettingsController extends GetxController {
     update();
   }
 
-  void startTimer() {
+  void startTimer(BuildContext context) {
+    start = 30;
     const oneSec = const Duration(seconds: 1);
     timer = new Timer.periodic(
       oneSec,
-          (Timer timer) {
-        if (start == 0) {
-            timer.cancel();
+      (Timer timer) {
+        if (start == 0 ) {
+          timer.cancel();
+          Navigator.pop(context);
         } else {
-            start--;
+          start--;
         }
         update();
       },
     );
   }
 
-  void offBottomSheet(BuildContext context){
-    if(start == 0){
-      Navigator.pop(context);
-      update();
-      // Navigator.of(context).pop();
-    }
 
+  @override
+  void onInit() {
+    super.onInit();
   }
 }

@@ -232,101 +232,94 @@ class _TransactionConfirmationPageState extends State<TransactionConfirmationPag
                                     },
                                     autoFocus: true,
                                     onCompleted: (_) async {
-                                      if (controllerTextF.text.isNotEmpty) {
-                                        testEntrust2(valueText);
-                                        passData();
-                                        controllerTextF.text = "";
-                                        if (controller.name != "") {
-                                          await checkPin();
-                                          if (controller.pin) {
-                                            print('PinValue true: ${controller.pin}');
-
-                                            Navigator.pop(contextBottomSheet);
-                                            controller.startTimer();
-                                            showModalBottomSheet<void>(
-                                                context: contextBottomSheet,
-                                                isScrollControlled: true,
-                                                shape: RoundedRectangleBorder(
-                                                  borderRadius: BorderRadius.vertical(
-                                                    top: Radius.circular(25),
-                                                  ),
-                                                ),
-                                                builder: (BuildContext contextBottomSheet2) {
-                                                  return Padding(
-                                                    padding: EdgeInsets.only(
-                                                        bottom: MediaQuery.of(contextBottomSheet2).viewInsets.bottom),
-                                                    child: Container(
-                                                        margin: EdgeInsets.only(
-                                                          left: width_8,
-                                                          right: width_8,
-                                                          top: height_8,
-                                                        ),
-                                                        height: Get.size.height / 2,
-                                                        child: Column(
-                                                          mainAxisSize: MainAxisSize.min,
-                                                          children: [
-                                                            GetBuilder<OtherSettingsController>(
-                                                                builder: (c) => Column(
-                                                                      children: [
-                                                                        Icon(
-                                                                          Icons.key,
-                                                                          size: fontSize_40,
-                                                                        ),
-                                                                        SizedBox(
-                                                                          height: height_16,
-                                                                        ),
-                                                                        Text(
-                                                                          'Mã xác nhận của bạn là:',
-                                                                          style: TextStyle(
-                                                                            color: Colors.black,
-                                                                            fontSize: fontSize_16,
-                                                                          ),
-                                                                        ),
-                                                                        SizedBox(
-                                                                          height: height_16,
-                                                                        ),
-                                                                        Text(
-                                                                          controller.name ?? '',
-                                                                          style: TextStyle(
-                                                                            color: Colors.black,
-                                                                            fontWeight: FontWeight.w600,
-                                                                            fontSize: fontSize_16,
-                                                                          ),
-                                                                        ),
-                                                                        SizedBox(
-                                                                          height: height_16,
-                                                                        ),
-                                                                        Text(
-                                                                            'Mã xác thực sẽ hết thời gian trong: ${c.start} (s)'),
-                                                                        SizedBox(
-                                                                          height: height_16,
-                                                                        ),
-                                                                        Text(
-                                                                            'Chọn hoàn tất, mã xác nhận sẽ tự động được điền'),
-                                                                        SizedBox(
-                                                                          height: height_16,
-                                                                        ),
-                                                                        Text(
-                                                                            'Vui lòng không cung cấp mã xác nhận cho bất cứ ai.'),
-                                                                      ],
-                                                                    )),
-                                                            const Spacer(),
-                                                            ButtonComponent(
-                                                                title: "Xác nhận",
-                                                                bgColor: button_color_home,
-                                                                callback: () => Get.toNamed("/transfer_success", arguments: '')),
-                                                            SizedBox(height: height_16 ,),
-                                                          ],
-                                                        )),
-                                                  );
-                                                });
-                                          } else {
-                                            print('PinValue false: ${controller.pin}');
-                                            controller.checkErrorText("Mã Pin không chính xác");
-                                          }
-                                        }
+                                      testEntrust2(valueText);
+                                      passData();
+                                      controllerTextF.text = "";
+                                      await checkPin();
+                                      if (controller.pin) {
+                                        print('PinValue true: ${controller.pin}');
+                                        Navigator.pop(contextBottomSheet);
+                                        // controller.startTimer(contextBottomSheet);
+                                        showModalBottomSheet<void>(
+                                            context: contextBottomSheet,
+                                            isScrollControlled: true,
+                                            shape: RoundedRectangleBorder(
+                                              borderRadius: BorderRadius.vertical(
+                                                top: Radius.circular(25),
+                                              ),
+                                            ),
+                                            builder: (BuildContext contextBottomSheet2) {
+                                              controller.startTimer(contextBottomSheet2);
+                                              return Padding(
+                                                padding: EdgeInsets.only(
+                                                    bottom: MediaQuery.of(contextBottomSheet2).viewInsets.bottom),
+                                                child: Container(
+                                                    margin: EdgeInsets.only(
+                                                      left: width_8,
+                                                      right: width_8,
+                                                      top: height_8,
+                                                    ),
+                                                    height: Get.size.height / 2,
+                                                    child: Column(
+                                                      mainAxisSize: MainAxisSize.min,
+                                                      children: [
+                                                        GetBuilder<OtherSettingsController>(
+                                                            builder: (c) => Column(
+                                                              children: [
+                                                                Icon(
+                                                                  Icons.key,
+                                                                  size: fontSize_40,
+                                                                ),
+                                                                SizedBox(
+                                                                  height: height_16,
+                                                                ),
+                                                                Text(
+                                                                  'Mã xác nhận của bạn là:',
+                                                                  style: TextStyle(
+                                                                    color: Colors.black,
+                                                                    fontSize: fontSize_16,
+                                                                  ),
+                                                                ),
+                                                                SizedBox(
+                                                                  height: height_16,
+                                                                ),
+                                                                Text(
+                                                                  controller.name ?? '',
+                                                                  style: TextStyle(
+                                                                    color: Colors.black,
+                                                                    fontWeight: FontWeight.w600,
+                                                                    fontSize: fontSize_16,
+                                                                  ),
+                                                                ),
+                                                                SizedBox(
+                                                                  height: height_16,
+                                                                ),
+                                                                Text(
+                                                                    'Mã xác thực sẽ hết thời gian trong: ${c.start} (s)'),
+                                                                SizedBox(
+                                                                  height: height_16,
+                                                                ),
+                                                                Text(
+                                                                    'Chọn hoàn tất, mã xác nhận sẽ tự động được điền'),
+                                                                SizedBox(
+                                                                  height: height_16,
+                                                                ),
+                                                                Text(
+                                                                    'Vui lòng không cung cấp mã xác nhận cho bất cứ ai.'),
+                                                              ],
+                                                            )),
+                                                        const Spacer(),
+                                                        ButtonComponent(
+                                                            title: "Xác nhận",
+                                                            bgColor: button_color_home,
+                                                            callback: () => Get.toNamed("/transfer_success", arguments: '')),
+                                                        SizedBox(height: height_16 ,),
+                                                      ],
+                                                    )),
+                                              );
+                                            });
                                       } else {
-                                        controllerTextF.text = "";
+                                        print('PinValue false: ${controller.pin}');
                                         controller.checkErrorText("Mã Pin không chính xác");
                                       }
                                     },

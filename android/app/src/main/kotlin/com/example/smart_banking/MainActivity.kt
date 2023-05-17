@@ -166,7 +166,7 @@ class MainActivity : FlutterActivity() {
                 }
             }
         } else {
-            Toast.makeText(applicationContext, "Please enter Pin Code! ", Toast.LENGTH_SHORT).show()
+//            Toast.makeText(applicationContext, "Please enter Pin Code! ", Toast.LENGTH_SHORT).show()
         }
     }
 
