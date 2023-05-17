@@ -28,11 +28,12 @@ class OtherSettingsController extends GetxController {
   }
 
   void startTimer(BuildContext context) {
+    timer?.cancel();
     start = 30;
     const oneSec = const Duration(seconds: 1);
     timer = new Timer.periodic(
       oneSec,
-      (Timer timer) {
+      (timer) {
         if (start == 0 ) {
           timer.cancel();
           Navigator.pop(context);
