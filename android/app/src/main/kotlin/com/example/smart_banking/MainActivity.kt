@@ -39,65 +39,26 @@ class MainActivity : FlutterActivity() {
                 flutterEngine.dartExecutor.binaryMessenger,
                 CHANNEL
         ).setMethodCallHandler { call, result ->
-            if (call.method == "test") {
-                if (checkIdentityExistOrNot(this@MainActivity)) {
-//                    val intent = Intent(this@MainActivity, SecurityCode::class.java)
-                    val intent = Intent(this@MainActivity, EnterPinCodeExisActivity::class.java)
-                    intent.putExtra(SecurityCode.IS_IDENTITY_SAVED, true)
-                    startActivity(intent)
-                    finish()
-
-                } else {
-                    try {
-
-                        val identity: Identity =
-                                IdentityProvider.generate(
-                                        null,
-                                        "6935019387", "0505428340110157"
-                                )
-
-                        println(identity)
-                        // Store our identity so it can be accessed by other activities
-                        Util.identity = identity
-                        // Determine whether the soft token identity requires a PIN to protect it.
-                        if (identity.isPINRequired) {
-                            // Our soft token identity requires a PIN
-//                            startActivity(Intent(this@MainActivity, EstablishPIN::class.java))
-                            startActivity(Intent(this@MainActivity, EnterPinCodeActivity::class.java))
-
-                        } else {
-                            // Go directly to showing the user the registration code.
-                            startActivity(Intent(this@MainActivity, RegistrationCode::class.java))
-                        }
-//                        finish()
-                    } catch (e: Exception) {
-                        Logger.error("Error generating identity", "")
-                        // Since we have validated beforehand, this should not happen.
-                        showErrorDialog(
-                                this@MainActivity,
-                                getString(R.string.error_createFailure)
-                        )
-                    }
-                }
-
-
-            } else if (call.method == "enter_pin") {
+            if (call.method == "enter_pin") {
+                //Enter pin code to transfer screen
                 var argEnterCode: String? = call.argument("enter_code");
-                var otpNative: String? = call.argument("otp_code")
                 entrust(argEnterCode)
             } else if (call.method == "fill_text") {
+                //get otp to flutter
                 result.success(data)
             } else if (call.method == "check_pin") {
+                //check pin code exist (true <-> false)
                 result.success(checkPin)
             } else if (call.method == "create_pin") {
+                //create pin code
                 var pinCode: String? = call.argument("create_pin");
                 var confirmCode: String? = call.argument("confirm_pin");
-                var pinValue: String? =""
                 createPin(pinCode, confirmCode);
                 result.success(createPin)
-            }else if(call.method == "check_exist_pin"){
+            } else if (call.method == "check_exist_pin") {
+                //check pin code exist of sharedPrefernces
                 val sharedPreferences = this.getSharedPreferences("pinValue", Context.MODE_PRIVATE)
-                var pinCodeNative: String? = sharedPreferences.getString("pinValue", "")
+                var pinCodeNative: String? = sharedPreferences.getString("pinValue", null)
                 result.success(pinCodeNative)
             }
         }
@@ -113,12 +74,8 @@ class MainActivity : FlutterActivity() {
                     )
 
             println(identity)
-            // Store our identity so it can be accessed by other activities
             Util.identity = identity
             if (identity.isPINRequired) {
-                // Our soft token identity requires a PIN
-//                            startActivity(Intent(this@MainActivity, EstablishPIN::class.java))
-//                startActivity(Intent(this@MainActivity, EnterPinCodeActivity::class.java))
                 val sharedPreferences = this.getSharedPreferences("pinValue", Context.MODE_PRIVATE)
                 val editor = sharedPreferences.edit()
                 editor.putString("pinValue", confirmPin)
@@ -127,89 +84,43 @@ class MainActivity : FlutterActivity() {
                 Util.saveIdentityInformation(applicationContext)
                 checkPin = true
                 generateOTP()
-
-            } else {
-                // Go directly to showing the user the registration code.
-//                startActivity(Intent(this@MainActivity, RegistrationCode::class.java))
             }
 
         } catch (e: Exception) {
             Logger.error("Error generating identity", "")
-            // Since we have validated beforehand, this should not happen.
             showErrorDialog(
                     this@MainActivity,
                     getString(R.string.error_createFailure))
         }
-//
-//
-
-//        Util.identity?.clearRegistrationCode()
-//        checkPin = true
     }
 
     private fun entrust(code: String?) {
         if (checkIdentityExistOrNot(this@MainActivity)) {
-
             if (code != null) {
                 enterPinCode(code)
             }
 
-        } else {
-//            try {
-//
-//                val identity: Identity =
-//                        IdentityProvider.generate(
-//                                null,
-//                                "6935019387", "0505428340110157"
-//                        )
-//
-//                println(identity)
-//                // Store our identity so it can be accessed by other activities
-//                Util.identity = identity
-//                // Determine whether the soft token identity requires a PIN to protect it.
-//                if (identity.isPINRequired) {
-//                    // Our soft token identity requires a PIN
-////                            startActivity(Intent(this@MainActivity, EstablishPIN::class.java))
-//                    startActivity(Intent(this@MainActivity, EnterPinCodeActivity::class.java))
-//
-//                } else {
-//                    // Go directly to showing the user the registration code.
-//                    startActivity(Intent(this@MainActivity, RegistrationCode::class.java))
-//                }
-//                finish()
-//            } catch (e: Exception) {
-//                Logger.error("Error generating identity", "")
-//                // Since we have validated beforehand, this should not happen.
-//                showErrorDialog(
-//                        this@MainActivity,
-//                        getString(R.string.error_createFailure)
-//                )
-//            }
         }
     }
 
     private fun enterPinCode(pinText: String) {
-//        val text = pinText.text.toString()
         val sharedPreferences = this.getSharedPreferences("pinValue", Context.MODE_PRIVATE)
         var sharedPin = sharedPreferences.getString("pinValue", null)
         val msg: String = pinText //.text.toString()
         if (msg.trim().isNotEmpty()) {
             if (msg.trim() != sharedPin) {
-//                Toast.makeText(applicationContext, "Mã Pin không chính xác", Toast.LENGTH_SHORT).show()
                 checkPin = false
             } else {
                 checkPin = true
                 if (!intent.hasExtra(SecurityCode.IS_IDENTITY_SAVED)) {
                     Util.saveIdentityInformation(applicationContext)
                 }
-               generateOTP()
+                generateOTP()
             }
-        } else {
-//            Toast.makeText(applicationContext, "Please enter Pin Code! ", Toast.LENGTH_SHORT).show()
         }
     }
 
-    private  fun generateOTP() {
+    private fun generateOTP() {
         var otp: String? = ""
         for (i in 0 until Util.identity?.otpLength!!) {
             otp += "0"
@@ -227,8 +138,6 @@ class MainActivity : FlutterActivity() {
     }
 
     companion object {
-        // Used when registering for transaction verification.  This can be null
-        // if transaction verification is not required.
         private val DEVICE_ID = deviceId
         private const val SCAN_REQUEST_CODE = 0
         private const val SCAN_MODE = "SCAN_MODE"
