@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:smart_banking/core/common/utils.dart';
 import 'package:smart_banking/screens/components/app_bar/app_bar_component.dart';
 
@@ -45,7 +46,7 @@ class _OtherSettingsState extends State<OtherSettings> {
     final String arg1 = valueText;
     try {
       final package =
-          await platform.invokeMethod("test_2", {"enter_code": arg1});
+          await platform.invokeMethod("enter_pin", {"enter_code": arg1});
       print(package);
     } on PlatformException catch (e) {
       print("Failed to get battery level: ${e.message}");
@@ -88,6 +89,28 @@ class _OtherSettingsState extends State<OtherSettings> {
     }
   }
 
+  Future<void> checkPinCreatePin() async {
+    try {
+      var res = await platform.invokeMethod("check_pin");
+      await controller.checkPin(res);
+      print("-----------${controller.pin}");
+    } on PlatformException catch (e) {
+      print("Failed to get battery level: ${e.message}");
+    }
+  }
+
+  Future<void> checkExistPin() async {
+    try {
+      var res = await platform.invokeMethod("check_exist_pin");
+      await controller.checkPinExist(res);
+      print("checkPinExist: ${controller.pinExist}");
+    } on PlatformException catch (e) {
+      print("Failed to get battery level: ${e.message}");
+    }
+  }
+
+
+
   Future<void> getDataOTPNative() async {
     try {
       var res = await platform.invokeMethod("fill_text");
@@ -100,6 +123,8 @@ class _OtherSettingsState extends State<OtherSettings> {
 
   @override
   Widget build(BuildContext context) {
+
+
     return Scaffold(
       resizeToAvoidBottomInset: true,
       appBar: AppBarComponent(
@@ -115,8 +140,8 @@ class _OtherSettingsState extends State<OtherSettings> {
             icon: Icons.pin_rounded,
             title: 'Tạo mã Pin',
             onTap: () async {
-              await checkPinNative();
-              if (!controller.pin)
+                await checkExistPin().then((value) => checkPinNative());
+                if(controller.pinExist == "")
                 showModalBottomSheet<void>(
                     context: context,
                     isScrollControlled: true,
@@ -346,7 +371,7 @@ class _OtherSettingsState extends State<OtherSettings> {
                                                                             top:
                                                                                 height_8,
                                                                           ),
-                                                                          height: Get.size.height / 4,
+                                                                          height: Get.size.height / 2,
                                                                           child: Column(
                                                                             mainAxisSize:
                                                                                 MainAxisSize.min,

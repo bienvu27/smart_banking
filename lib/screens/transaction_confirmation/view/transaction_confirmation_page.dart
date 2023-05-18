@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
+import 'package:smart_banking/core/entrust/entrust.dart';
 
 
 import '../../../core/resources/strings.dart';
@@ -31,7 +32,7 @@ class _TransactionConfirmationPageState extends State<TransactionConfirmationPag
   Future<void> exportPinFlutterToNative(String enterCode) async {
     final String arg1 = valueText;
     try {
-      final package = await platform.invokeMethod("test_2", {"enter_code": arg1});
+      final package = await platform.invokeMethod("enter_pin", {"enter_code": arg1});
       print(package);
     } on PlatformException catch (e) {
       print("Failed to get battery level: ${e.message}");
@@ -224,10 +225,13 @@ class _TransactionConfirmationPageState extends State<TransactionConfirmationPag
                                     controller: controllerPinTextField,
                                     autoDisposeControllers: false,
                                     onChanged: (value) {
+                                      // valueText = value;
                                       valueText = value;
                                     },
                                     autoFocus: true,
                                     onCompleted: (_) async {
+                                      // Entrust().exportPinFlutterToNative
+                                      //   (Entrust().valueText);
                                       exportPinFlutterToNative(valueText);
                                       getDataOTPNative();
                                       controllerPinTextField.text = "";

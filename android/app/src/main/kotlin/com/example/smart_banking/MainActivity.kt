@@ -27,6 +27,8 @@ class MainActivity : FlutterActivity() {
     private val CHANNEL = "entrust.sdk.dev/flutter"
     private var data: String? = "";
     private var checkPin: Boolean = false;
+    private var createPin: Boolean = false;
+
 
     @SuppressLint("MissingInflatedId")
     override fun configureFlutterEngine(@NonNull flutterEngine: FlutterEngine) {
@@ -79,7 +81,7 @@ class MainActivity : FlutterActivity() {
                 }
 
 
-            } else if (call.method == "test_2") {
+            } else if (call.method == "enter_pin") {
                 var argEnterCode: String? = call.argument("enter_code");
                 var otpNative: String? = call.argument("otp_code")
                 entrust(argEnterCode)
@@ -90,8 +92,13 @@ class MainActivity : FlutterActivity() {
             } else if (call.method == "create_pin") {
                 var pinCode: String? = call.argument("create_pin");
                 var confirmCode: String? = call.argument("confirm_pin");
+                var pinValue: String? =""
                 createPin(pinCode, confirmCode);
-                result.success(checkPin)
+                result.success(createPin)
+            }else if(call.method == "check_exist_pin"){
+                val sharedPreferences = this.getSharedPreferences("pinValue", Context.MODE_PRIVATE)
+                var pinCodeNative: String? = sharedPreferences.getString("pinValue", "")
+                result.success(pinCodeNative)
             }
         }
 
@@ -116,7 +123,6 @@ class MainActivity : FlutterActivity() {
                 val editor = sharedPreferences.edit()
                 editor.putString("pinValue", confirmPin)
                 editor.apply()
-
                 Util.identity?.clearRegistrationCode()
                 Util.saveIdentityInformation(applicationContext)
                 checkPin = true

@@ -6,11 +6,17 @@ import 'package:get/get.dart';
 class OtherSettingsController extends GetxController {
   String? name = "haha";
   bool pin = false;
+  bool createPin = false;
   String textError = "";
+  String pinExist = "";
 
   Timer? timer;
   int start = 30;
 
+  checkPinExist(String title){
+    pinExist = title;
+    update();
+  }
 
   checkErrorText(String text) {
     textError = text;
@@ -24,6 +30,11 @@ class OtherSettingsController extends GetxController {
 
   checkPin(bool pinValue) {
     pin = pinValue;
+    update();
+  }
+
+  createPinValue(bool pinValue){
+    createPin = pinValue;
     update();
   }
 
