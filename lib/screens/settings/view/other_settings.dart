@@ -44,14 +44,16 @@ class _OtherSettingsState extends State<OtherSettings> {
   Future<void> exportPinFlutterToNative(String enterCode) async {
     final String arg1 = valueText;
     try {
-      final package = await platform.invokeMethod("test_2", {"enter_code": arg1});
+      final package =
+          await platform.invokeMethod("test_2", {"enter_code": arg1});
       print(package);
     } on PlatformException catch (e) {
       print("Failed to get battery level: ${e.message}");
     }
   }
 
-  Future<void> createPinFlutterToNative(String pinCode, String confirmCode) async {
+  Future<void> createPinFlutterToNative(
+      String pinCode, String confirmCode) async {
     final String arg1 = createPin;
     final String arg2 = confirmPin;
     try {
@@ -99,6 +101,7 @@ class _OtherSettingsState extends State<OtherSettings> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: true,
       appBar: AppBarComponent(
         bgColor: Colors.white,
         colorTitle: clr_black,
@@ -113,302 +116,35 @@ class _OtherSettingsState extends State<OtherSettings> {
             title: 'Tạo mã Pin',
             onTap: () async {
               await checkPinNative();
-              if(!controller.pin)
-              showModalBottomSheet<void>(
-                  context: context,
-                  isScrollControlled: true,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.vertical(
-                      top: Radius.circular(25),
-                    ),
-                  ),
-                  builder: (BuildContext contextBottomSheet) {
-                    return Padding(
-                      padding: MediaQuery.of(context).viewInsets,
-                      child: Container(
-                        margin: EdgeInsets.only(
-                          left: width_8,
-                          right: width_8,
-                          top: height_8,
-                        ),
-                        height: Get.size.height / 4,
-                        child: Column(
-                          children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: [
-                                InkWell(
-                                  onTap: () => Navigator.pop(contextBottomSheet),
-                                  child: Text(
-                                    CANCEL,
-                                    style: TextStyle(
-                                      fontSize: fontSize_12,
-                                      color: PRIMARY_COLOR,
-                                      fontFamily: 'open_sans',
-                                      fontWeight: FontWeight.w600,
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                            SizedBox(
-                              height: height_8,
-                            ),
-                            Text(
-                              CREATE_PIN,
-                              style: TextStyle(
-                                fontFamily: 'open_sans',
-                                fontSize: fontSize_12,
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ),
-                            SizedBox(
-                              height: height_20,
-                            ),
-                            SizedBox(
-                              width: MediaQuery.of(contextBottomSheet).size.width / 1.5,
-                              child: PinCodeTextField(
-                                appContext: contextBottomSheet,
-                                pinTheme: PinTheme(
-                                  shape: PinCodeFieldShape.circle,
-                                  borderRadius: BorderRadius.circular(5),
-                                  fieldHeight: 50,
-                                  fieldWidth: 40,
-                                  activeFillColor: Colors.white,
-                                ),
-                                obscureText: true,
-                                length: 4,
-                                keyboardType: TextInputType.number,
-                                controller: controllerCreatePinTextField,
-                                autoDisposeControllers: false,
-                                onChanged: (value) {
-                                  createPin = value;
-                                },
-                                autoFocus: true,
-                                onCompleted: (_) async {
-                                  createPin = controllerCreatePinTextField.text;
-                                  Navigator.pop(contextBottomSheet);
-                                  showModalBottomSheet<void>(
-                                      context: context,
-                                      isScrollControlled: true,
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.vertical(
-                                          top: Radius.circular(25),
-                                        ),
-                                      ),
-                                      builder: (BuildContext contextBottomSheet) {
-                                        return Padding(
-                                          padding: MediaQuery.of(context).viewInsets,
-                                          child: Container(
-                                            margin: EdgeInsets.only(
-                                              left: width_8,
-                                              right: width_8,
-                                              top: height_8,
-                                            ),
-                                            height: Get.size.height / 4,
-                                            child: Column(
-                                              children: [
-                                                Row(
-                                                  mainAxisAlignment: MainAxisAlignment.end,
-                                                  children: [
-                                                    InkWell(
-                                                      onTap: () => Navigator.pop(contextBottomSheet),
-                                                      child: Text(
-                                                        CANCEL,
-                                                        style: TextStyle(
-                                                          fontSize: fontSize_12,
-                                                          color: PRIMARY_COLOR,
-                                                          fontFamily: 'open_sans',
-                                                          fontWeight: FontWeight.w600,
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ],
-                                                ),
-                                                SizedBox(
-                                                  height: height_8,
-                                                ),
-                                                Text(
-                                                  CONFIRM_PIN,
-                                                  style: TextStyle(
-                                                    fontFamily: 'open_sans',
-                                                    fontSize: fontSize_12,
-                                                    fontWeight: FontWeight.w600,
-                                                  ),
-                                                ),
-                                                SizedBox(
-                                                  height: height_20,
-                                                ),
-                                                SizedBox(
-                                                  width: MediaQuery.of(contextBottomSheet).size.width / 1.5,
-                                                  child: PinCodeTextField(
-                                                    appContext: contextBottomSheet,
-                                                    pinTheme: PinTheme(
-                                                      shape: PinCodeFieldShape.circle,
-                                                      borderRadius: BorderRadius.circular(5),
-                                                      fieldHeight: 50,
-                                                      fieldWidth: 40,
-                                                      activeFillColor: Colors.white,
-                                                    ),
-                                                    obscureText: true,
-                                                    length: 4,
-                                                    keyboardType: TextInputType.number,
-                                                    controller: controllerConfirmPinTextField,
-                                                    autoDisposeControllers: false,
-                                                    onChanged: (value) {
-                                                      confirmPin = value;
-                                                    },
-                                                    autoFocus: true,
-                                                    onCompleted: (_) async {
-                                                      confirmPin = controllerConfirmPinTextField.text;
-                                                      if(createPin != confirmPin){
-                                                          controller.checkErrorText("Mã pin không khớp");
-                                                      }else{
-                                                        controller.checkErrorText("");
-                                                        await createPinFlutterToNative(createPin, confirmPin);
-                                                        getDataOTPNative();
-                                                        await checkPinNative();
-                                                        if (controller.pin) {
-                                                          Navigator.pop(contextBottomSheet);
-                                                          showModalBottomSheet<void>(
-                                                              context: contextBottomSheet,
-                                                              isScrollControlled: true,
-                                                              shape: RoundedRectangleBorder(
-                                                                borderRadius: BorderRadius.vertical(
-                                                                  top: Radius.circular(25),
-                                                                ),
-                                                              ),
-                                                              builder: (BuildContext contextBottomSheet2) {
-                                                                controller.startTimer(contextBottomSheet2);
-                                                                return Padding(
-                                                                  padding: EdgeInsets.only(
-                                                                      bottom: MediaQuery.of(contextBottomSheet2).viewInsets.bottom),
-                                                                  child: Container(
-                                                                      margin: EdgeInsets.only(
-                                                                        left: width_8,
-                                                                        right: width_8,
-                                                                        top: height_8,
-                                                                      ),
-                                                                      height:
-                                                                      Get.size.height / 3,
-                                                                      child: Column(
-                                                                        mainAxisSize: MainAxisSize.min,
-                                                                        children: [
-                                                                          GetBuilder<OtherSettingsController>(
-                                                                              builder: (c) => Column(
-                                                                                children: [
-                                                                                  Icon(
-                                                                                    Icons.key,
-                                                                                    size: fontSize_40,
-                                                                                  ),
-                                                                                  SizedBox(
-                                                                                    height: height_16,
-                                                                                  ),
-                                                                                  Text(
-                                                                                    'Mã xác nhận của bạn là:',
-                                                                                    style: TextStyle(
-                                                                                      color: Colors.black,
-                                                                                      fontSize: fontSize_16,
-                                                                                    ),
-                                                                                  ),
-                                                                                  SizedBox(
-                                                                                    height: height_16,
-                                                                                  ),
-                                                                                  Text(
-                                                                                    controller.name ?? '',
-                                                                                    style: TextStyle(
-                                                                                      color: Colors.black,
-                                                                                      fontWeight: FontWeight.w600,
-                                                                                      fontSize: fontSize_16,
-                                                                                    ),
-                                                                                  ),
-                                                                                  SizedBox(
-                                                                                    height: height_16,
-                                                                                  ),
-                                                                                  Text(
-                                                                                      'Mã xác thực sẽ hết thời gian trong: ${c.start} (s)'),
-                                                                                  SizedBox(
-                                                                                    height: height_16,
-                                                                                  ),
-                                                                                  Text(
-                                                                                      'Vui lòng không cung cấp mã xác nhận cho bất cứ ai.'),
-                                                                                ],
-                                                                              )),
-                                                                        ],
-                                                                      )),
-                                                                );
-                                                              });
-                                                        }else{
-                                                          controller.checkErrorText("Không lấy được mà Pin");
-                                                        }
-                                                      }
-                                                    },
-                                                  ),
-                                                ),
-                                                GetBuilder<OtherSettingsController>(
-                                                  builder: (c) => Text(
-                                                    c.textError,
-                                                    style: TextStyle(color: Colors.red),
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                        );
-                                      });
-                                },
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    );
-                  });
-            },
-          ),
-          OtherSettingButton(
-            icon: Icons.sms,
-            title: 'Tạo Soft Token',
-            onTap: () {
-              testEntrust();
-            },
-          ),
-          OtherSettingButton(
-              icon: Icons.token,
-              title: 'Đã có Soft Token',
-              onTap: () {
+              if (!controller.pin)
                 showModalBottomSheet<void>(
                     context: context,
                     isScrollControlled: true,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.vertical(
-                        top: Radius.circular(25.r),
+                        top: Radius.circular(25),
                       ),
                     ),
-                    builder: (BuildContext context) {
-                      return Container(
+                    builder: (BuildContext contextBottomSheet) {
+                      return Padding(
+                        padding: MediaQuery.of(context).viewInsets,
+                        child: Container(
                           margin: EdgeInsets.only(
                             left: width_8,
                             right: width_8,
                             top: height_8,
                           ),
-                          height: Get.size.height / 3,
+                          height: Get.size.height / 4,
                           child: SingleChildScrollView(
                             child: Column(
+                              mainAxisSize: MainAxisSize.min,
                               children: [
                                 Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  mainAxisAlignment: MainAxisAlignment.end,
                                   children: [
-                                    Text(
-                                      ENTER_PIN,
-                                      style: TextStyle(
-                                        fontFamily: 'open_sans',
-                                        fontSize: fontSize_12,
-                                        fontWeight: FontWeight.w600,
-                                      ),
-                                    ),
                                     InkWell(
-                                      onTap: () => Navigator.pop(context),
+                                      onTap: () =>
+                                          Navigator.pop(contextBottomSheet),
                                       child: Text(
                                         CANCEL,
                                         style: TextStyle(
@@ -421,51 +157,287 @@ class _OtherSettingsState extends State<OtherSettings> {
                                     ),
                                   ],
                                 ),
-                                TextField(
-                                    keyboardType: TextInputType.number,
-                                    maxLength: 4,
-                                    controller: controllerTextF,
-                                    onChanged: (value) {
-                                      valueText = value;
-                                    },
-                                    style: TextStyle(
-                                      fontSize: fontSize_11,
-                                      color: clr_black,
-                                      fontFamily: 'open_sans',
-                                      fontWeight: FontWeight.w500,
+                                SizedBox(
+                                  height: height_8,
+                                ),
+                                Text(
+                                  CREATE_PIN,
+                                  style: TextStyle(
+                                    fontFamily: 'open_sans',
+                                    fontSize: fontSize_12,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: height_20,
+                                ),
+                                SizedBox(
+                                  width: MediaQuery.of(contextBottomSheet)
+                                          .size
+                                          .width /
+                                      1.5,
+                                  child: PinCodeTextField(
+                                    appContext: contextBottomSheet,
+                                    pinTheme: PinTheme(
+                                      shape: PinCodeFieldShape.circle,
+                                      borderRadius: BorderRadius.circular(5),
+                                      fieldHeight: 50,
+                                      fieldWidth: 40,
+                                      activeFillColor: Colors.white,
                                     ),
-                                    decoration: InputDecoration(
-                                      labelText: ENTER_PIN,
-                                      suffixIconColor: clr_black54,
-                                      labelStyle: TextStyle(
-                                        fontSize: fontSize_11,
-                                        color: clr_black,
-                                        fontFamily: 'open_sans',
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                    )),
-                                ElevatedButton(
-                                    onPressed: () {
-                                      if (controllerTextF.text.isNotEmpty) {
-                                        exportPinFlutterToNative(valueText);
-                                        passData();
-                                      } else {
-                                        controllerTextF.text = "";
-                                      }
+                                    obscureText: true,
+                                    length: 4,
+                                    keyboardType: TextInputType.number,
+                                    controller: controllerCreatePinTextField,
+                                    autoDisposeControllers: false,
+                                    onChanged: (value) {
+                                      createPin = value;
                                     },
-                                    child: Text("test")),
-                                GetBuilder<OtherSettingsController>(
-                                    builder: (c) => Text(
-                                          controller.name ?? '',
-                                          style: TextStyle(
-                                            color: Colors.black,
+                                    autoFocus: true,
+                                    onCompleted: (_) async {
+                                      createPin =
+                                          controllerCreatePinTextField.text;
+                                      Navigator.pop(contextBottomSheet);
+                                      showModalBottomSheet<void>(
+                                          context: context,
+                                          isScrollControlled: true,
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.vertical(
+                                              top: Radius.circular(25),
+                                            ),
                                           ),
-                                        ))
+                                          builder:
+                                              (BuildContext contextBottomSheet) {
+                                            return Padding(
+                                              padding: MediaQuery.of(context)
+                                                  .viewInsets,
+                                              child: Container(
+                                                margin: EdgeInsets.only(
+                                                  left: width_8,
+                                                  right: width_8,
+                                                  top: height_8,
+                                                ),
+                                                height: Get.size.height / 4,
+                                                child: Column(
+                                                  children: [
+                                                    Row(
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment.end,
+                                                      children: [
+                                                        InkWell(
+                                                          onTap: () => Navigator.pop(
+                                                              contextBottomSheet),
+                                                          child: Text(
+                                                            CANCEL,
+                                                            style: TextStyle(
+                                                              fontSize:
+                                                                  fontSize_12,
+                                                              color:
+                                                                  PRIMARY_COLOR,
+                                                              fontFamily:
+                                                                  'open_sans',
+                                                              fontWeight:
+                                                                  FontWeight.w600,
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                    SizedBox(
+                                                      height: height_8,
+                                                    ),
+                                                    Text(
+                                                      CONFIRM_PIN,
+                                                      style: TextStyle(
+                                                        fontFamily: 'open_sans',
+                                                        fontSize: fontSize_12,
+                                                        fontWeight:
+                                                            FontWeight.w600,
+                                                      ),
+                                                    ),
+                                                    SizedBox(
+                                                      height: height_20,
+                                                    ),
+                                                    SizedBox(
+                                                      width: MediaQuery.of(
+                                                                  contextBottomSheet)
+                                                              .size
+                                                              .width /
+                                                          1.5,
+                                                      child: PinCodeTextField(
+                                                        appContext:
+                                                            contextBottomSheet,
+                                                        pinTheme: PinTheme(
+                                                          shape: PinCodeFieldShape
+                                                              .circle,
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(5),
+                                                          fieldHeight: 50,
+                                                          fieldWidth: 40,
+                                                          activeFillColor:
+                                                              Colors.white,
+                                                        ),
+                                                        obscureText: true,
+                                                        length: 4,
+                                                        keyboardType:
+                                                            TextInputType.number,
+                                                        controller:
+                                                            controllerConfirmPinTextField,
+                                                        autoDisposeControllers:
+                                                            false,
+                                                        onChanged: (value) {
+                                                          confirmPin = value;
+                                                        },
+                                                        autoFocus: true,
+                                                        onCompleted: (_) async {
+                                                          confirmPin =
+                                                              controllerConfirmPinTextField
+                                                                  .text;
+                                                          if (createPin !=
+                                                              confirmPin) {
+                                                            controller.checkErrorText(
+                                                                "Mã pin không khớp");
+                                                          } else {
+                                                            controller
+                                                                .checkErrorText(
+                                                                    "");
+                                                            await createPinFlutterToNative(
+                                                                createPin,
+                                                                confirmPin);
+                                                            getDataOTPNative();
+                                                            await checkPinNative();
+                                                            if (controller.pin) {
+                                                              Navigator.pop(
+                                                                  contextBottomSheet);
+                                                              showModalBottomSheet<
+                                                                      void>(
+                                                                  context:
+                                                                      contextBottomSheet,
+                                                                  isScrollControlled:
+                                                                      true,
+                                                                  shape:
+                                                                      RoundedRectangleBorder(
+                                                                    borderRadius:
+                                                                        BorderRadius
+                                                                            .vertical(
+                                                                      top: Radius
+                                                                          .circular(
+                                                                              25),
+                                                                    ),
+                                                                  ),
+                                                                  builder:
+                                                                      (BuildContext
+                                                                          contextBottomSheet2) {
+                                                                    controller
+                                                                        .startTimer(
+                                                                            contextBottomSheet2);
+                                                                    return Padding(
+                                                                      padding: EdgeInsets.only(
+                                                                          bottom: MediaQuery.of(contextBottomSheet2)
+                                                                              .viewInsets
+                                                                              .bottom),
+                                                                      child: Container(
+                                                                          margin: EdgeInsets.only(
+                                                                            left:
+                                                                                width_8,
+                                                                            right:
+                                                                                width_8,
+                                                                            top:
+                                                                                height_8,
+                                                                          ),
+                                                                          height: Get.size.height / 4,
+                                                                          child: Column(
+                                                                            mainAxisSize:
+                                                                                MainAxisSize.min,
+                                                                            children: [
+                                                                              GetBuilder<OtherSettingsController>(
+                                                                                  builder: (c) => Column(
+                                                                                        children: [
+                                                                                          Icon(
+                                                                                            Icons.key,
+                                                                                            size: fontSize_40,
+                                                                                          ),
+                                                                                          SizedBox(
+                                                                                            height: height_16,
+                                                                                          ),
+                                                                                          Text(
+                                                                                            'Mã xác nhận của bạn là:',
+                                                                                            style: TextStyle(
+                                                                                              color: Colors.black,
+                                                                                              fontSize: fontSize_16,
+                                                                                            ),
+                                                                                          ),
+                                                                                          SizedBox(
+                                                                                            height: height_16,
+                                                                                          ),
+                                                                                          Text(
+                                                                                            controller.name ?? '',
+                                                                                            style: TextStyle(
+                                                                                              color: Colors.black,
+                                                                                              fontWeight: FontWeight.w600,
+                                                                                              fontSize: fontSize_16,
+                                                                                            ),
+                                                                                          ),
+                                                                                          SizedBox(
+                                                                                            height: height_16,
+                                                                                          ),
+                                                                                          Text('Mã xác thực sẽ hết thời gian trong: ${c.start} (s)'),
+                                                                                          SizedBox(
+                                                                                            height: height_16,
+                                                                                          ),
+                                                                                          Text('Vui lòng không cung cấp mã xác nhận cho bất cứ ai.'),
+                                                                                        ],
+                                                                                      )),
+                                                                            ],
+                                                                          )),
+                                                                    );
+                                                                  });
+                                                            } else {
+                                                              controller
+                                                                  .checkErrorText(
+                                                                      "Không lấy được mà Pin");
+                                                            }
+                                                          }
+                                                        },
+                                                      ),
+                                                    ),
+                                                    GetBuilder<
+                                                        OtherSettingsController>(
+                                                      builder: (c) => Text(
+                                                        c.textError,
+                                                        style: TextStyle(
+                                                            color: Colors.red),
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            );
+                                          });
+                                    },
+                                  ),
+                                ),
                               ],
                             ),
-                          ));
+                          ),
+                        ),
+                      );
                     });
-              }),
+            },
+          ),
+          OtherSettingButton(
+            icon: Icons.sms,
+            title: 'Tạo Soft Token',
+            onTap: () {
+              // testEntrust();
+            },
+          ),
+          OtherSettingButton(
+            icon: Icons.token,
+            title: 'Đã có Soft Token',
+            onTap: () {},
+          ),
         ],
       ),
     );
