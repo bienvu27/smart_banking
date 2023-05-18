@@ -14,6 +14,7 @@ class TextFieldComponent extends StatelessWidget {
     this.counter,
     this.focusNode,
     this.maxLength,
+     this.autoFocus
   });
 
   final String label;
@@ -24,6 +25,7 @@ class TextFieldComponent extends StatelessWidget {
   int? maxLength;
   FocusNode? focusNode;
   final TextInputType textInputType;
+  final bool? autoFocus;
 
   @override
   Widget build(BuildContext context) {
@@ -36,6 +38,7 @@ class TextFieldComponent extends StatelessWidget {
           onChange!(_);
         }
       },
+      autofocus: autoFocus ?? false,
       maxLength: maxLength,
       style: TextStyle(
         fontSize: fontSize_12,
