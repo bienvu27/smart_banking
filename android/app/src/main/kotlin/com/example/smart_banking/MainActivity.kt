@@ -58,7 +58,7 @@ class MainActivity : FlutterActivity() {
             } else if (call.method == "check_exist_pin") {
                 //check pin code exist of sharedPrefernces
                 val sharedPreferences = this.getSharedPreferences("pinValue", Context.MODE_PRIVATE)
-                var pinCodeNative: String? = sharedPreferences.getString("pinValue", null)
+                var pinCodeNative: String? = sharedPreferences.getString("pinValue", "")
                 result.success(pinCodeNative)
             }
         }
