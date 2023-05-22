@@ -1,15 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
-import 'package:smart_banking/core/common/utils.dart';
 import 'package:smart_banking/screens/components/app_bar/app_bar_component.dart';
 
 import '../../../core/resources/strings.dart';
 import '../../../core/style/colors.dart';
 import '../../../core/style/size.dart';
-import '../../components/button/button_component.dart';
 import '../components/other_settings_button.dart';
 import '../controller/other_settings_controller.dart';
 
@@ -45,7 +42,7 @@ class _OtherSettingsState extends State<OtherSettings> {
     final String arg1 = valueText;
     try {
       final package =
-          await platform.invokeMethod("test_2", {"enter_code": arg1});
+          await platform.invokeMethod("enter_pin", {"enter_code": arg1});
       print(package);
     } on PlatformException catch (e) {
       print("Failed to get battery level: ${e.message}");
@@ -88,6 +85,26 @@ class _OtherSettingsState extends State<OtherSettings> {
     }
   }
 
+  Future<void> checkPinCreatePin() async {
+    try {
+      var res = await platform.invokeMethod("check_pin");
+      await controller.checkPin(res);
+      print("-----------${controller.pin}");
+    } on PlatformException catch (e) {
+      print("Failed to get battery level: ${e.message}");
+    }
+  }
+
+  Future<void> checkExistPin() async {
+    try {
+      var res = await platform.invokeMethod("check_exist_pin");
+      await controller.checkPinExist(res);
+      print("checkPinExist: ${controller.pinExist}");
+    } on PlatformException catch (e) {
+      print("Failed to get battery level: ${e.message}");
+    }
+  }
+
   Future<void> getDataOTPNative() async {
     try {
       var res = await platform.invokeMethod("fill_text");
@@ -115,8 +132,8 @@ class _OtherSettingsState extends State<OtherSettings> {
             icon: Icons.pin_rounded,
             title: 'Tạo mã Pin',
             onTap: () async {
-              await checkPinNative();
-              if (!controller.pin)
+              await checkExistPin().then((value) => checkPinNative());
+              if (controller.pinExist == "")
                 showModalBottomSheet<void>(
                     context: context,
                     isScrollControlled: true,
@@ -206,8 +223,8 @@ class _OtherSettingsState extends State<OtherSettings> {
                                               top: Radius.circular(25),
                                             ),
                                           ),
-                                          builder:
-                                              (BuildContext contextBottomSheet) {
+                                          builder: (BuildContext
+                                              contextBottomSheet) {
                                             return Padding(
                                               padding: MediaQuery.of(context)
                                                   .viewInsets,
@@ -225,8 +242,9 @@ class _OtherSettingsState extends State<OtherSettings> {
                                                           MainAxisAlignment.end,
                                                       children: [
                                                         InkWell(
-                                                          onTap: () => Navigator.pop(
-                                                              contextBottomSheet),
+                                                          onTap: () =>
+                                                              Navigator.pop(
+                                                                  contextBottomSheet),
                                                           child: Text(
                                                             CANCEL,
                                                             style: TextStyle(
@@ -237,7 +255,8 @@ class _OtherSettingsState extends State<OtherSettings> {
                                                               fontFamily:
                                                                   'open_sans',
                                                               fontWeight:
-                                                                  FontWeight.w600,
+                                                                  FontWeight
+                                                                      .w600,
                                                             ),
                                                           ),
                                                         ),
@@ -268,8 +287,9 @@ class _OtherSettingsState extends State<OtherSettings> {
                                                         appContext:
                                                             contextBottomSheet,
                                                         pinTheme: PinTheme(
-                                                          shape: PinCodeFieldShape
-                                                              .circle,
+                                                          shape:
+                                                              PinCodeFieldShape
+                                                                  .circle,
                                                           borderRadius:
                                                               BorderRadius
                                                                   .circular(5),
@@ -281,7 +301,8 @@ class _OtherSettingsState extends State<OtherSettings> {
                                                         obscureText: true,
                                                         length: 4,
                                                         keyboardType:
-                                                            TextInputType.number,
+                                                            TextInputType
+                                                                .number,
                                                         controller:
                                                             controllerConfirmPinTextField,
                                                         autoDisposeControllers:
@@ -296,8 +317,9 @@ class _OtherSettingsState extends State<OtherSettings> {
                                                                   .text;
                                                           if (createPin !=
                                                               confirmPin) {
-                                                            controller.checkErrorText(
-                                                                "Mã pin không khớp");
+                                                            controller
+                                                                .checkErrorText(
+                                                                    "Mã pin không khớp");
                                                           } else {
                                                             controller
                                                                 .checkErrorText(
@@ -307,7 +329,8 @@ class _OtherSettingsState extends State<OtherSettings> {
                                                                 confirmPin);
                                                             getDataOTPNative();
                                                             await checkPinNative();
-                                                            if (controller.pin) {
+                                                            if (controller
+                                                                .pin) {
                                                               Navigator.pop(
                                                                   contextBottomSheet);
                                                               showModalBottomSheet<
@@ -346,7 +369,7 @@ class _OtherSettingsState extends State<OtherSettings> {
                                                                             top:
                                                                                 height_8,
                                                                           ),
-                                                                          height: Get.size.height / 4,
+                                                                          height: Get.size.height / 2,
                                                                           child: Column(
                                                                             mainAxisSize:
                                                                                 MainAxisSize.min,
