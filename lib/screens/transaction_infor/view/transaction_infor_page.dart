@@ -298,7 +298,8 @@ class _TransactionInforPageState extends State<TransactionInforPage> {
                                 borderRadius: BorderRadius.circular(15),
                               ),
                               child: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceAround,
                                 children: [
                                   RichText(
                                     text: TextSpan(
@@ -311,7 +312,8 @@ class _TransactionInforPageState extends State<TransactionInforPage> {
                                       ),
                                       children: [
                                         TextSpan(
-                                          text: 'Chuyển tiền 24/7 là dịch vụ chuyển nhanh \n',
+                                          text:
+                                              'Chuyển tiền 24/7 là dịch vụ chuyển nhanh \n',
                                           style: TextStyle(
                                             fontSize: fontSize_9,
                                             color: clr_black,
@@ -365,9 +367,11 @@ class _TransactionInforPageState extends State<TransactionInforPage> {
                 boxShadow: [bottomNavigationBar],
               ), // Get.to(const RegisterStep3Page()
               child: ButtonComponent(
-                  title: NEXT,
-                  bgColor: button_color_home,
-                  callback: () => Get.toNamed("/transaction_confirm", arguments: '')),
+                title: NEXT,
+                bgColor: button_color_home,
+                callback: () =>
+                    Get.toNamed("/transaction_confirm", arguments: ''),
+              ),
             ),
           );
         });

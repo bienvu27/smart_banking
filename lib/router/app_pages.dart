@@ -84,7 +84,7 @@ class AppPages {
 
     GetPage(
         name: AppRouters.TRANSACTION_CONFIRM,
-        page: () => const TransactionConfirmationPage(),
+        page: () =>  TransactionConfirmationPage(),
         binding: TransactionConfirmationBinding()),
 
     GetPage(
