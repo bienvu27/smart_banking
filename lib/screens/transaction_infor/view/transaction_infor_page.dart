@@ -72,15 +72,6 @@ class _TransactionInforPageState extends State<TransactionInforPage> {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            // CircleAvatar(
-                            //   radius: border_16,
-                            //   backgroundColor: clr_d5d6d7,
-                            //   child: Icon(
-                            //     Icons.person,
-                            //     color: Colors.white,
-                            //     size: fontSize_26,
-                            //   ),
-                            // ),
                             CircleAvatar(
                               backgroundColor: clr_f6f5f7,
                               radius: fontSize_16,
@@ -371,6 +362,7 @@ class _TransactionInforPageState extends State<TransactionInforPage> {
                 bgColor: button_color_home,
                 callback: () =>
                     Get.toNamed("/transaction_confirm", arguments: ''),
+                 // Get.to(()=> TestBottom())
               ),
             ),
           );

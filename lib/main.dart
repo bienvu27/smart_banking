@@ -33,7 +33,6 @@ class _MyAppState extends State<MyApp> {
           getPages: AppPages.list,
           debugShowCheckedModeBanner: false,
           themeMode: ThemeMode.system,
-          // home: TestEntrust(),
           builder: (context, child) {
             return MediaQuery(
                 data: MediaQuery.of(context).copyWith(
