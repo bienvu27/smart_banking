@@ -5,18 +5,18 @@ import 'package:intl/intl.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:smart_banking/fake_data/data_fake_home.dart';
 import 'package:smart_banking/router/app_routers.dart';
-import 'package:smart_banking/screens/dashboard/controller/dashboard_controller.dart';
-import '../../screens/components/button/button_component.dart';
-import '../../screens/components/text_field/text_field_icon_component.dart';
-import '../../screens/components/text_field/text_field_icon_subtile_component.dart';
-import '../../screens/register/view/components/radio_button_bottom_sheet.dart';
-import '../resources/asset.dart';
-import '../resources/strings.dart';
-import '../style/colors.dart';
-import '../style/size.dart';
-import '../widgets/dialog_logout.dart';
-import '../widgets/pin_code_bottom_sheet.dart';
-import '../widgets/warning_dialog.dart';
+import 'package:smart_banking/view_model/dashboard_view_model/dashboard_view_model.dart';
+import '../screens/components/button/button_component.dart';
+import '../screens/components/text_field/text_field_icon_component.dart';
+import '../screens/components/text_field/text_field_icon_subtile_component.dart';
+import '../screens/register/view/components/radio_button_bottom_sheet.dart';
+import '../core/resources/asset.dart';
+import '../res/strings/strings.dart';
+import '../core/style/colors.dart';
+import '../core/style/size.dart';
+import '../core/widgets/dialog_logout.dart';
+import '../core/widgets/pin_code_bottom_sheet.dart';
+import '../core/widgets/warning_dialog.dart';
 
 class Utils {
   VoidCallback? callback;
@@ -162,7 +162,7 @@ class Utils {
                         Navigator.of(context).pop();
                         Navigator.of(context).pushNamedAndRemoveUntil(
                             AppRouters.DASHBOARD, (route) => false);
-                        Get.put(DashboardController());
+                        Get.put(DashboardViewModel());
                       }
                     }),
               ),
@@ -249,7 +249,7 @@ class Utils {
                 pref.remove("username");
                 Navigator.of(context).pushNamedAndRemoveUntil(
                     AppRouters.DASHBOARD, (route) => false);
-                Get.put(DashboardController());
+                Get.put(DashboardViewModel());
                 Utils.showWarningDialog(context, "Đăng xuất thành công");
               },
             ));

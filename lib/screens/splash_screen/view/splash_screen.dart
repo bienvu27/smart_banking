@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../dashboard/view/dashboard_page.dart';
+import '../../dashboard_view/view/dashboard_page.dart';
 
 class SplashScreen extends StatefulWidget {
   @override

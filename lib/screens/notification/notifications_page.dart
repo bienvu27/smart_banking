@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../core/resources/strings.dart';
+import '../../res/strings/strings.dart';
 import '../../core/style/colors.dart';
 import '../../core/style/size.dart';
 import '../../fake_data/data_fake_home.dart';

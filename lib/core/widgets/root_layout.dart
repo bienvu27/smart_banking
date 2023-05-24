@@ -1,7 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:smart_banking/screens/dashboard/view/dashboard_page.dart';
+import 'package:smart_banking/screens/dashboard_view/view/dashboard_page.dart';
 
 
 class RootLayout extends StatefulWidget {

@@ -5,7 +5,7 @@ import 'package:smart_banking/screens/history_transfer/view/tab_history/tab_hist
 import 'package:smart_banking/screens/history_transfer/view/tab_history/tab_history_page2.dart';
 import 'package:smart_banking/screens/history_transfer/view/tab_history/tab_history_page3.dart';
 
-import '../../../core/resources/strings.dart';
+import '../../../res/strings/strings.dart';
 import '../../../core/style/colors.dart';
 import '../../../core/style/size.dart';
 import '../../components/button/back_icon_button.dart';

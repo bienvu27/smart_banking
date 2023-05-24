@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../core/common/utils.dart';
+import '../../../utils/utils.dart';
 
 class TransactionInforController extends GetxController{
   TextEditingController moneyController = new TextEditingController();
