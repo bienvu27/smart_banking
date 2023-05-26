@@ -86,4 +86,5 @@ abstract class BaseColors {
 
   // ========================================
   Color get colorUnActiveButton;
+  LinearGradient get colorGradientBgBanner;
 }

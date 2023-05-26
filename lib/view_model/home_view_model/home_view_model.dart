@@ -4,10 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+
 class HomeController extends GetxController {
-
   bool isLogin = false;
-
   final PageController pageController = PageController(initialPage: 0);
   int _currentPage = 0;
   bool end = false;

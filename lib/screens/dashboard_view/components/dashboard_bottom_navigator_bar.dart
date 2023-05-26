@@ -6,7 +6,7 @@ import '../../../res/strings/strings.dart';
 import '../../../res/colors/app_colors.dart';
 import '../../../res/text_style/app_text_style.dart';
 import '../../components/dialog/custom_dialog.dart';
-import '../../home/view/home_page.dart';
+import '../../home_view/view/home_page.dart';
 import '../../notification/notifications_page.dart';
 import '../../promotion/promotion_page.dart';
 import '../../settings/settings_page.dart';

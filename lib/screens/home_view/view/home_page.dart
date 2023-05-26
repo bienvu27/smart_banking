@@ -1,23 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:smart_banking/screens/home/controller/home_controller.dart';
+import 'package:smart_banking/view_model/home_view_model/home_view_model.dart';
 import '../../../core/resources/asset.dart';
+import '../../../res/dimentions/gaps.dart';
 import '../../../res/strings/strings.dart';
 import '../../../core/style/size.dart';
 import '../../../fake_data/data_fake_home.dart';
-import '../components/cover_widget.dart';
+import '../components/cover_widget/cover_widget.dart';
 import '../components/grid_menu.dart';
+import '../components/image_watermarks.dart';
 import '../components/list_service.dart';
 import '../components/service_favorite.dart';
 
-class HomePage extends StatefulWidget {
+class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
-  @override
-  State<HomePage> createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<HomeController>(
@@ -27,38 +24,21 @@ class _HomePageState extends State<HomePage> {
               resizeToAvoidBottomInset: false,
               body: Stack(
                 children: [
-                  SizedBox(
-                    height: MediaQuery.of(context).size.height,
-                    child: Center(
-                      child: Image.asset(
-                        icon_vrb_white,
-                        width: width_160,
-                        height: height_400,
-                        color: Colors.black.withOpacity(0.05),
-                        colorBlendMode: BlendMode.modulate,
-                      ),
-                    ),
-                  ),
+                  ImageWatermarks(image: icon_vrb_white),
                   SingleChildScrollView(
                     child: Column(
                       children: [
                         CoverWidget(
                           controller: controller,
                         ),
-                        SizedBox(
-                          height: height_12,
-                        ),
+                        gapH2,
                         GridMenu(controller: controller),
-                        SizedBox(
-                          height: height_12,
-                        ),
+                        gapH2,
                         ServiceFavorite(
                           list: list,
                           controller: controller,
                         ),
-                        SizedBox(
-                          height: height_12,
-                        ),
+                        gapH2,
                         Container(
                           margin: EdgeInsets.only(
                             left: width_12,
@@ -78,9 +58,7 @@ class _HomePageState extends State<HomePage> {
                                     ));
                               }),
                         ),
-                        SizedBox(
-                          height: height_12,
-                        ),
+                        gapH2,
                         Text(
                           TITLE_30,
                           style: TextStyle(
@@ -89,9 +67,7 @@ class _HomePageState extends State<HomePage> {
                             fontWeight: FontWeight.w600,
                           ),
                         ),
-                        SizedBox(
-                          height: height_12,
-                        ),
+                        gapH2,
                         ListService(
                           listService: listService,
                           onTap: (e) => Get.toNamed(

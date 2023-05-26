@@ -8,7 +8,7 @@ import '../../../res/strings/strings.dart';
 import '../../../core/style/colors.dart';
 import '../../../core/style/size.dart';
 import '../../components/dialog/custom_dialog.dart';
-import '../../home/controller/home_controller.dart';
+import '../../../view_model/home_view_model/home_view_model.dart';
 import '../../service_manager/model/service_favorite_model.dart';
 
 class GridViewComponent extends StatelessWidget {

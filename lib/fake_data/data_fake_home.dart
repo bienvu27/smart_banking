@@ -1,11 +1,10 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:smart_banking/screens/transfer/models/list_bank_model.dart';
 import 'package:smart_banking/screens/user/model/list_available_balances_model.dart';
 
 import '../screens/card_service/model/card_model.dart';
 import '../screens/history_transfer/model/history_transfer_model.dart';
-import '../screens/home/model/list_service_model.dart';
+import '../screens/home_view/model/list_service_model.dart';
 import '../screens/notification/model/description_model.dart';
 import '../screens/notification/model/notification_model.dart';
 import '../screens/notification/model/notification_model2.dart';

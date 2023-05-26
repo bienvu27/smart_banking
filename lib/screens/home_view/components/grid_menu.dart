@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:smart_banking/screens/components/dialog/custom_dialog.dart';
 import 'package:get/get.dart';
-import 'package:smart_banking/screens/home/controller/home_controller.dart';
+import 'package:smart_banking/view_model/home_view_model/home_view_model.dart';
 import '../../../utils/utils.dart';
 import '../../../core/resources/asset.dart';
 import '../../../res/strings/strings.dart';

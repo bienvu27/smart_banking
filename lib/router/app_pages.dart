@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:smart_banking/screens/home/view/home_page.dart';
+import 'package:smart_banking/screens/home_view/view/home_page.dart';
 import 'package:smart_banking/screens/register/binding/register_binding.dart';
 import 'package:smart_banking/screens/register/view/register_page.dart';
 import 'package:smart_banking/screens/service_manager/view/service_manager_page.dart';
@@ -21,7 +21,7 @@ import '../view_model/dashboard_view_model/dashboard_binding.dart';
 import '../screens/dashboard_view/view/dashboard_page.dart';
 import '../screens/history_transfer/binding/history_transfer_binding.dart';
 import '../screens/history_transfer/view/history_transfer_page.dart';
-import '../screens/home/binding/home_binding.dart';
+import '../view_model/home_view_model/home_binding.dart';
 import '../screens/questions/binding/questions_binding.dart';
 import '../screens/questions/view/question_page.dart';
 import '../screens/service_manager/binding/service_manager_binding.dart';

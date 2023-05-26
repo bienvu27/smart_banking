@@ -119,4 +119,12 @@ class AppDimensions extends Dimensions {
   @override
   // TODO: implement heightQRHome
   double get heightQRHome => 27;
+
+  @override
+  // TODO: implement sizeImageWatermarks
+  double get sizeImageWatermarks => 280;
+
+  @override
+  // TODO: implement sizeImageLogo
+  double get sizeImageLogo => 120;
 }

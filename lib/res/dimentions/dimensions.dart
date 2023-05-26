@@ -61,4 +61,8 @@ abstract class Dimensions {
   dynamic get mediaQueryHeight;
 
   double get heightQRHome;
+
+  double get sizeImageWatermarks;
+
+  double get sizeImageLogo;
 }

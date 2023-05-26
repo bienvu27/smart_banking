@@ -8,7 +8,7 @@ import '../../core/style/colors.dart';
 import '../../core/style/size.dart';
 import '../../fake_data/data_fake_home.dart';
 import '../components/dialog/custom_dialog.dart';
-import '../home/controller/home_controller.dart';
+import '../../view_model/home_view_model/home_view_model.dart';
 import 'components/list_promotion.dart';
 import 'components/sliver_app_bar.dart';
 

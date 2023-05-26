@@ -20,9 +20,6 @@ import '../core/widgets/warning_dialog.dart';
 
 class Utils {
   VoidCallback? callback;
-
-
-
   static void showAuthenticationDialog(BuildContext context) {
     final timeNow = DateFormat('dd/MM/yyyy HH:mm:ss').format(DateTime.now());
     TextEditingController phoneController = TextEditingController();

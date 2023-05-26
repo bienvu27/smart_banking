@@ -262,4 +262,15 @@ class AppColors implements BaseColors {
   @override
   // TODO: implement colorUnActiveButton
   Color get colorUnActiveButton => const Color(0xFF989797);
+
+  @override
+  // TODO: implement colorGradientBgBanner
+  LinearGradient get colorGradientBgBanner =>
+      LinearGradient(begin: FractionalOffset.bottomCenter, end: FractionalOffset.topCenter, colors: [
+        Colors.grey.withOpacity(0.1),
+        Colors.black87,
+      ], stops: [
+        0.0,
+        1.0
+      ]);
 }

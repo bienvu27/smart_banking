@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
-import 'package:smart_banking/screens/home/controller/home_controller.dart';
-import '../../screens/home/view/home_page.dart';
+import 'package:smart_banking/view_model/home_view_model/home_view_model.dart';
+import '../../screens/home_view/view/home_page.dart';
 import '../../screens/notification/notifications_page.dart';
 import '../../screens/promotion/promotion_page.dart';
 import '../../screens/qr_code/qr_code_page.dart';

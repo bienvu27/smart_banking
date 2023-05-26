@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:smart_banking/screens/home/controller/home_controller.dart';
+import 'package:smart_banking/view_model/home_view_model/home_view_model.dart';
 
 class HomedBinding extends Bindings {
   @override

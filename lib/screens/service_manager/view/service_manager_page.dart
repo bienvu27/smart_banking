@@ -8,7 +8,7 @@ import '../../../core/style/colors.dart';
 import '../../../core/style/size.dart';
 import '../../../fake_data/data_fake_home.dart';
 import '../../components/app_bar/app_bar_component.dart';
-import '../../home/controller/home_controller.dart';
+import '../../../view_model/home_view_model/home_view_model.dart';
 import '../components/services/service_list.dart';
 
 class ServiceManager extends StatefulWidget {

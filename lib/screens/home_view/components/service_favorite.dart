@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:smart_banking/screens/home/controller/home_controller.dart';
+import 'package:smart_banking/view_model/home_view_model/home_view_model.dart';
 import '../../../utils/utils.dart';
 import '../../../res/strings/strings.dart';
 import '../../../core/style/colors.dart';
