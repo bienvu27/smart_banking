@@ -32,7 +32,7 @@ class DashboardViewModel extends GetxController {
     super.onInit();
     currentTab = 0;
     currentScreen = const HomePage();
-    Get.put(HomeController());
+    Get.put(HomeViewModel());
     update();;
   }
 

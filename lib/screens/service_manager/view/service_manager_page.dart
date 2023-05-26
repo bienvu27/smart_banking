@@ -159,7 +159,7 @@ class _ServiceManagerState extends State<ServiceManager> {
 
                                   InkWell(
                                     onTap: () {
-                                      final controller = Get.put(HomeController());
+                                      final controller = Get.put(HomeViewModel());
                                       !controller.isLogin ? Utils.showAuthenticationDialog(context) : SizedBox();
                                     },
                                     child: Padding(
@@ -182,7 +182,7 @@ class _ServiceManagerState extends State<ServiceManager> {
                                   ),
                                   InkWell(
                                     onTap: () {
-                                      final controller = Get.put(HomeController());
+                                      final controller = Get.put(HomeViewModel());
                                       if(!controller.isLogin){
                                         Utils.showAuthenticationDialog(context);
                                       }else{
@@ -423,7 +423,7 @@ class _ServiceManagerState extends State<ServiceManager> {
                                     ),
                                     InkWell(
                                       onTap: () {
-                                        final controller = Get.put(HomeController());
+                                        final controller = Get.put(HomeViewModel());
                                         !controller.isLogin ? Utils.showAuthenticationDialog(context) : SizedBox();
                                       },
                                       child: Text(
@@ -440,7 +440,7 @@ class _ServiceManagerState extends State<ServiceManager> {
                                     ),
                                     InkWell(
                                       onTap: () {
-                                        final controller = Get.put(HomeController());
+                                        final controller = Get.put(HomeViewModel());
                                         if(!controller.isLogin){
                                           Utils.showAuthenticationDialog(context);
                                         }else{

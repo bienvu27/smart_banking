@@ -11,7 +11,7 @@ import '../../components/dialog/custom_dialog.dart';
 import '../../service_manager/model/service_favorite_model.dart';
 
 class ServiceFavorite extends StatelessWidget {
-  HomeController controller;
+  HomeViewModel controller;
 
   ServiceFavorite({super.key, required this.list, required this.controller});
 

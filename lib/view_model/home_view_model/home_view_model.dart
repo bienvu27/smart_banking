@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 
-class HomeController extends GetxController {
+class HomeViewModel extends GetxController {
   bool isLogin = false;
   final PageController pageController = PageController(initialPage: 0);
   int _currentPage = 0;

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:smart_banking/res/app_context_extention.dart';
+import '../../../res/text_style/app_text_style.dart';
 import '../../../utils/utils.dart';
 import '../../../res/strings/strings.dart';
 import '../../../core/style/colors.dart';
@@ -17,10 +19,8 @@ class LoginBottomSheet extends StatelessWidget {
       },
       child: Text(
         LOGIN,
-        style: TextStyle(
-          fontSize: fontSize_12,
-          fontWeight: FontWeight.w500,
-          color: PRIMARY_COLOR_BLUE,
+        style: AppTextStyle().bigTextStyle.copyWith(
+          color: context.resources.color.colorPrimary,
         ),
       ),
     );

@@ -17,8 +17,8 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<HomeController>(
-        init: HomeController(),
+    return GetBuilder<HomeViewModel>(
+        init: HomeViewModel(),
         builder: (controller) {
           return Scaffold(
               resizeToAvoidBottomInset: false,

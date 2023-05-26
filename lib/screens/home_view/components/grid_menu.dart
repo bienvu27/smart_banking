@@ -13,7 +13,7 @@ import '../../../fake_data/data_fake_home.dart';
 import 'grid_menu_component.dart';
 
 class GridMenu extends StatelessWidget {
-  HomeController controller;
+  HomeViewModel controller;
 
   GridMenu({super.key, required this.controller});
 

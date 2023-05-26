@@ -15,7 +15,7 @@ class AvatarHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetBuilder(
-        init: HomeController(),
+        init: HomeViewModel(),
         builder: (c) {
           return Row(
             crossAxisAlignment: CrossAxisAlignment.center,

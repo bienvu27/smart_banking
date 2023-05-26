@@ -57,7 +57,7 @@ class _PromotionPageState extends State<PromotionPage> {
                     list: list,
                     title: PROMOTION,
                     onTap: () {
-                      final controller = Get.put(HomeController());
+                      final controller = Get.put(HomeViewModel());
                       !controller.isLogin
                           ? showDialog(
                               barrierDismissible: false,
@@ -78,7 +78,7 @@ class _PromotionPageState extends State<PromotionPage> {
                 ListPromotion(
                     listPromotion: listPromotion,
                     onTap: () {
-                      final controller = Get.put(HomeController());
+                      final controller = Get.put(HomeViewModel());
                       !controller.isLogin
                           ? showDialog(
                           barrierDismissible: false,

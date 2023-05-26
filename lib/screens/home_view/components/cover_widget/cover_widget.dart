@@ -4,14 +4,13 @@ import 'package:smart_banking/res/dimentions/gaps.dart';
 import 'package:smart_banking/screens/home_view/components/cover_widget/search_home.dart';
 import '../../../../core/resources/asset.dart';
 import '../../../../view_model/home_view_model/home_view_model.dart';
-import '../authentication.dart';
-import '../infor_user.dart';
+import '../authentication/container_cover.dart';
 import 'avatar_home.dart';
 import 'banner_bg.dart';
 
 // ignore: must_be_immutable
 class CoverWidget extends StatelessWidget {
-  HomeController controller;
+  HomeViewModel controller;
 
   CoverWidget({super.key, required this.controller});
 
@@ -57,11 +56,7 @@ class CoverWidget extends StatelessWidget {
               ],
             ),
           ),
-          if (!controller.isLogin) ...[
-            const Authentication(),
-          ] else ...[
-            const InforUser(),
-          ]
+          ContainerCover(homeViewModel: controller,),
         ],
       ),
     );
