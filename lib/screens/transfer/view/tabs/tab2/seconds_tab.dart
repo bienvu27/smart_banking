@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 import 'package:smart_banking/screens/transfer/view/tabs/tab1/components/list_contacts.dart';
 import 'package:smart_banking/screens/transfer/view/tabs/tab1/components/list_contacts_recently.dart';
 import '../../../../../core/resources/asset.dart';
-import '../../../../../core/resources/strings.dart';
+import '../../../../../res/strings/strings.dart';
 import '../../../../../core/style/colors.dart';
 import '../../../../../core/style/size.dart';
 import '../../../../../fake_data/data_fake_home.dart';

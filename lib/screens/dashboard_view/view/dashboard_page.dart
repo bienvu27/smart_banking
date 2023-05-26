@@ -3,9 +3,9 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import '../components/dash_board_floating_action_button.dart';
 import '../components/dashboard_bottom_navigator_bar.dart';
-import '../controller/dashboard_controller.dart';
+import '../../../view_model/dashboard_view_model/dashboard_view_model.dart';
 
-class DashBoardPage extends GetView<DashboardController> {
+class DashBoardPage extends GetView<DashboardViewModel> {
   const DashBoardPage({Key? key}) : super(key: key);
 
   @override
@@ -14,8 +14,8 @@ class DashBoardPage extends GetView<DashboardController> {
         value: const SystemUiOverlayStyle(
           statusBarColor: Colors.transparent,
         ),
-        child: GetBuilder<DashboardController>(
-          init: DashboardController(),
+        child: GetBuilder<DashboardViewModel>(
+          init: DashboardViewModel(),
           builder: (controller) {
             return Scaffold(
               resizeToAvoidBottomInset: false,

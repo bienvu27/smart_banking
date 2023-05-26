@@ -17,8 +17,8 @@ import '../screens/contact_bank/binding/contact_bank_binding.dart';
 import '../screens/contact_bank/view/contact_bank_page.dart';
 import '../screens/contacts_manager/binding/contacts_manager_binding.dart';
 import '../screens/contacts_manager/view/contacts_manager.dart';
-import '../screens/dashboard/binding/dashboard_binding.dart';
-import '../screens/dashboard/view/dashboard_page.dart';
+import '../view_model/dashboard_view_model/dashboard_binding.dart';
+import '../screens/dashboard_view/view/dashboard_page.dart';
 import '../screens/history_transfer/binding/history_transfer_binding.dart';
 import '../screens/history_transfer/view/history_transfer_page.dart';
 import '../screens/home/binding/home_binding.dart';
@@ -84,7 +84,7 @@ class AppPages {
 
     GetPage(
         name: AppRouters.TRANSACTION_CONFIRM,
-        page: () => const TransactionConfirmationPage(),
+        page: () =>  TransactionConfirmationPage(),
         binding: TransactionConfirmationBinding()),
 
     GetPage(

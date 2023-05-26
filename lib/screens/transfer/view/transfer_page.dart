@@ -5,7 +5,7 @@ import 'package:smart_banking/screens/transfer/view/tabs/tab1/components/seconds
 import 'package:smart_banking/screens/transfer/view/tabs/tab1/first_tab.dart';
 import 'package:smart_banking/screens/transfer/view/tabs/tab2/seconds_tab.dart';
 import 'package:smart_banking/screens/transfer/view/tabs/tab3/last_tab.dart';
-import '../../../core/resources/strings.dart';
+import '../../../res/strings/strings.dart';
 import '../../../core/style/colors.dart';
 import '../../../core/style/size.dart';
 import '../../components/button/back_icon_button.dart';

@@ -1,6 +1,5 @@
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smart_banking/router/app_pages.dart';
 import 'package:smart_banking/router/app_routers.dart';
@@ -34,7 +33,6 @@ class _MyAppState extends State<MyApp> {
           getPages: AppPages.list,
           debugShowCheckedModeBanner: false,
           themeMode: ThemeMode.system,
-          // home: TestEntrust(),
           builder: (context, child) {
             return MediaQuery(
                 data: MediaQuery.of(context).copyWith(
@@ -50,35 +48,3 @@ class _MyAppState extends State<MyApp> {
   }
 }
 
-class TestEntrust extends StatefulWidget {
-  const TestEntrust({Key? key}) : super(key: key);
-
-  @override
-  State<TestEntrust> createState() => _TestEntrustState();
-}
-
-class _TestEntrustState extends State<TestEntrust> {
-  static const platform = MethodChannel('entrust.sdk.dev/flutter');
-
-  Future<void> testEntrust() async {
-    try {
-      final package = await platform.invokeMethod("test");
-      print(package);
-    } on PlatformException catch (e) {
-      print("Failed to get battery level: ${e.message}");
-    }
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: ElevatedButton(
-            onPressed: () {
-              testEntrust();
-            },
-            child: Text('Button')),
-      ),
-    );
-  }
-}

@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:smart_banking/screens/register/view/steps/photo_id_screen.dart';
 
 import '../../../../core/resources/asset.dart';
-import '../../../../core/resources/strings.dart';
+import '../../../../res/strings/strings.dart';
 import '../../../../core/style/colors.dart';
 import '../../../../core/style/size.dart';
 import '../../../components/app_bar/app_bar_component.dart';

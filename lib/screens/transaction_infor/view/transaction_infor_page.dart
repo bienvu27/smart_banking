@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import '../../../core/resources/asset.dart';
-import '../../../core/resources/strings.dart';
+import '../../../res/strings/strings.dart';
 import '../../../core/style/colors.dart';
 import '../../../core/style/size.dart';
 import '../../components/app_bar/app_bar_component.dart';
@@ -72,15 +72,6 @@ class _TransactionInforPageState extends State<TransactionInforPage> {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            // CircleAvatar(
-                            //   radius: border_16,
-                            //   backgroundColor: clr_d5d6d7,
-                            //   child: Icon(
-                            //     Icons.person,
-                            //     color: Colors.white,
-                            //     size: fontSize_26,
-                            //   ),
-                            // ),
                             CircleAvatar(
                               backgroundColor: clr_f6f5f7,
                               radius: fontSize_16,
@@ -298,7 +289,8 @@ class _TransactionInforPageState extends State<TransactionInforPage> {
                                 borderRadius: BorderRadius.circular(15),
                               ),
                               child: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceAround,
                                 children: [
                                   RichText(
                                     text: TextSpan(
@@ -311,7 +303,8 @@ class _TransactionInforPageState extends State<TransactionInforPage> {
                                       ),
                                       children: [
                                         TextSpan(
-                                          text: 'Chuyển tiền 24/7 là dịch vụ chuyển nhanh \n',
+                                          text:
+                                              'Chuyển tiền 24/7 là dịch vụ chuyển nhanh \n',
                                           style: TextStyle(
                                             fontSize: fontSize_9,
                                             color: clr_black,
@@ -365,9 +358,12 @@ class _TransactionInforPageState extends State<TransactionInforPage> {
                 boxShadow: [bottomNavigationBar],
               ), // Get.to(const RegisterStep3Page()
               child: ButtonComponent(
-                  title: NEXT,
-                  bgColor: button_color_home,
-                  callback: () => Get.toNamed("/transaction_confirm", arguments: '')),
+                title: NEXT,
+                bgColor: button_color_home,
+                callback: () =>
+                    Get.toNamed("/transaction_confirm", arguments: ''),
+                 // Get.to(()=> TestBottom())
+              ),
             ),
           );
         });

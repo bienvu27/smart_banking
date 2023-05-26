@@ -3,7 +3,7 @@ import 'package:smart_banking/screens/user/view/tabs/user_tab1/user_tab1.dart';
 import 'package:smart_banking/screens/user/view/tabs/user_tab2/user_tab2.dart';
 import 'package:smart_banking/screens/user/view/tabs/user_tab3/user_tab3.dart';
 
-import '../../../core/resources/strings.dart';
+import '../../../res/strings/strings.dart';
 import '../../../core/style/colors.dart';
 import '../../../core/style/size.dart';
 import '../../components/button/back_icon_button.dart';
