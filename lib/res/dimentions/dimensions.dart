@@ -65,4 +65,6 @@ abstract class Dimensions {
   double get sizeImageWatermarks;
 
   double get sizeImageLogo;
+
+  double get gapH2;
 }

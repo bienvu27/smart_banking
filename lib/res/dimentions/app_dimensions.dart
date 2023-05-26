@@ -127,4 +127,8 @@ class AppDimensions extends Dimensions {
   @override
   // TODO: implement sizeImageLogo
   double get sizeImageLogo => 120;
+
+  @override
+  // TODO: implement gapH2
+  double get gapH2 => 20;
 }

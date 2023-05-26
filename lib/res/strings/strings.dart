@@ -246,4 +246,4 @@ const String TITLE_89 = '- Phí quản lý tài khoản (1 tài khoản mặc đ
 const String TITLE_90 = '- Phí OOT';
 const String TITLE_91 = '- Phí phát hành và phí thường niên trọn đời thẻ Phi vật lý phát hành trên Smartbanking.';
 const String TITLE_92 = 'Lưu ý: Khách hàng đang sử dụng gói B-free sau khi lựa chọn chính sách miễn phí mới sẽ áp dụng theo chính sách mới(không mễn phí phát hành và phí thường niên thẻ năm đầu), và không đăng ký lại gói B-free.';
-
+const String RECENT_LOGIN = "Lần đăng nhập gần nhất";
