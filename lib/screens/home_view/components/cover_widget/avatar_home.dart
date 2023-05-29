@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:smart_banking/res/app_context_extention.dart';
 import 'package:smart_banking/res/text_style/app_text_style.dart';
-import '../../../../core/resources/asset.dart';
+import '../../../../res/resources/assets.dart';
 import '../../../../res/strings/strings.dart';
 import '../../../../view_model/home_view_model/dialog_home/dialog_bottom_sheet_home.dart';
 import '../../../../view_model/home_view_model/home_view_model.dart';
@@ -69,17 +69,17 @@ class AvatarHome extends StatelessWidget {
                   children: [
                     Text(
                       GOOD_MORNING,
-                      style: AppTextStyle().boldDefaultTextStyle.copyWith(
-                            color: context.resources.color.colorWhite.withOpacity(0.5),
-                          ),
+                      // style: AppTextStyle().boldDefaultTextStyle.copyWith(
+                      //       color: context.resources.color.colorWhite.withOpacity(0.5),
+                      //     ),
                     ),
                     if (c.isLogin)
                       Text(
                         NAME_TEST.toUpperCase(),
-                        style: AppTextStyle().boldDefaultTextStyle.copyWith(
-                              color: context.resources.color.colorWhite,
-                              fontSize: 17,
-                            ),
+                        // style: AppTextStyle().boldDefaultTextStyle.copyWith(
+                        //       color: context.resources.color.colorWhite,
+                        //       fontSize: 17,
+                        //     ),
                       ),
                   ],
                 ),

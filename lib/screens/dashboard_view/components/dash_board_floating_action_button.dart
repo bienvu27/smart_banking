@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import '../../../core/style/colors.dart';
-import '../../../core/style/size.dart';
+import '../../../res/resources/assets.dart';
 
 class DashBoardFloatingActionButton extends StatelessWidget {
   const DashBoardFloatingActionButton({
@@ -11,27 +12,24 @@ class DashBoardFloatingActionButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(border_148),
-      ),
-      shadowColor: PRIMARY_COLOR,
-      child: CircleAvatar(
-        radius: border_50,
-        backgroundColor: clr_white,
-        child: FloatingActionButton(
-          backgroundColor: PRIMARY_COLOR,
-          onPressed: () {
-            scanQRCode();
-          },
-          shape: RoundedRectangleBorder(
-            side: BorderSide(
-              width: width_2,
-              color: clr_white,
-            ),
-            borderRadius: BorderRadius.circular(border_148),
+    return CircleAvatar(
+      radius: 25,
+      backgroundColor: clr_white,
+      child: FloatingActionButton(
+        backgroundColor: PRIMARY_COLOR,
+        onPressed: () {
+          scanQRCode();
+        },
+        shape: RoundedRectangleBorder(
+          side: BorderSide(
+            width: 1,
+            color: clr_white,
           ),
-          child: const Icon(Icons.qr_code_2),
+          borderRadius: BorderRadius.circular(50),
+        ),
+        child: SvgPicture.asset(
+          home_qr_code,
+          width: 22,
         ),
       ),
     );

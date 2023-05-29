@@ -106,7 +106,7 @@ class AppDimensions extends Dimensions {
   // ==========================================================================
   @override
   // TODO: implement heightBottomAppBar
-  double get heightBottomAppBar => 60;
+  double get heightBottomAppBar => 82;
 
   @override
   // TODO: implement MediaQueryHeight

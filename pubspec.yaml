@@ -24,7 +24,8 @@ dependencies:
   camera: ^0.10.5
   path_provider: ^2.0.14
   pin_code_fields: ^7.4.0
-  dio: ^5.1.2
+  http: ^1.0.0
+  animated_bottom_navigation_bar: ^1.2.0
 
 dev_dependencies:
   flutter_test:
@@ -48,18 +49,17 @@ flutter:
     - assets/images/emoji/
     - assets/svg/
     - assets/i18n/
-    - assets/svg/icon_white/
     - assets/svg/icon_gradient/
     - assets/json/
+    - assets/fonts/
+    - assets/
+    - assets/svg/icon_menu/
 
   fonts:
-    - family: open_sans
+    - family: gilroy_regular
       fonts:
-        - asset: assets/fonts/open_sans_bold.ttf
+        - asset: assets/fonts/gilroy_regular.otf
         - style: normal
-        - asset: assets/fonts/open_sans_italic.ttf
-        - style: normal
-        - asset: assets/fonts/open_sans_regular.ttf
-        - style: normal
+
 
 

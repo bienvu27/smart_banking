@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:smart_banking/res/app_context_extention.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import '../../../res/colors/app_colors.dart';
 import '../../../res/text_style/app_text_style.dart';
 import '../../../view_model/dashboard_view_model/dashboard_view_model.dart';
@@ -16,7 +16,7 @@ class IconsDashBoard extends StatelessWidget {
 
   final VoidCallback onTap;
   final String title;
-  final IconData icon;
+  final String icon;
   final DashboardViewModel c;
   final int number;
 
@@ -27,19 +27,23 @@ class IconsDashBoard extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(
+          SvgPicture.asset(
             icon,
-            size: context.resources.dimension.defaultIcon,
+            width: 20,
             color: c.currentTab == number
                 ? AppColors().colorPrimary
                 : AppColors().colorUnActiveButton,
           ),
+          SizedBox(
+            height: 10,
+          ),
           Text(
             title,
-            style: AppTextStyle().boldVerySmallTextStyle.copyWith(
+            style: AppTextStyle().verySmallTextStyle.copyWith(
                   color: c.currentTab == number
                       ? AppColors().colorPrimary
                       : AppColors().colorUnActiveButton,
+                  fontSize: 14,
                 ),
           )
         ],

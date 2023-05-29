@@ -38,7 +38,7 @@ class SearchHome extends StatelessWidget {
             fillColor: context.resources.color.colorBlack.withOpacity(0.3),
             contentPadding: EdgeInsets.zero,
             hintText: SEARCH,
-            hintStyle: AppTextStyle().defaultTextStyle.copyWith(
+            hintStyle: AppTextStyle().verySmallTextStyle.copyWith(
               color: context.resources.color.colorWhite.withOpacity(0.5),
             ),
           ),

@@ -19,7 +19,7 @@ class LoginBottomSheet extends StatelessWidget {
       },
       child: Text(
         LOGIN,
-        style: AppTextStyle().bigTextStyle.copyWith(
+        style: AppTextStyle().verySmallTextStyle.copyWith(
           color: context.resources.color.colorPrimary,
         ),
       ),

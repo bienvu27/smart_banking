@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:smart_banking/res/app_context_extention.dart';
 import 'package:smart_banking/res/dimentions/gaps.dart';
 import 'package:smart_banking/screens/home_view/components/cover_widget/search_home.dart';
-import '../../../../core/resources/asset.dart';
+import '../../../../res/resources/assets.dart';
 import '../../../../view_model/home_view_model/home_view_model.dart';
 import '../authentication/container_cover.dart';
 import 'avatar_home.dart';

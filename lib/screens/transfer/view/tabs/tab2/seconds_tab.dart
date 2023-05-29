@@ -4,7 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:smart_banking/screens/transfer/view/tabs/tab1/components/list_contacts.dart';
 import 'package:smart_banking/screens/transfer/view/tabs/tab1/components/list_contacts_recently.dart';
-import '../../../../../core/resources/asset.dart';
+import '../../../../../res/resources/assets.dart';
 import '../../../../../res/strings/strings.dart';
 import '../../../../../core/style/colors.dart';
 import '../../../../../core/style/size.dart';

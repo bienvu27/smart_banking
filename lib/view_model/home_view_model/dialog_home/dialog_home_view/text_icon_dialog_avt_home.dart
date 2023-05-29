@@ -6,7 +6,12 @@ import '../../../../res/text_style/app_text_style.dart';
 
 class TextIconDialog extends StatelessWidget {
   const TextIconDialog(
-      {Key? key, required this.onTap, required this.title, required this.check, this.time, required this.icon})
+      {Key? key,
+      required this.onTap,
+      required this.title,
+      required this.check,
+      this.time,
+      required this.icon})
       : super(key: key);
   final VoidCallback onTap;
   final String? title, time;
@@ -40,7 +45,7 @@ class TextIconDialog extends StatelessWidget {
               ))),
               child: Text(
                 title ?? "",
-                style: AppTextStyle().boldDefaultTextStyle,
+                // style: AppTextStyle().boldDefaultTextStyle,
               ),
             )
           else
@@ -49,19 +54,19 @@ class TextIconDialog extends StatelessWidget {
               children: [
                 Text(
                   title ?? "",
-                  style: AppTextStyle().boldDefaultTextStyle,
+                  // style: AppTextStyle().boldDefaultTextStyle,
                 ),
                 gapH1,
                 Text(
                   '$RECENT_LOGIN \n'
                   '$time',
-                  style: AppTextStyle().mediumTextStyle.copyWith(
-                        fontWeight: FontWeight.w400,
-                        color: context.resources.color.colorBlack.withOpacity(
-                          .3,
-                        ),
-                      ),
+                  // style: AppTextStyle().mediumTextStyle.copyWith(
+                  //       fontWeight: FontWeight.w400,
+                  //       color: context.resources.color.colorBlack.withOpacity(
+                  //         .3,
                 ),
+                // ),
+                // ),
               ],
             ),
         ],

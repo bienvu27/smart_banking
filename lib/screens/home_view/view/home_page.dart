@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:smart_banking/view_model/home_view_model/home_view_model.dart';
-import '../../../core/resources/asset.dart';
 import '../../../res/dimentions/gaps.dart';
+import '../../../res/resources/assets.dart';
 import '../../../res/strings/strings.dart';
 import '../../../core/style/size.dart';
 import '../../../fake_data/data_fake_home.dart';

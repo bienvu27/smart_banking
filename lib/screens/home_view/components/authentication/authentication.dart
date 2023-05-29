@@ -20,7 +20,7 @@ class Authentication extends StatelessWidget {
           },
           child: Text(
             SIGN_IN,
-            style: AppTextStyle().bigTextStyle.copyWith(
+            style: AppTextStyle().verySmallTextStyle.copyWith(
                   color: context.resources.color.colorBlack.withOpacity(.3),
                 ),
           ),

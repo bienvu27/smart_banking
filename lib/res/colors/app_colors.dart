@@ -22,7 +22,7 @@ class AppColors implements BaseColors {
 
   @override
   // TODO: implement colorPrimary
-  Color get colorPrimary => const Color(0xFF002d85);
+  Color get colorPrimary => const Color(0xFF013AA9);
 
   @override
   // TODO: implement colorAccent
@@ -261,7 +261,7 @@ class AppColors implements BaseColors {
 
   @override
   // TODO: implement colorUnActiveButton
-  Color get colorUnActiveButton => const Color(0xFF989797);
+  Color get colorUnActiveButton => const Color(0XFF8F9BB3);
 
   @override
   // TODO: implement colorGradientBgBanner
