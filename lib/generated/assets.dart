@@ -2,6 +2,7 @@
 class Assets {
   Assets._();
 
+  static const String assetsSplash = 'assets/splash.png';
   static const String emojiEmoji1 = 'assets/images/emoji/emoji_1.png';
   static const String emojiEmoji2 = 'assets/images/emoji/emoji_2.png';
   static const String emojiEmoji3 = 'assets/images/emoji/emoji_3.png';
@@ -78,7 +79,6 @@ class Assets {
   static const String iconGradientDatLaiMatKhau = 'assets/svg/icon_gradient/dat_lai_mat_khau.svg';
   static const String iconGradientIconLightning = 'assets/svg/icon_gradient/icon_lightning.svg';
   static const String iconGradientKichHoatThe = 'assets/svg/icon_gradient/kich_hoat_the.svg';
-  static const String iconGradientMoKhoaThe = 'assets/svg/icon_gradient/mo_khoa_the.svg';
   static const String iconMenuGifts = 'assets/svg/icon_menu/gifts.svg';
   static const String iconMenuMenuIcon = 'assets/svg/icon_menu/menu_icon.svg';
   static const String iconMenuNotification = 'assets/svg/icon_menu/notification.svg';

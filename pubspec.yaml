@@ -25,7 +25,12 @@ dependencies:
   path_provider: ^2.0.14
   pin_code_fields: ^7.4.0
   http: ^1.0.0
-  animated_bottom_navigation_bar: ^1.2.0
+  flutter_native_splash: ^2.3.0
+
+flutter_native_splash:
+  image: assets/splash.png
+  color: "42a5f5"
+  android_disable_fullscreen: true
 
 dev_dependencies:
   flutter_test:
