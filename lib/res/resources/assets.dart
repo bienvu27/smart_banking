@@ -27,3 +27,6 @@ const home_gifts = "assets/svg/icon_menu/gifts.svg";
 const home_notification = "assets/svg/icon_menu/notification.svg";
 const home_setting = "assets/svg/icon_menu/setting.svg";
 const home_qr_code = "assets/svg/icon_menu/qr_code_icon.svg";
+const splash_bg_top = "assets/images/splash/bg_splash_1.png";
+const splash_bg_bottom = "assets/images/splash/bg_splash_2.png";
+const logo_app = "assets/images/logo_app.png";

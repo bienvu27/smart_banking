@@ -28,9 +28,12 @@ dependencies:
   flutter_native_splash: ^2.3.0
 
 flutter_native_splash:
-  image: assets/splash.png
+  image: assets/images/emoji/emoji_1.png
   color: "42a5f5"
   android_disable_fullscreen: true
+  android_12:
+  android: false
+  ios: false
 
 dev_dependencies:
   flutter_test:
@@ -59,11 +62,22 @@ flutter:
     - assets/fonts/
     - assets/
     - assets/svg/icon_menu/
+    - assets/images/splash/
 
   fonts:
     - family: gilroy_regular
       fonts:
         - asset: assets/fonts/gilroy_regular.otf
+        - style: normal
+
+    - family: gilroy_bold
+      fonts:
+        - asset: assets/fonts/gilroy_bold.otf
+        - style: normal
+
+    - family: gilroy_black
+      fonts:
+        - asset: assets/fonts/gilroy_black.otf
         - style: normal
 
 
