@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:smart_banking/screens/contacts_manager/controller/contacts_manager_controller.dart';
 
-import '../../../core/resources/strings.dart';
+import '../../../res/strings/strings.dart';
 import '../../../core/style/colors.dart';
 import '../../../core/style/size.dart';
 import '../../components/button/back_icon_button.dart';

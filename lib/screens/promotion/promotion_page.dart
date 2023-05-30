@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:smart_banking/screens/components/grid_view/grid_view_component.dart';
-import '../../core/common/utils.dart';
-import '../../core/resources/strings.dart';
+import '../../utils/utils.dart';
+import '../../res/strings/strings.dart';
 import '../../core/style/colors.dart';
 import '../../core/style/size.dart';
 import '../../fake_data/data_fake_home.dart';
 import '../components/dialog/custom_dialog.dart';
-import '../home/controller/home_controller.dart';
+import '../../view_model/home_view_model/home_view_model.dart';
 import 'components/list_promotion.dart';
 import 'components/sliver_app_bar.dart';
 
@@ -57,7 +57,7 @@ class _PromotionPageState extends State<PromotionPage> {
                     list: list,
                     title: PROMOTION,
                     onTap: () {
-                      final controller = Get.put(HomeController());
+                      final controller = Get.put(HomeViewModel());
                       !controller.isLogin
                           ? showDialog(
                               barrierDismissible: false,
@@ -78,7 +78,7 @@ class _PromotionPageState extends State<PromotionPage> {
                 ListPromotion(
                     listPromotion: listPromotion,
                     onTap: () {
-                      final controller = Get.put(HomeController());
+                      final controller = Get.put(HomeViewModel());
                       !controller.isLogin
                           ? showDialog(
                           barrierDismissible: false,

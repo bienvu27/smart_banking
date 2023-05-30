@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import '../../../core/common/utils.dart';
-import '../../../core/resources/constant.dart';
-import '../../../core/resources/strings.dart';
+import '../../../res/resources/constant.dart';
+import '../../../utils/utils.dart';
+import '../../../res/strings/strings.dart';
 import '../../../core/style/colors.dart';
 import '../../../core/style/size.dart';
 import '../../../fake_data/data_fake_home.dart';
 import '../../components/app_bar/app_bar_component.dart';
-import '../../home/controller/home_controller.dart';
+import '../../../view_model/home_view_model/home_view_model.dart';
 import '../components/services/service_list.dart';
 
 class ServiceManager extends StatefulWidget {
@@ -159,7 +159,7 @@ class _ServiceManagerState extends State<ServiceManager> {
 
                                   InkWell(
                                     onTap: () {
-                                      final controller = Get.put(HomeController());
+                                      final controller = Get.put(HomeViewModel());
                                       !controller.isLogin ? Utils.showAuthenticationDialog(context) : SizedBox();
                                     },
                                     child: Padding(
@@ -182,7 +182,7 @@ class _ServiceManagerState extends State<ServiceManager> {
                                   ),
                                   InkWell(
                                     onTap: () {
-                                      final controller = Get.put(HomeController());
+                                      final controller = Get.put(HomeViewModel());
                                       if(!controller.isLogin){
                                         Utils.showAuthenticationDialog(context);
                                       }else{
@@ -423,7 +423,7 @@ class _ServiceManagerState extends State<ServiceManager> {
                                     ),
                                     InkWell(
                                       onTap: () {
-                                        final controller = Get.put(HomeController());
+                                        final controller = Get.put(HomeViewModel());
                                         !controller.isLogin ? Utils.showAuthenticationDialog(context) : SizedBox();
                                       },
                                       child: Text(
@@ -440,7 +440,7 @@ class _ServiceManagerState extends State<ServiceManager> {
                                     ),
                                     InkWell(
                                       onTap: () {
-                                        final controller = Get.put(HomeController());
+                                        final controller = Get.put(HomeViewModel());
                                         if(!controller.isLogin){
                                           Utils.showAuthenticationDialog(context);
                                         }else{

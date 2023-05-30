@@ -61,4 +61,5 @@ class OtherSettingsController extends GetxController {
   void onInit() {
     super.onInit();
   }
+
 }

@@ -113,6 +113,7 @@ BoxShadow boxShadowSearch = BoxShadow(
   ),
 );
 
+
 LinearGradient linearGradient1 = LinearGradient(colors: [
   PRIMARY_COLOR,
   PRIMARY_COLOR_BLUE,
@@ -129,6 +130,7 @@ LinearGradient linearGradient4 = LinearGradient(colors: [
   PRIMARY_COLOR_BLUE,
   PRIMARY_COLOR,
 ]);
+
 LinearGradient linearGradientTab = LinearGradient(colors: [
   clr_button_1,
   clr_button_2,
@@ -141,11 +143,6 @@ LinearGradient linearGradientButtom = LinearGradient(
     colors: [
       PRIMARY_COLOR,
       PRIMARY_COLOR_BLUE,
-  // clr_button_1,
-  // clr_button_2,
-  // clr_button_3,
-  // clr_button_4,
-  // clr_button_5,
 ],
     begin: Alignment(-1, -1),
     end: Alignment(1, 1),
@@ -154,11 +151,6 @@ LinearGradient linearGradientButtom2 = LinearGradient(
   colors: [
     PRIMARY_COLOR_BLUE,
     PRIMARY_COLOR,
-    // clr_button_1,
-    // clr_button_2,
-    // clr_button_3,
-    // clr_button_4,
-    // clr_button_5,
   ],
   begin: Alignment(-1, -1),
   end: Alignment(1, 1),
@@ -189,3 +181,4 @@ LinearGradient linearGradientBgRegister = LinearGradient(colors: [
   Color(0xff0181ad),
   Color(0xff026c90),
 ]);
+

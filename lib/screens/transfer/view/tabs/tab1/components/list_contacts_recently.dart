@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../../../core/resources/strings.dart';
+import '../../../../../../res/strings/strings.dart';
 import '../../../../../../core/style/colors.dart';
 import '../../../../../../core/style/size.dart';
 import '../../../../models/list_contacts_model.dart';

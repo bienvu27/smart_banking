@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../core/resources/strings.dart';
+import '../../../res/strings/strings.dart';
 import '../../components/app_bar/app_bar_component.dart';
 
 class CardMobilePage extends StatelessWidget {

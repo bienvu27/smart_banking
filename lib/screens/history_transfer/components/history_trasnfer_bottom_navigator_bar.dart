@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import '../../../core/resources/asset.dart';
-import '../../../core/resources/strings.dart';
+import '../../../res/resources/assets.dart';
+import '../../../res/strings/strings.dart';
 import '../../../core/style/colors.dart';
 import '../../../core/style/size.dart';
 import '../controller/history_transfer_controller.dart';

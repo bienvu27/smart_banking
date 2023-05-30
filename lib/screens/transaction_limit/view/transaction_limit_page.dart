@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../core/resources/strings.dart';
+import '../../../res/strings/strings.dart';
 import '../../../core/style/colors.dart';
 import '../../../core/style/size.dart';
 import '../../components/app_bar/app_bar_component.dart';
